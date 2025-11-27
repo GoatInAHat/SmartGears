@@ -7,10 +7,12 @@ It is intended to ensure safety, reliability, maintainability, and clarity in al
 
 ## 0. Purpose & Rationale
 
-- SmartGears uses **niche technologies and domains** — e.g. AutoLISP for AutoCAD automation, involute-gear geometry math, laser-cut tolerancing — which have very limited examples and public code.  
+- SmartGears uses **niche technologies and domains** — e.g. AutoLISP for AutoCAD automation, involute-gear geometry math, laser-cut tolerancing — which have very limited examples and public code. 
 - Large-language models tend to **hallucinate or misuse APIs** when resources are rare or ambiguous.  
 - To avoid generating incorrect, fragile or unmaintainable code, the agent must treat **official documentation and credible external sources as first-class references**.  
 - Use of external documentation and repeated validation/testing is not optional — it is **mandatory**.
+- Keep everything compatible with all versions of AutoCAD, including AutoCAD web.
+- Ensure compatibility with AutoCAD Web: prioritize use of features supported by AutoCAD Web (e.g., avoid File Dialogs, ActiveX, or unsupported UI features).
 
 ---
 
@@ -25,6 +27,8 @@ When writing or modifying AutoLISP, geometry, CAD output, or gear-generation log
 - When using tutorials or community code — ensure at least two independent credible sources, compare for consistency, and verify via tests.  
 
 The agent should **always keep these references in its context window** when working on any code related to AutoLISP, geometry generation, or CAD output.  
+
+The agent must also consider AutoCAD Web limitations as documented in AutoCAD Web LISP support pages.
 
 ---
 
@@ -126,6 +130,12 @@ The agent must stop and ask for human review in the following situations:
 - When making design decisions with potential aesthetic or usability consequences (e.g. UI layout, user-facing defaults, mechanical tolerances for wood).  
 
 Do **not** guess or assume — ask.  
+
+---
+
+## 8.1 GitHub Actions: Single-File Build for AutoCAD Web
+
+SmartGears will use a GitHub Action to automatically bundle all modular .lsp source files into a single distribution-ready SmartGears.lsp file to maximize AutoCAD Web compatibility. The agent must ensure code remains modular internally while preserving the ability to concatenate modules in the correct order for a final single-file build. When modifying or adding modules, the agent must verify that the bundling script remains correct and that the output SmartGears.lsp loads successfully in both AutoCAD Desktop and AutoCAD Web.
 
 ---
 

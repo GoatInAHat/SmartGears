@@ -54,10 +54,17 @@ When a bug is reported, follow this exact workflow:
 ## 9. Summary: Core Imperatives  
 
 - Always treat documentation as first-class — read before writing.  
-- Always test before committing.  
-- Separate concerns — keep code modular.  
-- Document assumptions and references.  
-- Manage context window actively to avoid noise, repetition, and hallucination drift.  
-- Seek human input when uncertain.  
+- Always test before committing.
+- Separate concerns — keep code modular.
+- Document assumptions and references.
+- Manage context window actively to avoid noise, repetition, and hallucination drift.
+- Seek human input when uncertain.
 
-If at any point you can’t satisfy these conditions, **abort or request review** before proceeding.  
+### CI/Release Guardrail
+- Do not disable, bypass, or remove GitHub Actions steps that bundle sources, run smoke tests, or publish draft releases; keep the automated build-and-test pipeline intact when modifying workflows.
+
+### Status reporting in final responses
+- Always include an explicit readiness statement in the final summary (e.g., "Ready to push" or "Not ready to push").
+- If not ready, list the blockers.
+
+If at any point you can’t satisfy these conditions, **abort or request review** before proceeding.

@@ -2,7 +2,6 @@ name: Build SmartGears bundle
 
 on:
   push:
-    branches: ["**"]
   workflow_dispatch:
   release:
     types: [published]
@@ -33,11 +32,11 @@ jobs:
           path: SmartGears.lsp
 
       - name: Create draft release with bundle
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: draft-${{ github.run_number }}
-          name: SmartGears draft build #${{ github.run_number }}
+          tag_name: draft-${{ github.run_id }}-${{ github.run_attempt }}
+          name: SmartGears draft build #${{ github.run_id }}.${{ github.run_attempt }}
           draft: true
           generate_release_notes: true
           files: SmartGears.lsp

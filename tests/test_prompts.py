@@ -4,14 +4,16 @@ import unittest
 
 
 class PromptInitgetTests(unittest.TestCase):
-    def test_initget_always_has_flags(self):
-        """Ensure initget is never invoked without a bit-coded flags argument."""
+    def test_prompts_avoid_initget(self):
+        """Interactive prompts should not rely on initget to avoid 'too few arguments' crashes."""
+
         text = pathlib.Path("src/sg-load.lsp").read_text(encoding="utf-8")
-        zero_arg_calls = list(re.finditer(r"\(initget\s*\)", text))
+        initget_calls = list(re.finditer(r"\(initget\s", text))
+
         self.assertEqual(
-            zero_arg_calls,
+            initget_calls,
             [],
-            "initget must be called with flags; an empty call triggers 'too few arguments' in AutoCAD when accepting defaults.",
+            "Interactive gear prompts must not call initget; AutoCAD reports 'too few arguments' when defaults are accepted.",
         )
 
 

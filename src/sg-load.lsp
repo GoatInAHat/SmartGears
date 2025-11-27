@@ -15,14 +15,17 @@ Additional examples echo the same pattern with getreal returning NIL when the us
   (sg:val-or-default value default))
 
 (defun sg:prompt-real (msg default flags)
-  "Prompt for a real number with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags))
+  "Prompt for a real number with DEFAULT fallback.
+FLAGS is accepted for backward compatibility but deliberately unused; initget
+calls trigger 'too few arguments' errors in AutoCAD Web when users press Enter
+to accept defaults."
   (let ((val (getreal (strcat msg " <" (rtos default 2 3) ">: "))))
     (sg:val-or-default val default)))
 
 (defun sg:prompt-int (msg default flags)
-  "Prompt for an integer with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags))
+  "Prompt for an integer with DEFAULT fallback.
+FLAGS is accepted for backward compatibility but intentionally unused to avoid
+initget crashes when defaults are taken."
   (let ((val (getint (strcat msg " <" (itoa default) ">: "))))
     (sg:val-or-default val default)))
 

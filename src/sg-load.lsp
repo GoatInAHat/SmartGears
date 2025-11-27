@@ -10,6 +10,10 @@ empty Enter, enabling manual defaults. https://forums.autodesk.com/t5/visual-lis
 Additional examples echo the same pattern with getreal returning NIL when the user presses Enter. https://www.cadtutor.net/forum/topic/3755-exiting-getreal-if-enter-is-hit/"
   (if (numberp value) value default))
 
+(defun VAL (value default)
+  "Backward-compatible alias for sg:val-or-default."
+  (sg:val-or-default value default))
+
 (defun sg:prompt-real (msg default flags)
   "Prompt for a real number with DEFAULT fallback and optional INITGET FLAGS."
   (if flags (initget flags) (initget))

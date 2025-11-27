@@ -12,7 +12,7 @@ It is intended to ensure safety, reliability, maintainability, and clarity in al
 - To avoid generating incorrect, fragile or unmaintainable code, the agent must treat **official documentation and credible external sources as first-class references**.  
 - Use of external documentation and repeated validation/testing is not optional — it is **mandatory**.
 - Keep everything compatible with all versions of AutoCAD, including AutoCAD web.
-- Ensure compatibility with AutoCAD Web: prioritize use of features supported by AutoCAD Web (e.g., avoid File Dialogs, ActiveX, or unsupported UI features).
+- Ensure compatibility with AutoCAD Web: only use features supported by AutoCAD Web (e.g., avoid File Dialogs, ActiveX, or unsupported UI features). Don't let this limit scope, a lot can still be accomplished with AutoCAD web.
 
 ---
 

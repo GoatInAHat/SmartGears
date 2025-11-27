@@ -16,13 +16,13 @@ Additional examples echo the same pattern with getreal returning NIL when the us
 
 (defun sg:prompt-real (msg default flags)
   "Prompt for a real number with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  (if flags (initget flags))
   (let ((val (getreal (strcat msg " <" (rtos default 2 3) ">: "))))
     (sg:val-or-default val default)))
 
 (defun sg:prompt-int (msg default flags)
   "Prompt for an integer with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  (if flags (initget flags))
   (let ((val (getint (strcat msg " <" (itoa default) ">: "))))
     (sg:val-or-default val default)))
 

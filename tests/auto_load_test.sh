@@ -30,7 +30,7 @@ for idx, ch in enumerate(text, start=1):
 if stack != 0:
     sys.stderr.write("Unbalanced parentheses in SmartGears.lsp\n")
     sys.exit(1)
-required = ["c:SGEARMAKE", "sg:gear-make", "sg:acad-draw-gear", "sg:gear-derived-values"]
+required = ["c:SGEARMAKE", "sg:gear-make", "sg:acad-draw-gear", "sg:gear-derived-values", "sg:val-or-default", "(defun VAL"]
 missing = [name for name in required if name not in text]
 if missing:
     sys.stderr.write(f"Missing expected symbols: {', '.join(missing)}\n")

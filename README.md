@@ -22,6 +22,8 @@ SmartGears is a modular AutoLISP toolkit for generating 2D external spur gear pr
 - Kerf / clearance offset (mm; positive to expand, negative to shrink)
 - Center point (defaults to origin if Enter is pressed)
 
+Press **Enter** at any prompt to accept the shown default values so you can move quickly through common setups.
+
 The tool builds an involute spur gear outline (outer profile, root circle, bore) using only core AutoLISP primitives for maximum AutoCAD Web compatibility.
 
 ## Repository layout

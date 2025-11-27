@@ -16,19 +16,26 @@ Additional examples echo the same pattern with getreal returning NIL when the us
 
 (defun sg:prompt-real (msg default flags)
   "Prompt for a real number with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  (if flags (initget flags))
   (let ((val (getreal (strcat msg " <" (rtos default 2 3) ">: "))))
     (sg:val-or-default val default)))
 
 (defun sg:prompt-int (msg default flags)
   "Prompt for an integer with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  (if flags (initget flags))
   (let ((val (getint (strcat msg " <" (itoa default) ">: "))))
     (sg:val-or-default val default)))
 
+(defun sg:plist-get (params key)
+  "Return the value for KEY from property list PARAMS."
+  (cond
+    ((null params) nil)
+    ((eq key (car params)) (cadr params))
+    (t (sg:plist-get (cddr params) key))))
+
 (defun sg:plist-number (params key default)
   "Return numeric value from PARAMS plist by KEY, falling back to DEFAULT."
-  (sg:val-or-default (cdr (assoc key params)) default))
+  (sg:val-or-default (sg:plist-get params key) default))
 
 (defun SGEARMAKE (params)
   "Create an external spur gear using SmartGears involute geometry.
@@ -54,7 +61,7 @@ geometry pipeline."
          (kerf (if params
                 (sg:plist-number params :kerf 0.0)
                 (sg:prompt-real "Kerf / clearance offset (mm, +expand, -shrink)" 0.0 nil)))
-         (center (if params (cdr (assoc :center params)) (getpoint "\nCenter point <0,0,0>: ")))
+         (center (if params (sg:plist-get params :center) (getpoint "\nCenter point <0,0,0>: ")))
          (origin (if center center '(0 0 0)))
          (gear (sg:gear-make z m alpha bore kerf origin)))
     (if gear

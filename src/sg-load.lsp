@@ -15,14 +15,17 @@ Additional examples echo the same pattern with getreal returning NIL when the us
   (sg:val-or-default value default))
 
 (defun sg:prompt-real (msg default flags)
-  "Prompt for a real number with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  "Prompt for a real number with DEFAULT fallback.
+FLAGS is accepted for backward compatibility but deliberately unused; initget
+calls trigger 'too few arguments' errors in AutoCAD Web when users press Enter
+to accept defaults."
   (let ((val (getreal (strcat msg " <" (rtos default 2 3) ">: "))))
     (sg:val-or-default val default)))
 
 (defun sg:prompt-int (msg default flags)
-  "Prompt for an integer with DEFAULT fallback and optional INITGET FLAGS."
-  (if flags (initget flags) (initget))
+  "Prompt for an integer with DEFAULT fallback.
+FLAGS is accepted for backward compatibility but intentionally unused to avoid
+initget crashes when defaults are taken."
   (let ((val (getint (strcat msg " <" (itoa default) ">: "))))
     (sg:val-or-default val default)))
 
@@ -63,5 +66,23 @@ geometry pipeline."
   (princ))
 
 (defun c:SGEARMAKE () (SGEARMAKE nil))
+
+;;; Test commands for CI and smoke checks
+
+(defun SGEARMAKE-TEST10 ()
+  "Generate a 10-tooth gear with canned parameters (no prompts)."
+  (SGEARMAKE '(:teeth 10 :module 2.0 :pressure-angle 20.0 :bore 5.0 :kerf 0.0 :center (0 0 0))))
+
+(defun c:SGEARTEST10 () (SGEARMAKE-TEST10))
+
+(defun SGEARLINE ()
+  "Minimal interactive command: prompt for a length and draw a line along +X."
+  (princ "\n-- SmartGears: Prompt smoke test --")
+  (let* ((len (sg:prompt-real "Test line length (mm)" 10.0 nil))
+         (end (list len 0.0 0.0)))
+    (command "_.LINE" '(0.0 0.0 0.0) end "")
+    (princ "\nTest line drawn.")))
+
+(defun c:SGEARLINE () (SGEARLINE))
 
 (princ)

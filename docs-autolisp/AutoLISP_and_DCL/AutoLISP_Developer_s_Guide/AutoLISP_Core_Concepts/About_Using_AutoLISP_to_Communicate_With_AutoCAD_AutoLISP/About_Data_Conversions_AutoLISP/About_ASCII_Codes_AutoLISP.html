@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="ASCII codes are integer values that represent alphanumeric characters." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About ASCII Codes (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About ASCII Codes (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    ASCII codes are integer values that represent alphanumeric characters.
+   </p>
+   <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__WSFACF1429558A55DE11F0759FF1E4B858C-647E">
+    Numeric values 0 through 127 represent digits 0 through 9, letters of the alphabet, punctuation marks, and other special characters. Some AutoLISP functions return or expect an ASCII code for a single character instead of the string equivalent.
+   </p>
+   <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__WSFACF1429558A55DE11F0759FF1E4B858C-647D">
+    For example, the
+    <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-711913D0-F0B7-4503-9ACB-8E357DD0D07D">
+     grread
+    </samp>
+    function returns the ASCII code of the key pressed when a user provides keyboard input. The ASCII code in the list returned can then be evaluated or converted for display based on how the program is going to use it.
+   </p>
+   <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-0E5BAA6F-DE67-40CB-BC05-399894F3EEAD">
+    The following are a few of the AutoLISP functions that are used when working with ASCII codes:
+   </p>
+   <ul class="ul" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__UL_00F1B7A724594A3A8767709BEE03BD3B">
+    <li class="li" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__LI_6589C1353E7D412C87C06F967C095ED2">
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-28BAFB88-8185-45FD-9D1A-1F65D9B27E32">
+      grread
+     </samp>
+     – Reads values from any of the AutoCAD input devices.
+    </li>
+    <li class="li" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__LI_3D6FAF7AFC4744E78050DECC26190D29">
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-DE7A957D-5229-4C0A-8132-3925B2DCA5B0">
+      read-char
+     </samp>
+     – Returns the ASCII code representing the character read from the keyboard input buffer or an open file.
+    </li>
+    <li class="li" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__LI_40170BCCC1324D8BA77B9576FF73E140">
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-7B6A8E84-B235-4F66-B1E4-9C2A1E4916D9">
+      write-char
+     </samp>
+     – Writes one character to the screen or to an open file.
+    </li>
+    <li class="li" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__LI_D39C1D712F144E51A42E827D03E7FB11">
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-95AE0A0D-A739-4030-920D-F3165D7BFE75">
+      ascii
+     </samp>
+     – Returns the ASCII code for the first character of a string.
+    </li>
+    <li class="li" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__LI_FB715589FD44414ABF7D3FD2D4C979B1">
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-3A6E5B99-3D9B-4174-8BB1-4AB89B0468AF">
+      chr
+     </samp>
+     – Converts an integer representing an ASCII character code into a single-character string.
+    </li>
+   </ul>
+   <div class="section" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__SECTION_3DBD4C366D2D449FB5CA28D32146AD17">
+    <h2 class="title sectiontitle">
+     Converting ASCII Codes and Characters to ASCII Codes
+    </h2>
+    <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-F3CBF37E-1076-4277-99BF-4B805ECA37C6">
+     The
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-D75A3E90-0E3E-4D65-AAD6-88DBCC981778">
+      ascii
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-DB4CE0E3-8281-404A-B88B-261FCA8E4E90">
+      chr
+     </samp>
+     functions can be used to handle the conversion of ASCII codes. The
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-F1FAE1D6-3389-4D9D-ADAB-F74663407ED1">
+      ascii
+     </samp>
+     function returns the ASCII code associated with a character string, and
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-C790EC1C-A27A-43F5-90CF-53722903983A">
+      chr
+     </samp>
+     returns the character string associated with an ASCII code.
+    </p>
+    <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-890C38FC-5201-41FA-9279-212B3F4E716C">
+     The following code converts an uppercase A to its ASCII code value:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-C385897A-5799-4F59-B643-3DBE0C00C598">(ascii "A")</strong>
+65</pre>
+    <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-234A3280-A5A1-411E-A9B8-52B366051899">
+     The following code converts an ASCII code value to the character string it represents:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-010FAB98-C0B9-4A07-B412-66903CC8371C">(chr 65)</strong>
+"A"</pre>
+    <p class="p" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-15AB8527-AE87-4518-B5F7-C5B9B8EA9245">
+     The following example code defines a command named
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-A0EBB77E-EAD7-434C-B47B-B991F30EF5D4">
+      ASCII
+     </samp>
+     and a function named
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-382E88D7-B700-4B0A-8ADF-CBF368CAAE52">
+      BASE
+     </samp>
+     that is used by the
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-3D036A5B-5398-4471-83BA-23F9DAF0869F">
+      ASCII
+     </samp>
+     command. The
+     <samp class="ph codeph" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-998F5FDF-3826-493A-B165-C9E7C3D51257">
+      ASCII
+     </samp>
+     command writes characters with their codes in decimal, octal, and hexadecimal form to the screen and a file named
+     <em class="ph i" id="GUID-22EE1BF1-C71B-4FDB-9C89-3697EDF93688__GUID-7F2C76B6-6215-49AD-96CD-C3CF6A1CCB74">
+      ASCII.txt
+     </em>
+     .
+    </p>
+    <pre class="pre codeblock prettyprint">; BASE converts from a decimal integer to a string in another base.
+(defun BASE (bas int / ret yyy zot)
+  (defun zot (i1 i2 / xxx)
+    (if (&gt; (setq xxx (rem i2 i1)) 9)
+      (chr (+ 55 xxx))
+      (itoa xxx)
+    )
+  )
+
+  (setq ret (zot bas int)
+        yyy (/ int bas)
+  )
+  (setq ret (strcat (zot bas yyy) ret))
+  (setq yyy (/ yyy bas))
+
+  (strcat (zot bas yyy) ret)
+)
+
+(defun C:ASCII (/)                      ;chk out ct code dec oct hex )
+  (initget "Yes")
+  (setq chk (getkword "\nWriting to ASCII.TXT, continue? &lt;Y&gt;: "))
+  (if (or (= chk "Yes") (= chk nil))
+    (progn
+      (setq out  (open "ascii.txt" "w")
+            chk  1
+            code 0
+            ct   0
+      )
+      (princ "\n \n CHAR DEC OCT HEX \n")
+      (princ "\n \n CHAR DEC OCT HEX \n" out)
+      (while chk
+        (setq dec (strcat "  " (itoa code))
+              oct (base 8 code)
+              hex (base 16 code)
+        )
+        (setq dec (substr dec (- (strlen dec) 2) 3))
+        (if (&lt; (strlen oct) 3)
+          (setq oct (strcat "0" oct))
+        )
+
+        (princ (strcat "\n " (chr code) " " dec " " oct " " hex))
+        (princ (strcat "\n " (chr code) " " dec " " oct " " hex)
+               out
+        )
+
+        (cond
+          ((= code 255) (setq chk nil))
+          ((= ct 20)
+           (setq
+             xxx (getstring
+                   "\n \nPress 'X' to eXit or any key to continue: "
+                 )
+           )
+           (if (= (strcase xxx) "X")
+             (setq chk nil)
+             (progn
+               (setq ct 0)
+               (princ "\n \n CHAR DEC OCT HEX \n")
+             )
+           )
+          )
+        )
+        (setq ct   (1+ ct)
+              code (1+ code)
+        )
+      )
+      (close out)
+      (setq out nil)
+    )
+  )
+ (princ)
+)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Data_Conversions_AutoLISP.html">
+      About Data Conversions (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_Integers_AutoLISP.html" title="Integers are whole numbers; numbers that do not contain a decimal point.">
+       About Integers (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Number_Handling_AutoLISP.html" title="AutoLISP provides functions for working with integers and real numbers.">
+       About Number Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_String_Conversions_AutoLISP.html" title="Numeric values can be converted to string values for use in output or textual data.">
+       About String Conversions (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Strings_and_String_Handling_AutoLISP.html" title="A string is a group of characters surrounded by quotation marks. Within quoted strings the backslash (\) character allows control characters (or escape codes) to be included.">
+       About Strings and String Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5BDBD4BC-289E-4A49-9BB9-DF6A6147E0FC">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-209318DE-95C4-40F6-8776-935C8905FDEE" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Starting the Make Application Wizard
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Starting the Make Application Wizard
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-232D5A97-C1B7-4DD4-A307-231AA13F5C4E">
+    <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-7844">
+     To assist you in creating standalone applications, Visual LISP provides the Make Application wizard.
+    </p>
+   </div>
+   <div class="section" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE6C92BAFEE30F7510-7DB4">
+    <h2 class="title sectiontitle">
+     To run the Make Application wizard
+    </h2>
+    <ol class="ol" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF18CB41610EC0A2E719-72C6">
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF7">
+      To start the wizard, click File
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      Make Application
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      New Application Wizard from the Visual LISP menu.
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF6">
+      Select Expert mode and click Next.
+      <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-7843">
+       The wizard prompts you to specify the directory in which to store files created by Make Application, and to name your application. Make Application produces two output files: a .
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-E857ED65-A678-4341-BDF8-35F621967CF4">
+        vlx
+       </em>
+       file containing your program executable, and a .
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-B7DAF4C8-2236-4E53-8C1F-5B0A39B4322D">
+        prv
+       </em>
+       file containing the options you specify to Make Application. The .
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-4E09E9B4-BDC0-43AE-B66C-A56996853929">
+        prv
+       </em>
+       file is also known as a
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-B3E52490-1CEB-46DE-B88B-A318228D963A">
+        make
+       </em>
+       file. You can use the make file to rebuild your application, when necessary.
+      </p>
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF5">
+      Specify your
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-66919935-1EAB-4E4E-9619-AB7D4965DE4C">
+       Tutorial\VisualLISP\MyPath
+      </em>
+      directory as the application location, and call the application
+      <samp class="ph codeph" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-1C7F52D3-FCCE-4FB6-BABE-338912E5D5A6">
+       gardenpath
+      </samp>
+      . Visual LISP uses the application name in the output file names (in this instance,
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-2D05F124-D4CA-4B03-8393-D5AF5E620F41">
+       gardenpath.vlx
+      </em>
+      and
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-548C8317-3BF3-45BE-8A45-7BAD99519B4B">
+       gardenpath.prv
+      </em>
+      .)
+      <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-7842">
+       Click Next to continue.
+      </p>
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF4">
+      The application options are not covered in this tutorial. Accept the defaults and click Next.
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF3">
+      In this step, the wizard is prompting you to identify all the AutoLISP source code files that make up the application. You could individually select the LISP source files, but there is an easier way. Change the pull-down file type selection box so that “Visual LISP Project file” is shown, then click the Add button. Select the
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-32992773-4E1D-4DE1-A073-0D791F89F301">
+       Gpath
+      </em>
+      project file and click Open.
+      <div class="note note" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF2">
+       <span class="notetitle">
+        Note:
+       </span>
+       Depending on how you worked through the tutorial, you may have several
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-3DE9A961-F81B-4626-90FE-D25738D74D48">
+        Gpath
+       </em>
+       project files showing up. Select the most recent file. If you copied in the completed source code from Lesson 7, the project name to select should be
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-2F5F95D1-1A50-43AF-8399-BFA663342580">
+        Gpath7.prj
+       </em>
+       .
+      </div>
+      <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-7841">
+       After selecting the project file, click Next to continue.
+      </p>
+      <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-7840">
+       One advantage of compiled VLX applications is that you can compile your dialog control files (.
+       <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-84D11DD2-257C-4D58-B54B-67EF16B219A1">
+        dcl
+       </em>
+       ) into the complete application. This reduces the number of individual source files your end users need to deal with, and eliminates any of the search path problems when loading a DCL file.
+      </p>
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF1">
+      Change the pull-down file type selection box so that “DCL files” is shown, then click the Add button. Select the
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-51755803-66CA-4183-B704-494D17007E00">
+       gpdialog.dcl
+      </em>
+      file, then click Open.
+      <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-783F">
+       Click Next to continue building the application.
+      </p>
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CF0">
+      Compilation options are not covered in this tutorial. Accept the defaults and click Next.
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CEF">
+      The final step is used to review the selections you've made. At this point, you can select Finish. Visual LISP will begin the build process, displaying the results in the Build Output window. Several intermediate files will be produced, as your individual source code files are compiled into a format that can be linked into the single VLX application.
+     </li>
+    </ol>
+    <p class="p" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WSFACF1429558A55DE1929BBDFEF458CE1C-783E">
+     When it is all complete, you'll have an executable file named
+     <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-4BC9247C-6FC2-410A-AEE9-41C6C323FC09">
+      gardenpath.vlx
+     </em>
+     . To test it, do the following:
+    </p>
+    <ul class="ul" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF18CB41610EC0A2E719-72C5">
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CEE">
+      From AutoCAD, click Manage tab
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      Applications panel
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      Load Application.
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CED">
+      Load the
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-CC717D6B-4FF7-4EE5-8E9C-C448813D8D57">
+       gardenpath.vlx
+      </em>
+      application that was just created and is found in the
+      <em class="ph i" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-D9755F88-DE84-4ADC-BDA0-BDB66F0CFCED">
+       Tutorial\VisualLISP\
+      </em>
+      MyPath directory.
+     </li>
+     <li class="li" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__WS1A9193826455F5FF-7F10494411F03A24F24-1CEC">
+      At the Command prompt, enter
+      <strong class="ph b" id="GUID-D47DDBBE-E94D-4433-91AE-D31BF876CFB6__GUID-456A1203-9BB9-4165-8997-7CCAD797B102">
+       gpath
+      </strong>
+      and press Enter to execute the command from the VLX file.
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_7_Putting_It_All_Together_Visual_LISP_IDE.html">
+      Lesson 7: Putting It All Together (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Building_an_Application.html">
+      Building an Application
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Wrapping_Up_the_Tutorial.html">
+      Wrapping Up the Tutorial
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

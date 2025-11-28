@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Imports a 3D Studio (.3ds) file" name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   3dsin (AutoLISP/External Function)
+  </title>
+  <link href="../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      3dsin (AutoLISP/External Function)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Imports a 3D Studio (
+    <em class="ph i" id="GUID-03F556C2-4A79-440A-8EB2-005C8359A2D3">
+     .3ds
+    </em>
+    ) file
+   </p>
+   <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-4CFBD5C3-86E2-435E-85AD-762CF241640D">
+    <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-9AF5D98C-2590-45EA-99F2-81CB57224529">
+     Supported Platforms:
+    </strong>
+    AutoCAD for Windows only; not available in AutoCAD LT for Windows
+   </p>
+   <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-C2A86DC2-D551-437A-9D35-64B66C863146">
+    <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-571FC6B6-57DB-4076-AFCD-1EF0D65DBEC3">
+     Prerequisites:
+    </strong>
+    The AcRender ObjectARX application must be loaded before the function can be called,
+    <samp class="ph codeph" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-6A88F0D3-9D1E-4079-B63C-43F491AEE93A">
+     (arxload "acrender")
+    </samp>
+    . Earlier releases might require you to load the
+    <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-4AD95A72-6F06-4FD0-91E8-2F6A903BF32B">
+     render.arx
+    </em>
+    file.
+   </p>
+   <div class="section" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-E57BEE3F-330E-4A8F-88D7-7851D10DBD38">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(c:3dsin <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-5ABC24CE-22CA-42B5-B125-437BB2CD85B8">mode [multimat create] file</em>)</pre>
+    <div class="section" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FFF0124D0128744E2E7D777A">
+     <dl class="dl" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FFF0124D0128744E2E7D777A">
+      <dt class="dt dlterm">
+       mode
+      </dt>
+      <dd class="dd" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-62D47F0D-9F6C-42BF-B06E-F323A4A25627">
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-F2442524-4795-4B03-ADEC-E2482023C633">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-5FBE10B2-B431-434F-BB90-E83872EA95D4">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7662">
+        A numeric value that specifies whether the command is to be used interactively (mode = 1) or non-interactively (mode = 0)
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       multimat
+      </dt>
+      <dd class="dd" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-FEC2D4BD-12E8-44B0-AB48-8B9FAF6C0F30">
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-C09080AD-88F5-4DE6-A734-315C391E286C">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-A505365D-E04F-4C6E-81B3-45F5DBCA3964">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7660">
+        A numeric value that specifies how to treat objects with multiple materials. Required if
+        <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-42F7B290-9563-428F-AA7B-8DDB1B34FF6E">
+         mode
+        </em>
+        is set to 0. Allowable values are
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-765F">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-03D45D09-204B-43AE-A923-030B82BFF277">
+         0
+        </strong>
+        Create a new object for each material
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-765E">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-64193638-3699-41A3-8D79-1FF422A37F61">
+         1
+        </strong>
+        Assign the first material to the new object
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       create
+      </dt>
+      <dd class="dd" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-58D73C0F-9B4E-4AD3-995C-4867BD92A56D">
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-98AE2094-8328-4259-AA4C-6196606FD723">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-F715D46E-1574-4D59-AC6B-F4B0438DA225">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-765C">
+        A numeric value that specifies how to organize new objects. This mode always imports all the objects in the
+        <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-63E7F33E-B645-4F47-AC0A-7338ED0E75C0">
+         .3ds
+        </em>
+        file. Required if
+        <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-A58ADCB0-9FE3-4B54-BFA3-D92BC6052271">
+         mode
+        </em>
+        is set to 0. Allowable values are
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-765B">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-88AB8FDC-B729-4411-9AF7-4D742A485EAF">
+         0
+        </strong>
+        Create a layer for each 3DS object
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-765A">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-8CD000F6-E1A5-4D8F-8D41-5F5EB575FB6E">
+         1
+        </strong>
+        Create a layer for each 3DS color
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7659">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-FDD21CA1-C285-4CB1-B79A-B0B561A1AA95">
+         2
+        </strong>
+        Create a layer for each 3DS material
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7658">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-4F233590-5934-4EB6-9E4A-7BC73EC7A5C1">
+         3
+        </strong>
+        Place all new objects on a single layer
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       file
+      </dt>
+      <dd class="dd" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-81242158-7696-4BCD-A1FA-17DC01B9C375">
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-A3D158CA-D108-4FE7-A3B1-FA7C617BC4D1">
+        <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-DCFB300B-887D-4374-B7C2-7F56B72863F0">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7656">
+        3DS file to import; the
+        <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-9C1CE5E3-3E1A-4EA0-9430-ACE963F29DC4">
+         .3ds
+        </em>
+        file extension is required.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__SECTION_68EBA77F59F4456B8AF233A486253677">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-7164F76D-A57F-4B01-A05E-4CB74DE303D2">
+     <strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-4BFB09ED-F83F-40CD-A6A4-93685FD6A5D1">
+      Type:
+     </strong>
+     Integer or nil
+    </p>
+    <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-3DEFA9FF-EE8E-4D36-AF74-170DDA645B42">
+     A numeric value if the file was successfully imported; otherwise,
+     <samp class="ph codeph" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-6DF071F4-0F6B-4635-B3F0-5B09AA71A126">
+      nil
+     </samp>
+     is returned if the file could not be imported.
+    </p>
+   </div>
+   <div class="section" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__SECTION_2A5FB770E9624B2E8FC053632D9C2002">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__WS1A9193826455F5FF-7C08E89711EC57B47A8-7654">
+     Import all of
+     <em class="ph i" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-F882E247-C9B1-4930-A71C-0CD5793BCAB4">
+      shadow.3ds
+     </em>
+     with no user input, splitting objects with multiple materials and putting all new objects on the same later:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-CB6540BA-B16A-4F3D-8920-F4D2D714A6B5__GUID-F4E5008F-FB0C-48AD-943E-6C2A458FC441">(c:3dsin 0 0 3 "c:/my documents/cad drawings/shadow.3ds")</strong>
+Initializing Render...
+Initializing preferences...done.
+Processing object B_Leg01
+Converting material SKIN
+Processing object B_Leg02
+Processing object Central_01
+Processing object Central_02
+Processing object F_Leg01
+Processing object F_Leg02
+Processing object M_Quad01
+Processing object ML_Feele01
+Processing object ML_Feele02
+Processing object Pre_Quad01
+Processing object Pre_Quad02
+3D Studio file import completed
+1</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="Externally_Defined_Commands_AutoLISP.html">
+       Externally Defined Commands (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

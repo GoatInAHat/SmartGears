@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Prompts the user to select an object (entity) by specifying a point, and provides access to the definition data contained within a complex object" name="description"/>
+  <meta content="NENTSEL" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   nentsel (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      nentsel (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Prompts the user to select an object (entity) by specifying a point, and provides access to the definition data contained within a complex object
+   </p>
+   <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-F2B1528B-B66A-480D-8DDA-4ED71380606A">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(nentsel <em class="ph i" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-1BF8DC3F-A3F3-4275-94C3-CA39F0CDDD5E">[msg]</em>)</pre>
+    <div class="section" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WS1A9193826455F5FF-1E1423D1125831BDA67-7B2F">
+     <dl class="dl" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WS1A9193826455F5FF-1E1423D1125831BDA67-7B2F">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-15BDFC18-4E01-42CD-8D7C-567E6E87DCE3">
+        msg
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-D8DB7F82-5AF9-4FE2-89D7-548F46E1C594">
+       <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-7803549B-54C5-470E-A361-44541770846F">
+        <strong class="ph b" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-93B65581-E20B-4782-8584-E9B84D88058F">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3547">
+        Message to be displayed as a prompt. If the
+        <em class="ph i" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-C25A0270-71EE-4755-B3E4-8EC7E06B7AC7">
+         msg
+        </em>
+        argument is omitted, the Select Object prompt is issued.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__SECTION_4FAB932AA5FB4F289A4DD8ED05AF3E1A">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-CE27B240-AF72-4FBB-8D12-F508BEDE997A">
+     <strong class="ph b" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-94A5F606-0B3A-49E0-8DCC-C48310EF2B97">
+      Type:
+     </strong>
+     Ename (entity name)
+    </p>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3545">
+     When the selected object is not complex (that is, not a 3D polyline or block),
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-4DE8A115-4BAF-4D06-B94F-E848B116BDB3">
+      nentsel
+     </samp>
+     returns the same information as
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-67E93233-BE3C-4F19-9E26-869C5A583ABC">
+      entsel
+     </samp>
+     . However, if the selected object is a 3D polyline,
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-E67DCE05-B2D2-4748-80EF-AA9AD3462C91">
+      nentsel
+     </samp>
+     returns a list containing the name of the subentity (vertex) and the pick point. This is similar to the list returned by
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-A960D106-9874-4219-A8A0-E8165EB8FFF1">
+      entsel
+     </samp>
+     , except that the name of the selected vertex is returned instead of the polyline header. The
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-5A99EDF5-FE01-430F-9426-D7AD4AC582AC">
+      nentsel
+     </samp>
+     function always returns the starting vertex of the selected 3D polyline segment. Picking the third segment of the polyline, for example, returns the third vertex. The Seqend subentity is never returned by
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-0E1FE8AB-8DF2-4E8A-83A0-D0178DA80F2F">
+      nentsel
+     </samp>
+     for a 3D polyline.
+    </p>
+    <div class="note note" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WS1A9193826455F5FF-7C08E89711EC57B47A8-7877">
+     <span class="notetitle">
+      Note:
+     </span>
+     A lightweight polyline (lwpolyline entity) is defined in the drawing database as a single entity; it does not contain subentities.
+    </div>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3544">
+     Selecting an attribute within a block reference returns the name of the attribute and the pick point. When the selected object is a component of a block reference other than an attribute,
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-040A02DA-1752-491C-855B-18092CFEC7CF">
+      nentsel
+     </samp>
+     returns a list containing four elements.
+    </p>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3543">
+     The first element of the list returned from picking an object within a block is the selected entity's name.
+    </p>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3542">
+     The second element is a list containing the coordinates of the point used to pick the object.
+    </p>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3541">
+     The third element is called the Model to World Transformation Matrix. It is a list consisting of four sublists, each of which contains a set of coordinates. This matrix can be used to transform the entity definition data points from an internal coordinate system called the Model Coordinate System (MCS), to the World Coordinate System (WCS). The insertion point of the block that contains the selected entity defines the origin of the MCS. The orientation of the UCS when the block is created determines the direction of the MCS axes.
+    </p>
+    <div class="note note" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WS1A9193826455F5FF-7C08E89711EC57B47A8-7876">
+     <span class="notetitle">
+      Note:
+     </span>
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-0CCF0727-F099-4335-9701-381FB3CC999B">
+      nentsel
+     </samp>
+     is the only AutoLISP function that uses a matrix of this type; the
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-7C03B806-AEA1-4E57-B9B2-308A8495C83A">
+      nentselp
+     </samp>
+     function returns a matrix similar to those used by other AutoLISP and ObjectARX functions.
+    </div>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3540">
+     The fourth element is a list containing the entity name of the block that contains the selected object. If the selected object is in a nested block (a block within a block), the list also contains the entity names of all blocks in which the selected object is nested, starting with the innermost block and continuing outward until the name of the block that was inserted in the drawing is reported.
+    </p>
+   </div>
+   <div class="section" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__SECTION_604799506EC9409F82BD9CB7C5A5910B">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-3549">
+     The
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-AF1C3425-CD9C-443C-8B6C-3ECB30A980E7">
+      nentsel
+     </samp>
+     function prompts the user to select an object. The current Object Snap mode is ignored unless the user specifically requests it. To provide additional support at the Command prompt,
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-2F238CD6-5FDC-412F-9FED-271E5EEEE418">
+      nentsel
+     </samp>
+     honors keywords defined by a previous call to
+     <samp class="ph codeph" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__GUID-9C790D3F-C82A-4E11-9436-4F27B0AB4AA0">
+      initget
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__SECTION_8C1831EA2A194A94AD2FC887D8B5496D">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-A7AC0917-66CE-4BAA-BBAF-D49F8ADB26B1__WSFACF1429558A55DE11F0759FF1E4B858C-353D">
+     Draw a 3D polyline with multiple line segments; then load and run the following function and select different segments of the line. Pick off the line and then pick the same segments again to see the subentity handle. Try it with a lightweight polyline to see the difference.
+    </p>
+    <pre class="pre codeblock prettyprint">(defun c:subent ()
+  (while   
+     (setq Ent (entsel "\nPick an entity: "))
+     (print (strcat "Entity handle is: " 
+          (cdr (assoc 5 (entget (car Ent))))))
+   )
+   (while   
+      (setq Ent (nentsel "\nPick an entity or subEntity: "))
+      (print (strcat "Entity or subEntity handle is:  " 
+          (cdr (assoc 5 (entget (car Ent))))))
+   )
+  (prompt "\nDone.")
+ (princ)
+)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/User_Input_Functions_Reference_AutoLISP.html">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94">
+       About Entity Context and Coordinate Transform Data (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="nentselp_AutoLISP.html" title="Provides similar functionality to that of the nentsel function without the need for user input">
+       nentselp (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../E_Functions/entsel_AutoLISP.html" title="Prompts the user to select a single object (entity) by specifying a point">
+       entsel (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/ssget_AutoLISP.html" title="Creates a selection set from the selected object">
+       ssget (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/ssgetfirst_AutoLISP.html" title="Determines which objects are selected and gripped">
+       ssgetfirst (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

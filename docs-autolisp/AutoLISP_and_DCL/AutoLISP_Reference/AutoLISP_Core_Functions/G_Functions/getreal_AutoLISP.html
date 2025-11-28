@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Pauses for user input of a real number, and returns that real number" name="description"/>
+  <meta content="GETREAL" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   getreal (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      getreal (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Pauses for user input of a real number, and returns that real number
+   </p>
+   <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-890F082F-1685-4DE9-A2C6-2FC8A43ED9A9">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(getreal <em class="ph i" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-8202F725-6E6A-403A-9236-31C3F2902951">[msg]</em>)</pre>
+    <div class="section" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__WS1A9193826455F5FF-1E1423D1125831BDA67-7B60">
+     <dl class="dl" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__WS1A9193826455F5FF-1E1423D1125831BDA67-7B60">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-159353AE-4216-46B6-B395-F8E8A4612124">
+        msg
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-613F2437-46F3-4185-A66A-E1DDDB9EF694">
+       <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-63C34530-158D-407E-9A15-7891982C8CC8">
+        <strong class="ph b" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-35D634E9-39E6-4E77-8D9B-067A7C94B364">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__WSFACF1429558A55DE11F0759FF1E4B858C-375F">
+        Message to be displayed to prompt the user.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__SECTION_B383095B73C64597A269B8B4B1082CC5">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-2C759826-04FC-4264-9A26-0B92DC364F22">
+     <strong class="ph b" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-10B27D55-6BB6-426B-8EB3-5747C7E1C3CF">
+      Type:
+     </strong>
+     Real or nil
+    </p>
+    <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-9FE92F2B-1712-4B1F-BAC3-F237637AFE84">
+     The number entered by the user and expressed as a real.
+    </p>
+   </div>
+   <div class="section" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__SECTION_1C2D45CCD2C049A69BC99066DBA75EBD">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__WSFACF1429558A55DE11F0759FF1E4B858C-3761">
+     The user cannot enter another AutoLISP expression as the response to a
+     <samp class="ph codeph" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-483325D3-B922-49B1-8773-F16B11FA6F27">
+      getreal
+     </samp>
+     request.
+    </p>
+   </div>
+   <div class="section" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__SECTION_B8CCF77B8B884E9CA2F2673AD22FE786">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-503BBE86-9B22-456A-8883-1B5F5832B7E0__GUID-9D4AE556-C3CC-4A09-A756-87D638B6E76F">(setq val (getreal)) 
+(setq val (getreal "Scale factor: "))</strong></pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/User_Input_Functions_Reference_AutoLISP.html">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="getint_AutoLISP.html" title="Pauses for user input of an integer, and returns that integer">
+       getint (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../A_Functions/atof_AutoLISP.html" title="Converts a string into a real number">
+       atof (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../R_Functions/rtos_AutoLISP.html" title="Converts a number into a string">
+       rtos (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../F_Functions/float_AutoLISP.html" title="Returns the conversion of a number into a real number">
+       float (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

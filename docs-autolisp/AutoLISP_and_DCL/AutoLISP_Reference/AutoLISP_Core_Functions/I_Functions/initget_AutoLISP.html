@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Establishes keywords for use by the next user-input function call" name="description"/>
+  <meta content="INITGET" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   initget (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      initget (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Establishes keywords for use by the next user-input function call
+   </p>
+   <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-86107146-0947-4B7E-B057-D87A21E073A2">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(initget <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3711F768-E7B3-4BA6-8C8C-7DDC9F7F8B13">[bits] [keywords]</em>)</pre>
+    <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-1E1423D1125831BDA67-7B54">
+     <dl class="dl" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-1E1423D1125831BDA67-7B54">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-88F815B8-EBB2-4C31-A4A4-8AE3B18AA9D6">
+        bits
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-49C9E6FA-5D29-43B6-BF3E-96AE1E591BF5">
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-6267AEBC-82AA-45B8-BE0E-6481D7572734">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-22F01B77-32C4-4E70-84B7-92BEFD584AEE">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3696">
+        A bit-coded that allows or disallows certain types of user input. The bits can be added together in any combination to form a value between 0 and 255. If no
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-C51BDBE3-9FD9-488E-BADB-01696F689CC0">
+         bits
+        </em>
+        argument is supplied, zero (no conditions) is assumed. The bit values are as follows:
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3695">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3DC0F096-6C20-4045-BC53-95EA14A5EFFB">
+         1
+        </strong>
+        (bit 0) -- Prevents the user from responding to the request by entering only Enter.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3694">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-EBE4378B-6196-4257-996A-5DB870D517AD">
+         2
+        </strong>
+        (bit 1) -- Prevents the user from responding to the request by entering zero.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3693">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E1E8AA50-100A-4963-BC96-2928CFD0CEA2">
+         4
+        </strong>
+        (bit 2) -- Prevents the user from responding to the request by entering a negative value.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3692">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-747B3C1E-CDC7-469D-A735-1151EDE3DDBF">
+         8
+        </strong>
+        (bit 3) -- Allows the user to enter a point outside the current drawing limits. This condition applies to the next user-input function even if the AutoCAD LIMCHECK system variable is currently set.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3691">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-445E853A-8584-4297-8BE1-3A87BA1B65C3">
+         16
+        </strong>
+        (bit 4) -- (Not currently used.)
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3690">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-1885B9F8-2EB1-4F7F-A43C-57EC7D2DEAC8">
+         32
+        </strong>
+        (bit 5) -- Uses dashed lines when drawing a rubber-band line or box. For those functions with which the user can specify a point by selecting a location in the drawing area, this bit value causes the rubber-band line or box to be dashed instead of solid. (Some display drivers use a distinctive color instead of dashed lines.) If the AutoCAD POPUPS system variable is 0, AutoCAD ignores this bit.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-368F">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4EA3DD11-3B30-4658-A37D-F978875CEF84">
+         64
+        </strong>
+        (bit 6) -- Prohibits input of a
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-60110B4A-8148-4B03-8971-BDF75FF28343">
+         Z
+        </em>
+        coordinate to the
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-8B56E184-A860-4B18-A35F-58636750C8F1">
+         getdist
+        </samp>
+        function; lets an application ensure that this function returns a 2D distance.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-368E">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-886CB0BA-92A8-472A-A76F-135494CEA4DB">
+         128
+        </strong>
+        (bit 7) -- Allows arbitrary input as if it is a keyword, first honoring any other control bits and listed keywords. This bit takes precedence over bit 0; if bits 7 and 0 are set and the user presses Enter, a null string is returned.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4724">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-B458BC8D-6CDA-4163-AA14-043E13E46085">
+         256
+        </strong>
+        (bit 8) -- Give direct distance input precedence over arbitrary input. For external applications, arbitrary input is given precedence over direct distance input by default. Set this bit if you wish to force AutoCAD to evaluate user input as direct distance input. Note that legal point input from the keyboard always takes precedence over either direct distance or arbitrary input.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4723">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3291C28F-3D21-4EA4-9608-DC75D0A817F4">
+         512
+        </strong>
+        (bit 9) -- If set before a call to
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-01B57F94-7C06-44EE-B902-3A62F607362C">
+         getpoint
+        </samp>
+        or
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-8A0E99BB-DE14-40AC-86CE-F75DBB90ABB6">
+         getcorner
+        </samp>
+        , a temporary UCS will be established when the cursor crosses over the edge of a planar face of a solid. The temporary UCS is reset when the cursor moves off of a face. It is dynamically re-established when the cursor moves over a different face. After the point is acquired, the dynamic UCS is reset to the current UCS. This functionality is not enabled for non-planar faces such as the side of a cylinder.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4722">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-BE9ACAA6-746D-480D-A31D-C8E06AC26DCF">
+         1024
+        </strong>
+        (bit 10) -- When calling
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-A29B71D3-39A2-45C6-9E87-7296A4734350">
+         getdist
+        </samp>
+        ,
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-007558DA-976F-4134-A287-F1F39D535D19">
+         getangle
+        </samp>
+        ,
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-37AAA9A2-AF85-4404-844E-18F62E0BF852">
+         getorient
+        </samp>
+        ,
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-F7606670-4EB7-4DA7-91C9-56616188BABF">
+         getpoint
+        </samp>
+        , or
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-73C86C38-9075-4B4F-ABD9-E201F23E4381">
+         getcorner
+        </samp>
+        , you may not want the distance, angle, orient, point, or corner to be influenced by ortho, polar, or otracking in the
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-26E2F92A-1180-4705-9F2A-648E1DE2B711">
+         Z
+        </em>
+        direction. Setting this bit before calls to any of these functions will temporarily disable ortho, polar, and otracking in the
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-1931577D-E81E-481C-9266-8435517B85E8">
+         Z
+        </em>
+        direction. This is useful when you create 2D entities such as a polyline, arc, or circle, or when you use the AutoCAD ARRAY command, which creates only a 2D array. In 2D-only commands it can be confusing and error-prone to allow 3D points to be entered using ortho
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-80F8FDF9-2A24-4DF1-9311-FDD6F4F8F700">
+         Z
+        </em>
+        , polar
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-EAE62575-FC48-43FB-A9ED-DEF01AEB33B2">
+         Z
+        </em>
+        , or otrack
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-9DD24D7D-EAF2-42A4-964F-E426861AAC0D">
+         Z
+        </em>
+        .
+       </p>
+       <div class="note note" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-7C08E89711EC57B47A8-792A">
+        <span class="notetitle">
+         Note:
+        </span>
+        Future versions of AutoLISP may use additional
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-28C09939-E9DF-4F6B-B7B7-9DB50F212546">
+         initget
+        </samp>
+        control bits, so avoid setting bits that are not listed here.
+       </div>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-5AA69A2C-B429-4A2A-A273-B1FC56709B3E">
+        keywords
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-36B7AF0D-3BFF-419F-98D4-20C2E8EADB2B">
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3937855C-6699-42BA-AB84-DC3C94339D4E">
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-597D8CFE-41A8-4222-9CE3-95BDD932D917">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-368D">
+        Series of keywords.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__SECTION_01377D1390E143C5BD0EB69284C68C17">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4B2D633C-43AC-40C4-B1AB-61BB1153DED5">
+     <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-021DEC8E-E10C-4B0B-A735-133B51084056">
+      Type:
+     </strong>
+     nil
+    </p>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E1B3CEC7-E567-4AA6-8909-DB8FB085E1AE">
+     Always returns
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-8FFCD2E8-1995-4A29-B1A9-F720F0B5A554">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__SECTION_3FD56CEBEF92428698F043652831AA0D">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-369B">
+     The functions that honor keywords are
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E46468F7-76FC-49CA-BC50-76DB1466C80E">
+      getint
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-BC7A0815-F311-4D25-B046-A7DC31322E10">
+      getreal
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-BD1672A1-93D6-4AF7-B5B3-A0B585A56F7D">
+      getdist
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-D5D64A09-82C8-40C6-A834-A86A0818ACC1">
+      getangle
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-D0EBD876-940D-44F2-8871-2462255E92B9">
+      getorient
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E5EDB889-2063-4C56-A26A-03563BE6A269">
+      getpoint
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-299EC60A-642F-4A2A-9632-6F1C2001C0AB">
+      getcorner
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-93289A31-B1F5-4E88-BC86-6E974EB8024B">
+      getkword
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-6E853CE6-3547-48B5-B609-591EE8FCDBA9">
+      entsel
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-195173C4-CF91-45A9-BEEE-1DCFA5F29756">
+      nentsel
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-CA99CAC4-EC8A-41AD-A5C3-882C72A6E280">
+      nentselp
+     </samp>
+     . The
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-A9675411-5D24-4313-ACA7-BD9AB66E08A8">
+      getstring
+     </samp>
+     function is the only user-input function that does not honor keywords.
+    </p>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-369A">
+     The keywords are checked by the next user-input function call when the user does not enter the expected type of input (for example, a point to
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-B115B9E7-E9BB-4C33-BA38-16034E7480A8">
+      getpoint
+     </samp>
+     ). If the user input matches a keyword from the list, the function returns that keyword as a string result. The application can test for the keywords and perform the action associated with each one. If the user input is not an expected type and does not match a keyword, AutoCAD asks the user to try again. The
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-513A217A-AD2D-4846-8DE7-3D502EDC7141">
+      initget
+     </samp>
+     bit values and keywords apply only to the next user-input function call.
+    </p>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3699">
+     If
+     <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-7BD95BB2-36F4-4239-8403-BC9FFD3EF364">
+      initget
+     </samp>
+     sets a control bit and the application calls a user-input function for which the bit has no meaning, the bit is ignored.
+    </p>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3698">
+     If the user input fails one or more of the specified conditions (as in a zero value when zero values are not allowed), AutoCAD displays a message and asks the user to try again.
+    </p>
+    <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-052671F1-EB0E-47E4-89FD-67A99B59E6E8">
+     <dl class="dl" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-052671F1-EB0E-47E4-89FD-67A99B59E6E8">
+      <dt class="dt dlterm">
+       Function Applicable Control Bits
+      </dt>
+      <dd class="dd" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-D508CFBC-B0DD-4268-AD72-778B341E6DEA">
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3689">
+        The special control values are honored only by those
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-83F45A6E-FE6E-47D2-AED1-DFEC93A587FC">
+         get
+         <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-7E549094-8007-4698-BD49-43A78EFEE0E0">
+          XXX
+         </em>
+        </samp>
+        functions for which they make sense, as indicated in the following table:
+       </p>
+       <div class="tablenoborder">
+        <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-69D8" rules="all" summary="" width="90%">
+         <thead align="left" class="thead">
+          <tr class="row">
+           <th class="entry" colspan="7" valign="top">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4721">
+             User-input functions and applicable control bits
+            </p>
+           </th>
+          </tr>
+          <tr class="row">
+           <th class="entry" valign="top" width="20.573602575358503%">
+           </th>
+           <th class="entry" valign="top" width="14.808311384255196%">
+           </th>
+           <th class="entry" colspan="5" valign="top">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4720">
+             Control bits values
+            </p>
+           </th>
+          </tr>
+          <tr class="row">
+           <th class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471F">
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471E">
+             Function
+            </p>
+           </th>
+           <th class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471D">
+             Honors
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471C">
+             key
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471B">
+             words
+            </p>
+           </th>
+           <th class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-471A">
+             No
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4719">
+             null
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4718">
+             (1)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4717">
+             No
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4716">
+             zero
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4715">
+             (2)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4714">
+             No
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4713">
+             negative
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4712">
+             (4)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4711">
+             No
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4710">
+             limits
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470F">
+             (8)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470E">
+             Uses
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470D">
+             dashes
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470C">
+             (32)
+            </p>
+           </th>
+          </tr>
+         </thead>
+         <tbody class="tbody">
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470B">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4424FB6C-CF7A-4AF8-9E04-9A374ACA1F95">
+              getint
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-470A">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4709">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4708">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4707">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4706">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4705">
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4704">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-F0D0DB8C-73F9-4564-A2E4-E164CC8B5DD3">
+              getreal
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4703">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4702">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4701">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4700">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FF">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FE">
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FD">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-DC47679F-227D-4004-9E16-1E2CE696E61B">
+              getdist
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FC">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FB">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46FA">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F9">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F8">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F7">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F6">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-B61E7BD3-163D-4A6C-B0FB-8E19039E8860">
+              getangle
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F5">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F4">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F3">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F2">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F1">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46F0">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46EF">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-689E5863-77DA-4F8B-8984-EEB504A8E0AC">
+              getorient
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46EE">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46ED">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46EC">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46EB">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46EA">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E9">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E8">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-EB2FB290-E7DD-4E54-893C-4DFCBD165AC7">
+              getpoint
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E7">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E6">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E5">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E4">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E3">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E2">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E1">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-EAF07AF5-AA74-452A-963A-2A5D9DE80A25">
+              getcorner
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46E0">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DF">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DE">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DD">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DC">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DB">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46DA">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-73BA2B52-F82E-4B35-A347-4DC6E9661307">
+              getkword
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D9">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D8">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D7">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D6">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D5">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D4">
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D3">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4FFB27D0-2FA4-47AD-A207-075747DC7BC0">
+              entsel
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D2">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D1">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46D0">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CF">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CE">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CD">
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CC">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-05BA886A-53CA-480A-8B02-DB2DB2FD00CF">
+              nentsel
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CB">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46CA">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C9">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C8">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C7">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C6">
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.573602575358503%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C5">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-C70BF9C4-32A6-435C-A5C0-20A76540D1A7">
+              nentselp
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.808311384255196%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C4">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.442786069651742%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C3">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="11.940298507462686%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C2">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.53994732221247%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C1">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="13.023119695639451%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46C0">
+            </p>
+           </td>
+           <td class="entry" valign="top" width="12.67193444541996%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BF">
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="tablenoborder">
+        <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-69D7" rules="all" summary="" width="90%">
+         <thead align="left" class="thead">
+          <tr class="row">
+           <th class="entry" colspan="6" valign="top">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BE">
+             User-input functions and applicable control bits (continued)
+            </p>
+           </th>
+          </tr>
+          <tr class="row">
+           <th class="entry" valign="top" width="20.236039147956244%">
+           </th>
+           <th class="entry" colspan="5" valign="top">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BD">
+             Control bits values
+            </p>
+           </th>
+          </tr>
+          <tr class="row">
+           <th class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BC">
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BB">
+             Function
+            </p>
+           </th>
+           <th class="entry" valign="top" width="14.248704663212433%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46BA">
+             2D
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B9">
+             distance
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B8">
+             (64)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B7">
+             Arbitrary
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B6">
+             input
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B5">
+             (128)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B4">
+             Direct
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B3">
+             distance
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B2">
+             (256)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="16.11974668969488%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B1">
+             UCS face
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46B0">
+             tracking
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AF">
+             (512)
+            </p>
+           </th>
+           <th class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AE">
+             Disable
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AD">
+             Z-tracking
+            </p>
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AC">
+             (1024)
+            </p>
+           </th>
+          </tr>
+         </thead>
+         <tbody class="tbody">
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AB">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-BF5AC3C6-A3B5-44CB-97D9-E77EE8C03FDC">
+              getint
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46AA">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A9">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-0DBA05B6-82F2-4DAF-9EEF-FEC97E0AB7A9">
+              getreal
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A8">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A7">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-0ED3391C-EB1E-444B-AB47-7198B9866F5B">
+              getdist
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A6">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A5">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A4">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A3">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A2">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-48DC9EB2-22E9-46F8-AEA2-C2D589EAE657">
+              getangle
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A1">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-46A0">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469F">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469E">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4150138A-0EB9-4DD9-8632-F69FE4060310">
+              getorient
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469D">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469C">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469B">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-469A">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-F0236AC5-E317-48A7-AF04-D3EC7AB044D4">
+              getpoint
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4699">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4698">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4697">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4696">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4695">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-5D018365-0B9D-4084-A99E-12A6FD3936A3">
+              getcorner
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4694">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4693">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4692">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4691">
+             X
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-4690">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3B30A0A9-97CA-43D7-9E1C-26ECD035B9BB">
+              getkword
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-468F">
+             X
+            </p>
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-468E">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-91D12A3B-B6A0-4550-B986-98C7FEFA3E47">
+              entsel
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-468D">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-149588C8-B6F6-4CEF-B5B9-C4B5138CE13E">
+              nentsel
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top" width="20.236039147956244%">
+            <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF9110C71085341391D-468C">
+             <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-75941629-AB29-4909-8BB1-B40217EEB57F">
+              nentselp
+             </samp>
+            </p>
+           </td>
+           <td class="entry" valign="top" width="14.248704663212433%">
+           </td>
+           <td class="entry" valign="top" width="15.054691997697178%">
+           </td>
+           <td class="entry" valign="top" width="15.284974093264248%">
+           </td>
+           <td class="entry" valign="top" width="16.11974668969488%">
+           </td>
+           <td class="entry" valign="top" width="19.055843408175015%">
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </dd>
+      <dt class="dt dlterm">
+       Keyword Specifications
+      </dt>
+      <dd class="dd" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-D2D11CD0-78E2-45D6-9174-A0655753EEF6">
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3609">
+        The
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-C1A1935D-C59B-471D-B1D1-4F3B9E99644B">
+         string
+        </em>
+        argument is interpreted according to the following rules:
+       </p>
+       <ol class="ol" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-69D6">
+        <li class="li" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-7C08E89711EC57B47A8-7928">
+         Each keyword is separated from the following keyword by one or more spaces. For example,
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-7C91BEB2-CE83-4B45-8D39-86BBC0297345">
+          "Width Height Depth"
+         </samp>
+         defines three keywords.
+        </li>
+        <li class="li" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-7C08E89711EC57B47A8-7927">
+         Each keyword can contain only letters, numbers, and hyphens (-).
+        </li>
+       </ol>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3608">
+        There are two methods for abbreviating keywords:
+       </p>
+       <ul class="ul" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-69D5">
+        <li class="li" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-7C08E89711EC57B47A8-7926">
+         The required portion of the keyword is specified in uppercase characters, and the remainder of the keyword is specified in lowercase characters. The uppercase abbreviation can be anywhere in the keyword (for example,
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-46C6CB61-17BC-48BE-96EB-9E03B6A66360">
+          "LType"
+         </samp>
+         ,
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-8D727FCC-71D8-4D43-AA7F-F52AD4EA19E5">
+          "eXit"
+         </samp>
+         , or
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-90B9717F-4B7C-4DAC-B34F-04A608F58325">
+          "toP"
+         </samp>
+         ).
+        </li>
+        <li class="li" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WS1A9193826455F5FF-7C08E89711EC57B47A8-7925">
+         The
+         <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-6981CB7D-5835-46EE-A324-1D5E28CAAC0C">
+          entire
+         </em>
+         keyword is specified in uppercase characters, and it is followed immediately by a comma, which is followed by the required characters (for example,
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-4FDE60A3-5894-4F7C-874F-F97D5109234D">
+          "LTYPE,LT"
+         </samp>
+         ). The keyword characters in this case must include the first letter of the keyword, which means that
+         <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-B0B0EDCC-D3D0-485E-B407-5FEE83C5AAF4">
+          "EXIT,X"
+         </samp>
+         is not valid.
+        </li>
+       </ul>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3607">
+        The two brief examples,
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-B1584114-39EF-4A39-9C5E-BA57C765AE1C">
+         "LType"
+        </samp>
+        and
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-586CD281-38C9-4E77-BF47-7AF29E965480">
+         "LTYPE,LT"
+        </samp>
+        , are equivalent: if the user types
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-5EA5CA44-DFF1-4E4A-A657-A54D1AACC06A">
+         LT
+        </strong>
+        (in either uppercase or lowercase letters), this is sufficient to identify the keyword. The user can enter characters that
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-99E9DD3B-E3CF-4608-B6BF-6F49612678D1">
+         follow
+        </em>
+        the required portion of the keyword, provided they don't conflict with the specification. In the example, the user could also enter
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-988C3C14-935F-4680-B3FF-58AEEBF12FCE">
+         LTY
+        </strong>
+        or
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-E8BC37A2-4A0A-4DD9-B4A8-FE6F2A3B365C">
+         LTYP
+        </strong>
+        , but
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-A6CC2A52-0DCF-4327-9E94-3F835A916D70">
+         L
+        </strong>
+        would not be sufficient.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3606">
+        If
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-64A6675E-4744-4CF7-ACC7-55CF860699ED">
+         string
+        </em>
+        shows the keyword entirely in uppercase
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-CBA5AD6C-0A81-4888-B715-581BDD009D36">
+         or
+        </em>
+        lowercase characters with no comma followed by a required part, AutoCAD recognizes the keyword only if the user enters all of it.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3605">
+        The
+        <samp class="ph codeph" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-3C84E9D9-F909-4731-81E3-EAA8377B8F76">
+         initget
+        </samp>
+        function provides support for localized keywords. The following syntax for the keyword string allows input of the localized keyword while it returns the language independent keyword:
+       </p>
+       <pre class="pre codeblock prettyprint"><em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-24E5A7C2-1BCA-4C79-9CBA-663352606D7F">"local1 local2 localn _indep1 indep2 indepn"</em></pre>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3604">
+        where
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-ED5CAC9B-78E9-4DBF-983A-8E4D0172E334">
+         local1
+        </em>
+        through
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-FD50BEDE-C470-45F9-BC2D-B9CADB623141">
+         localn
+        </em>
+        are the localized keywords, and
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-BCEC7B7E-4FFB-410B-8353-A308B52ACCC6">
+         indep1
+        </em>
+        through
+        <em class="ph i" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-59FEA5A6-E0A8-43D8-879F-FFAB7FCEB97A">
+         indepn
+        </em>
+        are the language-independent keywords.
+       </p>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3603">
+        There must always be the same number of localized keywords as language-independent keywords, and the first language-independent keyword is prefixed by an underscore as shown in the following example:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-05A2D22C-CADF-4063-9CEF-5887274789CD">(initget "Abc Def _Ghi Jkl")
+(getkword "\nEnter an option (Abc/Def): ")</strong></pre>
+       <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__WSFACF1429558A55DE11F0759FF1E4B858C-3602">
+        Entering
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-D5F05255-E2D9-415F-85BA-9BB5996866F4">
+         A
+        </strong>
+        returns Ghi and entering
+        <strong class="ph b" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-5C19697E-F036-4F3C-9A0F-7D65DFF83DF1">
+         _J
+        </strong>
+        returns Jkl.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__SECTION_41C9779758B847E4B5608B53A383A409">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF__GUID-5B3FD120-4856-452A-B2E9-3693E650DF74">
+     None
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/User_Input_Functions_Reference_AutoLISP.html">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../G_Functions/getkword_AutoLISP.html" title="Pauses for user input of a keyword, and returns that keyword">
+       getkword (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

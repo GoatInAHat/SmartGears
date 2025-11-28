@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-87F4038B-C54A-4A2A-B122-FFE4DAB279C3" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Getting Help With a Function (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Getting Help With a Function (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-62CBFB9E-66A3-42D8-9613-477A1EE83460">
+    <p class="p" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WSFACF1429558A55DE1929BBDFEF458CE1C-771C">
+     The code that adds a lightweight polyline to the drawing calls a function named
+     <samp class="ph codeph" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-0C675385-1614-49DF-86D9-5EF7A926C90F">
+      vla-addLightweightPolyline
+     </samp>
+     . Not only is that a lengthy term to write, but there are several functions whose names begin with
+     <samp class="ph codeph" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-1CCD5EA2-4AE9-4932-9229-C349444D38D8">
+      vla-add
+     </samp>
+     that you will use to create entities. Rather than consulting a manual to look up the function name every time you create a program, let Visual LISP help.
+    </p>
+   </div>
+   <div class="section" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WSFACF1429558A55DE6C92BAFEE30F7510-7DF5">
+    <h2 class="title sectiontitle">
+     To get help with using a function
+    </h2>
+    <ol class="ol" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF18CB41610EC0A2E719-73C1">
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D67">
+      Enter the following on a blank line:
+      <pre class="pre codeblock prettyprint">(vla-add</pre>
+     </li>
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D66">
+      Press Ctrl+Shift+Spacebar.
+     </li>
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D65">
+      Scroll through the list until you find
+      <samp class="ph codeph" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-DB5218A4-3C34-4A97-A7B2-A42D993EF792">
+       vla-addLightweightPolyline
+      </samp>
+      .
+     </li>
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D64">
+      Double-click on
+      <samp class="ph codeph" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-818B50FC-F1E7-48C2-AE46-FC76039782BF">
+       vla-addLightweightPolyline
+      </samp>
+      .
+      <p class="p" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WSFACF1429558A55DE1929BBDFEF458CE1C-771B">
+       Visual LISP displays the Symbol Service dialog box for the selected function.
+      </p>
+     </li>
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D63">
+      Clicking the Help button in the Symbol Service dialog box.
+      <img class="image" height="25" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__IMAGE_8E344EE84FC74789B4C83CAE86E99A63" src="../../../../_assets/GUID_222051E2_D25D_4AF9_B5D1_6D4D1AD84BD9-5c72fd63.png" width="25"/>
+     </li>
+     <li class="li" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__WS1A9193826455F5FF-7F10494411F03A24F24-1D62">
+      Delete the changes you made to
+      <em class="ph i" id="GUID-88EEAE20-9DD3-4774-8654-164BC8997FD0__GUID-DDFF450F-790B-4BA0-89D9-8CF5EC2F1329">
+       gpdraw.lsp
+      </em>
+      ; these were for demonstration purposes only. Also, close the Symbol Service and Apropos windows.
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_5_Drawing_the_Tiles_Visual_LISP_IDE.html">
+      Lesson 5: Drawing the Tiles (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Completing_a_Word_by_Apropos.html">
+      Completing a Word by Apropos
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Adding_Tiles_to_the_Garden_Path.html">
+      Adding Tiles to the Garden Path
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

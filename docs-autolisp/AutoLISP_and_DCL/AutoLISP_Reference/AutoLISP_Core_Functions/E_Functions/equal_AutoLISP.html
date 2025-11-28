@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Determines whether two expressions are equal" name="description"/>
+  <meta content="EQUAL" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   equal (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      equal (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Determines whether two expressions are equal
+   </p>
+   <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-982A9EB2-69C5-4E99-B683-9A82AE09AC1A">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(equal <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-8E2D93EF-3D47-480F-AC3E-B4B463AA2B3E">expr1 expr2 [fuzz]</em>)</pre>
+    <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WS1A9193826455F5FF-1E1423D1125831BDA67-7B79">
+     <dl class="dl" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WS1A9193826455F5FF-1E1423D1125831BDA67-7B79">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-81328111-A8BA-4C0C-9601-999E8EA6288B">
+        expr1
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-B197EAC5-36E3-4220-8F4D-67B4C1A3D931">
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-2BE2FA23-B331-46CB-9BB2-7E8F434A8711">
+        <strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-AA87958E-08E9-4FBA-B124-8E668E153034">
+         Type:
+        </strong>
+        Integer, Real, String, List, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3862">
+        The expression to be compared.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-AE0CA4A8-E459-4844-82B7-AD4BD8D2DEDD">
+        expr2
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-2B0E2E11-722D-42D0-B91A-0D9B5325EE01">
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-7705C9E3-311B-470A-8C42-9F004C68975B">
+        <strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-7BD53BEE-6BF1-4191-AC3E-06B566E6E77A">
+         Type:
+        </strong>
+        Integer, Real, String, List, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3861">
+        The expression to compare with
+        <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-E52C1DBE-6DA8-427D-A93A-4549C2D18297">
+         expr1
+        </em>
+        .
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-8D2BB6E8-30A9-4806-A8AF-2151793E28D3">
+        fuzz
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-5FA5F32A-D81C-4663-AFA3-CA539601CE6B">
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-9EA45448-2FA4-45CB-96ED-E0C844CCE355">
+        <strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-C28DED5C-D623-4B91-B24E-7FE93FC7A242">
+         Type:
+        </strong>
+        Integer or Real
+       </p>
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3860">
+        A real number defining the maximum amount by which
+        <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-B4DA7A55-E8F6-4482-85F7-2BDEE4720CA8">
+         expr1
+        </em>
+        and
+        <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-9117D10C-8438-4A7D-B040-74DBE2A21EE5">
+         expr2
+        </em>
+        can differ and still be considered equal.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__SECTION_C4D2EE59456E49B9A4030B7FDC5F0025">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-BEED2B8B-6C69-4489-89F7-D7E9C7B0F9A0">
+     <strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-BBB3777C-242E-41F5-9664-4C8B6BBEA2DB">
+      Type:
+     </strong>
+     T or nil
+    </p>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-396C924A-2889-4549-AE42-AA48DBC31C36">
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-6CBFAF6B-C5FD-41EE-9991-7F9265A5C7E9">
+      T
+     </samp>
+     if the two expressions are equal (evaluate to the same value); otherwise
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-AFA412A8-BFA3-4641-A2A8-D140F7F7B92F">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__SECTION_3AF6C72EB6C9430D9DA9C79475944201">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-385F">
+     When comparing two real numbers (or two lists of real numbers, as in points), the two identical numbers can differ slightly if different methods are used to calculate them. You can specify a
+     <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-99E6B75F-848B-462F-AA85-C2C309A676E6">
+      fuzz
+     </em>
+     amount to compensate for the difference that may result from the different methods of calculation.
+    </p>
+    <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-BDE10B16-9450-4844-80E7-8622BE10BEE2">
+     <dl class="dl" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-BDE10B16-9450-4844-80E7-8622BE10BEE2">
+      <dt class="dt dlterm">
+       Comparing the
+       <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-FF87BEC3-85E3-42B6-B1F0-CD9599A54FD5">
+        eq
+       </samp>
+       and
+       <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-CB10BC77-934A-498F-ADA4-B8FC0F9E22EF">
+        equal
+       </samp>
+       Functions
+      </dt>
+      <dd class="dd" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-67CBA8AE-D48A-4207-AC2F-6CAD72168F21">
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3853">
+        If the
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-3A1F271F-763A-4E2F-B578-E339E54A2D54">
+         eq
+        </samp>
+        function finds that two lists or atoms are the same, the
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-D44E4520-89AA-46A6-8452-C917B9E64834">
+         equal
+        </samp>
+        function also finds them to be the same.
+       </p>
+       <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3852">
+        Any
+        <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-437D7BFB-38C5-4268-B265-45C81F328C0F">
+         atoms
+        </em>
+        that the
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-A58772B7-9AC7-4E1A-BFBC-962746423166">
+         equal
+        </samp>
+        function determines to be the same are also found equivalent by
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-AC51133E-45FB-420C-AA83-761932FFED9F">
+         eq
+        </samp>
+        . However, two
+        <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-89F979C0-6B63-425E-A6A6-4D5D1A9C6777">
+         lists
+        </em>
+        that
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-2FD870BD-0B0C-4003-A731-611D7FFA9863">
+         equal
+        </samp>
+        determines to be the same may be found to be different according to the
+        <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-1F24BE22-A160-41F4-954E-DA82583AE2D4">
+         eq
+        </samp>
+        function.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__SECTION_DDADC46ACBD34269BE72858E076B9922">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-385B">
+     Given the following assignments:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-80FBBDB8-1442-4E9F-AC86-C6BB3280EDB4">(setq f1 '(a b c)) 
+(setq f2 '(a b c)) 
+(setq f3 f2)
+(setq a 1.123456) 
+(setq b 1.123457)</strong></pre>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-385A">
+     Compare
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-AB73EBFB-E213-4528-B13F-627E1C4ABA86">
+      f1
+     </samp>
+     to
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-70296A86-1A6F-41B8-8193-320FC79681B6">
+      f3
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-B7ECA394-B6AB-45CC-A824-A63D65376F85">(equal f1 f3)</strong>
+T</pre>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3859">
+     Compare
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-562BD12D-DDC1-45C0-A648-802530855F0F">
+      f3
+     </samp>
+     to
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-C2020204-674C-414C-AD4D-FC1812350D88">
+      f2
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-68638C65-F094-4E59-BD76-C2C1C2CC998F">(equal f3 f2)</strong>
+T</pre>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3858">
+     Compare
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-8EFEDB76-02A3-41FE-B580-9A9398BEF22F">
+      a
+     </samp>
+     to
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-75B70D61-03DF-4CE2-B1F2-98F3C388163C">
+      b
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-CA8BC361-DB6A-4AC7-BFF4-D04462E7F05B">(equal a b)</strong>
+nil</pre>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3857">
+     The
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-2533DF6B-C605-4C2A-8948-C438744C0A2B">
+      a
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-87141839-7A43-4365-943F-4695B7DA125C">
+      b
+     </samp>
+     variables differ by .000001. Compare
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-C6F75260-FE19-4A97-B0CB-F3AE7CEF625D">
+      a
+     </samp>
+     to
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-2BFF8E83-ECB6-49CD-AEC2-3839550CBD91">
+      b
+     </samp>
+     :, with
+     <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-3B66708D-1BA1-4CE0-A847-A9117FAA5561">
+      fuzz
+     </em>
+     argument of .000001:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-6FE2F4F4-B18F-4E1C-B25A-D89896093C00">(equal a b 0.000001)</strong>
+T</pre>
+    <p class="p" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__WSFACF1429558A55DE11F0759FF1E4B858C-3855">
+     The
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-40CB8B11-86D9-47A3-BCB5-791A06DE4E22">
+      a
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-B828D376-C6C8-4FEE-BFFF-ED5CB61165A3">
+      b
+     </samp>
+     variables differ by an amount equal to the specified
+     <em class="ph i" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-0D32929E-8C97-4C13-9E62-E2E61640DC5D">
+      fuzz
+     </em>
+     factor, so
+     <samp class="ph codeph" id="GUID-7E85CB8F-B4DA-42F3-ABD3-89342A11EF9B__GUID-FFC9509A-E028-4187-B740-E6F52101F757">
+      equal
+     </samp>
+     considers the variables equal.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Non_alphabetic_Functions/equal_to_AutoLISP.html" title="Compares arguments for numerical equality">
+       = (equal to) (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Equality_and_Conditional_Functions_Reference_AutoLISP.html">
+       Equality and Conditional Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="eq_AutoLISP.html" title="Determines whether two expressions are identical">
+       eq (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

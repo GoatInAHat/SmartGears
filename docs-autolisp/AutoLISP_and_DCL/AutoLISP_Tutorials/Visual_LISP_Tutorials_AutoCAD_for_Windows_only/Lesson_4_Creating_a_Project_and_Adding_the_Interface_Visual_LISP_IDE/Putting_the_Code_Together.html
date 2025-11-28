@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Putting the Code Together
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Putting the Code Together
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-BCA63E8B-41B0-4E3F-A708-5A958D61360F">
+    <p class="p" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WSFACF1429558A55DE1929BBDFEF458CE1C-773F">
+     With the examples above, and a few additional lines, you have the code needed to complete the
+     <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-39DB3411-75A3-468A-8173-555ACDADB663">
+      gp:getDialogInput
+     </samp>
+     function.
+    </p>
+   </div>
+   <div class="section" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WSFACF1429558A55DE6C92BAFEE30F7510-7E1D">
+    <h2 class="title sectiontitle">
+     To put gp:getDialogInput together
+    </h2>
+    <ol class="ol" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF18CB41610EC0A2E719-738D">
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D8D">
+      Open your copy of
+      <em class="ph i" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-D5CFAAC8-131D-4D7B-BECB-5595D7C30A33">
+       gp-io.lsp
+      </em>
+      in a Visual LISP text editor window.
+     </li>
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D8C">
+      Delete the code in
+      <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-0954CB26-8A4A-40D0-AADC-1C4D97906E8B">
+       gp:getDialogInput
+      </samp>
+      (the
+      <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-39E81B21-33F3-445D-88E3-04ED97DDF28F">
+       defun gp:getDialogInput
+      </samp>
+      statement and everything after it).
+     </li>
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D8B">
+      Enter the following
+      <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-751CAE47-65B1-44C1-A115-5B693242A67C">
+       defun
+      </samp>
+      statement as the first line of code in the
+      <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-819124F6-6C0F-4640-8B37-70BC04C46339">
+       gp:getDialogInput
+      </samp>
+      function:
+      <pre class="pre codeblock prettyprint">(defun gp:getDialogInput (pathWidth / dcl_id objectCreateMethod
+                                      plineStyle tilerad tilespace result UserClick
+                                      dialogLoaded dialogShow)</pre>
+      <p class="p" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WSFACF1429558A55DE1929BBDFEF458CE1C-773E">
+       The function expects a single argument (
+       <samp class="ph codeph" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__GUID-CFF4EC5E-E0E3-407B-9A1B-00FDB9EFB866">
+        pathwidth
+       </samp>
+       ), and establishes a number of local variables.
+      </p>
+     </li>
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D8A">
+      Following the code you added in step 3, enter the sample code from each of the following sections:
+      <ul class="ul" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF18CB41610EC0A2E719-738C">
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D89">
+        Setting Up Dialog Values
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D88">
+        Loading the Dialog File
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D87">
+        Loading a Specific Dialog into Memory
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D86">
+        Initializing the Default Dialog Values
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D85">
+        Assigning Actions to Tiles
+       </li>
+      </ul>
+      <div class="note note" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D84">
+       <span class="notetitle">
+        Note:
+       </span>
+       Enter just the first code example from Assigning Actions to Tiles not the fragments in the explanations that follow. Those fragments just repeat pieces of the example.
+      </div>
+      <ul class="ul" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF18CB41610EC0A2E719-738B">
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D83">
+        Starting the Dialog
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D82">
+        Unloading the Dialog
+       </li>
+       <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D81">
+        Determining What to Do Next
+       </li>
+      </ul>
+     </li>
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D80">
+      After the last line of code, add the following:
+      <pre class="pre codeblock prettyprint">) 
+ ) 
+  Result; 
+) ;_ end of defun</pre>
+     </li>
+     <li class="li" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF-7F10494411F03A24F24-1D7F">
+      Format the code you entered by clicking Tools
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      Format Code in Editor from the Visual LISP menu.
+      <div class="fig fignone" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__WS1A9193826455F5FF18CB41610EC0A2E719-738A">
+       <img class="image" height="25" id="GUID-AF12AC1D-2F15-4D3D-BA0B-82D79C8A333D__IMAGE_62531C5B8D8540088392BF9F56BDED83" src="../../../../_assets/GUID_2946F5A1_0C50_414F_9424_2AEF6BAE4F5C-acccb60f.png" width="25"/>
+      </div>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Determining_What_to_Do_Next.html">
+      Determining What to Do Next
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Updating_a_Stubbed_Out_Function.html">
+      Updating a Stubbed-Out Function
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

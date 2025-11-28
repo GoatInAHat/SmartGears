@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Returns the current value of an entity’s property" name="description"/>
+  <meta content="GETPROPERTYVALUE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   getpropertyvalue (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      getpropertyvalue (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Returns the current value of an entity’s property
+   </p>
+   <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__SECTION_749F83BC03034417A0F97FC4E7423C9C">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(getpropertyvalue <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-47BDD9BD-FD66-4439-851A-B3B6DEF6FBE1">ename propertyname [or collectionName index name]</em>)</pre>
+    <div class="section" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-76DB4509-FC0E-428F-A091-668F8FFFD959">
+     <dl class="dl" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-76DB4509-FC0E-428F-A091-668F8FFFD959">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-9ACD4CAE-3C1B-4700-8324-37B38A54D0AE">
+        ename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-4373FE21-4326-4F24-B91A-3E08E85820CB">
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-2413E3A5-FB6B-45E6-87C0-77FEB1EC5D97">
+        <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-8DB7F3C4-A768-4134-A47A-5CE913E8B4EE">
+         Type:
+        </strong>
+        Ename (entity name)
+       </p>
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-64662BE9-87F5-43E2-9315-8788F7675930">
+        Name of the entity being queried. The
+        <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-D24E52C0-81AE-49F7-A376-77F557786BE8">
+         ename
+        </em>
+        can refer to either a graphical or a nongraphical entity.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-8622CA84-B16F-42EE-BACE-2C5B7E9895BF">
+        propertyname
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-D0144935-D319-4924-A354-DC5840805C92">
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-8883E84B-B90B-4C3A-AB12-310D97B0AF7E">
+        <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-14A169C1-FECF-4138-B601-A2BCAC25D4B3">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-C7031FEE-6136-423E-A3C9-CE958CBB5F83">
+        Name of the property being queried. For a list of all the valid property names of a given object, use
+        <samp class="ph codeph" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-9D72F6C1-49F2-4EED-A7B9-6B95070EFA8A">
+         dumpallproperties
+        </samp>
+        .
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-3336BF64-9FED-493F-8A92-07E032DECDEE">
+        collectionName
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-A117BF82-177F-46E0-9EEF-8C67038F3EB4">
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-70786B50-116E-4CAF-9575-81327AAF9F1B">
+        <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-E2F41616-5E62-470E-819C-DCD08455122F">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-C54B008C-BC64-4FEA-B003-AAB6D9805C86">
+        If the object is a collection object, the Collection name is passed here.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-C5028A03-7595-45E3-B1EE-30CB2ADB8DAA">
+        index
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-0F92DDD4-2468-4153-992C-E8D5A89B23E6">
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-44EFC33C-8FCB-46EC-8F5D-7E3024702233">
+        <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-CD6B6954-B86B-4076-87E4-E5D941764168">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-85B4D10B-D6B8-4DC6-B51B-7FD2F4978102">
+        The collection index being queried.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-54232790-48B4-4C99-9436-6CFB26F40E58">
+        name
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-B8F5CF1C-7D1B-481A-98D5-2AE5D881E9B9">
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-B1DD552E-60B8-443A-964A-116B65880FDA">
+        <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-EEB929E6-F237-4E84-9553-46617EF17E71">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-D4830D48-A1D4-4AF6-BA9D-355C162CABC8">
+        The name of the property within the collection being queried.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__SECTION_B3E0867FE15E43E9A84AA0DE2F37D316">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-5B571283-1323-43E5-BEBD-E5AD318BED90">
+     <strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-98B8BC5F-A0FB-4978-8C74-82E4A3308B30">
+      Type:
+     </strong>
+     Integer, Real, String, List, T, or nil
+    </p>
+    <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-D7D4FFEA-95F8-4A6E-9910-721BA1E4E8E4">
+     The value of the entity’s property.
+    </p>
+   </div>
+   <div class="section" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__SECTION_159811CB180249008ABBCB7592887FD2">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-D1F1E71E-2DD8-41E5-A128-8ED00C1BB8F3">
+     The following example demonstrates how to get the current radius value of a circle.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-19A071E9-77F4-4BC4-8A58-9901AFDAA98E">(command "_circle" "2,2" 2)</strong>
+nil
+
+<strong class="ph b" id="GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899__GUID-5C19B483-F710-451E-BC0C-8B3D3F6B7359">(getpropertyvalue (entlast) "radius")</strong>
+2.0</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Object_Handling_Functions_Reference_AutoLISP.html">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../D_Functions/dumpallproperties_AutoLISP.html" title="Retrieves an entity’s supported properties">
+       dumpallproperties (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../I_Functions/ispropertyreadonly_AutoLISP.html" title="Returns the read-only state of an entity’s property">
+       ispropertyreadonly (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/setpropertyvalue_AutoLISP.html" title="Sets the property value for an entity">
+       setpropertyvalue (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

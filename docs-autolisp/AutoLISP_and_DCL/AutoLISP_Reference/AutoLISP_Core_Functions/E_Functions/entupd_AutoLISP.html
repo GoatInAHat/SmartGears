@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Updates the screen image of an object (entity)" name="description"/>
+  <meta content="ENTUPD" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="12/08/2024" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-78313F48-676D-49D7-842A-288DD347A783" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   entupd (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-78313F48-676D-49D7-842A-288DD347A783">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      entupd (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Updates the screen image of an object (entity)
+   </p>
+   <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-7E3ACB11-B920-4FD7-AC84-E2D3004432F3">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(entupd <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-8290082B-C516-4342-8B94-D048EDE8A3AD">ename</em>)</pre>
+    <div class="section" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WS1A9193826455F5FF-1E1423D1125831BDA67-7B7B">
+     <dl class="dl" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WS1A9193826455F5FF-1E1423D1125831BDA67-7B7B">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-10277CDB-F371-4C6B-B917-189E84DB6FE3">
+        ename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-B815748B-1353-4798-9172-94717A19A066">
+       <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-BE4373F3-8EDB-49CA-BC42-F12E5F059F15">
+        <strong class="ph b" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-48D28B3A-7537-429C-8130-158A846D7E47">
+         Type:
+        </strong>
+        Ename (entity name)
+       </p>
+       <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WSFACF1429558A55DE11F0759FF1E4B858C-3878">
+        The name of the entity to be updated on the screen.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-78313F48-676D-49D7-842A-288DD347A783__SECTION_57A6051D1FAE49039716B5FC1AF9EB2D">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-B660806A-F8B4-4FFF-ACE6-628B74AFF5AB">
+     <strong class="ph b" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-2C1FDA0B-E399-4663-B2F7-B7E080D4852B">
+      Type:
+     </strong>
+     Ename (entity name) or nil
+    </p>
+    <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-2EDE33ED-4EE4-4163-9C37-CE71096A8F63">
+     The updated entity; otherwise
+     <samp class="ph codeph" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-B57D77DE-6B98-4DC0-BD4A-601F96964453">
+      nil
+     </samp>
+     , if nothing was updated.
+    </p>
+   </div>
+   <div class="section" id="GUID-78313F48-676D-49D7-842A-288DD347A783__SECTION_84590ABA17A34E148EEB1CF6CAB887AD">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WSFACF1429558A55DE11F0759FF1E4B858C-3872">
+     When a "legacy" polyline vertex or block attribute is modified with
+     <samp class="ph codeph" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-3ED5B22E-6A07-4459-B93F-2D3338438AD8">
+      entmod
+     </samp>
+     , the entire complex entity is not updated on the screen. The
+     <samp class="ph codeph" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-47A4073A-CDA5-4588-BA14-CF99D3AE34FD">
+      entupd
+     </samp>
+     function can be used to cause a modified polyline or block to be updated on the screen. This function can be called with the entity name of any part of the polyline or block; it need not be the head entity. While
+     <samp class="ph codeph" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-8A2E0731-5F5F-473E-8E81-21ADA966F43B">
+      entupd
+     </samp>
+     is intended for polylines and blocks with attributes, it can be called for any entity. It always regenerates the entity on the screen, including all subentities.
+    </p>
+    <div class="note note" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WS1A9193826455F5FF-7C08E89711EC57B47A8-7983">
+     <span class="notetitle">
+      Note:
+     </span>
+     If
+     <samp class="ph codeph" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-6BDC9E37-1499-4399-A797-42BBF9DC691B">
+      entupd
+     </samp>
+     is used on a nested entity (an entity within a block) or on a block that contains nested entities, some of the entities might not be regenerated. To ensure complete regeneration, you must invoke the AutoCAD REGEN command.
+    </div>
+   </div>
+   <div class="section" id="GUID-78313F48-676D-49D7-842A-288DD347A783__SECTION_D7A56B81F29543F1AEF209184EA135CA">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-78313F48-676D-49D7-842A-288DD347A783__WSFACF1429558A55DE11F0759FF1E4B858C-3874">
+     Assuming that the first entity in the drawing is a 3D polyline with several vertices, the following code modifies and redisplays the polyline:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq e1 (entnext))       ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-615AEF83-0BFD-4E06-8CEB-6EEABB2F99A6">Sets</em> e1 <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-2CEFFC99-751C-40D6-BA4B-93D689A8DB22">to the polyline's entity name</em>
+(setq e2 (entnext e1))    ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-5743D0CF-3FA4-41FF-BA05-1585C654DF42">Sets</em> e2 <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-72C595E0-9B53-4DA4-B26C-297F1D030035">to its first vertex</em>
+(setq ed (entget e2))     ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-56824C0F-98FD-4D06-9CCC-C7C50BE4A8B4">Sets</em> ed <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-438E57D7-4F16-4C55-9679-4C8DF572698A">to the vertex data</em>
+(setq ed 
+  (subst '(10 1.0 2.0)
+    (assoc 10 ed)         ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-2148CE1E-E9DE-4A00-976C-1B955986FD56">Changes the vertex's location in</em> ed 
+    ed                    ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-EB8909C9-B0FB-428B-81A0-56EB16549131">to point (1,2)</em>
+  ) 
+) 
+(entmod ed)               ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-5F34729D-4E9A-45BC-9D7F-E723D84E88D5">Moves the vertex in the drawing</em>
+(entupd e1)               ; <em class="ph i" id="GUID-78313F48-676D-49D7-842A-288DD347A783__GUID-59688C8F-5A3D-423A-81C4-CAFD98AF3928">Regenerates the polyline entity</em> e1</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Object_Handling_Functions_Reference_AutoLISP.html">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="entmod_AutoLISP.html" title="Modifies the definition data of an object (entity)">
+       entmod (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="entget_AutoLISP.html" title="Retrieves an object's (entity's) definition data">
+       entget (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

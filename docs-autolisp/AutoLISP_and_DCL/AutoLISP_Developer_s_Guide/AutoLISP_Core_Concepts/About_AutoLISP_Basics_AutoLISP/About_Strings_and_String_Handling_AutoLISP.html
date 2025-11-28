@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="A string is a group of characters surrounded by quotation marks. Within quoted strings the backslash (\) character allows control characters (or escape codes) to be included." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Strings and String Handling (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Strings and String Handling (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    A string is a group of characters surrounded by quotation marks. Within quoted strings the backslash (\) character allows control characters (or escape codes) to be included.
+   </p>
+   <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-8FA4D70F-92B2-46BF-A04E-E6ECCBDFC74C">
+    When you explicitly use a quoted string in AutoLISP, that value is known as a literal string or a string constant.
+   </p>
+   <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-A3182211-F4F4-471F-AEA6-B36026117D80">
+    Examples of valid strings are “string 1” and “\nEnter first point:”.
+   </p>
+   <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-8F943263-8CF5-4DB5-B91E-D791468F3970">
+    AutoLISP provides many functions for working with string values. The following are some of the most commonly used functions:
+   </p>
+   <ul class="ul" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__UL_F9CD380FD7E74111A7B9C26BF6C7B0C5">
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_A91B166B7834411CB5105CE67C6F3A51">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3EF717C4-8543-49C3-9D8E-0BDBBE61183D">
+      strcat
+     </samp>
+     – Returns a string that is the concatenation of multiple strings.
+    </li>
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_C19F3E181C0640149A95A27817F0DCE2">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-0F75D2EA-145F-4D4D-AFE4-C269BCB830C1">
+      strcase
+     </samp>
+     – Returns a string where all alphabetic characters have been converted to uppercase or lowercase.
+    </li>
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_8313464A60F64B5DBFEADF3422B6FE37">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-471FAFDE-6DC3-47D2-84A2-1A0E2A33AA37">
+      strlen
+     </samp>
+     – Returns an integer that is the number of characters in a string.
+    </li>
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_A4D9B556CE0942B09D63E05DA0B9F9A9">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-6CF2E5E3-9D5B-47BC-8145-732F853329B0">
+      substr
+     </samp>
+     – Returns a substring of a string.
+    </li>
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_F7477D4473244CE681BF3BD5BF6AAB6E">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-59B927EE-A7B4-4B88-A67F-77201D63D83B">
+      vl-string-search
+     </samp>
+     – Searches for the specified pattern in a string.
+    </li>
+    <li class="li" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__LI_0D99754127294172AD4F557066546984">
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-B1DD0E04-5919-4E56-A0EB-52B272318B89">
+      vl-string-subst
+     </samp>
+     – Substitutes one string for another, within a string.
+    </li>
+   </ul>
+   <div class="section" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__SECTION_47962129B83B41BDB64382DEBCDD9D7E">
+    <h2 class="title sectiontitle">
+     Convert the Case of a String
+    </h2>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-FCFE6D21-288A-4EF8-A065-CF4C6DDC1D27">
+     The alphabetic characters of a string can be converted to uppercase or lowercase with the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3E841E31-1A57-4DA9-9E4C-D376BDF3C25C">
+      strcase
+     </samp>
+     function. It accepts two arguments: a string and an optional argument that specifies the case in which the characters are returned. If the optional second argument is omitted, it evaluates to
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-565A03C5-B566-4D3A-95A0-E8712E0A5426">
+      nil
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-466C6FA2-0034-4BA6-8FBB-92651B9B032B">
+      strcase
+     </samp>
+     returns the characters converted to uppercase.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-C4888EBF-6492-4F6E-ADA9-680488191879">(strcase "This is a TEST.")</strong>
+"THIS IS A TEST."</pre>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-128ACDA6-3CA2-40ED-9E91-D31B51F3C1E5">
+     If you provide a second argument of
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-9F565F69-5D88-4E91-A468-2F5A4630F219">
+      T
+     </samp>
+     , the characters are returned as lowercase.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-77DA461C-A06E-493A-A2FC-63DB9D201DB2">(strcase "This is a TEST." T)</strong>
+"this is a test."</pre>
+    <div class="note note" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-627FF739-CF37-47A5-8351-C14BC3B71ACF">
+     <span class="notetitle">
+      Note:
+     </span>
+     The predefined variable
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-F73F3E42-7F08-49AF-B6F7-B469ABB812C4">
+      T
+     </samp>
+     is often used to represent a True value when a function returns or excepts a True/False value. A
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3F126D97-CB13-40E9-8452-63598DBA18A1">
+      nil
+     </samp>
+     value is used to represent a False value in these conditions.
+    </div>
+   </div>
+   <div class="section" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__SECTION_7CEFDEC2E57B481DB846B6C94A9924CF">
+    <h2 class="title sectiontitle">
+     Combine Multiple Strings
+    </h2>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-1E160FA2-74DA-4AA5-A554-6764C18698B9">
+     You can combine multiple strings into a single string value with the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-4C5156CE-FC57-406B-84A0-F3FC31F5204D">
+      strcat
+     </samp>
+     function. This is useful for placing a variable string within a constant string, such as an error message or note in a drawing. The following code example sets a variable to a string value and then uses
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-8E726560-CB1B-4AF2-9B1D-9C0A3EF55EE1">
+      strcat
+     </samp>
+     to insert that string between two other strings.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3A909854-EB11-45AB-9A58-C9DBEA534D33">(setq str "BIG")
+(setq bigstr (strcat "This is a " str " test."))</strong>
+"This is a BIG test."</pre>
+   </div>
+   <div class="section" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__SECTION_343BB73F844B4391A78FE918121A0CF3">
+    <h2 class="title sectiontitle">
+     Return a Substring of a String
+    </h2>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3C66C41B-08D7-41B4-B4A9-0E6E77995BFA">
+     The
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-188793AB-7D1C-44CC-A9D0-BD6817CF6722">
+      substr
+     </samp>
+     function allows you to return a portion of a string. This function requires two arguments and has one optional argument. The first argument is a string and the second argument is an integer that represents the start character of the string that you want to return as the substring. If the third argument is not provided,
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-FC9A5A69-67B3-43DA-8405-3A5FA9F90F19">
+      substr
+     </samp>
+     returns all characters including and following the specified start character.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-4AD9373B-DA23-4D04-B47D-AC765172A4E4">(substr "Welcome to AutoLISP" 12)</strong>
+"AutoLISP"</pre>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-3DC84A86-F365-4250-A32C-F6E787536ABD">
+     If want to return a substring that is at the beginning or middle of the string provided to the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-94A7FED3-80ED-4581-AB15-98ADC0EC7B36">
+      substr
+     </samp>
+     function, you can specify an integer for the third argument that represents the number of characters that should be returned. For example, the following example code returns the first 7 characters of the provided string:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-25101750-0F59-49FD-934A-0DE3CBD53361">(substr "Welcome to AutoLISP" 1 7)</strong>
+"Welcome"</pre>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-0D1116CC-BF8B-43C2-A37E-3BEFF207A8F7">
+     Often, when working with a string you might not know how long it is but might know the start position of the substring you want to return. The
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-15FD6FDC-8781-4924-A0F5-295683842C23">
+      strlen
+     </samp>
+     function returns the number of characters (including spaces) in a string.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-F923A6E3-2226-412E-A166-9857309B0C26">(setq filnam "bigfile.txt")
+(strlen filnam)</strong>
+11</pre>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-217EA3CC-5532-4B5D-89A9-D24A19F91F88">
+     The following example code returns all the characters in a filename except the last four (the period and the three-letter extension). This is done by using
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-9EC6649E-0D23-4E62-ADA6-00267141F555">
+      strlen
+     </samp>
+     to get the length of the string and subtract 4 from that value. Then
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-46E7D83E-6F69-4977-B460-46DCEACAE92E">
+      substr
+     </samp>
+     is used to specify the first character of the substring and its length.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-35AA454D-4258-4880-A8CC-21937FDD205D">(setq newlen (- (strlen filnam) 4))</strong>
+7
+
+<strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-E20D9495-BA8D-47E0-8206-F951D035F89B">(substr filnam 1 newlen)</strong>
+"bigfile"</pre>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-C31D6C5B-FDC3-4D4E-BE5E-8068BC56BB41">
+     You can combine the two previous lines of code into one if you do not need the length of the string stored in the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-CA6E93D1-A2CA-4CC9-B175-781F7AC2593A">
+      newlen
+     </samp>
+     variable for other functions.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-61D171F8-8DF2-4A7D-9C13-F3D9976DACF9">(substr filnam 1 (- (strlen filnam) 4))</strong>
+"bigfile"</pre>
+   </div>
+   <div class="section" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__SECTION_1AAD0FA63DD94BE39119581E05E96E50">
+    <h2 class="title sectiontitle">
+     Find and Replace Text in a String
+    </h2>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-1F83BF9F-7884-4322-9334-A0EE73F0C3BC">
+     Finding and replacing text can be helpful in updating notes or part numbers. The
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-F7F685EC-84D6-4DA0-8167-9FFB48F75725">
+      vl-string-search
+     </samp>
+     function allows you to locate a pattern within a string, and return the start position as an integer of the first instance of the specified pattern. If the function returns an integer, you can then use that as the starting position for another search to make sure there is not more than one instance of the pattern in the string.
+    </p>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-1C24F0C1-52FA-40D4-9C65-B0D0AFE1839D">
+     The
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-7A5BAECD-26C3-4376-B0A0-55A2064ED7D4">
+      vl-string-subst
+     </samp>
+     function can be used to replace text within a string. Similar to the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-0245125B-20BF-453F-A889-3B9D709933F2">
+      vl-string-search
+     </samp>
+     function, it can only identify the first instance of a specified pattern. You can use the
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-4F61EA40-318A-4EC8-9F27-EE3E3590769E">
+      vl-string-search
+     </samp>
+     function after replacing a text string to see if another instance of a pattern is contained in the string returned by
+     <samp class="ph codeph" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-617DED53-9EB1-4702-911E-EA12FF883952">
+      vl-string-subst
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-DA0F815E-F59F-43A5-A3B3-36950B153414">
+     The following code examples find and replace the text [WIDTH] in a string.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-BD042DD9-AC23-4BCA-8F4B-FD6605BB62A7">(setq note "All door openings are [WIDTH] unless otherwise noted.")</strong>
+"All door openings are [WIDTH] unless otherwise noted."
+
+<strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-FAF131C8-55E0-4070-B8FF-6AAEC3AB741C">(setq position (vl-string-search "[WIDTH]" note))</strong>
+22
+
+<strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-6AD25644-AB00-43E1-ACC9-BB9A2104D028">(setq revised-note (vl-string-subst "36\"" "[WIDTH]" note position))</strong>
+"All door openings are 36\" unless otherwise noted."
+
+<strong class="ph b" id="GUID-417600C7-1F59-4C95-B4E8-A7996F9F994F__GUID-A737BF1A-9F53-4422-B3AC-C0516F9617AF">(prompt revised-note)(princ)</strong>
+All door openings are 36" unless otherwise noted.</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_AutoLISP_Basics_AutoLISP.html" title="You can use number, string, and list-handling functions to customize AutoCAD.">
+      About AutoLISP Basics (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Basic_Output_Functions_AutoLISP/About_Displaying_Messages_AutoLISP/About_Displaying_Messages_AutoLISP.html" title="AutoLISP programs often need to inform the user of an error or request for input.">
+       About Displaying Messages (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Basic_Output_Functions_AutoLISP/About_Control_Characters_in_Strings_AutoLISP.html" title="Within quoted string values, the backslash (\) character allows control characters (or escape codes) to be included.">
+       About Control Characters in Strings (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP/About_Data_Conversions_AutoLISP/About_String_Conversions_AutoLISP.html" title="Numeric values can be converted to string values for use in output or textual data.">
+       About String Conversions (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8543549B-F0D7-43CD-87A3-F6B827FF0B88">
+       String-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

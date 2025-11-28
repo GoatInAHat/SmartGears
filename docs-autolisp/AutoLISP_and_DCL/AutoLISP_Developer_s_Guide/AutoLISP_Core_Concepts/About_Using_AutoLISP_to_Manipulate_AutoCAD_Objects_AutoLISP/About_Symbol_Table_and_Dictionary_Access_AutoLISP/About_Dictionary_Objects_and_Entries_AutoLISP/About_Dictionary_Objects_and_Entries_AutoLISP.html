@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="A dictionary is a container object, similar to symbol tables." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-24E52678-513E-4322-8070-B23C8945DC3D" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Dictionary Objects and Entries (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-24E52678-513E-4322-8070-B23C8945DC3D">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Dictionary Objects and Entries (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    A dictionary is a container object, similar to symbol tables.
+   </p>
+   <p class="p" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-9DBBF7A4-10B9-4194-B68A-88F925D9D1EF">
+    Dictionaries are stored in the drawing’s named object dictionary, which is the root of all non-graphical objects in a drawing, or as an extension dictionary attached to an object. Each drawing can contain different dictionaries, so a routine should not expect that a specific dictionary might exist in a drawing. The dictionaries in a drawing’s named object dictionary can be accessed using
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-DA101BA7-8AA6-4773-938E-81FDAA5D8497">
+     namedobjdict
+    </samp>
+    , which returns an entity name. Use
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-AAD2F7A2-00AA-4955-B57C-7B288BAF70A3">
+     entget
+    </samp>
+    to access the entity list that represents all of the dictionaries in the drawing.
+   </p>
+   <p class="p" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-399BEAA0-3EC2-443A-8E28-3B657EED9C47">
+    The following rules apply to dictionary objects:
+   </p>
+   <ul class="ul" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__UL_EFD60AC2CE2F4648AA8C42C3412F5865">
+    <li class="li" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__LI_A553C001E1154844B5275C0E61D66256">
+     Dictionary objects can be examined with
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-9DB624FD-73E2-45A7-A0D3-3F8DC2705584">
+      entget
+     </samp>
+     and their xdata modified with
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-81351DC2-C71D-4D6D-B10C-07FD974F2392">
+      entmod
+     </samp>
+     . Their entries cannot be altered with
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-9415C631-D081-424A-9880-420F1D14F749">
+      entmod
+     </samp>
+     . All access to their entries are made through the
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-599F17C7-5A57-4C93-B617-30153C27FBDE">
+      dictsearch
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-14E2C921-1D9A-4012-B8D0-9AA88967B839">
+      dictnext
+     </samp>
+     functions.
+    </li>
+    <li class="li" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__LI_6622D493108743E5A8C62C89AD4234A5">
+     Dictionary entry contents cannot be modified through
+     <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-85B2A0BA-3EC6-4F6C-A48B-EE31978C72B4">
+      entmod
+     </samp>
+     , although xdata can be modified.
+    </li>
+    <li class="li" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__LI_D2EBFFCE0A174076B4A2818513151221">
+     Dictionary entries that begin with ACAD* cannot be renamed.
+    </li>
+   </ul>
+   <p class="p" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-E333C172-EC42-448D-A23D-724ABCFCD096">
+    Dictionary entries can be queried with the
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-295D0161-4C45-4E6B-B94C-D48AF61608F7">
+     dictsearch
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-25C5C270-7832-4622-BF85-7422A7FD9A49">
+     dictnext
+    </samp>
+    functions. Each dictionary entry consists of a text name key plus a hard ownership handle reference to the entry object. Dictionary entries may be removed by directly passing entry object names to the
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-CEAFE820-8CAC-42E3-9CD5-4DC37F22CA49">
+     entdel
+    </samp>
+    function. The text name key uses the same syntax and valid characters as symbol table names. A key name can be changed using the
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-DE3B1DBE-28A8-4D7B-B5ED-0A02E983AAA3">
+     dictrename
+    </samp>
+    function.
+   </p>
+   <p class="p" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-618637E5-4E86-439E-B621-1531D80BB78A">
+    The following example code lists each of the dictionaries in the drawing’s named object dictionary and their entries:
+   </p>
+   <pre class="pre codeblock prettyprint">(defun c:ListDictionaries ( / ed ed1)
+  (prompt "\nDictionaries in current drawing: ")
+  (foreach ed (entget (namedobjdict))
+    (progn
+      (cond ((= (car ed) 3)
+        (prompt (strcat "\n" (cdr ed))))
+            ((= (car ed) 350)
+        (progn
+          (foreach ed1 (entget (cdr ed))
+            (if (= (car ed1) 3)
+              (prompt (strcat "\n  " (cdr ed1)))
+            )
+          )
+        ))
+      )
+    )
+  )
+ (princ)
+)</pre>
+   <p class="p" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-7C733398-9787-4C30-91AA-62EE7F6B353D">
+    The following is an example of the output you might see in Text History window after
+    <samp class="ph codeph" id="GUID-24E52678-513E-4322-8070-B23C8945DC3D__GUID-CD319867-67A5-476A-B25E-0B7D6D5FE3CB">
+     c:ListDictionaries
+    </samp>
+    is executed.
+   </p>
+   <pre class="pre codeblock prettyprint">Dictionaries in current drawing:
+ACAD_CIP_PREVIOUS_PRODUCT_INFO
+ACAD_COLOR
+ACAD_DETAILVIEWSTYLE
+  Imperial24
+ACAD_GROUP
+ACAD_LAYOUT
+  Layout1
+  Layout2
+  Model
+ACAD_MATERIAL
+  ByBlock
+  ByLayer
+  Global
+ACAD_MLEADERSTYLE
+  Annotative
+  Standard
+ACAD_MLINESTYLE
+  Standard
+ACAD_PLOTSETTINGS
+ACAD_PLOTSTYLENAME
+  Normal
+ACAD_SCALELIST
+  A0
+  A1
+  A2
+  A3
+  A4
+  A5
+  A6
+  A7
+  A8
+  A9
+  B0
+  B1
+  B2
+  B3
+  B4
+  B5
+  B6
+  B7
+  B8
+  B9
+  C0
+  C1
+  C2
+  C3
+  C4
+  C5
+  C6
+  C7
+  C8
+  C9
+  D0
+  D1
+  D2
+ACAD_SECTIONVIEWSTYLE
+  Imperial24
+ACAD_TABLESTYLE
+  Standard
+ACAD_VISUALSTYLE
+  2dWireframe
+  Basic
+  Brighten
+  ColorChange
+  Conceptual
+  Dim
+  EdgeColorOff
+  Facepattern
+  Flat
+  FlatWithEdges
+  Gouraud
+  GouraudWithEdges
+  Hidden
+  JitterOff
+  Linepattern
+  OverhangOff
+  Realistic
+  Shaded
+  Shaded with edges
+  Shades of Gray
+  Sketchy
+  Thicken
+  Wireframe
+  X-Ray
+AcDbVariableDictionary
+  CANNOSCALE
+  CMLEADERSTYLE
+  CTABLESTYLE
+  CVIEWDETAILSTYLE
+  CVIEWSECTIONSTYLE
+  DIMASSOC
+  HIDETEXT
+  LAYEREVAL
+  LAYERNOTIFY</pre>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="Example_Accessing_AutoCAD_Groups_AutoLISP.html">
+       Example: Accessing AutoCAD Groups (AutoLISP)
+      </a>
+      <br/>
+      This example demonstrates one method for accessing the entities contained in a group.
+     </li>
+    </ul>
+   </div>
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="../About_Symbol_Table_and_Dictionary_Access_AutoLISP.html">
+      About Symbol Table and Dictionary Access (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_Object_Handling_AutoLISP/About_Non_Graphical_Object_Handling_AutoLISP.html" title="A drawing database contains two types of non-graphical objects: dictionary and symbol table objects.">
+       About Non-Graphical Object Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Object_Handling_AutoLISP/About_Entity_Data_Functions_AutoLISP/About_Modifying_an_Entity_without_the_Command_Function_AutoLISP.html" title="An entity can be modified directly by changing its entity list and posting the changes back to the database.">
+       About Modifying an Entity without the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="Example_Accessing_AutoCAD_Groups_AutoLISP.html" title="This example demonstrates one method for accessing the entities contained in a group.">
+       Example: Accessing AutoCAD Groups (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Symbol_Tables_AutoLISP.html" title="Symbol tables are used to store non-graphical information in a drawing’s database.">
+       About Symbol Tables (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Xrecord_Objects_AutoLISP.html" title="Xrecord objects are used to store and manage arbitrary data.">
+       About Xrecord Objects (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-7AACB386-1AA1-4BDF-B5D7-A1E23A51CA15">
+       Symbol Table and Dictionary-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

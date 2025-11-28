@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Comments are useful to both the programmer and future users who may need to revise a program to suit their needs." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Comments in AutoLISP Program Files (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Comments in AutoLISP Program Files (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Comments are useful to both the programmer and future users who may need to revise a program to suit their needs.
+   </p>
+   <p class="p" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WSFACF1429558A55DE11F0759FF1E4B858C-660B">
+    It is good coding practice to include comments in all AutoLISP program files, small and large. Use comments to do the following:
+   </p>
+   <div class="section" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__GUID-4AFA774B-EACD-43DF-9829-088CAB168E50">
+    <ul class="ul" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WS73099CC142F4875516D84BE10EBC87A53F-7C5E">
+     <li class="li" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WS1A9193826455F5FF-4855151011E21CB4C05-5DA9">
+      Give a title, authorship, and creation date
+     </li>
+     <li class="li" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WS1A9193826455F5FF-4855151011E21CB4C05-5DA8">
+      Provide instructions on using a routine
+     </li>
+     <li class="li" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WS1A9193826455F5FF-4855151011E21CB4C05-5DA7">
+      Make explanatory notes throughout the body of a routine
+     </li>
+     <li class="li" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WS1A9193826455F5FF-4855151011E21CB4C05-5DA6">
+      Make notes to yourself during debugging
+     </li>
+    </ul>
+    <p class="p" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WSFACF1429558A55DE11F0759FF1E4B858C-660A">
+     Comments begin with one or more semicolons (
+     <strong class="ph b" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__GUID-5666170D-DE7C-462F-8562-BE173AE64620">
+      <samp class="ph codeph" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__GUID-F1776593-2F38-479E-93A2-6926AE61AB59">
+       ;
+      </samp>
+     </strong>
+     ) and continue through the end of the line.
+    </p>
+    <pre class="pre codeblock prettyprint">; This entire line is a comment
+(setq area (* pi r r)) ; Compute area of circle</pre>
+    <p class="p" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WSFACF1429558A55DE11F0759FF1E4B858C-6609">
+     Any text within
+     <strong class="ph b" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__GUID-CE42DB66-BE6A-47B1-BC07-34A3663C67D3">
+      <samp class="ph codeph" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__GUID-259EE95E-0E59-4A8E-B40F-E4F58481806B">
+       ;| ... |;
+      </samp>
+     </strong>
+     is ignored. Therefore, comments can be included within a line of code or extend for multiple lines. This type of comment is known as an in-line comment.
+    </p>
+    <pre class="pre codeblock prettyprint">(setq tmode ;|some note here|; (getvar "tilemode"))</pre>
+    <p class="p" id="GUID-4D4664AD-301F-4E6E-AD65-4B7CE6A258B8__WSFACF1429558A55DE11F0759FF1E4B858C-6608">
+     The following example shows a comment that continues across multiple lines:
+    </p>
+    <pre class="pre codeblock prettyprint">(setvar "orthomode" 1) ;|comment starts here
+and continues to this line,
+but ends way down here|; (princ "\nORTHOMODE set On.")</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Source_Code_Files_AutoLISP.html" title="Although you can enter AutoLISP code at the AutoCAD Command prompt or Visual LISP Console window prompt (AutoCAD for Windows only), any functions you define are lost when you close the drawing or session they were created in.">
+      About Source Code Files (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Source_Code_Files_AutoLISP.html" title="Although you can enter AutoLISP code at the AutoCAD Command prompt or Visual LISP Console window prompt (AutoCAD for Windows only), any functions you define are lost when you close the drawing or session they were created in.">
+       About Source Code Files (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../Introduction_AutoLISP/About_Getting_Organized_AutoLISP.html" title="AutoLISP programs can be very simple in nature, executing a few commands that you might commonly use throughout the a day.">
+       About Getting Organized (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo reltasks">
+    <h4 class="related">
+     Related Tasks
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="To_Create_and_Open_AutoLISP_Source_Code_Files_AutoLISP.html" title="AutoLISP source code files can be created and edited using a plain text editor.">
+       To Create and Open AutoLISP Source Code Files (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

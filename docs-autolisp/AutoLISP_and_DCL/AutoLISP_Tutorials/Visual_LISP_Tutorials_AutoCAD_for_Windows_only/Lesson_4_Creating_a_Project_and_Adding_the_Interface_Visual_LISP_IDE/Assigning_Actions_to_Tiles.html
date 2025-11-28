@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Assigning Actions to Tiles
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Assigning Actions to Tiles
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-199660DD-44CC-4F64-AD12-859C6B6E8A0E">
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFDF1B63E01EA74BE1908CA1FEE071559F-7FF4">
+     A DCL definition does nothing more than define a lifeless dialog box. You connect this lifeless dialog box to your dynamic AutoLISP code with the
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-D320B4E8-6B2C-49BA-A797-1FB76D9977C9">
+      action_tile
+     </samp>
+     function, as demonstrated by the following code:
+    </p>
+    <pre class="pre codeblock prettyprint">;; Assign actions (the functions to be invoked) to dialog buttons
+(action_tile
+  "gp_lw"
+  "(setq plineStyle \"Light\")"
+)
+(action_tile
+  "gp_hw"
+  "(setq plineStyle \"Pline\")"
+)
+(action_tile
+  "gp_actx"
+  "(setq objectCreateMethod \"ActiveX\")"
+)
+(action_tile
+  "gp_emake"
+  "(setq objectCreateMethod \"Entmake\")"
+)
+(action_tile
+  "gp_cmd"
+  "(setq objectCreateMethod \"Command\")"
+)
+(action_tile "cancel" "(done_dialog) (setq UserClick nil)")
+(action_tile
+  "accept"
+  (strcat "(progn (setq tileRad (atof (get_tile \"gp_trad\")))"
+       "(setq tileSpace (atof (get_tile \"gp_spac\")))"
+       "(done_dialog) (setq UserClick T))"
+  )
+)</pre>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFACF1429558A55DE1929BBDFEF458CE1C-7747">
+     Notice all the quotes around the AutoLISP code. When you write an AutoLISP
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-2465078E-99BE-41F8-929F-578EBE3D62F8">
+      action_tile
+     </samp>
+     function, your code is essentially telling a tile, “here, remember this string, then pass it back to me when the user selects you.” The string (anything within double-quotation marks) is dormant until the user selects the tile. At that time, the tile passes the string to AutoCAD, which converts the string into functioning AutoLISP code and executes the code.
+    </p>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFACF1429558A55DE1929BBDFEF458CE1C-7746">
+     For example, consider the following
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-E24DB883-3318-4EAF-9C7B-BD2845BD1DBA">
+      action_tile
+     </samp>
+     expression, which is connected to the lightweight polyline radio button:
+    </p>
+    <pre class="pre codeblock prettyprint">(action_tile
+   "gp_lw"
+   "(setq plineStyle \"Light\")"
+)</pre>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFACF1429558A55DE1929BBDFEF458CE1C-7745">
+     The code assigns the string
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-F6E1C69A-E792-4DE0-8B67-9EE8C18C2CAE">
+      "(setq plineStyle \"Light\")"
+     </samp>
+     to the radio button. When a user picks the button, the string is passed back to AutoCAD and transformed directly into the following AutoLISP expression:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq plineStyle "Light")</pre>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFACF1429558A55DE1929BBDFEF458CE1C-7744">
+     Look at one more code fragment. The following is the
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-0C6306B6-D753-46B8-B201-BC3F4FE336E2">
+      action_tile
+     </samp>
+     expression assigned to the OK button:
+    </p>
+    <pre class="pre codeblock prettyprint">(action_tile
+    "accept"
+    (strcat "(progn (setq tileRad (atof (get_tile \"gp_trad\")))"
+      "(setq tileSpace (atof (get_tile \"gp_spac\")))"
+      "(done_dialog) (setq UserClick T))"
+)</pre>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFACF1429558A55DE1929BBDFEF458CE1C-7743">
+     When a user clicks the OK button, the lengthy string assigned to the button is passed to AutoCAD and turned into the following AutoLISP code:
+    </p>
+    <pre class="pre codeblock prettyprint">(progn 
+   (setq tileRad (atof (get_tile "gp_trad")))
+   (setq tileSpace (atof (get_tile "gp_spac")))
+   (done_dialog)
+   (setq UserClick T)
+)</pre>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFDF1B63E01EA74BE1908CA1FEE071559F-7FF3">
+     This code does several things: It retrieves the current values from the tiles whose key values are
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-DBB138A9-1A57-4683-AD7E-B5C660CDBEF9">
+      gp_trad
+     </samp>
+     (the tile radius) and
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-7EBC4D63-F682-478D-89F2-76196A6D38F8">
+      gp_spac
+     </samp>
+     (the tile spacing value). Then
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-A4A8923E-6621-499D-BAEF-B5A6D5896AD3">
+      atof
+     </samp>
+     converts the number string into a real number. The dialog is terminated with the
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-2DB31436-4413-49B5-96C9-42A7A7CBA114">
+      done_dialog
+     </samp>
+     function, and a value of
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-E2C64DB2-876A-4D78-B6D4-5AF21672C821">
+      T
+     </samp>
+     , or true, is assigned to the variable
+     <samp class="ph codeph" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__GUID-7A5244DD-530D-4BB7-B09E-AABE4CCFCAC3">
+      UserClick
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-8715618D-FB61-4428-A4A5-32165A3D8E2F__WSFDF1B63E01EA74BE1908CA1FEE071559F-7FF2">
+     You're done assigning actions to the buttons. The next thing to do is to put it all in motion.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Initializing_the_Default_Dialog_Values.html">
+      Initializing the Default Dialog Values
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Starting_the_Dialog.html">
+      Starting the Dialog
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

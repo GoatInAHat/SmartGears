@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-EA2B760C-866D-46BB-B682-EEC46C8FF11B" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-F6B71F40-1430-42AB-A7F3-1AB3E492DA8A" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Attaching the Reactors
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-F6B71F40-1430-42AB-A7F3-1AB3E492DA8A">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Attaching the Reactors
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-F6B71F40-1430-42AB-A7F3-1AB3E492DA8A__GUID-95B0013B-725E-4F1C-9F16-122203F18787">
+    <p class="p" id="GUID-F6B71F40-1430-42AB-A7F3-1AB3E492DA8A__WSFACF1429558A55DE1929BBDFEF458CE1C-76E8">
+     The next step in planning a reactor-based application is to determine how and when to attach reactors. You need to attach two object reactors for the polyline border of any garden path (one to respond to a modification event, the other to respond to erasure), and one editor reactor to alert your application when users complete their modification to the polyline. Object reactors are attached to entities, while editor reactors are registered with AutoCAD.
+    </p>
+    <p class="p" id="GUID-F6B71F40-1430-42AB-A7F3-1AB3E492DA8A__WSFACF1429558A55DE1929BBDFEF458CE1C-76E7">
+     There is another consideration to account for. To recalculate the polyline outline—return it to a rectilinear shape—after the user modifies it, you must know what the vertex configuration was before the modification. This information cannot be determined once the polyline has been modified. By that time you can only retrieve information on what the new configuration is. So how do you solve this? You could keep this information in a global variable, but there is a major problem with that idea. Users can draw as many garden paths as they want, and every new path would require a new global variable.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_6_Acting_With_Reactors_Visual_LISP_IDE.html">
+      Lesson 6: Acting With Reactors (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Planning_for_Multiple_Reactors.html">
+      Planning for Multiple Reactors
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Storing_Data_With_a_Reactor.html">
+      Storing Data With a Reactor
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

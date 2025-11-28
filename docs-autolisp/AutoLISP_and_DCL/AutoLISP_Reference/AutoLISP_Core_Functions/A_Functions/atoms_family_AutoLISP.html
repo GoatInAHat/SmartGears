@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Returns a list of the currently defined symbols" name="description"/>
+  <meta content="ATOMS-FAMILY" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   atoms-family (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      atoms-family (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Returns a list of the currently defined symbols
+   </p>
+   <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-2475401A-FE69-43F8-A838-5FBF48DE198B">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(atoms-family <em class="ph i" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-3826E6C5-0B8D-4F56-B517-32C265BEF130">format [symlist]</em>)</pre>
+    <div class="section" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WS1A9193826455F5FF-1E1423D1125831BDA67-7BA1">
+     <dl class="dl" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WS1A9193826455F5FF-1E1423D1125831BDA67-7BA1">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-BDD2F0BD-DF2C-4465-B175-3886CF9DF405">
+        format
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-99F05CCC-D26F-4A2B-89F7-C135FB33F4B2">
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-071C01A7-2F08-4605-A1D1-21D7C3019003">
+        <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-AF4F8D5E-8666-47DC-82B4-A6C784787EDB">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A07">
+        An integer value of 0 or 1 that determines the format in which
+        <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-6833302C-FFC4-4383-AA8E-D941E4B487A9">
+         atoms-family
+        </samp>
+        returns the symbol names:
+       </p>
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A06">
+        <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-4D766491-B3D7-4FF4-B6F5-6F1D334AF061">
+         0
+        </strong>
+        -- Return the symbol names as a list
+       </p>
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A05">
+        <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-75AE1D18-44F5-4094-849D-CA28FB891396">
+         1
+        </strong>
+        -- Return the symbol names as a list of strings
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-490B4E55-FCBC-4A8E-840F-3A0B04917834">
+        symlist
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-20CC4E72-19E8-46D7-B713-759496E1E7BB">
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-F95EF4C9-C735-4B66-8131-7B52BD1EB059">
+        <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-A460280A-B5D9-4F7A-94A3-EAA76CF875FF">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A04">
+        A list of strings that specify the symbol names you want
+        <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-34813FD2-F7E1-4E83-940F-A28809D0BE1C">
+         atoms-family
+        </samp>
+        to search for.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__SECTION_D4DD4ACFC9684013AF25908950E75A4F">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-37311894-933B-4348-B119-724C1EF6B8F5">
+     <strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-55085C74-0DB3-4BB7-8289-5777C9B95619">
+      Type:
+     </strong>
+     List
+    </p>
+    <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A02">
+     A list of symbols. If you specify
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-83EFBF94-BFB9-447C-AC91-38C64F94F50C">
+      symlist
+     </samp>
+     , then
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-CAD831BE-FEE0-4A13-9016-021B05CBBC05">
+      atoms-family
+     </samp>
+     returns the specified symbols that are currently defined, and returns
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-E56F1635-4B92-4A3B-8D7E-B81272CF44FD">
+      nil
+     </samp>
+     for those symbols that are not defined.
+    </p>
+   </div>
+   <div class="section" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__SECTION_1E2FFB4BC8744F159BD3AFB6BE5F57DC">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-32B1CD5E-8CA4-4100-B29A-4AAC3F0B7C27">(atoms-family 0)</strong>
+(BNS_PRE_SEL FITSTR2LEN C:AI_SPHERE ALERT DEFUN C:BEXTEND REM_GROUP
+ B_RESTORE_SYSVARS BNS_CMD_EXIT LISPED FNSPLITL...)</pre>
+    <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-3A00">
+     The following code verifies that the symbols
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-3439CF4F-22AF-4404-A6C1-2746AB3B12B8">
+      CAR
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-4AA49186-C0BF-472D-B3DB-45F57568631B">
+      CDR
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-8D47C4B2-04BE-42BA-ADA9-69DAA8B8E9FF">
+      XYZ
+     </samp>
+     are defined, and returns the list as strings:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-71B38268-2EF8-4D13-83BC-1516A0AB798D">(atoms-family 1 '("CAR" "CDR" "XYZ"))</strong>
+("CAR" "CDR" nil)</pre>
+    <p class="p" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__WSFACF1429558A55DE11F0759FF1E4B858C-39FF">
+     The return value shows that the symbol
+     <samp class="ph codeph" id="GUID-0B35850D-9E62-446B-BAA2-0598A4BDE3D7__GUID-C0D4912E-D385-4C6D-9EBA-AD3103B2AEBB">
+      XYZ
+     </samp>
+     is not defined.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Symbol_Handling_Functions_Reference_AutoLISP.html">
+       Symbol-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="atom_AutoLISP.html" title="Verifies that an item is an atom">
+       atom (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

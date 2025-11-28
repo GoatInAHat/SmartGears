@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Writes text to the status line or to screen menu areas" name="description"/>
+  <meta content="GRTEXT" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   grtext (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      grtext (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Writes text to the status line or to screen menu areas
+   </p>
+   <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-3AA2E100-6343-4C23-B766-2039531E4ECC">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(grtext <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-E8E088D8-2726-4011-BB7A-6AE68B3D0A3A">[box text [highlight]]</em>)</pre>
+    <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WS1A9193826455F5FF-1E1423D1125831BDA67-7B5B">
+     <dl class="dl" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WS1A9193826455F5FF-1E1423D1125831BDA67-7B5B">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-594C8714-A3BC-4BD7-884F-7B7C7749C230">
+        box
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-11E12C92-BA9B-44DF-ABDA-2A4CDDD9FB18">
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-4823A15C-0B69-4E7A-AA12-FBD96607A091">
+        <strong class="ph b" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-0120F698-FB0C-4659-B6C5-CF92057738A4">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36DB">
+        Location in which to write the text.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-932B3A0F-4DF6-42E0-8F26-32EA5D47AC66">
+        text
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-DAE4F320-409A-48B2-9193-5C5C67168A4D">
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-83FBC710-74DC-4E33-BE58-463ADC632062">
+        <strong class="ph b" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-8D161003-A26F-4417-B101-52590445C33D">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36DA">
+        Specifies the text to be written to the screen menu or status line location. The
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-8297E6C0-CB81-4D32-AC39-FDF1F73E1CC5">
+         text
+        </em>
+        argument is truncated if it is too long to fit in the available area.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-28541DAF-FC34-4BAF-91E9-462AD9A91DB3">
+        highlight
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-45E5AE64-1777-4B34-B740-3B964C92DE3F">
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-B4D21167-F687-4D6D-8B86-C74E4216D6DE">
+        <strong class="ph b" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-0C55D194-B885-4423-A4B6-32CFE8349837">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D9">
+        Selects or deselects a screen menu location.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__SECTION_96026C5963854749AD9A7C5E7E81E18F">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-1C98E123-3E84-4025-9BC3-2D9107E5B802">
+     <strong class="ph b" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-46BB5CA9-DEB8-4723-A830-1940916BF3F0">
+      Type:
+     </strong>
+     String
+    </p>
+    <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D6">
+     The string passed in the
+     <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-C2A832F1-C1D7-4BAB-BDDF-7783C9184BD0">
+      text
+     </em>
+     argument, if successful, and
+     <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-9082B799-662C-4206-A522-E19AC7332EB4">
+      nil
+     </samp>
+     if unsuccessful or no arguments are supplied.
+    </p>
+   </div>
+   <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__SECTION_59580535A0124563AA8363C2649A2029">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36DD">
+     This function displays the supplied text in the menu area; it does not change the underlying menu item. The
+     <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-07948AEF-352F-4130-958F-180EA4A65F85">
+      grtext
+     </samp>
+     function can be called with no arguments to restore all text areas to their standard values.
+    </p>
+    <div class="note note" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-7A3EADCD-3E7C-4B3E-9E1C-308EB6400B39">
+     <span class="notetitle">
+      Note:
+     </span>
+     This function is supported on Mac OS and Web, but does not affect the program.
+    </div>
+    <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D8">
+     If called without arguments,
+     <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-B47AA1B0-17E8-46FD-A6DD-C4F29D75EA93">
+      grtext
+     </samp>
+     restores all text areas to their standard values. If called with only one argument,
+     <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-4ADD4024-0538-4F78-B6CB-ECE4BD0EC295">
+      grtext
+     </samp>
+     results in an error.
+    </p>
+    <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-A5D993E2-3C5B-480B-8664-C4FD0DC018D7">
+     <dl class="dl" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-A5D993E2-3C5B-480B-8664-C4FD0DC018D7">
+      <dt class="dt dlterm">
+       Screen Menu Area (Obsolete)
+      </dt>
+      <dd class="dd" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-F89D7C7B-1F42-4AD9-A969-3C7DF45E62CE">
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D4">
+        Setting
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-1A92F7DE-4EDA-4A55-A477-82DC7CCCB466">
+         box
+        </em>
+        to a positive or zero value specifies a screen menu location. Valid
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-349D2F0F-7FBF-4197-9004-1EDBE66DA371">
+         box
+        </em>
+        values range from 0 to the highest-numbered screen menu box minus 1. The AutoCAD SCREENBOXES system variable reports the maximum number of screen menu boxes. If the
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-531B405D-51C5-4E0C-BA10-505DCF7B2314">
+         highlight
+        </em>
+        argument is supplied as a positive integer,
+        <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-1C8920EC-B076-42AD-A463-C0D713337FA8">
+         grtext
+        </samp>
+        highlights the text in the designated box. Highlighting a box automatically dehighlights any other box already highlighted. If
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-C07DDDA6-D521-42EF-B874-6987F47591A7">
+         highlight
+        </em>
+        is zero, the menu item is dehighlighted. If
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-B4C67505-E448-413C-989F-D77CB477045C">
+         highlight
+        </em>
+        is a negative number, it is ignored. On some platforms, the text must first be written without the
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-F899BDD8-2C13-4B5F-BAD8-F4F1252F4134">
+         highlight
+        </em>
+        argument and then must be highlighted. Highlighting of a screen menu location works only when the cursor is not in that area.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       Status Line Area
+      </dt>
+      <dd class="dd" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-AF52CE85-212B-4075-B2BA-B9EE9353D8D3">
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D2">
+        If
+        <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-1DC4A96D-2711-4FD3-A1CC-A5369F36A84A">
+         grtext
+        </samp>
+        is called with a
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-4EECFD4C-A955-4752-92B8-7C788553DC78">
+         box
+        </em>
+        value of -1, it writes the text into the mode status line area. The length of the mode status line differs from display to display (most allow at least 40 characters). The following code uses the
+        <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-1BDBCCB5-D824-40BE-9AC5-2D65D1E25F4F">
+         $(linelen)
+        </samp>
+        DIESEL expression to report the length of the mode status area.
+       </p>
+       <pre class="pre codeblock prettyprint">(setq modelen (menucmd "M=$(linelen)"))</pre>
+       <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__WSFACF1429558A55DE11F0759FF1E4B858C-36D1">
+        If a
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-C832F9AC-9585-4378-BEDA-84A194CBF888">
+         box
+        </em>
+        value of -2 is used,
+        <samp class="ph codeph" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-6BB28E53-063F-46A3-9D6F-D45ED1D8E74C">
+         grtext
+        </samp>
+        writes the text into the coordinate status line area. If coordinate tracking is turned on, values written into this field are overwritten as soon as the pointer sends another set of coordinates. For both -1 and -2
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-6C50875F-DC79-474F-9986-A2D136411BDF">
+         box
+        </em>
+        values, the
+        <em class="ph i" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-E00387CF-DFC7-4371-A26A-DE3EE7778C7A">
+         highlight
+        </em>
+        argument is ignored.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__SECTION_32ACB4EAC6E84195AB2182B5AF565B0B">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-5B0B01CA-BDBA-4A77-B840-6EE64591AC47__GUID-B3B59AB7-3E23-4ED2-B7B3-F1FC6C7746A5">
+     N/A
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Display_Control_Functions_Reference_AutoLISP.html">
+       Display Control Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="grdraw_AutoLISP.html" title="Draws a vector between two points, in the current viewport">
+       grdraw (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="grvecs_AutoLISP.html" title="Draws multiple vectors in the drawing area">
+       grvecs (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

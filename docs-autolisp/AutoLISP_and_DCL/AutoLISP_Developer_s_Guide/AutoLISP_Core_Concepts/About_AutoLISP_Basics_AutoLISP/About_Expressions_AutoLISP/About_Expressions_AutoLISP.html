@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="An expression is the basic structure that is used when working with AutoLISP." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-AD10051A-822B-4E94-A615-F2A074E878C5" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Expressions (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Expressions (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    An expression is the basic structure that is used when working with AutoLISP.
+   </p>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__WSFACF1429558A55DE11F0759FF1E4B858C-665C">
+    AutoLISP expressions have the following form:
+   </p>
+   <pre class="pre codeblock prettyprint">(function <em class="ph i" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-8089F7A9-1A31-40E1-AA34-3E4BFED77DF2">arguments</em>)</pre>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-BA669EE9-858B-4B92-A6FA-9BF38499B3FD">
+    Each expression:
+   </p>
+   <ul class="ul" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__UL_EAFC5E0940904257A0F074F6314B6B78">
+    <li class="li" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__LI_4D442035CD8E41ACAD2D4B36FAFEBDF3">
+     Begins with an open (left) parenthesis.
+    </li>
+    <li class="li" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__LI_59C6E84B045E48A88448EA3413087ADA">
+     Consists of a function name and optional arguments for that function. Each argument can also be an expression.
+    </li>
+    <li class="li" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__LI_F628E6C6ABEE41BBB78BE9AE53B0C05D">
+     Ends with a close (right) parenthesis.
+    </li>
+    <li class="li" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__LI_1AB01194207C4722BEF14EB3EF5D8FA4">
+     Returns a value that can be used by a surrounding expression. The value of the last interpreted expression is returned to the calling expression.
+    </li>
+   </ul>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__WSFACF1429558A55DE11F0759FF1E4B858C-665A">
+    For example, the following code example involves three functions:
+   </p>
+   <pre class="pre codeblock prettyprint">(fun1 (fun2 <em class="ph i" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-A888D1C1-6B6B-4147-9423-ACD86144511C">arguments</em>)(fun3 <em class="ph i" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-498D1AE0-9938-4AFE-8A56-F13D8765F91A">arguments</em>))</pre>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__WSFACF1429558A55DE11F0759FF1E4B858C-6659">
+    The first function,
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-C58D9E96-C28A-4442-BB3E-B9CDCE83D33C">
+     fun1
+    </samp>
+    , has two arguments, which in this example are expressions. The values returned by the expressions are used by
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-D1204F55-9B25-4B38-A930-26F9A31035C3">
+     fun1
+    </samp>
+    . The other functions,
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-2B9603C4-97B3-4E74-9427-7539CF720520">
+     fun2
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-DF529978-A202-4D1F-9D6F-6808D6793E91">
+     fun3
+    </samp>
+    , each have one argument. AutoLISP evaluates the innermost expression first, working its way outward. For this example, expressions containing
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-51C6E54C-A305-4F5C-A562-A0C65C430D97">
+     fun2
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-F986A3C2-B16D-4C38-9160-C35125569103">
+     fun3
+    </samp>
+    are evaluated before
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-2A54850D-482A-4FF6-A412-131CB42E3AAE">
+     fun1
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__WSFACF1429558A55DE11F0759FF1E4B858C-6658">
+    The following example shows the use of the
+    <strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-0E8202FF-934C-4272-B055-89E6BA0704C2">
+     <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-C83B4BD0-1B94-4570-917D-25B4F22750C3">
+      *
+     </samp>
+    </strong>
+    (multiplication) function, which accepts one or more numbers as arguments:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-44D4B9A1-4192-4EDB-AA4F-61A430ED0D53">(* 2 27)</strong>
+54</pre>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__WSFACF1429558A55DE11F0759FF1E4B858C-6657">
+    Because this code example has no surrounding expression, AutoLISP returns the result to the window from which you entered the code.
+   </p>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-2B00D0DC-71F8-4F90-8B79-EE8A468E59C2">
+    Expressions nested within other expressions return their result to the surrounding expression.
+   </p>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-FEEEAA15-7A7E-4884-9F87-4B9375A911B4">
+    The following example uses the result from the
+    <strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-D752D576-C078-4324-9B5C-976FA8C7A6F4">
+     <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-A3E58C55-C69B-4CA6-9E51-EE46531E0A8A">
+      +
+     </samp>
+    </strong>
+    (addition) function as one of the arguments for the
+    <strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-B39081F7-D3FC-43AD-95C3-BD57474230D9">
+     <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-AC92DB38-11B1-4977-9E36-3C45E58BE912">
+      *
+     </samp>
+    </strong>
+    (multiplication) function.
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-FEA404E9-BAD3-41F2-8476-855F4E4F06CC">(* 2 (+ 5 10))</strong>
+30</pre>
+   <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-1A71DF25-EA2C-4484-B596-D677BB82A52B">
+    In the previous example,
+    <samp class="ph codeph" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-F1114F9D-A332-4935-9525-01EFF68E6A35">
+     (+ 5 10)
+    </samp>
+    returns a value of 5. After the innermost expression is evaluated, the AutoLISP interpreter sees the following:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-7A1491E0-3417-40D8-8962-65F69AF1567B">(* 2 15)</strong>
+30</pre>
+   <div class="section" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__SECTION_C06944AB49BB46F8820179A2A98844B8">
+    <h2 class="title sectiontitle">
+     Entering AutoLISP Expressions
+    </h2>
+    <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-79CE2399-7766-4088-83D4-9BB8F8D22255">
+     AutoLISP expressions can be entered directly at the AutoCAD Command prompt, loaded with an AutoLISP source (LSP) file, or evaluated with the Visual LISP Editor (AutoCAD for Windows only). When you type an open (left) parenthesis, you indicate to AutoCAD that the following text should be passed to the AutoLISP interpreter for evaluation.
+    </p>
+    <div class="note note" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-D4045ACF-F88E-481E-8588-14B6B71BF9DF">
+     <span class="notetitle">
+      Note:
+     </span>
+     The Visual LISP Editor is not available for AutoCAD LT for Windows or on Mac OS.
+    </div>
+    <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-B4E9094D-8A0C-49F2-BBAD-29BAF328B11A">
+     If you enter the incorrect number of close (right) parentheses, AutoLISP displays the following prompt:
+    </p>
+    <pre class="pre codeblock prettyprint">(_&gt;</pre>
+    <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-EF961B95-FBA7-47CB-87DB-003E46AC49C8">
+     The number of open parentheses in this prompt indicates how many levels of open parentheses remain unclosed. If this prompt appears, you must enter the required number of close parentheses for the expression to be evaluated.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-646D1D20-8370-4992-91FE-0939652258BD">(* 2 (+ 5 10</strong>
+((_&gt; <strong class="ph b" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-E3D1F8CA-F0BA-40A3-918B-CE736C7CA8D0">) )</strong>
+30</pre>
+    <p class="p" id="GUID-AD10051A-822B-4E94-A615-F2A074E878C5__GUID-324AEDC2-626E-4A67-9585-E825201F313D">
+     A common mistake is to omit the closing quotation mark (") in a text string, in which case the close parentheses are interpreted as part of the string and have no effect in resolving the open parentheses. To correct this condition, press Shift+Esc to cancel the function, then re-enter it correctly.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="About_Function_Syntax_AutoLISP.html">
+       About Function Syntax (AutoLISP)
+      </a>
+      <br/>
+      Reference topics in the documentation use a consistent convention to describe the proper syntax for an AutoLISP function.
+     </li>
+    </ul>
+   </div>
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="../About_AutoLISP_Basics_AutoLISP.html" title="You can use number, string, and list-handling functions to customize AutoCAD.">
+      About AutoLISP Basics (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Function_Syntax_AutoLISP.html" title="Reference topics in the documentation use a consistent convention to describe the proper syntax for an AutoLISP function.">
+       About Function Syntax (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Source_Code_Files_AutoLISP/About_Formatting_and_Spaces_in_Code_AutoLISP.html" title="AutoLISP code can span multiple lines, and contain empty lines and extra spaces. Empty lines and extra spaces do not have any significant meaning, but can make your code easier to read.">
+       About Formatting and Spaces in Code (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Data_Types_AutoLISP/About_Symbols_and_Variables_AutoLISP/About_Symbols_and_Variables_AutoLISP.html" title="AutoLISP uses symbols to refer to functions and data holders.">
+       About Symbols and Variables (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Symbol_and_Function_Handling_AutoLISP/About_Functions_with_Arguments_AutoLISP/About_Functions_with_Arguments_AutoLISP.html" title="With AutoLISP, many functions require you to pass them values. These values are known as arguments.">
+       About Functions with Arguments (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4CEE5072-8817-4920-8A2D-7060F5E16547">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

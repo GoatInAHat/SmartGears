@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Converts a string that represents a real (floating-point) value into a real value" name="description"/>
+  <meta content="DISTOF" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   distof (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      distof (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Converts a string that represents a real (floating-point) value into a real value
+   </p>
+   <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-4C976386-38BC-48A5-A390-E452B456662C">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(distof <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-FCACD425-5BC1-4374-A42E-CF025F880A79">str [mode]</em>)</pre>
+    <div class="section" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WS1A9193826455F5FF-1E1423D1125831BDA67-7B84">
+     <dl class="dl" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WS1A9193826455F5FF-1E1423D1125831BDA67-7B84">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-4A097A6B-46F9-4D08-BC5D-9FFE68966818">
+        str
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-1F6B87C4-9DDA-4207-819D-DF2FF1E6F89F">
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-4F869D78-F64E-49C3-BE42-95BD07220B7F">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-D484D682-1EFF-4C1D-BF8B-CCD63220A544">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E5">
+        A string to be converted. The argument must be a string that
+        <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-210EE2D5-13BE-4C5D-862A-B89A49F83739">
+         distof
+        </samp>
+        can parse correctly according to the units specified by
+        <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-2B4B33D0-FA14-4B9E-B7F7-B5DBE8A85760">
+         mode
+        </em>
+        . It can be in the same form that
+        <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-3B983BF2-9550-475B-A66A-257796077BB3">
+         rtos
+        </samp>
+        returns, or in a form that AutoCAD allows for keyboard entry.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-5DB0CF83-F91A-4052-B885-C216F86D54A6">
+        mode
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-F6C94A53-66A0-4A01-AEB6-57FE40574D00">
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-B45D9381-35F9-467E-AA0F-1C0F216DC8CA">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-89811DC6-22A8-4EDA-9591-B21BBD48E6FE">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E4">
+        The units in which the string is currently formatted. The
+        <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-DB0B6B35-DDD3-4D4B-BE16-73B9390BEA27">
+         mode
+        </em>
+        corresponds to the values allowed for the AutoCAD LUNITS system variable. Specify one of the following numbers for
+        <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-BF9ABE7A-2D44-45CB-8DB2-020835DC8370">
+         mode
+        </em>
+        :
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E3">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-08B317A4-0A57-4286-852B-794E38F13283">
+         1
+        </strong>
+        -- Scientific
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E2">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-E03132A8-6287-4AFD-A2D4-EDE430A3783C">
+         2
+        </strong>
+        -- Decimal
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E1">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-DD62E5C8-AE7E-4637-A05D-29A4BFDBEBDF">
+         3
+        </strong>
+        -- Engineering (feet and decimal inches)
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E0">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-0C1F219F-5FB9-4B18-8416-2F8682CE39AA">
+         4
+        </strong>
+        -- Architectural (feet and fractional inches)
+       </p>
+       <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38DF">
+        <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-9504ADD5-BF4C-441A-B12E-7F81DE9646EF">
+         5
+        </strong>
+        -- Fractional
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__SECTION_660C85685D5545CF863092501986A35F">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-C9B9ED0A-838F-4FF9-A64F-CD856F2C99E5">
+     <strong class="ph b" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-91A9E0DC-9D72-4CF1-8D6F-6775FC77114B">
+      Type:
+     </strong>
+     Real
+    </p>
+    <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38DD">
+     A real number, if successful; otherwise
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-5CBEC8B6-EB84-4AAD-BDF5-1F3D59046CFC">
+      nil
+     </samp>
+     .
+    </p>
+    <div class="note note" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WS1A9193826455F5FF-7C08E89711EC57B47A8-79AF">
+     <span class="notetitle">
+      Note:
+     </span>
+     The
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-C13966B4-8FE2-4629-9F1F-E78AF77E64AC">
+      distof
+     </samp>
+     function treats modes 3 and 4 the same. That is, if
+     <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-2D172B7F-2D33-4E12-BBAC-13E8CA75701D">
+      mode
+     </em>
+     specifies 3 (engineering) or 4 (architectural) units, and
+     <em class="ph i" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-0830720B-7EB1-472E-9BF3-6BDB6617E073">
+      string
+     </em>
+     is in either of these formats,
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-65F72D54-0153-4F47-99A2-AE94F1D9A6BA">
+      distof
+     </samp>
+     returns the correct real value.
+    </div>
+   </div>
+   <div class="section" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__SECTION_BB011D9730ED4145A23B8C398CD4EEA7">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__WSFACF1429558A55DE11F0759FF1E4B858C-38E7">
+     The
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-C89CB7A2-484C-403F-9550-6FE7AEF97D45">
+      distof
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-18E5AEE3-C2B7-4B29-A94D-9C41D0E57616">
+      rtos
+     </samp>
+     functions are complementary. If you pass
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-1C8DD18F-3875-4C7C-8653-580EE4436440">
+      distof
+     </samp>
+     a string created by
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-DA03E227-126B-475A-8EF1-B1416E4B3DDF">
+      rtos
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-9FC46F8E-9805-4B97-9540-95A4D7FDCAF4">
+      distof
+     </samp>
+     is guaranteed to return a valid value, and vice versa (assuming the mode values are the same).
+    </p>
+   </div>
+   <div class="section" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__SECTION_7B452BA350EF4CB79B7D024D3CD47B4A">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-CC0490B9-29BC-44C4-A317-5BAA34B0168E__GUID-050BC1D9-8CF5-4486-8C09-20E1850E676A">
+     None
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Conversion_Functions_Reference_AutoLISP.html">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

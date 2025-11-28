@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Constructs and returns a list" name="description"/>
+  <meta content="VL-LIST" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-list* (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-list* (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Constructs and returns a list
+   </p>
+   <p class="p" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-164037EC-39E0-40D0-9E6B-595DABBA1517">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-list* <em class="ph i" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-24A66667-D235-43E8-908B-5B44C85CDEFD">object [object ...]</em>)</pre>
+    <div class="section" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-1E1423D1125831BDA67-7AD1">
+     <dl class="dl" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-1E1423D1125831BDA67-7AD1">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-BC6D8F19-3A4C-4E4D-AD7B-2740FDF73E1A">
+        object
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-BA2BE267-AF4A-4E83-AFC1-EA8A9BCEFA4F">
+       <p class="p" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-D50BCEC9-DD32-4BE6-AA54-964A803ED0A0">
+        <strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-1201CFB4-7C9F-43AB-BF38-8789767F5E98">
+         Type:
+        </strong>
+        Integer, Real, String, List, File, Symbol, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WSFACF1429558A55DE11F0759FF1E4B858C-3128">
+        Any LISP object.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__SECTION_2390D38CD1224244B427E69A20F009F1">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WSFACF1429558A55DE11F0759FF1E4B858C-3126">
+     The
+     <samp class="ph codeph" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-B6BBF778-F961-4EF5-B5F8-C9005BAA5EDE">
+      vl-list*
+     </samp>
+     function is similar to
+     <samp class="ph codeph" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-ADAADE5D-CF84-40C3-90E3-07647AE99457">
+      list
+     </samp>
+     , but it will place the last
+     <em class="ph i" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-3C94A815-FE1D-499D-A7DB-7526DB904396">
+      object
+     </em>
+     in the final
+     <samp class="ph codeph" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-A9EBDA6A-B4D6-4ABA-98E4-73B0A3389640">
+      cdr
+     </samp>
+     of the result list. If the last argument to
+     <samp class="ph codeph" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-4FC09706-2B8F-4C91-8839-193E735DC667">
+      vl-list*
+     </samp>
+     is an atom, the result is a dotted list. If the last argument is a list, its elements are appended to all previous arguments added to the constructed list. The possible return values from
+     <samp class="ph codeph" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-81A243C1-C33C-4ACB-A804-94B022C317D6">
+      vl-list*
+     </samp>
+     are
+    </p>
+    <ul class="ul" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-68B1">
+     <li class="li" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-7C08E89711EC57B47A8-77A2">
+      An atom, if a single atom
+      <em class="ph i" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-AC9F5AC5-0EB3-4EEE-91C0-1970484C77EE">
+       object
+      </em>
+      is specified.
+     </li>
+     <li class="li" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-7C08E89711EC57B47A8-77A1">
+      A dotted pair, if all
+      <em class="ph i" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-B6361DAF-CADD-4D65-A4C4-7E1B25B8CD4F">
+       object
+      </em>
+      arguments are atoms.
+     </li>
+     <li class="li" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-7C08E89711EC57B47A8-77A0">
+      A dotted list, if the last argument is an atom and neither of the previous conditions is true.
+     </li>
+     <li class="li" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__WS1A9193826455F5FF-7C08E89711EC57B47A8-779F">
+      A list, if none of the previous statements is true.
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__SECTION_B48DEB013E1B4894B8664458A5712CEE">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-A5D890B9-4A41-4812-A478-753631EA96D8">(vl-list* 1)</strong>
+1
+
+<strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-D68DBA3C-D4A2-4BF5-A3E7-FBEBEC81AA5F">(vl-list* 0 "text")</strong>
+(0 . "TEXT")
+
+<strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-C5A55E03-5802-4E6D-AB4E-EC35B6CEA10D">(vl-list* 1 2 3)</strong>
+(1 2 . 3)
+
+<strong class="ph b" id="GUID-959DE11B-95E8-4AC3-BFBD-02406977D343__GUID-CCF9FA8B-0E12-442E-982E-65F5CE0574B4">(vl-list* 1 2 '(3 4))</strong>
+(1 2 3 4)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/List_Manipulation_Functions_Reference_AutoLISP.html">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../L_Functions/list_AutoLISP.html" title="Takes any number of expressions and combines them into one list">
+       list (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../A_Functions/append_AutoLISP.html" title="Takes any number of lists and appends them together as one list">
+       append (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../L_Functions/listp_AutoLISP.html" title="Verifies that an item is a list">
+       listp (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_every_AutoLISP.html" title="Checks whether the predicate is true for every element combination">
+       vl-every (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

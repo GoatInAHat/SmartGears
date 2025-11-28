@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The AutoCAD AutoLISP Extension for Microsoft Visual Studio (VS) Code allows you to write custom routines with the AutoLISP programming language that can be used to automate workflows and extend the functionality of AutoCAD." name="description"/>
+  <meta content="create LSP file" name="indexterm"/>
+  <meta content="autolisp extension" name="indexterm"/>
+  <meta content="programming" name="job"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Tutorial: Getting Started with the AutoLISP Extension (AutoLISP/VS Code)
+  </title>
+  <link href="../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Tutorial: Getting Started with the AutoLISP Extension (AutoLISP/VS Code)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The AutoCAD AutoLISP Extension for Microsoft Visual Studio (VS) Code allows you to write custom routines with the AutoLISP programming language that can be used to automate workflows and extend the functionality of AutoCAD.
+   </p>
+   <div class="section" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__SECTION_AB4497470D024CE79C954456AF4914E2">
+    <h2 class="title sectiontitle">
+     Prerequisites
+    </h2>
+    <ol class="ol" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__OL_FBA210679F03453DB5D4577C48D4F658">
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_50D45C91F96D48C884542D9415CF1C36">
+      <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-B18FA64E-AF62-4399-9D4F-57A18A472185">
+       Install Visual Studio Code on your workstation.
+      </a>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_0E5DC8CB12DD4A0F8932BEF41815BF87">
+      <a class="xref" href="Installing_and_Configuring_the_AutoLISP_Extension.html" title="After you have installed Microsoft Visual Studio (VS) Code, you can install and configure the AutoCAD AutoLISP Extension which will allow you to manage and debug custom AutoLISP programs.">
+       Install and configure the AutoCAD AutoLISP Extension.
+      </a>
+     </li>
+    </ol>
+   </div>
+   <div class="section" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__SECTION_7303CCC117704D6DA40E3091175CE003">
+    <h2 class="title sectiontitle">
+     Topics in this Tutorial
+    </h2>
+    <ul class="ul" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__UL_E06E78DC8A5D45DC848E97A9CBA0B357">
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_044CEC281E3645DC884F74B41DDF2029">
+      <a class="xref" href="Getting_Started_with_the_AutoLISP_Extension.html">
+       Create an AutoLISP (LSP) File
+      </a>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_1611D88D1DA242FE9791ED8BD7735169">
+      <a class="xref" href="Getting_Started_with_the_AutoLISP_Extension.html">
+       Load an AutoLISP (LSP) File
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__SECTION_CCC7C408982841E4B40614EA4FCFBC15">
+    <h2 class="title sectiontitle">
+     Launch Visual Studio (VS) Code
+    </h2>
+    <p class="p">
+     The following methods can be used to launch Visual Studio Code after it has been installed:
+    </p>
+    <ul class="ul" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__UL_EF6BC957BB9C4F7BAB9C3DE50B49F53C">
+     <p class="p">
+      <strong class="ph b">
+       Windows
+      </strong>
+     </p>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_C518118808414ED58F04F9B7DA0F3A24">
+      In File Explorer, click Start menu &gt; Visual Studio Code &gt; Visual Studio Code.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_D66661ABC37D41D18B2B05FE7302797A">
+      In AutoCAD, not AutoCAD LT, at the Command prompt, enter
+      <strong class="ph b">
+       vlisp
+      </strong>
+      . If displayed, read and close the informational message to proceed.
+      <div class="note note" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__GUID-81D32F9E-0F1E-44DF-A20C-94EABA326E55">
+       <span class="notetitle">
+        Note:
+       </span>
+       Visual Studio Code might prompt for permission to allow the AutoCAD AutoLISP Extension to open a URI that displays a message box. Click Open to allow the extension to display the informational message during startup, or click Cancel to suppress the display of the informational message. Check "Don't ask again for this extension." to have VS Code remember your choice.
+      </div>
+     </li>
+     <p class="p">
+      <strong class="ph b">
+       Mac OS
+      </strong>
+     </p>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_6D20843E6E4A4B719F7F4979A14CBDBB">
+      In Finder, click Go &gt; Applications and then click Visual Studio Code in the Applications window.
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__SECTION_455095C496D24B0B960F5D7C072C4E05">
+    <h2 class="title sectiontitle">
+     Create an AutoLISP (LSP) File
+    </h2>
+    <p class="p">
+     LSP files are used to store AutoLISP code statements that can later be executed in a drawing and shared with others.
+    </p>
+    <p class="p">
+     The following steps explain how to create an AutoLISP (LSP) file named
+     <em class="ph i">
+      Create-LSP-Tutorial.lsp
+     </em>
+     in the open working folder.
+    </p>
+    <ol class="ol" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__OL_6BEE5BAA93544C4C9C10D22FE6F80B8B">
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_05D300D4A5C54F87ADCA92DEAD889B8E">
+      In Visual Studio Code, on the Activity Bar, click Explorer.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_45C2E687B4704639AC38E74BFECE4A0C">
+      In the Explorer view, adjacent to the open folder's name, click New File.
+      <div class="fig fignone" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__FIG_5508642316704EEEB0B1FB78B851059F">
+       <img class="image" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__IMAGE_F59AF01379234CE8A9020C7896037CB6" src="../../../_assets/GUID_74AF2363_71F7_4431_82AE_1CAC15239695-5d744923.png"/>
+      </div>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_043FCD772F4244FAA0AF56A9FD2CCA18">
+      In the in-place editor, type
+      <strong class="ph b">
+       Create-LSP-Tutorial.lsp
+      </strong>
+      and press Enter.
+      <p class="p">
+       If you enter a different name, make sure to include the
+       <em class="ph i">
+        .lsp
+       </em>
+       file extension.
+      </p>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_A2B97FAC01A043198F996182B6AF802E">
+      In the
+      <em class="ph i">
+       Create-LSP-Tutorial.lsp
+      </em>
+      editor window, copy/paste or type the following:
+      <pre class="pre codeblock prettyprint">;; Displays a message box containing the entered text
+(defun c:hello ( / msg)
+(setq msg (getstring T "\nEnter a message: "))
+(alert msg)
+)
+
+;; Draws a line between two points
+(defun c:drawline ( / pt1 pt2) ;; Declared local variables
+;; Prompt for two points
+(setq pt1 (getpoint "\nSpecify start point of line: ")
+pt2 (getpoint pt1 "\nSpecify end point of line: ")
+)
+
+;; Check to see if the user specified two points
+(if (and pt1 pt2)
+(command "_.line" pt1 pt2 "")
+(prompt "\nInvalid or missing point(s)")
+)
+
+;; Exit quietly
+(princ)
+)
+
+(prompt "\nAutoLISP Tutorial file loaded.")
+(princ) ; Suppress the return value of the prompt function</pre>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_58C4D34BF1C64D9DB6AC7B3A71D4466C">
+      One the menu bar, click File menu &gt; Save to save the changes to the LSP file.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_765F96C859274C3CB2FA8B1622589007">
+      Click File menu &gt; Close Editor or Close (X) on the file's tab to close the editor window.
+     </li>
+    </ol>
+   </div>
+   <div class="section" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__SECTION_6C72FE8DC10C42B4B031650A54FDCBEF">
+    <h2 class="title sectiontitle">
+     Load an AutoLISP (LSP) File
+    </h2>
+    <p class="p">
+     AutoLISP code statements stored in LSP files must be loaded into a drawing open in AutoCAD before they can be executed. While Visual Studio Code can be used to create and load LSP files, you will typically want to load your custom programs directly into AutoCAD before using them.
+    </p>
+    <div class="note note" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__GUID-8BB97B4E-EE19-4B06-B41D-52600F1EC7EF">
+     <span class="notetitle">
+      Note:
+     </span>
+     You will need to load your LSP files into AutoCAD from Visual Studio Code when you want to debug the code statements that define your custom programs. Debugging the code statements stored in the
+     <em class="ph i">
+      Create-LSP-Tutorial.lsp
+     </em>
+     file is explained in
+     <a class="xref" href="Debugging_LSP_Files_with_the_AutoLISP_Extension.html" title="After you create an AutoLISP (LSP) file and add code statements to the file, you can connect Visual Studio Code to AutoCAD and step through your custom functions using many of the debug tools that Visual Studio Code offers.">
+      Tutorial: Debugging LSP Files with the AutoLISP Extension
+     </a>
+     .
+    </div>
+    <p class="p">
+     The following steps explain how to load the
+     <em class="ph i">
+      Create-LSP-Tutorial.lsp
+     </em>
+     file into AutoCAD.
+    </p>
+    <ol class="ol" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__OL_F4C2BF501A7C4276A376291C520C67BE">
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_F6AAB7FE28354AFEA1370137F961A61E">
+      In AutoCAD, do one of the following:
+      <ul class="ul" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__UL_812C31E7B3544D45BDE98BAFD4BA8D95">
+       <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_FBE1896219F34F6ABA248E030FA0FD43">
+        <strong class="ph b">
+         (Windows)
+        </strong>
+        On the ribbon, click Manage tab &gt; Applications panel &gt; Load Application.
+       </li>
+       <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_11C7CBD7D8984038BA6B403D16B87B93">
+        <strong class="ph b">
+         (Mac OS)
+        </strong>
+        On the Mac OS menu bar, click Tools &gt; Load Application.
+       </li>
+       <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_AF39F328D3C1467B9215246D7C78EF80">
+        At the Command prompt, enter
+        <strong class="ph b">
+         appload
+        </strong>
+        .
+       </li>
+      </ul>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_897F6000887846C78289C94386D0B05C">
+      In the Load/Unload Applications dialog box, browse to the
+      <em class="ph i">
+       LSP Files
+      </em>
+      folder or the folder in which you stored the
+      <em class="ph i">
+       Create-LSP-Tutorial.lsp
+      </em>
+      file.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_190F2D2B3997465BA98A874FD64BDF0E">
+      Select the
+      <em class="ph i">
+       Create-LSP-Tutorial.lsp
+      </em>
+      file and click Load.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_F30D457250C043F799418DF910C71E5C">
+      If the File Loading – Security Concern dialog box is displayed, click Load again.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_B5588445F4B149B6B75A19CEE5211DBF">
+      Click Close to return to the application window.
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_0A8506DD6E324007815EAD55CABC67A2">
+      You should see the following message in the Command History window.
+      <p class="p promptblock">
+       AutoLISP Tutorial file loaded.
+      </p>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_624C92D6D8DB4F19B8524B2E7D8E4436">
+      At the Command prompt, enter
+      <strong class="ph b">
+       hello
+      </strong>
+      .
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_8C7098E06C2246149EF660B0DDBD7023">
+      At the
+      <em class="ph i">
+       Enter a message:
+      </em>
+      prompt, type a text string and press Enter.
+      <p class="p">
+       A message box with the entered text string is displayed.
+      </p>
+     </li>
+     <li class="li" id="GUID-9999E8BF-CFA1-412F-A265-3568287DB77E__LI_CD95019B2C9D46A4A7D96D6DB29F6F1B">
+      Click OK to close the message box.
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8BCC1A08-B530-4220-A199-4CB40FCB20ED">
+       Creating and Opening AutoLISP Files (AutoLISP/VS Code)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo">
+    <h4 class="related">
+     Related Information
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D126D06C-D287-429D-9FC8-DC3B6B81345D">
+       To Create a New AutoLISP or DCL File (AutoLISP/VS Code)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

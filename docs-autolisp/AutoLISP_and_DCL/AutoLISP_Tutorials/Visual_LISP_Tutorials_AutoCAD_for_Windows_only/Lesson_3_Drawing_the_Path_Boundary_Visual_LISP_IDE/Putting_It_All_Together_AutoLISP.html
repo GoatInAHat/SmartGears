@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-D0CF600F-566E-4D79-9DEB-3039A97E5348" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Putting It All Together (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Putting It All Together (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-0335D764-3895-4703-A892-2F1187108B51">
+    <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-778B">
+     You now have all the code you need to draw the outline of the garden path.
+    </p>
+   </div>
+   <div class="section" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE6C92BAFEE30F7510-7E3A">
+    <h2 class="title sectiontitle">
+     To update your code
+    </h2>
+    <ol class="ol" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF18CB41610EC0A2E719-735B">
+     <li class="li" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF-7F10494411F03A24F24-1E33">
+      Replace your old code for the
+      <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-6DDC16B9-4930-42CC-93E8-3B09A607FCF0">
+       gp:drawOutline
+      </samp>
+      function with the following:
+      <pre class="pre codeblock prettyprint">;;;---------------------------------------------------------------
+;;;     Function: gp:drawOutline                                  
+;;;---------------------------------------------------------------
+;;;  Description: This function will draw the outline of the garden
+;;;               path.                                            
+;;;--------------------------------------------------------------- 
+;;;  Note: No error checking or validation is performed on the     
+;;;  BoundaryData parameter.  The sequence of items within this
+;;;  parameter does not matter, but it is assumed that all sublists
+;;;  are present and contain valid data.                           
+;;; --------------------------------------------------------------
+(defun gp:drawOutline (BoundaryData / VLADataPts PathAngle
+                                      Width HalfWidth StartPt PathLength
+                                      angm90 angp90 p1 p2
+                                      p3 p4 polypoints pline
+                      )
+  ;; extract the values from the list BoundaryData
+  (setq PathAngle (cdr (assoc 50 BoundaryData))
+        Width (cdr (assoc 40 BoundaryData))
+        HalfWidth (/ Width 2.00)
+        StartPt (cdr (assoc 10 BoundaryData))
+        PathLength (cdr (assoc 41 BoundaryData))
+        angp90 (+ PathAngle (Degrees-&gt;Radians 90))
+        angm90 (- PathAngle (Degrees-&gt;Radians 90))
+        p1 (polar StartPt angm90 HalfWidth)
+        p2 (polar p1 PathAngle PathLength)
+        p3 (polar p2 angp90 Width)
+        p4 (polar p3 (+ PathAngle (Degrees-&gt;Radians 180)) PathLength)
+        polypoints (apply 'append
+                     (mapcar '3dPoint-&gt;2dPoint (list p1 p2 p3 p4))
+                   )
+  )
+
+  ;; ***** data conversion *****
+  ;; Notice, polypoints is in AutoLISP format, consisting of a list
+  ;; of the 4 corner points for the garden path.
+  ;; The variable needs to be converted to a form of input parameter
+  ;; acceptable to ActiveX calls.
+  (setq VLADataPts (gp:list-&gt;variantArray polypoints))
+
+  ;; Add polyline to the model space using ActiveX automation.
+  (setq	pline (vla-addLightweightPolyline
+                 *ModelSpace*; Global Definition for Model Space
+                 VLADataPts
+              ) ;_ end of vla-addLightweightPolyline
+  ) ;_ end of setq
+
+  (vla-put-closed pline T)
+  ;; Return the ActiveX object name for the outline polyline
+  ;; The return value should look something like this:
+  ;; #&lt;VLA-OBJECT IAcadLWPolyline 02351a34&gt; 
+  pline
+) ;_ end of defun</pre>
+      <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-778A">
+       Note that
+       <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-8698C982-0752-4CF6-BFC6-69D1FEB9E700">
+        gp:drawOutline
+       </samp>
+       now returns the variable
+       <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-F2AD4ED8-3692-473F-85B4-E197A1CF0897">
+        pline
+       </samp>
+       , not the quoted symbol
+       <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-D1ECAF71-1CB2-441E-A563-C055983436C4">
+        'SomeEname
+       </samp>
+       used in the stubbed-out version of the function.
+      </p>
+     </li>
+     <li class="li" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF-7F10494411F03A24F24-1E32">
+      Format the code you just entered by selecting it and choosing the Format Selection button on the Visual LISP toolbar.
+     </li>
+     <li class="li" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF-7F10494411F03A24F24-1E31">
+      Enable ActiveX and add the global variable assignment for the pointer to model space, as described earlier. Scroll to the top of the text editor window and add the following code before the first
+      <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-CE6AF6B1-185A-47A1-BE53-C2CA6B8965FD">
+       defun
+      </samp>
+      :
+      <pre class="pre codeblock prettyprint">;;;--------------------------------------------------------------
+;;; First step is to load ActiveX functionality. If ActiveX support 
+;;; already exists in document (can occur when Bonus tools have been 
+;;; loaded into AutoCAD), nothing happens. Otherwise, ActiveX 
+;;; support is loaded.                                
+;;;---------------------------------------------------------------
+(vl-load-com)
+;;; In Lesson 4, the following comment and code is moved to utils.lsp
+;;;---------------------------------------------------------------
+;;; For ActiveX functions, we need to define a global variable that 
+;;; "points" to the Model Space portion of the active drawing. This 
+;;; variable, named *ModelSpace* will be created at load time.      
+;;;---------------------------------------------------------------
+(setq *ModelSpace*
+      (vla-get-ModelSpace
+        (vla-get-ActiveDocument (vlax-get-acad-object))
+      ) ;_ end of vla-get-ModelSpace
+) ;_ end of setq</pre>
+      <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-7789">
+       Note how the above code lives outside of any
+       <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-8A6B1415-36BD-4E5D-8709-FA5E8D336053">
+        defun
+       </samp>
+       . Because of this, Visual LISP automatically executes the code at the time you load the file.
+      </p>
+     </li>
+     <li class="li" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF-7F10494411F03A24F24-1E30">
+      Look for the following line in the
+      <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-0E9D2E6D-9C38-40C0-BE91-7C304A2BEB38">
+       C:GPath
+      </samp>
+      function:
+      <pre class="pre codeblock prettyprint">(setq PolylineName (gp:drawOutline))</pre>
+      <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-7788">
+       Change it to the following:
+      </p>
+      <pre class="pre codeblock prettyprint">(setq PolylineName (gp:drawOutline gp_PathData))</pre>
+      <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-7787">
+       The
+       <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-CD548C96-FEB2-4E89-B5BF-A0FDA880AB15">
+        gp:drawOutline
+       </samp>
+       function is now expecting a parameter—the list containing the polyline boundary data—and this change fulfills that requirement.
+      </p>
+     </li>
+     <li class="li" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WS1A9193826455F5FF-7F10494411F03A24F24-1E2F">
+      Add the
+      <samp class="ph codeph" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-35540C7E-833A-40F5-A90F-8DDB105D329B">
+       gp:list-&gt;variantArray
+      </samp>
+      function shown in Constructing a Variant from a List of Points to the end of
+      <em class="ph i" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__GUID-D211C102-871B-4B7E-95F1-0F3527E2018A">
+       gpmain.lsp
+      </em>
+      .
+      <p class="p" id="GUID-8BE1EFA2-B861-4CF3-84DB-D0A825D84598__WSFACF1429558A55DE1929BBDFEF458CE1C-7786">
+       Try loading and running the revised program. Visual LISP takes control away from AutoCAD before you see the end result, so switch back to the AutoCAD window after control returns to Visual LISP. If the program ran correctly, you should see a border for the garden path. If you find errors, debug the code and try again.
+      </p>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE.html">
+      Lesson 3: Drawing the Path Boundary (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Constructing_a_Variant_From_a_List_of_Points.html">
+      Constructing a Variant From a List of Points
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Wrapping_Up_Lesson_3.html">
+      Wrapping Up Lesson 3
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

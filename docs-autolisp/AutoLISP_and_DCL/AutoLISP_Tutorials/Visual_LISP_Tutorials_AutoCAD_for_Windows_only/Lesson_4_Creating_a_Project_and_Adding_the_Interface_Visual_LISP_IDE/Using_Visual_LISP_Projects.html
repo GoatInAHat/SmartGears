@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Using Visual LISP Projects
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Using Visual LISP Projects
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-9E014B69-713E-4727-8E76-07DC2E5CC051">
+    <p class="p" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE1929BBDFEF458CE1C-776E">
+     The Visual LISP project feature provides a convenient way to manage the files that make up your application. And with the project feature, you can open a single project file instead of individually opening every LISP file in the application. Once the project is open, getting to its constituent files is a double-click away.
+    </p>
+   </div>
+   <div class="section" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE6C92BAFEE30F7510-7E21">
+    <h2 class="title sectiontitle">
+     To create a Visual LISP project
+    </h2>
+    <ol class="ol" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF18CB41610EC0A2E719-73A8">
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DAD">
+      Click Project
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      New Project from the Visual LISP menu.
+     </li>
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DAC">
+      Save the file in your
+      <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-F33F60AF-6F3A-4889-BCB6-4AA73B06FBCE">
+       Lesson4
+      </em>
+      directory, using the name
+      <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-CA2994A7-5DFE-4219-8B54-5DB9013B7ECC">
+       gpath.prj
+      </em>
+      .
+      <p class="p" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE1929BBDFEF458CE1C-776D">
+       After you save the file, Visual LISP displays the Project Properties dialog box.
+      </p>
+     </li>
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DAB">
+      Click the [Un]Select All button on the left in the Project Properties dialog box.
+     </li>
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DAA">
+      Click the button containing an arrow pointing to the right. This adds all the selected files to your project.
+      <div class="fig fignone" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF18CB41610EC0A2E719-73A7">
+       <img class="image" height="22" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__IMAGE_E6DB99D07E5342CABEC3B313C84AFBAD" src="../../../../_assets/GUID_66DBA219_7FA1_4AC2_92EF_79297C2FC8FC-452078c6.png" width="25"/>
+      </div>
+      <p class="p" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE1929BBDFEF458CE1C-776C">
+       In the Project Properties dialog box, the list box on the left shows all LISP files that reside in the same directory as your project file and are
+       <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-012C1791-D1EA-4502-B545-246C92A12167">
+        not
+       </em>
+       included in that project. The list box on the right lists all the files that make up the project. When you add the selected files to the project, those file names move from the left box to the right box.
+      </p>
+     </li>
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DA9">
+      In the list box on the right side of the dialog box, select
+      <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-740EE1C6-0718-4296-8E71-558297EDE0AD">
+       gpmain
+      </em>
+      , then click the Bottom button. This moves the file to the bottom of the list.
+      <p class="p" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE1929BBDFEF458CE1C-776B">
+       Visual LISP loads project files in the order they are listed. Because the prompt that tells users the name of the command is located at the end of the
+       <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-AD2FCA9A-A361-44FD-805E-49B3799A4707">
+        gpmain.lsp
+       </em>
+       file, you need to move this file to the bottom of the list. Loading this file last results in the prompt displayed to users. The
+       <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-43610326-13CF-45E3-BC21-1900CDD0A458">
+        utils.lsp
+       </em>
+       file should be loaded first because it contains initialization code for the application. Therefore, select
+       <em class="ph i" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__GUID-9637291A-21A8-40E3-8AA6-56E5EF173139">
+        utils
+       </em>
+       in the dialog's list box and choose the Top button.
+      </p>
+     </li>
+     <li class="li" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WS1A9193826455F5FF-7F10494411F03A24F24-1DA8">
+      Click OK.
+     </li>
+    </ol>
+    <p class="p" id="GUID-83911E8D-D5A9-4FF0-A650-80466C5D1CFE__WSFACF1429558A55DE1929BBDFEF458CE1C-776A">
+     Visual LISP adds a small project window to your Visual LISP desktop. The window lists the files in your project. Double-click on any file to open the file in the Visual LISP text editor (if it is not already open) and make it the active editor window.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Modularizing_Your_Code_AutoLISP.html">
+      Modularizing Your Code (AutoLISP)
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Adding_the_Dialog_Box_Interface.html">
+      Adding the Dialog Box Interface
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

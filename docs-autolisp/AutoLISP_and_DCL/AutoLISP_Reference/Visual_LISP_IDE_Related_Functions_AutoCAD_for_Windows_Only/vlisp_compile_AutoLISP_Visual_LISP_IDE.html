@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Compiles AutoLISP source code into a FAS file" name="description"/>
+  <meta content="VLISP-COMPILE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vlisp-compile (AutoLISP/Visual LISP IDE)
+  </title>
+  <link href="../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vlisp-compile (AutoLISP/Visual LISP IDE)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Compiles AutoLISP source code into a FAS file
+   </p>
+   <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-44279DEA-4910-4423-B970-35FCCCB251BE">
+    <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-C625F265-FCDB-4F2C-9E37-E9049F57AEE7">
+     Supported Platforms:
+    </strong>
+    AutoCAD for Windows only; not available in AutoCAD LT for Windows
+   </p>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-3A679525-5BD0-453E-832F-ECBE51ADB517">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vlisp-compile '<em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-073472D1-059E-4722-B244-AE8F5DE8432F">mode filename [output-filename]</em>)</pre>
+    <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WS1A9193826455F5FF-1E1423D1125831BDA67-7A6D">
+     <dl class="dl" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WS1A9193826455F5FF-1E1423D1125831BDA67-7A6D">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-44DD4969-BE92-435B-B23E-9787A1F24893">
+        mode
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-E6CE58A0-5CE9-4BCE-A70D-DB763E5BDCE6">
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-FFC8A621-1E79-4745-B6B0-71922F7D7C46">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-3B07A865-5251-4461-99EE-148960FE0568">
+         Type:
+        </strong>
+        Symbol
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D74">
+        The compiler mode, which can be one of the following symbols:
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D73">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-CDB5D3E7-F987-4479-9353-841FD8FB3196">
+         st
+        </strong>
+        Standard build mode - Produces the smallest output file and is suitable for programs consisting of a single file.
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D72">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-05B2E8FA-11E9-4FA9-8508-F9BB7E42183A">
+         lsm
+        </strong>
+        Optimize and link indirectly - Optimizes the compiled files, but does not create direct references to the compiled functions in the compiled code.
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D71">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-458BAC7D-1531-4FDE-B612-0451A6D6D235">
+         lsa
+        </strong>
+        Optimize and link directly - Optimizes the compiled files and creates direct references to the compiled function in the compiled code, instead of to the function symbol.
+       </p>
+       <div class="note note" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-3390A40B-BCC0-4967-A5B7-27C407564D44">
+        <span class="notetitle">
+         Note:
+        </span>
+        Both the optimization options are best suited for large and complex programs.
+       </div>
+       <p class="p">
+        The basic functions of optimization are as follows:
+       </p>
+       <ul class="ul" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__UL_786EDF210AD0446D8052F3B4D7D8FD04">
+        <li class="li" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__LI_D51251073F2B4839811D67991AED4788">
+         Link function calls to create direct references to the compiled function in the compiled code, instead of to the function symbol. This feature improves the performance of the compiled code and protects the code against function redefinition at runtime.
+        </li>
+        <li class="li" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__LI_002D80AC38E14FA7919F5F6204686536">
+         Drop function names to make the compiled code more secure and to decrease program size and load time.
+        </li>
+        <li class="li" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__LI_DC93E2046CE94CA2BA39FAFCB94DDE6B">
+         Drop the names of all local variables and directly link their references. This also makes the compiled code more secure and decreases program size and load time.
+        </li>
+       </ul>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-4FDCF6B0-AB28-4CB1-9769-48834516A69D">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-98B13B08-EA3B-4244-80FE-CE921D4977F1">
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-BF9ABCCA-8367-457B-89A3-351AEB528C90">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-11B3B0FC-A586-4946-93BC-E0C505AEA705">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D70">
+        AutoLISP source file name. If the source file is in the AutoCAD support file search path, you can omit the path when specifying the file name. If you omit the file extension,
+        <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-F9E00EBE-E095-4484-9072-A5C77DCB86F8">
+         .lsp
+        </em>
+        is assumed.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-19C867B8-51A2-408E-845B-8967265C78BE">
+        output-filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-D14703C9-D4B4-4597-935F-C0EDE0AE2821">
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-41A6F75C-6FD0-43B8-A2FC-525351717CD3">
+        <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-3260B7A4-DD01-4764-A138-55F02000A5EF">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D6F">
+        Compiled output file name. If you do not specify an output file,
+        <samp class="ph codeph" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-5C3E3283-AB9F-4365-84EE-5D18DF478FCB">
+         vlisp-compile
+        </samp>
+        names the output with the same name as the input file, but replaces the extension with
+        <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-E2418483-2D89-4D06-82E5-676521A5F821">
+         .fas
+        </em>
+        .
+       </p>
+       <div class="note note" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-957456B9-21E3-48A7-A36B-D603DE1F8EE3">
+        <span class="notetitle">
+         Note:
+        </span>
+        If you specify an output file name but do not specify a path name for either the input or the output file,
+        <samp class="ph codeph" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-28A347AC-DD41-4D3E-A85C-63EFB4284A2E">
+         vlisp-compile
+        </samp>
+        places the output file in the AutoCAD installation directory.
+       </div>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__SECTION_318EC2CE0F8A4F23879B2919DCCDC88D">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-C8478F86-E458-40B0-934A-3329A902B5A0">
+     <strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-507F2F18-7F29-40EF-9B06-55A62E5E1917">
+      Type:
+     </strong>
+     T or nil
+    </p>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D6C">
+     <samp class="ph codeph" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-07081537-B7C7-4C11-B38A-45D34F36459C">
+      T
+     </samp>
+     , if compilation is successful; otherwise
+     <samp class="ph codeph" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-DB4DD804-81A7-49F3-976B-FFC382F80EE0">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__SECTION_6BB53C9CED354980A835E289EFBF1DE1">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p">
+     Starting with
+     <span class="ph msgph prodname">
+      AutoCAD 2021
+     </span>
+     -based products, FAS files can be compiled into two different file formats; Unicode and Multi-byte Character Strings (MBSCs). Unicode format FAS files are not compatible with
+     <span class="ph msgph prodname">
+      AutoCAD 2020
+     </span>
+     -based and earlier product releases, but are required to properly support Unicode strings. Use the LISPSYS system variable to control the format in which to compile FAS files.
+    </p>
+   </div>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__SECTION_6F3C9708E02642D7A81F436C7BC8ECAD">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__UL_CBC3ACBCEDC549AB9BEFFB679BDA224B">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__LI_DB8EF94EA1C54A0FA9BF19B1AEA2A1B5">
+      <span class="ph msgph prodname">
+       AutoCAD R14 and later on Windows
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__SECTION_396ED1493E2741AF9B7EB37A1BBF1EE1">
+    <h2 class="title sectiontitle">
+     History
+    </h2>
+    <ul class="ul" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__UL_4FD9E125DF584B04B3EEBDE142022EF0">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2021
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__LI_D3EB824299F047F59466575CDF8EEC44">
+      Updated to support the Unicode file format.
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__SECTION_F60C586E75A3445A99150956D8535C41">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D6A">
+     Assuming that
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-81360025-B96E-4BE3-80EF-75572D64A6E4">
+      yinyang.lsp
+     </em>
+     resides in a directory that is in the AutoCAD support file search path, the following command compiles this program:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-C7CB68AA-2B9E-4813-ACF2-2AF24EAFF38C">(vlisp-compile 'st "yinyang.lsp")</strong>
+T</pre>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D69">
+     The output file is named
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-CCE8463F-A8C4-42AF-AD53-A3208AC0FD5A">
+      yinyang.fas
+     </em>
+     and resides in the same directory as the source file.
+    </p>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D68">
+     The following command compiles
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-A645DF14-5B28-4771-AEDC-F6975E157E8E">
+      yinyang.lsp
+     </em>
+     and names the output file
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-1D957CA2-95DB-4DF6-9968-E2BAF7E97934">
+      GoodKarma.fas
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-19CE45F5-5A1A-4411-B826-0FCDBCF77282">(vlisp-compile 'st "yinyang.lsp" "GoodKarma.fas")</strong></pre>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D67">
+     Note that the output file from the previous command resides in the AutoCAD installation directory,
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-879D2066-6D54-4793-9B14-2CE9AAE4A358">
+      not
+     </em>
+     the directory where
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-B4F20D4C-053B-4CB8-A1C2-50CF9985A114">
+      yinyang.lsp
+     </em>
+     resides. The following command compiles
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-EEE87936-379D-4FFC-9428-B86A24E08F48">
+      yinyang.lsp
+     </em>
+     and directs the output file to the
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-101D1CF4-858F-44C7-A783-CCA6A2C38126">
+      c:\my documents
+     </em>
+     directory:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-72BEE6A1-8606-46F8-9CD2-428C10B323AC">(vlisp-compile 'st </strong><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-3F9844FC-D045-48AE-8D2E-31CE95B78801">"</strong><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-865F0F89-7F06-4660-8498-007423DBA192">yinyang.lsp</strong><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-078038BC-5147-4F1C-8E1C-33CB768F67F1">"</strong><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-9EB5F791-7CCE-4C3D-84DD-2A1FC81F0ADF"> "c:/my documents/GoodKarma")</strong></pre>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D66">
+     This last example identifies the full path of the file to be compiled:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-E99C000D-6F97-4CE6-AFE0-47D763720C13">(vlisp-compile 'st "&lt;AutoCAD installation directory&gt;/Sample/yinyang.lsp")</strong></pre>
+    <p class="p" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__WSFACF1429558A55DE11F0759FF1E4B858C-2D65">
+     The output file from this command is named
+     <em class="ph i" id="GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C__GUID-340E5CED-DE39-4C89-9DD2-45BCC851F5C3">
+      yinyang.fas
+     </em>
+     and resides in the same directory as the input file.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../AutoLISP_Core_Functions/Functions_By_Functionality/Application_Handling_Functions_Reference_AutoLISP.html">
+       Application-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="vl_get_resource_AutoLISP_Visual_LISP_IDE.html" title="Returns the text stored in a .txt file packaged in a VLX">
+       vl-get-resource (AutoLISP/Visual LISP IDE)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

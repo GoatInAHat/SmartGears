@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The AutoCAD environment provides several system variables that can be used to get the current system date\time along with date\time related information about the current drawing." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Getting and Calculating Date\Time Values (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Getting and Calculating Date\Time Values (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The AutoCAD environment provides several system variables that can be used to get the current system date\time along with date\time related information about the current drawing.
+   </p>
+   <p class="p">
+    Getting the current system date\time can be helpful when populating a date field in a title block, while calculating elapsed time can be beneficial when you want to let a user know how long a process took to complete or provide a basic return on investment (ROI) analysis for a custom program. Date\time values in the AutoCAD environment are stored as real numbers, and those values represent dates\times in two different formats; Gregorian Calendar and Modified Julian Date. The integer part of the real number (what is to the left of the decimal) represents a date, while the fraction part of the real number (what is to the right of the decimal) represents time.
+   </p>
+   <p class="p">
+    For example, the following is an example of the current system date\time returned by the CDATE system variable:
+   </p>
+   <pre class="pre codeblock prettyprint">20170306.15023500</pre>
+   <p class="p">
+    20170306 = Date: 03/06/2017
+   </p>
+   <p class="p">
+    15023500 = Time: 3:02:25:00 P.M.
+   </p>
+   <div class="note note" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__GUID-829B5F96-BEB8-439F-B735-453556CCEEE9">
+    <span class="notetitle">
+     Note:
+    </span>
+    Starting with AutoCAD 2017-based products, all date\time related system variables are only accurate to the nearest second with the exception of MILLISECS; whereas in previous releases time also included milliseconds. If you need to track time changes, be warned that you will no longer see a change in time until one second has elapsed even though 0 to 999 milliseconds might have passed. When needing to calculate differences in time smaller than one second, consider using the value returned by the MILLISECS system variable.
+   </div>
+   <div class="section" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__SECTION_1CA7412F50E34B0E8BBA96290DC15C1C">
+    <h2 class="title sectiontitle">
+     Date\Time Related System Variables
+    </h2>
+    <p class="p">
+     This section lists the system variables that are related to getting the current system date\time or date\time values associated with the current drawing.
+    </p>
+    <dl class="dl">
+     <dt class="dt dlterm">
+      Current System
+     </dt>
+     <dd class="dd">
+      <ul class="ul" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__UL_4AF9B92BD2404A779F63604BB7C25F92">
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_2EFB1883686E43E9AD7E0150864F074E">
+        CDATE - Stores the current date and time in coded decimal format.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_BCC3C19012FF43348EDE6E54F9A639BF">
+        DATE - Stores the current date and time in Modified Julian Date format.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_18681C9A0CB849ACAA3A56629D1A9BBB">
+        MILLISECS - Stores the number of milliseconds that have elapsed since the system was started.
+       </li>
+      </ul>
+     </dd>
+     <dt class="dt dlterm">
+      Associated with the Current Drawing
+     </dt>
+     <dd class="dd">
+      <div class="note note" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__GUID-2D9253E9-0F6D-4189-B55B-FB4BB625F73A">
+       <span class="notetitle">
+        Note:
+       </span>
+       Values returned by these system variables are in Modified Julian Date format.
+      </div>
+      <ul class="ul" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__UL_DFCDE2B327B649C085000BA5D6B1C40E">
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_CAB2E7AFD491457DA7791B312038AF8E">
+        TDCREATE - Stores the local time and date the drawing was created.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_07D2E18B9C52409BB6EA20D7B0F3C876">
+        TDINDWG - Stores the total editing time, which is the total elapsed time between saves of the current drawing.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_8C65A6F9F1AC4893AB4E8AD4933D7A30">
+        TDUCREATE - Stores the universal time and date that the drawing was created.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_883665379E1146B88D7E67C854699AB2">
+        TDUPDATE - Stores the local time and date of the last update/save.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_7D24852C29124F438F7EE687F003D2BA">
+        TDUSRTIMER - Stores the user-elapsed timer.
+       </li>
+       <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_91B6E54DCDD74A41B08E21A32A5F4358">
+        TDUUPDATE - Stores the universal time and date of the last update or save.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__SECTION_6C6F9F237388482C8703C9A7E5203CA0">
+    <h2 class="title sectiontitle">
+     Display the Full Value of a Date\Time Related System Variable
+    </h2>
+    <p class="p">
+     When using the
+     <samp class="ph codeph">
+      GETVAR
+     </samp>
+     function to obtain the value of a system variable that stores a real number, the value when output to the Command prompt is displayed in scientific notation. While scientific notation makes it easier for the AutoCAD program to present large decimal numbers, it doesn't make it easier to read or understand. The
+     <samp class="ph codeph">
+      RTOS
+     </samp>
+     function can be used to display all significant digits of a real number returned by the
+     <samp class="ph codeph">
+      GETVAR
+     </samp>
+     function.
+    </p>
+    <pre class="pre codeblock prettyprint">Command: (getvar "cdate")
+2.01703e+07
+
+Command: (rtos (getvar "cdate") 2 6)
+"20170306.175302"</pre>
+    <div class="note note" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__GUID-86053917-FDCE-48CA-9D5E-5E33D3306421">
+     <span class="notetitle">
+      Note:
+     </span>
+     The third argument of the
+     <samp class="ph codeph">
+      RTOS
+     </samp>
+     function controls the precision in which the real number is returned. A value of 6 indicates that the real number should be returned with six significant digits after the decimal place. Prior to AutoCAD 2017-based products, the value stored in CDATE included milliseconds which were represented by the 7th and 8th significant digits after the decimal place.
+    </div>
+   </div>
+   <div class="section" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__SECTION_957B8CD89A2649FF93003C593BA98D1F">
+    <h2 class="title sectiontitle">
+     Format the Date\Time Value Returned by CDATE
+    </h2>
+    <p class="p">
+     The real number stored in CDATE represents the current system date and time in coded decimal format; converting that real number to a string makes it much easier to extract specific digits. Using the
+     <samp class="ph codeph">
+      SUBSTR
+     </samp>
+     function, a portion of a string can be returned.
+    </p>
+    <pre class="pre codeblock prettyprint">Command: (setq cdate_val (rtos (getvar "cdate") 2 6))
+"20170306.175302"
+
+Command: (substr cdate_val 1 4)
+"2017"</pre>
+    <p class="p">
+     The following breaks down the significance of each digit:
+    </p>
+    <ul class="ul" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__UL_2C55AA9016B34C06B063331B7B6F8CB8">
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_9ADD026929BB41DD997C4EBDD9F35B52">
+      1-4: Year
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_2396B9528EB14163BE103892EC2FC782">
+      5-6: Month
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_E2B604CB580D400181DB2037E586D6C7">
+      7-8: Day
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_C616B44F9FB6432E8D8AF1704CE639A3">
+      10-11: Hours
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_CCA601F0A45341769F29C808CB4F1F69">
+      12-13: Minutes
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_7FE5D054BAAA4660B80D59F5EE3DE50B">
+      14-15: Seconds
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_4B576EC3058441B1930F04037B970BCC">
+      16-17: Milliseconds (AutoCAD 2016-based products and earlier only)
+     </li>
+    </ul>
+    <p class="p">
+     The following sample code shows an example of a function that you might use to extract the different date and time parts of the value returned by CDATE:
+    </p>
+    <pre class="pre codeblock prettyprint">; Returns or outputs the current date and time
+; bOutput = T - Output the string to the Command prompt
+; bOutput = nil - Return a string in the MM/DD/YYYY  HH:MM:SS format
+; Usage: (CurDate T)
+; Usage: (CurDate nil)
+
+(defun CurDate (bOuput / cdate_val YYYY M D HH MM SS)
+  ; Get the current date/time
+  (setq cdate_val (rtos (getvar "CDATE") 2 6))
+
+  ; Break up the string into its separate date and time parts
+  (setq YYYY (substr cdate_val 1 4)
+        M    (substr cdate_val 5 2)
+        D    (substr cdate_val 7 2)
+        HH   (substr cdate_val 10 2)
+        MM   (substr cdate_val 12 2)
+        SS   (substr cdate_val 14 2)
+  )
+
+  ; Output the current date and time to the Command
+  ; prompt or return the formatted output as a string
+  (if bOuput
+    (progn
+      (prompt (strcat "\nDate: " M "/" D "/" YYYY
+                      "\nTime: " HH ":" MM ":" SS
+              )
+      )
+      (princ)
+    )
+    (strcat M "/" D "/" YYYY "  " HH ":" MM ":" SS)
+  )
+)</pre>
+    <p class="p">
+     The output or return value of the
+     <samp class="ph codeph">
+      CurDate
+     </samp>
+     function will look similar to the following:
+    </p>
+    <pre class="pre codeblock prettyprint">(CurDate T)
+Date: 02/14/2017
+Time: 14:38:57
+
+(CurDate nil)
+"02/14/2017  14:39:04"</pre>
+   </div>
+   <div class="section" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__SECTION_08B4F1F4D97D42CA9822C870E128810E">
+    <h2 class="title sectiontitle">
+     Format Modified Julian Date Values
+    </h2>
+    <p class="p">
+     All other date\time related system variables store time in the Modified Julian Date format with the exceptions of CDATE and MILLISECS. The date part of the Modified Julian Date format is the integer part of the number (what is to the left of the decimal) and it represents the number of days since Noon on January 1, 4713 BC, while time is the decimal fraction part of the number (what is to the right of the decimal) and it represents the time that has elapsed since Midnight which can be calculated by multiplying the decimal fraction by 86,400.
+    </p>
+    <p class="p">
+     The calculations required to convert a value in Modified Julian Date format to something more meaningful can be complex, but there are five date\time related AutoLISP functions in the Express Tools that can be helpful. The date\time related functions are only available after the
+     <em class="ph i">
+      Julian.lsp
+     </em>
+     file has been loaded into the AutoCAD environment, which can be done by using the DATE command or AutoLISP
+     <samp class="ph codeph">
+      LOAD
+     </samp>
+     function.
+    </p>
+    <p class="p">
+     These are the date\time related AutoLISP functions that are available after the
+     <em class="ph i">
+      Julian.lsp
+     </em>
+     file is loaded:
+    </p>
+    <ul class="ul" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__UL_5D3BB31BE20845A593A739E1049993EB">
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_5B47EB090E414A768EC3F8AB69CEDD3C">
+      <samp class="ph codeph">
+       CTOJ
+      </samp>
+      - Converts calendar date and time to Julian date
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_2807DA7243F84394BE04F70108666E20">
+      <samp class="ph codeph">
+       DTOJ
+      </samp>
+      - Converts AutoCAD calendar date/time to Julian date
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_0544B6E8C7F140CE8ED69E6D9588208E">
+      <samp class="ph codeph">
+       JTOC
+      </samp>
+      - Converts Julian date to calendar date list
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_0EEE4B62B41B4A7C96D567358F4B8C93">
+      <samp class="ph codeph">
+       JTOD
+      </samp>
+      - Converts Julian date to AutoCAD calendar date/time
+     </li>
+     <li class="li" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__LI_8929902415DF435ABFD6F57F0E31A740">
+      <samp class="ph codeph">
+       JTOW
+      </samp>
+      - Determines day of the week for a given Julian day
+     </li>
+    </ul>
+    <p class="p">
+     The following are examples of the
+     <samp class="ph codeph">
+      JTOC
+     </samp>
+     and
+     <samp class="ph codeph">
+      JTOD
+     </samp>
+     functions:
+    </p>
+    <pre class="pre codeblock prettyprint">Command: (jtoc (getvar "date"))
+(2017 2 22 9 21 27.0)
+
+Command: (rtos (jtod (getvar "date")) 2 6)
+"20170222.092127"</pre>
+   </div>
+   <div class="section" id="GUID-EF8856E5-DB58-4EFC-B223-AB8B8A25F240__SECTION_F7BC5F240C5546BE8C25F558FF69DC77">
+    <h2 class="title sectiontitle">
+     Calculate Elapsed Time
+    </h2>
+    <p class="p">
+     The calculation of elapsed time can be accomplished by subtracting two different date and time, or just time only values. Based on the precision needed, you can use the value stored in the CDATE or MILLISECS system variables. For very small changes in time, fractions of a second, the value stored in the MILLISECS system variable would be best.
+    </p>
+    <pre class="pre codeblock prettyprint">Command: (setq start (getvar "MILLISECS"))
+25494432
+
+Command: (setq end (getvar "MILLISECS"))
+25499471
+
+Command: (- end start)
+5039</pre>
+    <p class="p">
+     The following sample code shows an example of a function that can be used to get the difference between two values that represent different start and end times in milliseconds:
+    </p>
+    <pre class="pre codeblock prettyprint">; Takes two values that represent milliseconds and returns
+; the difference as an integer/long or double/float
+;
+; bMilliseconds = T   - Return value as milliseconds
+; bMilliseconds = nil - Return value as seconds
+;
+; Usage: (TimeDiff T1 T2 T) - Milliseconds example
+; Usage: (TimeDiff T1 T2 nil) - Seconds example
+
+(defun TimeDiff (nStart nEnd bReturnMilliseconds / nDiff)
+  
+  ; Get the time difference
+  (if (&gt; nStart nEnd)
+    (setq nDiff (- nStart nEnd))
+    (setq nDiff (- nEnd nStart))
+  )
+
+  ; Return the time difference in milliseconds or seconds
+  (if (= bReturnMilliseconds nil)
+    (/ nDiff 1000.0)
+    nDiff
+  )
+)</pre>
+    <p class="p">
+     The return value of the
+     <samp class="ph codeph">
+      TimeDiff
+     </samp>
+     function might look similar to the following:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq T1 24092498)
+(setq T2 24188267)
+(TimeDiff T1 T2 T)
+95769
+
+(TimeDiff T1 T2 nil)
+95.769</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP.html" title="Query and command functions provide direct access to AutoCAD commands and drawing services.">
+      About Using AutoLISP to Communicate With AutoCAD (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP.html" title="Query and command functions provide direct access to AutoCAD commands and drawing services.">
+       About Using AutoLISP to Communicate With AutoCAD (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Accessing_Commands_and_Services_AutoLISP/About_System_and_Environment_Variables_AutoLISP.html" title="AutoLISP applications can inspect and change the value of AutoCAD system variables with the getvar and setvar functions.">
+       About System and Environment Variables (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Device_Access_and_Control_AutoLISP/About_Device_Access_and_Control_AutoLISP.html">
+       About Device Access and Control (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-209318DE-95C4-40F6-8776-935C8905FDEE" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Planning the Overall Reactor Process
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Planning the Overall Reactor Process
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-8A296851-1C77-4260-975A-D21102B3C37C">
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-78A1">
+     You need to define several new functions in this lesson. Rather than present you with details on all aspects of the new code, this lesson presents an overview and points out the concepts behind the code. At the end of the lesson, you will have all the source code necessary to create a garden path application identical to the sample program you ran in Lesson 1.
+    </p>
+    <div class="note note" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D3B">
+     <span class="notetitle">
+      Note:
+     </span>
+     When you are in the midst of developing and debugging reactor-based applications, there is always the potential of leaving AutoCAD
+     <span name="glyph_span">
+      ®
+     </span>
+     in an unstable state. This can be caused by several situations, such as failing to remove a reactor from deleted entities. For this reason, it is recommended that before beginning Lesson 7, you should close Visual LISP, save any open files as you do so, exit AutoCAD, then restart both applications.
+    </div>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-78A0">
+     Begin by loading the project as it existed at the end of Lesson 6.
+    </p>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789F">
+     Two obvious pieces of work remain to be done in the garden path application:
+    </p>
+    <ul class="ul" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF18CB41610EC0A2E719-72F9">
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D3A">
+      Writing the object reactor callbacks.
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D39">
+      Writing the editor reactor callbacks.
+     </li>
+    </ul>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789E">
+     You also need to consider how to handle the global variables in your program. Often, it is desirable to have global variables retain a value throughout an AutoCAD drawing session. In the case of reactors, however, this is not the case. To illustrate this, imagine a user of your garden path application has drawn several garden paths in a single drawing. After doing this, the user erases them, first one at a time, then two at a time, and so on, until all but one path is erased.
+    </p>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789D">
+     Lesson 5 introduced a global variable
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-54DD736D-EE31-4821-9334-E7B0E489AF59">
+      *reactorsToRemove*
+     </samp>
+     , responsible for storing pointers to the reactors for the polylines about to be erased. When
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-1D353EB2-6048-491B-B99F-22A597946C3E">
+      *reactorsToRemove*
+     </samp>
+     is declared in
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-DCD70822-9B59-4B80-A452-F0DF522D99D9">
+      gp:outline-erased
+     </samp>
+     , the event lets you know the polyline is about to be erased. The polyline is not actually removed until the
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-3F6ED199-A3A6-4592-9959-3FF5AED09868">
+      gp:command-ended
+     </samp>
+     event fires.
+    </p>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789C">
+     The first time the user deletes a polyline, things work just as you would expect. In
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-5C12D10C-B5FD-4B1D-A119-8E794989A1A8">
+      gp:outline-erased
+     </samp>
+     , you store a pointer to the reactor. When
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-5023B87A-A820-4FFA-A94F-396F3308F928">
+      gp:command-ended
+     </samp>
+     fires, you remove the tiles associated with the polyline to which the reactor is attached, and all is well. Then, the user decides to erase two paths. As a result, your application will get two calls to
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-1A96BBB7-57D7-4A59-A70C-33B9D89C830F">
+      gp:outline-erased
+     </samp>
+     , one for each polyline about to be erased. There are two potential problems you must anticipate:
+    </p>
+    <ul class="ul" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF18CB41610EC0A2E719-72F8">
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D38">
+      When you
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-EAAFE404-84CE-458C-BCC2-82235BD923B4">
+       setq
+      </samp>
+      the
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-9511685B-1F81-4C79-BD53-A6BF11A98306">
+       *reactorsToRemove*
+      </samp>
+      variable, you must add a pointer to a reactor to the global, making sure not to overwrite any values already stored there. This means
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-C8EB81E6-8CEC-4761-B523-577CCF0D840F">
+       *reactorsToRemove*
+      </samp>
+      must be a list structure, so you can append reactor pointers to it. You can then accumulate several reactor pointers corresponding to the number of paths the user is erasing within a single erase command.
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D37">
+      Every time
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-5C665727-B064-44DA-B23F-D5079D4E873D">
+       gp:command-will-start
+      </samp>
+      fires, indicating a new command sequence is beginning, you should reinitialize the
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-100EAB69-3E5E-4950-81A4-07760460A2DC">
+       *reactorsToRemove*
+      </samp>
+      variable to
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-B5D74574-9900-4DBB-BBDB-FAA218475AE9">
+       nil.
+      </samp>
+      This is necessary so that the global is not storing reactor pointers from the previous erase command.
+      <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789B">
+       If you do not reinitialize the global variable or use the correct data structure (in this case, a list), you will get unexpected behavior. In the case of reactors, unexpected behavior can be fatal to your AutoCAD session.
+      </p>
+     </li>
+    </ul>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-789A">
+     Here is the chain of events that needs to occur for users to erase two garden paths with a single erase command. Note how global variables are handled:
+    </p>
+    <ul class="ul" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF18CB41610EC0A2E719-72F7">
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D36">
+      Initiate the ERASE command. This triggers the
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-86393F9F-CCC3-49A3-B0FD-0640D1F8D76F">
+       gp:command-will-start
+      </samp>
+      function. Set
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-D4DC12A7-1DEF-4663-A188-1A448C1A43BB">
+       *reactorsToRemove*
+      </samp>
+      to
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-7E0DBEE3-FF85-4F3D-A4F6-4EC785F3517E">
+       nil
+      </samp>
+      .
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D35">
+      Select two polylines; your application is not yet notified.
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D34">
+      Press Enter to erase the two selected polylines.
+      <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-7899">
+       Your application gets a callback to
+       <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-B3EF0648-E480-499E-8236-E030432C35A4">
+        gp:outline-erased
+       </samp>
+       for one of the polylines. Add its reactor pointer to the null global,
+       <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-E7AA358D-0CBD-441D-A839-4FC60372909D">
+        *reactorsToRemove*
+       </samp>
+       .
+      </p>
+      <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-7898">
+       Your application gets a callback to
+       <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-5A78816E-3FBF-4C59-9EFE-BAFF6400CFE4">
+        gp:outline-erased
+       </samp>
+       for the second of the polylines. Append its reactor pointer to the
+       <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-943271CE-017B-4FEB-90B1-1A8EC0AD1266">
+        *reactorsToRemove*
+       </samp>
+       global that already contains the first reactor pointer.
+      </p>
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D33">
+      AutoCAD deletes the polylines.
+     </li>
+     <li class="li" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WS1A9193826455F5FF-7F10494411F03A24F24-1D32">
+      Your callback function
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-9C3BE1D5-59FE-4FE8-8849-40BE678755CE">
+       gp:command-ended
+      </samp>
+      fires. Eliminate any tiles associated with the reactor pointers stored in
+      <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-7112BF15-5EBD-4196-B625-A61794D701DD">
+       *reactorsToRemove*
+      </samp>
+      .
+     </li>
+    </ul>
+    <p class="p" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__WSFACF1429558A55DE1929BBDFEF458CE1C-7897">
+     In addition to the
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-C00B0613-2A44-4BEF-B9D6-CD47278C563F">
+      *reactorsToRemove*
+     </samp>
+     global, your application also includes a
+     <samp class="ph codeph" id="GUID-A33CFACE-CEA1-43D7-9F3C-48E56760FD29__GUID-B2E923B8-6A53-4843-82CB-6B1CAA2D75C3">
+      *polyToChange*
+     </samp>
+     global, which stores a pointer to any polyline that will be modified. Two additional global variables for the application will be introduced later in this lesson.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_7_Putting_It_All_Together_Visual_LISP_IDE.html">
+      Lesson 7: Putting It All Together (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Reacting_to_More_User_Invoked_Commands.html">
+      Reacting to More User-Invoked Commands
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The *error* function can ensure that AutoCAD returns to a particular state after an error occurs." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Using the *error* Function (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Using the *error* Function (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The
+    <samp class="ph codeph" id="GUID-AC95B456-1582-47D3-82EE-6FF3BB07A1A2">
+     *error*
+    </samp>
+    function can ensure that AutoCAD returns to a particular state after an error occurs.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-E4286458-5442-4188-871B-FC10D0CFE87A">
+    This user-definable function can assess the error condition and return an appropriate message to the user. If AutoCAD encounters an error during evaluation, it prints a message in the following form:
+   </p>
+   <p class="p promptblock" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-5185A43B-6326-4664-B826-92D246C11E8F">
+    Error: text
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__WSFACF1429558A55DE11F0759FF1E4B858C-6535">
+    In this message, text describes the error. However, if the
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-52FC3307-67EC-4AF9-948C-F4D61D3126F4">
+     *error*
+    </samp>
+    function is defined (that is, if it is not
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-12BF54C6-EFB6-4E22-9926-351183E3AEEF">
+     nil
+    </samp>
+    ), AutoLISP executes
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-B59DF65F-3327-4748-8BCA-D2A590841882">
+     *error*
+    </samp>
+    instead of printing the message. The
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-50B5AFE2-93FD-4013-A858-ADAAF7E819B8">
+     *error*
+    </samp>
+    function receives text as its single argument. If
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-9EBE9344-FA5C-47BC-AD6B-28FE44B749E8">
+     *error*
+    </samp>
+    is not defined or is
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-60819AC1-D8BD-4230-9720-E647F9F43226">
+     nil
+    </samp>
+    , AutoLISP evaluation stops and displays a traceback of the calling function and its callers. It is beneficial to leave this error handler in effect while you debug your program.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-637F04B7-8B44-4EB9-8882-5D1D2FCF01D8">
+    A code for the last error is saved in the system variable ERRNO, where you can retrieve it using the
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-3071A935-C942-4D95-B682-50205F56DA7C">
+     getvar
+    </samp>
+    function.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-4DD55E40-39C7-46EE-B9E4-031777F8D6EA">
+    Before defining your own
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-38807BF8-2BE5-418B-A9FA-3B39581EB1B0">
+     *error*
+    </samp>
+    function, save the current contents of
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-5B3E1AD5-B497-46D3-B5C4-CDC2E45D19B9">
+     *error*
+    </samp>
+    so that the previous error handler can be restored upon exit. When an error condition exists, AutoCAD calls the currently defined
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-A41FA206-0173-4A0C-A95C-916DC1A5DCA9">
+     *error*
+    </samp>
+    function and passes it one argument, which is a text string describing the nature of the error. Your
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-AC552E72-B9A6-486A-82A9-10E2157B8DBE">
+     *error*
+    </samp>
+    function should be designed to exit quietly after an Esc (cancel) or an
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-AE74E9BC-58EB-4D5B-9FDB-9CE7001DEFFF">
+     exit
+    </samp>
+    function call. The standard way to accomplish this is to include the following statements in your error-handling routine.
+   </p>
+   <pre class="pre codeblock prettyprint">(if
+  (or
+    (= msg "Function cancelled")
+    (= msg "quit / exit abort")
+  )
+ (princ)
+ (princ (strcat "\nError: " msg))
+)</pre>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-7639DFC4-4500-4F63-94A2-0C70F8A92563">
+    This code evaluates the error message passed to it and ensures that the user is informed of the nature of the error. If the user cancels the command or function while it is running, nothing is returned from this code. Likewise, if an error condition is programmed into your code and the
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-383ED149-0831-4876-B934-C9CE476D6A1A">
+     exit
+    </samp>
+    function is called, nothing is returned. It is presumed you have already explained the nature of the error by displaying a message. Remember to include a terminating call to
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-4158D8F8-8FE4-4813-9636-0B6B1220809C">
+     princ
+    </samp>
+    if you do not want a return value printed at the end of the
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-76CAFD0A-C462-419D-B219-41AFD897BBFC">
+     *error*
+    </samp>
+    function.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-2FAD9C95-3FA1-467D-B3EE-0F5F25CB0FD1">
+    The main caveat about error-handling routines is they are normal AutoLISP functions that can be canceled by the user. Keep them as short and as fast as possible. This will increase the likelihood that an entire routine will execute if called.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-0534F1DB-3584-4183-8882-F63FDEE93473">
+    You can also warn the user about error conditions by displaying an alert box, which is a small dialog box containing a message supplied by your program and a single OK button. To display an alert box, call the
+    <samp class="ph codeph" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-55588033-A915-4215-817E-C84E26FA92DF">
+     alert
+    </samp>
+    function.
+   </p>
+   <p class="p" id="GUID-2AC47A3C-7E80-414D-9134-EABA0003193F__GUID-9910BD33-A6DA-4218-BD91-5A84A8516350">
+    The following call to alert displays an alert box with the message File note found:
+   </p>
+   <pre class="pre codeblock prettyprint">(alert "File not found")</pre>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Error_Handling_AutoLISP.html" title="The AutoLISP language provides several functions for handling errors.">
+      About Error Handling (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Error_Handling_AutoLISP.html" title="The AutoLISP language provides several functions for handling errors.">
+       About Error Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Catching_Errors_and_Continuing_Program_Execution_AutoLISP/About_Catching_Errors_and_Continuing_Program_Execution_AutoLISP.html" title="Programs should intercept and attempt to process errors instead of allowing control to pass to *error* when possible.">
+       About Catching Errors and Continuing Program Execution (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Basic_Output_Functions_AutoLISP/About_Displaying_Messages_AutoLISP/About_Exiting_a_Function_Quietly_AutoLISP.html" title="If you invoke the princ function without passing an expression to it, it displays nothing and has no value to return.">
+       About Exiting a Function Quietly (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-9205DA3B-9186-48C7-A477-E4C8FF88E1BB.htm" title="The vl-catch-all-apply function allows you to intercept errors returned by ActiveX methods, and decide how the program should continue.">
+       Example: Intercept an Error Returned by an ActiveX Method (AutoLISP/ActiveX)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D114F1C4-DE8E-422D-8F3F-C43707B8212B">
+       Error-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

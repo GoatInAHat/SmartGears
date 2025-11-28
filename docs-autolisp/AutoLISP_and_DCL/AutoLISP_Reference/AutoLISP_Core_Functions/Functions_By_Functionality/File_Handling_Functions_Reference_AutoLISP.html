@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   File-Handling Functions Reference (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      File-Handling Functions Reference (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-09C708A6-CA70-4BE5-9DC8-C30A740E8A18">
+    <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D4E">
+     The following table provides summary descriptions of the AutoLISP file-handling functions.
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WS73099CC142F4875516D84BE10EBC87A53F-7B51" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" rowspan="2" valign="top">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D4D">
+          File-handling functions
+         </p>
+        </th>
+        <th class="entry" colspan="5" valign="top">
+         <p class="p">
+          Platforms
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p">
+          Windows
+         </p>
+        </th>
+        <th class="entry" colspan="2" valign="top">
+         <p class="p">
+          Mac OS
+         </p>
+        </th>
+        <th class="entry" valign="top" width="10%">
+         <p class="p">
+          Web
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D4C">
+          Function
+         </p>
+        </th>
+        <th class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D4B">
+          Description
+         </p>
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D4A">
+          <a class="xref" href="../C_Functions/close_AutoLISP.html" title="Closes an open file">
+           (close
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-9C306FC2-6D52-49C9-B2E5-7C953B620CC2">
+            file-desc
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D49">
+          Closes an open file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D48">
+          <a class="xref" href="../F_Functions/findfile_AutoLISP.html" title="Searches the AutoCAD library and trusted paths for the specified file or directory">
+           (findfile
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-8CA4C5FA-861B-432F-B307-E717606A37E9">
+            filename
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D47">
+          Searches the AutoCAD library path for the specified file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-E3A53DEC-2AE7-415D-A913-ADA1E48050E9">
+          <a class="xref" href="../F_Functions/findtrustedfile_AutoLISP.html" title="Searches the AutoCAD trusted locations for the specified file">
+           (findtrustedfile
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-C5C780BC-83FC-47B3-AD96-A80120BB74F7">
+            filename
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-8AC8DC7B-3A4E-4725-942E-9C04DDD7F5FB">
+          Searches the AutoCAD trusted file paths for the specified file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D46">
+          <a class="xref" href="../O_Functions/open_AutoLISP.html" title="Opens a file for access by the AutoLISP I/O functions">
+           (open
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-6046F942-3DFD-4E3F-B015-DD4EF506EA38">
+            filename mode
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D45">
+          Opens a file for access by the AutoLISP I/O functions
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D44">
+          <a class="xref" href="../R_Functions/read_char_AutoLISP.html" title="Returns the integer representing the character read from the keyboard input buffer or from an open file">
+           (read-char
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-6E18EE31-F905-4A87-BC2D-74D357DA771C">
+            [file-desc]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D43">
+          Returns the decimal ASCII code representing the character read from the keyboard input buffer or from an open file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D42">
+          <a class="xref" href="../R_Functions/read_line_AutoLISP.html" title="Reads a string from the keyboard or from an open file, until an end-of-line marker is encountered">
+           (read-line
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-B0005D0F-BC39-4CE0-931C-9D186C4442FD">
+            [file-desc]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D41">
+          Reads a string from the keyboard or from an open file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D40">
+          <a class="xref" href="../V_Functions/vl_directory_files_AutoLISP.html" title="Lists all files in a given directory">
+           (vl-directory-files [
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-DEBBA68C-4AF1-415D-AE2F-DFC690FF5263">
+            directory pattern directories]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D3E">
+          Lists all files in a given directory
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D3D">
+          <a class="xref" href="../V_Functions/vl_file_copy_AutoLISP.html" title="Copies or appends the contents of one file to another file">
+           (vl-file-copy
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-1FD4F6CC-86EC-4DC7-BA2F-2AB41B63FCFA">
+            "source-filename" "destination-filename" [append]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D3B">
+          Copies or appends the contents of one file to another file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D3A">
+          <a class="xref" href="../V_Functions/vl_file_delete_AutoLISP.html" title="Deletes a file">
+           (vl-file-delete
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-BB659F7A-3D50-4575-8611-7DB39DC57C94">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D39">
+          Deletes a file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D38">
+          <a class="xref" href="../V_Functions/vl_file_directory_p_AutoLISP.html" title="Determines if a file name refers to a directory">
+           (vl-file-directory-p
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-A3CAB6AA-CAC7-4604-8E1F-639CC06CFADB">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D37">
+          Determines if a file name refers to a directory
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D36">
+          <a class="xref" href="../V_Functions/vl_file_rename_AutoLISP.html" title="Renames a file">
+           (vl-file-rename
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-EB5CE02B-78B2-412E-8CD5-0160F0914A3F">
+            "old-filename" "new-filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D34">
+          Renames a file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D33">
+          <a class="xref" href="../V_Functions/vl_file_size_AutoLISP.html" title="Determines the size of a file, in bytes">
+           (vl-file-size
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-1E0BCCDE-B6CF-445A-9F6D-C7D7F329DBF5">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D32">
+          Determines the size of a file, in bytes
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D31">
+          <a class="xref" href="../V_Functions/vl_file_systime_AutoLISP.html" title="Returns last modification time of the specified file">
+           (vl-file-systime
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-B6E994EB-EC56-4476-A49D-C86398391D6F">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D30">
+          Returns last modification time of the specified file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D2F">
+          <a class="xref" href="../V_Functions/vl_filename_base_AutoLISP.html" title="Returns the name of a file, after stripping out the directory path and extension">
+           (vl-filename-base
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-54C3AE31-C0C5-4F6E-BCAA-4947CC9D7876">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D2E">
+          Returns the name of a file, after stripping out the directory path and extension
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D2D">
+          <a class="xref" href="../V_Functions/vl_filename_directory_AutoLISP.html" title="Returns the directory path of a file, after stripping out the name and extension">
+           (vl-filename-directory
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-E8F3D549-5E75-43EB-8A71-DD440CCF63E1">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D2B">
+          Returns the directory path of a file, after stripping out the name and extension
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D2A">
+          <a class="xref" href="../V_Functions/vl_filename_extension_AutoLISP.html" title="Returns the extension from a file name, after stripping out the rest of the name">
+           (vl-filename-extension
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-643C30FC-01DF-4415-951D-870DED1293A8">
+            "filename"
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D28">
+          Returns the extension from a file name, after stripping out the rest of the name
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D27">
+          <a class="xref" href="../V_Functions/vl_filename_mktemp_AutoLISP.html" title="Calculates a unique file name to be used for a temporary file">
+           (vl-filename-mktemp
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-F5C36076-EF1D-4628-879F-BBEB51D6DC1A">
+            ["pattern" "directory" "extension"]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D25">
+          Calculates a unique file name to be used for a temporary file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D24">
+          <a class="xref" href="../W_Functions/write_char_AutoLISP.html" title="Writes one character to the screen or an open file">
+           (write-char
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-FD82809E-D66B-4F24-9705-4EAC95FE764E">
+            num [file-desc]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D23">
+          Writes one character to the screen or to an open file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D22">
+          <a class="xref" href="../W_Functions/write_line_AutoLISP.html" title="Writes a string to the screen or to an open file">
+           (write-line
+           <em class="ph i" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__GUID-A36EB7FD-AB96-4DD0-8F41-335BAD75CE49">
+            string [file-desc]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2__WSFACF1429558A55DE11F0759FF1E4B858C-5D21">
+          Writes a string to the screen or to an open file
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../Functions_Reference_AutoLISP.html" title="Listing of AutoLISP functions by alphabetic name and feature.">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

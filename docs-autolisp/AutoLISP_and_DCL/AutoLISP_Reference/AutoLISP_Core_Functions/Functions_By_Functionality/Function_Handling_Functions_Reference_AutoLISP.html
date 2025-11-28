@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Function-Handling Functions Reference (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Function-Handling Functions Reference (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-BC775B7A-87FE-43D9-B8F1-8F81B63CD8FE">
+    <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E42">
+     The following table provides summary descriptions of the AutoLISP function-handling functions.
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WS73099CC142F4875516D84BE10EBC87A53F-7B60" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" rowspan="2" valign="top">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E41">
+          Function-handling functions
+         </p>
+        </th>
+        <th class="entry" colspan="5" valign="top">
+         <p class="p">
+          Platforms
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p">
+          Windows
+         </p>
+        </th>
+        <th class="entry" colspan="2" valign="top">
+         <p class="p">
+          Mac OS
+         </p>
+        </th>
+        <th class="entry" valign="top" width="10%">
+         <p class="p">
+          Web
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E40">
+          Function
+         </p>
+        </th>
+        <th class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E3F">
+          Description
+         </p>
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E3E">
+          <a class="xref" href="../A_Functions/apply_AutoLISP.html" title="Passes a list of arguments to, and executes, a specified function">
+           (apply
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-D0F6BDE8-7653-4637-8A04-3ABEE3A2557F">
+            function lst
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E3D">
+          Passes a list of arguments to a specified function
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E3C">
+          <a class="xref" href="../D_Functions/defun_AutoLISP.html" title="Defines a function">
+           (defun
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-E19C02E8-0698-4DC7-83AA-280C4698D8CA">
+            sym ([arguments] [/variables ...]) expr ...
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E3A">
+          Defines a function
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E39">
+          <a class="xref" href="../D_Functions/defun_q_AutoLISP.html" title="Defines a function as a list">
+           (defun-q
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-FB0D9D0E-FE36-4264-8CF7-953B81682ED6">
+            sym ([arguments] [/ variables ...]) expr ...
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E37">
+          Defines a function as a list (intended for backward-compatibility only)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E36">
+          <a class="xref" href="../D_Functions/defun_q_list_ref_AutoLISP.html" title="Displays the list structure of a function defined with defun-q">
+           (defun-q-list-ref
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-5BEEC4BF-BCB1-4153-8FC5-8CB83FDD90C6">
+            'function
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E35">
+          Displays the list structure of a function defined with
+          <samp class="ph codeph" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-08972BDC-9C04-43AC-BFD6-8796F2EB4005">
+           defun-q
+          </samp>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E34">
+          <a class="xref" href="../D_Functions/defun_q_list_set_AutoLISP.html" title="Sets the value of a symbol to be a function defined by a list">
+           (defun-q-list-set
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-5F3398DC-8FEE-4209-97D4-AE9227953A94">
+            'sym list
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E33">
+          Defines a function as a list (intended for backward-compatibility only)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E32">
+          <a class="xref" href="../E_Functions/eval_AutoLISP.html" title="Returns the result of evaluating an AutoLISP expression">
+           (eval
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-12FA2F5A-2E19-44DE-B070-98B0B3C6AC3A">
+            expr
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E31">
+          Returns the result of evaluating an AutoLISP expression
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E30">
+          <a class="xref" href="../L_Functions/lambda_AutoLISP.html" title="Defines an anonymous function">
+           (lambda
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-116B1D17-E3D9-4C76-B296-CD1FAE7845BC">
+            arguments expr ...
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2F">
+          Defines an anonymous function
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2E">
+          <a class="xref" href="../P_Functions/progn_AutoLISP.html" title="Evaluates each expression sequentially and returns the value of the last expression">
+           (progn
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-2B9CF0BD-A79F-4A90-A561-E7E1CE776B28">
+            [expr ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2D">
+          Evaluates each expression sequentially, and returns the value of the last expression
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2C">
+          <a class="xref" href="../T_Functions/trace_AutoLISP.html" title="Aids in AutoLISP debugging">
+           (trace
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-F9A91DDA-3594-4F08-864E-FC2A3B6FE77D">
+            function ...
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2B">
+          Aids in AutoLISP debugging
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E2A">
+          <a class="xref" href="../U_Functions/untrace_AutoLISP.html" title="Clears the trace flag for the specified functions">
+           (untrace
+           <em class="ph i" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__GUID-97F9C572-D048-472E-A2F5-058F33B12041">
+            function ...
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-6804DF2D-E5C4-466A-9869-3CDD7A031FAA__WSFACF1429558A55DE11F0759FF1E4B858C-5E29">
+          Clears the trace flag for the specified functions
+         </p>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../Functions_Reference_AutoLISP.html" title="Listing of AutoLISP functions by alphabetic name and feature.">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

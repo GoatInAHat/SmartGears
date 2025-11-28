@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Low-level graphics in the drawing area and application window can be controlled using AutoLISP functions." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Controlling Low-Level Graphics (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Controlling Low-Level Graphics (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Low-level graphics in the drawing area and application window can be controlled using AutoLISP functions.
+   </p>
+   <p class="p" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__WSFACF1429558A55DE11F0759FF1E4B858C-64E8">
+    The following functions can be used to draw temporary objects in the drawing area or display text in the status bar:
+   </p>
+   <ul class="ul" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__UL_44BBD08CE51F4B15B98126531470D9EB">
+    <li class="li" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__LI_1C0D7612A1944FB8A897ECCE6EAF5BE8">
+     <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-9222E8A2-188B-42AE-A310-3F4987428398">
+      grtext
+     </samp>
+     – Displays text directly in the status bar area, with or without highlighting.
+     <div class="note note" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-A49C9AE8-BBC0-443A-8B15-DAF145071413">
+      <span class="notetitle">
+       Note:
+      </span>
+      This function is supported on Mac OS, but does not affect AutoCAD.
+     </div>
+    </li>
+    <li class="li" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__LI_10DDD3AE5C564E6797F3B7EF45C34AF5">
+     <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-A89FAA2F-9CE0-4D50-87CE-C13980F0BAAF">
+      grdraw
+     </samp>
+     – Draws a temporary vector in the current viewport with control over color and highlighting.
+    </li>
+    <li class="li" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__LI_14D39F84DCBE422B9CBB52A57FB6B5A1">
+     <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-63768B5C-1882-409B-AD70-052CD758E89E">
+      grvecs
+     </samp>
+     – Draws multiple temporary vectors.
+    </li>
+    <li class="li" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__LI_8BC976B7781B490F8E892D2690E774B2">
+     <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-CB7DA978-012F-4461-BEB3-28122727CAA2">
+      redraw
+     </samp>
+     – Redraws the current viewport or a specified object (entity) in the current viewport.
+    </li>
+   </ul>
+   <div class="note note" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__WS1A9193826455F5FF-4855151011E21CB4C05-5ECB">
+    <span class="notetitle">
+     Note:
+    </span>
+    Because these functions depend on code in AutoCAD, their operation can be expected to change from release to release. There is no guarantee that applications calling these functions will be upward compatible. Also, they depend on current hardware configurations. In particular, applications that call
+    <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-ECEBE752-990E-45F1-9AD1-6F7A147C8DA4">
+     grtext
+    </samp>
+    are not likely to work the same on all configurations unless the developer is very careful to use them as described and to avoid hardware-specific features. Finally, because they are low-level functions, they do almost no error reporting and can alter the graphics screen display unexpectedly (see the following example for a way to fix this).
+   </div>
+   <p class="p" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__WSFACF1429558A55DE11F0759FF1E4B858C-64E6">
+    The following sequence restores the default graphics window display caused by incorrect calls to
+    <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-9261031C-9140-4C85-9984-56F0305DED50">
+     grtext
+    </samp>
+    ,
+    <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-DF8CB009-8298-4509-B234-19F63142CC1C">
+     grdraw
+    </samp>
+    , or
+    <samp class="ph codeph" id="GUID-57942DDA-8A41-4456-B021-FDEF0475A6AE__GUID-2E91CF35-1C4E-4AB2-89BF-44869789A95A">
+     grvecs
+    </samp>
+    :
+   </p>
+   <pre class="pre codeblock prettyprint">(grtext) ; Restores standard text
+(redraw)</pre>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Display_Control_AutoLISP.html">
+      About Display Control (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Controlling_the_Graphics_and_Text_Windows_AutoLISP.html" title="You can control the display of the graphics and text windows from an application.">
+       About Controlling the Graphics and Text Windows (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-9C2C56A3-0BEF-45AB-A7FE-5825339DCB41">
+       Display Control Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

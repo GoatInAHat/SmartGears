@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Determines the size of a file, in bytes" name="description"/>
+  <meta content="VL-FILE-SIZE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-file-size (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-file-size (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Determines the size of a file, in bytes
+   </p>
+   <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-03FC4FD2-2F94-439B-9548-72C57FA12E25">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-file-size <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-A46A8392-7134-4DB7-A2F3-308A239DC6C2">filename</em>)</pre>
+    <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__WS1A9193826455F5FF-1E1423D1125831BDA67-7AD8">
+     <dl class="dl" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__WS1A9193826455F5FF-1E1423D1125831BDA67-7AD8">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-B29D2D7D-E2A3-49E4-9EF7-998DDFBB6092">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-63CAF2B7-DAC6-488E-95D0-A6E1B1DB4D5C">
+       <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-47A8B554-E96C-466F-BBB4-E0F71BF011B9">
+        <strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-800F1DE8-03B8-4208-A054-6D245E45AC12">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__WSFACF1429558A55DE11F0759FF1E4B858C-3157">
+        Naming the file to be sized. If you do not specify a full path name,
+        <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-C1E8FADB-EA2D-4344-BF01-D2D3AA634AB7">
+         vl-file-size
+        </samp>
+        searches the AutoCAD default drawing directory for the file.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__SECTION_5243CED2BBD04CA5B975A7F9E01077BD">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-CC02D486-EABB-48EA-8146-204775C43C05">
+     <strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-4145CDBB-4FB9-45B4-B9FD-0285CA1C8F9F">
+      Type:
+     </strong>
+     Integer
+    </p>
+    <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__WSFACF1429558A55DE11F0759FF1E4B858C-3155">
+     If successful,
+     <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-CBF95387-7C7D-4DD4-BBA2-F144EA2BA2E7">
+      vl-file-size
+     </samp>
+     returns an integer showing the size of
+     <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-C72C7BBC-09BD-4A74-9750-881D76AB90B2">
+      filename
+     </em>
+     . If the file is not readable,
+     <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-4101F14F-E41C-4D87-8DD6-B699A2AA54DC">
+      vl-file-size
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-CADA2F23-4296-445D-871D-B017504EA687">
+      nil
+     </samp>
+     . If
+     <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-8AE850CE-629C-4FCE-A2E1-44D09D0401C3">
+      filename
+     </em>
+     is a directory or an empty file,
+     <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-997B2066-29B1-4F0D-B858-81169CD787D4">
+      vl-file-size
+     </samp>
+     returns 0.
+    </p>
+   </div>
+   <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__SECTION_45EF162382FD4971907B59DC5A9DF857">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__UL_601CF3C18B944C56B6DE169D92406729">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_C5B603143C1C444DB8BCA4FB860EBC4E">
+      <span class="ph msgph prodname">
+       AutoCAD R14 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_6D3E6EB310D04137A0FCD9D60FD51E12">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__SECTION_8DD7147860174F90B25DA88C95CE72E6">
+    <h2 class="title sectiontitle">
+     History
+    </h2>
+    <ul class="ul" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__UL_F544503F9E0248D0A2E1347EAD78CBA5">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2021
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_9469701DC1804CE28649187702B9148E">
+      <samp class="ph codeph">
+       <em class="ph i">
+        filename
+       </em>
+      </samp>
+      argument previously accepted an ASCII text string, but now accepts a Unicode text string.
+     </li>
+     <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_7FD83FA3943A40629786BA2DAC6AB232">
+      LISPSYS system variable controls which AutoLISP engine is used and the behavior of the function.
+      <ul class="ul" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__UL_857B7FD0CC6F4B7B9E9943C01B80FC9A">
+       <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_863CB09F96C2419693A532EABB040235">
+        0 - ASCII character support (legacy behavior)
+       </li>
+       <li class="li" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__LI_8E0A56D387F442AEAB25691C54CB1F59">
+        1 or 2 - Unicode character support
+       </li>
+      </ul>
+      <div class="note note" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-C0A93482-5E3D-45FB-9424-2C8B3FAED432">
+       <span class="notetitle">
+        Note:
+       </span>
+       After the value of the LISPSYS system variable has been changed, AutoCAD must be restarted for the change to take affect.
+      </div>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__SECTION_F1C56DF086194DE88A97536FFBE02DF7">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <div class="section" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-1ED81517-0A13-4967-88DA-7AB268762B17">
+     <dl class="dl" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-1ED81517-0A13-4967-88DA-7AB268762B17">
+      <dt class="dt dlterm">
+       Windows
+      </dt>
+      <dd class="dd" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-CE57C6BB-CBE3-49FF-8E56-A58201E16E74">
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-A6E7F2B7-F731-494F-A610-39B0DB827DDC">(vl-file-size "c:/autoexec.bat")</strong>
+1417
+
+<strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-B5BD628D-F76E-44D1-AFD6-A3B9CFEF359F">(vl-file-size "c:/")</strong>
+0</pre>
+       <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-14ADC5A5-F257-4266-A538-57740F919D93">
+        In the preceding example,
+        <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-7F4BB5C2-F232-4E9D-94D0-1679CCDA0F5E">
+         vl-file-size
+        </samp>
+        returned 0 because
+        <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-E0E15D4B-FA67-42E9-9EC8-4B1F8B7A2C1D">
+         c:/
+        </em>
+        names a directory.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       Mac OS and Web
+      </dt>
+      <dd class="dd" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-D80924BA-49FB-49D8-AE22-D0FB1B9C326A">
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-96E6C961-9200-4760-886F-B11654B89B9F">(vl-file-size "/output.txt")</strong>
+568
+
+<strong class="ph b" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-15252D5A-C986-4A08-8D2B-5A41351D91F9">(vl-file-size "/")</strong>
+0</pre>
+       <p class="p" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-EAB30408-40DC-4F25-A7AD-52632C8BB55F">
+        In the preceding example,
+        <samp class="ph codeph" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-AC28AD20-7FE5-4CC1-988F-199E86CFB8A9">
+         vl-file-size
+        </samp>
+        returned 0 because
+        <em class="ph i" id="GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005__GUID-C09899CE-27CA-4584-B04D-5E99F2F95B3F">
+         /
+        </em>
+        names the &lt;root&gt; of the drive and not a file.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/File_Handling_Functions_Reference_AutoLISP.html">
+       File-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../F_Functions/findfile_AutoLISP.html" title="Searches the AutoCAD library and trusted paths for the specified file or directory">
+       findfile (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_file_systime_AutoLISP.html" title="Returns last modification time of the specified file">
+       vl-file-systime (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_filename_base_AutoLISP.html" title="Returns the name of a file, after stripping out the directory path and extension">
+       vl-filename-base (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_filename_extension_AutoLISP.html" title="Returns the extension from a file name, after stripping out the rest of the name">
+       vl-filename-extension (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_filename_directory_AutoLISP.html" title="Returns the directory path of a file, after stripping out the name and extension">
+       vl-filename-directory (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

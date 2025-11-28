@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Programs should intercept and attempt to process errors instead of allowing control to pass to *error* when possible." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Catching Errors and Continuing Program Execution (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Catching Errors and Continuing Program Execution (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Programs should intercept and attempt to process errors instead of allowing control to pass to
+    <samp class="ph codeph" id="GUID-5BDB0510-8D09-4F5A-A42B-4531F6F5F96D">
+     *error*
+    </samp>
+    when possible.
+   </p>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__WSFACF1429558A55DE11F0759FF1E4B858C-652C">
+    The
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-3384B8DD-26A4-4B38-86CE-67FDE934D577">
+     vl-catch-all-apply
+    </samp>
+    function is designed to invoke any function, return a value from the function, and trap any error that may occur. The function requires two arguments:
+   </p>
+   <ul class="ul" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__UL_761384FEDEFF4396ABD3F2D613271299">
+    <li class="li" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__LI_9F05818237054F9D81AFA28D269B3AB9">
+     A symbol identifying a function or lambda expression
+    </li>
+    <li class="li" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__LI_D031EE9F5C0341EB8B8FC6B6C16CA464">
+     A list of arguments to be passed to the called function
+    </li>
+   </ul>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-08B7027D-8396-40D0-8F84-191B29931B2A">
+    The importance of
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-0CE7251A-5B2E-41FF-8E4A-D8B6F21FDAFB">
+     vl-catch-all-apply
+    </samp>
+    is the ability to catch errors and allow your program to continue execution. The following example uses
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-CAF3EA25-551E-416C-9621-CC8E83044F8C">
+     vl-catch-all-apply
+    </samp>
+    to divide two numbers:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-4F4E6F86-03B6-4538-B88E-41AFCF490D52">(setq catchit (vl-catch-all-apply '/ '(50 5)))</strong>
+10</pre>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__WSFACF1429558A55DE11F0759FF1E4B858C-652B">
+    The result from this example is the same as if you had used apply to perform the division or just used
+    <strong class="ph b" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-9F98E786-D123-4654-8E66-0207109FB6D6">
+     <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-73A784A4-E012-4EDA-B63C-EF709C932EB8">
+      /
+     </samp>
+    </strong>
+    to divide the provided numbers.
+   </p>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__WSFACF1429558A55DE11F0759FF1E4B858C-652A">
+    The following example uses
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-50DADC95-E500-4853-90A2-8CE0866C6678">
+     vl-catch-all-apply
+    </samp>
+    to divide two numbers, and one of the numbers being zero:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-FAE41D79-19F8-4C86-966F-A37DCB343188">(setq catchit (vl-catch-all-apply '/ '(5 0)))</strong>
+#&lt;%catch-all-apply-error%&gt;</pre>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-C3440A48-2375-4304-A0CC-394CF5790B04">
+    The result from this example returns a VL-CATCH-ALL-APPLY-ERROR object which can be interpreted using
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-199E9A79-596B-4038-9D09-E6B635DD7EEC">
+     vl-catch-all-error-message
+    </samp>
+    . You can use the type function to make sure you are working with an error object before calling
+    <samp class="ph codeph" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-C7018656-C3C8-4856-8C9E-250FFC1EE552">
+     vl-catch-all-error-message
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-E9308BAC-CB40-4326-AEC9-09823EEB2C83">
+    The following example checks for an error object and returns the error message:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-9DDAD8C4-FB10-4C15-B59E-F6E05C1F9672__GUID-426B2C33-F1B3-4A24-AFB8-B01F87729F28">(if (vl-catch-all-error-p catchit)
+  (vl-catch-all-error-message catchit)
+)</strong>
+"divide by zero"</pre>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="To_catch_errors_with_vl_catch_all_apply_AutoLISP.html">
+       To catch errors with vl-catch-all-apply (AutoLISP)
+      </a>
+      <br/>
+      Errors caused by AutoLISP functions can result in a program ending unexpectedly, make sure to handle all known situations that could cause an error.
+     </li>
+    </ul>
+   </div>
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="../About_Error_Handling_AutoLISP.html" title="The AutoLISP language provides several functions for handling errors.">
+      About Error Handling (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Error_Handling_AutoLISP.html" title="The AutoLISP language provides several functions for handling errors.">
+       About Error Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Using_the_error_Function_AutoLISP.html" title="The *error* function can ensure that AutoCAD returns to a particular state after an error occurs.">
+       About Using the *error* Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Basic_Output_Functions_AutoLISP/About_Displaying_Messages_AutoLISP/About_Exiting_a_Function_Quietly_AutoLISP.html" title="If you invoke the princ function without passing an expression to it, it displays nothing and has no value to return.">
+       About Exiting a Function Quietly (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-9205DA3B-9186-48C7-A477-E4C8FF88E1BB.htm" title="The vl-catch-all-apply function allows you to intercept errors returned by ActiveX methods, and decide how the program should continue.">
+       Example: Intercept an Error Returned by an ActiveX Method (AutoLISP/ActiveX)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../../Appendixes/Error_Codes_Reference_AutoLISP.html">
+       Error Codes Reference (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D114F1C4-DE8E-422D-8F3F-C43707B8212B">
+       Error-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo reltasks">
+    <h4 class="related">
+     Related Tasks
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="To_catch_errors_with_vl_catch_all_apply_AutoLISP.html" title="Errors caused by AutoLISP functions can result in a program ending unexpectedly, make sure to handle all known situations that could cause an error.">
+       To catch errors with vl-catch-all-apply (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

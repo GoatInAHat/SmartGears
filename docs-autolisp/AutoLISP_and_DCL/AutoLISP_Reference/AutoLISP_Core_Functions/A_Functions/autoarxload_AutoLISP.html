@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Predefines command names to load an associated ObjectARX file" name="description"/>
+  <meta content="AUTOARXLOAD" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   autoarxload (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      autoarxload (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Predefines command names to load an associated ObjectARX file
+   </p>
+   <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-1A5170FD-395A-4CF0-B10D-DECED8EC8CC0">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(autoarxload <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-01A4B66F-F9AE-4388-8BAE-865461C334A4">filename cmdlist</em>)</pre>
+    <div class="section" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WS1A9193826455F5FF-1E1423D1125831BDA67-7BA0">
+     <dl class="dl" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WS1A9193826455F5FF-1E1423D1125831BDA67-7BA0">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-EDD31692-5580-468F-8326-3823CA7C6477">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-584969A8-68FB-4918-BD2F-B2A3D9B62324">
+       <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-2F98813B-239B-4A93-8124-54EDD9503B34">
+        <strong class="ph b" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-609BA7ED-28C4-4F70-BC29-7B827140A233">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WSFACF1429558A55DE11F0759FF1E4B858C-39FB">
+        ObjectARX file to be loaded when one of the commands defined by the
+        <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-DF413890-D26A-4AF1-BD23-1EF21EE2D08B">
+         cmdlist
+        </em>
+        argument is entered at the Command prompt. You can omit the path from the
+        <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-9BE451CA-2463-495A-83B8-B329DD2B5C0A">
+         filename
+        </em>
+        , AutoCAD looks for the file in the support file search path. The extension from the filename can also be omitted;
+        <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-52E698F4-04E3-40A3-AE09-9EDFC773B703">
+         .arx
+        </em>
+        (Windows) or
+        <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-1C307B6E-294C-4E1D-BACC-13DB08790915">
+         .bundle
+        </em>
+        (Mac OS).
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-89FAAB66-3DEE-43A6-B747-D5D5AAF4D05B">
+        cmdlist
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-9EDA3940-A1AB-4224-A198-E0AA20C92A12">
+       <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-432375B2-60F2-4C56-BA0C-806E281A01D3">
+        <strong class="ph b" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-4F85BB29-BB23-4520-A5D7-CFCF6EEB31D4">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WSFACF1429558A55DE11F0759FF1E4B858C-39FA">
+        A list of strings.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__SECTION_C7CC88C8B4F04A56898B4F3C06BAFE24">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-E12BEC3D-D480-4ACB-A95E-86CA0EEE97C3">
+     <strong class="ph b" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-7696CE10-E0CC-4142-84CB-55CC4F13D8C5">
+      Type:
+     </strong>
+     nil
+    </p>
+    <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-C80EA0B3-2778-43F5-AF2F-6A2DDC652F72">
+     Always returns
+     <samp class="ph codeph" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-8ED6920B-A009-4F76-9D39-1890808901CD">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__SECTION_937BFC7DD69C4CBEAAD9A2730767974E">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WSFACF1429558A55DE11F0759FF1E4B858C-39FE">
+     The first time a user enters a command specified in
+     <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-335A95E9-E994-44FE-ADA4-51933F050B58">
+      cmdlist
+     </em>
+     , AutoCAD loads the ObjectARX application specified in
+     <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-F8FF757D-38E2-4803-9B2F-3F108ABA41CC">
+      filename
+     </em>
+     , then continues the command.
+    </p>
+    <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WSFACF1429558A55DE11F0759FF1E4B858C-39FD">
+     If you associate a command with
+     <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-28288A89-3456-49F1-97E4-2284524A807A">
+      filename
+     </em>
+     and that command is not defined in the specified file, AutoCAD alerts you with an error message when you enter the command.
+    </p>
+    <div class="note important" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-DF868DF8-33BA-4AE1-99A7-D630E5229697">
+     <span class="importanttitle">
+      Important:
+     </span>
+     Starting with AutoCAD 2014-based products, custom applications must work under secure mode; when the SECURELOAD system variable is set to 1 or 2. When operating under secure mode, the program is restricted to loading and executing files that contain code from trusted locations; trusted locations are specified by the TRUSTEDPATHS system variable.
+    </div>
+   </div>
+   <div class="section" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__SECTION_CDCC7C9D3CEF48FCA1DBC4FD3F019BE6">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__WSFACF1429558A55DE11F0759FF1E4B858C-39F7">
+     The following code defines the
+     <samp class="ph codeph" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-0AE145DD-3047-45A0-A56E-81836B84E6A1">
+      C:APP1
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-978C3D21-6E39-42AC-BC41-3B23126EFB43">
+      C:APP2
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-BA012476-403B-4CC5-83CB-40B0361E4932">
+      C:APP3
+     </samp>
+     functions to load the
+     <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-CB6FAD13-8A17-4F4F-8D20-409065A98794">
+      bonusapp.arx
+     </em>
+     or
+     <em class="ph i" id="GUID-E1DDBABF-6F72-4747-B9E2-ACEEEA9FAA48__GUID-0278EC5F-31AB-4EB2-A924-87134180B437">
+      bonusapp.bundle
+     </em>
+     file:
+    </p>
+    <pre class="pre codeblock prettyprint">(autoarxload "BONUSAPP" '("APP1" "APP2" "APP3"))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Application_Handling_Functions_Reference_AutoLISP.html">
+       Application-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="arxload_AutoLISP.html" title="Loads an ObjectARX application">
+       arxload (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

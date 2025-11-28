@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="An application can obtain the extended data (xdata) that it has attached to an entity with entget." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Retrieving Extended Data (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Retrieving Extended Data (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    An application can obtain the extended data (xdata) that it has attached to an entity with
+    <samp class="ph codeph" id="GUID-3303AD7D-ABDF-46A0-99F0-233C99D7F40F">
+     entget
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-3B8CBA70-2381-4860-9C65-ACA4DFA9C84D">
+    The
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-8A53EAB0-728B-4526-BBEF-A31A250F30FF">
+     entget
+    </samp>
+    function can return an entity’s definition data and the xdata for the applications it requests. It requires an additional argument, application, that specifies the application names. The names passed to
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-013A3072-5C26-4C52-9CED-6EA404C78FF4">
+     entget
+    </samp>
+    must correspond to applications registered by a previous call to
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-24D14FBC-6E7D-4213-8BEA-F8D52C9F1406">
+     regapp
+    </samp>
+    ; they can also contain wild-card characters.
+   </p>
+   <p class="p" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-F7757137-AE3F-4F5F-BD8B-BFFFB64A5D98">
+    By default, associative hatch patterns contain xdata. The following example code demonstrates the association list of this xdata. Before you can use the code, create a closed boundary and apply an associative hatch object to the boundary.
+   </p>
+   <pre class="pre codeblock prettyprint">(entget (car (entsel)) '("ACAD"))</pre>
+   <p class="p promptblock" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-2ABAE9A0-2168-42C7-BF63-FDE9FBCE6998">
+    Select object:
+    <em class="ph i" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-DC90DF6E-00BC-4AC4-BA68-ADB0B46DA8F7">
+     Select an associative hatch
+    </em>
+   </p>
+   <p class="p" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__WSFACF1429558A55DE11F0759FF1E4B858C-62BA">
+    Entering the preceding code at the command line returns a list that looks something like this:
+   </p>
+   <pre class="pre codeblock prettyprint">((-1 . &lt;Entity name: 7ffffb05e10&gt;) (0 . "HATCH") (330 . &lt;Entity name: 7ffffb039f0&gt;) (5 . "1D9") (100 . "AcDbEntity") (67 . 0) (410 . "Model") (8 . "0") (100 . "AcDbHatch") (10 0.0 0.0 0.0) (210 0.0 0.0 1.0) (2 . "ANSI31") (70 . 0) (71 . 1) (91 . 1) (92 . 7) (72 . 0) (73 . 1) (93 . 4) (10 31.2567 17.3197 0.0) (10 7.77575 17.3197 0.0) (10 7.77575 8.83313 0.0) (10 31.2567 8.83313 0.0) (97 . 1) (330 . &lt;Entity name: 7ffffb05d50&gt;) (75 . 1) (76 . 1) (52 . 0.0) (41 . 3.0) (77 . 0) (78 . 1) (53 . 0.785398) (43 . 0.0) (44 . 0.0) (45 . -0.265165) (46 . 0.265165) (79 . 0) (47 . 0.0289642) (98 . 1) (10 21.1106 14.5391 0.0) (-3 ("ACAD" (1010 0.0 0.0 0.0))))</pre>
+   <p class="p" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-E51708E5-9E6D-4ED2-9852-60E29926AF15">
+    The following example code demonstrates a typical sequence for retrieving xdata for two specified applications. Note that the
+    <em class="ph i" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-71AE2044-8350-4B89-9D9B-C562B52E5E9B">
+     application
+    </em>
+    argument accepts application names in list form:
+   </p>
+   <pre class="pre codeblock prettyprint">(setq working_elist
+  (entget ent_name
+    '("MY_APP_1" "SOME_OTHER") ; Only xdata from "MY_APP_1"
+  )                            ; and "SOME_OTHER" is retrieved.
+)
+(if working_elist
+  (progn
+    ...                        ; Updates working entity groups.
+    (entmod working_elist)     ; Only xdata from registered
+  )                            ; applications still in the
+)                              ; working_elist list are modified.</pre>
+   <p class="p" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__WSFACF1429558A55DE11F0759FF1E4B858C-62B7">
+    As the example code demonstrates, you can modify xdata retrieved by
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-6A859BBC-6E26-40AC-AD24-FED94635227A">
+     entget
+    </samp>
+    by using a subsequent call to
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-ABD40271-5582-4A33-98C8-62C5BCD0E83D">
+     entmod
+    </samp>
+    , just as you can use
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-EC1ADDD9-FDCF-4EA4-9469-374E76A54A03">
+     entmod
+    </samp>
+    to modify normal entity definition data. You can also create xdata by defining it in the entity list passed to
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-8B8F97FA-EDF8-4461-91E9-6057A62DABCD">
+     entmake
+    </samp>
+    . Returning the xdata of only those applications specifically requested protects one application from corrupting another application's data. It also controls the amount of memory that an application needs to use and simplifies the xdata processing that an application needs to perform.
+   </p>
+   <div class="note note" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__WS1A9193826455F5FF-4855151011E21CB4C05-5B15">
+    <span class="notetitle">
+     Note:
+    </span>
+    Because the strings passed by
+    <em class="ph i" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-F6F7385A-54CF-428C-A578-362BABB20330">
+     application
+    </em>
+    can include wild-card characters, an application name of
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-89BA92F6-810E-4DA7-9DC8-CE4C30C55EB3">
+     "*"
+    </samp>
+    will cause
+    <samp class="ph codeph" id="GUID-1A2A0518-E9DB-462E-925E-32181D96CE4D__GUID-C4E2B3D4-9005-494B-B1EC-DD532497F892">
+     entget
+    </samp>
+    to return all extended data attached to an entity.
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Extended_Data_Xdata_AutoLISP.html" title="Several AutoLISP functions are provided to handle extended data (xdata), which is created by routines written with AutoLISP, ObjectARX, or Managed .NET.">
+      About Extended Data - Xdata (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Extended_Data_Xdata_AutoLISP.html" title="Several AutoLISP functions are provided to handle extended data (xdata), which is created by routines written with AutoLISP, ObjectARX, or Managed .NET.">
+       About Extended Data - Xdata (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Extended_Data_Group_Codes_AutoLISP.html" title="Extended data consists of one or more 1001 group codes, each of which begin with a unique application name.">
+       About Extended Data Group Codes (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Management_of_Extended_Data_Memory_Use_AutoLISP.html" title="Extended data is limited to 16K per entity.">
+       About Management of Extended Data Memory Use (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Attaching_Extended_Data_to_an_Entity_AutoLISP.html" title="You can use extended data (xdata) to store any type of information you want on an entity.">
+       About Attaching Extended Data to an Entity (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Object_Handling_AutoLISP/About_Entity_Data_Functions_AutoLISP/About_Modifying_an_Entity_without_the_Command_Function_AutoLISP.html" title="An entity can be modified directly by changing its entity list and posting the changes back to the database.">
+       About Modifying an Entity without the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Selecting_Objects_and_Selection_Sets_AutoLISP/About_Selection_Set_Filter_Lists_AutoLISP/About_Filtering_for_Extended_Data_in_a_Selection_Set_AutoLISP.html" title="You can select all entities containing extended data for a particular application using the filter-list argument of ssget.">
+       About Filtering for Extended Data in a Selection Set (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Registered_Applications_AutoLISP.html" title="An application must register its name or names to be recognized by AutoCAD.">
+       About Registered Applications (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-0949AEA9-3942-42C5-8DF4-BC58758319BD">
+       Extended Data-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Provides similar functionality to that of the nentsel function without the need for user input" name="description"/>
+  <meta content="NENTSELP" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   nentselp (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      nentselp (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Provides similar functionality to that of the
+    <em class="ph i" id="GUID-123E948C-EC16-4F3E-8989-FE44696D84C8">
+     nentsel
+    </em>
+    function without the need for user input
+   </p>
+   <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-3EBE23E3-BFFC-41E5-8F46-CB3DAD85BA2F">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(nentselp <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-441EC97B-1F6A-4042-95F6-767406D0BC54">[msg] [pt]</em>)</pre>
+    <div class="section" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WS1A9193826455F5FF-1E1423D1125831BDA67-7B2E">
+     <dl class="dl" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WS1A9193826455F5FF-1E1423D1125831BDA67-7B2E">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-161BB6A8-AA42-42D8-9E20-15FF3A588EAE">
+        msg
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-F06C39A7-2182-4E3F-A531-23E5237468C7">
+       <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-B8DDCBDD-3AB2-44D6-88EA-C85FC36EA06A">
+        <strong class="ph b" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-173FF653-F55C-4C66-8850-972D3C309FAD">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WSFACF1429558A55DE11F0759FF1E4B858C-353A">
+        Message to be displayed as a prompt. If the
+        <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-62891D19-19A7-457A-9F94-9866B7795474">
+         msg
+        </em>
+        argument is omitted, the Select object prompt is issued.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-A643CC31-5AF3-407B-9755-1CA68A00B5FB">
+        pt
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-053178FF-A515-404A-95AD-43D9DF21B2E5">
+       <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-3177D1D5-56B3-47F8-9195-9BAB8BE5A89A">
+        <strong class="ph b" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-1F626F85-85A3-4108-BC2B-729BB0C05B68">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WSFACF1429558A55DE11F0759FF1E4B858C-3539">
+        A selection point. This allows object selection without user input.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__SECTION_711C573D86D94471BACA7ED651593B4A">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-D4154F08-0464-44FE-9A57-3D12F3BEEA87">
+     <strong class="ph b" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-E9D05778-04C4-4F02-9C9D-FAA48D79B0C6">
+      Type:
+     </strong>
+     List or nil
+    </p>
+    <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WSFACF1429558A55DE11F0759FF1E4B858C-3537">
+     The
+     <samp class="ph codeph" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-D4068866-598E-44AE-AF7E-F857E430DC2E">
+      nentselp
+     </samp>
+     function returns a 4×4 transformation matrix, defined as follows:
+    </p>
+    <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WSFACF1429558A55DE11F0759FF1E4B858C-3536">
+     The first three columns of the matrix specify scaling and rotation. The fourth column is a translation vector.
+    </p>
+    <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__WSFACF1429558A55DE11F0759FF1E4B858C-3535">
+     The functions that use a matrix of this type treat a point as a column vector of dimension 4. The point is expressed in
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-0FA87302-A268-494B-992D-CBEBB7698770">
+      homogeneous coordinates,
+     </em>
+     where the fourth element of the point vector is a
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-167E34D7-3FE2-4EF4-B2C7-8CC364352202">
+      scale factor
+     </em>
+     that is normally set to 1.0. The final row of the matrix, the vector [
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-5F557E66-24D7-41F9-A302-8A709A2A4EC9">
+      M
+     </em>
+     <sub class="ph sub" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-8A8115E2-6555-479D-AFD3-12313922136A">
+      <span class="ph" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-7C7FB21E-7E46-4D41-BA4F-C6A692AD15B3">
+       30
+      </span>
+     </sub>
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-948187AC-28E4-4EB0-82D3-33526145225C">
+      M
+     </em>
+     <sub class="ph sub" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-F7A09255-4CF3-4CB5-B4F9-040DC87B33FC">
+      <span class="ph" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-B59F692D-D69A-43A6-8B80-D6DE6FC6E6EA">
+       31
+      </span>
+     </sub>
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-78F3B3DE-2FF9-406A-9914-CFAC580176B6">
+      M
+     </em>
+     <sub class="ph sub" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-8A149082-1B8C-4DCA-938E-DDF0D13D4EEC">
+      <span class="ph" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-DA94AAC1-7DD3-469B-92C2-AA1F588A0265">
+       32
+      </span>
+     </sub>
+     <em class="ph i" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-90C5D520-B743-4A75-A025-2922B03CD3E6">
+      M
+     </em>
+     <sub class="ph sub" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-38CC7AAB-A06B-4254-9A57-0B5ECA618985">
+      <span class="ph" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-BECE1D41-FDE9-4485-8309-3EFFA834A2A1">
+       33
+      </span>
+     </sub>
+     ], has the nominal value of [0 0 0 1]; it is currently ignored by the functions that use this matrix format.
+    </p>
+   </div>
+   <div class="section" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__SECTION_25824D501ED94429B620E0CD933C504B">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-5CE182FE-6455-4C62-B953-B1CA441455C1__GUID-51899E8C-295C-4598-9746-F5D78E938BBE">
+     N/A
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/User_Input_Functions_Reference_AutoLISP.html">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="nentsel_AutoLISP.html" title="Prompts the user to select an object (entity) by specifying a point, and provides access to the definition data contained within a complex object">
+       nentsel (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../E_Functions/entsel_AutoLISP.html" title="Prompts the user to select a single object (entity) by specifying a point">
+       entsel (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/ssget_AutoLISP.html" title="Creates a selection set from the selected object">
+       ssget (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/ssgetfirst_AutoLISP.html" title="Determines which objects are selected and gripped">
+       ssgetfirst (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

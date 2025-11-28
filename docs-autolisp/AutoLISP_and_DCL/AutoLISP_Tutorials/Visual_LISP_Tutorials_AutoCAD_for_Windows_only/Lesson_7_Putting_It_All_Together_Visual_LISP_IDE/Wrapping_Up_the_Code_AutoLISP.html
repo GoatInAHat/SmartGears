@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-209318DE-95C4-40F6-8776-935C8905FDEE" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Wrapping Up the Code (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Wrapping Up the Code (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-038E2ADB-A16A-4CB5-9FEF-4D22518CF5C1">
+    <p class="p" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WSFACF1429558A55DE1929BBDFEF458CE1C-7847">
+     So far, you have done the following in this lesson:
+    </p>
+    <ul class="ul" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF18CB41610EC0A2E719-72CA">
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CFE">
+      Modified the
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-47FFAD52-9463-464F-8518-1D653BCBACD9">
+       gp:drawOutline
+      </samp>
+      function so that it returns the polyline perimeter points in addition to the pointer to the polyline. You added this information to the
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-DE4C1D9E-92D8-4EAF-857B-1649BC637AF1">
+       gp_PathData
+      </samp>
+      variable. This variable is stored with the reactor data in the object reactor attached to every garden path.
+     </li>
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CFD">
+      Updated the reactor functions in gpreact.lsp.
+     </li>
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CFC">
+      Added functions
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-493E5267-7F68-4A21-A3CE-6B26BE2E6F16">
+       xyzList-&gt;ListOfPoints
+      </samp>
+      ,
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-DDA73DC8-0054-48CB-9B95-CFA241D8F516">
+       xyList-&gt;ListOfPoints
+      </samp>
+      , and other utility functions to the
+      <em class="ph i" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-E8C7A5C3-77BD-408F-B16E-06FE056888CA">
+       utils.lsp
+      </em>
+      file.
+     </li>
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CFB">
+      Updated the
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-A2DE0E19-783A-4B87-A217-C80D0FF6AB30">
+       gp:Calculate-and-Draw-Tiles
+      </samp>
+      function so that
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-7402A8ED-92F0-419A-AD52-9349450DE209">
+       ObjectCreationStyle
+      </samp>
+      is now a parameter to the function rather than a local variable.
+     </li>
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CFA">
+      Modified the call to
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-DF91FFB8-9268-4EEF-8AAD-6B69C53305C9">
+       gp:Calculate-and-Draw-Tiles
+      </samp>
+      in the
+      <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-E94500BC-2297-45E0-A56B-0A348B88115C">
+       C:GPath
+      </samp>
+      function within the
+      <em class="ph i" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-8F7A33E7-733F-4DE9-AC70-E36851F502C4">
+       gpmain.lsp
+      </em>
+      file.
+     </li>
+     <li class="li" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WS1A9193826455F5FF-7F10494411F03A24F24-1CF9">
+      Added
+      <em class="ph i" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-EC236281-932F-496C-A063-97DDEB7B00BC">
+       gppoly.lsp
+      </em>
+      to your project, and examined the functions within it.
+     </li>
+    </ul>
+    <p class="p" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__WSFACF1429558A55DE1929BBDFEF458CE1C-7846">
+     Give the completed application a try. Save your work, then load in the project sources, run the
+     <samp class="ph codeph" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-BA9EE760-87C7-46A3-8A4A-81E3CA8C8BD8">
+      Gpath
+     </samp>
+     function, and try stretching and moving the garden path boundary. Remember: if something is not working and you are unable to debug the problem, you can load the completed code from the
+     <em class="ph i" id="GUID-9FD1081D-CFD1-4EE6-BAD5-4B6540073770__GUID-90A9288F-0106-4636-BA78-E0C8F2DD2C99">
+      Tutorial\VisualLISP\Lesson7
+     </em>
+     directory.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_7_Putting_It_All_Together_Visual_LISP_IDE.html">
+      Lesson 7: Putting It All Together (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Understanding_the_Gp_pointEqual_Gp_rtos2_and_Gp_zeroSmallNum_Functions.html">
+      Understanding the Gp:pointEqual, Gp:rtos2, and Gp:zeroSmallNum Functions
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Building_an_Application.html">
+      Building an Application
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

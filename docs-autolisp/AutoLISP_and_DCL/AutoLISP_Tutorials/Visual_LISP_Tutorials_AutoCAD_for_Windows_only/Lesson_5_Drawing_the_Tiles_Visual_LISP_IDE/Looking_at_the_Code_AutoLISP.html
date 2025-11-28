@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-87F4038B-C54A-4A2A-B122-FFE4DAB279C3" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Looking at the Code (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Looking at the Code (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-BF1C48C5-AFFA-4C9D-82B7-4F23AEC9E56F">
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7707">
+     Now look at the code for the
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-8A54F4D3-ABCA-4C7C-B2DF-2F827152C1EF">
+      gp:calculate-Draw-TileRow
+     </samp>
+     function:
+    </p>
+    <pre class="pre codeblock prettyprint">(defun gp:calculate-Draw-TileRow (startPoint TileRadius
+                                  TileSpace pathWidth pathAngle 
+                                  offsetFromCenter ObjectCreationStyle / 
+                                  HalfWidth TileDiameter
+                                  ObjectCreationFunction angp90 angm90
+                                  firstCenterPt TileCenterPt TileList)
+  (setq HalfWidth (- (/ pathWidth 2.00) TileRadius)
+        Tilespacing (+ (* TileRadius 2.0) TileSpace)
+        TileDiameter (* TileRadius 2.0)
+        angp90 (+ PathAngle (Degrees-&gt;Radians 90))
+        angm90 (- PathAngle (Degrees-&gt;Radians 90))
+        firstCenterPt (polar startPoint angp90 offsetFromCenter)
+        tileCenterPt firstCenterPt
+        ObjectCreationStyle(strcase ObjectCreationStyle)
+        ObjectCreationFunction
+        (cond 
+          ((equal ObjectCreationStyle "ACTIVEX")
+            gp:Create_activeX_Circle
+          )
+          ((equal ObjectCreationStyle "ENTMAKE")
+            gp:Create_entmake_Circle
+          )
+          ((equal ObjectCreationStyle "COMMAND")
+            gp:Create_command_Circle
+          )
+          (T
+            (alert (strcat "ObjectCreationStyle in function gp:calculate-Draw-TileRow"
+                           "\nis invalid. Contact developer for assistance."
+                           "\n        ObjectCreationStyle set to ACTIVEX"
+                   )
+            )
+            (setq ObjectCreationStyle "ACTIVEX")
+          )
+        )
+  )
+
+  ;; Draw the circles to the left of the center.
+  (while (&lt; (distance startPoint tileCenterPt) HalfWidth)
+    ;; Add each tile to the list to return.
+    (setq tileList
+          (cons
+            (ObjectCreationFunction tileCenterPt TileRadius)
+            tileList
+          )
+    )
+    ;; Calculate the center point for the next tile.
+    (setq tileCenterPt
+          (polar tileCenterPt angp90 TileSpacing)
+    )
+  );_ end of while
+
+  ;; Draw the circles to the right of the center.
+  (setq tileCenterPt
+        (polar firstCenterPt angm90 TileSpacing)
+  )
+  (while (&lt; (distance startPoint tileCenterPt) HalfWidth)
+    ;; Add each tile to the list to return.
+    (setq tileList
+          (cons
+            (ObjectCreationFunction tileCenterPt TileRadius)
+            tileList
+          )
+    )
+    ;; Calculate the center point for the next tile.
+    (setq tileCenterPt
+          (polar tileCenterPt angm90 TileSpacing)
+    )
+  );_ end of while
+
+  ;; Return the list of tiles.
+  tileList
+) ;_ end of defun</pre>
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7706">
+     The AutoLISP code logic follows the pseudo-code, with the following addition:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq ObjectCreationFunction
+  (cond
+    ((equal ObjectCreationStyle "ACTIVEX")
+       gp:Create_activeX_Circle
+    )
+    ((equal ObjectCreationStyle "ENTMAKE")
+      gp:Create_entmake_Circle
+    )
+    ((equal ObjectCreationStyle "COMMAND")
+      gp:Create_command_Circle
+    )
+    (T
+      (alert
+        (strcat
+         "ObjectCreationStyle in function gp:calculate-Draw-TileRow"
+         "\nis invalid.  Contact the developer for assistance."
+         "\n        ObjectCreationStyle set to ACTIVEX"
+        ) ;_ end of strcat
+      ) ;_ end of alert
+     (setq ObjectCreationStyle "ACTIVEX")
+    )
+  ) ;_ end of cond
+) ;_ end of setq</pre>
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7705">
+     Remember the specification to allow users to draw the tiles (circles) using either ActiveX, the
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-1E4523C9-DE3B-4D7E-BAAA-901746672130">
+      entmake
+     </samp>
+     function, or the
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-771F52C0-C556-4C3A-A7BE-B906DAC71E0F">
+      command
+     </samp>
+     function? The
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-15C77823-95C5-441B-82D4-7FC3F9B361A3">
+      ObjectCreationFunction
+     </samp>
+     variable is assigned one of three functions, depending on the
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-F43229F9-0123-4CA3-9A5A-CF3D886CC1BC">
+      ObjectCreationStyle
+     </samp>
+     parameter (passed from
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-91B1AC34-55AD-49A9-9A5E-00FCD9EC579D">
+      <strong class="ph b" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-D2F33642-A7E9-4C96-8922-CF44DC668DEE">
+       C:GPath
+      </strong>
+     </samp>
+     and through
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-D3C6C341-F5C3-4A30-9C30-3C62868CB999">
+      gp:Calculate-and-Draw-Tiles
+     </samp>
+     ). Here are the three functions as they will be defined in
+     <em class="ph i" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-A74E044C-45B6-41DC-BD79-290138763340">
+      gpdraw.lsp
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint">(defun gp:Create_activeX_Circle (center radius)
+  (vla-addCircle *ModelSpace*
+    (vlax-3d-point center) ; convert to ActiveX-compatible 3D point
+    radius
+  )
+) ;_ end of defun
+(defun gp:Create_entmake_Circle	(center radius)
+  (entmake
+    (list (cons 0 "CIRCLE") (cons 10 center) (cons 40 radius))
+  )
+  (vlax-ename-&gt;vla-object (entlast))
+)
+(defun gp:Create_command_Circle	(center radius)
+  (command "._circle" center radius)
+  (vlax-ename-&gt;vla-object (entlast))
+)</pre>
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7704">
+     The first function draws a circle using an ActiveX function and returns an ActiveX object.
+    </p>
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7703">
+     The second function draws a circle using
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-25A68AED-39C6-43E9-BC50-43921B83CA38">
+      entmake
+     </samp>
+     . It returns an entity name converted into an ActiveX object.
+    </p>
+    <p class="p" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__WSFACF1429558A55DE1929BBDFEF458CE1C-7702">
+     The third function draws a circle using
+     <samp class="ph codeph" id="GUID-8B7A66F1-EB67-40BA-9756-63B3E1001003__GUID-67EA2876-19A4-404E-A87E-A36B3DCF04B4">
+      command
+     </samp>
+     . It also returns an entity name converted into an ActiveX object.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_5_Drawing_the_Tiles_Visual_LISP_IDE.html">
+      Lesson 5: Drawing the Tiles (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Drawing_the_Tiles_in_a_Row.html">
+      Drawing the Tiles in a Row
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Testing_the_Code.html">
+      Testing the Code
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

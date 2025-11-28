@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Some AutoCAD commands (such as TRIM, EXTEND, and FILLET) require the user to specify a pick point as well as the object itself." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Passing Pick Points to AutoCAD Commands (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Passing Pick Points to AutoCAD Commands (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Some AutoCAD commands (such as TRIM, EXTEND, and FILLET) require the user to specify a pick point as well as the object itself.
+   </p>
+   <p class="p" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-DAE325C2-C59D-4831-840D-5ABABE8FAD77">
+    Object and point data can be passed to the
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-C52AA00F-243C-49BB-8005-899D140E6AAE">
+     command
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-104CAFC1-DA02-4C49-97CB-92F225027885">
+     command-s
+    </samp>
+    functions without the use of a
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-8F70E82E-EC5E-43EE-BC2E-F5F9A5DD905E">
+     PAUSE
+    </samp>
+    , but requires you to first store the values as variables. Points can be passed as strings within the
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-B179C383-98EA-4F61-9E91-314E1CFA29B1">
+     command
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-9C136702-CD28-4E56-AF67-F55E549CEF40">
+     command-s
+    </samp>
+    functions, or can be defined outside the function and passed as variables, as shown in the following example.
+   </p>
+   <p class="p" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WSFACF1429558A55DE11F0759FF1E4B858C-650A">
+    The following example code demonstrates one method of passing an entity name and a pick point to the
+    <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-6CD530E8-7517-4D23-AFE5-CCA29DD2FD6C">
+     command
+    </samp>
+    function.
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-BF85F5AC-B2F6-4157-BB77-74E7CD7CC446">(command "._circle" "5,5" "2")</strong>    ;Draws a circle
+<strong class="ph b" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-712DB89A-3485-4BA5-9609-8FBFD72C1B1C">(command "._line" "3,5" "7,5" "")</strong> ;Draws a line
+<strong class="ph b" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-107252A4-6BB7-453C-AC4F-F076CB33540F">(setq el (entlast))</strong>               ;Gets the last entity 
+                                  ;  added to the drawing
+<strong class="ph b" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-0F8FF8EB-B9E7-479F-A082-2505F59FFC6C">(setq pt '(5 7))</strong>                  ;Sets the trim point
+<strong class="ph b" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-F79CAC7A-541C-41A8-B337-EE2FBDE28971">(command "._trim" el "" pt "")</strong>    ;Performs the trim</pre>
+   <p class="p" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WSFACF1429558A55DE11F0759FF1E4B858C-6509">
+    If AutoCAD is at an idle Command prompt when these statements are called, AutoCAD performs the following actions:
+   </p>
+   <ol class="ol" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS73099CC142F4875516D84BE10EBC87A53F-79F4">
+    <li class="li" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS1A9193826455F5FF-4855151011E21CB4C05-5ED5">
+     Draws a circle centered at (5,5) with a radius of 2.
+    </li>
+    <li class="li" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS1A9193826455F5FF-4855151011E21CB4C05-5ED4">
+     Draws a line from (3,5) to (7,5).
+    </li>
+    <li class="li" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS1A9193826455F5FF-4855151011E21CB4C05-5ED3">
+     Creates a variable
+     <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-492767B0-6936-423B-9563-128A58F621B8">
+      el
+     </samp>
+     that is the name of the last object added to the database.
+    </li>
+    <li class="li" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS1A9193826455F5FF-4855151011E21CB4C05-5ED2">
+     Creates a
+     <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-35A22172-DE18-4267-AF3F-8F60FCE4AC5A">
+      pt
+     </samp>
+     variable that is a point on the circle. (This point selects the portion of the circle to be trimmed.)
+    </li>
+    <li class="li" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__WS1A9193826455F5FF-4855151011E21CB4C05-5ED1">
+     Performs the TRIM command by selecting the
+     <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-3C968E0A-DD00-44AB-A5AC-946267A52B5A">
+      el
+     </samp>
+     object (the line) and by selecting the point specified by
+     <samp class="ph codeph" id="GUID-EF2D73CE-9B75-4532-AF2F-DD6F0C36C3FD__GUID-22694BD1-A33D-4392-B328-34CFE5E1C8B4">
+      pt
+     </samp>
+     .
+    </li>
+   </ol>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Using_AutoCAD_Commands_AutoLISP.html" title="AutoLISP can execute a built-in AutoCAD command or one that is defined in a loaded ObjectARX or Managed .NET application.">
+      About Using AutoCAD Commands (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_Device_Access_and_Control_AutoLISP/About_Accessing_and_Requesting_User_Input_AutoLISP.html" title="AutoLISP can collect raw input from an input device, in addition to offering a set of functions designed to request specific types of input from the user.">
+       About Accessing and Requesting User Input (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Getting_User_Input_AutoLISP/About_Controlling_User_Input_Function_Conditions_AutoLISP/About_Controlling_User_Input_Function_Conditions_AutoLISP.html" title="The initget function provides a level of control over the next user-input function call.">
+       About Controlling User-Input Function Conditions (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Using_AutoCAD_Commands_AutoLISP.html" title="AutoLISP can execute a built-in AutoCAD command or one that is defined in a loaded ObjectARX or Managed .NET application.">
+       About Using AutoCAD Commands (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Pausing_for_User_Input_During_an_AutoCAD_Command_AutoLISP.html" title="The PAUSE symbol can be used in the command function to interrupt the execution of an AutoCAD command and have the user provide input.">
+       About Pausing for User Input During an AutoCAD Command (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Getting_User_Input_AutoLISP/About_Controlling_User_Input_Function_Conditions_AutoLISP/About_Arbitrary_Keyboard_Input_AutoLISP.html" title="Arbitrary input allows you to provide a string to most of the getXXX functions as if it is a keyword; control bits and keywords are honored first.">
+       About Arbitrary Keyboard Input (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-49DBE7DD-D1D2-4B3A-9718-E3F4E2FD5E81">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

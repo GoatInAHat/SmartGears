@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Converts a value from one unit of measurement to another" name="description"/>
+  <meta content="CVUNIT" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   cvunit (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      cvunit (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Converts a value from one unit of measurement to another
+   </p>
+   <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-225F63A0-292A-41DE-B6A5-A4DC6EC0F3F1">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(cvunit <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-E06E9E69-8AD2-46B0-B222-146EC3FADB2F">value from-unit to-unit</em>)</pre>
+    <div class="section" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WS1A9193826455F5FF-1E1423D1125831BDA67-7B91">
+     <dl class="dl" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WS1A9193826455F5FF-1E1423D1125831BDA67-7B91">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-CA89B6FA-5382-4F27-819D-98DEEA9520B1">
+        value
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-E20A58A3-3FEF-4A42-9BAD-0A146F9F72E7">
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-5130CE50-6B72-45BD-9997-24F4BD961B98">
+        <strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-8EF7A2C4-69B5-4FEF-AB4D-19A7CC7B9D82">
+         Type:
+        </strong>
+        Integer, Real, or List
+       </p>
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WSFACF1429558A55DE11F0759FF1E4B858C-396E">
+        The numeric value or point list (2D or 3D point) to be converted.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-B23EB415-D154-4BF4-98FB-B59648DEF851">
+        from-unit
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-C2B066A9-AD28-41AA-9447-FB4123D5963C">
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-33985A96-A2D0-4E19-841E-575BCC9D8424">
+        <strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-BA7CA71E-9625-4E39-8E7A-55C7B1842B5A">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WSFACF1429558A55DE11F0759FF1E4B858C-396D">
+        The unit that
+        <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-BA2823C5-625C-4B9A-9800-EF50FC6F7898">
+         value
+        </em>
+        is being converted from.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-20ABFBF7-D1C6-4C7A-871C-7C8B6921B489">
+        to-unit
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-FF6E675E-B522-4DA6-9DB3-FE80F1DCC027">
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-FD0C3995-5C4A-484C-95C0-8CA040FD20D9">
+        <strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-341E2ED6-228E-44F3-804E-9562707ED6C5">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WSFACF1429558A55DE11F0759FF1E4B858C-396C">
+        The unit that
+        <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-10C1C2B8-4EC4-4690-B689-E1539E89D25B">
+         value
+        </em>
+        is being converted to.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__SECTION_2F4E0591C4B84EA4B60AC5F39D5B8BAB">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-F7884685-CB85-4950-B3D1-5EF44FE4CF23">
+     <strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-ACE9E7B8-91F2-4E4D-B34E-E37125A9407A">
+      Type:
+     </strong>
+     Real, List, or nil
+    </p>
+    <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WSFACF1429558A55DE11F0759FF1E4B858C-3969">
+     The converted value, if successful; otherwise
+     <samp class="ph codeph" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-916DCD43-94F3-4B65-9742-EB6E57C9948D">
+      nil
+     </samp>
+     , if either unit name is unknown or not found in the
+     <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-DB85542B-FF5D-4DBD-87EC-0586AC683C9C">
+      acad.unt
+     </em>
+     file (or
+     <em class="ph i">
+      acadlt.unt
+     </em>
+     file in AutoCAD LT), or if the two units are incompatible (for example, trying to convert grams into years).
+    </p>
+   </div>
+   <div class="section" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__SECTION_0E4B0B0B90B74BD986BF1E2D40A11DAE">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WSFACF1429558A55DE11F0759FF1E4B858C-396B">
+     The
+     <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-11681655-E028-4976-9404-DA06F4B78B85">
+      from-unit
+     </em>
+     and
+     <em class="ph i" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-10635C92-EED2-4DA3-9AB8-A6FCEF0F775A">
+      to-unit
+     </em>
+     arguments can name any unit type found in the
+     <em class="ph i">
+      acad.unt
+     </em>
+     file (or
+     <em class="ph i">
+      acadlt.unt
+     </em>
+     file in AutoCAD LT).
+    </p>
+   </div>
+   <div class="section" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__SECTION_4306758A458A4284B70669C9069F469B">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-10EA0E47-A57B-4C49-A5D3-26AFC299BC05">(cvunit 1 "minute" "second")</strong>
+60.0
+
+<strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-2E3737D2-7394-4854-8DB9-BEF2E9885056">(cvunit 1 "gallon" "furlong")</strong>
+nil
+
+<strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-97C64651-5B49-44AB-A252-500223400A54">(cvunit 1.0 "inch" "cm")</strong>
+2.54
+
+<strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-F6D7C52A-A758-4FC3-9863-B0C39C61C8A3">(cvunit 1.0 "acre" "sq yard")</strong>
+4840.0
+
+<strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-7E22B0BE-2EE3-48F1-8E20-54826FBA3CFC">(cvunit '(1.0 2.5) "ft" "in")</strong>
+(12.0 30.0)
+
+<strong class="ph b" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__GUID-3C05FAF6-66AF-4843-B662-808C0B69C327">(cvunit '(1 2 3) "ft" "in")</strong>
+(12.0 24.0 36.0)</pre>
+    <div class="note note" id="GUID-253E72F1-09B8-473E-A51B-B97BE2E29019__WS1A9193826455F5FF-7C08E89711EC57B47A8-79D1">
+     <span class="notetitle">
+      Note:
+     </span>
+     If you have several values to convert in the same manner, it is more efficient to convert the value 1.0 once and then apply the resulting value as a scale factor in your own function or computation. This works for all predefined units except temperature, where an offset is involved as well.
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Conversion_Functions_Reference_AutoLISP.html">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

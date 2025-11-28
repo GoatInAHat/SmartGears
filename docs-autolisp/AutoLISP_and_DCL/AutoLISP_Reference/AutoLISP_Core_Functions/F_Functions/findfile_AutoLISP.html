@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Searches the AutoCAD library and trusted paths for the specified file or directory" name="description"/>
+  <meta content="FINDFILE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   findfile (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      findfile (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Searches the AutoCAD library and trusted paths for the specified file or directory
+   </p>
+   <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-9911618B-179B-4605-89C2-8F69912553FA">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(findfile <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-6D68A22F-A8A4-4E09-90EB-997F800C3445">filename</em>)</pre>
+    <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WS1A9193826455F5FF-1E1423D1125831BDA67-7B73">
+     <dl class="dl" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WS1A9193826455F5FF-1E1423D1125831BDA67-7B73">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-1ED49610-63E3-410A-B459-1C811B2D69A9">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-1C9183B8-54EC-4D34-93B4-4B8EC0791BBC">
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-5B972EF0-ADC1-4AA6-AA4C-3E6FDE854523">
+        <strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-C8B5BA5D-65D0-41EC-92DD-ABCA1AB15353">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WSFACF1429558A55DE11F0759FF1E4B858C-380E">
+        Name of the file or directory to be searched for.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__SECTION_4E8A4166BE4441ACA9F13CB443ED1CED">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-9F6270A6-DEBA-4A87-A19B-CA2C31B87AEA">
+     <strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-1E0CD8AB-2543-465F-9A57-30E3987A1F73">
+      Type:
+     </strong>
+     String or nil
+    </p>
+    <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WSFACF1429558A55DE11F0759FF1E4B858C-380C">
+     A string containing the fully qualified file name; otherwise
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-495C8475-569C-4DC4-BBCB-2804027EBF2E">
+      nil
+     </samp>
+     , if the specified file or directory is not found.
+    </p>
+    <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WSFACF1429558A55DE11F0759FF1E4B858C-380B">
+     The file name returned by
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-4C1EFBE3-9C95-4FDF-BEA0-ABD285150685">
+      findfile
+     </samp>
+     is suitable for use with the
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-B69C70E3-9E5D-4E3F-B173-4302616F8877">
+      open
+     </samp>
+     function.
+    </p>
+   </div>
+   <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__SECTION_24E6C46BFAE840B1BAD8A1741BD8664E">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__WSFACF1429558A55DE11F0759FF1E4B858C-3810">
+     The
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-27B01B54-14F9-46D0-B54F-1B6970660EF2">
+      findfile
+     </samp>
+     function makes no assumption about the file type or extension of
+     <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-8CF95E55-C7DE-4538-9AC9-420B7FEFE68A">
+      filename
+     </em>
+     . If
+     <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-D132804F-E5AC-4AF3-BFFF-8B0D0CDB9574">
+      filename
+     </em>
+     does not specify a drive/directory prefix,
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-50AFD1D3-C2BA-4B14-83A5-FE0ED7A8D032">
+      findfile
+     </samp>
+     searches the AutoCAD library and trusted paths. If a drive/directory prefix is supplied,
+     <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-E51383BC-901E-46D2-B612-45164D8539F6">
+      findfile
+     </samp>
+     looks only in that directory.
+    </p>
+   </div>
+   <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__SECTION_5B1EFB7E37B84E79BB89576812AC557B">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <div class="section" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-73EF5886-63DD-4EC2-8B7F-357293C14895">
+     <dl class="dl" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-73EF5886-63DD-4EC2-8B7F-357293C14895">
+      <dt class="dt dlterm">
+       Windows
+      </dt>
+      <dd class="dd" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-0E9A461F-C24B-4CDA-8A06-ECD6105F68B3">
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-0AD14CBD-7FEF-416B-A9A5-C334ED686226">
+        If the current directory is
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-116B8493-CFC5-4C95-B4E0-74173E05FBFA">
+         /MyUtilities/lsp
+        </em>
+        and it contains the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-FE62DDD0-1AE4-41E5-8EC8-2DEAA359385B">
+         abc.lsp
+        </em>
+        , the following function call retrieves the path name:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-DDAC2C10-496D-4DA5-8BE2-BB725936740F">(findfile "abc.lsp")</strong>
+"C:\\MyUtilities\\lsp\\abc.lsp"</pre>
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-9D1EA044-1FAA-419C-B3B8-1CD6CFB6617F">
+        If you are editing a drawing in the
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-63739737-8936-495F-8564-54D17A39767E">
+         /My Utilities/Support
+        </em>
+        directory, and the
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-C0FF50EB-C643-48C2-8216-1C8D629FB958">
+         ACAD
+        </samp>
+        environment variable is set to
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-B90ADD8D-BA30-42ED-B201-2B846112E2EF">
+         /My Utilities/Support
+        </em>
+        , and the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-4E0F6E05-58CB-4E15-B913-B4F1BA933022">
+         xyz.txt
+        </em>
+        exists only in the
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-FE93CB8A-F8CE-400C-8B22-8562708C0195">
+         /My Utilities/Support
+        </em>
+        directory, then the following command retrieves the path name:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-DF5B5B35-1207-46D4-AFF1-354A837B841F">(findfile "xyz.txt")</strong>
+"C:\\My Utilities\\Support\\xyz.txt"</pre>
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-FA3C1F64-604D-45C4-8978-D5738A3236FB">
+        If the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-5E3C277F-688B-4E34-8B22-C99A861F8D76">
+         nosuch
+        </em>
+        is not present in any of the directories on the library or trusted search paths,
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-0D1E4883-D5B4-40F4-9C29-D88047F979A9">
+         findfile
+        </samp>
+        returns
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-BFD361C6-6CD4-415B-8B99-DCD5FD15C3DE">
+         nil
+        </samp>
+        :
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-2B0BE0B2-823B-4CA5-8405-86954D758E65">(findfile "nosuch")</strong>
+nil</pre>
+      </dd>
+      <dt class="dt dlterm">
+       Mac OS and Web
+      </dt>
+      <dd class="dd" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-4D1B2004-4258-4A88-89F9-966356B3466D">
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-E1E56D5F-ACD2-4E29-9403-93CC3258CFDB">
+        If the current directory is
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-1B1EFC75-A5D7-4378-B96E-F31CFF1B8471">
+         /MyUtilities/lsp
+        </em>
+        and it contains the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-0C91BE9C-BD49-4C1B-891B-3F5CC5F2A4C1">
+         abc.lsp
+        </em>
+        , the following function call retrieves the path name:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-19973E14-F593-4EEE-96D2-3F64D799583E">(findfile "abc.lsp")</strong>
+"/MyUtilities/Lsp/abc.lsp"</pre>
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-B14813B9-31C4-40CF-874F-F167E08F58B2">
+        If you are editing a drawing in the
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-838567F4-69D9-423E-9ABB-3E0E0608F3FB">
+         /My Utilities/Support
+        </em>
+        directory, and the
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-BB39FA7D-699D-467D-AEFD-404090819B4F">
+         ACAD
+        </samp>
+        environment variable is set to
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-643BDF40-32FD-4CE4-954D-C0053BDD4DAE">
+         /My Utilities/Support
+        </em>
+        , and the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-2897492A-401C-4C9C-A375-42B4AAB83568">
+         xyz.txt
+        </em>
+        exists only in the
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-24BE1E0C-18AA-401E-8C8E-6E0876C1BDDF">
+         /My Utilities/Support
+        </em>
+        directory, then the following command retrieves the path name:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-23C882EA-52C6-4111-8EB5-C71402188593">(findfile "xyz.txt")</strong>
+"/MyUtilities/Support/xyz.txt"</pre>
+       <p class="p" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-E144AAC0-DB02-4C17-9A79-21FC319CE8B1">
+        If the file
+        <em class="ph i" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-225C6CF4-F46A-49AF-AED0-FCC0E3EE5A8A">
+         nosuch
+        </em>
+        is not present in any of the directories on the library or trusted search paths,
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-EBFEBFF3-C662-4BE2-BCBB-7538CCC8CA46">
+         findfile
+        </samp>
+        returns
+        <samp class="ph codeph" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-6A750BAD-F11F-4B65-82C9-177EB1315C7B">
+         nil
+        </samp>
+        :
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607__GUID-831B7633-C63E-4AFD-96A0-C5684AB7CD18">(findfile "nosuch")</strong>
+nil</pre>
+      </dd>
+     </dl>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/File_Handling_Functions_Reference_AutoLISP.html">
+       File-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../G_Functions/getfiled_AutoLISP.html" title="Prompts the user for a file name with the standard AutoCAD file dialog box, and returns that file name">
+       getfiled (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="findtrustedfile_AutoLISP.html" title="Searches the AutoCAD trusted locations for the specified file">
+       findtrustedfile (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_directory_files_AutoLISP.html" title="Lists all files in a given directory">
+       vl-directory-files (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_filename_directory_AutoLISP.html" title="Returns the directory path of a file, after stripping out the name and extension">
+       vl-filename-directory (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

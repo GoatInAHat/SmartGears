@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Deletes objects (entities) or restores previously deleted objects" name="description"/>
+  <meta content="ENTDEL" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   entdel (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      entdel (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Deletes objects (entities) or restores previously deleted objects
+   </p>
+   <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-3CFB3D91-8DD8-4157-B734-DF0FB1B9FD93">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(entdel <em class="ph i" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-DF0BA811-38FC-4EB3-9A2A-EF7AA88A5CCC">ename</em>)</pre>
+    <div class="section" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WS1A9193826455F5FF-1E1423D1125831BDA67-7B82">
+     <dl class="dl" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WS1A9193826455F5FF-1E1423D1125831BDA67-7B82">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-FED3CEBA-B81A-491A-B7C6-E158608B3233">
+        ename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-0895C69C-7D53-4630-814F-E8AA3DDDEC8E">
+       <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-F5CAE018-0AD8-4902-B39A-348D47D89196">
+        <strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-49EB1156-A574-419D-A361-2FE4F079E8AB">
+         Type:
+        </strong>
+        Ename (entity name)
+       </p>
+       <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38CC">
+        Name of the entity to be deleted or restored.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__SECTION_DAE52BA0C0DA433687F1496293C6FC71">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-93F440A0-5FDD-439F-8CD2-5AB9782E8779">
+     <strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-377E6F6D-EE87-4DB5-A188-EED6E4993986">
+      Type:
+     </strong>
+     Ename (entity name)
+    </p>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38CA">
+     The entity name.
+    </p>
+   </div>
+   <div class="section" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__SECTION_9F14C45E668C4289B3654BBCE52D129B">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38CE">
+     The entity specified by
+     <em class="ph i" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-43EB62AE-84F1-4A25-833C-1D611CDA37C9">
+      ename
+     </em>
+     is deleted if it is currently in the drawing. The
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-A9E80659-926E-49B5-9375-6AEF1EF58292">
+      entdel
+     </samp>
+     function restores the entity to the drawing if it has been deleted previously in this editing session. Deleted entities are purged from the drawing when the drawing is exited. The
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-880BF06B-8335-4828-96E2-F10675836BC2">
+      entdel
+     </samp>
+     function can delete both graphical and nongraphical entities.
+    </p>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38C8">
+     The
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-5D2FEC93-F8D8-4228-9875-702A97C894AE">
+      entdel
+     </samp>
+     function operates only on main entities. Attributes and polyline vertices cannot be deleted independently of their parent entities. You can use the
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-BD9CB920-6142-4704-96F1-058659B8616B">
+      command
+     </samp>
+     function to operate the AutoCAD ATTEDIT or PEDIT commands to modify subentities.
+    </p>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38C7">
+     You cannot delete entities within a block definition. However, you can completely redefine a block definition, minus the entity you want deleted, with
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-A25AFF2B-297A-4156-8B27-10C027823947">
+      entmake
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__SECTION_5AA1FBE0E79E479BA95A892F2CD754C6">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38C5">
+     Get the name of the first entity in the drawing and assign it to variable
+     <samp class="ph codeph" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-CFE47E5F-D3CC-4527-B5B2-1916BC83CB3E">
+      e1
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-3D6117C8-335B-4EDB-9882-50690669031C">(setq e1 (entnext))</strong>
+&lt;Entity name: 2c90520&gt;</pre>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38C4">
+     Delete the entity named by e1:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-E36642C8-BEC8-4E4F-AA1C-87BFC32196E5">(entdel e1)</strong>
+&lt;Entity name: 2c90520&gt;</pre>
+    <p class="p" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__WSFACF1429558A55DE11F0759FF1E4B858C-38C3">
+     Restore the entity named by e1:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70__GUID-00620C1E-FAEE-4BFE-B53E-0AAA72E83172">(entdel e1)</strong> &lt;Entity name: 2c90520&gt;</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Object_Handling_Functions_Reference_AutoLISP.html">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="entget_AutoLISP.html" title="Retrieves an object's (entity's) definition data">
+       entget (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="entlast_AutoLISP.html" title="Returns the name of the last nondeleted main object (entity) in the drawing">
+       entlast (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

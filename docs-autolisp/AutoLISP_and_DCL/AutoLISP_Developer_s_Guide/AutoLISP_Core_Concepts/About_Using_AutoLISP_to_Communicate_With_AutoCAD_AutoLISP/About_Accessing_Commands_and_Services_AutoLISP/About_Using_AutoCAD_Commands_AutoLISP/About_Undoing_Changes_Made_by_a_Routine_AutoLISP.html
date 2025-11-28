@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Grouping multiple AutoLISP statements together under a single UNDO group allows you to rollback all the actions performed by using either the AutoCAD U or UNDO commands." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Undoing Changes Made by a Routine (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Undoing Changes Made by a Routine (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Grouping multiple AutoLISP statements together under a single UNDO group allows you to rollback all the actions performed by using either the AutoCAD U or UNDO commands.
+   </p>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-F0B76D0D-06C5-47AA-AC88-D9C486B35088">
+    Each command executed with the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-0DCA5814-CA57-419A-9D36-B174402EA4B7">
+     command
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-9A4CBAD3-7B8F-40CC-8104-9EB117A764A2">
+     command-s
+    </samp>
+    functions explicitly creates its own UNDO group. If a user enters U (or UNDO) at the AutoCAD Command prompt after running an AutoLISP routine, only the last command will be undone. Additional uses of UNDO will step backward further through the commands used in that routine. Users of your routine will expect that all of the operations that it performs can be undone in a single operation, instead of having to undo multiple operations to get back to the previous state of the drawing.
+   </p>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-8C3D1760-E207-4399-9A0A-B8E3DB756E67">
+    It is recommended to group the commands and operations performed by an AutoLISP routine into a single UNDO group, or if your routine allows the user to repeat operations you might even create UNDO groups for each time the user’s response affects the drawing. You can define an UNDO group by using the Begin and End options of the AutoCAD UNDO command.
+   </p>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-491762EB-E53C-4BC9-A94B-795E082D1B1B">
+    The following example code demonstrates how each command executed with the command function has its own UNDO group.
+   </p>
+   <pre class="pre codeblock prettyprint">(defun c:NoUndo ( / old_osmode el pt)
+  (setq old_osmode (getvar "OSMODE"))
+  (setvar "OSMODE" 0)
+  (command "._circle" "5,5" "2")    ;Draws a circle
+  (command "._line" "3,5" "7,5" "") ;Draws a line
+  (setq el (entlast))               ;Gets the last entity added 
+                                    ; to the drawing
+  (setq pt '(5 7))                  ;Sets the trim point
+  (command "._trim" el "" pt "")    ;Performs the trim
+  (setvar "OSMODE" old_osmode)
+)</pre>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__WSFACF1429558A55DE11F0759FF1E4B858C-6508">
+    After running the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-8C500DD6-77FA-446F-AF68-2C3066546159">
+     c:NoUndo
+    </samp>
+    routine, you will see a semi-circle. Issuing the U or UNDO command after running the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-C960738A-44AD-42AD-892F-52A30A2C27CD">
+     c:NoUndo
+    </samp>
+    routine results in the AutoCAD TRIM command being undone; you should now see a full circle with a line running through its center. Executing the U or UNDO command again results in the line being undone that was created with the AutoCAD LINE command. A third use of the U or UNDO command results in the AutoCAD CIRCLE command being undone.
+   </p>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-543AFEE9-388D-4746-889A-94BE5148F16E">
+    The following example code demonstrates how the AutoCAD UNDO command can be used to create an UNDO group that allows the user to rollback all changes back with a single U (or UNDO) command.
+   </p>
+   <pre class="pre codeblock prettyprint">(defun c:YesUndo ( / old_osmode el pt)
+  (command "._UNDO" "_Begin")
+  (setq old_osmode (getvar "OSMODE"))
+  (setvar "OSMODE" 0)
+  (command "._circle" "5,5" "2")    ;Draws a circle
+  (command "._line" "3,5" "7,5" "") ;Draws a line
+  (setq el (entlast))               ;Gets the last entity added
+                                    ; to the drawing
+  (setq pt '(5 7))                  ;Sets the trim point
+  (command "._trim" el "" pt "")    ;Performs the trim
+  (setvar "OSMODE" old_osmode)
+  (command "._UNDO" "_End")
+)</pre>
+   <p class="p" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-DDE46B7B-575A-4672-8CCB-B8BC25232504">
+    After running the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-A9166237-0399-416A-BF81-2A06AB5E42A1">
+     c:YesUndo
+    </samp>
+    routine, you will see a semi-circle just like with the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-8CC51C4D-26AD-44CC-BA0A-916B3DC6ABC3">
+     c:NoUndo
+    </samp>
+    routine. Issuing the U or UNDO command after running the
+    <samp class="ph codeph" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-56CACB02-94EF-42CA-B794-C2543F80B43E">
+     c:YesUndo
+    </samp>
+    routine results in the AutoCAD TRIM, LINE, and CIRCLE commands being undone.
+   </p>
+   <div class="section" id="GUID-4481039B-77DA-4500-AE8B-3D2AD6951115__GUID-5B780916-D682-43A8-B7D3-D3BB80C000D0">
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Using_AutoCAD_Commands_AutoLISP.html" title="AutoLISP can execute a built-in AutoCAD command or one that is defined in a loaded ObjectARX or Managed .NET application.">
+      About Using AutoCAD Commands (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Using_AutoCAD_Commands_AutoLISP.html" title="AutoLISP can execute a built-in AutoCAD command or one that is defined in a loaded ObjectARX or Managed .NET application.">
+       About Using AutoCAD Commands (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../../About_AutoLISP_Basics_AutoLISP/About_Symbol_and_Function_Handling_AutoLISP/About_Defining_a_Function_AutoLISP/About_Defining_a_Function_AutoLISP.html" title="You can define your own functions.">
+       About Defining a Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F9ABE09D-9A71-4C00-8E5D-5BA70C3797B5">
+       Query and Command Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

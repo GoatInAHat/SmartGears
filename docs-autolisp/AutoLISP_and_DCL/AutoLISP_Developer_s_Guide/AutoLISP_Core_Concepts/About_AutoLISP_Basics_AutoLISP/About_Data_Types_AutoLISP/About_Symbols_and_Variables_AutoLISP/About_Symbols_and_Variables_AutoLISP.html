@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="AutoLISP uses symbols to refer to functions and data holders." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Symbols and Variables (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Symbols and Variables (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    AutoLISP uses symbols to refer to functions and data holders.
+   </p>
+   <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-662B">
+    Symbol names are not case sensitive and may consist of any sequence of alphanumeric and notation characters, except the following:
+   </p>
+   <div class="tablenoborder">
+    <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WS73099CC142F4875516D84BE10EBC87A53F-7C66" rules="all" summary="" width="100%">
+     <thead align="left" class="thead">
+      <tr class="row">
+       <th class="entry" colspan="2" valign="top">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-662A">
+         Characters restricted from symbol names
+        </p>
+       </th>
+      </tr>
+     </thead>
+     <tbody class="tbody">
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6629">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-E2E3C731-A5C6-41DC-8219-A711C53090C2">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-50D2D2C9-539D-4A93-B748-17CD07B0AC8A">
+           (
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6628">
+         (Open Parenthesis)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6627">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-7A3E81A7-77CE-45F9-ADE6-3DE50E75C011">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-EFB6E263-D872-486B-8227-5F5C9A738BD5">
+           )
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6626">
+         (Close Parenthesis)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6625">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-67A6561B-2CD4-4D0D-8DC7-6D335DEB324D">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-6080C5F3-3E97-4934-BB81-FFDFAA793658">
+           .
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6624">
+         (Period)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6623">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-4374A332-6B82-489C-BE35-DCC92258BB19">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-E2AAD4FD-F673-4C3C-81DD-F37E4AE02CCC">
+           '
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6622">
+         (Apostrophe)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6621">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-1CABE8F6-646A-4963-87D3-C093DC19DFA7">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-8654E71F-C3F8-440A-A53E-11CE41DB261A">
+           "
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-6620">
+         (Quote Symbol)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="13.928012519561813%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-661F">
+         <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-882220AE-979E-41C2-910A-BBBADEFE4F24">
+          <strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-ABDE35AF-2BB6-4D8D-B59F-BD20A119463B">
+           ;
+          </strong>
+         </samp>
+        </p>
+       </td>
+       <td class="entry" valign="top" width="86.0719874804382%">
+        <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-661E">
+         (Semicolon)
+        </p>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-661C">
+    A symbol name cannot consist only of numeric characters.
+   </p>
+   <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__WSFACF1429558A55DE11F0759FF1E4B858C-661B">
+    Technically, AutoLISP applications consist of either symbols or constant values, such as strings, reals, and integers. For the sake of clarity, this documentation uses the term symbol to refer to a symbol name that stores static data, such as built-in and user-defined functions. Examples of symbols are, the predefined variable
+    <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-02C6B09D-1E78-4AE0-B0E3-5F2E04159A3F">
+     T
+    </samp>
+    and the
+    <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-F22908D8-FA3E-469F-AC28-ED06EEF6F0B9">
+     defun
+    </samp>
+    function.
+   </p>
+   <p class="p" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-E41670D5-EE27-421E-9AC0-B4A0ED53E6C0">
+    The term variable is used to refer to a symbol name that stores program data. The following example uses the
+    <samp class="ph codeph" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-E04DFF60-3B41-4A04-9C3B-F8ED431D7743">
+     setq
+    </samp>
+    function to assign the string value "this is a string" to the str1 variable:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-E5241BC0-685B-4633-BC92-C2DD54E2CDA5">(setq str1 "this is a string")</strong>
+"this is a string"</pre>
+   <div class="note note" id="GUID-1855E7B0-2474-49E6-9EE3-8BC541FC1CC8__GUID-67B6162D-4F62-46B7-910B-D621F0710473">
+    <span class="notetitle">
+     Note:
+    </span>
+    When declaring variables or defining a function, choose meaningful names to make it easy to identify the type of data a variable holds or the purpose of a function.
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="About_Protected_Symbols_Visual_LISP_IDE.html">
+       About Protected Symbols (Visual LISP IDE)
+      </a>
+      <br/>
+      When Visual LISP is loaded, you may be warned if you attempt to change the value of some symbols used by the AutoLISP language.
+     </li>
+    </ul>
+   </div>
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="../About_Data_Types_AutoLISP.html">
+      About Data Types (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_Expressions_AutoLISP/About_Expressions_AutoLISP.html" title="An expression is the basic structure that is used when working with AutoLISP.">
+       About Expressions (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Expressions_AutoLISP/About_Function_Syntax_AutoLISP.html" title="Reference topics in the documentation use a consistent convention to describe the proper syntax for an AutoLISP function.">
+       About Function Syntax (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Source_Code_Files_AutoLISP/About_Formatting_and_Spaces_in_Code_AutoLISP.html" title="AutoLISP code can span multiple lines, and contain empty lines and extra spaces. Empty lines and extra spaces do not have any significant meaning, but can make your code easier to read.">
+       About Formatting and Spaces in Code (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Strings_and_String_Handling_AutoLISP.html" title="A string is a group of characters surrounded by quotation marks. Within quoted strings the backslash (\) character allows control characters (or escape codes) to be included.">
+       About Strings and String Handling (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4CEE5072-8817-4920-8A2D-7060F5E16547">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

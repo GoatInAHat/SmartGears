@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Arithmetic Functions Reference (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Arithmetic Functions Reference (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-7580B5F9-7409-4F48-B940-D87007D166E7">
+    <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EB2">
+     The following table provides summary descriptions of the AutoLISP arithmetic functions.
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WS73099CC142F4875516D84BE10EBC87A53F-7B66" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th align="center" class="entry" colspan="2" rowspan="2" valign="top">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EB1">
+          Arithmetic functions
+         </p>
+        </th>
+        <th align="center" class="entry" colspan="5" valign="top">
+         <p class="p">
+          Platforms
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th align="center" class="entry" colspan="2" valign="top">
+         <p class="p">
+          Windows
+         </p>
+        </th>
+        <th align="center" class="entry" colspan="2" valign="top">
+         <p class="p">
+          Mac OS
+         </p>
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         <p class="p">
+          Web
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EB0">
+          Function
+         </p>
+        </th>
+        <th align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAF">
+          Description
+         </p>
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         AutoCAD LT
+        </th>
+        <th align="center" class="entry" valign="top" width="10%">
+         AutoCAD
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAE">
+          <a class="xref" href="../Non_alphabetic_Functions/add_AutoLISP.html" title="Returns the sum of all numbers">
+           (+
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-6EF1CA1D-0B6E-4019-9235-170A5A190D56">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAD">
+          Returns the sum of all numbers
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAC">
+          <a class="xref" href="../Non_alphabetic_Functions/subtract_AutoLISP.html" title="Subtracts the second and following numbers from the first and returns the difference">
+           (-
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-9720C434-D042-4C43-B682-B6E9A09B2AAB">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAB">
+          Subtracts the second and following numbers from the first and returns the difference
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EAA">
+          <a class="xref" href="../Non_alphabetic_Functions/multiply_AutoLISP.html" title="Returns the product of all numbers">
+           (*
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-385492D7-CCD8-4D5A-9905-914FE2A96EA0">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA9">
+          Returns the product of all numbers
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA8">
+          <a class="xref" href="../Non_alphabetic_Functions/divide_AutoLISP.html" title="Divides the first number by the product of the remaining numbers and returns the quotient">
+           (/
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-DB16E4AA-66A5-4DA2-9C9A-1C33FA41214E">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA7">
+          Divides the first number by the product of the remaining numbers and returns the quotient
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA6">
+          <a class="xref" href="../Non_alphabetic_Functions/bitwise_NOT_AutoLISP.html" title="Returns the bitwise NOT (1's complement) of the argument">
+           (~
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-CA206F1E-AFDD-4EE5-A192-8802A2FC155C">
+            int
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA5">
+          Returns the bitwise
+          <samp class="ph codeph" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-917EF9F1-FC36-4266-B1B3-CED7DFEC4929">
+           NOT
+          </samp>
+          (1's complement) of the argument
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA4">
+          <a class="xref" href="../Non_alphabetic_Functions/1_increment_AutoLISP.html" title="Increments a number by 1">
+           (1+
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-0A8F5709-CCF8-470F-8D3C-CB275C258D2D">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA3">
+          Returns the argument increased by 1 (incremented)
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA2">
+          <a class="xref" href="../Non_alphabetic_Functions/1_decrement_AutoLISP.html" title="Decrements a number by 1">
+           (1-
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-B991EBC4-1CE8-4BA7-ADF0-269B43CA6CCF">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA1">
+          Returns the argument reduced by 1 (decremented)
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5EA0">
+          <a class="xref" href="../A_Functions/abs_AutoLISP.html" title="Returns the absolute value of a number">
+           (abs
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-20E36746-999E-4FB7-B255-944891DFDF1F">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9F">
+          Returns the absolute value of the argument
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9E">
+          <a class="xref" href="../A_Functions/atan_AutoLISP.html" title="Returns the arctangent of a number in radians">
+           (atan
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-6CC7FEF1-1584-41A9-BF8D-8DEF5BE0D555">
+            num1 [num2]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9D">
+          Returns the arctangent of a number in radians
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9C">
+          <a class="xref" href="../C_Functions/cos_AutoLISP.html" title="Returns the cosine of an angle expressed in radians">
+           (cos
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-D757A99B-B146-4692-BF70-0479BB29F9BD">
+            ang
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9B">
+          Returns the cosine of an angle expressed in radians
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E9A">
+          <a class="xref" href="../E_Functions/exp_AutoLISP.html" title="Returns the constant e (a real number) raised to a specified power (the natural antilog)">
+           (exp
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-BA369992-09CE-4F7E-8FB5-94547F0BBC6D">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E99">
+          Returns the constant e (a real) raised to a specified power (the natural antilog)
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E98">
+          <a class="xref" href="../E_Functions/expt_AutoLISP.html" title="Returns a number raised to a specified power">
+           (expt
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-D8036BE3-0273-45B0-B9F1-3C39E525C496">
+            base power
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E97">
+          Returns a number raised to a specified power
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E96">
+          <a class="xref" href="../F_Functions/fix_AutoLISP.html" title="Returns the conversion of a real number into the nearest smaller integer">
+           (fix
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-9440949A-6D47-4BCF-9603-C9E6546E01A6">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E95">
+          Returns the conversion of a real into the nearest smaller integer
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E94">
+          <a class="xref" href="../F_Functions/float_AutoLISP.html" title="Returns the conversion of a number into a real number">
+           (float
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-74EF43CC-B544-470E-9955-134E80D17D1B">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E93">
+          Returns the conversion of a number into a real
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E92">
+          <a class="xref" href="../G_Functions/gcd_AutoLISP.html" title="Returns the greatest common denominator of two integers">
+           (gcd
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-090B68F7-83E2-4041-8B63-20C3D850F4F8">
+            int1 int2
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E91">
+          Returns the greatest common denominator of two integers
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E90">
+          <a class="xref" href="../L_Functions/log_AutoLISP.html" title="Returns the natural log of a number as a real number">
+           (log
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-78C60287-6B4C-4FFC-B625-D1CAFDA22A89">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8F">
+          Returns the natural log of a number as a real
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8E">
+          <a class="xref" href="../L_Functions/logand_AutoLISP.html" title="Returns the result of the logical bitwise AND of a list of integers">
+           (logand
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-38FE67E7-2355-46DF-A87F-37C8D87BAA56">
+            [int int ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8D">
+          Returns the result of the logical bitwise
+          <samp class="ph codeph" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-2DC9A9EE-0BA1-4002-9B23-B21EBD0E0FF7">
+           AND
+          </samp>
+          of a list of integers
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8C">
+          <a class="xref" href="../L_Functions/logior_AutoLISP.html" title="Returns the result of the logical bitwise inclusive OR of a list of integers">
+           (logior
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-5D6DDAF8-EBD5-4BF8-AE09-1429B46C44E4">
+            [int int ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8B">
+          Returns the result of the logical bitwise inclusive
+          <samp class="ph codeph" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-4C751FB8-1173-405D-85E3-E6DCD9FE762C">
+           OR
+          </samp>
+          of a list of integers
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E8A">
+          <a class="xref" href="../L_Functions/lsh_AutoLISP.html" title="Returns the logical bitwise shift of an integer by a specified number of bits">
+           (lsh
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-E941FA21-B532-4065-A55A-333E5E057EA4">
+            [int numbits]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E89">
+          Returns the logical bitwise shift of an integer by a specified number of bits
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E88">
+          <a class="xref" href="../M_Functions/max_AutoLISP.html" title="Returns the largest of the numbers given">
+           (max
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-68697167-9B46-403E-B861-F06C4A3F091A">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E87">
+          Returns the largest of the numbers given
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E86">
+          <a class="xref" href="../M_Functions/min_AutoLISP.html" title="Returns the smallest of the numbers given">
+           (min
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-88824E0D-0E3D-477E-926D-59200FF94D54">
+            [number number ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E85">
+          Returns the smallest of the numbers given
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E84">
+          <a class="xref" href="../M_Functions/minusp_AutoLISP.html" title="Verifies that a number is negative">
+           (minusp
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-BB27CDB9-E835-4465-9A58-4C4BC3813B04">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E83">
+          Verifies that a number is negative
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E82">
+          <a class="xref" href="../R_Functions/rem_AutoLISP.html" title="Divides the first number by the second, and returns the remainder">
+           (rem
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-BF6920DC-7157-4BCF-8DC5-2280206E1982">
+            [num1 num2 ...]
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E81">
+          Divides the first number by the second, and returns the remainder
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E80">
+          <a class="xref" href="../S_Functions/sin_AutoLISP.html" title="Returns the sine of an angle as a real number expressed in radians">
+           (sin
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-4CC16FD2-DBD3-4848-B2F2-745F93C1AC8E">
+            ang
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E7F">
+          Returns the sine of an angle as a real expressed in radians
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E7E">
+          <a class="xref" href="../S_Functions/sqrt_AutoLISP.html" title="Returns the square root of a number as a real number">
+           (sqrt
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-94F379C3-855F-4327-AD4B-B121C94BA04D">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E7D">
+          Returns the square root of a number as a real
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+       <tr class="row">
+        <td align="center" class="entry" valign="top" width="20%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E7C">
+          <a class="xref" href="../Z_Functions/zerop_AutoLISP.html" title="Verifies that a number evaluates to zero">
+           (zerop
+           <em class="ph i" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__GUID-F9854C22-8DB4-46F4-ADE0-2A8845014DA0">
+            number
+           </em>
+           )
+          </a>
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="30%">
+         <p class="p" id="GUID-FC14467C-63B9-4400-8C6A-266D21C846AE__WSFACF1429558A55DE11F0759FF1E4B858C-5E7B">
+          Verifies that a number evaluates to zero
+         </p>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         --
+        </td>
+        <td align="center" class="entry" valign="top" width="10%">
+         <span name="glyph_span">
+          ✓
+         </span>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../Functions_Reference_AutoLISP.html" title="Listing of AutoLISP functions by alphabetic name and feature.">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Takes any number of expressions and combines them into one list" name="description"/>
+  <meta content="LIST" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   list (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      list (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Takes any number of expressions and combines them into one list
+   </p>
+   <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-38530C9A-FAA9-4F1D-B218-95C26B43CBEC">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(list <em class="ph i" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-DB13A679-7D53-4708-871D-E5CEA2E64F96">[expr ...]</em>)</pre>
+    <div class="section" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WS1A9193826455F5FF-1E1423D1125831BDA67-7B41">
+     <dl class="dl" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WS1A9193826455F5FF-1E1423D1125831BDA67-7B41">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-AE4D7511-E38B-44B9-9D0D-0A1E67F195BB">
+        expr
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-C1FACEC3-2DAA-40D8-8488-18A78FB48101">
+       <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-4AB47589-99BC-46FF-89AE-8CD1753C7255">
+        <strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-158D9199-5F94-41ED-B562-9EEB3B4C4699">
+         Type:
+        </strong>
+        Integer, Real, String, List, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WSFACF1429558A55DE11F0759FF1E4B858C-35D8">
+        An AutoLISP expression.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__SECTION_924EFC0DE03E458B8CB9BCC1D62889C7">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-ABE3BAEC-0441-4A11-B7BF-6F5C97E2325F">
+     <strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-CE2B1742-CD32-4FFC-9810-3C0B1DAAE1B3">
+      Type:
+     </strong>
+     List or nil
+    </p>
+    <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WSFACF1429558A55DE11F0759FF1E4B858C-35D6">
+     A list, unless no expressions are supplied, in which case
+     <samp class="ph codeph" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-47E7AD09-E212-4040-ABCF-623911BF6CF5">
+      list
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-E9684087-AF08-42DD-9A70-7556057E00A6">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__SECTION_7BD317DB315947BB8A8DB491DEAB2936">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WSFACF1429558A55DE11F0759FF1E4B858C-35DA">
+     This function is frequently used to define a 2D or 3D point variable (a list of two or three reals).
+    </p>
+   </div>
+   <div class="section" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__SECTION_2B407F1A0B1C4B42AC947C21A318794D">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-573F22BB-35C8-49A0-B91F-301BE132FE14">(list 'a 'b 'c)</strong>
+(A B C)
+
+<strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-082CF666-C202-41B1-924F-A949C1C6ECA3">(list 'a '(b c) 'd)</strong>
+(A (B C) D)
+
+<strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-F857C550-03AE-4BAB-9B89-A685B2A094EA">(list 3.9 6.7)</strong>
+(3.9 6.7)</pre>
+    <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WSFACF1429558A55DE11F0759FF1E4B858C-35D4">
+     As an alternative to using the
+     <samp class="ph codeph" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-A266F0A7-CAC8-4A92-9E1C-6A8C36961E15">
+      list
+     </samp>
+     function, you can explicitly quote a list with the
+     <samp class="ph codeph" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-29822072-C9AE-493A-B37B-D2AFEC0DDEE5">
+      quote
+     </samp>
+     function if there are no variables or undefined items in the list. The single quote character (
+     <samp class="ph codeph" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-205C79F2-F0A1-40D3-AD10-328E649B350A">
+      '
+     </samp>
+     ) is defined as the quote function.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-B2D3AC77-E099-47DA-AA04-C6BCD4106DC3">'(3.9 6.7)</strong> <em class="ph i" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__GUID-E7E5953E-F165-4521-90FE-6FBF294C7114">means the same as</em> (list 3.9 6.7)</pre>
+    <p class="p" id="GUID-2BA66308-DE64-4BA6-8F57-6E3EC1A93141__WSFACF1429558A55DE11F0759FF1E4B858C-35D3">
+     This can be useful for creating association lists and defining points.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/List_Manipulation_Functions_Reference_AutoLISP.html">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="length_AutoLISP.html" title="Returns an integer indicating the number of elements in a list">
+       length (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../A_Functions/append_AutoLISP.html" title="Takes any number of lists and appends them together as one list">
+       append (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="listp_AutoLISP.html" title="Verifies that an item is a list">
+       listp (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_every_AutoLISP.html" title="Checks whether the predicate is true for every element combination">
+       vl-every (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_list_AutoLISP.html" title="Constructs and returns a list">
+       vl-list* (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Displays the AutoCAD color selection dialog box with tabs for index color, true color, and color books" name="description"/>
+  <meta content="ACAD_TRUECOLORDLG" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   acad_truecolordlg (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      acad_truecolordlg (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Displays the AutoCAD color selection dialog box with tabs for index color, true color, and color books
+   </p>
+   <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-61498FB1-B7EA-463B-9E20-7FC147147573">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(acad_truecolordlg <em class="ph i" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-37D3D035-CA3E-42E4-8FBD-D464F9A74106">color [allowbylayer] [currentlayercolor]</em>)</pre>
+    <div class="section" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBB">
+     <dl class="dl" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBB">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-AEE46028-BBA2-4239-9962-DCD2FBE12449">
+        color
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-B288DE98-D282-4E60-AEEB-56D6B787F2D1">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE11F0759FF1E4B858C-3B2F">
+        <strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-791F11A3-0873-49F5-A757-6E561C8ECF98">
+         Type:
+        </strong>
+        List (Dotted pair)
+       </p>
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE1A6293F1040D944663-7E6A">
+        A dotted pair that describes the default color. The first element of the dotted pair must be one of the color-related DXF group codes (62, 420, or 430); for example,
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-A1226A85-188D-47F5-83FC-501D7D3853A3">
+         (62 . ColorIndex)
+        </samp>
+        ,
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-D8028154-D7F8-4D67-BED0-3A2A3F2184B6">
+         (420 . TrueColor)
+        </samp>
+        , or
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-1E63F80D-6D84-47AB-B686-1AD6376DA63D">
+         (430 . "colorbook$colorname")
+        </samp>
+        .
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-797BD907-025B-4073-9F03-3654036FB1B9">
+        allowbylayer
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-874D43AA-4134-4E8F-9002-E9AD1DA942E5">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-BD022BF7-1682-4FE7-8E57-1BED414F76AA">
+        <strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-A7A8A911-B274-4882-BD5C-19FB047EF8F9">
+         Type:
+        </strong>
+        T or nil
+       </p>
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE1A6293F1040D944663-7E69">
+        If set to
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-D2C3046B-307D-4BBC-B077-3F862A14AB88">
+         nil
+        </samp>
+        , disables the ByLayer and ByBlock buttons. Omitting the
+        <em class="ph i" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-67B2DA87-9859-4A30-A0FF-62C9DA4468A2">
+         allowbylayer
+        </em>
+        argument or setting it to a non-
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-7BAFD068-A736-4D06-AC73-CA239F62F5B3">
+         nil
+        </samp>
+        value enables the ByLayer and ByBlock buttons.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-780FD9A7-BA96-4E79-90AE-3EC9BAB3F18B">
+        currentlayercolor
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-F8380EC7-C518-4F4B-8E07-390DF8C30AE1">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-411E996F-7FCE-4031-839C-573C12DF7370">
+        <strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-FA247B07-ECF9-47FD-8417-BCF45B375564">
+         Type:
+        </strong>
+        List (Dotted pair)
+       </p>
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE1A6293F1040D944663-7E68">
+        Optional dotted pair in the same form as
+        <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-172A3FBB-4F5A-45F1-9999-BB424A40F5D2">
+         color
+        </samp>
+        that sets the value of the ByLayer/ByBlock color in the dialog.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__SECTION_82F6E9531075477686BD8467EB32B96C">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-970E64ED-0DE0-4AF3-ADAC-9D6001275606">
+     <strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-8A264DB3-8696-4D43-8E42-4B580AB6959A">
+      Type:
+     </strong>
+     List (Dotted pair) or nil
+    </p>
+    <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE1A6293F1040D944663-7E66">
+     When the operation is successful, the function returns a list of one or more dotted pairs (depending on the tab on which the color is selected) describing the color selected. The last dotted pair in the list indicates the color selected. The function returns
+     <samp class="ph codeph" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-BD233515-E72B-421D-B90F-8624A34D3A2F">
+      nil
+     </samp>
+     if the user cancels the dialog box.
+    </p>
+    <div class="section" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBA">
+     <dl class="dl" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBA">
+      <dt class="dt dlterm">
+       Color book color
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-920694DA-6880-4337-A4AD-D4B9A8421208">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE6812D1041FA83470-7C21">
+        If the last item in the returned list is a 430 pair, then the specified color originates from a color book. This returned list will also contain a 420 pair that describes the corresponding true color and a 62 pair that describes the closest matching color index value.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       True color
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-944AC347-1C36-4FA2-8D93-1825750D94FB">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE6812D1041FA83470-7C20">
+        If the returned list contains a 420 pair as the last item, then a true color was specified (as “Red,Green,Blue”). The list will also contain a 62 pair that indicates the closest matching color index. No 430 pair will be present.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       Color index
+      </dt>
+      <dd class="dd" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-99BD1F9C-D271-4F43-9489-4C851AF965B8">
+       <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__WSFACF1429558A55DE6812D1041FA83470-7C1F">
+        If the last item in the list is a 62 pair, then a color index was chosen. No other dotted pairs will be present in the returned list.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__SECTION_D3F7B1A1C9DC429C8C6081D8B19336FA">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-1363448F-C21A-471A-85C8-535698C5C7E7">
+     Open the color selection dialog to the Color Index tab and accept the purple default selection:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-F79F448E-C267-46FC-A117-97D039ACF67A">(acad_truecolordlg '(62 . 215))</strong>
+((62 . 215))</pre>
+    <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-54F04CF4-991D-4B54-8EA6-C6CD34B5813D">
+     Open the color selection dialog to the True Color tab with a green default selection and with the By Layer and By Block buttons disabled:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-C025D2AB-9880-425C-B6F7-EBA23E36BE30">(acad_truecolordlg '(420 . 2686760) nil)</strong>
+((62 . 80) (420 . 2686760))</pre>
+    <p class="p" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-BC341602-6DE3-428A-9BB2-F4BD68C9997A">
+     Open the color selection dialog to the Color Books tab and accept the mustard default selection:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-E6FF435F-9E66-4F37-8770-2E3FB87B8E0B__GUID-CC61F17A-2588-42AA-AF82-1C615F2B714F">(acad_truecolordlg '(430 . "RAL CLASSIC$RAL 1003"))</strong>
+((62 . 40) (420 . 16235019) (430 . "RAL CLASSIC$RAL 1003"))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Query_and_Command_Functions_Reference_AutoLISP.html">
+       Query and Command Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="acad_colordlg_AutoLISP.html" title="Displays the standard AutoCAD color selection dialog box">
+       acad_colordlg (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="acad_truecolorcli_AutoLISP.html" title="Prompts for colors at the Command prompt">
+       acad_truecolorcli (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

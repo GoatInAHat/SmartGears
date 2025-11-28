@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Modularizing Your Code (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Modularizing Your Code (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-7DF2A8B0-501D-497F-ACC2-22678C521F6E">
+    <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7780">
+     As a result of the work you did in Lesson 3, your
+     <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-1D91842E-7C1B-4D00-B44D-E5953071B979">
+      gpmain.lsp
+     </em>
+     file was getting rather large. This is not a problem for Visual LISP, but it is easier to maintain the code if you split things up into files containing logically related functions. It is also easier to debug your code. For example, if you have a single file with 150 functions, a single missing parenthesis can be difficult to find.
+    </p>
+    <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777F">
+     In the tutorial, the files will be organized as follows:
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF18CB41610EC0A2E719-73B0" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777E">
+          Tutorial file organization
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="23.70387140593163%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777D">
+          File name
+         </p>
+        </th>
+        <th class="entry" valign="top" width="76.29612859406838%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777C">
+          Contents
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="23.70387140593163%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777B">
+          gp-io.lsp
+         </p>
+        </td>
+        <td class="entry" valign="top" width="76.29612859406838%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-777A">
+          All input and output (I/O) functions) such as getting user input. Also contains the AutoLISP code required for the dialog box interface you will be adding.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="23.70387140593163%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7779">
+          utils.lsp
+         </p>
+        </td>
+        <td class="entry" valign="top" width="76.29612859406838%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7778">
+          Includes all generic functions that can be used again on other projects. Also contains load-time initializations.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="23.70387140593163%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7777">
+          gpdraw.lsp
+         </p>
+        </td>
+        <td class="entry" valign="top" width="76.29612859406838%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7776">
+          All drawing routines—the code that actually creates the AutoCAD entities.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="23.70387140593163%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7775">
+          gpmain.lsp
+         </p>
+        </td>
+        <td class="entry" valign="top" width="76.29612859406838%">
+         <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7774">
+          The basic C:GPath function.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="section" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE6C92BAFEE30F7510-7E22">
+    <h2 class="title sectiontitle">
+     To split gpmain.lsp into four files
+    </h2>
+    <ol class="ol" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF18CB41610EC0A2E719-73AE">
+     <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB7">
+      Create a new file, then cut and paste the following functions from
+      <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-AD47006C-81B6-404D-9204-1D9A3CD493AC">
+       gpmain.lsp
+      </em>
+      into the new file:
+      <ul class="ul" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF18CB41610EC0A2E719-73AD">
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB6">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-8CC65F0F-0C68-49C3-8834-57C01B53563B">
+         gp:getPointInput
+        </samp>
+       </li>
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB5">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-ACC7D12F-0E39-4579-B0D0-4CD1349EB68D">
+         gp:getDialogInput
+        </samp>
+       </li>
+      </ul>
+      <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7773">
+       Save the new file in your working directory as
+       <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-6DBD484A-A04F-4F52-AB4D-80C24F779056">
+        gp-io.lsp
+       </em>
+       .
+      </p>
+     </li>
+     <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB4">
+      Create a new file, then cut and paste the following functions from
+      <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-659AB2CD-FDFC-41BC-87CE-4880C5E4A301">
+       gpmain.lsp
+      </em>
+      into the new file:
+      <ul class="ul" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF18CB41610EC0A2E719-73AC">
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB3">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-3549CF33-612A-4911-A30D-F11E5789DEF3">
+         Degrees-&gt;Radians
+        </samp>
+       </li>
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB2">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-72D08871-3B6A-46FA-BA52-DCBFC7E5CC06">
+         3Dpoint-&gt;2Dpoint
+        </samp>
+       </li>
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB1">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-F8EC8D8D-DAB5-4BFD-8509-2C9F6C17741B">
+         gp:list-&gt;variantArray
+        </samp>
+       </li>
+      </ul>
+      <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7772">
+       Also, at the beginning of the file, insert the lines of code to establish ActiveX functionality (
+       <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-03E9FFE6-119E-47ED-BE3E-E3AD41C1FC47">
+        vl-load-com
+       </samp>
+       ) and commit global variable assignment (
+       <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-A6092CC8-E52B-43C0-8AE4-A96ECDB07523">
+        *ModelSpace*
+       </samp>
+       ).
+      </p>
+      <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7771">
+       Save the file as
+       <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-0F5B7ABF-1C1F-4DF0-B2A9-712AC0701871">
+        utils.lsp
+       </em>
+       .
+      </p>
+     </li>
+     <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DB0">
+      Create a new file, then cut and paste the following function from
+      <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-883ED07B-C0E0-4267-BDDD-675DCA6BFA71">
+       gpmain.lsp
+      </em>
+      into the new file:
+      <ul class="ul" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF18CB41610EC0A2E719-73AB">
+       <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DAF">
+        <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-3E97DC09-38C6-4CF0-9874-1796B5DA1DAA">
+         gp:drawOutline
+        </samp>
+       </li>
+      </ul>
+      <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-7770">
+       Save this file as
+       <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-8C10461B-80FB-4C9C-8AA3-E2674360FE61">
+        gpdraw.lsp
+       </em>
+       .
+      </p>
+     </li>
+     <li class="li" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WS1A9193826455F5FF-7F10494411F03A24F24-1DAE">
+      After stripping the code out of
+      <em class="ph i" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-9589DA3D-2157-491A-B13A-6EA739FE7355">
+       gpmain.lsp
+      </em>
+      , save it and check it. Only the original function,
+      <samp class="ph codeph" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__GUID-91EA7924-F4D3-4072-9E48-AB63801E5256">
+       C:GPath
+      </samp>
+      , should remain in the file.
+     </li>
+    </ol>
+    <p class="p" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__WSFACF1429558A55DE1929BBDFEF458CE1C-776F">
+     Your desktop is starting to get crowded. You can minimize any window within Visual LISP and it stays accessible. Click the Select Window button on the toolbar to choose a window from a list, or click Window from the Visual LISP menu and select a window to view.
+     <img class="image" height="25" id="GUID-E412C0D3-72A2-4B87-BACE-BCE0E28E006B__IMAGE_77A07F21ADC8486C8DEA80DB4318D24F" src="../../../../_assets/GUID_3971D4FA_ECD2_42CF_A230_55BB2F780E84-4ae93de4.png" width="25"/>
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Using_Visual_LISP_Projects.html">
+      Using Visual LISP Projects
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

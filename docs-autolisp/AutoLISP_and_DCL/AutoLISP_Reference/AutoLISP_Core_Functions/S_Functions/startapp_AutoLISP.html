@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Starts an external application" name="description"/>
+  <meta content="STARTAPP" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   startapp (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      startapp (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Starts an external application
+   </p>
+   <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-F5625224-15D5-427D-A3CF-D4245F4E1AEA">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(startapp <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-E8B722B7-A161-4FF0-B4BA-5B2BBFB138FE">appcmd [file]</em>)</pre>
+    <div class="section" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WS1A9193826455F5FF-1E1423D1125831BDA67-7B01">
+     <dl class="dl" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WS1A9193826455F5FF-1E1423D1125831BDA67-7B01">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-568D522B-02C6-4DFC-B7A1-C8196EF22150">
+        appcmd
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-0EFF3FA8-186C-4051-AFD0-FB35A9024CAB">
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-7DF480AC-EF6E-4D48-BD76-36014414FE44">
+        <strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-07515321-F32D-471A-B59C-BAA484C66CEC">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WSFACF1429558A55DE11F0759FF1E4B858C-3327">
+        Application to execute. If
+        <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-FF2A39B7-3F8E-4643-93D3-1E545DF98C1C">
+         appcmd
+        </em>
+        does not include a full path name,
+        <samp class="ph codeph" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-7CD0E69C-CA23-4562-B783-FDB81D895C6C">
+         startapp
+        </samp>
+        searches the directories in the PATH environment variable on Windows for the application and the equivalent on Mac OS.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-5A25851C-43C5-42B7-88D1-0168C0B508A3">
+        file
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-86F6CCED-272E-4D3F-83AF-53ACDA33C935">
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-A47D04E0-D8B8-46E8-AC93-5E625F2BFAB6">
+        <strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-F49324A1-AAD2-4662-B354-81191C065A48">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WSFACF1429558A55DE11F0759FF1E4B858C-3326">
+        File name to be opened.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__SECTION_B9C761E6AFE44422BA42A6DCB9EE9EEB">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-C57F41F3-2B72-4651-B8A1-BEC951FBBA6A">
+     <strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-D71DA624-6986-4053-BF3B-DB902DCADDBD">
+      Type:
+     </strong>
+     Integer or nil
+    </p>
+    <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WSFACF1429558A55DE11F0759FF1E4B858C-3324">
+     A numeric value greater than 0, if successful; otherwise
+     <samp class="ph codeph" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-21A9F23C-8FEC-49B9-A019-17DA1461392F">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__SECTION_6834C0E0CAD54689A9AD49F0FE2F167F">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <div class="section" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-86EC83D6-0122-4755-BC1C-6E968877007C">
+     <dl class="dl" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-86EC83D6-0122-4755-BC1C-6E968877007C">
+      <dt class="dt dlterm">
+       Windows
+      </dt>
+      <dd class="dd" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-8226518F-B8BC-4630-A5FC-D501DE681536">
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WSFACF1429558A55DE11F0759FF1E4B858C-3322">
+        The following code starts Notepad and opens the
+        <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-5665E4F2-AA36-42CA-AD37-6BD09A5A003A">
+         acad.lsp
+        </em>
+        file.
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-19AA89B2-A93A-42D7-B184-E8C9381E730A">(startapp "notepad" "acad.lsp")</strong>
+33</pre>
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__WSFACF1429558A55DE11F0759FF1E4B858C-3321">
+        If an argument has embedded spaces, it must be surrounded by literal double quotes. For example, to edit the file
+        <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-3679DB3F-AD0D-418B-8BA8-C35798433887">
+         my stuff.txt
+        </em>
+        with Notepad, use the following syntax:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-B58A5E72-2169-43CF-8B56-F67CFA78F325">(startapp "notepad.exe" "\"my stuff.txt\"")</strong>
+33</pre>
+      </dd>
+      <dt class="dt dlterm">
+       Mac OS
+      </dt>
+      <dd class="dd" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-0E015C13-0F24-4BD1-B531-B98AB9AC4CBC">
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-79FB5CEF-A5A1-45DF-864D-C1C59E2A6CAA">
+        The following code starts TextEdit and opens the
+        <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-5B165E13-D738-460C-8715-65E7C0C35640">
+         acad.lsp
+        </em>
+        file.
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-79C45E74-360A-4AC9-87F2-BBEE0284C2B0">(startapp "textedit" "acad.lsp")</strong>
+33</pre>
+       <p class="p" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-68E5C870-0BBE-4407-A72C-09664ACCB0AB">
+        If an argument has embedded spaces, it must be surrounded by literal double quotes. For example, to edit the file
+        <em class="ph i" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-34E2211D-713B-471B-BB9F-4E9B7BE4296F">
+         my stuff.txt
+        </em>
+        with TextEdit, use the following syntax:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-30EC493A-674B-4AAE-8C88-358E38CDAB21__GUID-408F904B-5FAC-4096-8BE6-446FFD2F2EB1">(startapp "textedit.app" "\"my stuff.txt\"")</strong>
+33</pre>
+      </dd>
+     </dl>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Application_Handling_Functions_Reference_AutoLISP.html">
+       Application-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="showhtmlmodalwindow_AutoLISP.html" title="Displays a modal dialog box with a specified URI (Uniform Resource Identifier)">
+       showhtmlmodalwindow (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Clears the trace flag for the specified functions" name="description"/>
+  <meta content="UNTRACE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   untrace (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      untrace (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Clears the trace flag for the specified functions
+   </p>
+   <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-BFCFDE4E-171B-4D0A-AF94-3A230B9610D7">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(untrace <em class="ph i" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-179825DB-61B1-4A05-9795-2DE20B19A11D">[function ...]</em>)</pre>
+    <div class="section" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF0">
+     <dl class="dl" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF0">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-B17F4518-4665-4545-B91D-29B88A0E0178">
+        function
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-B93202F0-0FA9-403A-B82E-7AA2FEE39FBE">
+       <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-E504DBF1-D1CC-442B-9668-ECE3461D5588">
+        <strong class="ph b" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-7AC181C6-7266-44F5-BFCA-75EDDC8E9DFE">
+         Type:
+        </strong>
+        Symbol
+       </p>
+       <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__WSFACF1429558A55DE11F0759FF1E4B858C-3244">
+        A symbol that names a function. If
+        <em class="ph i" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-44397AAD-B1C7-4973-A06E-3519D8F662BB">
+         function
+        </em>
+        is not specified,
+        <samp class="ph codeph" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-A79A5BCE-FE28-4AEB-9578-A7FDA2CCDE89">
+         untrace
+        </samp>
+        has no effect.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__SECTION_08060259A78F4E1E99F86603420BED88">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-9B838452-65E9-44CF-834E-9983E53154FE">
+     <strong class="ph b" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-CEC82CA3-F565-42C3-934D-625C17EE808E">
+      Type:
+     </strong>
+     Symbol or nil
+    </p>
+    <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__WSFACF1429558A55DE11F0759FF1E4B858C-3242">
+     The last function name passed to
+     <samp class="ph codeph" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-EE65B054-39C3-4630-877F-2B4D0B485C3B">
+      untrace
+     </samp>
+     . If
+     <em class="ph i" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-367CCC58-365A-4A7C-8C1B-F3F97111F22E">
+      function
+     </em>
+     was not specified,
+     <samp class="ph codeph" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-66F2AF37-4B7F-4EA0-9F8B-E32825BD3A56">
+      untrace
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-7E08FFD3-9FD6-49BC-9EB1-CB09E58995A5">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__SECTION_36199DE2E97346B3A1CF6DD31BA5B0BE">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__WSFACF1429558A55DE11F0759FF1E4B858C-3240">
+     The following command clears the trace flag for function
+     <samp class="ph codeph" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-FA0F609C-D875-4248-A0ED-085EAEA1B81E">
+      foo
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-44FB0D76-668A-449C-9C17-4BCD259577E9__GUID-DF2B4633-639C-4637-9C34-3E44FC607716">(untrace foo)</strong>
+FOO</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Function_Handling_Functions_Reference_AutoLISP.html">
+       Function-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../T_Functions/trace_AutoLISP.html" title="Aids in AutoLISP debugging">
+       trace (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

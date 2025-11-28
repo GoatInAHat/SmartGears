@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Determines if the predicate is true for one of the list members" name="description"/>
+  <meta content="VL-MEMBER-IF" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-member-if (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-member-if (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Determines if the predicate is true for one of the list members
+   </p>
+   <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-4B78382F-A3C1-40AA-9F34-3740E20A5C62">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-member-if <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-DDABDE17-2CB3-45AC-A1F5-9509D11CF10A">predicate-function lst</em>)</pre>
+    <div class="section" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF-1E1423D1125831BDA67-7ACB">
+     <dl class="dl" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF-1E1423D1125831BDA67-7ACB">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-2BED1FA1-8A10-476D-8467-BD9F1BA0AB65">
+        predicate-function
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-313C5834-AFE4-405E-BC92-CC1015FB0F18">
+       <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-ACE814A0-F4FA-4217-BBDF-1D53BA4896FE">
+        <strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-9CD55007-81A6-486B-848F-20E24ECAEC16">
+         Type:
+        </strong>
+        Subroutine or Symbol
+       </p>
+       <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30F0">
+        The test function. This can be any function that accepts a single argument and returns
+        <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-7A930537-27EC-4C86-814F-89DB47236F69">
+         T
+        </samp>
+        for any user-specified condition. The
+        <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-7DB9FD18-40DE-48D9-A95B-F0D3381A8944">
+         predicate-function
+        </em>
+        value can take one of the following forms:
+       </p>
+       <ul class="ul" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-689E">
+        <li class="li" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF-7C08E89711EC57B47A8-7798">
+         A symbol (function name)
+        </li>
+        <li class="li" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF-7C08E89711EC57B47A8-7797">
+         <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-03065227-488C-4D2F-B1CD-38EB30DD9470">
+          '(LAMBDA (A1 A2) ...)
+         </samp>
+        </li>
+        <li class="li" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WS1A9193826455F5FF-7C08E89711EC57B47A8-7796">
+         <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-F331FCEF-9BE4-4351-9114-2FF4074FB303">
+          (FUNCTION (LAMBDA (A1 A2) ...))
+         </samp>
+        </li>
+       </ul>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-E663FF6F-57D0-4EC4-885B-32F3782510B3">
+        lst
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-92C3E6A1-7BFE-4105-A280-BC92092C214F">
+       <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-BF4B1765-E442-438A-86CE-B9BD32AA0E80">
+        <strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-71D4C508-FE5F-4D22-9D7E-D0BBB0D1EEEE">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30EF">
+        A list to be tested.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__SECTION_2D5C4FD90D9644FAA057019C66500011">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-3A6966C9-971F-4EE4-B29E-E2374C9241B8">
+     <strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-047C14AD-2CD1-4245-A0FE-F3F1002F63DA">
+      Type:
+     </strong>
+     List or nil
+    </p>
+    <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30ED">
+     A list, starting with the first element that passes the test and containing all elements following this in the original argument. If none of the elements passes the test condition,
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-19AA335F-C1BB-4E48-A562-78910839E2D7">
+      vl-member-if
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-8075980A-28D0-42F2-AFD6-A8A6097C6674">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__SECTION_7519DC544A6642AEB97CBC49C928159A">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30F2">
+     The
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-7F61CA09-4EC6-4BAC-ACB0-A49D81395E8F">
+      vl-member-if
+     </samp>
+     function passes each element in
+     <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-E08CA0C5-8769-46C4-828F-A5415E8FF0C3">
+      lst
+     </em>
+     to the function specified in
+     <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-66ACC93E-9CE3-4223-903F-6E6EC697128A">
+      predicate-function
+     </em>
+     . If
+     <em class="ph i" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-7D923B92-1DE3-4DEA-B6FA-576F883FAEB0">
+      predicate-function
+     </em>
+     returns a non-
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-DFC3F9B6-8DDE-4FC0-A903-AB8F30DDD2EF">
+      nil
+     </samp>
+     value,
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-74BB2A62-2811-4E38-9477-1994DAC23175">
+      vl-member-if
+     </samp>
+     returns the rest of the list in the same manner as the
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-AB51A720-8EEE-48EA-954E-8466289C9543">
+      member
+     </samp>
+     function.
+    </p>
+   </div>
+   <div class="section" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__SECTION_C83A55D1B1914261B4A1B7E01F9146CE">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30EB">
+     The following command draws a line:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-D7518B0E-78F8-49A9-AADE-4AD5DD8DB8A2">(command "._line" '(0 10) '(30 50) nil)</strong>
+nil</pre>
+    <p class="p" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__WSFACF1429558A55DE11F0759FF1E4B858C-30EA">
+     The following command uses
+     <samp class="ph codeph" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-D421BFCE-1EA4-47A6-8885-87B2834B7C77">
+      vl-member-if
+     </samp>
+     to return association lists describing an entity, if the entity is a line:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-CFEA98F0-F6DE-4FF4-839A-0F6C8FBE1319__GUID-F36B9303-2F76-4814-883E-5E338569D0C5">(vl-member-if
+  '(lambda (x) (= (cdr x) "AcDbLine"))
+   (entget (entlast)))</strong>
+((100 . "AcDbLine") (10 0.0 10.0 0.0) (11 30.0 50.0 0.0) (210 0.0 0.0 1.0))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/List_Manipulation_Functions_Reference_AutoLISP.html">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../L_Functions/list_AutoLISP.html" title="Takes any number of expressions and combines them into one list">
+       list (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_member_if_not_AutoLISP.html" title="Determines if the predicate is nil for one of the list members">
+       vl-member-if-not (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_remove_if_AutoLISP.html" title="Returns all elements of the supplied list that fail the test function">
+       vl-remove-if (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

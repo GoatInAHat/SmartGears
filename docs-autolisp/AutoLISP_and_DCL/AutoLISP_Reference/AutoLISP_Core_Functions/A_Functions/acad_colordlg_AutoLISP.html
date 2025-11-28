@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Displays the standard AutoCAD color selection dialog box" name="description"/>
+  <meta content="ACAD_COLORDLG" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="autolisp_functions_a" name="feature"/>
+  <meta content="autolisp_functions_query" name="feature"/>
+  <meta content="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   acad_colordlg (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      acad_colordlg (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Displays the standard AutoCAD color selection dialog box
+   </p>
+   <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows only
+   </p>
+   <div class="section" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-29E9AC6B-C2C6-411D-9C8E-0242F9198B58">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(acad_colordlg <em class="ph i" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-93E5F210-21B7-4ED7-9548-ECD3C2571470">colornum [flag]</em>)</pre>
+    <div class="section" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBF">
+     <dl class="dl" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WS1A9193826455F5FF-1E1423D1125831BDA67-7BBF">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-F473DEB6-8FA2-44C3-840D-14450F013AB8">
+        colornum
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-795EB7D2-5E2A-475A-812C-42F6952B66ED">
+       <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WSFACF1429558A55DE11F0759FF1E4B858C-3B2F">
+        <strong class="ph b" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-791F11A3-0873-49F5-A757-6E561C8ECF98">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WSFACF1429558A55DE11F0759FF1E4B858C-3AE7">
+        An integer in the range 0-256 (inclusive), specifying the AutoCAD color number to display as the initial default.
+       </p>
+       <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WSFACF1429558A55DE11F0759FF1E4B858C-3AE5">
+        A
+        <em class="ph i" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-3122F812-964C-4096-8B46-FD58ACA330F2">
+         colornum
+        </em>
+        value of 0 defaults to ByBlock, and a value of 256 defaults to ByLayer.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-2541BCE5-AFF8-4027-9906-F37772CFF325">
+        flag
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-AE153E7C-65FD-4F63-86DD-3FA3AD5D33F5">
+       <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-E68DB090-A8F6-4D55-8CD3-0C155479E8F2">
+        <strong class="ph b" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-CA9478D7-8DBD-43C6-8AF7-E3CC30A8C7C3">
+         Type:
+        </strong>
+        T or nil
+       </p>
+       <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WSFACF1429558A55DE11F0759FF1E4B858C-3AE6">
+        If set to
+        <samp class="ph codeph" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-45C32010-F88F-491C-9A17-38494C9B7419">
+         nil
+        </samp>
+        , disables the ByLayer and ByBlock buttons. Omitting the
+        <em class="ph i" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-DF724D09-D427-40CB-B0BA-594054FC1612">
+         flag
+        </em>
+        argument or setting it to a non-
+        <samp class="ph codeph" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-803A6955-3DE7-4630-8587-BA29286DAA3B">
+         nil
+        </samp>
+        value enables the ByLayer and ByBlock buttons.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__SECTION_CA62DC11584740F78C0837313ACA922B">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-712FD213-4C47-4F85-B58B-06B31D5432A2">
+     <strong class="ph b" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-A96A668D-EAC0-4754-8742-F5F9410C75EC">
+      Type:
+     </strong>
+     Integer or nil
+    </p>
+    <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__WSFACF1429558A55DE11F0759FF1E4B858C-3AE3">
+     The user-selected color number; otherwise
+     <samp class="ph codeph" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-6B4AE0B4-A218-467D-967B-7F6F8A3330E2">
+      nil
+     </samp>
+     , if the user cancels the dialog box.
+    </p>
+   </div>
+   <div class="section" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__SECTION_A604B63AEE5E471BA474971C5F3DC124">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-5E2A5569-02F4-496B-9CD7-E2457305FF35__GUID-605B9937-4040-476D-8EF3-1A6B10D94A91">
+     Prompt the user to select a color, and default to green if none is selected:
+    </p>
+    <pre class="pre codeblock prettyprint">(acad_colordlg 3)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Query_and_Command_Functions_Reference_AutoLISP.html">
+       Query and Command Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="acad_truecolorcli_AutoLISP.html" title="Prompts for colors at the Command prompt">
+       acad_truecolorcli (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="acad_truecolordlg_AutoLISP.html" title="Displays the AutoCAD color selection dialog box with tabs for index color, true color, and color books">
+       acad_truecolordlg (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

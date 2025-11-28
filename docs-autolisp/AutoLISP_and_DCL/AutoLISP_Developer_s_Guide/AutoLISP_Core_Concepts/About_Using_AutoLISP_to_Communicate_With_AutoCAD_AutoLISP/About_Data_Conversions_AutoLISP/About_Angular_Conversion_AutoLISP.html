@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Angular values returned by most AutoLISP functions and those stored in a drawing are expressed in radians, while angular input is commonly provided in degrees or another angular format than radians." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Angular Conversion (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Angular Conversion (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Angular values returned by most AutoLISP functions and those stored in a drawing are expressed in radians, while angular input is commonly provided in degrees or another angular format than radians.
+   </p>
+   <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__WSFACF1429558A55DE11F0759FF1E4B858C-6482">
+    You can convert angular values directly with a combination of math functions, or use the
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-8460F96A-A9FD-49A8-B47E-89808757FBF3">
+     angtos
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-8308501B-FF26-4D05-BAE7-D641C9BC5F4F">
+     angtof
+    </samp>
+    functions. The
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-6DC145A2-A3F4-42EE-B552-D514BEE1DF46">
+     angtos
+    </samp>
+    function converts an angular value expressed in radians to degrees or one of the other supported angular formats. This function returns a string value. If you need a real (or floating point) value, you can use the
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-09DF0FCA-6362-451B-901C-404EBE5AFC97">
+     atof
+    </samp>
+    function to convert the string value that is returned by
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-31F18153-EFDF-4AC6-ABAE-CEEFFA3F8F2E">
+     angtos
+    </samp>
+    .
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-D41A6490-5BC1-4A96-AE95-B2156763CAA7">(setq half-PI (/ PI 2))</strong>
+1.5708
+
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-397CE44F-6731-4658-A304-0B78CB8D9561">(setq angstr (angtos half-PI 0 2))</strong>
+"90.00"
+
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-7D6707ED-B35A-4567-9ACA-284E5D179E3F">(setq deg (atof angstr))</strong>
+90.0</pre>
+   <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__WSFACF1429558A55DE11F0759FF1E4B858C-6481">
+    The
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-4E11E08D-2DC9-471D-AE7B-A9BF8C2B5EA5">
+     angtof
+    </samp>
+    function is the opposite of
+    <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-DE1536D8-159E-4AD6-BE43-FFA493EB4D80">
+     angtos
+    </samp>
+    , it converts a string representing an angular value into a real (or floating point) value in radians.
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-C99F1193-68FE-46AA-8182-D1A151038F57">(setq angstr (angtos 1.5708 1 6))</strong>
+"90d0'0.76\""
+
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-A28BC494-486E-4DE5-87BD-AC0304E91B52">(setq rad (angtof angstr 1))</strong>
+1.5708</pre>
+   <div class="section" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__SECTION_F670BA4E01564791B1D139D60EF1EB3A">
+    <h2 class="title sectiontitle">
+     Converting Radians to Degrees and Degrees to Radians with Math Functions
+    </h2>
+    <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-9EFC47B3-F0E6-46E9-9DB6-136606B8E743">
+     A more efficient method way to convert radians to degrees and degrees to radians than using the
+     <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-5C4BAF3C-F35E-4331-BC49-DF1DE2BC4A4A">
+      angtos
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-6EDFD8DD-324A-49C7-87B3-E05B47E1F2D1">
+      angtof
+     </samp>
+     functions is to use math functions.
+    </p>
+    <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-451F87D9-1B55-40A4-89AF-B2F7991F41C0">
+     The math formula to convert radians to degrees is:
+    </p>
+    <pre class="pre codeblock prettyprint">(Radians / PI) * 180 = Degrees</pre>
+    <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-B768153B-8CE7-4846-AD91-4388848B639E">
+     In AutoLISP, the same can be achieved using the following function:
+    </p>
+    <pre class="pre codeblock prettyprint">; Convert value in radians to degrees
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-FF1B0E3F-2A60-46D6-8053-5A81B3A28211">(defun Radian-&gt;Degrees (nbrOfRadians)
+  (* 180.0 (/ nbrOfRadians pi))
+)</strong>
+RADIAN-&gt;DEGREES
+
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-F3C339A0-C6FA-4018-BF7D-113DBC0BAFA3">(Radian-&gt;Degrees PI)</strong>
+180.0</pre>
+    <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-1EE8B518-B5CA-4D2F-A0BA-CF587DFD2E24">
+     The math formula to convert degrees to radians is:
+    </p>
+    <pre class="pre codeblock prettyprint">(Degrees / 180) * PI = Radians</pre>
+    <p class="p" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-8AA8E262-F350-42E9-B2D2-DCD4119C77C4">
+     In AutoLISP, the same can be achieved using the following function:
+    </p>
+    <pre class="pre codeblock prettyprint">; Convert value in degrees to radians
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-24A3E9EF-BD81-4588-9AD7-E5F38120B3FA">(defun Degrees-&gt;Radians (numberOfDegrees)
+  (* pi (/ numberOfDegrees 180.0))
+)</strong>
+DEGREES-&gt;RADIANS
+
+<strong class="ph b" id="GUID-725BC3DE-3D4C-4365-A7F9-FAD5B8AC2DD1__GUID-E407915D-419B-4A16-A960-5B5E921A201F">(Degrees-&gt;Radians 180.0)</strong>
+3.14159</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Data_Conversions_AutoLISP.html">
+      About Data Conversions (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Device_Access_and_Control_AutoLISP/About_Accessing_and_Requesting_User_Input_AutoLISP.html" title="AutoLISP can collect raw input from an input device, in addition to offering a set of functions designed to request specific types of input from the user.">
+       About Accessing and Requesting User Input (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Geometric_Utilities_AutoLISP/About_Geometric_Utilities_AutoLISP.html" title="A group of functions allows applications to obtain pure geometric information and geometric data from the drawing.">
+       About Geometric Utilities (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_Integers_AutoLISP.html" title="Integers are whole numbers; numbers that do not contain a decimal point.">
+       About Integers (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_Reals_AutoLISP.html" title="A real is a number containing a decimal point. Numbers between -1 and 1 must contain a leading zero.">
+       About Reals (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Number_Handling_AutoLISP.html" title="AutoLISP provides functions for working with integers and real numbers.">
+       About Number Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5BDBD4BC-289E-4A49-9BB9-DF6A6147E0FC">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

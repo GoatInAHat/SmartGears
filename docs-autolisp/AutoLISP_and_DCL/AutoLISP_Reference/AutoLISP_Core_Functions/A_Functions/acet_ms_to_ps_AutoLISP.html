@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Converts a real value from model space units to paper space units" name="description"/>
+  <meta content="ACET-MS-TO-PS" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   acet-ms-to-ps (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      acet-ms-to-ps (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Converts a real value from model space units to paper space units
+   </p>
+   <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows only
+   </p>
+   <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-0893920C-4A79-48DA-B90E-C3D5641C3BB3">
+    <strong class="ph b" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-2B0D9BA3-D863-4A93-B133-0C11BCB8867A">
+     Prerequisites:
+    </strong>
+    The AcSpaceTrans ObjectARX application must be loaded before the function can be called,
+    <samp class="ph codeph" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-9C6B9585-86C3-4C3C-81BD-5C1E963D5F24">
+     (arxload "acspacetrans.arx")
+    </samp>
+    or
+    <samp class="ph codeph">
+     (arxload "acspacetrans.crx")
+    </samp>
+    based on release.
+   </p>
+   <div class="section" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-B704C5D5-E80F-4476-B1A9-20EDE3A388CC">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(acet-ms-to-ps <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-FB74323D-46BF-48C7-8F82-15366EE781D4">[value] [viewport]</em>)</pre>
+    <div class="section" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WS1A9193826455F5FF-1E1423D1125831BDA67-7BB5">
+     <dl class="dl" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WS1A9193826455F5FF-1E1423D1125831BDA67-7BB5">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-A21EDE21-EA02-4A5F-A647-4DB852C3B595">
+        value
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-328A4482-C1DD-465B-B22B-F91BCADA1ACB">
+       <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-B98CA443-7CCB-4852-81B1-F3CE8A028019">
+        <strong class="ph b" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-E41C9BB4-F317-4E4B-9484-5916A384F0F6">
+         Type:
+        </strong>
+        Real
+       </p>
+       <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WSFACF1429558A55DE11F0759FF1E4B858C-3AA1">
+        Value to be converted.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-0D8CA7C0-672A-443C-B84E-42E4FECC918C">
+        viewport
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-401340B9-A234-4429-AF93-BDA87F3F849F">
+       <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-721A1D87-6346-44F7-AFDF-54C565885001">
+        <strong class="ph b" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-76D0380B-7EB8-45E5-8A20-17B5FE31EEE8">
+         Type:
+        </strong>
+        Ename (entity name)
+       </p>
+       <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WSFACF1429558A55DE11F0759FF1E4B858C-3AA0">
+        A viewport entity name.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__SECTION_875163CA922A40D8A30EEF4E4717B877">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-D1E383F2-AAC2-4778-9A5C-E5842AFBD51C">
+     <strong class="ph b" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-9C33C65F-06D5-4115-86D9-47B69ED95A57">
+      Type:
+     </strong>
+     Real or nil
+    </p>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-97FAD5FD-01B6-4C6C-8667-DF03760DF0BA">
+     The converted real value on success;
+     <samp class="ph codeph" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-DA51322F-762B-437F-A144-E7D1171C59AA">
+      nil
+     </samp>
+     on failure.
+    </p>
+   </div>
+   <div class="section" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__SECTION_F60036FCC23F4907B85378D871130DAD">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WSFACF1429558A55DE11F0759FF1E4B858C-3AA5">
+     If both the
+     <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-C42B56AB-53BA-4836-BA79-C6D5AAE54BC2">
+      value
+     </em>
+     and
+     <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-5A5D33CD-AB4C-4C80-BCEF-EFD54F6B575B">
+      viewport
+     </em>
+     arguments are specified, the value is converted to paper space units using the specified viewport. No user input is required.
+    </p>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WSFACF1429558A55DE11F0759FF1E4B858C-3AA4">
+     If only the
+     <em class="ph i" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-EAB45665-B63B-4FF1-9160-2C628AD99ABF">
+      value
+     </em>
+     argument is specified, the current viewport is assumed and no user input is required. However, if the current space is model space, there is no current viewport and the function will fail (returning
+     <samp class="ph codeph" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-9A50F740-AB8D-42B6-9CE3-C6216A897BAB">
+      nil
+     </samp>
+     ). If paper space is the current space, the function will either prompt for a viewport if more than one viewport exists in the current paper space layout, or use the single existing viewport.
+    </p>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__WSFACF1429558A55DE11F0759FF1E4B858C-3AA3">
+     If no arguments are specified, the function prompts for a value and converts it if possible.
+    </p>
+   </div>
+   <div class="section" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__SECTION_7B6E32688C9B47D48A8BF8164E4852B3">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-9E316699-FF65-477F-BD28-318FDEC04CC5__GUID-5635C311-53AD-4EA4-9AC5-6F1CD7A47CAE">
+     None
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="acet_ps_to_ms_AutoLISP.html" title="Converts a real value from paper space units to model space units">
+       acet-ps-to-ms (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The help and setfunhelp functions provide access to the product and your custom help files." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Accessing and Assigning Help to a Command (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Accessing and Assigning Help to a Command (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The
+    <samp class="ph codeph" id="GUID-2F859C2E-E396-476E-8D89-7E7653153C45">
+     help
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-085565F3-DFAB-445C-A0C8-9E6B69FD6764">
+     setfunhelp
+    </samp>
+    functions provide access to the product and your custom help files.
+   </p>
+   <p class="p" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-854597A2-18A5-4EF8-8758-7733B771B668">
+    The Help facility supports:
+   </p>
+   <ul class="ul" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__UL_42BC8A6EE42A41DC80CED40771201B53">
+    <li class="li" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__LI_FCBD76EA5AFB48809CE326C1A20A0E04">
+     HyperText Markup Language (.htm/.html) files - Windows and Mac OS
+    </li>
+    <li class="li" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__LI_10A8088F3B03490AB11E7DEBC922C9CF">
+     Microsoft Compiled HTML Help (.chm) files - Windows only
+    </li>
+    <li class="li" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__LI_9A226510067949A5AB8CC50FBE7705A9">
+     Windows Help (.hlp) files - Windows only
+    </li>
+   </ul>
+   <div class="section" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-917486EE-0A7B-40E3-B33D-FCBDAA9A48CD">
+    <p class="p" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__WSFACF1429558A55DE11F0759FF1E4B858C-643F">
+     You can use the help function to display a Help file. Depending on the Help file's extension, the help function displays the appropriate viewer for the specified file. The following example code displays the LINE commands topic in the default AutoCAD Help file.
+    </p>
+    <pre class="pre codeblock prettyprint">(help "" "line")</pre>
+    <p class="p" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__WSFACF1429558A55DE11F0759FF1E4B858C-643E">
+     You can create a custom Help file that provides information about your applications and display it with the help function. The following example code displays a custom help file named
+     <em class="ph i" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-753DB9E0-6B46-4A81-8F6F-B467E931E51A">
+      abcindoorcad.chm
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint">(defun C:ABCINDOORCADHELP ()
+  (help "abcindoorcad.chm")
+ (princ)
+)</pre>
+    <p class="p" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__WSFACF1429558A55DE11F0759FF1E4B858C-643C">
+     The
+     <samp class="ph codeph" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-E5EAD67B-6D23-4B83-A906-318CA3553DDC">
+      setfunhelp
+     </samp>
+     function provides contextual help for user-defined commands. After the definition of a new command defined with AutoLISP, add a call to
+     <samp class="ph codeph" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-2942D0B8-199B-4ECA-9719-CC8B37DDDAFB">
+      setfunhelp
+     </samp>
+     and associate a specific help topic to the command. The following example assigns the help topic “MyCommand” in the
+     <em class="ph i" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-B12FD721-68B5-4E5F-A172-3CF893438FCC">
+      abcindoorcad.chm
+     </em>
+     file to the user-defined MYCOMMAND command:
+    </p>
+    <pre class="pre codeblock prettyprint">(defun C:MYCOMMAND ( )
+  ..
+  <em class="ph i" id="GUID-02866F82-0BA8-4395-A4EA-9A90EC934045__GUID-3DCE9D67-0599-46EE-BC2A-B3A9B2AF0051">Command definition</em>
+  ..
+)
+(setfunhelp "c:mycommand" "abcindoorcad.chm" "mycommand")</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_File_Handling_AutoLISP.html">
+      About File Handling (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Symbol_and_Function_Handling_AutoLISP/About_C_XXX_Functions_AutoLISP/About_Defining_Commands_AutoLISP.html" title="New commands can be defined with the defun function and by prefixing a function name with c:.">
+       About Defining Commands (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Symbol_and_Function_Handling_AutoLISP/About_Defining_a_Function_AutoLISP/About_Defining_a_Function_AutoLISP.html" title="You can define your own functions.">
+       About Defining a Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F9ABE09D-9A71-4C00-8E5D-5BA70C3797B5">
+       Query and Command Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

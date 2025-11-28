@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Retrieves information about how a selection set was created." name="description"/>
+  <meta content="SSNAMEX" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   ssnamex (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      ssnamex (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Retrieves information about how a selection set was created.
+   </p>
+   <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-79896810-3DE0-4999-B982-506ACC39D5C2">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(ssnamex <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-7AAA3345-F935-4232-8EE0-FBD2AC7225AC">ss [index]</em>)</pre>
+    <div class="section" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WS1A9193826455F5FF-1E1423D1125831BDA67-7B03">
+     <dl class="dl" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WS1A9193826455F5FF-1E1423D1125831BDA67-7B03">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-5A0E0377-F48B-4335-AE75-0E3FB3C44CA2">
+        ss
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-E8422CAB-B051-4D56-AE90-356A49356736">
+       <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-941F2532-07C2-4E2A-8C1D-A9ACB15F5372">
+        <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-7966C0EA-C12B-4066-8937-8BB9765603CA">
+         Type:
+        </strong>
+        Pickset (selection set)
+       </p>
+       <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3365">
+        A selection set.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-6B05CBA5-398F-464A-9D2C-36589B088D86">
+        index
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-7D74BF3D-5046-448A-8463-B7B80E929FF7">
+       <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-F1654FD1-3417-4DA7-9D16-3A16A01ADA84">
+        <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-4B631603-A828-4B21-9712-F00746B75F2A">
+         Type:
+        </strong>
+        Integer or Real
+       </p>
+       <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3364">
+        Element in a selection set. The first element in the set has an index of zero.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__SECTION_B6DFB7158CB74012AAE05D4907682BA6">
+    <h2 class="title sectiontitle">
+     Return values
+    </h2>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-E8D5F2FE-2382-4985-BAB2-772831831DF6">
+     <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-DE942D99-C762-42EB-94B7-1A7CDC198AAB">
+      Type:
+     </strong>
+     Ename (entity name) or nil
+    </p>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3362">
+     If successful,
+     <samp class="ph codeph" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-BAE5E2E0-D354-42F9-87C8-0D1CBD0291B7">
+      ssnamex
+     </samp>
+     returns the name of the entity at
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-FB1FDD57-EE11-49E5-B2CA-BB1804FFA237">
+      index
+     </em>
+     , along with data describing how the entity was selected. If the
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-A870C7B1-FD87-4CDD-8952-1F2B7798BED3">
+      index
+     </em>
+     argument is not supplied, this function returns a list containing the entity names of the elements in the selection set, along with data that describes how each entity was selected. If
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-08C9C01C-A6B7-4F9A-A9B7-1F7E17457188">
+      index
+     </em>
+     is negative or greater than the highest-numbered entity in the selection set,
+     <samp class="ph codeph" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-61C0EB11-925C-4E50-ACBF-614561291A6D">
+      ssnamex
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-FA0F4A28-37DB-4922-8AFE-BA196DD2F198">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__SECTION_A306812251824A5CB68B4FE152BF3DBA">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3367">
+     Only selection sets with entities from the current drawing's model space and paper space—
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-AB04A99C-B6E4-4008-8C40-44224D7960C0">
+      not
+     </em>
+     nongraphical objects or entities in other block definitions—can be retrieved by this function.
+    </p>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-30245CB6-EB2C-4424-B14E-8D24A9B72230">
+     The data returned by
+     <samp class="ph codeph" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-DE3E95CE-D053-434A-B856-77CE3A7A6150">
+      ssnamex
+     </samp>
+     is a list made up of sublists that contain information about an entity and the selection method used to select it, or a polygon used to select one or more entities. Each sublist that describes the selection of a particular entity comprises of three parts: selection method ID (an integer &gt;= 0), entity name of the selected entity, and selection method specific data that describes how the entity was selected.
+    </p>
+    <pre class="pre codeblock prettyprint">((<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-D3BF26EA-8CBC-4DB5-BBCC-BD0EA5F4749E">sel_id1 ename1</em> (<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-40FBBE57-F5F2-493C-B17D-B827100A5540">data</em>))(<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-745AF09E-35B5-4D05-8833-C4FC5EA5151D">sel_id2 ename2</em> (<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-67068884-3B18-4206-A96C-DCC7F74E3904">data</em>)) ... )</pre>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3360">
+     The following table lists the selection method IDs:
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6931" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335F">
+          Selection method IDs
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335E">
+          ID
+         </p>
+        </th>
+        <th class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335D">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335C">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335B">
+          Nonspecific (i.e., Last All)
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-335A">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3359">
+          Pick
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3358">
+          2
+         </p>
+        </td>
+        <td class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3357">
+          Window or WPolygon
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3356">
+          3
+         </p>
+        </td>
+        <td class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3355">
+          Crossing or CPolygon
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="28.137310073157007%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3354">
+          4
+         </p>
+        </td>
+        <td class="entry" valign="top" width="71.86268992684299%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3353">
+          Fence
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3351">
+     Each sublist that both describes a polygon and is used during entity selection takes the form of a polygon ID (an integer &lt; 0), followed by point descriptions.
+    </p>
+    <pre class="pre codeblock prettyprint">(<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-52B3CF5F-116D-428E-B9A3-53EAA677734A">polygon_id point_description_1 point_description_n ...</em>)</pre>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3350">
+     Polygon ID numbering starts at -1 and each additional polygon ID is incremented by -1. Depending on the viewing location, a point is represented as one of the following: an infinite line, a ray, or a line segment. A point descriptor comprises three parts: a point descriptor ID (the type of item being described), the start point of the item, and an optional unit vector that describes either the direction in which the infinite line travels or a vector that describes the offset to the other side of the line segment.
+    </p>
+    <pre class="pre codeblock prettyprint">(<em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-C7B87337-5A4A-4704-BE34-8E5574F4D3C2">point_descriptor_id base_point [unit_or_offset_vector]</em>)</pre>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334F">
+     The following table lists the valid point descriptor IDs:
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6930" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334E">
+          Point descriptor IDs
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="22.22222222222222%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334D">
+          ID
+         </p>
+        </th>
+        <th class="entry" valign="top" width="77.77777777777779%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334C">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="22.22222222222222%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334B">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="77.77777777777779%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-334A">
+          Infinite line
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="22.22222222222222%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3349">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="77.77777777777779%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3348">
+          Ray
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="22.22222222222222%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3347">
+          2
+         </p>
+        </td>
+        <td class="entry" valign="top" width="77.77777777777779%">
+         <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3346">
+          Line segment
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3345">
+    </p>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-2C3450D6-7E10-4FC1-A82E-4D9C5229CEF6">
+     The
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-CED1457D-64C0-4B1D-8B34-38E4DC50CAD6">
+      unit_or_offset_vector
+     </em>
+     is returned when the view point is something other than 0,0,1.
+    </p>
+   </div>
+   <div class="section" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__SECTION_0ABA8805E0704AEBA9FE35369F56A9F2">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3342">
+     The
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-671B80A2-DEFF-4265-85AB-5FAC8463695F">
+      data
+     </em>
+     associated with Pick (type 1) entity selections is a single point description. For example, the following record is returned for the selection of an entity picked at 1,1 in plan view of the WCS:
+    </p>
+    <p class="p promptblock" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-C56D7B6D-3588-4FAF-8072-6F279ABC4FD2">
+     Command:
+     <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-B99F6385-8241-4DED-B16D-02BAA1CF1203">
+      (ssnamex ss3 0)
+     </strong>
+    </p>
+    <pre class="pre codeblock prettyprint">((1 &lt;Entity name: 1d62da0&gt; 0 (0 (1.0 1.0 0.0))))</pre>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3341">
+     The
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-50B17F34-1587-43D1-96F2-9E3E461A3C79">
+      data
+     </em>
+     associated with an entity selected with the Window, WPolygon, Crossing, or CPolygon method is the integer ID of the polygon that selected the entity. It is up to the application to associate the polygon identifiers and make the connection between the polygon and the entities it selected. For example, the following returns an entity selected by Crossing (note that the polygon ID is -1):
+    </p>
+    <p class="p promptblock" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-2B6BEAC4-8F8C-40C3-8742-4F5BC479371B">
+     Command:
+     <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-B864E5BD-B89C-4ECA-9115-FC60E770A11E">
+      (ssnamex ss4 0)
+     </strong>
+    </p>
+    <pre class="pre codeblock prettyprint">((3 &lt;Entity name: 1d62d60&gt; 0 -1) (-1 (0 (-1.80879 8.85536 0.0)) (0 (13.4004 8.85536 0.0))
+(0 (13.4004 1.80024 0.0)) (0 (-1.80879 1.80024 0.0))))</pre>
+    <p class="p" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__WSFACF1429558A55DE11F0759FF1E4B858C-3340">
+     The
+     <em class="ph i" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-277E48FD-5ACA-478F-94DD-271F64A1FC35">
+      data
+     </em>
+     associated with fence selections is a list of points and descriptions for the points where the fence and entity visually intersect. For example, the following command returns information for a nearly vertical line intersected three times by a Z-shaped fence:
+    </p>
+    <p class="p promptblock" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-F6210808-B5C8-418B-9705-CD57E20D7FC2">
+     Command:
+     <strong class="ph b" id="GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999__GUID-9EC0EF6D-7033-44F8-B0D6-05FA95A5E930">
+      (ssnamex ss5 0)
+     </strong>
+    </p>
+    <pre class="pre codeblock prettyprint">((4 &lt;Entity name: 1d62d88&gt; 0 (0 (5.28135 6.25219 0.0)) (0 (5.61868 2.81961 0.0))
+(0 (5.52688 3.75381 0.0))))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Selection_Set_Manipulation_Functions_Reference_AutoLISP.html">
+       Selection Set Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="ssget_AutoLISP.html" title="Creates a selection set from the selected object">
+       ssget (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="sslength_AutoLISP.html" title="Returns an integer containing the number of objects (entities) in a selection set">
+       sslength (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="ssmemb_AutoLISP.html" title="Tests whether an object (entity) is a member of a selection set">
+       ssmemb (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="ssname_AutoLISP.html" title="Returns the object (entity) name of the indexed element of a selection set">
+       ssname (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

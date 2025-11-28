@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-D0CF600F-566E-4D79-9DEB-3039A97E5348" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Using Angles and Setting Up Points
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Using Angles and Setting Up Points
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-B775A8E1-395B-4B8E-8FCC-4BFABD9AC587">
+    <p class="p" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WSFACF1429558A55DE1929BBDFEF458CE1C-77A6">
+     There are still a couple of issues remaining. First, you need to figure out how to draw the path at any angle the user specifies. From the
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-675793AD-BF9A-448F-BB15-0342D57DE99D">
+      gp:getPointInput
+     </samp>
+     function, you can easily establish the primary angle of the path. To draw it, you need a couple of additional vectors perpendicular to the primary angle.
+    </p>
+    <div class="fig fignone" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WS1A9193826455F5FF18CB41610EC0A2E719-7369">
+     <img class="image" height="244" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__IMAGE_16023B99C004499F91AD75E37D5AFD41" src="../../../../_assets/GUID_D706D252_836D_4134_84C9_811AB7FD64ED-55b1a38e.png" width="504"/>
+    </div>
+    <p class="p" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WSFACF1429558A55DE1929BBDFEF458CE1C-77A5">
+     This is where the
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-EE047E6D-08BB-4F11-843D-25BFB445942E">
+      Degrees-&gt;Radians
+     </samp>
+     function is useful. The following code fragment demonstrates how you can set up your two perpendicular vectors using the
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-FD9726A4-96C6-405D-81EA-D2A2AC8925EC">
+      PathAngle
+     </samp>
+     variable as an argument passed to the
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-33B7FFD8-55AE-4680-A89E-D755B9F07273">
+      Degrees-&gt;Radians
+     </samp>
+     function:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq angp90 (+ PathAngle (Degrees-&gt;Radians 90))
+      angm90 (- PathAngle (Degrees-&gt;Radians 90)))</pre>
+    <p class="p" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WSFACF1429558A55DE1929BBDFEF458CE1C-77A4">
+     With the data you now have in hand, you can establish the four corner points of the path using
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-CC4C770D-A977-43CB-BFB4-80E6586BC262">
+      <strong class="ph b" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-B945871E-2A2E-42ED-882E-A36D65E396FB">
+       polar
+      </strong>
+     </samp>
+     function:
+    </p>
+    <div class="fig fignone" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WS1A9193826455F5FF18CB41610EC0A2E719-7368">
+     <img class="image" height="201" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__IMAGE_3FB1E2AB9667494CA03F01D744C55AFA" src="../../../../_assets/GUID_61D24939_3416_4FA4_9D2B_3482590531D0-2cf63b26.png" width="504"/>
+    </div>
+    <pre class="pre codeblock prettyprint">(setq p1 (polar StartPt angm90 HalfWidth)
+      p2 (polar p1 PathAngle PathLength)
+      p3 (polar p2 angp90 Width)
+      p4 (polar p3 (+ PathAngle (Degrees-&gt;Radians 180))</pre>
+    <p class="p" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__WSFACF1429558A55DE1929BBDFEF458CE1C-77A3">
+     The
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-A844C74E-6477-448C-AD58-A22F707435B8">
+      polar
+     </samp>
+     function returns a 3D point at a specified angle and distance from a point. For instance,
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-6F82F980-AD7C-4B74-B24A-8DB058BE503E">
+      polar
+     </samp>
+     locates
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-B740AAB0-29AD-413B-9DD1-3B6178081DF6">
+      p2
+     </samp>
+     by projecting
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-35FC22D9-9FC6-45AD-9E4C-B534DFA15BE5">
+      p1
+     </samp>
+     a distance of
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-0E37E570-FEFB-4179-9B0B-F809B1E4F0C6">
+      PathLength
+     </samp>
+     along a vector oriented at an angle of
+     <samp class="ph codeph" id="GUID-DE12B4F3-3A24-4121-B417-569050C0A7CA__GUID-245156E0-CC7E-4794-BF5B-AC8E621249CA">
+      PathAngle
+     </samp>
+     , counter-clockwise from the x-axis.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE.html">
+      Lesson 3: Drawing the Path Boundary (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Working_With_an_Association_List.html">
+      Working With an Association List
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Understanding_the_ActiveX_Code_in_Gp_drawOutline.html">
+      Understanding the ActiveX Code in Gp:drawOutline
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

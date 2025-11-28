@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="You can select and handle objects, and use their extended data." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Using AutoLISP to Manipulate AutoCAD Objects (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Using AutoLISP to Manipulate AutoCAD Objects (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    You can select and handle objects, and use their extended data.
+   </p>
+   <div class="section" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__GUID-6C138E37-F629-4935-8146-24F209E19AB6">
+    <p class="p" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__WSFACF1429558A55DE11F0759FF1E4B858C-641F">
+     Most AutoLISP
+     <sup class="ph sup" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__GUID-0FDFAA42-7E62-45E3-A1DF-0762ED165F63">
+      <span class="ph" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__GUID-E0DC4364-149A-4759-A8B4-1320DE158763">
+       ®
+      </span>
+     </sup>
+     functions that handle selection sets and objects identify a set or an object by the entity name. For selection sets, which are valid only in the current session, the volatility of names poses no problem, but it does for objects because they are saved in the drawing database. An application that must refer to the same objects in the same drawing (or drawings) at different times can use the objects' handles.
+    </p>
+    <p class="p" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__WSFACF1429558A55DE11F0759FF1E4B858C-641E">
+     AutoLISP uses symbol tables to maintain lists of graphic and non-graphic data related to a drawing, such as the layers, linetypes, and block definitions. Each symbol table entry has a related entity name and handle and can be manipulated in a manner similar to the way other AutoCAD
+     <sup class="ph sup" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__GUID-D378FD08-8326-410B-B780-66A1AA7DD87E">
+      <span class="ph" id="GUID-9AED35A1-5CB2-43D8-88ED-CBE95E54798D__GUID-1F90354A-3F15-43E9-BAA8-3F9200EA6EA1">
+       ®
+      </span>
+     </sup>
+     entities are manipulated.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="About_Selecting_Objects_and_Selection_Sets_AutoLISP/About_Selecting_Objects_and_Selection_Sets_AutoLISP.html">
+       About Selecting Objects and Selection Sets (AutoLISP)
+      </a>
+      <br/>
+      Selection sets are groups of one or more selected objects (entities).
+     </li>
+     <li class="link ulchildlink">
+      <a href="About_Object_Handling_AutoLISP/About_Object_Handling_AutoLISP.html">
+       About Object Handling (AutoLISP)
+      </a>
+      <br/>
+     </li>
+     <li class="link ulchildlink">
+      <a href="About_Extended_Data_Xdata_AutoLISP/About_Extended_Data_Xdata_AutoLISP.html">
+       About Extended Data - Xdata (AutoLISP)
+      </a>
+      <br/>
+      Several AutoLISP functions are provided to handle extended data (xdata), which is created by routines written with AutoLISP, ObjectARX, or Managed .NET.
+     </li>
+     <li class="link ulchildlink">
+      <a href="About_Xrecord_Objects_AutoLISP.html">
+       About Xrecord Objects (AutoLISP)
+      </a>
+      <br/>
+      Xrecord objects are used to store and manage arbitrary data.
+     </li>
+     <li class="link ulchildlink">
+      <a href="About_Symbol_Table_and_Dictionary_Access_AutoLISP/About_Symbol_Table_and_Dictionary_Access_AutoLISP.html">
+       About Symbol Table and Dictionary Access (AutoLISP)
+      </a>
+      <br/>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

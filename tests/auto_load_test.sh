@@ -14,7 +14,7 @@ if [[ ! -f "$BUNDLE" ]]; then
   exit 1
 fi
 
-python - <<'PY'
+python3 - <<'PY'
 import pathlib, sys
 bundle = pathlib.Path("SmartGears.lsp")
 text = bundle.read_text(encoding="utf-8")
@@ -39,6 +39,6 @@ print("Bundle syntax check passed; core symbols present.")
 PY
 
 # Run Python-based verification of math expectations
-python -m unittest discover -v tests
+python3 -m unittest discover -v tests
 
 echo "Auto-load smoke + math tests completed successfully."

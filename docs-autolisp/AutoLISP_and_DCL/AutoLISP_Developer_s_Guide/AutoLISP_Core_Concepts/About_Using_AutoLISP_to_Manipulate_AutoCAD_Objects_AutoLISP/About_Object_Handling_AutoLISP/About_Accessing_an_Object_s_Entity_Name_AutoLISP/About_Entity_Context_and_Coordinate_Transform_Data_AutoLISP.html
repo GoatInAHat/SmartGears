@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The nentsel and nentselp functions are similar to entsel, except they return two additional values to handle entities nested within block references." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Entity Context and Coordinate Transform Data (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Entity Context and Coordinate Transform Data (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The
+    <samp class="ph codeph" id="GUID-2F7F1C66-2E35-449F-8E06-5C5329907CE8">
+     nentsel
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-E411BF3F-D29C-4442-BE32-6D4A02010FBA">
+     nentselp
+    </samp>
+    functions are similar to
+    <samp class="ph codeph" id="GUID-25382AFC-9C6F-439F-9F8A-8B593A57CACE">
+     entsel
+    </samp>
+    , except they return two additional values to handle entities nested within block references.
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E07DAF19-30B0-4840-87FB-55C0A1F4122B">
+    Another difference between these functions is that when the user responds to a
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-33785BFE-0389-47DD-8684-5A981C5C3101">
+     nentsel
+    </samp>
+    call by selecting a complex entity or a complex entity is selected by
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-894B11D1-5B58-446D-936B-2BF6485267DB">
+     nentselp
+    </samp>
+    , these functions return the entity name of the selected subentity and not the complex entity's header, as
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-5D46A3CF-5442-4A71-BBF2-8056D39C06DB">
+     entsel
+    </samp>
+    does.
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E2A81606-081A-43E3-A10F-690966E68920">
+    For example, when the user selects a 3D polyline,
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-DF8EB3B5-81C8-455E-A31B-7CF6D8F69AB0">
+     nentsel
+    </samp>
+    returns a vertex subentity instead of the polyline header. You can retrieve the polyline header by making successive calls to
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-CBFB9F61-0D13-4332-A504-69E31B80C4E4">
+     entnext
+    </samp>
+    , stepping forward to the Seqend subentity, and then obtain the name of the header from the Deqend subentity's -2 dxf group code. The same applies when the user selects attributes in a nested block reference.
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-868F5EB6-6BD0-4D64-8AE3-A01DD9D781D0">
+    Selecting an attribute within a block reference returns the name of the attribute and the pick point. When the selected object is a component of a block reference other than an attribute,
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-156ED7C0-B876-4555-A592-94E42FD2FA69">
+     nentsel
+    </samp>
+    returns a list containing the following elements:
+   </p>
+   <ul class="ul" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__UL_B27EA6E833F448DC8744311772C61A02">
+    <li class="li" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__LI_12FE0DE43E6A494A9D41260AB21AEE4F">
+     The selected entity's name.
+    </li>
+    <li class="li" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__LI_46D76312A3804ACA8CFBA8A2C2263B7A">
+     A list containing the coordinates of the point used to pick the object.
+    </li>
+    <li class="li" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__LI_EEC7006C664B41E5BAD6229717916F0C">
+     The Model to World Transformation Matrix. This is a list consisting of four sublists, each of which contains a set of coordinates. This matrix can be used to transform the entity definition data points from an internal coordinate system called the model coordinate system (MCS), to the World Coordinate System (WCS). The insertion point of the block that contains the selected entity defines the origin of the MCS. The orientation of the UCS when the block is created determines the direction of the MCS axes.
+    </li>
+    <li class="li" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__LI_8F2473A9935F427EA1087C53B46569B5">
+     A list containing the entity name of the block that contains the selected object. If the selected object is in a nested block (a block within a block), the list also contains the entity names of all blocks in which the selected object is nested, starting with the innermost block and continuing outward until the name of the block that was inserted in the drawing is reported.
+    </li>
+   </ul>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-EFD04C23-652B-4948-8689-05565BD525CC">
+    The list returned from selecting a block with
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E3733295-F3C1-4543-AD21-31BB3C5EABEF">
+     nentsel
+    </samp>
+    is summarized as follows:
+   </p>
+   <pre class="pre codeblock prettyprint">(&lt;Entity Name: ename1&gt;   ; Name of entity.
+  (Px Py Pz)             ; Pick point.
+  ( (X0 Y0 Z0)           ; Model to World Transformation Matrix.
+  (X1 Y1 Z1)
+  (X2 Y2 Z2)
+  (X3 Y3 Z3)
+)
+(&lt;Entity name: ename2&gt;   ; Name of most deeply nested block
+  .                      ; containing selected object.
+  ..
+  &lt;Entity name: enamen&gt;) ; Name of outermost block
+)                        ; containing selected object.</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-8AB5788E-8507-4828-9512-4867A0B8348E">
+    In the following example, create a block to use with the
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3233C378-F900-42E5-94D5-115F46C4F012">
+     nentsel
+    </samp>
+    function.
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-8338987E-B0DD-4421-B6F9-92D6C8BBB668">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3400A3FC-1B3B-4F84-BD21-0BF53EF6BAB2">
+     line
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-A16BE878-B578-4133-B022-ABD7048ABFB9">
+    Specify first point:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-C3F89CCC-EEDA-45E0-B5F6-6BE172B657F0">
+     1,1
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-9F49179C-8874-4898-8041-44225ECC8434">
+    Specify next point or [Undo]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-1C3A1883-489C-414F-845B-96629282B174">
+     3,1
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-960E4D5B-4792-4A27-8592-18E8ED9A7C7D">
+    Specify next point or [Undo]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-0FD195E8-615F-4468-86C0-B1C695A5374C">
+     3,3
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3D007AFA-CD98-4D2D-913A-E7E0A6773F20">
+    Specify next point or [Close/Undo]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-7EDE3914-1201-4F90-8CBF-05FF099D6AEE">
+     1,3
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3DDC3B4D-D9CD-4DA5-8731-91DFBAFCF640">
+    Specify next point or [Close/Undo]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-931CC22E-97A1-4C44-86E5-B4CFBECF389F">
+     c
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-FAC5BA32-5EF3-486A-8D6F-DEB8B2FDCC31">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E3C85A85-BE68-4000-981C-FCEB80568BA2">
+     -block
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-352BD58B-7CC6-4B7E-80D7-E04184F2A0EA">
+    Enter block name or [?]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-2EC00884-876F-4546-BCC5-DE6CC7425B21">
+     square
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-6C9619FF-E6A4-41D6-A7A9-9EE168FBDAEE">
+    Specify insertion base point or [Annotative]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-9B6B73C2-1237-49B7-BAFA-C4C51E2B359C">
+     2,2
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-98E1A068-35FD-4714-B25C-6BEB65689E80">
+    Select objects:
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3D0A7715-0262-4092-B998-73685A10E3A7">
+     Select the four lines you just drew
+    </em>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-9F55B510-0840-4FD6-8E37-7F36DBBA97FC">
+    Select objects:
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-6547E76B-EA82-4A77-854E-0FD34CDFA0F8">
+     Press Enter
+    </em>
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-6383">
+    Then, insert the block in a UCS rotated 45 degrees about the
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-78852E46-C2C3-4D51-9C62-FD03B2546AF7">
+     Z
+    </em>
+    axis:
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-765A7369-86BC-41EE-9CCA-E5D4919933D6">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-75596BC7-B654-4014-BDC0-B416B42EA035">
+     ucs
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-27B49DBB-E600-4C75-B9A1-8A7ABC6B470C">
+    Current ucs name: *WORLD*
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-8E0F0E95-68C8-477F-BCF2-C2FC1382B1BD">
+    Specify origin of UCS or [Face/NAmed/OBject/Previous/View/World/X/Y/Z/ZAxis] &lt;World&gt;:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-9020C715-17A8-4F87-B95A-7DBD58F88AAA">
+     z
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-8450B6E4-1F82-4A39-9AC0-E3EE1810A071">
+    Specify rotation angle about Z axis &lt;90&gt;:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-EEF26A42-E20E-42C0-AA13-E13A64606A02">
+     45
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-470BD631-221B-4F71-90AD-C2CBEC544438">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-05436F6D-DFDD-4726-8941-2A5979F5CA79">
+     -insert
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-17029988-029F-49D8-865D-AA07F3186179">
+    Enter block name or [?]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E0D687D8-98C9-43A0-A014-F5AAC76BC44D">
+     square
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-608BFEB8-1AFC-41CE-A479-2AE59E26C366">
+    Specify insertion point or [Basepoint/Scale/X/Y/Z/Rotate]:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-841B4CF2-D175-4CA8-94A1-08B5EDA0EEA9">
+     7,0
+    </strong>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-AAFE55D6-67AC-4AEE-8380-69285060B179">
+    Enter X scale factor, specify opposite corner, or [Corner/XYZ] &lt;1&gt;:
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-326DC7A1-4E5A-4D46-92BA-3D0A1632D334">
+     Press Enter
+    </em>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-B1630954-4F8B-4086-B4D2-6670A8FA1CB3">
+    Enter Y scale factor &lt;use X scale factor&gt;:
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-71EC62CA-CD8C-4E8C-B555-3FEC71593391">
+     Press Enter
+    </em>
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-D209B539-8FBF-4DC3-BEFA-CAC8C9E42ED4">
+    Specify rotation angle &lt;0&gt;:
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-BBDBE59F-018C-4198-B532-FF48F57599AB">
+     Press Enter
+    </em>
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-6382">
+    Use
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-B1714320-40E1-4C9E-BCFD-1155381CF15D">
+     nentsel
+    </samp>
+    to select the lower-left side of the square.
+   </p>
+   <pre class="pre codeblock prettyprint">(setq ndata (nentsel))</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-6381">
+    This code sets
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-2CAA0B99-0D3D-4A1D-8FFD-8C4F2D9FAB53">
+     ndata
+    </samp>
+    equal to a list similar to the following:
+   </p>
+   <pre class="pre codeblock prettyprint">(&lt;Entity Name: 400000a0&gt;   ; Entity name.
+  (6.46616 -1.0606 0.0)    ; Pick point.
+  ((0.707107 0.707107 0.0) ; Model to World
+  (-0.707107 0.707107 0.0) ; Transformation Matrix.
+  (0.0 -0.0 1.0)
+  (4.94975 4.94975 0.0)
+)
+  (&lt;Entity name:6000001c&gt;) ; Name of block containing
+                           ; selected object.
+)</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-6380">
+    Once you obtain the entity name and the Model to World Transformation Matrix, you can transform the entity definition data points from the MCS to the WCS. Use
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-530AC916-3552-44C4-B7F6-920207C41A22">
+     entget
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-184AF3CC-CB74-45C1-99BC-0A52240D87AC">
+     assoc
+    </samp>
+    on the entity name to obtain the definition points expressed in MCS coordinates. The Model to World Transformation Matrix returned by
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-DAAEA911-E14E-4998-9B1A-6DA2C7B91D8A">
+     nentsel
+    </samp>
+    is a 4×3 matrix—passed as an array of four points—that uses the convention that a point is a row rather than a column. The transformation is described by the following matrix multiplication:
+   </p>
+   <div class="fig fignone" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WS73099CC142F4875516D84BE10EBC87A53F-7A21">
+    <img class="image" height="95" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__IMAGE_3A8EBF48C0244716A0BC09C7785D93BB" src="../../../../../../_assets/GUID_A72BD35B_C21F_4C5B_B655_86B7424CE945-85cf4b5d.png" width="505"/>
+   </div>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637F">
+    So the equations for deriving the new coordinates are as follows:
+   </p>
+   <div class="fig fignone" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WS73099CC142F4875516D84BE10EBC87A53F-7A20">
+    <img class="image" height="87" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__IMAGE_79788E83E31147498D6579A721A07BE0" src="../../../../../../_assets/GUID_10591BAA_B24A_4802_9380_B0DFF7E10531-813b9e9e.png" width="504"/>
+   </div>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637E">
+    The
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-BFE8F5B1-2659-4C43-87AA-3093F8E9A9BF">
+     Mij
+    </em>
+    , where 0 le;
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-4EC6E18A-10EC-406A-8562-7A44F2C1E643">
+     i
+    </em>
+    ,
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-041E4B97-0700-44B2-BAEC-DB2CF9D0869E">
+     j
+    </em>
+    le; 2, are the Model to World Transformation Matrix coordinates;
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-1416DD58-DDEE-49C3-966B-AE0FF7054476">
+     X
+    </em>
+    ,
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-5ADFE8E5-FC96-4DCF-8F9F-569E4236990B">
+     Y
+    </em>
+    ,
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-A31AB68B-9C7F-4648-A24B-B5A267EA50E8">
+     Z
+    </em>
+    is the entity definition data point expressed in MCS coordinates, and
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-EEF39444-2E6B-4D07-8648-FF2D103FBFB3">
+     X
+    </em>
+    ',
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-4D50D668-18CD-499F-BE3E-C6A7428C38B6">
+     Y
+    </em>
+    ',
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-A1D32068-F7A3-4F12-95B6-73F404B8CE7E">
+     Z
+    </em>
+    ' is the resulting entity definition data point expressed in WCS coordinates.
+   </p>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637D">
+    To transform a vector rather than a point, do not add the translation vector (M30 M31 M32 from the fourth column of the transformation matrix).
+   </p>
+   <div class="note note" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WS1A9193826455F5FF-4855151011E21CB4C05-5B3F">
+    <span class="notetitle">
+     Note:
+    </span>
+    This is the only AutoLISP function that uses a matrix of this type. The
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-85AFD0E3-10A8-4BB5-B8B7-EE79324FC271">
+     nentselp
+    </samp>
+    function is preferred to
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-40FAA122-BA4F-42B1-9359-9FEA7B9B39DD">
+     nentsel
+    </samp>
+    because it returns a matrix similar to those used by other AutoLISP, ObjectARX, and Managed .NET functions.
+   </div>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637C">
+    Using the entity name previously obtained with
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-1AE82BA0-9F6E-4A17-8AD6-5453E3CB7BBB">
+     nentsel
+    </samp>
+    , the following example illustrates how to obtain the MCS start point of a line (group code 10) contained in a block definition:
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-3C526C62-A3C2-4CE5-962C-A5378748E8B1">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-04254875-423E-4D76-BBE3-EACFB2C8D285">
+     (setq edata (assoc 10 (entget (car ndata))))
+    </strong>
+   </p>
+   <pre class="pre codeblock prettyprint">(10 -1.0 1.0 0.0)</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637B">
+    The following statement stores the Model to World Transformation Matrix sublist in the symbol
+    <samp class="ph codeph" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-9AFCD844-0A00-4EDF-9780-D9F62C8D3A33">
+     matrix
+    </samp>
+    .
+   </p>
+   <p class="p promptblock" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-4F536A3E-42FB-453D-ACA0-AC7DCFA9BACD">
+    Command:
+    <strong class="ph b" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-8033A9B1-C785-48F6-8368-BA9EB3A24A17">
+     (setq matrix (caddr ndata))
+    </strong>
+   </p>
+   <pre class="pre codeblock prettyprint">((0.707107 0.707107 0.0)   ; X transformation
+  (-0.707107 0.707107 0.0) ; Y transformation
+  (0.0 -0.0 1.0)           ; Z transformation
+  (4.94975 4.94975 0.0)    ; Displacement from WCS origin
+)</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-637A">
+    The following statement applies the transformation formula for
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-ACDE90A8-F918-4A27-A7EA-22422D89098F">
+     X
+    </em>
+    ' to change the
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-E780F3CB-81FF-4F14-A354-4C6E83B62962">
+     X
+    </em>
+    coordinate of the start point of the line from an MCS coordinate to a WCS coordinate:
+   </p>
+   <pre class="pre codeblock prettyprint">(setq answer
+  (+                                       ; add:
+    (* (car (nth 0 matrix))(cadr edata))   ; M00 * X
+    (* (car (nth 1 matrix))(caddr edata))  ; M10 * Y
+    (* (car (nth 2 matrix))(cadddr edata)) ; M20 * Z
+    (car (nth 3 matrix))                   ; M30
+  )
+)</pre>
+   <p class="p" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__WSFACF1429558A55DE11F0759FF1E4B858C-6379">
+    This statement returns 3.53553, the WCS
+    <em class="ph i" id="GUID-4F71D4FB-FBF4-4EB3-B546-24B8858FBB94__GUID-6B30A974-04C6-4B5A-BB5C-06AB7E612543">
+     X
+    </em>
+    coordinate of the start point of the selected line.
+   </p>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Accessing_an_Object_s_Entity_Name_AutoLISP.html" title="An AutoLISP routine must obtain an object’s entity name to make subsequent calls to the entity data or selection set functions.">
+      About Accessing an Object’s Entity Name (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Accessing_an_Object_s_Entity_Name_AutoLISP.html" title="An AutoLISP routine must obtain an object’s entity name to make subsequent calls to the entity data or selection set functions.">
+       About Accessing an Object’s Entity Name (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Entity_Data_Functions_AutoLISP/About_Obtaining_Entity_Information_AutoLISP.html" title="The entget function returns the definition data of a specified entity as a list.">
+       About Obtaining Entity Information (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Entity_Data_Functions_AutoLISP/About_Modifying_an_Entity_without_the_Command_Function_AutoLISP.html" title="An entity can be modified directly by changing its entity list and posting the changes back to the database.">
+       About Modifying an Entity without the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Entity_Data_Functions_and_the_Graphics_Screen_AutoLISP.html" title="Changes to the drawing made by the entity data functions are reflected on the graphics screen, provided the entity being deleted, undeleted, modified, or created is in an area and on a layer that is currently visible.">
+       About Entity Data Functions and the Graphics Screen (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Entity_Handles_and_Their_Uses_AutoLISP.html" title="The handent function retrieves the name of an entity with a specific handle.">
+       About Entity Handles and Their Uses (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-1197B695-C73C-4B4D-AD5D-8F8EB64FB253">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-49DBE7DD-D1D2-4B3A-9718-E3F4E2FD5E81">
+       User Input Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

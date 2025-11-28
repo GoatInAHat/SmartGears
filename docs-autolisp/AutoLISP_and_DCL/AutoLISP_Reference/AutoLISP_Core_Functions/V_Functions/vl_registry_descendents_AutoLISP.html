@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS" name="description"/>
+  <meta content="VL-REGISTRY-DESCENDENTS" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-registry-descendents (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-registry-descendents (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS
+   </p>
+   <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows and Mac OS only
+   </p>
+   <div class="section" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-62229A59-3157-4F0C-AB2E-864B90D76565">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-registry-descendents <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-EA914FF9-197B-4094-A769-F26E5D4CFCE1">reg-key [val-names]</em>)</pre>
+    <div class="section" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WS1A9193826455F5FF-1E1423D1125831BDA67-7AC4">
+     <dl class="dl" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WS1A9193826455F5FF-1E1423D1125831BDA67-7AC4">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-DC598A5D-31CF-4FC9-B93A-B17638401BEF">
+        reg-key
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-E88AB684-AFAB-4908-8777-BBF91E01FF57">
+       <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-F68C6D4D-9285-4ACC-8627-ECF5DE32F4B1">
+        <strong class="ph b" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-C1313F66-DF39-4A4D-887D-0B6F5149C358">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WSFACF1429558A55DE11F0759FF1E4B858C-30BF">
+        Windows registry key or property list file key on Mac OS.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-877260B4-8C48-4EFB-AB63-3E23634A2603">
+        val-names
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-58120377-C8BA-4BD6-A202-369A32C57397">
+       <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-D11FEE9D-8F13-4A49-8171-3B04F93F4DD8">
+        <strong class="ph b" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-25BD8AB3-8DD4-4D06-8770-A2103B7196A2">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WSFACF1429558A55DE11F0759FF1E4B858C-30BE">
+        Values for the
+        <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-F2157876-6E08-4070-9F0C-DC9E8ED79A9B">
+         reg-key
+        </em>
+        entry.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__SECTION_40C92797CB4B4D869431DE5E23B3758B">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-EF038BF7-8D54-43D5-8769-256411695132">
+     <strong class="ph b" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-F6F5656E-36ED-4FAB-81D8-A7217F303812">
+      Type:
+     </strong>
+     List or nil
+    </p>
+    <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WSFACF1429558A55DE11F0759FF1E4B858C-30BB">
+     A list of strings, if successful; otherwise
+     <samp class="ph codeph" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-DA5E7845-76DC-461F-B32F-AED2B79FCACF">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__SECTION_85F3A792250242B88DCB5F17F21D638B">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__WSFACF1429558A55DE11F0759FF1E4B858C-30BD">
+     If
+     <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-9D31F7E1-AC20-4F32-9CF8-C11AAE759443">
+      val-names
+     </em>
+     is supplied and is not
+     <samp class="ph codeph" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-2D7D215F-7D3D-4587-9CBF-D2599457F2D8">
+      nil
+     </samp>
+     , the specified value names will be listed from the registry. If
+     <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-62895A31-10A6-4FAA-B7B2-B6856FAE3CD4">
+      val-name
+     </em>
+     is absent or
+     <samp class="ph codeph" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-A348AA5D-CEEF-4CF7-99A2-41F1E9CBA849">
+      nil
+     </samp>
+     , the function displays all subkeys of
+     <em class="ph i" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-DA30849D-7936-4B67-82C0-1421B4C95D2F">
+      reg-key
+     </em>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__SECTION_1729AF8BF72543CF8D4FA1D65D60B189">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-3A2A4AA0-8799-4B0A-AD26-443A8B4DD9BE__GUID-A07787CC-4550-432C-BA5D-6EA30A49BA4F">(vl-registry-descendents "HKEY_LOCAL_MACHINE\\SOFTWARE")</strong>
+("Description" "Program Groups" "ORACLE" "ODBC" "Netscape" "Microsoft")</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Windows_Registry_and_Property_List_File_Functions_Reference_AutoLISP.html">
+       Windows Registry and Property List File Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="vl_registry_delete_AutoLISP.html" title="Deletes the specified key from the Windows Registry or property list file on Mac OS">
+       vl-registry-delete (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_registry_read_AutoLISP.html" title="Returns data stored by a specific key/value pair in the Windows Registry or property list file on Mac OS">
+       vl-registry-read (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_registry_write_AutoLISP.html" title="Creates a key in the Windows Registry or property list file on Mac OS">
+       vl-registry-write (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-2EB68815-FDF9-4235-918B-025FB9A42220.htm" title="Returns the AutoCAD Windows registry path in the HKLM (HKEY_LOCAL_MACHINE)">
+       vlax-machine-product-key (AutoLISP/ActiveX)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-237CEDFA-A02E-443E-BB21-5BD86E5E353E.htm" title="Returns the AutoCAD Windows registry path">
+       vlax-product-key (AutoLISP/ActiveX)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-42C8BADD-C5BC-4913-A8AF-ECF2ADF42FB6.htm" title="Returns the AutoCAD Windows registry path in the HKCU (HKEY_CURRENT_USER)">
+       vlax-user-product-key (AutoLISP/ActiveX)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

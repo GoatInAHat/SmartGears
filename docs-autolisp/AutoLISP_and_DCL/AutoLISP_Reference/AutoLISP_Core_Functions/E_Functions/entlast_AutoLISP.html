@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Returns the name of the last nondeleted main object (entity) in the drawing" name="description"/>
+  <meta content="ENTLAST" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   entlast (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      entlast (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Returns the name of the last nondeleted main object (entity) in the drawing
+   </p>
+   <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-4E456DA4-0514-4D0C-BE02-BB97E4D52AFA">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(entlast)</pre>
+    No arguments.
+   </div>
+   <div class="section" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__SECTION_C95EB3C78D7047A8AED7435F5B8E189A">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-0E2B9E05-4B48-496B-8E35-602AA6F2260E">
+     <strong class="ph b" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-BA277AF0-EE38-47BA-AB11-2DF0E17ABF71">
+      Type:
+     </strong>
+     Ename (entity name)
+    </p>
+    <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-8A406170-A4A0-4679-A0B6-9FF0D8C4BBDA">
+     An entity name; otherwise
+     <samp class="ph codeph" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-84D4DEAE-2B2E-4F8C-BB1C-ABB9857D32CE">
+      nil
+     </samp>
+     , if there are no entities in the current drawing.
+    </p>
+   </div>
+   <div class="section" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__SECTION_A59AB3BBA00A434898BF8273F89F7DDA">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__WSFACF1429558A55DE11F0759FF1E4B858C-38B8">
+     The
+     <samp class="ph codeph" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-BD7BDB9E-1299-4400-B71E-A9707FAE6E84">
+      entlast
+     </samp>
+     function is frequently used to obtain the name of a new entity that has just been added with the
+     <samp class="ph codeph" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-B8B531E0-3961-4223-AAC4-B3E1CF9EF60A">
+      command
+     </samp>
+     function. To be selected, the entity need not be on the screen or on a thawed layer.
+    </p>
+   </div>
+   <div class="section" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__SECTION_75A57FD5C2E44AAE80AF2322CB811402">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-6F7BA509-C06E-4BFB-8FCF-806C5FAB9487">
+     Set variable
+     <samp class="ph codeph" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-ADF6E099-9686-43ED-9422-C7ED590C8BD2">
+      e1
+     </samp>
+     to the name of the last entity added to the drawing:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-F296F82F-0E05-4C01-A6E1-1EF769C7B344">(setq e1 (entlast))</strong>
+&lt;Entity name: 2c90538&gt;</pre>
+    <p class="p" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-5DDC1DF2-F55D-4C8C-94FB-8E15407DB454">
+     If your application requires the name of the last nondeleted entity (main entity or subentity), define a function such as the following and call it instead of
+     <samp class="ph codeph" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-F44C69CF-14F3-4510-B7A1-8559926F6A15">
+      entlast
+     </samp>
+     .
+    </p>
+    <pre class="pre codeblock prettyprint">(defun lastent (/ a b) 
+  (if (setq a (entlast))         <em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-35C54FA5-0C7D-4DA5-B0C8-E753C2E18AFD">Gets last main entity</em>
+    (while (setq b (entnext a))  <em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-8AC6CB5C-3878-4A65-AA79-734F330AFBA7">If subentities follow, loops</em><em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-D5321F71-130E-4024-B185-8FA2FE7127CC">until there are no more </em>
+      (setq a b)                 <em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-3A9678BD-2120-4C31-A310-E7A7E5228947">subentities </em>
+    ) 
+  ) 
+  a                              <em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-752033F4-C618-4075-83F6-A98D9F7FA510">Returns last main entity </em>
+)                                <em class="ph i" id="GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86__GUID-2FB16934-C620-4212-92BF-C01E16A4DA69">or subentity</em></pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Object_Handling_Functions_Reference_AutoLISP.html">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="entget_AutoLISP.html" title="Retrieves an object's (entity's) definition data">
+       entget (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="entnext_AutoLISP.html" title="Returns the name of the next object (entity) in the drawing">
+       entnext (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="entsel_AutoLISP.html" title="Prompts the user to select a single object (entity) by specifying a point">
+       entsel (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

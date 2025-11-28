@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Returns a substring of a string" name="description"/>
+  <meta content="SUBSTR" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   substr (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      substr (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Returns a substring of a string
+   </p>
+   <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-66833A2E-55FB-45E5-8BED-7F5E9D4D4BB5">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(substr <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-45087323-EA1C-4CE0-98AB-C21DDA03F6A8">str start [length]</em>)</pre>
+    <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WS1A9193826455F5FF-1E1423D1125831BDA67-7AFA">
+     <dl class="dl" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WS1A9193826455F5FF-1E1423D1125831BDA67-7AFA">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-BBDACE44-867C-409C-83EC-1B82979CD15A">
+        str
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-1A313F9D-0B36-4EB4-840F-0E26E77FC412">
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-1B960414-19C6-4B28-9E4B-C6ECD2F27813">
+        <strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-A2B38E74-FB91-4319-94CC-411B3BFC0072">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WSFACF1429558A55DE11F0759FF1E4B858C-32EE">
+        A textual value.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-A1DCEAED-171F-4191-AB4E-BDC976C66290">
+        start
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-8192D231-4C77-4C9B-AF02-D6A821C7828C">
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-E4E01A61-20BD-45D6-AC58-1653B16FEF2D">
+        <strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-53E3D29F-A7E9-4AC1-8520-EEAF4ADAC6C6">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WSFACF1429558A55DE11F0759FF1E4B858C-32ED">
+        A positive numeric value indicating the starting position in
+        <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-1A01DA65-EA13-4C2F-A67C-1D71AFBB1089">
+         str
+        </em>
+        . The first character in the string is position 1.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-9E70ADE0-0532-48B9-A6A0-6533D814CAEF">
+        length
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-8C11D00A-C9B0-4890-9B48-22770C958590">
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-7B2DCF81-D0A8-43CF-9878-75ABA55F0B3D">
+        <strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-53D400DE-3DD9-47B3-8454-19FD58A08A23">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WSFACF1429558A55DE11F0759FF1E4B858C-32EC">
+        A positive numeric value specifying the number of characters to search through in
+        <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-93243F68-3A78-4116-883F-CF05844F6349">
+         str
+        </em>
+        . If
+        <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-1B54F9A3-3E0C-4F3B-826E-AD8962C8CD14">
+         length
+        </em>
+        is not specified, the substring continues to the end of
+        <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-57F6EFB1-FF16-4519-A198-2E975FFBC3B6">
+         str
+        </em>
+        .
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__SECTION_692572AAB36B40E68121639BB0FF01AF">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-C3C87829-C1C0-4227-94CD-AED00CDA1128">
+     <strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-22393725-E22A-483E-AE6E-A44E5F49C3EF">
+      Type:
+     </strong>
+     String
+    </p>
+    <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-C07ED7B7-F557-402F-8AE9-9D267430A31C">
+     A substring from
+     <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-EA4A4873-45C9-49CE-BE63-34D5380AA30A">
+      str
+     </em>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__SECTION_DAC9E09B8A584CECABF1F439E19B8C20">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WSFACF1429558A55DE11F0759FF1E4B858C-32F0">
+     The
+     <samp class="ph codeph" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-14F23318-8D5F-4235-99EB-CA1184B9E600">
+      substr
+     </samp>
+     function starts at the
+     <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-4A5C7860-2F0E-432A-A85F-FCDB25FDEA3F">
+      start
+     </em>
+     character position of
+     <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-80EC4D42-3C24-434B-8EB3-ACA5A844108F">
+      str
+     </em>
+     and continues for
+     <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-C0B2AEE1-48E3-4D14-85BD-7F1CD266CF97">
+      length
+     </em>
+     characters.
+    </p>
+    <div class="note note" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__WS1A9193826455F5FF-7C08E89711EC57B47A8-7801">
+     <span class="notetitle">
+      Note:
+     </span>
+     The first character of
+     <em class="ph i" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-301DF282-8678-4A92-81F3-78A9DF615D9B">
+      str
+     </em>
+     is character number 1. This differs from other functions that process elements of a list (like
+     <samp class="ph codeph" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-F5FC258E-88B4-4F6F-B66B-FCB6635F006D">
+      nth
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-31ECE2D1-834B-460E-9982-57A7262EFBBC">
+      ssname
+     </samp>
+     ) that count the first element as 0.
+    </div>
+   </div>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__SECTION_C23F76CB5453441396C4A29AB4C7875B">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__UL_B98B1C9BFBB54FE89F3710FA50334612">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_F9427E0C30ED4A699BEA6D64BDFE6846">
+      <span class="ph msgph prodname">
+       AutoCAD R12 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_ADBCC9D6FC2843368E643987B64ECB5F">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__SECTION_560DDA35637449758F4AAC4F9D64C2A9">
+    <h2 class="title sectiontitle">
+     History
+    </h2>
+    <ul class="ul" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__UL_B7FECA47E5614FABA72FFDEF6C4CAAC9">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2021
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_6EF623F4676F46979339D117D249C7AB">
+      <samp class="ph codeph">
+       <em class="ph i">
+        str
+       </em>
+      </samp>
+      argument previously accepted an ASCII text string or character, but now accepts a Unicode text string or character.
+     </li>
+     <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_58D3D7115B34409384316B288772C6FE">
+      Return value was modified to support Unicode characters and might be different than earlier releases. In earlier releases, the length of a Unicode character was improperly calculated. For example,
+      <samp class="ph codeph">
+       (substr "中国" 1 1)
+      </samp>
+      previously returned "\\", but now returns "中".
+     </li>
+     <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_B441AD6CF2FC4406AD08A4D05773F0DC">
+      LISPSYS system variable controls which AutoLISP engine is used and the behavior of the function.
+      <ul class="ul" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__UL_FB890A3FAD2C43BDB0F7179DDB1AFC67">
+       <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_ACF88199EB0C464595E6CDF682C246B1">
+        0 - ASCII character support (legacy behavior)
+       </li>
+       <li class="li" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__LI_C401B297C3B04053B29F253B66C4B520">
+        1 or 2 - Unicode character support
+       </li>
+      </ul>
+      <div class="note note" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-47D29B06-3FEE-4E9B-B7EB-F54365FEDE42">
+       <span class="notetitle">
+        Note:
+       </span>
+       After the value of the LISPSYS system variable has been changed, AutoCAD must be restarted for the change to take affect.
+      </div>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__SECTION_BB2E225713D047C28A650E458D20BE3E">
+    <h2 class="title sectiontitle">
+     Example
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-55144CFF-8891-452C-AC04-E6C3C26BABAC">(substr "abcde" 2)</strong>
+"bcde"
+
+<strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-2D3469FD-6AE7-4F40-8980-D4A15A73FCAD">(substr "abcde" 2 1)</strong>
+"b"
+
+<strong class="ph b" id="GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2__GUID-A456D791-6DB7-471F-941F-C09F26C0E19B">(substr "abcde" 3 2)</strong>
+"cd"
+
+<strong class="ph b">(substr "€abc€" 4 2)</strong>
+"c€"
+
+<strong class="ph b">(substr "中国" 1 1)</strong> 
+"中"</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/String_Handling_Functions_Reference_AutoLISP.html">
+       String-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="strcase_AutoLISP.html" title="Returns a string where all alphabetic characters have been converted to uppercase or lowercase">
+       strcase (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="strcat_AutoLISP.html" title="Returns a string that is the concatenation of multiple strings">
+       strcat (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="strlen_AutoLISP.html" title="Returns an integer that is the number of characters in a string">
+       strlen (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

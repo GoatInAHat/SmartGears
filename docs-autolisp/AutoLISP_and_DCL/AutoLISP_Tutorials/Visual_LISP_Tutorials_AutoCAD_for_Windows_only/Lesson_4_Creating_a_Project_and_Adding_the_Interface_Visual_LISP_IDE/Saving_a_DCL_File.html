@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Saving a DCL File
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Saving a DCL File
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__GUID-141268B5-A990-4953-BFAA-1CDB4B0E8064">
+    <p class="p" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WSFACF1429558A55DE1929BBDFEF458CE1C-775B">
+     Before saving the file containing your DCL, consider the fact that AutoCAD
+     <span name="glyph_span">
+      ®
+     </span>
+     must be able to locate your DCL file during runtime. For this reason, the file must be placed in one of the AutoCAD Support File Search Path locations. (If you are unsure about these locations, click Application menu
+     <span class="glyphArrow" name="glyph_span">
+      <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+     </span>
+     Options from AutoCAD and examine the Support File Search Path locations under the Files tab.)
+    </p>
+    <p class="p" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WSFACF1429558A55DE1929BBDFEF458CE1C-775A">
+     For now, you can save the file in the AutoCAD
+     <em class="ph i" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__GUID-3088C578-5226-43B5-9370-907382A1440F">
+      Support
+     </em>
+     directory.
+    </p>
+   </div>
+   <div class="section" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WSFACF1429558A55DE6C92BAFEE30F7510-7E1F">
+    <h2 class="title sectiontitle">
+     To save your DCL file
+    </h2>
+    <ol class="ol" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF18CB41610EC0A2E719-739D">
+     <li class="li" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF-7F10494411F03A24F24-1D9A">
+      Click File
+      <span class="glyphArrow" name="glyph_span">
+       <img src="../../../../_assets/ac_menuaro-f6601f42.gif"/>
+      </span>
+      Save As from the Visual LISP menu.
+     </li>
+     <li class="li" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF-7F10494411F03A24F24-1D99">
+      In the Save As Type field of the Save As dialog box, choose DCL Source Files from the pull-down menu.
+     </li>
+     <li class="li" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF-7F10494411F03A24F24-1D98">
+      Change the Save In path to
+      <em class="ph i" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__GUID-3C7A2D62-ED62-4180-B339-E59E689575BC">
+       &lt;AutoCAD directory&gt;\Support
+      </em>
+      .
+     </li>
+     <li class="li" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF-7F10494411F03A24F24-1D97">
+      Enter the file name
+      <em class="ph i" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__GUID-E014DD54-8E24-4010-88C4-AB59021D11B7">
+       gpdialog.dcl
+      </em>
+      .
+     </li>
+     <li class="li" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WS1A9193826455F5FF-7F10494411F03A24F24-1D96">
+      Click Save.
+     </li>
+    </ol>
+    <p class="p" id="GUID-9D2DB6F3-E90F-4DA9-B58F-9858BC53E396__WSFACF1429558A55DE1929BBDFEF458CE1C-7759">
+     Notice Visual LISP changes the syntax coloring scheme after you save the file. Visual LISP is designed to recognize DCL files and highlight the different types of syntactical elements.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Defining_the_Dialog_Box_With_DCL.html">
+      Defining the Dialog Box With DCL
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Previewing_a_Dialog_Box.html">
+      Previewing a Dialog Box
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

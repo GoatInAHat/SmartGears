@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Determines if a file name refers to a directory" name="description"/>
+  <meta content="VL-FILE-DIRECTORY-P" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-7EEA5563-33A7-453C-9E96-860F7565808B" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-file-directory-p (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-file-directory-p (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Determines if a file name refers to a directory
+   </p>
+   <p class="p" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-D2A8D9FA-1850-43DD-B84C-BABD981F0662">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-file-directory-p <em class="ph i" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-19BF997C-E78A-4D03-9DBA-271C1056BB52">filename</em>)</pre>
+    <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__WS1A9193826455F5FF-1E1423D1125831BDA67-7ADA">
+     <dl class="dl" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__WS1A9193826455F5FF-1E1423D1125831BDA67-7ADA">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-262C2BB4-AC77-412D-980E-5BA32D8F59D0">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-73F26229-DA20-4702-AC80-5E1005686771">
+       <p class="p" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-D6E8A4FC-CA04-4CBE-A92A-FD0AD83355C4">
+        <strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-EA30B93C-C6FA-421F-B3D9-AD9F2DE7055E">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__WSFACF1429558A55DE11F0759FF1E4B858C-3162">
+        File name. If you do not specify a full path name,
+        <samp class="ph codeph" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-AC4E6FA3-BF90-4F50-908C-4F0871D91421">
+         vl-file-directory-p
+        </samp>
+        searches only the AutoCAD default drawing directory.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__SECTION_3C55A67D67DA44C6B9598BD3E637EB94">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-0F085F12-2D1E-4C8A-9E18-59454F12838A">
+     <strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-096E5A47-4F14-4AF6-A1BD-EA316165B67D">
+      Type:
+     </strong>
+     T or nil
+    </p>
+    <p class="p" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__WSFACF1429558A55DE11F0759FF1E4B858C-3160">
+     <samp class="ph codeph" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-F89BAA59-BB46-4DFD-B137-91AA2CC43953">
+      T
+     </samp>
+     , if
+     <em class="ph i" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-3D7AAE7D-6ECF-48B0-B448-A2B79C75D3D2">
+      filename
+     </em>
+     is the name of a directory;
+     <samp class="ph codeph" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-7804C44B-71B3-4992-849E-06F5E9FD818D">
+      nil
+     </samp>
+     if it is not.
+    </p>
+   </div>
+   <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__SECTION_00855011FBD447F3AFAB5D527C7C8585">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__UL_25AA3E113B5A4E39987C510F6A2103CA">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_1DAC83693CDC44028DBBED494C6FBF1B">
+      <span class="ph msgph prodname">
+       AutoCAD R14 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_DB16371AFF0C4E90A6BC081D0741DB44">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__SECTION_1FF6EF3C5CAF4B9AB01D9EF9E7E23E94">
+    <h2 class="title sectiontitle">
+     History
+    </h2>
+    <ul class="ul" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__UL_1FD97E7F5FEA4546A929C85E92C0AEE9">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2021
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_F12A0503FD574305B18EF0B5A4DF888E">
+      <samp class="ph codeph">
+       <em class="ph i">
+        filename
+       </em>
+      </samp>
+      argument previously accepted an ASCII text string, but now accepts a Unicode text string.
+     </li>
+     <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_1AC5BFF14EC947E28B9B6D8B64187F59">
+      LISPSYS system variable controls which AutoLISP engine is used and the behavior of the function.
+      <ul class="ul" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__UL_DFE1F016B30847CFBA6644DC19B817AE">
+       <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_16F84559637741629C94F3E19055EB88">
+        0 - ASCII character support (legacy behavior)
+       </li>
+       <li class="li" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__LI_B89D433291634610B33C5F58F8EA7472">
+        1 or 2 - Unicode character support
+       </li>
+      </ul>
+      <div class="note note" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-13C78D5D-CA27-40B2-B5EE-52C5AD262932">
+       <span class="notetitle">
+        Note:
+       </span>
+       After the value of the LISPSYS system variable has been changed, AutoCAD must be restarted for the change to take affect.
+      </div>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__SECTION_94C85825D32940F7A680D3807F070E50">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <div class="section" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-AD1100C3-378E-4BC9-BD09-453901A3BE1B">
+     <dl class="dl" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-AD1100C3-378E-4BC9-BD09-453901A3BE1B">
+      <dt class="dt dlterm">
+       Windows
+      </dt>
+      <dd class="dd" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-F94647D0-C392-448C-8EBA-557B2BEAA9F2">
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-F1E18765-6706-4F59-96E4-5209CE78C32F">(vl-file-directory-p "sample")</strong>
+T
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-D4178A7C-8385-46B9-8972-C3547A4D7474">(vl-file-directory-p "yinyang")</strong>
+nil
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-6CA11C3C-A144-4E3A-B95B-44AF907970DD">(vl-file-directory-p "c:/My Documents")</strong>
+T
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-7940F5DE-8E86-4E68-B842-9AF8745F66B0">(vl-file-directory-p "c:/My Documents/lisp/yinyang.lsp")</strong>
+nil</pre>
+      </dd>
+      <dt class="dt dlterm">
+       Mac OS and Web
+      </dt>
+      <dd class="dd" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-2B363577-ADB0-45B8-A655-11EC4539BE1D">
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-12F94B8B-C2E5-4846-AAC2-017CB0728071">(vl-file-directory-p "support")</strong>
+T
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-2BB6966F-7394-4FA5-8DFA-10FD49324303">(vl-file-directory-p "xyz")</strong>
+nil
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-B801CE59-AA63-42A8-B8B0-702EE80324E2">(vl-file-directory-p "/documents")</strong>
+T
+
+<strong class="ph b" id="GUID-7EEA5563-33A7-453C-9E96-860F7565808B__GUID-1BEBB0A4-CB97-4265-91C2-4DCC4F64EABE">(vl-file-directory-p "/documents/output.txt")</strong>
+nil</pre>
+      </dd>
+     </dl>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/File_Handling_Functions_Reference_AutoLISP.html">
+       File-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../F_Functions/findfile_AutoLISP.html" title="Searches the AutoCAD library and trusted paths for the specified file or directory">
+       findfile (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_directory_files_AutoLISP.html" title="Lists all files in a given directory">
+       vl-directory-files (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_filename_directory_AutoLISP.html" title="Returns the directory path of a file, after stripping out the name and extension">
+       vl-filename-directory (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_mkdir_AutoLISP.html" title="Creates a directory">
+       vl-mkdir (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

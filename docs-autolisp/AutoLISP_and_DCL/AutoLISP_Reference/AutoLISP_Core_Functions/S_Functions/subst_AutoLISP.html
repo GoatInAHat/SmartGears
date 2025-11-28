@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item" name="description"/>
+  <meta content="SUBST" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-25214E69-090A-45C3-8210-6D9801255E44" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   subst (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-25214E69-090A-45C3-8210-6D9801255E44">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      subst (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item
+   </p>
+   <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-6DD08703-3983-4083-8A86-B177791EB633">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(subst <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-5F161B97-8403-474F-9C40-41F853312559">newitem olditem lst</em>)</pre>
+    <div class="section" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WS1A9193826455F5FF-1E1423D1125831BDA67-7AFB">
+     <dl class="dl" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WS1A9193826455F5FF-1E1423D1125831BDA67-7AFB">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-D46A7331-CA1B-4AEE-A887-79D93F7FC590">
+        newitem
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-0DB40F43-1F35-4F8B-BB76-92B7E4880E44">
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-3FF68E97-BBFA-4813-AC4E-7D629522FAAA">
+        <strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-755AC7D8-0DD7-42A8-93B9-8154F8698A08">
+         Type:
+        </strong>
+        Integer, Real, String, List, Symbol, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32FA">
+        An atom or list.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-202B79F4-F628-46DE-AE7B-263A377A59AE">
+        olditem
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-7EB6B16D-74BD-4F15-BBB9-182A6BF2B749">
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-991351D2-A389-459D-BA3C-5E98D01BBBCF">
+        <strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-A70D2B18-BB26-4961-BC00-39990987FCB0">
+         Type:
+        </strong>
+        Integer, Real, String, List, Symbol, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F9">
+        An atom or list.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-7C30849D-566D-47DD-A66A-9A7E70353013">
+        lst
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-5ECA5CB0-994E-4850-907C-C7A14501B0AE">
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-5D20A489-5AF7-48F8-843B-01712A2BC977">
+        <strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-BBA9A7F1-7E1E-44DC-B8A5-ACA1B0A26D8D">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F8">
+        A list.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__SECTION_A9108F399A714C52B04406D00F41395E">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F6">
+     A list, with
+     <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-B09581D2-541A-45D2-8AA7-93B7405D5DBF">
+      newitem
+     </em>
+     replacing all occurrences of
+     <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-20A9E4FC-42C9-4B4E-A153-799CC8CB9A90">
+      olditem
+     </em>
+     . If
+     <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-C9EE8644-4536-471D-A1A5-A269164ADC21">
+      olditem
+     </em>
+     is not found in
+     <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-F8F4B66B-95F8-4D01-A6AE-DE354BDCCCA6">
+      lst
+     </em>
+     ,
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-10FD3620-1990-4CDE-B0DA-8890ADF7F125">
+      subst
+     </samp>
+     returns
+     <em class="ph i" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-65704BF6-5B0F-4F75-A12D-59E87E0A23E6">
+      lst
+     </em>
+     unchanged.
+    </p>
+   </div>
+   <div class="section" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__SECTION_29B5AD82A3544380AE8B85BB52A02F44">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__UL_EC8DBBFA6B0F42A38F9962D94E8AD3BE">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__LI_F1ABE74033AB4725B5B7D271FC8A6AA8">
+      <span class="ph msgph prodname">
+       AutoCAD R12 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__LI_761BBC1CE86E443C9218EDCB788FC2CA">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__SECTION_A2CDCB7835624F33A48B9D56D8746C28">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-B388C9FE-FF67-47AB-9AED-E37296C06313">(setq sample '(a b (c d) b))</strong>
+(A B (C D) B)
+
+<strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-BF796CC6-BC94-4CD5-9CCE-EB14B2FBE9E0">(subst 'qq 'b sample)</strong>
+(A QQ (C D) QQ)
+
+<strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-911F0B33-2A87-44D2-9526-4AE7ABA432F9">(subst 'qq 'z sample)</strong>
+(A B (C D) B)
+
+<strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-F9C6E1C7-2F46-438A-B2EA-EAB1E357E370">(subst 'qq '(c d) sample)</strong>
+(A B QQ B)
+
+<strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-7C71E1A1-673C-4E41-B51F-991F3500C8F6">(subst '(qq rr) '(c d) sample)</strong>
+(A B (QQ RR) B)
+
+<strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-69B0D551-33B5-45D6-AC23-9839856A7BF5">(subst '(qq rr) 'z sample)</strong>
+(A B (C D) B)</pre>
+    <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F4">
+     When used in conjunction with
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-FD8B9E92-DA0D-4FF2-95E6-7ECA51588650">
+      assoc
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-67815C17-FA71-41D0-B9C2-F619DCF3EAB5">
+      subst
+     </samp>
+     provides a convenient means of replacing the value associated with one key in an association list, as demonstrated by the following function calls.
+    </p>
+    <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F3">
+     Set variable
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-FE7B8240-E294-40E6-89D5-6A49091EAC36">
+      who
+     </samp>
+     to an association list:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-60218E18-56F4-4D7D-AB1E-EC779EED7AF1">(setq who '((first john) (mid q) (last public)))</strong>
+((FIRST JOHN) (MID Q) (LAST PUBLIC))</pre>
+    <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F2">
+     The following sets
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-5216AE95-90EC-44DC-A616-ACDC5FF261D6">
+      old
+     </samp>
+     to (FIRST JOHN) and
+     <samp class="ph codeph" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-7A3BF396-07FD-414E-8E6F-000A0AC6C538">
+      new
+     </samp>
+     to (FIRST J):
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-EFCCEC88-764D-47BE-A155-4392B42AA264">(setq old (assoc 'first who) new '(first j))</strong>
+(FIRST J)</pre>
+    <p class="p" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__WSFACF1429558A55DE11F0759FF1E4B858C-32F1">
+     Finally, replace the value of the first item in the association list:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-25214E69-090A-45C3-8210-6D9801255E44__GUID-94341842-7632-4BCC-AAF1-E0EFACA71C34">(subst new old who)</strong>
+((FIRST J) (MID Q) (LAST PUBLIC))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/List_Manipulation_Functions_Reference_AutoLISP.html">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../L_Functions/list_AutoLISP.html" title="Takes any number of expressions and combines them into one list">
+       list (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../C_Functions/cons_AutoLISP.html" title="Adds an element to the beginning of a list, or constructs a dotted list">
+       cons (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../A_Functions/assoc_AutoLISP.html" title="Searches an association list for an element and returns that association list entry">
+       assoc (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../E_Functions/entmod_AutoLISP.html" title="Modifies the definition data of an object (entity)">
+       entmod (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_string_subst_AutoLISP.html" title="Substitutes one string for another, within a string">
+       vl-string-subst (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

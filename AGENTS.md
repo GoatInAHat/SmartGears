@@ -16,6 +16,25 @@ SmartGears will use a GitHub Action to automatically bundle all modular .lsp sou
 
 ---
 
+## 8.2 Offline Documentation System & Mandatory Usage Rules
+
+- **Location & immutability**: Offline docs live in `docs-autolisp/` with assets in `_assets` and the lookup index in `_navmap.json`. Never modify, reformat, or delete anything inside `docs-autolisp/`; regenerate only via `scripts/build_offline_autolisp_docs.py` (Python 3 + `beautifulsoup4` required).
+- **Documentation map (mirrors folder hierarchy)**  
+  - `AutoLISP_and_DCL/AutoLISP_Developer_s_Guide/` – Core concepts (namespaces, variables, data types, lists, error handling), user input, selection sets, geometric utilities, entity data/handles, XData and dictionaries, file handling, display control, ActiveX, DCL basics, VS Code/Visual LISP IDE workflows.  
+  - `AutoLISP_and_DCL/AutoLISP_Reference/` – Function catalogs for arithmetic, strings, lists, equality/conditionals, selection sets, object/entity manipulation, entmake/entmod, command/query functions, user input, geometric utilities, namespaces, registry/property lists, file I/O, extended data, symbol tables/dictionaries, ActiveX library calls, DCL reference, Express Tools, and Visual LISP IDE utilities.  
+  - `AutoLISP_and_DCL/AutoLISP_Tutorials/` – Guided walkthroughs (Garden Path reactor project), AutoLISP extension tutorials, and foundational lessons on reactors, geometry, dialog creation, and debugging.  
+- **Usage mandates (apply all of these)**  
+  - Open relevant offline pages before writing AutoLISP code or selecting any AutoLISP/DCL/ActiveX function.  
+  - Consult docs before implementing math or geometry routines, entity construction (`entmake`, polylines, circles, splines), or any command/selection-set interaction.  
+  - Reference docs when designing data structures, handling strings/lists, or sanitizing user input.  
+  - Check docs prior to any AutoCAD interaction (commands, system variables, reactors) and when generating gear geometry.  
+  - During debugging or error triage, re-read the APIs involved (functions reference + guide sections) before making changes.  
+  - Load the relevant pages into the context window at the start of every task.  
+  - When submitting a PR or summary, explicitly name the offline pages consulted (use `_navmap.json` paths).  
+- **Rationale**: AutoLISP is niche, official references are sparse online, and LLM hallucination risk is high. Frequent, explicit consultation of the offline set is mandatory to avoid invalid code or mis-remembered function behaviors.
+
+---
+
 ## 8.5 Test Success Requirement
 
 All tasks must conclude with a verification step:
@@ -27,6 +46,9 @@ All tasks must conclude with a verification step:
 ## 8.6 Bug Resolution Protocol (Strict TDD)
 
 When a bug is reported, follow this exact workflow:
+
+0. Read the docs first.  
+   - Before writing a new test, open the applicable pages in `docs-autolisp/` (guide + function reference) to confirm expected behavior and edge cases.
 
 1. Write a failing test first.
    - Before attempting any fix, create a test that reproduces the bug.

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Error-handling function that indicates the use of variables from the AutoLISP stack within a custom *error* handler" name="description"/>
+  <meta content="PUSH-ERROR-USING-STACK" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   *push-error-using-stack* (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      *push-error-using-stack* (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Error-handling function that indicates the use of variables from the AutoLISP stack within a custom
+    <samp class="ph codeph" id="GUID-BE3BC361-8267-452B-AC4A-4158794B7E99">
+     *error*
+    </samp>
+    handler
+   </p>
+   <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-406D68E1-BD34-4AAF-9FD8-2547991B98F8">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(*push-error-using-stack*)</pre>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__WSFACF1429558A55DE11F0759FF1E4B858C-3B2A">
+     No arguments.
+    </p>
+   </div>
+   <div class="section" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__SECTION_F7F081B886D24BEBA77B31DEE549F469">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-915CF876-7AF4-43DE-BEED-3B017EC584C3">
+     <strong class="ph b" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-DB3FD16E-E86F-4A3D-BA92-9E4544FF7C44">
+      Type:
+     </strong>
+     T
+    </p>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-C5754985-9532-4CC5-B15D-0BB8CC6F66DC">
+     A value of
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-DF2B2C3D-E37C-43E8-BB9D-05BFBF9CCD8F">
+      T
+     </samp>
+     is returned.
+    </p>
+   </div>
+   <div class="section" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__SECTION_2708754638874273AD7E9EC9001F64B3">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__WSFACF1429558A55DE11F0759FF1E4B858C-2E57">
+     Allows access to the local AutoLISP variables on the stack defined within the function where the error occurred from your custom
+     <samp class="ph codeph">
+      *error*
+     </samp>
+     handler. A call to the
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-4FD04797-6609-4585-B291-6CF7F01F7297">
+      *push-error-using-stack*
+     </samp>
+     function overrides a previous call to
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-F9D11D7A-00D5-4AFF-B17D-0E5B82FE0734">
+      *push-error-using-command*
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-00E99944-A405-492C-BE40-D15B09E4EF15">
+     If
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-E84413F2-29B5-4C62-B947-FD1B228DF9A8">
+      *push-error-using-command*
+     </samp>
+     or
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-F242780F-EF78-4E6F-B2DA-D4DC07780F02">
+      *push-error-using-stack*
+     </samp>
+     are not called, by default AutoLISP works as if
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-0D821D91-AF78-44A3-B23E-04CEAA41C8BF">
+      *push-error-using-stack*
+     </samp>
+     was called.
+    </p>
+    <div class="note note" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-534E6FF3-D09D-4860-9710-C751157C23A9">
+     <span class="notetitle">
+      Note:
+     </span>
+     This function cannot be used when the
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-83B74121-B36C-4544-88C9-87700207425B">
+      command
+     </samp>
+     function is used within the local custom
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-6E577226-0E18-435E-B1CC-B0BA6F89C8CF">
+      *error*
+     </samp>
+     handler.
+    </div>
+   </div>
+   <div class="section" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__SECTION_CD890E9A2B8B4B8ABE0F454F6F79335E">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-10D3EA23-1CD3-43CE-8568-2DC93562FB0A">
+     The following example demonstrates the use of the
+     <samp class="ph codeph" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-211E337A-2B5E-4864-9D37-C93352DFE8E1">
+      *push-error-using-stack*
+     </samp>
+     function.
+    </p>
+    <pre class="pre codeblock prettyprint">(setq var1 "Global1"      ; Set some global variables
+      var2 "Global2")
+
+(defun mySub_err (err_msg)
+    (if (/= err_msg "Function cancelled")
+      (progn
+        (prompt (strcat "\nError: " err_msg))
+        (prompt (strcat "\nLocalSub1: " var1))
+        (prompt (strcat "\nLocalSub2: " var2))
+        (terpri)
+      )
+    )
+
+    (command-s "._undo" "_e")
+    (command-s "._U")  
+    (setq *error* olderr)
+  (princ)
+)
+
+(defun subUtil (val / olderr var1 var2)
+    (*push-error-using-stack*)         ; Indicates if the custom error handler has access to local
+                                       ; variables defined in his function
+
+    (setq olderr *error*
+          *error* mySub_err)
+
+    (command "._undo" "_group")        ; The following will not be executed in this sample, but is good 
+                                       ; framework for setting up your own error handlers
+
+    (setq var1 "Sub1"                  ; Set some local variables
+          var2 "Sub2")
+  
+    ;; Perform your tasks here
+    (strcat "Foo" val)
+  
+    (command "._undo" "_e")
+    (setq *error* olderr)              ; Restore old *error* handler
+    (*pop-error-mode*)                 ; End the use of *push-error-using-command*  
+)
+
+(defun my_err (err_msg)
+    (if (/= err_msg "Function cancelled")
+      (progn
+        (prompt (strcat "\nError: " err_msg))
+        (prompt (strcat "\nLocal1: " var1))
+        (prompt (strcat "\nLocal2: " var2))
+        (terpri)
+      )
+    )
+
+    (command "._undo" "_e")
+    (command "._U")
+    (setq *error* olderr)
+  (princ)
+)
+
+(defun myUtil (val / var1 var2)
+    (setq olderr *error*
+          *error* my_err)
+
+    (*push-error-using-command*)       ; Indicate use of Command function instead of Command-s
+                                       ; in the custom error handler
+  
+    (setq var1 "Local1"                ; Set some local variables
+          var2 "Local2")
+
+    (command "._undo" "_group")        ; The following will not be executed in this sample, but is good 
+                                       ; framework for setting up your own error handlers
+  
+    (subUtil val)                      ; Call to a custom function that uses *push-error-using-stack*
+  
+    (/ 1 0)                            ; Call a function with incorrect values to trigger the custom error handler
+                                       ; Remove when setting up your code
+   
+    ;; Perform your tasks here
+  
+    (command "._undo" "_e")
+    (setq *error* olderr)              ; Restore old *error* handler
+    (*pop-error-mode*)                 ; End the use of *push-error-using-command*  
+)
+</pre>
+    <p class="p" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-B421116A-2DA5-4985-AB55-554D0D6CB57E">
+     After loading the sample code, enter
+     <strong class="ph b" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-037A3617-79CC-4530-B47F-4114F068C152">
+      (myutil 1)
+     </strong>
+     at the Command prompt to enter the error handler for the nested function and
+     <strong class="ph b" id="GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1__GUID-3715A458-3F01-4388-BC69-629841070799">
+      (myutil “String”)
+     </strong>
+     to test the error handler of the main function.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Error_Handling_Functions_Reference_AutoLISP.html">
+       Error-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="pop_error_mode_AutoLISP.html" title="Error-handling function that ends the previous call to *push-error-using-command* or *push-error-using-stack*">
+       *pop-error-mode* (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="push_error_using_command_AutoLISP.html" title="Error-handling function that indicates the use of the command function within a custom *error* handler">
+       *push-error-using-command* (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

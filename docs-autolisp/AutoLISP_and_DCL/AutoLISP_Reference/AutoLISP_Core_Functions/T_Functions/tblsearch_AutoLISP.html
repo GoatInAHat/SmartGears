@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Searches a symbol table for a symbol name" name="description"/>
+  <meta content="TBLSEARCH" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   tblsearch (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      tblsearch (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Searches a symbol table for a symbol name
+   </p>
+   <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-884DA6C8-3983-48F8-A944-91A49BC9F61F">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(tblsearch <em class="ph i" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-A61AEAD4-66D9-4ECA-8A61-2A046969324B">table-name symbol [setnext]</em>)</pre>
+    <div class="section" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF6">
+     <dl class="dl" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF6">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-7049AF6D-0DB9-44AE-B1C9-CDF4471F69CE">
+        table-name
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-4C4DBBEC-2D5C-4CCD-A585-B535F262BEED">
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-232F500A-FA6F-47C8-8158-211E017197B2">
+        <strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-CE49573B-58FC-4D52-9DF7-5A3939669702">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WSFACF1429558A55DE11F0759FF1E4B858C-32C2">
+        Symbol table to be searched. This argument is not case-sensitive.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-8D237C5A-1653-459B-8D23-015DACA8F36B">
+        symbol
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-9F2CEDCE-CAF5-4D05-9798-2715E33368BF">
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-A5C1B967-CF76-4A78-8EB0-CE588751DC98">
+        <strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-22DA3750-6E80-4EB2-8EC5-0DF6FA391139">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WSFACF1429558A55DE11F0759FF1E4B858C-32C1">
+        Symbol name to be searched for. This argument is not case-sensitive.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-B51B427A-00EE-4D40-BAD9-6BA0BBABB4D5">
+        setnext
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-817BCD8B-C847-45E9-8F38-22645A987789">
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-92569518-C9A0-49CE-99B2-ACD38C2D9A33">
+        <strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-25ACB971-9A5F-40DD-91AE-23270ED9D8FC">
+         Type:
+        </strong>
+        T or nil
+       </p>
+       <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WSFACF1429558A55DE11F0759FF1E4B858C-32C0">
+        If this argument is supplied and is not
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-9CED2236-BAC8-4360-B013-0DED17631806">
+         nil
+        </samp>
+        , the
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-ED0967A2-39DF-40FF-90DC-2726C7EDD8FD">
+         tblnext
+        </samp>
+        entry counter is adjusted so the following
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-0477FFE7-6ED3-491C-9962-C34671616DC1">
+         tblnext
+        </samp>
+        call returns the entry after the one returned by this
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-AFF7375F-DD51-4D56-992E-DB9C0E0E8C4C">
+         tblsearch
+        </samp>
+        call. Otherwise,
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-E73B8AAC-B962-4AE7-A464-F5C2861EC414">
+         tblsearch
+        </samp>
+        has no effect on the order of entries retrieved by
+        <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-71555094-1AF5-48BA-ADA7-F2D957D7A700">
+         tblnext
+        </samp>
+        .
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__SECTION_3B7ADE2F250147A2ADA22779C178A377">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-9FEB6953-F461-45A2-8534-20549FF1A6DB">
+     <strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-EB2BE8D8-8AE3-4416-9B9B-7F794043121E">
+      Type:
+     </strong>
+     List (dotted pairs) or nil
+    </p>
+    <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WSFACF1429558A55DE11F0759FF1E4B858C-32BE">
+     If
+     <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-EC06B47A-6C28-477C-8E3A-8E9E7E100FCD">
+      tblsearch
+     </samp>
+     finds an entry for the given symbol name, it returns that entry. If no entry is found,
+     <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-B8CE61E9-ED2B-471F-AF87-F2F2D688A605">
+      tblsearch
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-0B510745-C3B7-4E3A-8E3A-9D0EB9A98343">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__SECTION_4EAB22ADFB8940C483211BC018EA3577">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__WSFACF1429558A55DE11F0759FF1E4B858C-32BC">
+     The following command searches for a text style named “standard”:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925__GUID-09577DCB-D389-4B5D-81E4-FD0BB3953A42">(tblsearch "style" "standard")</strong>
+((0 . "STYLE") (2 . "STANDARD") (70 . 0) (40 . 0.0) (41 . 1.0) (50 . 0.0) (71 . 0) (42 . 0.3) (3 . "txt") (4 . ""))</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Symbol_Table_and_Dictionary_Handling_Functions_Reference_AutoLISP.html">
+       Symbol Table and Dictionary-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="tblnext_AutoLISP.html" title="Finds the next item in a symbol table">
+       tblnext (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="tblobjname_AutoLISP.html" title="Returns the entity name of a specified symbol table entry">
+       tblobjname (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

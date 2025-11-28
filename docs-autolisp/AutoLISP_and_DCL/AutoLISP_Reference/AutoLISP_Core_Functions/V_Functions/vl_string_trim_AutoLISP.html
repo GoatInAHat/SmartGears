@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Removes the specified characters from the beginning and end of a string" name="description"/>
+  <meta content="VL-STRING-TRIM" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   vl-string-trim (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      vl-string-trim (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Removes the specified characters from the beginning and end of a string
+   </p>
+   <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-F2022998-D6BD-4ACC-95C1-DB090C96B297">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(vl-string-trim <em class="ph i" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-58C8634C-F295-438C-9D28-479816B169B7">char-set str</em>)</pre>
+    <div class="section" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__WS1A9193826455F5FF-1E1423D1125831BDA67-7AB2">
+     <dl class="dl" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__WS1A9193826455F5FF-1E1423D1125831BDA67-7AB2">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-D6B59C07-67DC-4CC0-9FE5-B807042AF63B">
+        char-set
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-47CC2448-CD09-4065-8A59-4D924F11AABC">
+       <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-B6BAE62D-4608-48F7-B4E0-E5A89790715C">
+        <strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-D3C3D246-8376-4294-8C7C-F559C945A786">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__WSFACF1429558A55DE11F0759FF1E4B858C-302C">
+        Characters to be removed.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-1CE57018-7C40-408A-B77B-9EB6CCFF10F8">
+        str
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-369145E6-606F-4C8D-908C-CFA78124C775">
+       <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-EC746AF7-1D9D-42C7-BFE0-1FF0C293A757">
+        <strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-9008D7B4-6290-4690-B1FE-0F72A28A27A2">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__WSFACF1429558A55DE11F0759FF1E4B858C-302B">
+        The textual value to be trimmed of
+        <em class="ph i" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-1C477578-1854-4E03-94C7-EE1745D14DD4">
+         char-set
+        </em>
+        .
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__SECTION_10875BD86CB848EA9DBD5873D20A7D82">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-1D687F77-0921-486A-9E0D-22DFC056A978">
+     <strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-1634EF4A-5C88-4C2C-85C9-3D1B1E1C3483">
+      Type:
+     </strong>
+     String
+    </p>
+    <p class="p" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__WSFACF1429558A55DE11F0759FF1E4B858C-3029">
+     The value of
+     <em class="ph i" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-B09043B4-5A97-49BC-8E6A-04BCC2A2CA55">
+      str
+     </em>
+     , after any characters have been trimmed.
+    </p>
+   </div>
+   <div class="section" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__SECTION_C187E89A57AD4F1F82058479A5690EF4">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__UL_71DA0A990A6A43EC94CFBCDC8FAA201B">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__LI_FC7B8FAC9CAF4EB680F6F16980994535">
+      <span class="ph msgph prodname">
+       AutoCAD R14 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__LI_481FD65EF9414FDFBD0613765D0D9A87">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__SECTION_A94AAF074DA742B5BF835F2A1BE0F731">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-C8D2292B-7F76-4855-8975-9CF919069293">(vl-string-trim " \t\n" " \t\n STR \n\t ")</strong>
+"STR"
+
+<strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-3CCEA6D5-F7AC-4A58-84FD-0A4280ABF94E">(vl-string-trim "this is junk" "this is junk Don't call this junk! this is junk")</strong>
+"Don't call this junk!"
+
+<strong class="ph b" id="GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389__GUID-B6C44842-81C1-41B6-8778-83C2C352920A">(vl-string-trim " " "      Leave me alone   ")</strong>
+"Leave me alone"</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/String_Handling_Functions_Reference_AutoLISP.html">
+       String-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="vl_string_left_trim_AutoLISP.html" title="Removes the specified characters from the beginning of a string">
+       vl-string-left-trim (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="vl_string_right_trim_AutoLISP.html" title="Removes the specified characters from the end of a string">
+       vl-string-right-trim (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../S_Functions/substr_AutoLISP.html" title="Returns a substring of a string">
+       substr (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

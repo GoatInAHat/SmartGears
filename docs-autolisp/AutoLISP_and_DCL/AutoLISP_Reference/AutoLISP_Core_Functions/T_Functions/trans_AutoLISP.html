@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Translates a point (or a displacement) from one coordinate system to another" name="description"/>
+  <meta content="TRANS" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   trans (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      trans (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Translates a point (or a displacement) from one coordinate system to another
+   </p>
+   <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-78DCBC70-C56D-45AE-8833-0B346AF9959A">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(trans <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-8CFD7946-E1F4-43FC-A1C2-40352B2B9DCA">pt from to [disp]</em>)</pre>
+    <div class="section" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF3">
+     <dl class="dl" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF3">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-F70B67AE-52DE-4EFB-980D-5082ECC3FAF8">
+        pt
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-5E8CA86B-3AAB-4B28-BE37-6D18C51BDBEF">
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-8B9B4FB5-343C-4121-8754-172D787788CE">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-90511C06-660A-405E-96B1-8788058839E2">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-329B">
+        A list of three reals that can be interpreted as either a 3D point or a 3D displacement (vector).
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-4D52BA36-B27C-4E9E-8B8B-B67F8DA4C4D2">
+        from
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-3E5514AE-492D-4464-9EC6-3D1BBF4DB161">
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-6DD60589-C3D0-4742-B39A-10DBD2CDD925">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-4925F655-6D4F-448A-B018-59B79D544178">
+         Type:
+        </strong>
+        Integer, List, or Ename (entity name)
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-329A">
+        An integer code, entity name, or 3D extrusion vector identifying the coordinate system in which
+        <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-2F29F450-08AF-44AE-BC96-471D749AD13B">
+         pt
+        </em>
+        is expressed. The integer code can be one of the following:
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3299">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-6E8EFC8F-5E9A-4FA1-B7AD-317FC300E59D">
+         0
+        </strong>
+        -- World (WCS)
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3298">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-35FBF900-DF05-4314-85D7-FA573758E2BF">
+         1
+        </strong>
+        -- User (current UCS)
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3297">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-9C367C57-B1E6-47C0-A1FA-E83BDD803D3C">
+         2
+        </strong>
+        -- If used with code 0 or 1, this indicates the Display Coordinate System (DCS) of the current viewport. When used with code 3, it indicates the DCS of the current model space viewport.
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3296">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-651E0160-FC2A-449C-B20B-8A228DF916FC">
+         3
+        </strong>
+        -- Paper space DCS (used
+        <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-AC5C93BA-114C-4A62-80E7-0D3EDC4ACA8C">
+         only
+        </em>
+        with code 2)
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-95E31B39-7ED5-443C-812E-9A204EB6622F">
+        to
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-5B579307-C2B3-4944-A5F8-ADD83AEC7F1D">
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-053FA31F-8DD3-4296-8D24-E4F1C1EF5845">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-8DA15565-239D-44AC-9569-38F4FC858BA5">
+         Type:
+        </strong>
+        Integer, List, or Ename (entity name)
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3295">
+        An integer code, entity name, or 3D extrusion vector identifying the coordinate system of the returned point. See the
+        <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-8CB4A428-A186-4716-9E28-3C1CB17604CB">
+         from
+        </em>
+        argument for a list of valid integer codes.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-67C47B25-3ED9-41C0-A026-7C9864B510B7">
+        disp
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-D2AB1909-A72A-4CE1-B56A-D018754ED299">
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-84EDD5D8-CD2B-4979-9B48-29E1DFB850FD">
+        <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-A7CE142A-1CFC-47A7-8B77-62B76A37B198">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3294">
+        If present and is not
+        <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-E9EDC864-C55B-4F20-BD60-EE2D753C00B7">
+         nil
+        </samp>
+        , this argument specifies that
+        <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-3365CED7-DEB4-4B84-90BF-761E0AA4F529">
+         pt
+        </em>
+        is to be treated as a 3D displacement rather than as a point.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__SECTION_BBAAFE8DE4504EA485CDC9A7F1870DD5">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-92D607FB-6BAA-4EE9-BF77-FA62C0C2972D">
+     <strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-5EBB3951-417C-4302-8A96-19F2D65604D8">
+      Type:
+     </strong>
+     List
+    </p>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3291">
+     A 3D point (or displacement) in the requested
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-445DA27D-EDD5-4232-A1BA-7CC6943DB774">
+      to
+     </em>
+     coordinate system.
+    </p>
+   </div>
+   <div class="section" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__SECTION_1035E642D4C940638AA7667A0843525C">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3293">
+     If you use an entity name for the
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-49BE6EC3-BA8D-4C63-8A0E-A2CB7E056B85">
+      from
+     </em>
+     or
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-C5024702-38BE-4706-8084-6C727DB41FB9">
+      to
+     </em>
+     argument, it must be passed in the format returned by the
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-C3874178-C5EF-448E-8053-A2B71237643A">
+      entnext
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-CBD5B185-54AC-4C4F-A541-6089C2E12216">
+      entlast
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-46D4E7E1-363F-4B54-A691-11AF6A386D7A">
+      entsel
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-D0CBF649-0082-4BCE-B8C3-768F639E246F">
+      nentsel
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-9D580472-B4F5-47FF-A038-201674B93DF8">
+      ssname
+     </samp>
+     functions. This format lets you translate a point to and from the Object Coordinate System (OCS) of a particular object. (For some objects, the OCS is equivalent to the WCS; for these objects, conversion between OCS and WCS is a null operation.) A 3D extrusion vector (a list of three reals) is another method of converting to and from an object's OCS. However, this does not work for those objects whose OCS is equivalent to the WCS.
+    </p>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3286">
+     The
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-F43793E7-5A58-4318-9C0B-11399E1420F0">
+      trans
+     </samp>
+     function can also transform 2D points. It does this by setting the
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-5E73C587-DEB4-4381-A159-5AC993247039">
+      Z
+     </em>
+     coordinate to an appropriate value. The
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-0F4F4C2E-C2D7-451E-9F48-196AE01333FB">
+      Z
+     </em>
+     component used depends on the
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-FF35AF12-90F0-4D0C-A13A-D5464EF49800">
+      from
+     </em>
+     coordinate system that was specified and on whether the value is to be converted as a point or as a displacement. If the value is to be converted as a displacement, the
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-39208E38-1B14-418F-AE55-F73D721F47C9">
+      Z
+     </em>
+     value is always 0.0; if the value is to be converted as a point, the filled-in
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-9D746936-6B10-46C8-92C0-1164B412293F">
+      Z
+     </em>
+     value is determined as shown in the following table:
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6903" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3285">
+          Converted 2D point
+          <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-A41D29C0-CE5D-4630-B306-8C63A916B925">
+           Z
+          </em>
+          values
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3284">
+          From
+         </p>
+        </th>
+        <th class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3283">
+          Filled-in
+          <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-4764AD2F-6D46-4F14-8DB6-0F98043A429D">
+           Z
+          </em>
+          value
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3282">
+          WCS
+         </p>
+        </td>
+        <td class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3281">
+          0.0
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3280">
+          UCS
+         </p>
+        </td>
+        <td class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327F">
+          Current elevation
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327E">
+          OCS
+         </p>
+        </td>
+        <td class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327D">
+          0.0
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327C">
+          DCS
+         </p>
+        </td>
+        <td class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327B">
+          Projected to the current construction plane (UCS
+          <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-CFD62697-07FB-4E7A-A9CF-09A36BA07123">
+           XY
+          </em>
+          plane + current elevation)
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="17.415857239665687%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-327A">
+          PSDCS
+         </p>
+        </td>
+        <td class="entry" valign="top" width="82.58414276033432%">
+         <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3279">
+          Projected to the current construction plane (UCS
+          <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-4D0E6CA0-4B21-4BDB-820D-81C6EFEE9C2A">
+           XY
+          </em>
+          plane + current elevation)
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="section" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__SECTION_87B7B7F79A1C47A494C10CCDD2F28F7D">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-328F">
+     In the following examples, the UCS is rotated 90 degrees counterclockwise around the WCS
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-06C16811-7F3D-40D5-93F0-40D60052A1D8">
+      Z
+     </em>
+     axis:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-8A55C5CF-F7C5-4A06-9710-1EA068073EC2">(trans '(1.0 2.0 3.0) 0 1)</strong>
+(2.0 -1.0 3.0)
+
+<strong class="ph b" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-E4DA2D15-22EF-47D9-B4D1-C8C3C4387D97">(trans '(1.0 2.0 3.0) 1 0)</strong>
+(-2.0 1.0 3.0)</pre>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-328D">
+     For example, to draw a line from the insertion point of a piece of text (without using Osnap), you convert the text object's insertion point from the text object's OCS to the UCS.
+    </p>
+    <pre class="pre codeblock prettyprint">(trans <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-5A5DAB27-49C2-4282-BD52-79D2B25C5B55">text-insert-point text-ename 1</em>)</pre>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-328C">
+     You can then pass the result to the From Point prompt.
+    </p>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-328B">
+     Conversely, you must convert point (or displacement) values to their destination OCS before feeding them to
+     <samp class="ph codeph" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-71D783D6-1B3D-428D-BD84-73B856CB161A">
+      entmod
+     </samp>
+     . For example, if you want to move a circle (without using the AutoCAD MOVE command) by the UCS-relative offset (1,2,3), you need to convert the displacement from the UCS to the circle's OCS:
+    </p>
+    <pre class="pre codeblock prettyprint">(trans '(1 2 3) 1 circle-ename)</pre>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-328A">
+     Then you add the resulting displacement to the circle's center point.
+    </p>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3289">
+     For example, if you have a point entered by the user and want to find out which end of a line it looks closer to, you convert the user's point from the UCS to the DCS.
+    </p>
+    <pre class="pre codeblock prettyprint">(trans user-point 1 2)</pre>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3288">
+     Then you convert each of the line's endpoints from the OCS to the DCS.
+    </p>
+    <pre class="pre codeblock prettyprint">(trans endpoint line-ename 2)</pre>
+    <p class="p" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__WSFACF1429558A55DE11F0759FF1E4B858C-3287">
+     From there you can compute the distance between the user's point and each endpoint of the line (ignoring the
+     <em class="ph i" id="GUID-1A316343-0B68-4DBE-8F49-B4D601CB8FCC__GUID-4A576217-5F0A-4460-B90F-0396A6BAE254">
+      Z
+     </em>
+     coordinates) to determine which end looks closer.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Conversion_Functions_Reference_AutoLISP.html">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../I_Functions/inters_AutoLISP.html" title="Finds the intersection of two lines">
+       inters (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../P_Functions/polar_AutoLISP.html" title="Returns the UCS 3D point at a specified angle and distance from a point">
+       polar (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../O_Functions/osnap_AutoLISP.html" title="Returns a 3D point that is the result of applying an Object Snap mode to a specified point">
+       osnap (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

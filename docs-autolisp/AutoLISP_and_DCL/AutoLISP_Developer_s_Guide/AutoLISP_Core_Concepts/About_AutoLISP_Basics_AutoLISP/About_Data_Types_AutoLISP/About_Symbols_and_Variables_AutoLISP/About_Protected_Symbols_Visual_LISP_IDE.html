@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="When Visual LISP is loaded, you may be warned if you attempt to change the value of some symbols used by the AutoLISP language." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Protected Symbols (Visual LISP IDE)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Protected Symbols (Visual LISP IDE)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    When Visual LISP is loaded, you may be warned if you attempt to change the value of some symbols used by the AutoLISP language.
+   </p>
+   <div class="note note" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-5432E85E-1953-49E8-97D6-1D12523AF307">
+    <span class="notetitle">
+     Note:
+    </span>
+    The Visual LISP IDE is not available in AutoCAD LT for Windows and on Mac OS.
+   </div>
+   <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-DE93CF94-9F56-4D4E-879F-8DCD6A58583C">
+    These symbols are known as protected symbols, and include items such as arithmetic operators (for example,
+    <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-88B4B0E8-5CD2-481A-9057-53737C6F611A">
+     <samp class="ph codeph" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-E0BE278B-7111-4854-8022-8A05ED30C88C">
+      +
+     </samp>
+    </strong>
+    ,
+    <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-99C1D89D-5B21-4ABC-8B92-DA9A8B54403E">
+     <samp class="ph codeph" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-D19715E9-A0BD-4019-B1AF-DC2889434C33">
+      -
+     </samp>
+    </strong>
+    ) and the values
+    <samp class="ph codeph" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-C54EB679-445E-439E-969F-6ED90A9C4A17">
+     T
+    </samp>
+    and
+    <samp class="ph codeph" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-81AF778D-DA28-43AE-965A-97A5180054B3">
+     nil
+    </samp>
+    .
+   </p>
+   <div class="section" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-556C7BD5-D790-4C67-9177-12F2723FB7E1">
+    <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6619">
+     You can use the Visual LISP Symbol Service feature to determine if a symbol is protected. When you first start AutoCAD, protected symbols receive no special protection. If you change a protected symbol at the AutoCAD Command prompt, no indication is made that a symbol has any special status. However, once you start Visual LISP, this changes. From the moment you start Visual LISP until the end of your AutoCAD session, Visual LISP intercepts any attempt to modify a protected symbol. Processing of protected symbols depends on the status of a Visual LISP environment option.
+    </p>
+    <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6618">
+     You can specify one of the following options:
+    </p>
+    <ul class="ul" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS73099CC142F4875516D84BE10EBC87A53F-7C64">
+     <li class="li" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS1A9193826455F5FF-4855151011E21CB4C05-5DB3">
+      <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-5B7DF32A-6138-46DB-A24D-F51FA518FE50">
+       Transparent
+      </strong>
+      - Protected symbols are treated like any other symbol.
+     </li>
+     <li class="li" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS1A9193826455F5FF-4855151011E21CB4C05-5DB2">
+      <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-8B90C7E8-9BDC-4CF6-AFC7-6737ED722346">
+       Print message
+      </strong>
+      - AutoLISP issues a warning message when you modify a protected symbol, but the modification is still carried out. For example, the following demonstrates what happens when you modify the predefined
+      <samp class="ph codeph" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-73B42B89-ABF5-41E7-A8B1-5C5FBB3AE2B7">
+       T
+      </samp>
+      variable:
+      <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6617">
+       Command:
+       <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-E3827435-DD74-439B-B0A0-E1217C2B438C">
+        (setq t "look out")
+       </strong>
+      </p>
+      <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6616">
+       ; *U* WARNING: assignment to protected symbol: T &lt;- "look out"
+      </p>
+      <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6615">
+       "look out"
+      </p>
+     </li>
+     <li class="li" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS1A9193826455F5FF-4855151011E21CB4C05-5DB1">
+      <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-55F0E938-0505-44D0-A1BF-B013CB21FFB3">
+       Prompt to enter break loop
+      </strong>
+      - Results in Visual LISP displaying the following message box when you attempt to modify a protected symbol:
+      <div class="fig fignone" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS73099CC142F4875516D84BE10EBC87A53F-7C63">
+       <img class="image" height="133" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__IMAGE_AB1F06A6DC254E3BB3BCCE97BFA0A5FC" src="../../../../../../_assets/GUID_9FFC40A0_6215_4A32_AE47_743F03593827-d07f7d9b.png" width="236"/>
+      </div>
+      <p class="p" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WSFACF1429558A55DE11F0759FF1E4B858C-6614">
+       Click Yes to interrupt processing and enter a Visual LISP break loop. Control switches to the Visual LISP Console window. To set the symbol and continue processing, click the Continue button on the Visual LISP toolbar; to abort modification, click Reset. If you click No, the symbol's value is modified, and processing continues normally.
+      </p>
+     </li>
+     <li class="li" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__WS1A9193826455F5FF-4855151011E21CB4C05-5DB0">
+      <strong class="ph b" id="GUID-63D484B0-890D-438B-860D-A7202AE8B2A5__GUID-FCEE38A5-9FCD-4373-96A6-8BB14A6F4C5D">
+       Error
+      </strong>
+      - This option prohibits modification of protected symbols. Any attempt to modify a protected symbol results in an error message.
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Symbols_and_Variables_AutoLISP.html" title="AutoLISP uses symbols to refer to functions and data holders.">
+      About Symbols and Variables (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="GUID-E51E1A6D-D9C9-4FCC-A363-814D49850AA1.htm" title="The Visual LISP user interface contains many elements common to other Windows applications.">
+       Visual LISP User Interface Reference (Visual LISP IDE)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-540202CA-0929-4CBB-909F-33DE5EBD441F.htm" title="Designed to simplify access to the different debugger features provided for symbols.">
+       Symbol Service Dialog Box (Visual LISP IDE)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Variables_AutoLISP/About_Predefined_Variables_AutoLISP.html" title="AutoLISP has several predefined variables that can be used with your custom functions and commands.">
+       About Predefined Variables (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-DD410649-0976-420A-8F08-91DD5A6205B2.htm" title="The Visual LISP code formatter can make it easy to distinguish between protected and unprotected AutoLISP symbols.">
+       About Setting Case for Symbols (Visual LISP IDE)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-23A0719A-EDB1-482F-A215-14A97133FD0B.htm">
+       General Options Dialog Box (Visual LISP IDE)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo reltasks">
+    <h4 class="related">
+     Related Tasks
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="GUID-2A71355F-DBBE-4D88-9490-224F61460FD2.htm" title="Visual LISP allows you to set the protection level for built-in functions and variables.">
+       To Set the Protection Level for Symbols (Visual LISP IDE)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

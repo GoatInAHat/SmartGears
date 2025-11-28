@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-EA2B760C-866D-46BB-B682-EEC46C8FF11B" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Cleaning Up After Your Reactors
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Cleaning Up After Your Reactors
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__GUID-A9419620-D27E-4138-AB00-B3EB6C7535A5">
+    <p class="p" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__WSFACF1429558A55DE1929BBDFEF458CE1C-76E1">
+     Reactors are indeed very active. When you design an application that relies on them, you could very well spend a great deal of time crashing your program and possibly crashing AutoCAD as well. It helps to have a tool available to remove all the reactors you have added, if necessary.
+    </p>
+    <p class="p" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__WSFDF1B63E01EA74BE535B58FEE071585B-7FF5">
+     The
+     <em class="ph i" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__GUID-DFC5BE64-7DB7-4DDD-ADDE-63A167CC15DF">
+      gpreact.lsp
+     </em>
+     file includes a function
+     <samp class="ph codeph" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__GUID-D423D706-6AFB-491A-B385-809CC6C32D3D">
+      gp:clean-all-reactors
+     </samp>
+     that does not do much on its own. Instead, it makes a call to the
+     <samp class="ph codeph" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__GUID-482447B2-E220-4CCE-B91C-4119230C3300">
+      CleanReactors
+     </samp>
+     function. Add this function to your
+     <em class="ph i" id="GUID-837583AE-15EB-4ACF-9F93-008020B06D5E__GUID-BF89DB8A-94D3-4169-BB28-943C558335F3">
+      utils.lsp
+     </em>
+     file by copying the following code to the end of the file:
+    </p>
+    <pre class="pre codeblock prettyprint">;;;--------------------------------------------------------------;
+;;;     Function: CleanReactors                                  ;
+;;;--------------------------------------------------------------;
+;;;  Description: General utility function used for cleaning up  ;
+;;;               reactors. It can be used during debugging, as  ;
+;;;               well as cleaning up any open reactors before   ;
+;;;               a drawing is closed.                           ;
+;;;--------------------------------------------------------------;
+(defun CleanReactors ()
+  (mapcar 'vlr-remove-all
+         '(:VLR-AcDb-reactor
+           :VLR-Editor-reactor
+           :VLR-Linker-reactor
+           :VLR-Object-reactor
+          )
+  )
+)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_6_Acting_With_Reactors_Visual_LISP_IDE.html">
+      Lesson 6: Acting With Reactors (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Adding_Reactor_Callback_Functions.html">
+      Adding Reactor Callback Functions
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Test_Driving_Your_Reactors.html">
+      Test Driving Your Reactors
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

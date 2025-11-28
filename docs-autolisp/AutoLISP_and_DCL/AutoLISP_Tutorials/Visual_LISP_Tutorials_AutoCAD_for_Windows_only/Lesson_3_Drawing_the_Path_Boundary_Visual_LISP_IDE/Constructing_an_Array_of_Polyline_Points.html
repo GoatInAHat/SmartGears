@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-D0CF600F-566E-4D79-9DEB-3039A97E5348" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Constructing an Array of Polyline Points
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Constructing an Array of Polyline Points
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-635AAE64-31D0-417F-A3BC-43B1020BEF0B">
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7797">
+     The last issue to deal with is how to transform the individual point variables—
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-532D6B3C-03A4-4DEA-AF91-855717F4C828">
+      p1
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-FD72303C-6564-4F0B-90AF-A2DE1AF520C3">
+      p2
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-C0FE82F0-7491-4589-A9D4-1A613C7B32DC">
+      p3,
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-9D66A209-9A83-45C7-88A4-EEFC5B2D6106">
+      p4
+     </samp>
+     —into the format required for the
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-3CC74908-D284-44E1-B559-A6BC8D0E3D1C">
+      vla-addLightweightpolyline
+     </samp>
+     function. First, get some help on the topic.
+    </p>
+   </div>
+   <div class="section" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE6C92BAFEE30F7510-7E3B">
+    <h2 class="title sectiontitle">
+     To obtain information on a function
+    </h2>
+    <ol class="ol" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WS1A9193826455F5FF18CB41610EC0A2E719-7361">
+     <li class="li" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WS1A9193826455F5FF-7F10494411F03A24F24-1E38">
+      Click the Help button on the Visual LISP toolbar.
+      <div class="fig fignone" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WS1A9193826455F5FF18CB41610EC0A2E719-7360">
+       <img class="image" height="25" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__IMAGE_804E0B99C8CA47B4B9C80D69BA5772F7" src="../../../../_assets/GUID_222051E2_D25D_4AF9_B5D1_6D4D1AD84BD9-5c72fd63.png" width="25"/>
+      </div>
+     </li>
+     <li class="li" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WS1A9193826455F5FF-7F10494411F03A24F24-1E37">
+      Enter
+      <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-2A5D6FAB-4CED-4513-B63A-5D1EB55EDF4B">
+       vla-addLightweightpolyline
+      </samp>
+      in the Enter Item Name dialog box, and click OK. (The Help system is not case sensitive, so do not worry about how you capitalize the function name.)
+     </li>
+    </ol>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7796">
+     Help states that
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-FA571D02-E4F6-479F-BFF2-7CB5B4D0E374">
+      AddLightWeightPolyline
+     </samp>
+     requires you to specify the polyline vertices as an array of doubles in the form of a variant. Here is how Help describes this parameter:
+    </p>
+    <pre class="pre codeblock prettyprint">The array of 2D WCS coordinates specifying the vertices of the polyline. At least two points (four elements) are required for constructing a lightweight polyline. The array size must be a multiple of 2.</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7795">
+     A variant is an ActiveX construct that serves as a container for various types of data. Strings, integers, and arrays can all be represented by variants. The variant stores data along with the information identifying the data.
+    </p>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7794">
+     So far, you have four points, each in the format (x, y, z). The challenge is to convert these four points into a list of the following form:
+    </p>
+    <pre class="pre codeblock prettyprint">(x1 y1 x2 y2 x3 y3 x4 y4)</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7793">
+     The
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-D43AB86C-8D27-4FBB-880D-3A0C7A8E5CCD">
+      append
+     </samp>
+     function takes multiple lists and concatenates them. To create a list of the four points in the proper format for the ActiveX function, you can use the following expression:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq polypoints (append (3dPoint-&gt;2dPoint p1)
+                              (3dPoint-&gt;2dPoint p2)
+                              (3dPoint-&gt;2dPoint p3)
+                              (3dPoint-&gt;2dPoint p4)))</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7792">
+     Writing the
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-67F2B5A0-FD68-4841-8BD3-938D392EF949">
+      3dPoint-&gt;2dPoint
+     </samp>
+     function four times is a bit cumbersome. You can reduce the code further by using the
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-D1AAD5A8-7E11-4D40-9E86-9EB38B29760F">
+      mapcar
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-A610384C-ED05-4065-AF8E-1A4C179C6453">
+      apply
+     </samp>
+     functions. When selected,
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-CDC73CEF-0A7B-48C1-8E9C-971A3F34AFA0">
+      mapcar
+     </samp>
+     executes a function on individual elements in one or more lists, and
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-9146E50F-7281-4D0F-8ACF-1D7AF32D11ED">
+      apply
+     </samp>
+     passes a list of arguments to the specified function. The resulting code looks like the following:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq polypoints (apply 'append (mapcar '3dPoint-&gt;2dPoint 
+(list p1 p2 p3 p4))))</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7791">
+     Before the call to
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-BA2D9824-1664-45FD-B3BB-8C85B44C4C8C">
+      mapcar
+     </samp>
+     , the list of points is in this form:
+    </p>
+    <pre class="pre codeblock prettyprint">((x1 y1 z1) (x2 y2 z2) (x3 y3 z3) (x4 y4 z4))</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-7790">
+     After
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-7C653BA4-19DF-405C-AC80-90ACE16151B3">
+      mapcar
+     </samp>
+     you have a list of points in the following form:
+    </p>
+    <pre class="pre codeblock prettyprint">((x1 y1) (x2 y2) (x3 y3) (x4 y4))</pre>
+    <p class="p" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__WSFACF1429558A55DE1929BBDFEF458CE1C-778F">
+     And finally, after applying the
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-679A037A-13B6-40BA-BFB3-509340CEB032">
+      append
+     </samp>
+     function on the list returned from
+     <samp class="ph codeph" id="GUID-406E5037-EDB3-453A-88F0-4E27F45464DF__GUID-ADE63BA4-C8B1-4844-B849-6C6DF117B458">
+      mapcar
+     </samp>
+     , you end up with the following:
+    </p>
+    <pre class="pre codeblock prettyprint">(x1 y1 x2 y2 x3 y3 x4 y4)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE.html">
+      Lesson 3: Drawing the Path Boundary (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Obtaining_a_Pointer_to_Model_Space.html">
+      Obtaining a Pointer to Model Space
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Constructing_a_Variant_From_a_List_of_Points.html">
+      Constructing a Variant From a List of Points
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

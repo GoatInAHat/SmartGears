@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="task-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Variables can be stored and retrieved across multiple open drawings using the blackboard namespace." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   To set and retrieve variables in the blackboard namespace (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      To set and retrieve variables in the blackboard namespace (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body taskbody-adsk">
+   <p class="shortdesc">
+    Variables can be stored and retrieved across multiple open drawings using the blackboard namespace.
+   </p>
+   <ol class="ol" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-AA2F0D5F-21B8-4084-8551-EC9A3146F8BE">
+    <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_270732D0647E4CBFB3830B508BAF6304">
+     At the AutoCAD Command prompt or from an AutoLISP program, use the
+     <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-8F59637A-31EB-423B-9BB7-9D560085DC8C">
+      vl-bb-set
+     </samp>
+     function to set the value of a variable in the blackboard.
+    </li>
+    <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_AE08E62B796E45B3BA3C6254CC403ECA">
+     Use the
+     <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-4BD38DCA-A3B5-4C68-B9EF-B246C801E01E">
+      vl-bb-ref
+     </samp>
+     function to retrieve the value of a variable from the blackboard.
+    </li>
+   </ol>
+   <div class="section" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__SECTION_FCE38E016B004962ADC934024A2E3077">
+    <h2 class="title sectiontitle">
+     Example
+    </h2>
+    <ol class="ol" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__OL_E206151027C74A55B3279FC51A91F2B2">
+     <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_E9DEC36891654665B98964C13433C83D">
+      At the AutoCAD Command prompt, enter
+      <strong class="ph b" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-8AC8B075-9118-4278-BBE7-B714992DF9BA">
+       (vl-bb-set '*example* 0)
+      </strong>
+      and press Enter.
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-1BB72FA4-1D11-4E04-BAD3-567263009660">
+       Returns:
+      </p>
+      <pre class="pre codeblock prettyprint">0</pre>
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-5C153E88-1128-459C-B724-34C1665000B5">
+       The
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-812783D7-57B3-43E5-A80C-F4108635C37B">
+        *example*
+       </samp>
+       variable is set to 0 in the blackboard namespace.
+      </p>
+     </li>
+     <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_6457D16FA39E496CAE7869BFC9EF94F6">
+      At the AutoCAD Command prompt, enter
+      <strong class="ph b" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-08FD5448-89B7-4F5E-95B4-ECABA226FCCB">
+       (vl-bb-ref '*example*)
+      </strong>
+      and press Enter.
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-2FB57672-85CE-4B40-BA2D-8AD69B6A520E">
+       Returns:
+      </p>
+      <pre class="pre codeblock prettyprint">0</pre>
+     </li>
+     <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_E95A93CC6F0245EABAA5AA6BE4F6D1A1">
+      At the AutoCAD Command prompt, enter
+      <strong class="ph b" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-7E3373D2-CDAA-4848-B39F-7449BDD40A91">
+       !*example*
+      </strong>
+      and press Enter.
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-90660420-6D1B-4FF3-A824-FBFA28DB45B0">
+       Returns:
+      </p>
+      <pre class="pre codeblock prettyprint">nil</pre>
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-413FF91E-1026-41A2-A5FC-52AEBCD8C12F">
+       The
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-A915749B-67C7-4F64-8860-EBCBC2587D83">
+        *example*
+       </samp>
+       variable returns nil because it has not been set in the document namespace.
+      </p>
+     </li>
+     <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_63241358018D4161931F36E093EC8A75">
+      At the AutoCAD Command prompt, enter
+      <strong class="ph b" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-859D0AC9-58ED-47F6-87AF-6C91A4E8BE07">
+       (setq *example* -1)
+      </strong>
+      and press Enter.
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-4AD0AB81-5B22-4446-A64B-7ED3250A463A">
+       Returns:
+      </p>
+      <pre class="pre codeblock prettyprint">-1</pre>
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-05857BAA-7B6D-4288-B710-7FF7CE41AE36">
+       The
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-144A80A9-3A81-40A4-80E5-768934BFC7AC">
+        *example*
+       </samp>
+       variable is set to -1 in the document namespace.
+      </p>
+     </li>
+     <li class="li" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__LI_DC273D7B6A564097AA91CC28955A438C">
+      At the AutoCAD Command prompt, enter
+      <strong class="ph b" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-DB66C1C5-7F75-4269-95F4-76DB0E6984CA">
+       (vl-bb-ref '*example*)
+      </strong>
+      and press Enter.
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-8A27EA94-3138-4147-9030-01E56DA02CDF">
+       Returns:
+      </p>
+      <pre class="pre codeblock prettyprint">0</pre>
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-01357AD7-DD1B-4AF3-B3AD-DBA485144EFA">
+       The blackboard variable named
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-6870B89B-D7C7-4769-86EE-03068B51DCC4">
+        *example*
+       </samp>
+       is still set to the value assigned in Step 1; setting the document variable of the same name in Step 4 had no effect on the variable in the blackboard.
+      </p>
+      <p class="p" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-7CC519F3-8780-4E4E-B34A-B2F8C5C8B118">
+       You can also the
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-61F6808C-E7CE-4B03-A591-65B9A4A2ED6C">
+        vl-doc-set
+       </samp>
+       and
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-D60AD128-9C9C-4C59-9510-17367666B185">
+        vl-doc-ref
+       </samp>
+       functions to set and retrieve document namespace variables from a separate-namespace VLX, and
+       <samp class="ph codeph" id="GUID-4E317058-1E6A-45E2-A9BE-71D63D2D0A33__GUID-55AD464A-91AB-4662-A52D-AFF83B6C6DD8">
+        vl-propagate
+       </samp>
+       to set the value of a variable in all open document namespaces.
+      </p>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Sharing_Data_Between_Namespaces_AutoLISP.html" title="A namespace called the blackboard is used for communicating values across all namespaces.">
+      About Sharing Data Between Namespaces (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Variables_AutoLISP/About_Variables_AutoLISP.html" title="Variables are used to store a value or list of values in memory.">
+       About Variables (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Sharing_Data_Between_Namespaces_AutoLISP.html" title="A namespace called the blackboard is used for communicating values across all namespaces.">
+       About Sharing Data Between Namespaces (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Namespaces_AutoLISP.html" title="A namespace is a LISP environment containing a set of symbols (for example, variables and functions).">
+       About Namespaces (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F5DD5472-1695-4CA3-9110-E6008E87BB89">
+       Namespace Communication Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

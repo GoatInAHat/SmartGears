@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The AutoCAD unit definition file, acad.unt, allows you to define the factors to convert data one set of units to another set of units." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Unit Definition File Reference (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Unit Definition File Reference (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    The AutoCAD unit definition file,
+    <em class="ph i" id="GUID-FDC24483-D9D8-40D8-9FD8-B9C157771DF0">
+     acad.unt
+    </em>
+    , allows you to define the factors to convert data one set of units to another set of units.
+   </p>
+   <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6477">
+    The
+    <em class="ph i" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-F2518516-D2B9-48A8-B203-01C25C524E4C">
+     acad.unt
+    </em>
+    file is a plain ASCII text format file and is used by the unit-conversion function
+    <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-A79E9C8E-E832-4F92-A535-73404487B90A">
+     cvunit
+    </samp>
+    . You can add new and modify the unit definitions available by using a text editor. A definition consists of two lines in the file—the unit name and the unit definition. The first line must have an asterisk (*) in the first column, followed by the name of the unit. A unit name can have several abbreviations or alternate spellings, separated by commas. If a unit name has singular and plural forms, you can specify these using the following format:
+   </p>
+   <pre class="pre codeblock prettyprint">*[ [common] [ ( [singular.] plural) ] ]...</pre>
+   <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6476">
+    You can specify multiple expressions (singular and plural). They do not have to be located at the end of the word, and a plural form is not required. The following are examples of valid unit name definitions:
+   </p>
+   <pre class="pre codeblock prettyprint">*inch(es)
+*milleni(um.a)
+*f(oot.eet) or (foot.feet)</pre>
+   <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6475">
+    The line following the
+    <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-B3B92BA3-4B26-48D7-925C-09AD09A84C38">
+     *unit name
+    </samp>
+    line defines the unit as either fundamental or derived.
+   </p>
+   <div class="section" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6523">
+    <h2 class="title sectiontitle">
+     Fundamental Units
+    </h2>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6474">
+     A fundamental unit is an expression in constants. If the line following the
+     <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-21D37840-4C07-44F7-BC00-B4782CD3893A">
+      *unit name
+     </samp>
+     line begins with something other than an equal sign (=), it defines fundamental units. Fundamental units consist of five integers and two real numbers in the following form:
+    </p>
+    <pre class="pre codeblock prettyprint">c, e, h, k, m, r1, r2</pre>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6473">
+     The five integers correspond to the exponents of these five constants:
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6472">
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-D6B1CAAE-DA23-47FD-9CC5-9FDA9C36C28C">
+      c
+     </strong>
+     Velocity of light in a vacuum
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6471">
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-88363111-1A8F-49C7-B74A-0306051B02F3">
+      e
+     </strong>
+     Electron charge
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6470">
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-13EF4B45-EDC6-4EC1-A27C-BAA922F81BC5">
+      h
+     </strong>
+     Planck's constant
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646F">
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-39FB4870-887E-4059-81FC-52FBC3E3B3F8">
+      k
+     </strong>
+     Boltzman's constant
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646E">
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-C008E868-0F20-484A-99F4-DF0E8200B11D">
+      m
+     </strong>
+     Electron rest mass
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646D">
+     As a group, these exponents define the dimensionality of the unit: length, mass, time, volume, and so on.
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646C">
+     The first real number (r1) is a multiplier, and the second (r2) is an additive offset (used only for temperature conversions). The fundamental unit definition allows for different spellings of the unit (for example,
+     <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-4DD900F2-1A53-4BD2-984F-0D4901A49C00">
+      meter
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-B5E4D7F9-8FB1-48BE-871E-D63B231BEAB8">
+      metre
+     </samp>
+     ); the case of the unit is ignored. An example of a fundamental unit definition is as follows:
+    </p>
+    <pre class="pre codeblock prettyprint">*meter(s),metre(s),m
+-1,0,1,0,-1,4.1214856408e11,0</pre>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646B">
+     In this example, the constants that make one meter are as follows:
+    </p>
+    <div class="fig fignone" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WS73099CC142F4875516D84BE10EBC87A53F-79D3">
+     <img class="image" height="48" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__IMAGE_8BB45F968AE140E2B3C09377BAE06055" src="../../../../../../_assets/GUID_D1CEC7F1_1E34_46B9_AB8F_CABCCA8CE1AD-7d1625f5.png" width="625"/>
+    </div>
+   </div>
+   <div class="section" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6522">
+    <h2 class="title sectiontitle">
+     Derived Units
+    </h2>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-646A">
+     A derived unit is defined in terms of other units. If the line following the *unit name line begins with an equal sign (
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-8B68FC5C-0032-4726-A495-C71E3A323D93">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-60637F0D-44FB-4F64-BE92-CC0854AD16F4">
+       =
+      </samp>
+     </strong>
+     ), it defines derived units. Valid operators in these definitions are
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-D6D4159A-6E8A-4512-90AB-AD143D76A406">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-E363BBB7-6420-4478-8AD5-61DD881E3C52">
+       *
+      </samp>
+     </strong>
+     (multiplication),
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-DAA9A284-AD99-4F7F-B512-9BC0CEFED41B">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-3A055392-F71F-4E19-BA4E-6CE3467A2CA6">
+       /
+      </samp>
+     </strong>
+     (division),
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-A16D9E5D-EEE8-49C3-9892-8A008599735F">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-1C2498C4-8B56-417C-8A12-627A44154B67">
+       +
+      </samp>
+     </strong>
+     (addition),
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-CC0AF088-CAC3-4C94-A525-EE5EC6BD6299">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-AC8ACD3E-4330-4F08-A98B-F9A72D998FD9">
+       -
+      </samp>
+     </strong>
+     (subtraction), and
+     <strong class="ph b" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-1EAE2392-B975-476C-A3AA-4D159C1618F1">
+      <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-008DC278-D5BD-41AB-9FB2-A120BFAB5528">
+       ^
+      </samp>
+     </strong>
+     (exponentiation).
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-AC1494E3-BB57-44AE-984C-D63DE49E36B9">
+     You can specify a predefined unit by naming it, and you can use abbreviations (if provided). The items in a formula are multiplied together unless some other arithmetic operator is specified. For example, the units database defines the dimensionless multiple and submultiple names, so you can specify a unit such as micro-inches by entering
+     <samp class="ph codeph" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-D8BF1D41-60BF-4910-851A-EFCC877FD4AA">
+      micro inch
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-4770CF4A-BAEB-40BA-8D59-5249C4EF0742">
+     The following are examples of derived unit definitions.
+    </p>
+    <pre class="pre codeblock prettyprint">; Units of area
+*township(s)
+=93239571.456 meter^2</pre>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6469">
+     The definition of a township is given as 93,239,571.456 square meters.
+    </p>
+    <pre class="pre codeblock prettyprint">; Electromagnetic units
+*volt(s),v
+=watt/ampere</pre>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6468">
+     In this example, a volt is defined as a watt divided by an ampere. In the
+     <em class="ph i" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__GUID-4F070968-3C47-45A2-9D0D-9E78DCFB7644">
+      acad.unt
+     </em>
+     , both watts and amperes are defined in terms of fundamental units.
+    </p>
+   </div>
+   <div class="section" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6521">
+    <h2 class="title sectiontitle">
+     User Comments
+    </h2>
+    <p class="p" id="GUID-EFC1FCF5-3CCF-4CDD-A205-1C2B3C747125__WSFACF1429558A55DE11F0759FF1E4B858C-6467">
+     Comments can be added to the file by placing a semicolon at the beginning of a line. The comment continues to the end of the line.
+    </p>
+    <pre class="pre codeblock prettyprint">; This entire line is a comment.</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Unit_Conversion_AutoLISP.html" title="Values that represent distances, volumes, or other forms of measurement can be converted from one real-world unit to another.">
+      About Unit Conversion (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Unit_Conversion_AutoLISP.html" title="Values that represent distances, volumes, or other forms of measurement can be converted from one real-world unit to another.">
+       About Unit Conversion (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="Example_Convert_Inches_to_Meters_AutoLISP.html" title="This example demonstrates how a user-specified distance in inches can be converted to meters with the cvunit function.">
+       Example: Convert Inches to Meters (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5BDBD4BC-289E-4A49-9BB9-DF6A6147E0FC">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

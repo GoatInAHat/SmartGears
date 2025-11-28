@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Symbol names specified in filtering lists can include wild-card patterns." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Wild-Card Patterns in Selection Set Filter Lists (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Wild-Card Patterns in Selection Set Filter Lists (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Symbol names specified in filtering lists can include wild-card patterns.
+   </p>
+   <p class="p" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__WSFACF1429558A55DE11F0759FF1E4B858C-63DC">
+    The wild-card patterns recognized by
+    <samp class="ph codeph" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-7F2DEAF1-D642-4955-A79C-FF7AB635A4D9">
+     ssget
+    </samp>
+    are the same as those recognized by the
+    <samp class="ph codeph" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-536C07AB-51C4-4B36-A477-6D160505E0D1">
+     wcmatch
+    </samp>
+    function. When filtering for anonymous blocks, you must precede the * character with a reverse single quotation mark (
+    <strong class="ph b" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-EE80F62A-666F-4748-B6F0-4D4414690CE6">
+     <samp class="ph codeph" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-87BF0D66-9CE6-46CB-A81E-A911F573E3D6">
+      `
+     </samp>
+    </strong>
+    ), also known as an escape character, because the
+    <strong class="ph b" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-62C91E0F-D851-4BCF-8E8B-E8F890A8E023">
+     <samp class="ph codeph" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-DCE201FF-E638-4C47-85AA-9E021EA6ECD2">
+      *
+     </samp>
+    </strong>
+    is read by
+    <samp class="ph codeph" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__GUID-AC261530-7736-4C08-8FFE-4D1AFA0C7BF0">
+     ssget
+    </samp>
+    as a wild-card character.
+   </p>
+   <p class="p" id="GUID-11EA0ABD-AE29-4DD7-92A5-DFF6EC1C9799__WSFACF1429558A55DE11F0759FF1E4B858C-63DB">
+    For example, you can retrieve an anonymous block named *U2 with the following:
+   </p>
+   <pre class="pre codeblock prettyprint">(ssget "X" '((2 . "`*U2")))</pre>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Selection_Set_Filter_Lists_AutoLISP.html" title="An entity filter list is an association list that uses DXF group codes in the same format as a list returned by entget.">
+      About Selection Set Filter Lists (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Selecting_Objects_and_Selection_Sets_AutoLISP.html" title="Selection sets are groups of one or more selected objects (entities).">
+       About Selecting Objects and Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Modifying_Selection_Sets_AutoLISP.html" title="Once a selection set has been created, you can add entities to it or remove entities from it with ssadd and ssdel.">
+       About Modifying Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Selection_Set_Filter_Lists_AutoLISP.html" title="An entity filter list is an association list that uses DXF group codes in the same format as a list returned by entget.">
+       About Selection Set Filter Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Logical_Grouping_of_Selection_Filter_Tests_AutoLISP.html" title="You can define test groups with nested Boolean expressions to filter objects from a selection set created with ssget.">
+       About Logical Grouping of Selection Filter Tests (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Relational_Tests_in_Filter_Lists_for_Selection_Sets_AutoLISP.html" title="Unless otherwise specified, an equivalency is implied for each item in the filter-list.">
+       About Relational Tests in Filter Lists for Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Filtering_for_Extended_Data_in_a_Selection_Set_AutoLISP.html" title="You can select all entities containing extended data for a particular application using the filter-list argument of ssget.">
+       About Filtering for Extended Data in a Selection Set (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-43715289-5715-4F96-8D48-3169FA26777A">
+       Selection Set Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

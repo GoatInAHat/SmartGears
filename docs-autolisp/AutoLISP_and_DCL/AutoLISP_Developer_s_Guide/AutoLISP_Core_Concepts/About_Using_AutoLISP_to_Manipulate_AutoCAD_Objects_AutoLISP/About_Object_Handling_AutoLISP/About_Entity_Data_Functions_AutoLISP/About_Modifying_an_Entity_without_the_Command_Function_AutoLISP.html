@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="An entity can be modified directly by changing its entity list and posting the changes back to the database." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Modifying an Entity without the Command Function (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Modifying an Entity without the Command Function (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    An entity can be modified directly by changing its entity list and posting the changes back to the database.
+   </p>
+   <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-0F62DF7D-FA9C-4430-91B9-0D148335E88D">
+    The
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-869C2853-32D4-47D9-AFE5-E93F4D0BEA37">
+     entmod
+    </samp>
+    function modifies an entity by passing it a list in the same format as a list returned by
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-3873E7DB-21D8-4D19-A56C-5D25A4FE13BE">
+     entget
+    </samp>
+    but with some of the entity group code values (presumably) modified by the application. This function complements
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-87E8F010-2E57-413B-AD41-94A18F800B50">
+     entget
+    </samp>
+    . The primary mechanism by which an AutoLISP application updates the database is by retrieving an entity with
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-CB65E05E-BF94-4C50-8A98-F09501E641B9">
+     entget
+    </samp>
+    , modifying its entity list, and then passing the list back to the database with
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-A42928AA-ECE6-4734-B896-9B71F994C757">
+     entmod
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-7E97A44C-D794-486F-8596-56AAA9058A32">
+    The following example code retrieves the definition data of the first entity in the drawing and changes its layer property to MYLAYER.
+   </p>
+   <pre class="pre codeblock prettyprint">(setq en (entnext))         ; Sets en to first entity name in the drawing.
+(setq ed (entget en))       ; Sets ed to the entity data for entity name en.
+(setq ed
+  (subst (cons 8 "MYLAYER")
+    (assoc 8 ed)            ; Changes the layer group in ed.
+    ed                      ; to layer MYLAYER.
+  )
+)
+(entmod ed)                 ; Modifies entity en's layer in the drawing.</pre>
+   <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WSFACF1429558A55DE11F0759FF1E4B858C-6367">
+    There are restrictions on the changes to the database that
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-BE2290B3-3871-488E-8D58-37AE4EC8798F">
+     entmod
+    </samp>
+    can make;
+    <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-3436C833-97F1-436F-9CEC-2A058013D5D7">
+     entmod
+    </samp>
+    cannot change the following:
+   </p>
+   <ul class="ul" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WS73099CC142F4875516D84BE10EBC87A53F-7A19">
+    <li class="li" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WS1A9193826455F5FF-4855151011E21CB4C05-5B3A">
+     The entity's type or handle.
+    </li>
+    <li class="li" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WS1A9193826455F5FF-4855151011E21CB4C05-5B39">
+     Internal fields. (Internal fields are the values that AutoCAD assigns to certain group codes: -2, entity name reference; -1, entity name; 5, entity handle.) Any attempt to change an internal field—for example, the main entity name in a Seqend subentity (group code -2)—is ignored.
+    </li>
+    <li class="li" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WS1A9193826455F5FF-4855151011E21CB4C05-5B38">
+     Viewport entities. An attempt to change a viewport entity causes an error.
+    </li>
+   </ul>
+   <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WSFACF1429558A55DE11F0759FF1E4B858C-6366">
+    Other restrictions apply when modifying dimensions and hatch patterns.
+   </p>
+   <div class="section" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-39792C8A-E556-4EBF-B894-D3CB873987E2">
+    <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WSFACF1429558A55DE11F0759FF1E4B858C-6365">
+     AutoCAD must recognize all objects (except layers) that the entity list refers to. The name of any text style, linetype, shape, or block that appears in an entity list must be defined in the current drawing before the entity list is passed to
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-29A31100-F20C-4D48-831F-F4D871F8F3CE">
+      entmod
+     </samp>
+     . The one exception is that
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-C042CC20-628A-434A-A717-A79FE3918175">
+      entmod
+     </samp>
+     accepts new layer names. If the entity list refers to a layer name that has not been defined in the current drawing,
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-B34594D7-D8AB-4FCC-8900-F02F5E57DBB3">
+      entmod
+     </samp>
+     creates a new layer. The attributes of the new layer are the standard default values used by the New option of the AutoCAD LAYER command.
+    </p>
+    <p class="p" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__WSFACF1429558A55DE11F0759FF1E4B858C-6364">
+     The
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-03C9BAC9-B413-47F2-90BE-E3076DCB08EA">
+      entmod
+     </samp>
+     function can modify subentities such as polyline vertices and block attributes. If you use
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-76C26B1B-4D1B-4854-9CAF-7F491C0A8155">
+      entmod
+     </samp>
+     to modify an entity in a block definition, this affects all references to that block which exist in model space and paper space. Attributes, unless defined as constant, are not updated for each block reference that exists in a drawing. Also, entities in block definitions cannot be deleted by
+     <samp class="ph codeph" id="GUID-125DC058-BBAA-4CA9-A203-53F0A27B87D0__GUID-54D8FC83-F4A8-4137-B1EB-0C0A0C51B9D0">
+      entdel
+     </samp>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Entity_Data_Functions_AutoLISP.html">
+      About Entity Data Functions (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Adding_an_Entity_without_Using_the_Command_Function_AutoLISP.html" title="An application can add an entity to the drawing database by calling the entmake function.">
+       About Adding an Entity without Using the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Creating_Complex_Entities_without_Using_the_Command_Function_AutoLISP/About_Creating_Complex_Entities_without_Using_the_Command_Function_AutoLISP.html" title='Complex entities (a block, polyface mesh, or "legacy" polyline) can be created by making multiple calls to entmake, using a separate call for each subentity.'>
+       About Creating Complex Entities without Using the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Deleting_an_Entity_AutoLISP.html" title="Entities can be deleted using the entdel function or AutoCAD ERASE command (with command).">
+       About Deleting an Entity (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Accessing_an_Object_s_Entity_Name_AutoLISP/About_Accessing_an_Object_s_Entity_Name_AutoLISP.html" title="An AutoLISP routine must obtain an object’s entity name to make subsequent calls to the entity data or selection set functions.">
+       About Accessing an Object’s Entity Name (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Obtaining_Entity_Information_AutoLISP.html" title="The entget function returns the definition data of a specified entity as a list.">
+       About Obtaining Entity Information (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-1197B695-C73C-4B4D-AD5D-8F8EB64FB253">
+       Object-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

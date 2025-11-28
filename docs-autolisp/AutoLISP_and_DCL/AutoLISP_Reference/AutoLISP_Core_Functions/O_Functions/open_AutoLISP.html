@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Opens a file for access by the AutoLISP I/O functions" name="description"/>
+  <meta content="OPEN" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-089A323F-21FF-4337-99A9-375758E23BA4" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   open (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-089A323F-21FF-4337-99A9-375758E23BA4">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      open (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Opens a file for access by the AutoLISP I/O functions
+   </p>
+   <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-B1DC53C1-D15C-4683-9BE9-049D1FF69DA4">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(open <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-B0AE00D6-32F6-40CF-A3F2-556FE8C6724B">filename mode [encoding]</em>)</pre>
+    <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WS1A9193826455F5FF-1E1423D1125831BDA67-7B28">
+     <dl class="dl" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WS1A9193826455F5FF-1E1423D1125831BDA67-7B28">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-91B409F0-DA20-47C8-AF6C-18B8FF3C1F4E">
+        filename
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-259E121E-2C23-4A6D-A2F4-DDA8463E5ECA">
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-8E082E91-1301-495C-A263-EBDE4877B556">
+        <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D54FE94F-FB72-4B3A-9974-169C5735AEF6">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350F">
+        Name and extension of the file to be opened. If you do not specify the full path name of the file,
+        <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-E1EC5337-F2E6-41C8-A2A7-6D6470B6E275">
+         open
+        </samp>
+        assumes you are referring to the AutoCAD default drawing directory.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-DBFC36BD-86B4-4500-91F7-6F749F9B6FC6">
+        mode
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-48B2C7DD-8EED-411C-89FF-DFDDD9D11CC4">
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-1B1E14B1-50B4-461C-9E73-95E39375587E">
+        <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D646AA99-67D2-4ADC-A088-3F240E2DE344">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350E">
+        Indicates whether the file is open for reading, writing, or appending. Specify a string containing one of the following letters:
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350D">
+        <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-213DB889-7074-400B-A47E-81A71DA545C5">
+         r
+        </strong>
+        Open for reading.
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350C">
+        <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D5E7073F-5BCA-425F-965E-56DA822A0B92">
+         w
+        </strong>
+        Open for writing. If
+        <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-84060CCA-7752-4BE6-81AB-1C872E8CAA7E">
+         filename
+        </em>
+        does not exist, a new file is created and opened. If
+        <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D234F629-191D-4380-A68D-6ECA24B40914">
+         filename
+        </em>
+        already exists, its existing data is overwritten. Data passed to an open file is not actually written until the file is closed with the
+        <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D4149BDB-C776-44A2-87BA-8A4E7D596C88">
+         close
+        </samp>
+        function.
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350B">
+        <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-B84F6410-937C-493D-9A8B-DD5774A09EF1">
+         a
+        </strong>
+        Open for appending. If
+        <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-1DBD826C-54F1-4A4F-AC2E-D5A9DA34F09B">
+         filename
+        </em>
+        does not exist, a new file is created and opened. If
+        <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-87867319-D312-47FC-BA88-5BB81A38D9AE">
+         filename
+        </em>
+        already exists, it is opened and the pointer is positioned at the end of the existing data, so new data you write to the file is appended to the existing data.
+       </p>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-350A">
+        The
+        <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-FFCAF849-CDC2-4029-BE9D-61157EF1056D">
+         mode
+        </em>
+        argument can be uppercase or lowercase.
+       </p>
+       <div class="note note" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-2F8A56E7-565A-465A-808C-6C870A37F1CA">
+        <span class="notetitle">
+         Note:
+        </span>
+        Prior to AutoCAD 2000,
+        <em class="ph i">
+         mode
+        </em>
+        had to be specified in lowercase.
+       </div>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i">
+        encoding
+       </em>
+      </dt>
+      <dd class="dd">
+       <p class="p">
+        <strong class="ph b">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p">
+        Indicates the character encoding to use when reading the file. When a value isn't provided for the argument, the file is assumed to contain multibyte character set (MBCS) which is the legacy behavior.
+       </p>
+       <p class="p">
+        Use one of the following values to specify a different character encoding:
+       </p>
+       <p class="p">
+        <strong class="ph b">
+         utf8
+        </strong>
+        UTF-8
+       </p>
+       <p class="p">
+        <strong class="ph b">
+         utf8-bom
+        </strong>
+        UTF-8 with Byte Order Marks
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__SECTION_A0BC81A07EA847948FCA7F5CDBA66249">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-E26CD6CD-5D0F-434A-8929-1193DC02325E">
+     <strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-5591A7C6-77D7-4F6F-93DC-93999168BDAD">
+      Type:
+     </strong>
+     File or nil
+    </p>
+    <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-3508">
+     If successful,
+     <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-74787BBC-0247-44C7-B02E-B83AD79E85A6">
+      open
+     </samp>
+     returns a file descriptor that can be used by the other I/O functions. If mode
+     <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-644C2338-96FD-46D8-887B-16A4595D1F11">
+      "r"
+     </samp>
+     is specified and
+     <em class="ph i" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-7AA5DAF9-BF38-4D76-B0F5-E22D373F01A1">
+      filename
+     </em>
+     does not exist,
+     <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-434D1D91-2847-4E64-8D32-45AB09222AAF">
+      open
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-A30B8247-2B90-447E-82BA-5B3FE0F99537">
+      nil
+     </samp>
+     .
+    </p>
+   </div>
+   <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__SECTION_52469260397441E1BF3F8F1D431FF023">
+    <h2 class="title sectiontitle">
+     Release Information
+    </h2>
+    <ul class="ul" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__UL_A96C2BCF9CB74D7085C39567E5E1C142">
+     <p class="p">
+      <strong class="ph b">
+       Releases:
+      </strong>
+     </p>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_47819A6D1DDE40BD9EA150F5AAC173A6">
+      <span class="ph msgph prodname">
+       AutoCAD R12 and later on Windows
+      </span>
+     </li>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_889236821A224D78845C2B575E4D5A19">
+      <span class="ph msgph prodname">
+       AutoCAD 2011 and later on Mac OS
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__SECTION_500B733A3B82472089490906B125BCB5">
+    <h2 class="title sectiontitle">
+     History
+    </h2>
+    <ul class="ul" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__UL_99AFB54CAEC6484CA86C46C00C62D7F2">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2021
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_6A98A2E9F1DA45358D12E29B615EC85F">
+      <samp class="ph codeph">
+       <em class="ph i">
+        filename
+       </em>
+      </samp>
+      argument previously accepted an ASCII text string, but now accepts a Unicode text string.
+     </li>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_33203A37950E45C39E1F25318E65BEFC">
+      <samp class="ph codeph">
+       <em class="ph i">
+        encoding
+       </em>
+      </samp>
+      argument is newly added.
+     </li>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_CB9D5B57D0DD490F84B3AB9E4994F4D8">
+      LISPSYS system variable controls which AutoLISP engine is used and the behavior of the function.
+      <ul class="ul" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__UL_B8B361F60669472281A75F91CE8717C1">
+       <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_BFA73746B99F49169B11535C239CCE31">
+        0 - ASCII character support and no
+        <samp class="ph codeph">
+         <em class="ph i">
+          encoding
+         </em>
+        </samp>
+        argument (legacy behavior)
+       </li>
+       <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_3C49224B161446BBA615E94F8151F2C0">
+        1 or 2 - Unicode character support
+       </li>
+      </ul>
+      <div class="note note" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-1590A31B-01CE-4007-B485-9792404FC36C">
+       <span class="notetitle">
+        Note:
+       </span>
+       After the value of the LISPSYS system variable has been changed, AutoCAD must be restarted for the change to take affect.
+      </div>
+     </li>
+    </ul>
+    <ul class="ul" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__UL_FB613B8682FB41689F39319BBA5C9F5B">
+     <p class="p">
+      <strong class="ph b">
+       <span class="ph msgph prodname">
+        AutoCAD 2000
+       </span>
+      </strong>
+     </p>
+     <li class="li" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__LI_9695C940367648B8B72A6515D9CA6F3C">
+      <samp class="ph codeph">
+       <em class="ph i">
+        mode
+       </em>
+      </samp>
+      argument previously only accepted a lowercase value.
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__SECTION_3FACB7EA69B54E43BA979E1C956D277C">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <div class="section" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-A0950484-D235-4BAF-A529-51BB430B1454">
+     <dl class="dl" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-A0950484-D235-4BAF-A529-51BB430B1454">
+      <dt class="dt dlterm">
+       Windows
+      </dt>
+      <dd class="dd" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-DF56DBC1-2C8B-4EE1-8CBD-E3E0E07D2279">
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-3506">
+        Open an existing file:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-D175BB7A-9EE0-4873-89A0-FE9DB95D6BA4">(setq a (open "c:/datafiles/filelist.txt" "r"))</strong>
+#&lt;file "c:/datafiles/filelist.txt"&gt;</pre>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__WSFACF1429558A55DE11F0759FF1E4B858C-3505">
+        The following examples issue
+        <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-299DB2B7-D2C2-49B4-A614-559BC0F29B47">
+         open
+        </samp>
+        against files that do not exist:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-B00547BC-2368-4BB7-B55D-3B466E11B395">(setq f (open "c:\\my documents\\new.tst" "w"))</strong>
+#&lt;file "c:\\my documents\\new.tst"&gt;
+
+<strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-731D549F-EAB3-4AB9-A7C4-98671834F0AC">(setq f (open "nosuch.fil" "r"))</strong>
+nil
+
+<strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-EAF59BC8-6FE2-4B18-BBF4-B6760491AD0D">(setq f (open "logfile" "a"))</strong>
+#&lt;file "logfile"&gt;</pre>
+      </dd>
+      <dt class="dt dlterm">
+       Mac OS and Web
+      </dt>
+      <dd class="dd" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-F821D76A-F418-42F0-852C-3D1C1E4948E2">
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-1A9C49FC-8840-43DE-86EC-93071F5CDF19">
+        Open an existing file:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-887FA9A0-48D7-424E-AFD3-A9804305A2BB">(setq a (open "/datafiles/filelist.txt" "r"))</strong>
+#&lt;file "/datafiles/filelist.txt"&gt;</pre>
+       <p class="p" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-8AD91F46-38DA-45FC-A3A6-EF1B64E5565C">
+        The following examples issue
+        <samp class="ph codeph" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-2FBC4674-40E3-4E59-8A7A-915BD6F8661D">
+         open
+        </samp>
+        against files that do not exist:
+       </p>
+       <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-30C0428F-5F14-47AD-A7B8-DDFFCDADCBE6">(setq f (open "/my documents/new.tst" "w"))</strong>
+#&lt;file "/my documents/new.tst"&gt;
+
+<strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-8033A293-72E9-40CB-9416-B8DE309EEFB4">(setq f (open "nosuch.fil" "r"))</strong>
+nil
+
+<strong class="ph b" id="GUID-089A323F-21FF-4337-99A9-375758E23BA4__GUID-4D2F372D-3628-445E-BC02-45489F53F189">(setq f (open "logfile" "a"))</strong>
+#&lt;file "logfile"&gt;</pre>
+      </dd>
+     </dl>
+    </div>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/File_Handling_Functions_Reference_AutoLISP.html">
+       File-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../C_Functions/close_AutoLISP.html" title="Closes an open file">
+       close (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../F_Functions/findfile_AutoLISP.html" title="Searches the AutoCAD library and trusted paths for the specified file or directory">
+       findfile (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../R_Functions/read_line_AutoLISP.html" title="Reads a string from the keyboard or from an open file, until an end-of-line marker is encountered">
+       read-line (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../W_Functions/write_line_AutoLISP.html" title="Writes a string to the screen or to an open file">
+       write-line (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_filename_mktemp_AutoLISP.html" title="Calculates a unique file name to be used for a temporary file">
+       vl-filename-mktemp (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

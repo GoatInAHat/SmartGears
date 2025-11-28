@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Integers are whole numbers; numbers that do not contain a decimal point." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Integers (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Integers (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Integers are whole numbers; numbers that do not contain a decimal point.
+   </p>
+   <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6645">
+    AutoLISP integers are 32-bit signed numbers with values ranging from +2,147,483,647 to -2,147,483,648. Some functions through, only accept 16-bit numbers ranging from +32767 to -32678. When you explicitly use an integer, that value is known as a constant. Numbers such as 2, -56, and 1,200,196 are valid integers.
+   </p>
+   <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-F09AC755-590D-40BA-8890-6A82E5A5604B">
+    If you enter a number that is greater than the maximum integer allowed (resulting in integer overflow), AutoLISP converts the integer to a real number. However, if you perform an arithmetic operation on two valid integers, and the result is greater than the maximum allowable integer, the resulting number will be invalid.
+   </p>
+   <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6644">
+    The following examples demonstrate how AutoLISP handles integer overflow.
+   </p>
+   <div class="section" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-76647349-8E2A-4A90-AB10-AF5125F19161">
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6643">
+     The largest positive integer value retains its specified value:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-8A497BCB-27D9-427B-87C4-32651A89C2B8">(setq int1 2147483647)</strong>
+2147483647</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6642">
+     If you enter an integer that is greater than the largest allowable value, AutoLISP returns the value as a real:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-58A6AF38-422F-4CD7-9EAA-95FC122766CC">(setq int2 2147483648)</strong>
+2.14748e+009</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6641">
+     An arithmetic operation involving two valid integers, but resulting in integer overflow, produces an invalid result:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-1ED7AA13-94FA-4F63-802E-B206F3C0B7BD">(setq int3 (+ 2147483646 3))</strong>
+-2147483647</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-6640">
+     In the previous example the result is clearly invalid, as the addition of two positive numbers results in a negative number. But note how the following operation produces a valid result:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-B550EDC1-421E-4830-9D56-2305A16C7ED8">(setq int4 (+ 2147483648 2))</strong>
+2.14748e+009</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-663F">
+     In this instance, AutoLISP converts 2147483648 to a valid real before adding 2 to the number. The result is a valid real. The largest negative integer value retains its specified value:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-F7B8E3CA-77B0-46C7-ACC4-C8C514226A64">(setq int5 -2147483647)</strong>
+-2147483647</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-663D">
+     If you enter a negative integer larger than the greatest allowable negative value, AutoLISP returns the value as a real:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-1160931E-5B73-4349-9686-28662FC9E3B6">(setq int6 -2147483648)</strong>
+-2.14748e+009</pre>
+    <p class="p" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__WSFACF1429558A55DE11F0759FF1E4B858C-663C">
+     The following operation concludes successfully, because AutoLISP first converts the overflow negative integer to a valid real:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EF6114FC-F1E4-4C71-91CC-07D01E6C8ABB__GUID-5A7348D7-CA51-45A4-A1BC-5467018EE20C">(setq int7 (- -2147483648 1))</strong>
+-2.14748e+009</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Data_Types_AutoLISP.html">
+      About Data Types (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Number_Handling_AutoLISP.html" title="AutoLISP provides functions for working with integers and real numbers.">
+       About Number Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Reals_AutoLISP.html" title="A real is a number containing a decimal point. Numbers between -1 and 1 must contain a leading zero.">
+       About Reals (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_List_Handling_AutoLISP/About_Point_Lists_AutoLISP.html" title="AutoLISP utilizes the list data type to represent graphical coordinate values.">
+       About Point Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP/About_Geometric_Utilities_AutoLISP/About_Geometric_Utilities_AutoLISP.html" title="A group of functions allows applications to obtain pure geometric information and geometric data from the drawing.">
+       About Geometric Utilities (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP/About_Data_Conversions_AutoLISP/About_Angular_Conversion_AutoLISP.html" title="Angular values returned by most AutoLISP functions and those stored in a drawing are expressed in radians, while angular input is commonly provided in degrees or another angular format than radians.">
+       About Angular Conversion (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-FC14467C-63B9-4400-8C6A-266D21C846AE">
+       Arithmetic Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

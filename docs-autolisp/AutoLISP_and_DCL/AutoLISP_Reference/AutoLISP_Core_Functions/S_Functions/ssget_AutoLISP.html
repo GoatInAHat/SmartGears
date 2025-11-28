@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Creates a selection set from the selected object" name="description"/>
+  <meta content="SSGET" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="12/08/2024" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   ssget (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      ssget (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Creates a selection set from the selected object
+   </p>
+   <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B11EB01D-5831-4941-B5E7-80D59BF7280A">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(ssget <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-D36A8C1E-1A6E-43FE-93EF-1B4D8F3951C9">[sel-method] [pt1 [pt2]] [pt-list] [filter-list]</em>)</pre>
+    <div class="section" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF-1E1423D1125831BDA67-7B07">
+     <dl class="dl" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF-1E1423D1125831BDA67-7B07">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B68BDF31-89B4-4DDE-8938-C96FDFBD7CEA">
+        sel-method
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-24271A63-0335-4A15-B6A3-95081D8A9856">
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7BCF6687-ACB4-4B06-875B-73E57FC57088">
+        <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-123065D4-B717-4634-B5B8-1DE5E6AFF485">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A8">
+        Object selection method.
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-BD6A5563-877E-49D3-A1A0-B4799372FBB0">
+        Valid selection methods are
+       </p>
+       <div class="tablenoborder">
+        <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__TABLE_7FB57A45421F4FC6936F848A4CBD566D" rules="all" summary="">
+         <tbody class="tbody">
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p">
+             <strong class="ph b">
+              A
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             All objects are selected.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p">
+             <strong class="ph b">
+              C
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Crossing selection; all objects crossing and inside of the specified rectangle.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A6">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1C8D3FC5-FAC8-4DF1-A231-F4BD5D2EBAB4">
+              CP
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Crossing polygon selection; all objects crossing and inside of the specified polygon.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A5">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-9335342F-C5E9-49FA-A317-0E657867D044">
+              F
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Fence selection.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A4">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-E8A7A45D-75AD-448F-B403-7A839999C8A2">
+              I
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Implied selection; objects selected while the AutoCAD PICKFIRST system variable is in effect.
+            </p>
+            <div class="note note" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1C7E575D-0334-49FD-ACF1-52E22DED813C">
+             <span class="notetitle">
+              Note:
+             </span>
+             The
+             <samp class="ph codeph">
+              ssget
+             </samp>
+             function returns a valid selection set or
+             <samp class="ph codeph">
+              nil
+             </samp>
+             . If an object is selected when the function is called, a valid selection set is returned.
+            </div>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A3">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B5088236-62F8-4E4F-A093-539874656331">
+              L
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Last visible object added to the database.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A2">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-9BA4208E-0DFA-423C-B391-3C439907829D">
+              P
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Previous selection set is selected.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A1">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-22FD5D2F-10F7-482B-9D89-EBD02BE4937E">
+              W
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Window selection (all objects within the specified rectangle).
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33A0">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-2E0D32B1-BADC-4047-8475-CA0FC4ADE1D0">
+              WP
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Window polygon (all objects within the specified polygon).
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339F">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-109D64D9-300E-484C-ADFB-BBC6B92E652C">
+              X
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Entire database. If you specify the
+             <samp class="ph codeph">
+              X
+             </samp>
+             selection method and do not provide a
+             <em class="ph i">
+              filter-list
+             </em>
+             ,
+             <samp class="ph codeph">
+              ssget
+             </samp>
+             selects all entities in the database, including entities on layers that are off, frozen, and out of the visible screen.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p">
+             <strong class="ph b">
+              :D
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Allows for the selection of duplicate objects.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339E">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7792D5C3-986F-45A8-850D-0D84C2B3BC22">
+              :E
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Everything within the cursor's object selection pickbox is selected and added to the select set.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-A0BEF7DD-0CE9-474B-A5F4-6A6FBE5E1D09">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-D31C599E-D29F-4E4A-8246-A9CEFBFF1605">
+              :L
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Allows for the selection of unlocked layers only.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339D">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-F74886B6-AD75-475C-8BE3-0650774E8222">
+              :N
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Call
+             <samp class="ph codeph">
+              ssnamex
+             </samp>
+             for additional information on container blocks and transformation matrices for any entities selected during the
+             <samp class="ph codeph">
+              ssget
+             </samp>
+             operation. This additional information is available only for entities selected through graphical selection methods such as Window, Crossing, and point picks.
+            </p>
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339C">
+             Unlike the other object selection methods,
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-FBABEBFB-856A-4431-AEEF-0749FBEDFAFD">
+              :N
+             </strong>
+             may return multiple entities with the same entity name in the selection set. For example, if the user selects a subentity of a complex entity such as a BlockReference, PolygonMesh, or "legacy" polyline,
+             <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-EEE7F814-B937-48F6-AF4E-7CD7AE6CEB6C">
+              ssget
+             </samp>
+             looks at the subentity that is selected when determining if it has already been selected. However,
+             <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-D33C6878-839E-4C9D-85C4-9C54978227F5">
+              ssget
+             </samp>
+             actually adds the main entity (BlockReference, PolygonMesh, and so on) to the selection set. The result could be multiple entries with the same entity name in the selection set (each will have different subentity information for
+             <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-A6A1BFDF-0AA3-4FD6-BE48-4F4E91EC2827">
+              ssnamex
+             </samp>
+             to report).
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF-7C08E89711EC57B47A8-7825">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-C2863BD5-0FEF-4003-BF4D-EB9FC0B315EC">
+              _:R
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Allows entities in a long transaction to be selected.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339B">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-35A9DF36-6721-427D-A747-7F8D7DF0D33F">
+              :S
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Allows for a single selection only, one or more objects can be selected.
+            </p>
+            <div class="note note" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-E83607E1-4C93-43CC-8DAA-3D2FC13FDC9A">
+             <span class="notetitle">
+              Note:
+             </span>
+             Use "+." with ":S" to force single object selection.
+            </div>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF9110C71085341391D-468B">
+             <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-6B558272-CB4C-42D6-9B3A-58D4E2FD5C13">
+              _:U
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Enables subentity selection.
+            </p>
+            <p class="p">
+             Cannot be combined with the duplicate (":D") or nested (":N") selection modes. In this mode, top-level entities are selected by default, but the user can attempt to select subentities by pressing the CTRL key while making the selection. This option is supported only with interactive selections, such as window, crossing, and polygon. It is not supported for all, filtered, or group selections.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p">
+             <strong class="ph b">
+              _:V
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Forces subentity selection.
+            </p>
+            <p class="p">
+             Treats all interactive, graphic selections performed by the user as subentity selections. The returned selection set contains subentities only. This option cannot be combined with the duplicate (":D") or nested (":N") selection modes. This option is supported only with interactive selections, such as window and crossing. It is not supported for all, filtered, or group selections.
+            </p>
+           </td>
+          </tr>
+          <tr class="row">
+           <td class="entry" valign="top">
+            <p class="p">
+             <strong class="ph b">
+              #
+             </strong>
+            </p>
+           </td>
+           <td class="entry" valign="top">
+            <p class="p">
+             Controls which object selection modes are allowed.
+            </p>
+            <ul class="ul" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__UL_74DC4AD8C9404F35ADAEA6276AC0400F">
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_D4201468B6DC4A34BC6EB5F2DCEE2A8D">
+              "+" allows for the addition of the keywords "Last", "All", and "Previous".
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_975B040F11C141998F98FC3668C05BAF">
+              "-" allows for the removal of the keywords "Last", "All", "Group", and "Previous".
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_678972561A8644FCA280D9D12CE62A0B">
+              "." forces the user to "pick" with the pointing device or enter a valid coordinate value to select an object.
+              <p class="p">
+               This is not an explicit keyword, but rather an implied keyword.
+              </p>
+             </li>
+            </ul>
+            <p class="p">
+             In combination with "+" and "-", use the following keywords to control the corresponding selection modes:
+            </p>
+            <ul class="ul" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__UL_54AD87A108974898A2AD7573345C67F3">
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_7779CB44698945E6B3A723BEB1235E93">
+              <strong class="ph b">
+               A
+              </strong>
+              - All
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_CFFAE5C68ACA4F7BAD8AB4416786B1FF">
+              <strong class="ph b">
+               B
+              </strong>
+              - Box and AUto
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_C6A033C5C76D479781857E1ECA98352D">
+              <strong class="ph b">
+               C
+              </strong>
+              - Crossing and CPolygon
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_8E7EC9236B9743D0AE6894A4FDFCF05D">
+              <strong class="ph b">
+               F
+              </strong>
+              - Fence
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_3360CB41F43D4CBDA750EC3ECE8F335B">
+              <strong class="ph b">
+               G
+              </strong>
+              - Group
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_CF5312442AA9409E8AEB6C575A076C9B">
+              <strong class="ph b">
+               L
+              </strong>
+              - Last
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_F9B0A793B01D49319BC134B286D1D827">
+              <strong class="ph b">
+               M
+              </strong>
+              - Multiple
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_A1149F2B4109436891F1CEAE641C5C1D">
+              <strong class="ph b">
+               P
+              </strong>
+              - Previous
+             </li>
+             <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__LI_13C5DAE5F947424A859F78C0562B4AC8">
+              <strong class="ph b">
+               W
+              </strong>
+              - Window and WPolygon
+             </li>
+            </ul>
+            <pre class="pre codeblock prettyprint">;; Allow for a single selection
+(ssget "_:S")
+
+Select objects: ?
+*Invalid selection*
+Expects a point or Window/Last/Crossing/BOX/ALL/Fence/WPolygon/CPolygon/Group/Previous/AUto
+
+;; Allow the user to only pick a single object
+(ssget "_:S+.")
+
+Select objects: ?
+*Invalid selection*
+Expects a single object.
+
+;; Allow the user to only pick a single object or 
+;; use the Last or Previous selection modes 
+(ssget "_:S+L+P")
+
+Select objects: ?
+*Invalid selection*
+Valid keywords: Last/Previous
+
+;; Remove the Multiple and All selection modes
+(ssget "-M-A")
+
+Select objects: ?
+*Invalid selection*
+Expects a point or Window/Last/Crossing/BOX/Fence/WPolygon/CPolygon/Group/Add/Remove/Previous/Undo/AUto/SIngle</pre>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B53546EC-E30F-4824-903D-FFF495821D7F">
+        pt1
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-3FBFDFB5-4FF4-47D4-BE65-B4677EE84993">
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-631EE2A4-41EC-4B30-8F3A-8031DCDC5EFD">
+        <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7057D79D-A3CB-4826-B083-98B8F0795A9F">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-339A">
+        A point relative to the selection.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-F6DD429F-3646-4A1B-8869-F949F8EF194A">
+        pt2
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-4772F525-DEAD-4BED-9288-23C5C66D2C40">
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-946B4C08-59A1-4D4D-9112-60E28F5FAD66">
+        <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-E58C395B-8017-4504-A585-6DD9119F060E">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3399">
+        A point relative to the selection.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-F90CCC93-AC2B-4729-AC2A-9C7270B64685">
+        pt-list
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-CA069C5E-07EA-4564-BC94-6CA900AE07F2">
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-4E9EDA40-60EE-4E34-B64A-8FBCAE0EB09C">
+        <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-387B2DC2-6E75-42DE-9ECC-1706641946D3">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3398">
+        A list of points.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-88DB08EC-EC66-4F2F-97B1-E9C31D5A8735">
+        filter-list
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-09094308-DA28-4AA3-8BC4-9180B8F3D6A9">
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-8E47F362-70EE-4179-A945-0CE255E28390">
+        <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-20BB47C0-D56C-45F5-886C-1BA6FCAF181D">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3397">
+        An association list that specifies object properties. Objects that match the
+        <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-CB8F9732-E3A9-481C-A7CA-E78465E665AA">
+         filter-list
+        </em>
+        are added to the selection set.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__SECTION_76C78ECEB92A48A8A07ECA0887EFAA59">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-6808ADB1-2554-4FE6-9424-F2042AAF29DB">
+     <strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-F9A96381-5B73-4051-850F-86A6A3564D3B">
+      Type:
+     </strong>
+     Pickset (selection set) or nil
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3393">
+     The name of the created selection set if successful; otherwise
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-E017291B-DEF2-4CE3-96CF-5F35F971AF80">
+      nil
+     </samp>
+     if no objects were selected.
+    </p>
+   </div>
+   <div class="section" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__SECTION_A9A83EBB482A4256A9F6B355431063AF">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-33AA">
+     Selection sets can contain objects from both paper and model space, but when the selection set is used in an operation,
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-728F797D-6A1A-42FB-A902-06936A0CB180">
+      ssget
+     </samp>
+     filters out objects from the space not currently in effect. Selection sets returned by
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-9ED4C138-2360-4A26-9F06-DD5FDB041508">
+      ssget
+     </samp>
+     contain main entities only (no attributes or polyline vertices).
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3396">
+     If you omit all arguments,
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-82D77239-9AED-4171-B0D4-DB0114DA8ED5">
+      ssget
+     </samp>
+     prompts the user with the Select Objects prompt, allowing interactive construction of a selection set.
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3395">
+     If you supply a point but do not specify an object selection method, AutoCAD assumes the user is selecting an object by picking a single point.
+    </p>
+    <ul class="ul" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-693C">
+     <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF-7C08E89711EC57B47A8-7820">
+      When using the
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-906EF552-2081-4B3A-BE5E-06B43D2048EF">
+       :N
+      </samp>
+      selection method, if the user selects a subentity of a complex entity such as a BlockReference, PolygonMesh, or "legacy" polyline,
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1188BD92-E8D8-48D6-B4F8-56FBB87EE83D">
+       ssget
+      </samp>
+      looks at the subentity that is selected when determining if it has already been selected. However,
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1C80010C-B372-4C04-A31A-F7BA903BFF57">
+       ssget
+      </samp>
+      actually adds the main entity (BlockReference, PolygonMesh, etc.) to the selection set. It is therefore possible to have multiple entries with the same entity name in the selection set (each will have different subentity information for
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1AA669EF-4868-45CD-86D5-7A477103BE88">
+       ssnamex
+      </samp>
+      to report). Because the
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-8B0C9F90-6A05-4834-87BB-395ACD2FD76C">
+       :N
+      </samp>
+      method does not guarantee that each entry will be unique, code that relies on uniqueness should not use selection sets created using this option.
+     </li>
+     <li class="li" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WS1A9193826455F5FF-7C08E89711EC57B47A8-781F">
+      When using the
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-FD71D518-3984-4C2C-ADE0-A6D58A1D5ECF">
+       L
+      </samp>
+      selection method in an MDI environment, you cannot always count on the last object drawn to remain visible. For example, if your application draws a line, and the user subsequently minimizes or cascades the AutoCAD drawing window, the line may no longer be visible. If this occurs,
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-3A30BC20-3573-419F-96C9-C5BDC0104174">
+       ssget
+      </samp>
+      with the
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7A5E3CF1-975E-4DE3-8DAD-0017AF7797FF">
+       "L"
+      </samp>
+      option will return
+      <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-63CB1433-ACC0-4635-A375-5A652C973558">
+       nil
+      </samp>
+      .
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__SECTION_8973E946984C4582B14A8AB0BF7452B4">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3390">
+     Prompt the user to select the objects to be placed in a selection set:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7D6480B2-63A3-4D76-9B48-A22BD5977522">(ssget)</strong>
+&lt;Selection set: 2&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338F">
+     Create a selection set of the object passing through (2,2):
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-DF089C7B-2D63-4D39-8221-A0D7F28D1A75">(ssget '(2 2))</strong>
+nil</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338E">
+     Create a selection set of the most recently selected objects:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-87C04444-330B-4DE2-B255-CD3C66331CCF">(ssget "_P")</strong>
+&lt;Selection set: 4&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338D">
+     Create a selection set of the objects crossing the box from (0,0) to (1,1):
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-1464A78B-4B4A-4D75-AD24-D4F2502484B6">(ssget "_C" '(0 0) '(1 1))</strong>
+&lt;Selection set: b&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338C">
+     Create a selection set of the objects inside the window from (0,0):
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-24168C6F-1A53-455A-A8CA-95B20319A97F">(ssget "_W" '(0 0) '(5 5))</strong>
+&lt;Selection set: d&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338B">
+     By specifying filters, you can obtain a selection set that includes all objects of a given type, on a given layer, or of a given color. The following example returns a selection set that consists only of blue lines that are part of the implied selection set (those objects selected while the AutoCAD PICKFIRST system variable is in effect):
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-9CBAB8E0-8D39-4AC3-84BF-413CB0C8A060">(ssget "_I" '((0 . "LINE") (62 . 5)))</strong>
+&lt;Selection set: 4&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-338A">
+     The following examples of
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B0C95623-AECC-4552-A3F8-8BD7B2F1E96C">
+      ssget
+     </samp>
+     require that a list of points be passed to the function. The
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-A96294AA-3FEB-4732-BE18-B2B245979908">
+      pt_list
+     </samp>
+     variable cannot contain points that define zero-length segments.
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3389">
+     Create a list of points:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-6D523B45-6361-4456-B9C5-D63B541EC361">(setq pt_list '((1 1)(3 1)(5 2)(2 4)))</strong>
+((1 1) (3 1) (5 2) (2 4))</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3388">
+     Create a selection set of all objects crossing and inside the polygon defined by
+     <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-2E41936C-1799-4AD8-BB0F-CED779302F5F">
+      pt_list
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-C08506FA-8B04-44EF-B645-480C5345F817">(ssget "_CP" pt_list)</strong>
+&lt;Selection set: 13&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3387">
+     Create a selection set of all blue lines inside the polygon defined by
+     <em class="ph i" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-7EAFD9E1-70E3-458B-BA16-F1612E53618F">
+      pt_list
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-C5D2387A-0AE4-4792-9375-773B778CFA0A">(ssget "_WP" pt_list '((0 . "LINE") (62 . 5)))</strong>
+&lt;Selection set: 8&gt;</pre>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3386">
+     The selected objects are highlighted only when
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-BE28457E-7237-45FD-85DE-BCF7A7B02960">
+      ssget
+     </samp>
+     is used with no arguments. Selection sets consume AutoCAD temporary file slots, so AutoLISP is not permitted to have more than 128 open at one time. If this limit is reached, AutoCAD cannot create any more selection sets and returns
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-FF14D4CB-4A9E-4997-81E2-B67BE422DB51">
+      nil
+     </samp>
+     to all
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-A3F7AD86-08FC-440D-95D3-AEAA571EC10B">
+      ssget
+     </samp>
+     calls. To close an unnecessary selection set variable, set it to
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-B1259332-9DB0-4727-AB39-980295993253">
+      nil
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3385">
+     A selection set variable can be passed to AutoCAD in response to any Select objects prompt at which selection by Last is valid. AutoCAD then selects all the objects in the selection set variable.
+    </p>
+    <p class="p" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__WSFACF1429558A55DE11F0759FF1E4B858C-3384">
+     The current setting of Object Snap mode is ignored by
+     <samp class="ph codeph" id="GUID-0F37CC5E-1559-4011-B8CF-A3BA0973B2C3__GUID-896CDA96-8FFD-4FBC-9753-B9B4F99739EF">
+      ssget
+     </samp>
+     unless you specifically request it while you are in the function.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Selection_Set_Manipulation_Functions_Reference_AutoLISP.html">
+       Selection Set Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="ssgetfirst_AutoLISP.html" title="Determines which objects are selected and gripped">
+       ssgetfirst (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="ssadd_AutoLISP.html" title="Adds an object (entity) to a selection set, or creates a new selection set">
+       ssadd (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="ssdel_AutoLISP.html" title="Deletes an object (entity) from a selection set">
+       ssdel (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

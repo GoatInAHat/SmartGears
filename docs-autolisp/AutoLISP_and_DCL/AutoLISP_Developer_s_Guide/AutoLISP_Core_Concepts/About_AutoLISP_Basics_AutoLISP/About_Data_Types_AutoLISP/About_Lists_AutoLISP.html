@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="A list is a group of related values separated by spaces and enclosed in parentheses." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="03/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-F8074AA9-F361-4960-B628-681465B74229" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Lists (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-F8074AA9-F361-4960-B628-681465B74229">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Lists (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    A list is a group of related values separated by spaces and enclosed in parentheses.
+   </p>
+   <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__WSFACF1429558A55DE11F0759FF1E4B858C-6637">
+    Lists provide an efficient method of storing numerous related values. After all, LISP is so-named because it is the LISt Processing language. Once you understand the power of lists, you will find that you can create more powerful and flexible applications. Lists are used to represent 2D and 3D coordinate values, and entity data.
+   </p>
+   <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__WSFACF1429558A55DE11F0759FF1E4B858C-6636">
+    Examples of lists are
+    <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-6754A5C6-0542-40F9-99DA-DF860A7947B9">
+     (1.0 1.0 0.0)
+    </samp>
+    ,
+    <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-8AAD8D49-EB67-4419-AF28-36E57DD90833">
+     ("this" "that" "the other")
+    </samp>
+    , and
+    <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-B4C49AAF-358F-4735-B9BC-2DE17426C81C">
+     (1 . "ONE")
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-8ECA9B34-1EF2-45E7-8870-0AE46E10F904">
+    AutoLISP provides many functions for working with lists. The following are some of the most commonly used functions:
+   </p>
+   <ul class="ul" id="GUID-F8074AA9-F361-4960-B628-681465B74229__UL_C3B851B676C54333961A7864DB277456">
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_210537230A84412CAB02896FE1CBC850">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-E0106710-626F-4BF0-8084-32B1734AA5A8">
+      list
+     </samp>
+     - Creates a new list with any number of values.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_5BF43FB172314626A22DC486C815FA22">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-E1F9A516-4661-45EC-98E2-52F406BDF958">
+      append
+     </samp>
+     - Appends values to an existing list, and returns a new list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_C545E3DA596E4CD5A0D6D6C24844AA30">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C6E12C90-3385-4437-A6C4-BE6D7FDD2DC2">
+      cons
+     </samp>
+     - Adds an element to the beginning of a list, or constructs a dotted list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_0B7895AF7B044BFCA4193C9B4855995A">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-5620961E-A461-4B88-A712-DC213F330CED">
+      length
+     </samp>
+     - Returns an integer indicating the number of elements in a list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_F75B0CA8D2994896A9686AC4617642BE">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-FEBEF7B8-AA98-4B55-9CE1-7D43BBF328A1">
+      assoc
+     </samp>
+     - Searches an association list for an element and returns that association list entry.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_D1627A189A6F4F7ABBBDFB722A7B8B2A">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-FB69BB94-CB44-4BF5-A302-1DB9851E33F2">
+      car
+     </samp>
+     - Returns the first element of a list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_C12DCE2BF3F54964B2CD0985A7041764">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-891AC72E-2360-4C27-AE9C-81600E924A15">
+      cdr
+     </samp>
+     - Returns a list containing all but the first element of the specified list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_B6268B0D6570400DAF4AC7F62AA92B9B">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C18F28FF-1147-4697-8EF6-583D0842CCBE">
+      nth
+     </samp>
+     - Returns the nth element of a list.
+    </li>
+    <li class="li" id="GUID-F8074AA9-F361-4960-B628-681465B74229__LI_BDDFDAFA8A2345A0BBEF087E46D49F1F">
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-976600FD-3F13-4097-B16D-D2FEA438615C">
+      subst
+     </samp>
+     - Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item.
+    </li>
+   </ul>
+   <div class="section" id="GUID-F8074AA9-F361-4960-B628-681465B74229__SECTION_63FEF2AC8ABE4AADB129280C2B46BD19">
+    <h2 class="title sectiontitle">
+     Creating a List
+    </h2>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-1BC20BBB-C9E5-45AE-A321-9D73A081A3F2">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C4D80456-2943-45DE-8F3C-E77D7DEB123F">
+      list
+     </samp>
+     function provides a simple method of grouping related items. These items do not need to be of similar data types and can even be other lists. The following code groups three items as a list:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C79BB1CF-0833-4018-B03B-FE148C49537B">(setq lst1 (list 1.0 "One" 1))</strong>
+(1.0 "One" 1)</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C4B60B00-4D5A-4868-89AD-79F9633A7B4C">
+     A list can also be created using the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-46F92A57-7961-49AB-AD30-CA07B8044592">
+      quote
+     </samp>
+     (or
+     <strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-46784587-978D-49DC-B8D3-0D56AC0FF9F3">
+      <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-0F2CB0C2-8859-44D5-82E7-476B156BAE6E">
+       '
+      </samp>
+     </strong>
+     ) function.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-7320F4CD-1B7E-447C-B28A-BC513B5308DD">(setq lst1 '(1.0 "One" 1))</strong>
+(1.0 "One" 1)</pre>
+   </div>
+   <div class="section" id="GUID-F8074AA9-F361-4960-B628-681465B74229__SECTION_E82DEC835E67492FAADE2DC6AE41C712">
+    <h2 class="title sectiontitle">
+     Adding to or Changing an Item in a List
+    </h2>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-D03B85B8-EAF7-4E80-9F49-BFD68F89A0DC">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-B80BEA96-C15B-4185-AB90-492F23729B94">
+      append
+     </samp>
+     function allows you to add new items to the end of a list, and the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-D9688120-FCCF-4512-9939-80CF569F476A">
+      cons
+     </samp>
+     function allows you to add new items to the beginning of a list. The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-38BDB5E6-CA2B-4268-A04A-F95E46D68CC7">
+      subst
+     </samp>
+     function can be used to substitute a new item for every occurrence of an old item. These functions do not modify the original list; they return a modified list. If you need to modify the original list, you explicitly replace the old list with the new list.
+    </p>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-37FA1484-1640-4793-BFD7-5DD895F91ADE">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-B4A672EF-FCC8-4D24-8F05-D4226F922618">
+      append
+     </samp>
+     function takes any number of lists and runs them together as one list. Therefore, all arguments to this function must be lists. The following code adds another "One" to the list stored in
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-C0F9FC52-84C0-4BED-A6F1-9A5AC60B9429">
+      lst1
+     </samp>
+     .
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-9ECDAFA7-7493-4232-8BF3-F946F0C59E3E">(setq lst2 (append lst1 '("One")))</strong>
+(1.0 "One" 1 "One")</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-4F3F1CE6-F4C6-4597-A8E8-639AD9C14C60">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-DB551F55-32C2-42E9-A6AB-10ABE2DA59A4">
+      cons
+     </samp>
+     function combines a single element with a list. You can add another string "One" to the beginning of a list,
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-CDAB2443-0F83-488F-A43B-92191D420AD8">
+      lst2
+     </samp>
+     , with the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-4E2D8E57-3D08-491E-954B-9045930889DE">
+      cons
+     </samp>
+     function.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-CFA48B48-5487-4C0E-ABDB-D550946D2B9A">(setq lst3 (cons "One" lst2 ))</strong>
+("One" 1.0 "One" 1 "One")</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-5AEB8BED-FCC5-4CA3-85F5-53A22D04B493">
+     You can substitute all occurrences of an item in a list with a new item using the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-878EDA19-BAF7-4CBE-8B57-4C72DD03F48E">
+      subst
+     </samp>
+     function. The following code replaces all strings "One" with the string "one".
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-54E072E1-84BB-4B50-A606-B3DB29E321D1">(setq lst4 (subst "one" "One" lst3))</strong>
+("one" 1.0 "one" 1 "one")</pre>
+   </div>
+   <div class="section" id="GUID-F8074AA9-F361-4960-B628-681465B74229__SECTION_1427D48E4B8546F19835BD76973508FB">
+    <h2 class="title sectiontitle">
+     Retrieving an Item from a List
+    </h2>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-89C218EC-F2DD-4B69-85B6-738DC8A7C7CA">
+     You can retrieve a specific item from a list with the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-D5011BC6-7392-44FD-AC98-48060385DE9C">
+      nth
+     </samp>
+     function. This function accepts two arguments. The first argument is an integer that specifies which item to return. Lists start with a 0 index. A 0 specifies the first item in a list, 1 specifies the second item, and so on. The second argument is the list itself. The following code returns the second item in
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-77FA4667-CE4C-4820-8FFD-43A030F0E79D">
+      lst1
+     </samp>
+     .
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-0048EC5A-B429-4ECB-A1BB-A46300E1EDD4">(nth 1 lst1)</strong>
+"One"</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-6BC3E59C-89D3-44BF-9AAB-B062AA3E2868">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-BA15754F-6063-4057-B116-7703076462C9">
+      car
+     </samp>
+     function returns the first item of a list. For example:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-D33FD626-C5EF-49FC-B38A-FEE124897FBE">(car lst1)</strong>
+1.0</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-788CF44C-5A65-481F-940D-338582C3358B">
+     The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-FCCB1FB8-F35E-400F-9644-E98D1C2CC963">
+      cdr
+     </samp>
+     function returns all items from a list as a new list, except the first item. For example:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-2084DB95-A754-4205-9BA9-1DA9407F8E92">(cdr lst1)</strong>
+("One" 1)</pre>
+    <p class="p" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-E360DDD0-98B5-4AA8-89FF-F7EBEABA7525">
+     AutoLISP also offers a number of additional functions that are variations of the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-A3A6D866-31D5-4A3C-A3EF-98EDB1FCF175">
+      car
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-51718A20-5848-4C70-826B-F585BAFB20AE">
+      cdr
+     </samp>
+     functions. For example, the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-F648988C-087D-48B9-8D5E-C718A859F6AD">
+      cadr
+     </samp>
+     function returns the second element of a list and the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-2565FEAC-C5E6-4C11-A9AA-B0C0D4143B9C">
+      caddr
+     </samp>
+     function returns the third item of a list. The
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-F7417AAE-C2AB-48AC-976A-CC26F455DCA9">
+      cadr
+     </samp>
+     function is like using the
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-87EFBECA-323A-4E6E-B96E-7EBF16ADF9B7">
+      cdr
+     </samp>
+     function on a list and then
+     <samp class="ph codeph" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-B7999AF6-0DB9-4D70-918C-C7F06CCD5BBC">
+      car
+     </samp>
+     on the resulting list.
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-332F8B32-825A-4574-B0FD-477D546AFA31">(cadr lst1)</strong>
+"One"
+
+<strong class="ph b" id="GUID-F8074AA9-F361-4960-B628-681465B74229__GUID-7AA627DF-BDC1-4071-A86A-F769424BAA13">(car (cdr lst1))</strong>
+"One"</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Data_Types_AutoLISP.html">
+      About Data Types (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_List_Handling_AutoLISP/About_Dotted_Pairs_AutoLISP.html" title="Dotted pair lists must always contain two members and is the method AutoLISP uses to maintain entity definition data.">
+       About Dotted Pairs (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_List_Handling_AutoLISP/About_Point_Lists_AutoLISP.html" title="AutoLISP utilizes the list data type to represent graphical coordinate values.">
+       About Point Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Using_AutoLISP_to_Manipulate_AutoCAD_Objects_AutoLISP/About_Selecting_Objects_and_Selection_Sets_AutoLISP/About_Selection_Set_Filter_Lists_AutoLISP/About_Selection_Set_Filter_Lists_AutoLISP.html" title="An entity filter list is an association list that uses DXF group codes in the same format as a list returned by entget.">
+       About Selection Set Filter Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-00A75AFB-5708-4D0C-B18C-F74DDC4D65FA">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-1A8D567B-168B-4272-BC70-8B50DC8B74CB" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Setting Up Dialog Values
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Setting Up Dialog Values
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16__GUID-B7B53CC9-6B31-4AF8-8FEC-E66EF1C34A8F">
+    <p class="p" id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16__WSFACF1429558A55DE1929BBDFEF458CE1C-7752">
+     When you run the complete garden path application, notice that the dialog box always starts up with ActiveX as the default object creation method and Lightweight as the polyline style. Something more interesting occurs with the default tile size—the values change depending on the width of the path. The following code fragment shows how to set up the default values to be displayed in the dialog box:
+    </p>
+    <pre class="pre codeblock prettyprint">(setq objectCreateMethod "ACTIVEX"
+      plineStyle "LIGHT"
+      tilerad (/ pathWidth 15.0)
+      tilespace (/ tilerad 5.0)
+      dialogLoaded T
+      dialogShow T
+) ;_ end of setq</pre>
+    <p class="p" id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16__WSFACF1429558A55DE1929BBDFEF458CE1C-7751">
+     For the moment, don't worry about what purpose the
+     <samp class="ph codeph" id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16__GUID-D4B71D8E-8887-4B5E-ADA4-19B1F3652DA6">
+      dialogLoaded
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-51A56BDF-D579-4C5A-8B84-8522D7C26F16__GUID-7FBD60D7-E4FD-45A3-9872-C0CDAADDC747">
+      dialogShow
+     </samp>
+     variables serve. This becomes apparent in the next two sections.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+      Lesson 4: Creating a Project and Adding the Interface (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Interacting_With_the_Dialog_Box_From_AutoLISP_Code.html">
+      Interacting With the Dialog Box From AutoLISP Code
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Loading_the_Dialog_File.html">
+      Loading the Dialog File
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

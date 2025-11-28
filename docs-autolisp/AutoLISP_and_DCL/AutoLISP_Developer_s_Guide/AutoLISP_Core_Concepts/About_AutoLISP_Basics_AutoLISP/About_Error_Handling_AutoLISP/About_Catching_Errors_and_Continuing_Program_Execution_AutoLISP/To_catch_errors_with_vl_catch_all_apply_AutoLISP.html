@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="task-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Errors caused by AutoLISP functions can result in a program ending unexpectedly, make sure to handle all known situations that could cause an error." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   To catch errors with vl-catch-all-apply (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      To catch errors with vl-catch-all-apply (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body taskbody-adsk">
+   <p class="shortdesc">
+    Errors caused by AutoLISP functions can result in a program ending unexpectedly, make sure to handle all known situations that could cause an error.
+   </p>
+   <ol class="ol" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-450FCE81-6B3E-4770-9A59-6585B878DBB9">
+    <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_9DBD4F826ABA424D8F875139613BC39A">
+     Wrap each function that could throw an error with
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-C4C80CF2-B893-447D-BC03-E5A445FB1B97">
+      vl-catch-all-apply
+     </samp>
+     .
+    </li>
+    <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_29D6D61D598C4BDFB22B05D03EB77705">
+     Evaluate the value returned by
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-57AF7596-5AB0-47BC-BDCF-4C24E54E94B7">
+      vl-catch-all-apply
+     </samp>
+     with
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-CB2B9B62-AED5-48ED-962A-62319845216E">
+      vl-catch-all-error-p
+     </samp>
+     to see if an error object or a value was returned.
+    </li>
+    <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_8AFC4A1C5ED444029CC71A9FE6C9DB59">
+     Use
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-052BAD1E-E41D-4B57-9338-D6D66FA227CA">
+      vl-catch-all-error-message
+     </samp>
+     to get the message associated with the returned error object.
+    </li>
+    <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_40001FD6E76A4CF8A220A519017CB1A7">
+     Load, run, and test the code.
+    </li>
+   </ol>
+   <div class="section" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__SECTION_EA047FF7859D4A58B7636A5A7333B8F8">
+    <h2 class="title sectiontitle">
+     Example
+    </h2>
+    <p class="p" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-8395C64E-8894-41B6-B9E1-C5CE76B2AE32">
+     The following defines a function named catch-me-if-you-can. This function accepts two number arguments and uses
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-95F6CACE-55A6-4F78-95C6-055DA086EB21">
+      vl-catch-all-apply
+     </samp>
+     to divide the first number by the second number. The
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-58969C0F-3A12-4EEB-BE3D-66C00702FE14">
+      vl-catch-all-error-p
+     </samp>
+     function determines whether the return value from
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-5AFDDFD0-724C-4FDD-B30D-4E6A44C42A50">
+      vl-catch-all-apply
+     </samp>
+     is an error object. If the return value is an error object, catch-me-if-you-can invokes
+     <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-DE4C42C6-AB56-41A2-9897-B5F998E40065">
+      vl-catch-all-error-message
+     </samp>
+     to obtain the message from the error object.
+    </p>
+    <ol class="ol" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__OL_FCAF00A8CE284EE3BCF5E68DB27EE142">
+     <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_E18C541CB3544D75A9E49E3C04EB183A">
+      At the AutoCAD Command prompt, enter the following code:
+      <pre class="pre codeblock prettyprint">(defun catch-me-if-you-can (dividend divisor / errobj)
+  (setq errobj (vl-catch-all-apply '/ (list dividend divisor)))
+  (if (vl-catch-all-error-p errobj)
+    (progn
+      (print (strcat "An error occurred: " (vl-catch-all-error-message errobj)))
+      (initget "Yes No")
+      (setq ans (getkword "Do you want to continue? [Y/N]: "))
+      (if (equal (strcase ans) "YES")
+        (print "Okay, I'll keep going")
+      )
+    )
+    (print errobj)
+  )
+ (princ)
+)</pre>
+      <div class="note note" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-CE947F24-8831-4A45-A451-FF6B96FA9124">
+       <span class="notetitle">
+        Note:
+       </span>
+       You can also add the example code to an existing or create a new LSP file. Then load the LSP file with the APPLOAD command.
+      </div>
+     </li>
+     <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_AD15FCC298104368A40963193E36B431">
+      Enter the following code:
+      <pre class="pre codeblock prettyprint">(catch-me-if-you-can 50 2)</pre>
+      <p class="p" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-0A7BC5B0-8BD2-4A80-BE33-A9BF80E744E0">
+       The function returns 25.
+      </p>
+     </li>
+     <li class="li" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__LI_6E9E87B015C7477487F48C30B0F0226E">
+      Enter the following code:
+      <pre class="pre codeblock prettyprint">(catch-me-if-you-can 50 0)</pre>
+      <p class="p" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-85AA318B-5C7A-4C0A-A335-D0F9C68AE695">
+       The function issues the following prompt:
+      </p>
+      <p class="p promptblock" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-8DAFD851-44AA-437E-9257-ED0DD918F427">
+       "An error occurred: divide by zero" Do you want to continue? [Y/N]:
+      </p>
+      <p class="p" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-69014FB1-F723-4CD3-8FD2-132D3087C94C">
+       If you enter y (or yes), catch-me-if-you-can indicates that it will continue processing. Try modifying this example by changing
+       <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-8B1FD4AA-5F27-468E-9807-AD63D445BCDD">
+        vl-catch-all-apply
+       </samp>
+       to
+       <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-B1ADBF49-BCC9-412C-868A-74C4BA9C3B4F">
+        apply
+       </samp>
+       . Load and run the example with a divide by zero again. When apply results in an error, execution immediately halts and *error* is called, resulting in an error message.
+      </p>
+      <p class="p" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-63098217-98E3-4EDE-B1E8-CAD5AB7D5772">
+       The
+       <samp class="ph codeph" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-84370BE8-D42F-4D25-8489-6E2EE7C7C0F2">
+        vl-catch-*
+       </samp>
+       functions are especially important when you use ActiveX with AutoLISP. Many of the AutoCAD ActiveX automation methods are designed to be used in the “programming by exception” style. This means they either return useful values if they succeed, or raise an exception if they fail (instead of returning an error value). If your program uses ActiveX methods, you must prepare it to catch exceptions, otherwise the program halts, leaving the user at a Command prompt.
+      </p>
+      <div class="note note" id="GUID-2138B8F3-F0E1-4DB4-97C4-EC26047550E0__GUID-EF20FCB0-FA43-46EA-94AE-143923DED3F1">
+       <span class="notetitle">
+        Note:
+       </span>
+       ActiveX is not supported on Mac OS and Web.
+      </div>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Catching_Errors_and_Continuing_Program_Execution_AutoLISP.html" title="Programs should intercept and attempt to process errors instead of allowing control to pass to *error* when possible.">
+      About Catching Errors and Continuing Program Execution (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Catching_Errors_and_Continuing_Program_Execution_AutoLISP.html" title="Programs should intercept and attempt to process errors instead of allowing control to pass to *error* when possible.">
+       About Catching Errors and Continuing Program Execution (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Error_Handling_AutoLISP.html" title="The AutoLISP language provides several functions for handling errors.">
+       About Error Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Using_the_error_Function_AutoLISP.html" title="The *error* function can ensure that AutoCAD returns to a particular state after an error occurs.">
+       About Using the *error* Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Basic_Output_Functions_AutoLISP/About_Displaying_Messages_AutoLISP/About_Exiting_a_Function_Quietly_AutoLISP.html" title="If you invoke the princ function without passing an expression to it, it displays nothing and has no value to return.">
+       About Exiting a Function Quietly (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="GUID-9205DA3B-9186-48C7-A477-E4C8FF88E1BB.htm" title="The vl-catch-all-apply function allows you to intercept errors returned by ActiveX methods, and decide how the program should continue.">
+       Example: Intercept an Error Returned by an ActiveX Method (AutoLISP/ActiveX)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../../Appendixes/Error_Codes_Reference_AutoLISP.html">
+       Error Codes Reference (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D114F1C4-DE8E-422D-8F3F-C43707B8212B">
+       Error-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

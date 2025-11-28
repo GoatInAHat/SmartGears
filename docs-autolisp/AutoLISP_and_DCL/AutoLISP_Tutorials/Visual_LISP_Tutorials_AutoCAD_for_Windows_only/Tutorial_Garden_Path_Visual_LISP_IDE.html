@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="tutorial" name="indexterm"/>
+  <meta content="tutorials" name="indexterm"/>
+  <meta content="autolisp tutorial" name="indexterm"/>
+  <meta content="examples" name="indexterm"/>
+  <meta content="getting started" name="indexterm"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Tutorial: Garden Path (Visual LISP IDE)
+  </title>
+  <link href="../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Tutorial: Garden Path (Visual LISP IDE)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="note attention" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-3F069EF0-3577-4986-B0DF-A8256B52C136">
+    <span class="attentiontitle">
+     Attention:
+    </span>
+    This tutorial requires the Visual LISP Editor and applies to AutoCAD for Windows only.
+   </div>
+   <div class="section" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-958E791B-2A4C-4F4C-B26D-6F8E961580A3">
+    <h2 class="title sectiontitle">
+     Overview
+    </h2>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-7832">
+     Your goal in this tutorial is to develop a new command for AutoCAD that draws a garden path and fills it with circular tiles. The tutorial is divided into seven lessons.
+    </p>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-7834">
+     This tutorial covers
+    </p>
+    <ul class="ul" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF18CB41610EC0A2E719-72FD">
+     <li class="li" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF-7F10494411F03A24F24-1DBB">
+      The Visual LISP
+      <span name="glyph_span">
+       ®
+      </span>
+      environment is introduced. This environment provides you with editing, debugging, and other tools specific to the creation of AutoLISP applications.
+     </li>
+     <li class="li" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF-7F10494411F03A24F24-1DBA">
+      ActiveX
+      <span name="glyph_span">
+       ®
+      </span>
+      and Reactor functions of AutoLISP are demonstrated, as well as several other extensions to the AutoLISP language provided with Visual LISP.
+     </li>
+    </ul>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-7833">
+     There are two possible execution contexts for this tutorial:
+    </p>
+    <ul class="ul" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF18CB41610EC0A2E719-72FC">
+     <li class="li" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF-7F10494411F03A24F24-1DB9">
+      The application may be run as interpreted LISP in piecemeal files and/or functions that are loaded into a single document, or
+     </li>
+     <li class="li" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WS1A9193826455F5FF-7F10494411F03A24F24-1DB8">
+      The program code can be compiled into a VLX application, denoted by a
+      <em class="ph i" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-14170456-7851-4E59-BD7C-C4B3224DEA91">
+       *.vlx
+      </em>
+      executable. A VLX operates from a self-contained namespace that can interact with the application-loading document.
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__SECTION_6664ECC3E80345D0A5CFD66A144FF6E2">
+    <h2 class="title sectiontitle">
+     Lessons
+    </h2>
+    <div class="note note" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-34899F9C-528A-48EA-8C5B-AF334C3249EA">
+     <span class="notetitle">
+      Note:
+     </span>
+     As you progress from lesson to lesson, you receive progressively less detailed instructions on how to perform individual tasks.
+    </div>
+    <div class="section" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-D0082F6B-1828-4C79-911D-CE66C159EA65">
+     <dl class="dl" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-D0082F6B-1828-4C79-911D-CE66C159EA65">
+      <dt class="dt dlterm">
+       Basic
+      </dt>
+      <dd class="dd" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-B4BFE565-FBCE-44F3-AA6B-D6CF5EB3CA18">
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-24A476C4-A742-4E4D-B369-375F20499A55">
+        <a class="xref" href="Lesson_1_Designing_and_Beginning_the_Program_Visual_LISP_IDE.html">
+         Lesson 1: Designing and Beginning the Program
+        </a>
+       </p>
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-B2702B4F-87B4-4913-ADFC-3D85A35B0021">
+        <a class="xref" href="Lesson_2_Using_Visual_LISP_Debugging_Tools_Visual_LISP_IDE.html">
+         Lesson 2: Using Visual LISP Debugging Tools
+        </a>
+       </p>
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-763A1F98-A126-40BF-9B6F-62B2FD40B859">
+        <a class="xref" href="Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE/Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE.html">
+         Lesson 3: Drawing the Path Boundary
+        </a>
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       Intermediate
+      </dt>
+      <dd class="dd" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-CCFD2152-AD97-4A95-BBE5-1A7314D4469D">
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-53A791E7-6935-4865-9624-D7024EBACA59">
+        <a class="xref" href="Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE/Lesson_4_Creating_a_Project_and_Adding_the_Interface_Visual_LISP_IDE.html">
+         Lesson 4: Creating a Project and Adding the Interface
+        </a>
+       </p>
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-E03AFD24-2723-485D-A639-9B8B1A1F93FC">
+        <a class="xref" href="Lesson_5_Drawing_the_Tiles_Visual_LISP_IDE/Lesson_5_Drawing_the_Tiles_Visual_LISP_IDE.html">
+         Lesson 5: Drawing the Tiles
+        </a>
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       Advanced
+      </dt>
+      <dd class="dd" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-4D9C79C0-391B-4E22-8E3A-9D969641286A">
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-3C97BBFC-A282-4CA6-84B4-0D79B7D4F3E0">
+        <a class="xref" href="Lesson_6_Acting_With_Reactors_Visual_LISP_IDE/Lesson_6_Acting_With_Reactors_Visual_LISP_IDE.html">
+         Lesson 6: Acting With Reactors
+        </a>
+       </p>
+       <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-AE0A3EF8-6A2C-4361-9320-800C8DA03ACF">
+        <a class="xref" href="Lesson_7_Putting_It_All_Together_Visual_LISP_IDE/Lesson_7_Putting_It_All_Together_Visual_LISP_IDE.html">
+         Lesson 7: Putting It All Together
+        </a>
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__SECTION_19BC14A68B1E452A9E4C18FF6E8FCA64">
+    <h2 class="title sectiontitle">
+     Assumptions
+    </h2>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-7835">
+     This tutorial assumes you have some familiarity with LISP or AutoLISP
+     <span name="glyph_span">
+      ®
+     </span>
+     . It also assumes you understand basic Windows
+     <span name="glyph_span">
+      ®
+     </span>
+     file management tasks such as creating directories, copying files, and navigating through the file system on your hard disk or network.
+    </p>
+   </div>
+   <div class="section" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__SECTION_791E971FAF8443FCAD375AEADDEEC662">
+    <h2 class="title sectiontitle">
+     Sample Files
+    </h2>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-7830">
+     If you chose the full installation option when you installed AutoCAD, the source code files are in the following directory:
+    </p>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-782F">
+     <em class="ph i" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-EB7DB3ED-7420-4060-99EF-730E46A9C2A8">
+      &lt;AutoCAD directory&gt;\Tutorial\VisualLISP\
+     </em>
+    </p>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-782D">
+     It is recommended you do not modify the sample source code files supplied with AutoCAD. If something is not working correctly within your program, you may want to copy the supplied source code into your working directory. Throughout the tutorial, the working directory is referred to as:
+    </p>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-782C">
+     <em class="ph i" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__GUID-619E2C14-2F66-40DC-AC2A-25C945AC2D78">
+      &lt;AutoCAD directory&gt;\Tutorial\VisualLISP\MyPath
+     </em>
+    </p>
+    <p class="p" id="GUID-66377097-9BDB-4E3D-97E6-2263A5F273EC__WSFACF1429558A55DE1929BBDFEF458CE1C-782B">
+     If you choose a different path for your working directory, substitute your directory name at the appropriate times.
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

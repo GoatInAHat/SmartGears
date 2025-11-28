@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-D0CF600F-566E-4D79-9DEB-3039A97E5348" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Enabling the Boundary Outline Drawing Function
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Enabling the Boundary Outline Drawing Function
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-3D1D2E35-BEB1-46EE-BC18-006680126499">
+    <p class="p" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__WSFACF1429558A55DE1929BBDFEF458CE1C-77B5">
+     After the last lesson, the
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-853E71A9-BCFC-430F-8BF6-EF0DA129430C">
+      gp:drawOutline
+     </samp>
+     function looked like the following:
+    </p>
+    <pre class="pre codeblock prettyprint">;;;--------------------------------------------------------------;
+;;;     Function: gp:drawOutline                                 ;
+;;;--------------------------------------------------------------;
+;;; Description: This function draws the outline of the          ;
+;;;              garden path.                                    ;
+;;;--------------------------------------------------------------;
+(defun gp:drawOutline ()
+  (alert
+    (strcat "This function will draw the outline of the polyline "
+      "\nand return a polyline entity name/pointer."
+    )
+  )
+  ;; For now, simply return a quoted symbol.  Eventually, this 
+  ;; function will return an entity name or pointer.
+  'SomeEname
+)</pre>
+    <p class="p" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__WSFACF1429558A55DE1929BBDFEF458CE1C-77B4">
+     As it exists, the code does not do much. However, using the association list information stored in the variable
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-7478D430-CE74-4C92-AB20-B87132F0FE03">
+      gp_PathData
+     </samp>
+     , you have enough information to calculate the points for the path boundary. You now have to determine how to pass the information in that variable to
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-067642B5-8264-4B33-B6BE-FBFB792057F4">
+      gp:drawOutline
+     </samp>
+     .
+    </p>
+    <p class="p" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__WSFACF1429558A55DE1929BBDFEF458CE1C-77B3">
+     Remember
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-3DE1ED34-F63A-4363-AF45-7807E56DB585">
+      gp_PathData
+     </samp>
+     is a local variable defined within the
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-7B7418FD-43B7-48B1-81D7-B070987397C9">
+      C:GPath
+     </samp>
+     function. In AutoLISP, local variables declared in one function are visible to any function called from that function (refer to Differentiating between Local and Global Variables for clarification). The
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-F0A7BF68-DD9C-4566-A6E6-E56D5E7D3E2F">
+      gp:drawOutline
+     </samp>
+     function is called from within
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-6997DB27-2F60-4CCB-9AA3-0E245648E7DF">
+      C:GPath
+     </samp>
+     . You can refer to the
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-99962EC5-F7E3-42CF-A404-B2529F485BFD">
+      gp_PathData
+     </samp>
+     variable in
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-7A0D8A46-98F3-446E-818E-099134C8794F">
+      gp:drawOutline
+     </samp>
+     , but this is not a good programming practice.
+    </p>
+    <p class="p" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__WSFACF1429558A55DE1929BBDFEF458CE1C-77B2">
+     Why? When the two functions using the same variable are defined in the same file, as in the examples shown so far, it is not too difficult to figure out where the variable is defined and what it is used for. But if the functions are defined in different files—as is often the case—you would have to search through both files to figure out what
+     <samp class="ph codeph" id="GUID-1A0CA306-C203-40C8-83AB-E75CEBEE7770__GUID-DF43FE2D-CF58-42E9-A1A8-BEAA52466461">
+      gp_PathData
+     </samp>
+     represents.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_3_Drawing_the_Path_Boundary_Visual_LISP_IDE.html">
+      Lesson 3: Drawing the Path Boundary (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Using_the_Command_Function.html">
+      Using the Command Function
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Passing_Parameters_to_Functions.html">
+      Passing Parameters to Functions
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

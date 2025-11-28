@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="A group of functions allows applications to obtain pure geometric information and geometric data from the drawing." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Geometric Utilities (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Geometric Utilities (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    A group of functions allows applications to obtain pure geometric information and geometric data from the drawing.
+   </p>
+   <p class="p" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__WSFACF1429558A55DE11F0759FF1E4B858C-64A3">
+    The following lists some of the commonly used geometric related functions:
+   </p>
+   <ul class="ul" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__UL_EF2F8EEA79DC421CBCD98AE0E06E5695">
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_92FE24C83946429889DAE78846221188">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-E594A0A0-7539-447D-9156-9082D19EA777">
+      angle
+     </samp>
+     – Returns the angle, in radians, between a line and the
+     <em class="ph i" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-3861B727-D424-4332-BA9F-7B3DEEFC5DA1">
+      X
+     </em>
+     axis (of the current UCS).
+    </li>
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_5034DCDFC07B4B45997F64894002C084">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-4BEBF1C6-FA12-4CFC-AC78-1D248073AB6D">
+      distance
+     </samp>
+     – Returns the distance between two points.
+    </li>
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_AE1EFC4270CD4D449EE006E748429346">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-E4500F82-D473-450F-9C08-6B3E3596AC7B">
+      polar
+     </samp>
+     – Locates a point by means of polar coordinates (relative to an initial point).
+    </li>
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_4A59E4BDC5754ADC856A7C20D0E57C6C">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-812182AA-31FC-49D1-8085-277DA391B44D">
+      inters
+     </samp>
+     – Locates the intersection point of two lines.
+    </li>
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_1FF49AE3D63B4D079D64A7C6D00CEE43">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-8DCD8317-1F11-4AF2-957A-D6A738E7A1F2">
+      osnap
+     </samp>
+     – Returns a 3D point that is the result of applying an Object Snap mode to a specified point.
+    </li>
+    <li class="li" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__LI_B4BD47F0995C4E23A5305AED358D0742">
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-DBDF0290-A715-4314-89C0-3DAB84AF3C28">
+      textbox
+     </samp>
+     – Measures a specified text object, and returns the diagonal coordinates of the bounding box that encloses the text.
+    </li>
+   </ul>
+   <p class="p" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__WSFACF1429558A55DE11F0759FF1E4B858C-64A1">
+    The following code example demonstrates calls to the geometric utility functions:
+   </p>
+   <div class="section" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-93C5D8D4-818E-45A8-B5F8-F8C2E77AABC8">
+    <pre class="pre codeblock prettyprint">(setq pt1 '(3.0 6.0 0.0))
+(setq pt2 '(5.0 2.0 0.0))
+(setq base '(1.0 7.0 0.0))
+(setq rads (angle pt1 pt2))   ; Angle in XY plane of current UCS - value
+                              ; is returned in radians
+
+(setq len (distance pt1 pt2)) ; Distance in 3D space
+(setq endpt (polar base rads len))</pre>
+    <p class="p" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__WSFACF1429558A55DE11F0759FF1E4B858C-64A0">
+     The call to
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-EA4733C5-BEC6-4ED1-A3BB-7C10C556CDE4">
+      polar
+     </samp>
+     sets
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-CD8DB31E-1BD4-4457-85FD-99BBFA48A412">
+      endpt
+     </samp>
+     to a point that is the same distance from (1,7) as
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-190EE7BD-11BC-4441-A274-7EC69330EB56">
+      pt1
+     </samp>
+     is from
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-B69DB53D-C8DC-4D46-91F5-9AD39E579047">
+      pt2
+     </samp>
+     , and at the same angle from the
+     <em class="ph i" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-D253AB14-9F4A-441B-83D3-2613EE249169">
+      X
+     </em>
+     axis as the angle between
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-858EDC8D-B9D9-4CC8-B5CE-FC95DF541302">
+      pt1
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-56A7AF2E-F3CC-45B3-915C-A34290A591DA__GUID-6B79FD23-DBA5-4FDF-A282-D4469DF01024">
+      pt2
+     </samp>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relchildren">
+    <strong>
+     Topics in this section
+    </strong>
+    <ul class="ullinks">
+     <li class="link ulchildlink">
+      <a href="About_Object_Snaps_AutoLISP.html">
+       About Object Snaps (AutoLISP)
+      </a>
+      <br/>
+      The
+      <samp class="ph codeph">
+       osnap
+      </samp>
+      function can find a point by using one of the AutoCAD Object Snap modes.
+     </li>
+     <li class="link ulchildlink">
+      <a href="About_Getting_the_Extents_of_Text_AutoLISP.html">
+       About Getting the Extents of Text (AutoLISP)
+      </a>
+      <br/>
+      The
+      <samp class="ph codeph">
+       textbox
+      </samp>
+      function returns the diagonal coordinates of a box that encloses text.
+     </li>
+    </ul>
+   </div>
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="../About_Using_AutoLISP_to_Communicate_With_AutoCAD_AutoLISP.html" title="Query and command functions provide direct access to AutoCAD commands and drawing services.">
+      About Using AutoLISP to Communicate With AutoCAD (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Object_Snaps_AutoLISP.html" title="The osnap function can find a point by using one of the AutoCAD Object Snap modes.">
+       About Object Snaps (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Getting_the_Extents_of_Text_AutoLISP.html" title="The textbox function returns the diagonal coordinates of a box that encloses text.">
+       About Getting the Extents of Text (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Data_Conversions_AutoLISP/About_Angular_Conversion_AutoLISP.html" title="Angular values returned by most AutoLISP functions and those stored in a drawing are expressed in radians, while angular input is commonly provided in degrees or another angular format than radians.">
+       About Angular Conversion (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Device_Access_and_Control_AutoLISP/About_Accessing_and_Requesting_User_Input_AutoLISP.html" title="AutoLISP can collect raw input from an input device, in addition to offering a set of functions designed to request specific types of input from the user.">
+       About Accessing and Requesting User Input (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_List_Handling_AutoLISP/About_Point_Lists_AutoLISP.html" title="AutoLISP utilizes the list data type to represent graphical coordinate values.">
+       About Point Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_Integers_AutoLISP.html" title="Integers are whole numbers; numbers that do not contain a decimal point.">
+       About Integers (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_Reals_AutoLISP.html" title="A real is a number containing a decimal point. Numbers between -1 and 1 must contain a leading zero.">
+       About Reals (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8C29D7A3-9CBB-47A8-A936-87118782303B">
+       Geometric Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="The following is an overview of the changes made to AutoLISP in recent releases." name="description"/>
+  <meta content="AutoLISP changes" name="indexterm"/>
+  <meta content="API changes" name="indexterm"/>
+  <meta content="new AutoLISP" name="indexterm"/>
+  <meta content="what is new in AutoLISP" name="indexterm"/>
+  <meta content="what's new in AutoLISP" name="indexterm"/>
+  <meta content="changed functions" name="indexterm"/>
+  <meta content="new functions" name="indexterm"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/04/2024" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   What's New or Changed with AutoLISP (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      What's New or Changed with AutoLISP (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    The following is an overview of the changes made to AutoLISP in recent releases.
+   </p>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_4093D069040941B0A4A58B6FE1B5CAFC">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2025
+     </span>
+    </h2>
+    <p class="p">
+     <samp class="ph codeph">
+      acet-load-expresstools
+     </samp>
+     function was added to AutoCAD for Windows only. This function is used to initialize the Express Tools functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_4F71D1B36DB84F8BAD4404CB3597021E">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2024
+     </span>
+    </h2>
+    <dl class="dl">
+     <dt class="dt dlterm">
+      New
+     </dt>
+     <dd class="dd">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_AEC41E7CE84C4914A4032780B3985D2C">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_7C77A65BFC6F417E85D1B0F1FBB2B32C">
+        No new or changed functions
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_1BF8C8595F684A40A4EC095F3F07D897">
+        AutoCAD LT for Windows now supports AutoLISP and DCL
+        <p class="p">
+         Here are some of the known limitations or differences from AutoCAD:
+        </p>
+        <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_4205767D351845F2B63BD6E885D15CC1">
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_3155DCF43A5A4001A4C2E0EC398CBC20">
+          Most
+          <samp class="ph codeph">
+           VL*
+          </samp>
+          ,
+          <samp class="ph codeph">
+           VLA*
+          </samp>
+          ,
+          <samp class="ph codeph">
+           VLAX*
+          </samp>
+          , and
+          <samp class="ph codeph">
+           VLR*
+          </samp>
+          functions are supported, but the use of third-party automation libraries is not supported in to AutoCAD LT.
+          <p class="p">
+           Here is a high-level summary of the functions that are not supported:
+          </p>
+          <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_7EC7FC3A710B404BA4C413075A32B5C9">
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_9160344E72404A3C971BE73E9628CE9A">
+            <samp class="ph codeph">
+             vlax-create-object
+            </samp>
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_3934C797775A4B8EAA9AC8DFE292606F">
+            <samp class="ph codeph">
+             vlax-get-object
+            </samp>
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_E87DB2B5093B4A57BE5A1B4F64705B91">
+            <samp class="ph codeph">
+             vlax-get-or-create-object
+            </samp>
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_53AD7E27DE984753B29F0844FE1E3EEB">
+            <samp class="ph codeph">
+             vlax-import-type-library
+            </samp>
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_8D96760F3B354D3D95B6F14F2BEEDF09">
+            <samp class="ph codeph">
+             vla-GetInterfaceObject
+            </samp>
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_67142E24E0AF45999A3AFBB60FC8800C">
+            <samp class="ph codeph">
+             VLA*
+            </samp>
+            functions related to creating and modifying 3D solid and surface, helix, material, multiline objects among others that can only be created in AutoCAD
+           </li>
+          </ul>
+         </li>
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_194A8362A40542D181DCAA921F117FB5">
+          <samp class="ph codeph">
+           entmake
+          </samp>
+          ,
+          <samp class="ph codeph">
+           entmakex
+          </samp>
+          , and
+          <samp class="ph codeph">
+           entmod
+          </samp>
+          functions only allow for the creation and modification of objects supported in AutoCAD LT
+         </li>
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_970282F33194449F95EAD67ABE164F5E">
+          AutoLISP functions exposed by custom ObjectARX and Managed .NET programs can't be used
+         </li>
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_C454798906F94CCEBDEEF536FAB97F81">
+          ActiveX limitations:
+          <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_3EE2EBD52FCD40CE8EE85A8C3DB5F3F9">
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_4F54C2944A5341D49CA6E89CD4A78F28">
+            <samp class="ph codeph">
+             PreferencesProfiles
+            </samp>
+            object exists as part of the ActiveX implementation, but all of its methods and properties have been removed since profiles are not supported in AutoCAD LT for Windows
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_8C30BE3021A24E7D903EB12F47950E27">
+            Creation of 3D meshes, surfaces, and solids is not supported, while support is limited for the modification of 3D objects
+           </li>
+          </ul>
+         </li>
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_A5B31449672F49D29E2E0EAE0D48A65F">
+          Developing AutoLISP program limitations:
+          <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_2AD171A662624E9B993BF03A0D7B1FCE">
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_61276FE7ECA0434CA3E0233B48E2D636">
+            Visual LISP integrated development environment (IDE) and VLIDE/VLISP commands are not available in AutoCAD LT for Windows
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_D412ADE2924F4EF98489DB164E04675D">
+            Debugging with the AutoLISP Extension in Visual Studio Code is not supported in AutoCAD LT for Windows
+           </li>
+          </ul>
+         </li>
+         <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_D57CE47E1D9140EE878C85E2AA0E7D5D">
+          Deploying AutoLISP program limitations:
+          <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_A62DB815259F4FE7AF84F4D90B2AF966">
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_05916827DEE54A649A529CC3D08D5445">
+            MNL files are not automatically loaded with CUIx files that have the same name, but the files can be loaded using the AutoLISP
+            <samp class="ph codeph">
+             LOAD
+            </samp>
+            function from another LISP file
+           </li>
+           <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_E1566F49DB0E4BCBB3F87AD5E752A212">
+            Compiled LSP files are supported in AutoCAD LT for Windows, but compiling LSP files can only be done in AutoCAD for Windows only
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <p class="p">
+         Programs that utilize functions and commands that are limited to AutoCAD should check which product they are being loaded into to avoid compatibility problems. This can be done using the PROGRAM system variable, a value of
+         <samp class="ph codeph">
+          acadlt
+         </samp>
+         is returned for AutoCAD LT.
+        </p>
+        <p class="p">
+         The following example restricts the loading of a DVB file and the definition of a command that runs a VBA macro based on if the code is loaded into AutoCAD or AutoCAD LT:
+        </p>
+        <pre class="pre codeblock prettyprint">(if (/= (strcase (getvar "PROGRAM") T) "acadlt")
+  (progn
+    (vl-load-com)
+
+    ;; Load a DVB file
+    (setq retVal (vl-catch-all-apply 'vl-vbaload (list (findfile "sample/vba/drawline.dvb"))))
+
+    ;; If the DVB file was found, then define the function to run the function
+    (if (not (vl-catch-all-error-p retVal))
+      (defun c:DRAWLINE (/)(vl-vbarun "drawline"))
+      (prompt "\ndrawline.dvb is missing")
+    )
+
+    (prompt "\nEnter DRAWLINE to run the VBA macro.")(princ)
+  )
+  (progn (prompt "\nVBA macros are not supported on AutoCAD LT.")(princ))
+)</pre>
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_7018403568904FC4A1D62BA2B88CBC0B">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2023
+     </span>
+    </h2>
+    <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_146049C6E258402D90322E4D0CBF9598">
+     <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_3F48510FB882464DBA93574E92025A19">
+      No new or changed functions
+     </li>
+     <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_EC755D16974D461C89EB5D5266A8E686">
+      AutoLISP is now available on AutoCAD web for AutoCAD subscribers only
+     </li>
+    </ul>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_D3AFE6E5C98A46C6A75B71926C42FBCB">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2022
+     </span>
+    </h2>
+    <p class="p">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_708F73F6DB6240BB803885A54F9058DE">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2021
+     </span>
+    </h2>
+    <dl class="dl">
+     <dt class="dt dlterm">
+      New
+     </dt>
+     <dd class="dd">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_652B0EB509464BCEAD0B0048F3523C02">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_166707953E884730B891020683C95EBD">
+        <strong class="ph b">
+         AutoCAD AutoLISP Extension for Visual Studio (VS) Code
+        </strong>
+        - Allows for the editing and debugging of AutoLISP files with VS Code on Windows or Mac OS. The LISPSYS system variable must to set to 1 or 2 in order to debug AutoLISP files with the AutoCAD AutoLISP Extension. When LISPSYS is set to 0, the legacy AutoLISP engine and Visual LISP IDE are used for editing and debugging AutoLISP files.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_56E076E679DF4B99A52F4BB94BD38277">
+        <strong class="ph b">
+         DCL support on Mac OS
+        </strong>
+        - Dialog boxes defined using DCL can now be displayed with AutoLISP. All DCL tiles supported on Windows are also supported on Mac OS, but not all tile attributes are supported on Mac OS.
+       </li>
+      </ul>
+     </dd>
+     <dt class="dt dlterm">
+      Changed
+     </dt>
+     <dd class="dd">
+      <p class="p">
+       These functions were updated to support Unicode character strings/codes:
+      </p>
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_F934127286BF48679272C15FF71ABC0B">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_4502E3C9E039491E90288C7797B661AB">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-03E1B586-72CB-4AB6-A151-B581AE530318">
+          ascii
+         </a>
+        </strong>
+        - Returns the conversion of the first character of a string into its Unicode character code (an integer).
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_E7AE93869FC94607967F0EF9CC05486D">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5846BFDD-AE5F-4B2F-99E0-0B9DBA667739">
+          chr
+         </a>
+        </strong>
+        - Converts an integer representing a Unicode character code into a single-character string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_C097EDA81FCE49389767FCD1F0DAA537">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F3639BAA-FD70-487C-AEB5-9E6096EC0255">
+          load
+         </a>
+        </strong>
+        - Evaluates the AutoLISP expressions in a file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_8D1C440525A0463C9E16BCC4E5592135">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-089A323F-21FF-4337-99A9-375758E23BA4">
+          open
+         </a>
+        </strong>
+        - Opens a file for access by the AutoLISP I/O functions. A new optional argument has been added which allows for the specification of the character encoding to be used when reading/writing the file. When the argument isn't provided, the file is assumed to contain a multibyte character set (MBCS) which is the legacy behavior.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_9EC08A1F53044A1681FE7E5B0ABFD7BC">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-7E94BD14-F018-47D0-88DA-2B08DE32DB2C">
+          read-char
+         </a>
+        </strong>
+        - Returns the integer representing the Unicode character read from the keyboard input buffer or from an open file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_73911C1859CA477AA87EF89632CBAD9D">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-AC74D827-0969-4888-91C0-C3149DEC3659">
+          read-line
+         </a>
+        </strong>
+        - Reads a string from the keyboard or from an open file, until an end-of-line marker is encountered.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_014E1FBD77344EDFB2483FE606C0EA88">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F16AAC5F-5C87-4DC5-A7B9-BDCD25DC507A">
+          strlen
+         </a>
+        </strong>
+        - Returns an integer that is the number of characters in a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_CC8517EC1F3646FE9B8DE3122B61DCAA">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2">
+          substr
+         </a>
+        </strong>
+        - Returns a substring of a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_0AA2BB691CAC4B0F9A3E0205AD58CC46">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-C28C0CB0-FBBE-4AA8-BAC4-2FF222772514">
+          vl-directory-files
+         </a>
+        </strong>
+        - Lists all files in a given directory.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_32D9A50E4DCF4BE593534DA7D9B93FE3">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-12910252-217C-427D-8874-1323611FA74C">
+          vl-file-copy
+         </a>
+        </strong>
+        - Copies or appends the contents of one file to another file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_661EBC4264C34BC58CC78ADDFF0C2798">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4CEDC718-EEBB-48A8-A9D3-387F216C12B8">
+          vl-file-delete
+         </a>
+        </strong>
+        - Deletes a file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_7DD8AEDF603745EDB5D340F6E952930F">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-7EEA5563-33A7-453C-9E96-860F7565808B">
+          vl-file-directory-p
+         </a>
+        </strong>
+        - Determines if a file name refers to a directory.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_8ED44C7BEDBF45818F0B7A9149406D80">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-188B957C-4CDF-41C7-99BE-8080FA587F74">
+          vl-file-rename
+         </a>
+        </strong>
+        - Renames a file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_D63D85D86D884DCF9AD678C37AA50EBD">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-646032BF-CAC1-4166-9EBA-2C954DFF3005">
+          vl-file-size
+         </a>
+        </strong>
+        - Determines the size of a file, in bytes.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_A32A425357794C2798384145CE98E293">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-7F6A31B2-7D51-4C4D-B239-206F398D67CA">
+          vl-file-systime
+         </a>
+        </strong>
+        - Returns last modification time of the specified file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_A2D4F45F2A5047F38905411E538731A6">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F417A5EF-95BB-47EE-B60E-7C017635580D">
+          vl-filename-mktemp
+         </a>
+        </strong>
+        - Calculates a unique file name to be used for a temporary file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_01E42C50BD6A4D27A78F489AB3B5BDB9">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-02C7058A-F648-48F5-BAF6-2A62EABD4DF6">
+          vl-list-&gt;string
+         </a>
+        </strong>
+        - Combines the Unicode characters associated with a list of integers into a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_4F884162DD3249C1922C6DD2D7263F6E">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-02D5CC9E-9394-4630-AE14-133F5F03D7B1">
+          vl-mkdir
+         </a>
+        </strong>
+        - Creates a directory.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_0CEB25C7E94C494895AE2CF3ED33C3D1">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-3C1B15F7-CF97-4783-A725-231C3A1ABB11">
+          vl-string-&gt;list
+         </a>
+        </strong>
+        - Converts a string into a list of Unicode character codes.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_08B3091187AD42E38B814F50490365C7">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5A68B31E-1EA7-434A-93FF-C05D9514A55B">
+          vl-string-elt
+         </a>
+        </strong>
+        - Returns the Unicode representation of the character at a specified position in a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_6FF8C5E033FF40FB915ACCFEDCF6DFE0">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D1EA6F47-146E-44BC-BBCA-40B7A874C0B8">
+          vl-string-mismatch
+         </a>
+        </strong>
+        - Returns the length of the longest common prefix for two strings, starting at specified positions.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_F71F6D0B199346D9B20E3B8C39B32912">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-2B0BF48B-FA26-431B-8EC3-DD0BD9F147A0">
+          vl-string-position
+         </a>
+        </strong>
+        - Looks for a character with the specified Unicode code in a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_0B97BED5F8354D618C0EC7924A9BAEA2">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4E7AE1DA-1ED5-4D96-A7D3-34241AA94AA6">
+          vl-string-search
+         </a>
+        </strong>
+        - Searches for the specified pattern in a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_CDA7BC2055784EFD97F68AEEAC5F338E">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D8EE91DC-D4DB-43E0-9AFE-5FA166C0896D">
+          vl-string-subst
+         </a>
+        </strong>
+        - Substitutes one string for another, within a string.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_891A9958DBA0472EAFB2F5126C26F72A">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-57060085-C79D-4613-B438-506AC443BCE7">
+          vl-string-translate
+         </a>
+        </strong>
+        - Replaces characters in a string with a specified set of characters.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_F0E3E2A51A03450384F8326DBF6CFD97">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-54FD698E-8D94-4E27-9DF1-3F7E9D451E05">
+          vl-vbaload
+         </a>
+        </strong>
+        - Loads a VBA project.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_93FA50EB88F149CBAF6A120E033765D3">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8184531C-EDE5-4949-9EAE-25CE98BFF89C">
+          vlisp-compile
+         </a>
+        </strong>
+        - Compiles AutoLISP source code into a FAS file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_CAF8EE286CFB4E10ADCC197434C83A58">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-83AA4A55-C6A0-447B-A106-717E08D2EAF1">
+          write-char
+         </a>
+        </strong>
+        - Writes one Unicode character to the screen or an open file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_530EEE2CB7184867B103C1679124BDD2">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-CB4F3ABC-F0F6-41DA-A911-75B90D9F974A">
+          write-line
+         </a>
+        </strong>
+        - Writes a string to the screen or to an open file.
+       </li>
+      </ul>
+     </dd>
+     <dt class="dt dlterm">
+      Obsolete
+     </dt>
+     <dd class="dd">
+      <strong class="ph b">
+       Visual LISP IDE (AutoCAD for Windows Only)
+      </strong>
+      - The Visual LISP (VL) IDE has been retired and will be removed in a future release. It is recommended to use the AutoCAD AutoLISP Extension for Visual Studio (VS) Code creating new and updating existing AutoLISP programs. LISPSYS must be set to 0 before the VL IDE can be used to edit and debug AutoLISP files.
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_DAF0D6F6B760453883DB93316E517E63">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2020
+     </span>
+    </h2>
+    <p class="p">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_9D62D9E4E9DA4602AD9F3888EC22F4FD">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2019
+     </span>
+    </h2>
+    <p class="p">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_B8BE551034464DF9857BDA130EBFF5EE">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2018
+     </span>
+    </h2>
+    <p class="p">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_F060E603E8CC492D9065C0735FBEA947">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2017
+     </span>
+    </h2>
+    <p class="p">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_EB226C3F28CC438FADA3C7188ED599C2">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2016
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-BCCD2949-FBFA-4BB1-97DD-7E73F0475A57">
+     <dt class="dt dlterm">
+      Changed
+     </dt>
+     <dd class="dd">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_2B42368953164655862B6B2B3F8E9F37">
+       <p class="p">
+        <strong class="ph b">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-33498AA8-EDC0-45A3-9603-47A3F3510924">
+          osnap
+         </a>
+        </strong>
+        - Returns a 3D point that is the result of applying an Object Snap mode to a specified point. The function no longer accepts the
+        <samp class="ph codeph">
+         qui
+        </samp>
+        mode. Using the
+        <samp class="ph codeph">
+         qui
+        </samp>
+        mode results in a value of
+        <samp class="ph codeph">
+         nil
+        </samp>
+        to be returned, even if other modes are specified.
+       </p>
+      </ul>
+     </dd>
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-87B89460-B568-44C2-9629-FF69A16DB285">
+      Obsolete
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-06A64A9E-959B-4629-B70B-1F5336A3D202">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_338AA9A5046042479FA81F33B5C4D44F">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_ED99A12E76CF4FE89751EDF8E7A004A1">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-159C15BB-96B1-4069-AD33-D27B780C3E15">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D8D46A8C-82DF-4193-A1B7-3DC3CAC70650">
+          getcfg
+         </a>
+        </strong>
+        - Retrieves application data from the AppData section of the
+        <em class="ph i" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-428C0CBD-70DF-484A-9215-90A0756D4A03">
+         acad20xx.cfg
+        </em>
+        file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_3B77D3567AA445059EA3FEBEC6AE6618">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-A17DCF13-FB29-408A-AF02-058E1B3CDCC1">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8BABF3B0-C8E1-49C9-A367-9823211C1F6B">
+          setcfg
+         </a>
+        </strong>
+        - Writes application data to the AppData section of the
+        <em class="ph i" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-3EBFDC08-1A27-4558-82D7-124660881A92">
+         acad20xx.cfg
+        </em>
+        file.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+    <div class="note note" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-FD3BF969-B99A-41D0-8DA9-1112D9F9859B">
+     <span class="notetitle">
+      Note:
+     </span>
+     <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-DF036AAC-0FC8-4813-B192-49B238FEF7F4">
+      getcfg
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-838DA71F-2AD6-44C0-8A00-007AF731A8DE">
+      setcfg
+     </samp>
+     are still available for compatibility, but might be removed in a future release. It is recommended to use the
+     <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-39B66B6E-2CBE-4B5D-AF2E-6A56B3D7DAA9">
+      vl-registry-read
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-B8938444-1BB9-4CC4-AE27-9332C92C0468">
+      vl-registry-write
+     </samp>
+     functions as replacements.
+    </div>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_67F73FF588C149B5A8DBAFB73C8D40EC">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2015
+     </span>
+    </h2>
+    <p class="p" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-F6832859-AFE0-45A8-8C8C-26C8ED6382F6">
+     No new or changed functions.
+    </p>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_7F03BACDD5C545DABD44EB1F79E2A4EF">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2014
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-98FF0459-C03F-4456-A84B-EE451BFBB74E">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-548C9F68-4401-4843-A64E-FA5340BDFB06">
+      New
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-AD9AF3AE-5AC9-428E-BD06-D37DE9A48C6A">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_7234DD91C98645008746009CC437F55D">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_F70EA67F74FA4A2BB6C2F4FD1B5C78FF">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-F447FF74-24F3-47EE-8B3E-C9640D5F7206">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-456F421A-DED1-4A87-9D4A-8434D1E997E1">
+          findtrustedfile
+         </a>
+        </strong>
+        - Searches the AutoCAD trusted file paths for the specified file.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_57634B8EA2FD4836ABE72690C2720A5A">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-35B80887-BBF0-4B52-BF6E-CB7E705C3EB2">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-1330BB1E-866E-419A-8AE3-22B0C16E1F06">
+          showHTMLModalWindow
+         </a>
+        </strong>
+        - Displays a modal window with a HTML document; use in conjunction with the new JavaScript API.
+       </li>
+      </ul>
+     </dd>
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-7104EA90-A6DF-4A7E-A381-4BCFCCC2D829">
+      Changed
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-4C7BA552-203D-43A1-AB23-FE19A1BDBC07">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_FD69BC01D8B94F27923DFC3ACAD2A200">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_B078E22512B1409BBEC0C1B0EF9B79A9">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-28A376A0-C9B3-44D7-ACE7-FC0F70B4E09E">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607">
+          findfile
+         </a>
+        </strong>
+        - Searches the AutoCAD support and trusted file paths. Function was updated to search the new trusted applications paths.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_9F8144F03D794A17B448B7FFD0D568D1">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2013
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-0F585ECD-8A81-431B-B86B-19F395DB7BE6">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-65534C47-5F0E-4C2D-928F-72EFDDAE0B10">
+      New
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-C618CFF7-C250-43DE-9DB5-0AA5FE990CB8">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_758A32D650434BDFBBF4C8CB32581EFE">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_F4256A0294A0409796CF1FF9C41E17DF">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-3FA25AD1-8C0C-4930-BA80-D656A828B9E6">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-2EB68815-FDF9-4235-918B-025FB9A42220">
+          vlax-machine-product-key
+         </a>
+        </strong>
+        - Returns the AutoCAD Windows registry path in the HKLM (HKEY_LOCAL_MACHINE).
+       </li>
+      </ul>
+     </dd>
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-180F76D0-006B-4A1E-A8F5-F6D86828D655">
+      <span class="keyword apiname">
+       Obsolete
+      </span>
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-67816E21-2EE6-4646-8182-BB5B245A6B5B">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_FAF37C44CA1F4B55950E5C4637539D5D">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_005387F0B6664EC68F0F0B9BF7B7E796">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-FF38AF28-C66C-4B85-A0E3-96964420BE35">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-237CEDFA-A02E-443E-BB21-5BD86E5E353E">
+          vlax-product-key
+         </a>
+        </strong>
+        - Returns the AutoCAD Windows registry path.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_28CF71D01B224690BCF89BA8435BFF29">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2012
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-E03B3120-65F7-44B8-96F4-96BA548D471A">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-B190A50C-E6A1-417D-A979-7476C1346A46">
+      New
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-AE135493-AC0C-4D53-8EE7-EFE0EF5E3F38">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_60E47148565444708A7C1E7FFE276040">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_95D3A8812A674F4C97D395C107CD55E2">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-7BCC1E5B-36C3-4E06-9438-F88D3D286DD7">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5C9DC003-3DD2-4770-95E7-7E19A4EE19A1">
+          command-s
+         </a>
+        </strong>
+        - Executes an AutoCAD command and the supplied input.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_63E1AB9DAB3844408AC3D1486A90C399">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-C8C64AF9-202C-4C7A-A25F-346034A1BDA6">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-60AFEFAD-1DF5-448F-A2E9-D7260DB279E4">
+          *pop-error-mode*
+         </a>
+        </strong>
+        - Error-handling function that ends the previous call to
+        <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-55386228-766E-4677-B1B3-DA003BBDEDC6">
+         *push-error-using-command*
+        </samp>
+        or
+        <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-40771477-D21D-4AD0-91D4-769CA9BFC367">
+         *push-error-using-stack*
+        </samp>
+        .
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_0B0BAF1E73E64EE886551967FE4C0E4C">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-26419AE6-76BC-4478-964B-38CC6FD794D1">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-620E034A-9151-427F-B6F5-B360D14DA925">
+          *push-error-using-command*
+         </a>
+        </strong>
+        - Error-handling function that indicates the use of the command function within a custom
+        <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-76C278D3-DA42-4A36-95D5-0140FBF8E935">
+         *error*
+        </samp>
+        handler.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_226DEF0BFFD1412D98DEC6A8C255C973">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-01016D4B-00C0-442B-970E-43C9BA20B160">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1">
+          *push-error-using-stack*
+         </a>
+        </strong>
+        - Error-handling function that indicates the use of variables from the AutoLISP stack within a custom
+        <samp class="ph codeph" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-C1A87544-92B0-4C34-AA2E-2ACA5AFB24B5">
+         *error*
+        </samp>
+        handler.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_1805BF476CC6414AA5EF361E472E8FD1">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2011
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-25D4F398-A631-40C8-8359-4B08086CE0BD">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-9E9ED35D-1D58-4631-A261-3D15881CEDE3">
+      New
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-BEDE05DD-E80B-4472-87AB-7FD16E74B10E">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_9399B59AA69547CCBE16CB8361D9C16B">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_27FA2D47ABB04A48973D007B3D5C4A7B">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-BCBEB136-3C33-476B-BB9D-0594E7939812">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-A65FBCCF-CC5D-47E8-9117-D577D9CB9D8A">
+          dumpallproperties
+         </a>
+        </strong>
+        - Retrieves an entity’s supported properties.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_3B568C2338EE4FB3899F1E5259444199">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-6D9C52AA-112A-4BE8-9791-95135BBCD2FD">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899">
+          getpropertyvalue
+         </a>
+        </strong>
+        - Returns the current value of an entity’s property.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_A7F95C5657A144D0A0B3BF888637EE71">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-EB20F02E-D759-4B29-8BEE-AD833A0DD699">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-1DE8095D-5755-4889-BFB7-C13045B7BC81">
+          ispropertyreadonly
+         </a>
+        </strong>
+        - Returns the read-only state of an entity’s property.
+       </li>
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_A404367DC75947E28ADE67EB95C271B1">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-CFF7125A-3463-490B-B5C0-1DBAD8CFC8CF">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-8F32FD8C-D81A-4DCA-B455-9D560CF17246">
+          setpropertyvalue
+         </a>
+        </strong>
+        - Sets the property value for an entity.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_357F811847B14677B6F215EFC734F60C">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2010
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-A0E95047-7072-473F-9711-911313E27E45">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-294F318C-6D25-4177-A441-980150C7F6BC">
+      Changes
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-39BE1CC6-3B0D-4D87-B33F-D6DF0A2B41E3">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_88C1FF518BE44B679B8B76F5D35C2F8D">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_31B31FEE080845BD9625046C3081D87F">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-2B954CE8-C7A0-4B09-993A-3BB3E2F15561">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4CB4A951-1507-4F3D-9F7B-93FF3A2C9850">
+          help
+         </a>
+        </strong>
+        - Invokes the Help facility. Function was updated to add support for HTML documentation.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+   <div class="section" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__SECTION_B92D89CA227D486EBCFF80D82546B9A1">
+    <h2 class="title sectiontitle">
+     <span class="ph msgph prodname">
+      AutoCAD 2009
+     </span>
+    </h2>
+    <dl class="dl" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-C44A2DBE-CFEB-4589-82A2-EE28E36BE0E5">
+     <dt class="dt dlterm" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-83FE17EC-B4A3-4AC2-AF02-64530CB1CB3B">
+      New
+     </dt>
+     <dd class="dd" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-D05A537F-B7B0-4AAD-BD01-3DB4C38AAF9A">
+      <ul class="ul" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__UL_8E5FCDBC5CE44C36BB392DA1652C08FB">
+       <li class="li" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__LI_F4AE67E53EB84E079C698E2BA70F840D">
+        <strong class="ph b" id="GUID-037BF4D4-755E-4A5C-8136-80E85CCEDF3E__GUID-0D9EF133-6BB2-474F-BD04-82880376E7D6">
+         <a class="xref" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-6176FC98-DC5D-433E-8D76-F481BE68D46A">
+          initcommandversion
+         </a>
+        </strong>
+        - Forces the next command to run with the specified version.
+       </li>
+      </ul>
+     </dd>
+    </dl>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Introduction_AutoLISP.html">
+      Introduction (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="AutoLISP_and_Visual_LISP_AutoLISP.html" title="AutoLISP is a programming language designed for extending and customizing AutoCAD product functionality.">
+       AutoLISP and Visual LISP (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-4CEE5072-8817-4920-8A2D-7060F5E16547">
+       Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

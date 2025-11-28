@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Performs a wild-card pattern match on a string" name="description"/>
+  <meta content="WCMATCH" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   wcmatch (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      wcmatch (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Performs a wild-card pattern match on a string
+   </p>
+   <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-FD2C70D5-C1B5-4804-AF82-CE6829516138">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(wcmatch <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-D5A77448-7AA7-4E41-AAAF-071E5B65967C">str pattern</em>)</pre>
+    <div class="section" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-1E1423D1125831BDA67-7A45">
+     <dl class="dl" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-1E1423D1125831BDA67-7A45">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-B40A7DA5-DC95-477F-8058-F1915428C28F">
+        str
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-9BEB1D98-E60B-47B9-A923-EA280BB353AA">
+       <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-34B41AFE-BF11-45AE-9BE4-387752D0FAF1">
+        <strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-53E197BE-7DA3-4B7D-BD1E-AA239CB23749">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2910">
+        A textual value to be compared. The comparison is case-sensitive, so uppercase and lowercase characters must match.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-68611F7B-E5B4-4F20-B60E-D3D62BE58834">
+        pattern
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-E4917051-7E69-40D0-8DA8-B12379505C5B">
+       <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-C3A39C91-81F2-4175-AABF-9B09E1C22D07">
+        <strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-8AD25669-9965-4CB4-9B80-44BD9A92CDD1">
+         Type:
+        </strong>
+        String
+       </p>
+       <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-290F">
+        Pattern to match against
+        <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-20022084-AF26-440A-9A27-1EA295E1CE78">
+         str
+        </em>
+        . The
+        <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-EB7C0D53-E74B-4C41-B860-052DC969B723">
+         pattern
+        </em>
+        can contain the wild-card pattern-matching characters shown in the table Wild-card characters. You can use commas in a pattern to enter more than one pattern condition. Only the first 500 characters (approximately) of the
+        <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-62BEA9A1-5CFD-4AC2-A0DC-D0A505ABC0C0">
+         str
+        </em>
+        and
+        <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-7E0DAF72-3A15-4D12-8942-F5C1AC3CDA87">
+         pattern
+        </em>
+        are compared; anything beyond that is ignored.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__SECTION_E0EBEA0D759A4E9CB9254CF8D7521030">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-B47C9CC1-8FCF-4437-ACAC-75BDA1FDB8F4">
+     <strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-718B91FA-C255-4E75-ACF8-C8A61811EAC1">
+      Type:
+     </strong>
+     String or nil
+    </p>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-290C">
+     If
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-76B0A0A0-2A07-4E2A-94BE-A107A9332EB3">
+      str
+     </em>
+     and
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-EE1B95A3-6D78-4DC5-B4A3-0FDA24701C3F">
+      pattern
+     </em>
+     match,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-D2D0A02E-F4A3-4FFF-B08B-8FB56E4B3DBE">
+      wcmatch
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-A6A469A1-8694-497C-B96A-E4E6DAFC0B05">
+      T
+     </samp>
+     ; otherwise,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-27B5AB40-C294-495A-AA9D-2A692AEDDACC">
+      wcmatch
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-D1960BE7-E085-4473-B110-F02CEED1C3C6">
+      nil
+     </samp>
+     .
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6752" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="2" valign="top">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS4B0506698C46277AB5F53AFF1E063EFC-7E42">
+          Wild-card characters
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-290B">
+          Character
+         </p>
+        </th>
+        <th class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-290A">
+          Definition
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2909">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-9C560574-6E48-4DBB-8F80-C4A37856F3BB">
+           #
+          </samp>
+          (pound)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2908">
+          Matches any single numeric digit.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2907">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-8E56C58A-5758-44F9-A794-8589BF58189B">
+           @
+          </samp>
+          (at)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2906">
+          Matches any single alphabetic character.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2905">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-A7028874-5F46-4BE6-983B-94154A15140C">
+           .
+          </samp>
+          (period)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2904">
+          Matches any single nonalphanumeric character.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2903">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-24381A52-263A-4E7A-934B-E5A2FD8421DE">
+           *
+          </samp>
+          (asterisk)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2902">
+          Matches any character sequence, including an empty one, and it can be used anywhere in the search pattern: at the beginning, middle, or end.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2901">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-FAE7A5F5-6F74-4A88-B424-5E148439BDB6">
+           ?
+          </samp>
+          (question mark)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-2900">
+          Matches any single character.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FF">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-A8D70E8B-C000-47C5-A11A-486B3AF4142C">
+           ~
+          </samp>
+          (tilde)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FE">
+          If it is the first character in the pattern, it matches anything except the pattern.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FD">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-456BD086-DB17-4A61-A08A-14F8A379BD80">
+           [...]
+          </samp>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FC">
+          Matches any one of the characters enclosed.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FB">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-224EAB4E-DF06-416A-A392-D2538D7C5636">
+           [~...]
+          </samp>
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28FA">
+          Matches any single character not enclosed.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F9">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-32E3C5FB-08CB-4CC0-9651-EB415C111679">
+           -
+          </samp>
+          (hyphen)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F8">
+          Used inside brackets to specify a range for a single character.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F7">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-DBB53065-600A-4BFF-91A7-12374D8965C7">
+           ,
+          </samp>
+          (comma)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F6">
+          Separates two patterns.
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="30.406320541760724%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F5">
+          <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-B5B1FB97-3243-4C04-843E-82448C2B1B14">
+           `
+          </samp>
+          (reverse quote)
+         </p>
+        </td>
+        <td class="entry" valign="top" width="69.5936794582393%">
+         <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F4">
+          Escapes special characters (reads next character literally).
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="section" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__SECTION_1C6A61C7C70941EEB2A65BDE6F408C7F">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-290E">
+     Both arguments can be either a quoted string or a string variable. It is valid to use variables and values returned from AutoLISP functions for
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-069EE7E1-3450-435A-AFC1-21AC0FC40B39">
+      str
+     </em>
+     and
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-D7F69AAF-AD03-4C75-BBCA-8704361B01C1">
+      pattern
+     </em>
+     values.
+    </p>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28ED">
+     To test for a wild-card character in a string, you can use the single reverse-quote character (
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-20A8F040-C60E-4FD2-B655-DD4528842C01">
+      `
+     </samp>
+     ) to
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-4784DAAE-EE9F-43B2-AC95-2E55C21F2B14">
+      escape
+     </em>
+     the character.
+     <em class="ph i" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-66D7E651-3DFF-4781-9554-6F05EBA3201D">
+      Escape
+     </em>
+     means that the character following the single reverse quote is not read as a wild-card character; it is compared at its face value. For example, to search for a comma anywhere in the string “
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-FD97AC8D-619C-4842-9D76-E7F7AC402B99">
+      Name
+     </samp>
+     ”, enter the following:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-C4D47635-AEE1-4B54-A914-57DBB10D4F97">(wcmatch "Name" "*`,*")</strong>
+nil</pre>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28EC">
+     Both the C and AutoLISP programming languages use the backslash (\) as an escape character, so you need two backslashes (\\) to produce one backslash in a string. To test for a backslash character anywhere in “
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-73A53A76-5509-4A05-9839-40527D4A8B71">
+      Name
+     </samp>
+     ”, use the following function call:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-88B43610-7C12-49D0-8B57-EE69C186FDF0">(wcmatch "Name" "*`\\*")</strong>
+nil</pre>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28EB">
+     All characters enclosed in brackets (
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-37D9F040-8850-4E5B-8351-69A385B6B087">
+      [
+     </samp>
+     . . .
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-ABCB38B0-D8B3-4CA1-8F26-2297A3319470">
+      ]
+     </samp>
+     ) are read literally, so there is no need to escape them, with the following exceptions: the tilde character (~) is read literally only when it is not the first bracketed character (as in
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-680EAD1F-967C-4BB1-BBE9-51F3BC25BACF">
+      "[A~BC]"
+     </samp>
+     ); otherwise, it is read as the negation character, meaning that
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-790D52AE-CD92-44B1-A893-5E0FD4F5D68F">
+      wcmatch
+     </samp>
+     should match all characters except those following the tilde (as in
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-21350572-9A61-4648-AEB9-E8ADA95434FC">
+      "[~ABC]"
+     </samp>
+     ). The dash character (-) is read literally only when it is the first or last bracketed character (as in
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-7BCA47CE-EDB2-4EA5-B362-E1665DD3FDBD">
+      "[-ABC]"
+     </samp>
+     or
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-63AEA1FF-F732-4D8E-94F3-A8BC390828AC">
+      "[ABC-]"
+     </samp>
+     ) or when it follows a leading tilde (as in
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-430AE0F7-8073-4079-9FEE-C8F0B551D45F">
+      "[~-ABC]"
+     </samp>
+     ). Otherwise, the dash character (-) is used within brackets to specify a range of values for a specific character. The range works only for single characters, so
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-FDA5A2F4-484C-4D29-B218-8515590A765D">
+      "STR[1-38]"
+     </samp>
+     matches
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-D74BB000-043F-4FF0-A85F-1AE057D2431F">
+      STR1
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-2881AFBA-1FF9-47BD-A693-2FBF17F92F2B">
+      STR2
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-0918EDF6-8E00-4ACC-A1BE-3D46A27BD81D">
+      STR3
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-010A4B88-065F-4FDE-9CFF-FE307819C023">
+      STR8
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-27B12923-BBB5-4A52-BECE-50F93756C90B">
+      "[A-Z]"
+     </samp>
+     matches any single uppercase letter.
+    </p>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28EA">
+     The closing bracket character (
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-AE0E1113-9142-44A0-BE6D-BF6839B6C98F">
+      ]
+     </samp>
+     ) is also read literally if it is the first bracketed character or if it follows a leading tilde (as in
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-80F55F4C-A1EF-4EDF-93D0-E4E78C662D1B">
+      "[ ]ABC]"
+     </samp>
+     or
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-7345E2FE-6443-4350-AB1D-421C5917E7CF">
+      "[~]ABC]"
+     </samp>
+     ).
+    </p>
+    <div class="note note" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-7C08E89711EC57B47A8-766F">
+     <span class="notetitle">
+      Note:
+     </span>
+     Because additional wild-card characters might be added in future releases of AutoLISP, it is a good idea to escape all nonalphanumeric characters in your pattern to ensure upward compatibility.
+    </div>
+   </div>
+   <div class="section" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__SECTION_231BAF75F3B94111ACC6AEC4852B344B">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F3">
+     Examples
+    </p>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F2">
+     The following command tests a string to see if it begins with the character
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-86C76D1C-9224-4D8D-9F43-8DAA5EE2468C">
+      N:
+     </samp>
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-42BAFF01-21DB-40BB-AE46-95D258C22152">(wcmatch "Name" "N*")</strong>
+T</pre>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F1">
+     The following example performs three comparisons. If any of the three pattern conditions is met,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-63DB275A-59CE-43C9-B5C4-BB822BAA75D8">
+      wcmatch
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-19D6AB34-862E-4EB0-A327-FE76DEB27C2D">
+      T
+     </samp>
+     . The tests are:
+    </p>
+    <ul class="ul" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6751">
+     <li class="li" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-7C08E89711EC57B47A8-7672">
+      Does the string contain three characters?
+     </li>
+     <li class="li" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-7C08E89711EC57B47A8-7671">
+      Does the string not contain an
+      <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-312753A7-D3BB-43F7-AA63-19B26175B97D">
+       m
+      </samp>
+      ?
+     </li>
+     <li class="li" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WS1A9193826455F5FF-7C08E89711EC57B47A8-7670">
+      Does the string begin with the letter “
+      <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-95373B78-42AD-4DFB-A0D0-4529CEFB07CD">
+       N
+      </samp>
+      ”?
+     </li>
+    </ul>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28F0">
+     If any of the three pattern conditions is met,
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-702A4AA2-B6D4-437B-AA4E-26C03E875F22">
+      wcmatch
+     </samp>
+     returns
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-5649082E-C910-4D6D-B44A-41EAC711DF09">
+      T
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-1A4D357C-6DE0-4E74-8143-D0DC62F5A6E2">(wcmatch "Name" "???,~*m*,N*")</strong>
+T</pre>
+    <p class="p" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__WSFACF1429558A55DE11F0759FF1E4B858C-28EF">
+     In this example, the last condition was met, so
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-2E37901B-9B9F-4187-ABA8-DF9F96F1E87E">
+      wcmatch
+     </samp>
+     returned
+     <samp class="ph codeph" id="GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD__GUID-F9BD7429-8506-4095-9CE2-89CB1916FC6D">
+      T
+     </samp>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/String_Handling_Functions_Reference_AutoLISP.html">
+       String-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../G_Functions/getstring_AutoLISP.html" title="Pauses for user input of a string, and returns that string">
+       getstring (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../C_Functions/cond_AutoLISP.html" title="Serves as the primary conditional function for AutoLISP">
+       cond (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

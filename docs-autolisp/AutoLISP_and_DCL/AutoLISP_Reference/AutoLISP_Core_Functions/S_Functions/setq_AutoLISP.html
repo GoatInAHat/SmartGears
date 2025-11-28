@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Sets the value of a symbol or symbols to associated expressions" name="description"/>
+  <meta content="SETQ" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   setq (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      setq (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Sets the value of a symbol or symbols to associated expressions
+   </p>
+   <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-51381ADD-2E28-4C89-BFD8-FB3AAD7A41F4">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(setq <em class="ph i" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-E6809860-8E90-4CC4-9E22-D043F4B7B106">sym expr [sym expr] ...</em>)</pre>
+    <div class="section" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WS1A9193826455F5FF-1E1423D1125831BDA67-7B10">
+     <dl class="dl" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WS1A9193826455F5FF-1E1423D1125831BDA67-7B10">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-85EDA50C-4DD1-4D2D-9657-0193517D055A">
+        sym
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-2FB3169E-30F1-47E7-B58A-A7F165069D70">
+       <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-90CB133F-F1DD-4B14-A156-B862DB55D520">
+        <strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-A1E7FC05-1D53-43C2-94DE-2C8CC00469E4">
+         Type:
+        </strong>
+        Symbol
+       </p>
+       <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-341E">
+        The user-defined variable to assign
+        <em class="ph i" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-2F101F13-9A96-43E2-ADFA-46E40590062E">
+         expr
+        </em>
+        to. This argument is not evaluated.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-FA1DF523-9F53-40D4-9F4F-5F3AF864A2A8">
+        expr
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-AC4C574C-22F0-4D06-A9B8-20D35C3A429C">
+       <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-5E3B3888-088F-446C-941F-992CF23511C1">
+        <strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-6B39A6FA-F05C-41DE-A92D-FF3E76FF3CE3">
+         Type:
+        </strong>
+        Integer, Real, String, List, File, Ename (entity name), T, or nil
+       </p>
+       <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-341D">
+        An expression.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__SECTION_AF707A9B1E5F4634B072BE818183F829">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-6BCA6EFB-9774-4522-854B-0170FB9344B7">
+     <strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-ECD09DED-87C4-4C3F-833A-D64BF3AA9976">
+      Type:
+     </strong>
+     Integer, Real, String, List, File, Ename (entity name), T, or nil
+    </p>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-341B">
+     The result of the last
+     <em class="ph i" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-8931EEF9-7EDC-4146-931C-EBD31B85F572">
+      expr
+     </em>
+     evaluated.
+    </p>
+   </div>
+   <div class="section" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__SECTION_F370003A63C1445DB7F12A6F29DFE1C1">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3420">
+     This is the basic assignment function in AutoLISP. The
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-CC3F79A7-1E68-4816-AB77-9E3FDC6073D6">
+      setq
+     </samp>
+     function can assign multiple symbols in one call to the function.
+    </p>
+   </div>
+   <div class="section" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__SECTION_50946A12865144918152DE5C4E36982A">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3419">
+     The following function call sets variable
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-6F5C0CDD-34E3-4DA7-BEF4-1754FB20A04C">
+      a
+     </samp>
+     to 5.0:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-32B853A5-E2FE-465D-B9BC-312F98877A22">(setq a 5.0)</strong>
+5.0</pre>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3418">
+     Whenever
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-B349B7F2-FFFD-442C-8BBE-0C674A6DA0AC">
+      a
+     </samp>
+     is evaluated, it returns the real number 5.0.
+    </p>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3417">
+     The following command sets two variables,
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-8476C0DB-CD03-43DB-8D55-0D0502C544EE">
+      b
+     </samp>
+     and
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-79052137-E054-4491-8A8B-CDB96DC67E8D">
+      c
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-1A6EFFF4-0508-406D-9C1C-862B43DE72FE">(setq b 123 c 4.7)</strong>
+4.7</pre>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3416">
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-91FCF151-3676-4002-8417-AE9A11E9581C">
+      setq
+     </samp>
+     returns the value of the last variable set.
+    </p>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3415">
+     In the following example,
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-75203311-21AD-4821-85D0-5483B98A03DE">
+      s
+     </samp>
+     is set to a string:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-8B9A2C55-6A55-4F6C-B080-98233EEF6ECD">(setq s "it")</strong>
+"it"</pre>
+    <p class="p" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__WSFACF1429558A55DE11F0759FF1E4B858C-3414">
+     The following example assigns a list to
+     <samp class="ph codeph" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-C6C26F08-474C-4930-A5E3-F995B8FC9F36">
+      x
+     </samp>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA__GUID-C914ABB5-181A-49F8-BA18-55375553021F">(setq x '(a b))</strong>
+(A B)</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Symbol_Handling_Functions_Reference_AutoLISP.html">
+       Symbol-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="set_AutoLISP.html" title="Sets the value of a quoted symbol name to an expression">
+       set (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../T_Functions/type_AutoLISP.html" title="Returns the type of a specified item">
+       type (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_bb_set_AutoLISP.html" title="Sets a variable in the blackboard namespace">
+       vl-bb-set (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_propagate_AutoLISP.html" title="Copies the value of a variable into all open document namespaces (and sets its value in any subsequent drawings opened during the current AutoCAD session)">
+       vl-propagate (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../V_Functions/vl_doc_set_AutoLISP.html" title="Sets the value of a variable in the current document's namespace">
+       vl-doc-set (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

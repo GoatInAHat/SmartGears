@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Dotted pair lists must always contain two members and is the method AutoLISP uses to maintain entity definition data." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Dotted Pairs (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Dotted Pairs (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    Dotted pair lists must always contain two members and is the method AutoLISP uses to maintain entity definition data.
+   </p>
+   <p class="p" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-F2E6C5FD-E664-4203-9216-2C3EABB6BFD6">
+    When representing a dotted pair, members of the list are separated by a period (
+    <strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-CB3CD7E5-B009-45C5-A90F-08EF4E0609A2">
+     <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-22A74CC9-D4BF-4B29-B492-D0CEA7134D9F">
+      .
+     </samp>
+    </strong>
+    ). Most list-handling functions do not accept a dotted pair as an argument, so you should be sure you are passing the right kind of list to a function.
+   </p>
+   <p class="p" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-6E8E3B31-D3FA-4AF5-9D50-A958C1DA44F6">
+    Dotted pairs are an example of an "improper list." An improper list is one in which the last
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-FA144EAE-AA08-4F98-946F-94FEC859C8E6">
+     cdr
+    </samp>
+    is not
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-D971AF75-9E19-435C-A879-36CF707873AC">
+     nil
+    </samp>
+    . In addition to adding an item to the beginning of a list, the
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-BD4F23E2-1C4F-42A4-9AF8-82DAA63F462D">
+     cons
+    </samp>
+    function can create a dotted pair. If the second argument to the
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-0F5BF8AE-01C9-47E5-9209-6A0B0426214A">
+     cons
+    </samp>
+    function is anything other than another list or
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-BB91E7E3-D6BE-442A-B6EB-A4DF294BFD12">
+     nil
+    </samp>
+    , it creates a dotted pair.
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-F2A7D811-FB18-4B25-AA3E-995A5DC99D16">(setq sublist (cons 'lyr "WALLS"))</strong>
+(LYR . "WALLS")</pre>
+   <p class="p" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-D3D45D10-8E53-4EA8-BF68-175AF288FC20">
+    The following functions are useful for handling dotted pairs:
+   </p>
+   <ul class="ul" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__UL_9F96EC5CC55D46EC958341880EC6AD59">
+    <li class="li" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__LI_823DFC1CB99A47CB8EBB5028596F0D69">
+     <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-20C39D3D-D3A9-4202-8F84-7173E195077B">
+      car
+     </samp>
+     - Returns the first member of the specified dotted pair.
+    </li>
+    <li class="li" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__LI_444F5B19C08741BDB9629776E5D0600D">
+     <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-6D2FC09A-2BF9-4525-B250-55B7BBE7412A">
+      cdr
+     </samp>
+     - Returns the second member of the specified dotted pair.
+    </li>
+    <li class="li" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__LI_B6EB39C5642841A3BC1D53556DC269CC">
+     <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-B3983942-FB29-4615-9753-CCAEC2BF76FE">
+      assoc
+     </samp>
+     - Searches an association list for a member and returns that association list entry.
+    </li>
+    <li class="li" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__LI_4AA1A510878548D180C89E300EAEE006">
+     <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-35887933-A865-46FC-9D7F-50EF67E72C06">
+      nth
+     </samp>
+     - Returns the nth element of a list.
+    </li>
+   </ul>
+   <p class="p" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__WSFACF1429558A55DE11F0759FF1E4B858C-6579">
+    The following code creates an association list of dotted pairs:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-C88B7197-B712-46F5-AD36-B294DA8DB243">(setq wallinfo (list sublist (cons 'len 240.0) (cons 'hgt 96.0)))</strong>
+((LYR . "WALLS") (LEN . 240.0) (HGT . 96.0))</pre>
+   <p class="p" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__WSFACF1429558A55DE11F0759FF1E4B858C-6578">
+    The
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-1EEBD752-E1A9-43E1-8523-D7FF8C26C7D3">
+     assoc
+    </samp>
+    function returns a specified list from within an association list regardless of the specified list's location within the association list. The
+    <samp class="ph codeph" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-C070142E-A50E-4DA8-80E7-3E411627E35F">
+     assoc
+    </samp>
+    function searches for a specified key element in the lists and returns the first instance, as follows:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-B0A750E4-4DBB-4E06-A06F-300D03FFDC7D">(assoc 'len wallinfo)</strong>
+(LEN . 240.0)
+
+<strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-0881F883-A67D-44A4-B858-FCEEEC2AF7C1">(cdr (assoc 'lyr wallinfo))</strong>
+"WALLS"
+
+<strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-6E1FE28D-9861-48E3-8095-645972DAA9E0">(nth 1 wallinfo)</strong>
+(LEN . 240.0)
+
+<strong class="ph b" id="GUID-877B87BA-6FA2-4894-9F94-184E7DF25B7D__GUID-A347E616-A1EC-4B2E-BADA-6850952D44DF">(car (nth 1 wallinfo))</strong>
+LEN</pre>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_List_Handling_AutoLISP.html">
+      About List Handling (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Data_Types_AutoLISP/About_Lists_AutoLISP.html" title="A list is a group of related values separated by spaces and enclosed in parentheses.">
+       About Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Data_Types_AutoLISP/About_Entity_Names_AutoLISP.html" title="An entity name is a numeric label assigned to objects in a drawing.">
+       About Entity Names (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Using_AutoLISP_to_Manipulate_AutoCAD_Objects_AutoLISP/About_Object_Handling_AutoLISP/About_Entity_Data_Functions_AutoLISP/About_Obtaining_Entity_Information_AutoLISP.html" title="The entget function returns the definition data of a specified entity as a list.">
+       About Obtaining Entity Information (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-00A75AFB-5708-4D0C-B18C-F74DDC4D65FA">
+       List Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

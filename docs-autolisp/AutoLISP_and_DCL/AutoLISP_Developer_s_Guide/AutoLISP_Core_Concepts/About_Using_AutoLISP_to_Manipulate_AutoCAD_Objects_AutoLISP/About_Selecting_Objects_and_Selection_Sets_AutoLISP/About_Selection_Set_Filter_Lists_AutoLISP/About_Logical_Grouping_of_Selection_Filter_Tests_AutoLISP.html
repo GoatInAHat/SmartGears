@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="You can define test groups with nested Boolean expressions to filter objects from a selection set created with ssget." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Logical Grouping of Selection Filter Tests (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Logical Grouping of Selection Filter Tests (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    You can define test groups with nested Boolean expressions to filter objects from a selection set created with
+    <samp class="ph codeph" id="GUID-E6A4FF1A-3871-4DC2-B766-4F842819846A">
+     ssget
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63BA">
+    The following table lists the grouping operators that you can use to filter selection sets:
+   </p>
+   <div class="tablenoborder">
+    <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WS73099CC142F4875516D84BE10EBC87A53F-7A29" rules="all" summary="" width="100%">
+     <thead align="left" class="thead">
+      <tr class="row">
+       <th class="entry" colspan="3" valign="top">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B9">
+         Grouping operators for selection set filter lists
+        </p>
+       </th>
+      </tr>
+      <tr class="row">
+       <th class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B8">
+         Starting operator
+        </p>
+       </th>
+       <th class="entry" valign="top" width="45.52036199095023%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B5">
+         Encloses
+        </p>
+       </th>
+       <th class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B4">
+         Ending operator
+        </p>
+       </th>
+      </tr>
+     </thead>
+     <tbody class="tbody">
+      <tr class="row">
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B2">
+         "&lt;AND"
+        </p>
+       </td>
+       <td class="entry" valign="top" width="45.52036199095023%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B1">
+         One or more operands
+        </p>
+       </td>
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63B0">
+         "AND&gt;"
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AF">
+         "&lt;OR"
+        </p>
+       </td>
+       <td class="entry" valign="top" width="45.52036199095023%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AE">
+         One or more operands
+        </p>
+       </td>
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AD">
+         "OR&gt;"
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AC">
+         "&lt;XOR"
+        </p>
+       </td>
+       <td class="entry" valign="top" width="45.52036199095023%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AB">
+         Two operands
+        </p>
+       </td>
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63AA">
+         "XOR&gt;"
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63A9">
+         "&lt;NOT"
+        </p>
+       </td>
+       <td class="entry" valign="top" width="45.52036199095023%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63A8">
+         One operand
+        </p>
+       </td>
+       <td class="entry" valign="top" width="27.23981900452489%">
+        <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63A7">
+         "NOT&gt;"
+        </p>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63A5">
+    The grouping operators are specified by -4 dxf group codes, like the relational operators. They are paired and must be balanced correctly in the filter list or the
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-B16ACB0A-A18C-4AE8-A009-67A91F07734B">
+     ssget
+    </samp>
+    call will fail.
+   </p>
+   <pre class="pre codeblock prettyprint">(ssget "X"
+  '(
+    (-4 . "&lt;OR")
+      (-4 . "&lt;AND")
+        (0 . "CIRCLE")
+        (40 . 1.0)
+      (-4 . "AND&gt;")
+      (-4 . "&lt;AND")
+        (0 . "LINE")
+        (8 . "ABC")
+      (-4 . "AND&gt;")
+    (-4 . "OR&gt;")
+  )
+)</pre>
+   <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-7D74C5D7-F523-42BD-B992-5C81FD630716">
+    This filter list allows the selection of all circles with a radius of 1.0 plus all lines on layer "ABC". The grouping operators are not case-sensitive; for example, you can specify
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-7699D91A-DBCE-4ED0-B849-838B6D0F7648">
+     "and&gt;"
+    </samp>
+    ,
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-65C5399F-CF09-457D-88AB-A2F72BBAF800">
+     "&lt;or"
+    </samp>
+    , instead of
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-E2E8E091-000C-4FB2-9F57-65274461C2D2">
+     "AND&gt;"
+    </samp>
+    ,
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-7B2D8185-7FBB-4E03-9353-BE15DF3E36DA">
+     "&lt;OR"
+    </samp>
+    . Grouping operators are not allowed within the -3 dxf group code. Multiple application names specified in a -3 dxf group code use an implied
+    <samp class="ph codeph" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-C6ED0C37-E980-4F47-AD88-BFF121047851">
+     AND
+    </samp>
+    operator. If you want to test for extended data using other grouping operators, specify separate -3 dxf group codes and group them as desired.
+   </p>
+   <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__GUID-81657322-7A15-4F85-A382-37BBE8893599">
+    The following example code demonstrates how to select all circles having extended data for either application "APP1" or "APP2" but not both:
+   </p>
+   <pre class="pre codeblock prettyprint">(ssget "X"
+  '((0 . "CIRCLE")
+    (-4 . "&lt;XOR")
+      (-3 ("APP1"))
+      (-3 ("APP2"))
+    (-4 . "XOR&gt;")
+  )
+)</pre>
+   <p class="p" id="GUID-5CB54129-22A1-42B9-B97C-2D2F5597F90E__WSFACF1429558A55DE11F0759FF1E4B858C-63A3">
+    You can simplify the coding of frequently used grouping operators by setting them equal to a symbol. The previous example could be rewritten as follows (notice that in this example you must explicitly quote each list):
+   </p>
+   <pre class="pre codeblock prettyprint">(setq &lt;xor '(-4 . "&lt;XOR")
+         xor&gt; '(-4 . "XOR&gt;"))
+
+(ssget "X"
+  (list
+    '(0 . "CIRCLE")
+    &lt;xor
+    '(-3 ("APP1"))
+    '(-3 ("APP2"))
+    xor&gt;
+  )
+)</pre>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Selection_Set_Filter_Lists_AutoLISP.html" title="An entity filter list is an association list that uses DXF group codes in the same format as a list returned by entget.">
+      About Selection Set Filter Lists (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../About_Selecting_Objects_and_Selection_Sets_AutoLISP.html" title="Selection sets are groups of one or more selected objects (entities).">
+       About Selecting Objects and Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Selection_Set_Filter_Lists_AutoLISP.html" title="An entity filter list is an association list that uses DXF group codes in the same format as a list returned by entget.">
+       About Selection Set Filter Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Modifying_Selection_Sets_AutoLISP.html" title="Once a selection set has been created, you can add entities to it or remove entities from it with ssadd and ssdel.">
+       About Modifying Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Relational_Tests_in_Filter_Lists_for_Selection_Sets_AutoLISP.html" title="Unless otherwise specified, an equivalency is implied for each item in the filter-list.">
+       About Relational Tests in Filter Lists for Selection Sets (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="About_Filtering_for_Extended_Data_in_a_Selection_Set_AutoLISP.html" title="You can select all entities containing extended data for a particular application using the filter-list argument of ssget.">
+       About Filtering for Extended Data in a Selection Set (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-43715289-5715-4F96-8D48-3169FA26777A">
+       Selection Set Manipulation Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

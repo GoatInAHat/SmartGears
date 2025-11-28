@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Tutorials" name="component"/>
+  <meta content="25/4/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="CSY, DEU, ESP, FRA, HUN, ITA, KOR, PLK, PTB, RUS, CHS, CHT" name="applies-to-languages"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="GUID-EA2B760C-866D-46BB-B682-EEC46C8FF11B" name="workflow-parent-id"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="24/02/2021" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Adding Reactor Callback Functions
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Adding Reactor Callback Functions
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <div class="section" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-198558EF-F991-40B3-BF43-E73C5913E9C0">
+    <p class="p" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WSFACF1429558A55DE1929BBDFEF458CE1C-76E4">
+     The reactor callback functions add a substantial amount of code to your application. This code is provided for you in the
+     <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-AD96A259-B835-41AA-9247-0DF6733DDC57">
+      Lesson6
+     </em>
+     directory.
+    </p>
+   </div>
+   <div class="section" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WSFACF1429558A55DE6C92BAFEE30F7510-7DE2">
+    <h2 class="title sectiontitle">
+     To add the reactor callback functions to your program
+    </h2>
+    <ol class="ol" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF18CB41610EC0A2E719-73D9">
+     <li class="li" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF-7F10494411F03A24F24-1D50">
+      Copy the
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-AE9DEF98-FD2C-4AFD-9C3F-093A6C3DDDBF">
+       gpreact.lsp
+      </em>
+      file from the
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-FFB7E627-A8AD-41DD-948A-C88C750F6A45">
+       Tutorial\VisualLISP\Lesson6
+      </em>
+      directory to your
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-CB65940E-89F6-4BEB-A26B-A44C054D64A9">
+       MyPath
+      </em>
+      working directory.
+     </li>
+     <li class="li" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF-7F10494411F03A24F24-1D4F">
+      Open the
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-84FD49BC-2101-4666-90C5-B09128A41B01">
+       GPath
+      </em>
+      project (if it is not already open), and click the Project Properties button in the gpath project window.
+      <img class="image" height="25" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__IMAGE_7359AE0A001C4884A0C4BF12AE442A74" src="../../../../_assets/GUID_3B8711A0_4629_42BD_BCE7_59A2315E6319-27ad87ea.png" width="25"/>
+     </li>
+     <li class="li" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF-7F10494411F03A24F24-1D4E">
+      Add the
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-E49E6011-E9A0-476C-A4DC-A3B60DA4D65F">
+       gpreact.lsp
+      </em>
+      file to your project.
+     </li>
+     <li class="li" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF-7F10494411F03A24F24-1D4D">
+      The
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-F9FDED33-EBF0-4EB0-AFBB-11BCEBA974F3">
+       gpreact.lsp
+      </em>
+      file can reside anywhere in the order of files between
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-9788D426-E560-46F2-A837-4412A8B12A9F">
+       utils.lsp
+      </em>
+      , which must remain first, and
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-B0B967E3-A02E-45FF-BBA5-6F3765B42692">
+       gpmain.lsp
+      </em>
+      , which should remain as the last file. Move any files, if necessary, then click OK.
+     </li>
+     <li class="li" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WS1A9193826455F5FF-7F10494411F03A24F24-1D4C">
+      Open the
+      <em class="ph i" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__GUID-4F08FEBA-3A56-4901-A411-EB96CA2985BC">
+       gpreact.lsp
+      </em>
+      file by double-clicking on the file name within the gpath project window.
+     </li>
+    </ol>
+    <p class="p" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WSFACF1429558A55DE1929BBDFEF458CE1C-76E3">
+     Read through the comments in the file to help you understand what it is doing. Note that all the callback functions are stubbed out; the only functionality they perform is to display alert messages when they are fired.
+    </p>
+    <p class="p" id="GUID-D9080DD9-5C2D-4259-BB4E-04C0645B4510__WSFACF1429558A55DE1929BBDFEF458CE1C-76E2">
+     The last function in the file is so important it deserves a heading of its own.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="Lesson_6_Acting_With_Reactors_Visual_LISP_IDE.html">
+      Lesson 6: Acting With Reactors (Visual LISP IDE)
+     </a>
+    </div>
+    <div class="previouslink">
+     <strong>
+      Previous topic:
+     </strong>
+     <a class="link" href="Updating_the_C_GPath_Function.html">
+      Updating the C:GPath Function
+     </a>
+    </div>
+    <div class="nextlink">
+     <strong>
+      Next topic:
+     </strong>
+     <a class="link" href="Cleaning_Up_After_Your_Reactors.html">
+      Cleaning Up After Your Reactors
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

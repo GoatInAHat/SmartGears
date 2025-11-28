@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Retrieves and sets digitizer (tablet) calibrations" name="description"/>
+  <meta content="TABLET" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-5AD61389-1F8E-497B-8B0B-259488A50772" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   tablet (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      tablet (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Retrieves and sets digitizer (tablet) calibrations
+   </p>
+   <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows only
+   </p>
+   <div class="section" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-3E74EA5E-C28F-4AB6-853A-6D3058C463BD">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(tablet <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-B6525FEC-F2AA-4DD3-B1BF-221678A21714">code [row1 row2 row3 direction]</em>)</pre>
+    <div class="section" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF9">
+     <dl class="dl" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WS1A9193826455F5FF-1E1423D1125831BDA67-7AF9">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-136EA10B-8D03-4C47-B588-176FB24646F7">
+        code
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-B046CF70-474E-41C2-9A8B-22CBF331E32B">
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-7B2DCF81-D0A8-43CF-9878-75ABA55F0B3D">
+        <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-53D400DE-3DD9-47B3-8454-19FD58A08A23">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E7">
+        One of the following:
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E6">
+        <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-47A0A759-0315-481C-A111-B30983F1BF78">
+         0
+        </strong>
+        -- Return the current digitizer calibration. In this case, the remaining arguments must be omitted.
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E5">
+        <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-EDD6907E-B7B0-4DDF-8838-F98D6BA9C053">
+         1
+        </strong>
+        -- Set the calibration according to the arguments that follow. In this case, you must provide the new calibration settings (
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-A500A4C8-74EA-4ED9-B5BF-4521B4BD6413">
+         row1,
+        </em>
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-C9E25B5C-B793-4057-82CB-0D5B0A2BE496">
+         row2,
+        </em>
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-B277AF73-3FDB-4433-8CD3-C150AFF0FEC0">
+         row3,
+        </em>
+        and
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-A60C90F8-B5D4-478C-B445-F723F098DA6E">
+         direction
+        </em>
+        ).
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-1A4EFF65-CD15-4A2C-93FE-72C61063E0EF">
+        row1, row2, row3
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-171A13E3-6854-4028-ADBE-DFB1FE22D026">
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-5798D92B-4F6D-4FD3-8C1E-4108A72D498A">
+        <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-BA5A1F4D-F397-40FC-A7D0-D5B6779FFC22">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E4">
+        Three 3D points. These three arguments specify the three rows of the tablet's transformation matrix.
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E3">
+        The third element in
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-3D6B580F-90F3-48A2-AFA2-878C1209BB60">
+         row3
+        </em>
+        (
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-0A265739-FE89-46CC-9F47-8A44F01B52D4">
+         Z
+        </em>
+        ) should always equal 1:
+        <samp class="ph codeph" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-2318AD88-A4B1-43B0-81FB-247E5E71AAD1">
+         tablet
+        </samp>
+        returns it as 1 even if you specify a different value in
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-27FFAF04-99A9-4BE7-8FC9-7509D79FB22D">
+         row3
+        </em>
+        .
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-E1B26B84-E68B-401F-8536-6F1BBB133205">
+        direction
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-BA674BD4-8116-4F0F-A978-7975E632EB03">
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-D3ADD725-E9E6-45DC-B056-250A30A3A0C8">
+        <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-59F78DC6-12A2-45D4-A3E5-4A8ABCAD1DEE">
+         Type:
+        </strong>
+        List
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E2">
+        One 3D point. This is the vector (expressed in the world coordinate system, or WCS) that is normal to the plane that represents the surface of the tablet.
+       </p>
+       <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32E1">
+        If the specified
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-C35D78F5-35F3-4003-979A-39D72C741C2F">
+         direction
+        </em>
+        isn't normalized,
+        <samp class="ph codeph" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-D2B2B64D-2E1F-4C4E-9D57-37F8B6E125C6">
+         tablet
+        </samp>
+        corrects it, so the
+        <em class="ph i" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-4E27BBE7-E689-45E8-94BD-65B299A9CA0C">
+         direction
+        </em>
+        it returns when you set the calibration may differ from the value you passed.
+       </p>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__SECTION_8A065FE1DF944C408FA1676D131AB4E8">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-C2F13E70-E3C4-4990-90A3-9150BFD1CE2F">
+     <strong class="ph b" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-20A6EB0F-D32E-47A0-BAAC-A75F4C5C00C0">
+      Type:
+     </strong>
+     Integer or nil
+    </p>
+    <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32DF">
+     If
+     <samp class="ph codeph" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-3D9626BF-7BA9-4D76-A524-1B946214BD5C">
+      tablet
+     </samp>
+     fails, it returns
+     <samp class="ph codeph" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-FCF4909F-7FF8-4A26-A918-02E45C6F0B70">
+      nil
+     </samp>
+     and sets the AutoCAD ERRNO system variable to a value that indicates the reason for the failure. This can happen if the digitizer is not a tablet.
+    </p>
+   </div>
+   <div class="section" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__SECTION_7449F61B63ED40139244B1461B838B10">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32DD">
+     A very simple transformation that can be established with
+     <samp class="ph codeph" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__GUID-7AC515C5-2C94-4E4F-86EB-607563462237">
+      tablet
+     </samp>
+     is the identity transformation:
+    </p>
+    <pre class="pre codeblock prettyprint">(tablet 1 '(1 0 0) '(0 1 0) '(0 0 1) '(0 0 1))</pre>
+    <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32DC">
+     With this transformation in effect, AutoCAD will receive, effectively, raw digitizer coordinates from the tablet. For example, if you pick the point with digitizer coordinates (5000,15000), AutoCAD will see it as the point in your drawing with those same coordinates.
+    </p>
+    <p class="p" id="GUID-5AD61389-1F8E-497B-8B0B-259488A50772__WSFACF1429558A55DE11F0759FF1E4B858C-32DB">
+     The AutoCAD TABMODE system variable allows AutoLISP routines to toggle the tablet on and off.
+    </p>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Device_Access_Functions_Reference_AutoLISP.html">
+       Device Access Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="relinfo relref">
+    <h4 class="related">
+     Related Reference
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../G_Functions/grread_AutoLISP.html" title="Reads values from any of the AutoCAD input devices">
+       grread (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

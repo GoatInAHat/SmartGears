@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="An application can use the findfile function to search for a particular file name." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Searching for Files (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Searching for Files (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    An application can use the
+    <samp class="ph codeph" id="GUID-891C791B-75CD-4BF9-9C68-FC1A75FCFBD3">
+     findfile
+    </samp>
+    function to search for a particular file name.
+   </p>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__WSFACF1429558A55DE11F0759FF1E4B858C-644C">
+    The application can specify the directory to search, or it can use the current AutoCAD library paths.
+   </p>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-D7068086-DFB9-41B2-94EB-3BDF1D83DB4A">
+    In the following example code,
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-C7E3A98B-1DAB-4C31-9E81-92D476B584D0">
+     findfile
+    </samp>
+    searches for the
+    <em class="ph i" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-A00E5DD2-942E-4AC2-97AC-7CF43ECA276B">
+     acad.pgp
+    </em>
+    file in the AutoCAD library paths:
+   </p>
+   <pre class="pre codeblock prettyprint">(setq pgpname "acad.pgp")
+(setq fil (findfile pgpname))
+(if fil
+  (setq pgpname fil)
+  (princ (strcat "\nCould not find file " pgpname ". " ))
+)</pre>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__WSFACF1429558A55DE11F0759FF1E4B858C-644A">
+    If the call to
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-53936ABF-C92A-4312-9E70-FA0A7A1546EA">
+     findfile
+    </samp>
+    is successful, the variable
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-2222D343-EA35-44A1-8B6C-7E521B6A7BC0">
+     refname
+    </samp>
+    is set to a fully qualified path name string, as follows:
+   </p>
+   <pre class="pre codeblock prettyprint">; On Windows
+"&lt;drive&gt;:\\Users\\&lt;username&gt;\\appdata\\roaming\\autodesk\\
+ &lt;product&gt;\\&lt;release&gt;\\&lt;language&gt;\\support\\acad.pgp"
+
+; or
+
+; On Mac
+"/Users/&lt;username&gt;/Library/Application Support/Autodesk/Roaming/
+ &lt;product&gt;/&lt;release&gt;/&lt;language&gt;/support/acad.pgp"</pre>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-A0CB2C9A-C47B-4007-A302-E9D21C27E5E0">
+    When specifying a path name, you must precede the backslash (
+    <strong class="ph b" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-BAD49082-9ADD-468A-9E75-47BADABF4AD5">
+     <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-29B20104-D98C-4F7D-990B-FF6B6E0BA036">
+      \
+     </samp>
+    </strong>
+    ) with another backslash so the path name will be recognized by AutoLISP. Alternatively, you can use the slash character (
+    <strong class="ph b" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-F846D8BF-20AC-4B09-AB43-E587AE7B6678">
+     <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-39177124-B4B5-4200-9E82-634C558EE406">
+      /
+     </samp>
+    </strong>
+    ) as a directory separator. The
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-EBE27DA4-8F8E-4107-AAA6-BE938FE21703">
+     getfiled
+    </samp>
+    function displays a dialog box containing a list of available files of a specified extension type in the specified directory. This gives AutoLISP routines access to the AutoCAD Get File dialog box, a standard file navigation dialog box.
+   </p>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-5F9622B9-9EA3-4F65-B890-CBB7370ED965">
+    A call to
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-A59A9025-8736-4797-929D-D764CA312905">
+     getfiled
+    </samp>
+    takes four arguments that determine the appearance and functionality of the dialog box. The application must specify the following string values, each of which can be
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-B10C1C97-D908-46FF-807C-18841FDDF558">
+     nil
+    </samp>
+    : a title, placed at the top of the dialog box; a default file name, displayed in the edit box at the bottom of the dialog box; and an extension type, which determines the initial files provided for selection in the list box. The final argument is an integer value that specifies how the dialog box interacts with selected files.
+   </p>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-02571DE9-0B01-4618-A5CA-654614CED267">
+    This following example uses
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-D92CF2BD-76B4-43CA-A417-9F5AE1CE8832">
+     getfiled
+    </samp>
+    to let the user browse the directory structure and select a file:
+   </p>
+   <pre class="pre codeblock prettyprint">(defun C:DDIR ( )
+  (setq *dfil (getfiled "Directory Listing" "" "" 2))
+  (princ (strcat "\nVariable '*dfil' set to selected file " *dfil ))
+ (princ)
+)</pre>
+   <p class="p" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__WSFACF1429558A55DE11F0759FF1E4B858C-6445">
+    The
+    <samp class="ph codeph" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-FBF27ED7-40BD-4977-9460-4E3B966B0C75">
+     *dfil
+    </samp>
+    variable is set to the file you select, which can then be used by other AutoLISP functions or as a response to a command prompt for a file name. To use this variable in response to a command prompt, enter
+    <strong class="ph b" id="GUID-CB21D8A9-1A88-477F-95CA-74F665609A42__GUID-59C520D7-8911-4561-A1FB-0768D3F5E6D8">
+     !*dfil
+    </strong>
+    .
+   </p>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_File_Handling_AutoLISP.html">
+      About File Handling (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_Data_Types_AutoLISP/About_File_Descriptors_AutoLISP.html" title="A file descriptor is a pointer to a file opened by the AutoLISP open function.">
+       About File Descriptors (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-F70DECFC-DBE1-4F04-A64C-B3F869A636A2">
+       File-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="This example demonstrates one method for accessing the entities contained in a group." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-74E761F9-08B1-4690-ADA0-396BC9431729" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   Example: Accessing AutoCAD Groups (AutoLISP)
+  </title>
+  <link href="../../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      Example: Accessing AutoCAD Groups (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    This example demonstrates one method for accessing the entities contained in a group.
+   </p>
+   <p class="p" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-28003FCD-25FB-4F33-8FEA-141FAC8365C6">
+    This example assumes a group named G1 exists in the current drawing.
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-799B5FC2-8854-4366-9091-9F7979AFDC5D">(setq objdict (namedobjdict))
+(setq grpdict (dictsearch objdict "ACAD_GROUP"))</strong></pre>
+   <p class="p" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-359B231C-E783-454F-86E2-51DEC832D0AA">
+    This sets the
+    <samp class="ph codeph" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-540E6DB6-C8A7-4465-BCE1-F25E7185897A">
+     grpdict
+    </samp>
+    variable to the entity definition list of the ACAD_GROUP dictionary and returns the following:
+   </p>
+   <pre class="pre codeblock prettyprint">((-1 . &lt;Entity name: 8dc10468&gt;) (0 . "DICTIONARY") (5 . "D")
+(102 . "{ACAD_REACTORS") (330 . &lt;Entity name: 8dc10460&gt;)
+(102 . "}") (100 . "AcDbDictionary") (3 . "G1")
+(350 . &lt;Entity name: 8dc41240&gt;))</pre>
+   <p class="p" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__WSFACF1429558A55DE11F0759FF1E4B858C-629B">
+    The following code sets the variable
+    <samp class="ph codeph" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-A62FEBC1-08BE-4C3A-BA37-040E34A5D6D9">
+     group1
+    </samp>
+    to the entity definition list of the G1 group:
+   </p>
+   <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__GUID-865A77C1-0E77-41A4-BFEB-7C7E3B4E0D1A">(setq group1 (dictsearch (cdar grpdict) "G1"))</strong>
+
+((-1 . &lt;Entity name: 8dc10518&gt;) (0 . "GROUP") (5 . "23")
+(102 . "{ACAD_REACTORS") (330 . &lt;Entity name: 8dc10468&gt;)
+(102 . "}") (100 . "AcDbGroup") (300 . "line and circle") (70 . 0) (71
+. 1) (340 . &lt;Entity name: 8dc10510&gt;)(340 . &lt;Entity name: 8dc10550&gt;))</pre>
+   <p class="p" id="GUID-74E761F9-08B1-4690-ADA0-396BC9431729__WSFACF1429558A55DE11F0759FF1E4B858C-6299">
+    The 340 group codes are the entities that belong to the group.
+   </p>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Dictionary_Objects_and_Entries_AutoLISP.html" title="A dictionary is a container object, similar to symbol tables.">
+      About Dictionary Objects and Entries (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="About_Dictionary_Objects_and_Entries_AutoLISP.html" title="A dictionary is a container object, similar to symbol tables.">
+       About Dictionary Objects and Entries (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Object_Handling_AutoLISP/About_Non_Graphical_Object_Handling_AutoLISP.html" title="A drawing database contains two types of non-graphical objects: dictionary and symbol table objects.">
+       About Non-Graphical Object Handling (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../../About_Object_Handling_AutoLISP/About_Entity_Data_Functions_AutoLISP/About_Modifying_an_Entity_without_the_Command_Function_AutoLISP.html" title="An entity can be modified directly by changing its entity list and posting the changes back to the database.">
+       About Modifying an Entity without the Command Function (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-7AACB386-1AA1-4BDF-B5D7-A1E23A51CA15">
+       Symbol Table and Dictionary-Handling Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

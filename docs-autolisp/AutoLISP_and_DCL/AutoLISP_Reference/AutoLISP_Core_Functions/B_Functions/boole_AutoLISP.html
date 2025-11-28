@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="reference-adsk" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP-Reference" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="Serves as a general bitwise Boolean function" name="description"/>
+  <meta content="BOOLE" name="contextid"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="29/03/2023" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="function" name="topic-subtype"/>
+  <meta content="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   boole (AutoLISP)
+  </title>
+  <link href="../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      boole (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body referencebody-adsk">
+   <p class="shortdesc">
+    Serves as a general bitwise Boolean function
+   </p>
+   <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-E049A211-8422-4856-8878-401FA04484E5">
+    <strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-0A75B4A3-BD6D-4633-AB76-DE70E52BC48F">
+     Supported Platforms:
+    </strong>
+    Windows, Mac OS, and Web
+   </p>
+   <div class="section" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-B7AEE4F6-69A1-4F68-B3F3-EB70B085AECC">
+    <h2 class="title sectiontitle">
+     Signature
+    </h2>
+    <pre class="pre codeblock prettyprint">(boole <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-C841F5F4-488C-4260-AA6D-63596988471C">operator int1 [int2 ...]</em>)</pre>
+    <div class="section" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WS1A9193826455F5FF-1E1423D1125831BDA67-7B9E">
+     <dl class="dl" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WS1A9193826455F5FF-1E1423D1125831BDA67-7B9E">
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-1F5BE697-A6A7-4B91-8EDB-7B072C9AE4D6">
+        operator
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-723D2A09-FEDB-46B6-B629-12E6EB1F0B63">
+       <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-1935A446-8E05-42EF-96B9-68F7C94A4973">
+        <strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-C185F025-ACBE-4A59-9353-57C201B42CE0">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39ED">
+        An integer between 0 and 15 representing one of the 16 possible Boolean functions in two variables.
+       </p>
+      </dd>
+      <dt class="dt dlterm">
+       <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-0A0ACEFB-AE74-4811-8F21-04A44BF23CCD">
+        int1, int2...
+       </em>
+      </dt>
+      <dd class="dd" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-97014559-5885-4701-9DF0-69FC8CD5D162">
+       <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-9492B3A2-75CB-46B5-A872-7B7BA568FEA2">
+        <strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-F08E72D7-7D5C-4A73-88B3-3C18670CEA43">
+         Type:
+        </strong>
+        Integer
+       </p>
+       <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39EC">
+        A numeric value.
+       </p>
+       <div class="note note" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-74FF5425-BBF5-4BAE-B8B8-9063B5EB95E9">
+        <span class="notetitle">
+         Note:
+        </span>
+        <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-F896E041-74A6-4EA2-BF35-4AA2C7264BDD">
+         boole
+        </samp>
+        will accept a single integer argument, but the result is unpredictable.
+       </div>
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <div class="section" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__SECTION_DDFA3F96237247C192B719A8E8B96769">
+    <h2 class="title sectiontitle">
+     Return Values
+    </h2>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-7B336663-2B81-4AA7-ABAD-45A745EAA721">
+     <strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-12D1117C-5FCE-4EF9-B707-0935D017713C">
+      Type:
+     </strong>
+     Integer
+    </p>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-9E8712E4-2174-4662-A0FD-D8E4A1CAD9FD">
+     A numeric value.
+    </p>
+   </div>
+   <div class="section" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__SECTION_0208867815AF40F39FCDA3017B238A40">
+    <h2 class="title sectiontitle">
+     Remarks
+    </h2>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39EA">
+     Successive integer arguments are bitwise (logically) combined based on this function and on the following truth table:
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6A90" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="3" valign="top">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E9">
+          Boolean truth table
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E8">
+          Int1
+         </p>
+        </th>
+        <th class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E7">
+          Int2
+         </p>
+        </th>
+        <th class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E6">
+          operator bit
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E5">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E4">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E3">
+          8
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E2">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E1">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39E0">
+          4
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DF">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DE">
+          0
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DD">
+          2
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DC">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DB">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="33.33333333333333%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39DA">
+          1
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D9">
+     Each bit of
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-4970BC0B-3C76-4FE1-83DD-3705E0AF3A5B">
+      int1
+     </em>
+     is paired with the corresponding bit of
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-B5428187-1EEE-4EF2-B276-0FB4CFD7DD09">
+      int2
+     </em>
+     , specifying one horizontal row of the truth table. The resulting bit is either 0 or 1, depending on the setting of the
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-F118829F-8368-441A-9D2A-15EEC0CFE88E">
+      operator
+     </em>
+     bit that corresponds to this row of the truth table.
+    </p>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D8">
+     If the appropriate bit is set in
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-D6090026-9290-4030-90AE-8D9B05E467DD">
+      operator
+     </em>
+     , the resulting bit is 1; otherwise the resulting bit is 0. Some of the values for
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-AD9E90C0-5561-4877-914A-BDE95B0CF90D">
+      operator
+     </em>
+     are equivalent to the standard Boolean operations
+     <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-BAC7866B-B59F-414A-AE69-8E64C87CC62C">
+      AND
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-7C5AF54D-0B81-4DED-86E6-909379201D3E">
+      OR
+     </samp>
+     ,
+     <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-15DB324C-2DF5-4936-9C9C-B54012B8BCC8">
+      XOR
+     </samp>
+     , and
+     <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-1A6F4BE9-8C83-4E47-8AAB-52267657C42A">
+      NOR
+     </samp>
+     .
+    </p>
+    <div class="tablenoborder">
+     <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WS1A9193826455F5FF1A32D8D10EBC6B7CCC-6A8F" rules="all" summary="" width="100%">
+      <thead align="left" class="thead">
+       <tr class="row">
+        <th class="entry" colspan="3" valign="top">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D7">
+          Boole function bit values
+         </p>
+        </th>
+       </tr>
+       <tr class="row">
+        <th class="entry" valign="top" width="22.018348623853214%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D6">
+          Operator
+         </p>
+        </th>
+        <th class="entry" valign="top" width="23.936613844870724%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D5">
+          Operation
+         </p>
+        </th>
+        <th class="entry" valign="top" width="54.045037531276066%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D4">
+          Resulting bit is 1 if
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody class="tbody">
+       <tr class="row">
+        <td class="entry" valign="top" width="22.018348623853214%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D3">
+          1
+         </p>
+        </td>
+        <td class="entry" valign="top" width="23.936613844870724%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D2">
+          AND
+         </p>
+        </td>
+        <td class="entry" valign="top" width="54.045037531276066%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D1">
+          Both input bits are 1
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="22.018348623853214%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39D0">
+          6
+         </p>
+        </td>
+        <td class="entry" valign="top" width="23.936613844870724%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CF">
+          XOR
+         </p>
+        </td>
+        <td class="entry" valign="top" width="54.045037531276066%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CE">
+          Only one of the two input bits is 1
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="22.018348623853214%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CD">
+          7
+         </p>
+        </td>
+        <td class="entry" valign="top" width="23.936613844870724%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CC">
+          OR
+         </p>
+        </td>
+        <td class="entry" valign="top" width="54.045037531276066%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CB">
+          Either or both of the input bits are 1
+         </p>
+        </td>
+       </tr>
+       <tr class="row">
+        <td class="entry" valign="top" width="22.018348623853214%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39CA">
+          8
+         </p>
+        </td>
+        <td class="entry" valign="top" width="23.936613844870724%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39C9">
+          NOR
+         </p>
+        </td>
+        <td class="entry" valign="top" width="54.045037531276066%">
+         <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39C8">
+          Both input bits are 0 (1's complement)
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="section" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__SECTION_903B8A8225AC4FC9AF61880938125CE7">
+    <h2 class="title sectiontitle">
+     Examples
+    </h2>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__WSFACF1429558A55DE11F0759FF1E4B858C-39C4">
+     The following specifies a logical
+     <samp class="ph codeph" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-C12FC589-929D-45F2-B282-5588ED191E33">
+      AND
+     </samp>
+     of the values 12 and 5:
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-FF9CA8DD-E2E2-4421-8846-70695206AC3C">(boole 1 12 5)</strong>
+3</pre>
+    <p class="p" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-5FE445AB-7D24-49EF-B7E7-AC8915930D57">
+     You can use other values of
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-5A693B55-553D-4482-BBC9-6548F0C225AA">
+      operator
+     </em>
+     to perform other Boolean operations for which there are no standard names. For example, if
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-CF02CEE2-1551-4E18-8D90-B1B61B1ACF7D">
+      operator
+     </em>
+     is 4, the resulting bits are set if the corresponding bits are set in
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-31097C29-0D00-4A03-A1FB-3D3E6AA87CB1">
+      int2
+     </em>
+     but not in
+     <em class="ph i" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-2A30F20A-5024-485B-B264-FFCF45FA8469">
+      int1
+     </em>
+     :
+    </p>
+    <pre class="pre codeblock prettyprint"><strong class="ph b" id="GUID-C8412B41-BED9-4182-94E6-9EDB3C176D13__GUID-ECDAB631-C53B-4A19-A1A1-B49631FD4E53">(boole 4 3 14)</strong>
+12</pre>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../Functions_By_Functionality/Equality_and_Conditional_Functions_Reference_AutoLISP.html">
+       Equality and Conditional Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

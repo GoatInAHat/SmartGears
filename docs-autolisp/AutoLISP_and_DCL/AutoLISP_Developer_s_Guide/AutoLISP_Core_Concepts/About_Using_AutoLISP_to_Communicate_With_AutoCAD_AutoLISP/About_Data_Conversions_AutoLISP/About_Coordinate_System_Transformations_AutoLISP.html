@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="concept" name="topic-type"/>
+  <meta content="/view/OARX/2025/ENU/" name="helpsystempath"/>
+  <meta content="OARX" name="product"/>
+  <meta content="2025" name="release"/>
+  <meta content="Developer" name="book"/>
+  <meta content="AutoCAD-AutoLISP" name="component"/>
+  <meta content="21/10/2024" name="created"/>
+  <meta content="ACD=2025" name="applies-to"/>
+  <meta content="ACAD_E=2025" name="applies-to"/>
+  <meta content="AMECH_PP=2025" name="applies-to"/>
+  <meta content="ARCHDESK=2025" name="applies-to"/>
+  <meta content="BLDSYS=2025" name="applies-to"/>
+  <meta content="CIV3D=2025" name="applies-to"/>
+  <meta content="MAP=2025" name="applies-to"/>
+  <meta content="PLNT3D=2025" name="applies-to"/>
+  <meta content="PNID=2025" name="applies-to"/>
+  <meta content="STRDET=2025" name="applies-to"/>
+  <meta content="UTLDESN=2025" name="applies-to"/>
+  <meta content="TRIDION" name="generatedby"/>
+  <meta content="disable" name="user-comments"/>
+  <meta content="A point or displacement can be transformed from one coordinate system into another with trans." name="description"/>
+  <meta content="general" name="experiencelevel"/>
+  <meta content="programmer" name="audience"/>
+  <meta content="02/12/2019" name="modified"/>
+  <meta content="autolisp" name="topic-subtype"/>
+  <meta content="GUID-0F0B833D-78ED-4491-9918-9481793ED10B" name="topicid"/>
+  <meta content="ENU" name="language"/>
+  <title>
+   About Coordinate System Transformations (AutoLISP)
+  </title>
+  <link href="../../../../../_assets/client-28da4093.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B">
+  <div class="head">
+   <div class="head-block">
+    <div class="button-info">
+     <span id="infoline">
+     </span>
+    </div>
+    <div class="ancestry">
+    </div>
+    <div class="head-text">
+     <h1>
+      About Coordinate System Transformations (AutoLISP)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <div class="body conbody">
+   <p class="shortdesc">
+    A point or displacement can be transformed from one coordinate system into another with
+    <samp class="ph codeph" id="GUID-BF3117D9-E090-401B-8CEB-32898EE2B679">
+     trans
+    </samp>
+    .
+   </p>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-F2417272-076B-402D-BAE5-EF7E3E177F22">
+    The
+    <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-32A2E85F-86FF-4EB4-8997-1FB568D43805">
+     trans
+    </samp>
+    function takes three arguments with an optional fourth. The first argument,
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-79D323C9-08BE-42AF-8851-DD81B51A5460">
+     pt
+    </em>
+    , is either a 3D point or a 3D displacement vector, distinguished by an optional displacement argument called
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-A43FFF74-6BED-4190-BB9C-81098F55D83D">
+     disp
+    </em>
+    . The
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-23A19D3D-A354-4CE3-B5AF-D22DA8F05C35">
+     disp
+    </em>
+    argument must be nonzero if
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-598E00A0-6129-46A0-8C1B-1E18D2287334">
+     pt
+    </em>
+    is to be treated as a displacement vector; otherwise,
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-2A364862-9B55-4D54-9941-545598B2B2A4">
+     pt
+    </em>
+    is treated as a point. The
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-E0CA4E45-63DD-48BA-A24F-8613A2BB815D">
+     from
+    </em>
+    argument specifies the coordinate system in which
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-60B45AEC-E181-49D2-AA5F-F59E90868286">
+     pt
+    </em>
+    is expressed, and the
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-C3614A44-FED2-4F76-87AE-56BD1665A45B">
+     to
+    </em>
+    argument specifies the desired coordinate system.
+   </p>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9B4ECA42-9B7F-42F6-AA1F-A0CCCE664318">
+    The following is the syntax for the
+    <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-4C0EAFC5-3338-449D-B4E9-1B5CEF5935FE">
+     trans
+    </samp>
+    function:
+   </p>
+   <pre class="pre codeblock prettyprint">(trans <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-C43EB623-F4D1-4C4B-B067-B50CBBAB535A">pt from to [disp]</em>)</pre>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-C798613B-9BE0-41DB-87A9-DCCC650A410C">
+    Both the
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-55FFED27-EF2A-4C20-BDAA-B5D2F9E82E36">
+     from
+    </em>
+    and
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-1474BF87-B0CC-4F01-9D6E-3A4105533AE8">
+     to
+    </em>
+    arguments can specify a coordinate system in any of the following ways:
+   </p>
+   <ul class="ul" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__UL_2CC0562AABA342D7ADD97C5FF3BC013F">
+    <li class="li" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__LI_5A48FD0A80F5464F96A34A364F8472C2">
+     As an integer code that specifies the WCS, current UCS, or current DCS (of either the current viewport or paper space).
+    </li>
+    <li class="li" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__LI_94297008087948FA8BAD5E1FE972A7A1">
+     As an entity name returned by one of the entity name or selection set functions. This specifies the OCS of the named object. If the OCS does not differ, conversion between OCS and WCS is an identity operation.
+    </li>
+    <li class="li" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__LI_AE5CE419F7FF49ADB7CC96DFE6CED2D1">
+     As a 3D extrusion vector. Extrusion vectors are always represented in World coordinates; an extrusion vector of (0,0,1) specifies the WCS itself.
+    </li>
+   </ul>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-EAB5FC67-CE2D-4A81-93B4-B4FA87055F19">
+    The following table lists the valid integer codes that can be used as the
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-68DE540E-02BA-4BA6-9400-895E01A39CD2">
+     from
+    </em>
+    and
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-A27F95E3-C982-4D1E-A9B2-10E2356D9FA5">
+     to
+    </em>
+    arguments:
+   </p>
+   <div class="tablenoborder">
+    <table border="1" cellpadding="4" cellspacing="0" class="table" frame="border" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__TABLE_7F777C001347443094B4032919157756" rules="all" summary="" width="100%">
+     <thead align="left" class="thead">
+      <tr class="row">
+       <th class="entry" colspan="2" valign="top">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-06A34C6D-93FC-4AF6-A499-5D145C831B2F">
+         Coordinate system codes
+        </p>
+       </th>
+      </tr>
+      <tr class="row">
+       <th class="entry" valign="top" width="16.82638105975197%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-494E8F45-00A6-4A1D-A46D-7F0FDE3017AC">
+         Code
+        </p>
+       </th>
+       <th class="entry" valign="top" width="83.17361894024803%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-7CE0A7F7-FEB0-4DDA-80E8-E01423A54888">
+         Coordinate system
+        </p>
+       </th>
+      </tr>
+     </thead>
+     <tbody class="tbody">
+      <tr class="row">
+       <td class="entry" valign="top" width="16.82638105975197%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-A4B0CF54-196A-440C-A69E-339FF2973983">
+         0
+        </p>
+       </td>
+       <td class="entry" valign="top" width="83.17361894024803%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-0E457059-2D6B-41B3-9907-A8B5DE6A6CE9">
+         World (WCS)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="16.82638105975197%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-F61E2335-ACBF-4DFF-82F0-0C5D00178DAE">
+         1
+        </p>
+       </td>
+       <td class="entry" valign="top" width="83.17361894024803%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-B543E0A2-3A7A-4D9F-B50D-CD75047D88A7">
+         User (current UCS)
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="16.82638105975197%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9D492F8E-4E3A-4832-86CE-6D5C4B03915E">
+         2
+        </p>
+       </td>
+       <td class="entry" valign="top" width="83.17361894024803%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-3827A4EE-412F-4A1F-AC80-FAE4C6600377">
+         Display; DCS of current viewport when used with code 0 or 1, DCS of current model space viewport when used with code 3
+        </p>
+       </td>
+      </tr>
+      <tr class="row">
+       <td class="entry" valign="top" width="16.82638105975197%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-3E360730-6B16-48BB-BA29-AA9C7B5C0128">
+         3
+        </p>
+       </td>
+       <td class="entry" valign="top" width="83.17361894024803%">
+        <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-C1002A9F-74F1-48A2-9F64-AD3893B71AB9">
+         Paper space DCS, PSDCS (used only with code 2)
+        </p>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-F57F7AE6-E33B-44E8-B2AF-150A9728EE80">
+    The following example code translates a point from the WCS into the current UCS.
+   </p>
+   <pre class="pre codeblock prettyprint">(setq pt '(1.0 2.0 3.0))
+(setq cs_from 0) ; WCS
+(setq cs_to 1) ; UCS
+(trans pt cs_from cs_to 0) ; disp = 0 indicates that pt is a point</pre>
+   <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-B2DB161B-77CB-46B0-B897-A0777C6944B0">
+    If the current UCS is rotated 90 degrees counterclockwise around the World Z axis, the call to
+    <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-3251BB5A-5917-40D3-AFAC-DAFA0D47A237">
+     trans
+    </samp>
+    returns a point (2.0,-1.0,3.0). However, if you swap the
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9C104715-B0A5-4FFB-A7B8-47DAC0764808">
+     to
+    </em>
+    and
+    <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-85D0B19B-0AAD-4E5D-B182-F7CE8E3F868E">
+     from
+    </em>
+    values, the result differs as shown in the following code:
+   </p>
+   <pre class="pre codeblock prettyprint">(trans pt cs_to cs_from 0) ; the result is (-2.0,1.0,3.0)</pre>
+   <div class="section" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9AC40AF7-1B13-4948-8D04-92EF3E5532D2">
+    <h2 class="title sectiontitle">
+     Coordinate Systems
+    </h2>
+    <dl class="dl" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9AC40AF7-1B13-4948-8D04-92EF3E5532D2">
+     <dt class="dt dlterm">
+      WCS
+     </dt>
+     <dd class="dd" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9355D52A-DC86-45A8-A8B2-B22F603766E4">
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-306F50B6-7659-4651-9B62-49B674B153B1">
+       World coordinate system—the reference coordinate system. All other coordinate systems are defined relative to the WCS, which never changes. Values measured relative to the WCS are stable across changes to other coordinate systems.
+      </p>
+     </dd>
+     <dt class="dt dlterm">
+      UCS
+     </dt>
+     <dd class="dd" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-41870BA0-B407-43F2-A019-3BBB664929CC">
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-E796F829-53A3-4755-835F-76A6D6935E52">
+       User coordinate system—the working coordinate system defined by the user to make drawing tasks easier. All points passed to AutoCAD commands, including those returned from AutoLISP routines and external functions, are points in the current UCS (unless the user precedes them with a
+       <strong class="ph b" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-E82FA3FB-E528-4755-96A3-00CB3F1E4883">
+        <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9C6D3DE2-8704-42E8-8842-6C7A062AF90D">
+         *
+        </samp>
+       </strong>
+       at the AutoCAD Command prompt). If you want your application to send coordinates in the WCS, OCS, or DCS to AutoCAD commands, you must first convert them to the UCS by calling the trans function.
+      </p>
+     </dd>
+     <dt class="dt dlterm">
+      OCS
+     </dt>
+     <dd class="dd" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-B511C191-6796-4D09-BA6D-4AAE906BFF93">
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-0C212B25-9A16-45F3-AF32-19338458352A">
+       Object coordinate system—point values returned by
+       <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-E7A0BEA6-83F9-4486-856E-6437AF7E34A7">
+        entget
+       </samp>
+       are expressed in this coordinate system, relative to the object itself. These points are usually converted into the WCS, current UCS, or current DCS, according to the intended use of the object. Conversely, points must be translated into an OCS before they are written to the database by means of the
+       <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-9D50292D-FF61-41ED-B53D-CF8A5773C8A1">
+        entmod
+       </samp>
+       or
+       <samp class="ph codeph" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-F4647726-1736-45EB-84EA-A01F8C276CCC">
+        entmake
+       </samp>
+       functions. This is also known as the entity coordinate system.
+      </p>
+     </dd>
+     <dt class="dt dlterm">
+      DCS
+     </dt>
+     <dd class="dd" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-4C586176-0B89-4610-8ACA-C85277B51A46">
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-5965A17A-3B03-4784-8CED-D19573180247">
+       Display coordinate system—the coordinate system into which objects are transformed before they are displayed. The origin of the DCS is the point stored in the AutoCAD system variable TARGET, and its
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-CAA6C913-4CB0-4510-9276-AD25ADFC9A0A">
+        Z
+       </em>
+       axis is the viewing direction. In other words, a viewport is always a plan view of its DCS. These coordinates can be used to determine where something will be displayed to the AutoCAD user.
+      </p>
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-F9287174-A286-4408-B066-ABFE996ED6EB">
+       When the
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-CC9F66BB-9FD8-4C19-B92D-E03639577BA1">
+        from
+       </em>
+       and
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-EFB6304D-1A5D-44CD-B479-E197579549E0">
+        to
+       </em>
+       integer codes are 2 and 3, in either order, 2 indicates the DCS for the current model space viewport and 3 indicates the DCS for paper space (PSDCS). When the 2 code is used with an integer code other than 3 (or another means of specifying the coordinate system), it is assumed to indicate the DCS of the current space, whether paper space or model space. The other argument is also assumed to indicate a coordinate system in the current space.
+      </p>
+     </dd>
+     <dt class="dt dlterm">
+      PSDCS
+     </dt>
+     <dd class="dd" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-EDAF5CDC-099C-4905-9ADD-4CB8A5BAC3C7">
+      <p class="p" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-6445D7B9-DA7E-44E8-B1CC-4122039F82E0">
+       Paper space DCS—this coordinate system can be transformed only
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-7945495A-47CB-47CE-98F5-485B059473DF">
+        to
+       </em>
+       or
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-C966B248-0B66-4B90-A5EF-06ED52A8579C">
+        from
+       </em>
+       the DCS of the currently active model space viewport. This is essentially a 2D transformation, where the
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-EC980D46-5CA8-434A-827B-FE398F4DDAFB">
+        X
+       </em>
+       and
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-A5258F4B-0B59-42B5-BD0C-16A04C321561">
+        Y
+       </em>
+       coordinates are always scaled and are offset if the
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-41C12F00-9F1F-4A86-BB5B-D99B187FC879">
+        disp
+       </em>
+       argument is 0. The
+       <em class="ph i" id="GUID-0F0B833D-78ED-4491-9918-9481793ED10B__GUID-B1110C6F-A197-434A-BEBA-E9654DCE8CAE">
+        Z
+       </em>
+       coordinate is scaled but is never translated. Therefore, it can be used to find the scale factor between the two coordinate systems. The PSDCS (integer code 2) can be transformed only into the current model space viewport. If the from argument equals 3, the to argument must equal 2, and vice versa.
+      </p>
+     </dd>
+    </dl>
+   </div>
+  </div>
+  <div class="related-links">
+   <div class="familylinks">
+    <div class="parentlink">
+     <strong>
+      Parent topic:
+     </strong>
+     <a class="link" href="About_Data_Conversions_AutoLISP.html">
+      About Data Conversions (AutoLISP)
+     </a>
+    </div>
+   </div>
+   <div class="relinfo relconcepts">
+    <h4 class="related">
+     Related Concepts
+    </h4>
+    <ul>
+     <li>
+      <a class="link" href="../../About_AutoLISP_Basics_AutoLISP/About_List_Handling_AutoLISP/About_Point_Lists_AutoLISP.html" title="AutoLISP utilizes the list data type to represent graphical coordinate values.">
+       About Point Lists (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="../About_Geometric_Utilities_AutoLISP/About_Geometric_Utilities_AutoLISP.html" title="A group of functions allows applications to obtain pure geometric information and geometric data from the drawing.">
+       About Geometric Utilities (AutoLISP)
+      </a>
+     </li>
+     <li>
+      <a class="link" href="https://beehive.autodesk.com/community/service/rest/cloudhelp/resource/cloudhelpchannel/guidcrossbook/?v=2025&amp;p=OARX&amp;l=ENU&amp;accessmode=live&amp;guid=GUID-5BDBD4BC-289E-4A49-9BB9-DF6A6147E0FC">
+       Conversion Functions Reference (AutoLISP)
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </body>
+</html>

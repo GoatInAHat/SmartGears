@@ -53,7 +53,8 @@ When a bug is reported, follow this exact workflow:
 
 ## 9. Summary: Core Imperatives  
 
-- Always treat documentation as first-class — read before writing.  
+- Always treat documentation as first-class — read before writing.
+- If required documentation is unavailable (e.g., network outage or blocked site), stop and request human intervention before proceeding.
 - Always test before committing.
 - Separate concerns — keep code modular.
 - Document assumptions and references.

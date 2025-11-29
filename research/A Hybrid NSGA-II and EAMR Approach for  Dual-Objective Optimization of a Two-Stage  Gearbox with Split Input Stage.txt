@@ -1,0 +1,821 @@
+Engineering, Technology & Applied Science Research
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26156
+
+A Hybrid NSGA-II and EAMR Approach for
+Dual-Objective Optimization of a Two-Stage
+Gearbox with Split Input Stage
+Van Thanh Dinh
+East Asia University of Technology, Trinh Van Bo Street, Hanoi City 12000, Vietnam
+thanh.dinh@eaut.edu.vn
+Duc Binh Vu
+Viet Tri University of Industry, 09 Tien Son Street, Viet Tri City 35100, Vietnam
+vubinh@vui.edu.vn
+Manh Cuong Nguyen
+Thai Nguyen University of Technology, 3/2 street, Tich Luong Ward, Thai Nguyen City 251750,
+Vietnam
+nmcuong@tnut.edu.vn
+Thi Thu Huong Truong
+Thai Nguyen University of Technology, 3/2 street, Tich Luong Ward, Thai Nguyen City 251750,
+Vietnam
+huongk8@tnut.edu.vn (corresponding author)
+Received: 28 April 2025 | Revised: 21 June 2025 | Accepted: 28 June 2025
+Licensed under a CC-BY 4.0 license | Copyright (c) by the authors | DOI: https://doi.org/10.48084/etasr.11790
+
+ABSTRACT
+This study proposes a hybrid Multi-Objective Optimization (MOO) approach that integrates the Nondominated Sorting Genetic Algorithm II (NSGA-II) and the Evaluation by an Area-based Method of
+Ranking (EAMR) to optimize the design of a two-stage helical gearbox featuring a split input stage. The
+optimization simultaneously targets two conflicting objectives: minimizing the base area of the gearbox
+housing and maximizing the transmission efficiency. A parametric design model was developed to capture
+the key geometrical and performance parameters, while ensuring compliance with the practical constraints
+related to gear strength and manufacturing limitations. The NSGA-II algorithm was employed to generate
+a set of Pareto-optimal solutions, which were subsequently ranked using the EAMR method to support
+decision-making. The results demonstrate the effectiveness of the hybrid approach in identifying highperformance design alternatives that offer an optimal balance between compactness and efficiency. This is
+the first study to apply a combination of NSGA-II and a Multi-Criteria Decision-Making (MCDM) method
+to the dual-objective optimization of a two-stage gearbox with a split input stage. In particular, the
+proposed approach successfully identifies the optimal design parameters across a wide range of
+transmission ratios, thereby facilitating the initial selection of appropriate gearbox transmission ratios in
+the early-stage design. This study also provides valuable design guidelines for engineers seeking to improve
+space utilization and performance in gear transmission systems.
+Keywords-two-stage gearbox; split input stage; NSGA-II; EAMR; multi-objective optimization; gear design;
+gearbox efficiency; base area minimization; helical gears; Pareto front
+
+I.
+INTRODUCTION
+The increasing demand for compactness, efficiency, and
+durability in mechanical transmission systems has intensified
+the research efforts toward the optimal design of gearboxes.
+Among various configurations, two-stage gearboxes with split
+input stages have attracted attention due to their flexibility in
+www.etasr.com
+
+load distribution and potential for structural and functional
+enhancement. However, designing such systems often entails
+resolving the trade-offs between conflicting objectives, such as
+minimizing the size or mass while maximizing the transmission
+efficiency. Consequently, MOO techniques, particularly hybrid
+approaches, have become instrumental in achieving balanced
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+
+solutions. Various evolutionary algorithms and decisionmaking strategies have been employed to address these tradeoffs. For instance, authors in [1] introduced a hybrid Sailfish
+Optimization Algorithm (SOA) for planetary gearbox design,
+demonstrating improvements in both the mass and
+performance-related criteria. Authors in [2] explored a threestage wind turbine gearbox considering tribological constraints,
+employing MOO to ensure reliability under demanding
+conditions. Authors in [3] addressed uncertainty in electric
+vehicle gear train design, applying robust optimization under
+probabilistic variations. These studies underscore the emphasis
+on robust MOO strategies for complex gearbox configurations.
+In [4], the multi-speed gearbox design was investigated
+using evolutionary algorithms, and thus setting the stage for
+numerous applications. Building on this, authors in [5]
+implemented heuristic algorithms to optimize aeroengine
+accessory gearboxes, achieving significant weight reduction
+without compromising the transmission characteristics.
+Similarly, authors in [6] optimized gear units by
+simultaneously minimizing the transmission error and
+improving efficiency, highlighting the benefits of multiobjective techniques in fine-tuning performance metrics.
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26157
+
+Despite these valuable contributions, the combination of
+NSGA-II and EAMR for gearboxes with split input stages
+remains underexplored. The unique configuration of a split
+input stage offers improved torque balance and spatial
+arrangement flexibility but introduces additional design
+complexities. This study proposes a hybrid optimization
+framework integrating NSGA-II and EAMR to address this
+gap, with dual-objective functions focused on minimizing the
+base area and maximizing the transmission efficiency. This is
+the first study to apply a combined NSGA-II and MCDM
+approach to the dual-objective optimization of a two-stage
+helical gearbox featuring a split input stage. While prior
+studies, such as [4, 5], employed NSGA-II in gearbox design
+optimization, their scopes were limited to standard
+configurations and did not consider the split input stage
+architecture. Moreover, the objectives in those studies were not
+focused on achieving optimal performance across a wide range
+of transmission ratios (uh), which is a central goal of the present
+work. In contrast, authors in [1, 7, 9] explored gearbox designs
+over broad transmission ratio ranges, similarly to this study, but
+relied solely on traditional techniques, such as Taguchi and
+Grey Relational Analysis [1, 9], or used only MCDM methods
+without incorporating evolutionary algorithms [15-17].
+
+Among these techniques, NSGA-II remains one of the most
+widely adopted algorithms. Authors in [7] applied NSGA-II to
+a two-stage spur gearbox, effectively identifying Paretooptimal designs. Authors in [8] combined teaching-learningbased optimization with MCDM methods to further enhance
+the solution quality in spur gear design. Authors in [9]
+extended the approach to planetary gear systems by integrating
+dynamic analysis into the optimization framework, thereby
+ensuring practical applicability. Authors in [10] demonstrated
+the utility of NSGA-III in high-speed bearing design for
+aircraft gearboxes, reaffirming the adaptability of evolutionary
+algorithms in aerospace applications.
+
+By integrating NSGA-II with the EAMR method, the
+present study not only addresses the structural and performance
+complexities of the split input stage, but also provides a robust
+optimization framework that successfully determines the
+optimal design parameters over a wide transmission ratio
+range. This enhances the capability for early-stage gearbox
+configuration and supports more flexible, high-performance
+design solutions. The outcomes provide practical guidance for
+the design of space-efficient and high-performance gear
+transmission systems.
+
+Alternative metaheuristic strategies have also shown
+promise. Authors in [11] employed particle swarm
+optimization and simulated annealing for gear train weight
+minimization, while authors in [12] incorporated tribological
+considerations into the spur gearbox optimization. Authors in
+[13] conducted a comparative study of evolutionary algorithms
+for gear design, confirming the robustness of NSGA-II in
+solving the constrained MOO problems. Authors in [14]
+applied genetic algorithms to optimize epicyclic gear trains,
+reinforcing the method’s flexibility across gear configurations.
+
+A. Calculating Gearbox Bottom Area
+As illustrated in Figure 1, for a two-stage helical gearbox
+with two gears in the input stage, the bottom area Ab is
+determined by:
+
+Authors in [15] further validated the effectiveness of
+NSGA-II in optimizing two-stage helical gear trains,
+highlighting its capability to resolve the trade-offs between
+volume and efficiency. Authors in [16] introduced the
+Extended Additive Mean Ratio (EAMR) method in optimizing
+two-stage helical gearboxes with dual gear sets in the first
+stage. Their approach successfully reduced the gearbox volume
+while maintaining high efficiency. Authors in [17] employed
+the MARCOS method for a similar design and achieved
+favorable results in balancing geometric and performance
+criteria. Authors in [18] combined NSGA-II with a decisionmaking step to identify the compromise solutions in spur gear
+design, further supporting the integration of MCDM techniques
+with evolutionary algorithms.
+www.etasr.com
+
+II.
+
+OPTIMIZATION PROBLEM FORMULATION
+
+=
+
+×
+
+(1)
+
+where L and B are calculated by:
+=
+
+=2
+
++
+
+/2 +
+
++
+
+/2 +
+
++7
+
++4
+
+(2)
+(3)
+
+where δ = 7÷10 (mm) [18], dw1i and dw2i (i = 1÷2) are the pitch
+diameter of the pinion and the gear of stage i, which can be
+calculated by [19]:
+=2
+
+/
+
+=2
+
+×
+
++1
+/
+
+(4)
++1
+
+(5)
+
+where awi (i=1÷2) is the center distance of stage i. awi can be
+calculated by [19]:
+=
+
+∙
+
++1 ∙
+
+*
+
+∙
+
+!"# $% ∙&# ∙'()#
+
+(6)
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+
+where Xbai is the wheel face width coefficient of stage ith, T1i
+(i=1÷2) denotes the pinion torque of stage i and it can be
+determined by:
+=
+=
+
++,
+
+% ∙. *
+∙&-( ∙./(0
+
+(7)
+
+%
+&% ∙./- ∙.(0
+
+(8)
+
++,
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26158
+
+C. Objective Functions
+In this study, the optimization problem is formulated as a
+bi-objective minimization model, focusing on two critical
+performance metrics in the design of a two-stage helical
+gearbox featuring a split input stage.
+ Minimizing the gearbox bottom area:
+=>?@ A =
+
+B
+
+(11)
+
+ Maximizing the gearbox efficiency:
+=>?@ A = 12
+
+(12)
+
+The design variable vector X includes the key geometrical
+and performance-related parameters that characterize the
+gearbox configuration. Conventionally, five parameters—u1,
+Xba1, Xba2, As1, and As2 —are used to define the gearbox
+geometry [19]. However, prior research [21] has shown that the
+optimal values of As1, and As2 commonly approach their upper
+bounds. Therefore, the three most influential and adjustable
+parameters—u1, Xba1, and Xba2—are selected as decision
+variables in the optimization model. The problem formulation
+is presented by:
+A=C
+
+,A
+
+,A
+
+E
+
+(13)
+
+D. Constrains
+For the gearbox design, the gear ratio of each stage ui is
+constrained within the interval (1, 9), while the face width
+coefficient Xbai is limited to the range (0.25, 0.4) for i = 1, 2
+[19]. Accordingly, the MOO problem is formulated under the
+following set of constraints:
+1F
+
+F9
+
+0.25 F A
+
+(14)
+F 0.4
+
+(15)
+
+III. METHODOLOGY
+This research employs a hybrid methodological framework
+that combines the NSGA-II with the EAMR method to address
+a bi-objective optimization problem in the design of a twostage helical gearbox with a split input stage. The two
+optimization objectives are: (1) minimizing the bottom area of
+the gearbox housing, and (2) maximizing the transmission
+efficiency.
+Fig. 1.
+
+Scheme for calculation of gearbox bottom area.
+
+B. Calculating Gearbox Efficiency
+The gearbox efficiency (%) can be calculated by:
+12 = 100 4
+
+55∙67
+6#8
+
+(9)
+
+where Pl represents the total gearbox power loss, which is
+determined by [20]:
+9: = 9:2 + 9: + 9:; + 9<5
+
+(10)
+
+where Plg, Plb, Pls, and PZ0 denote the power losses attributed to
+the gears, bearings, seals, and idle motion, respectively. The
+computation of these loss components is conducted in
+accordance with the procedure detailed in [20].
+
+www.etasr.com
+
+A. NSGA-II for Generating Pareto-Optimal Solutions
+The NSGA-II algorithm is used to solve the MOO problem
+and generate a set of Pareto-optimal solutions. The algorithm
+efficiently balances exploration and exploitation by applying
+genetic operations, such as selection, crossover, and mutation,
+guided by non-dominated sorting and crowding distance
+mechanisms.
+Each candidate solution (individual) in the population
+represents a specific gearbox design defined by the decision
+variable vector X= [u1, Xba1, Xba2], where u1 is the gear ratio of
+the first stage, and Xba1 and Xba2 are the face width
+coefficients of the first and second stage, respectively. The
+search is conducted under the design constraints specified
+above. NSGA-II was configured with a population size of 100,
+200 generations, a crossover probability of 0.9, and a mutation
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+
+probability of 0.1. After evolution, the final population
+represents a Pareto front comprising trade-off solutions for both
+objectives.
+B. EAMR for Decision-Making among Pareto Solutions
+To identify the most balanced design among the Paretooptimal solutions obtained from NSGA-II, the EAMR method
+is employed. This MCDM technique ranks the alternatives by
+comparing each solution’s proximity to the average solution
+across all criteria.
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26159
+
+in larger gearbox areas and lower efficiencies. For uh = 5 and
+10, the solutions are clustered near the upper-left corner (i.e.,
+small area and high efficiency), which is ideal. However, as uh
+approaches 35, this balance is deteriorated.
+
+The procedure includes the following key steps [22]:
+
+ Constructing the decision matrix and computing the
+average value of each criterion across all decision makers.
+ Calculating the normalized values by dividing each
+criterion’s average by its maximum observed value.
+ Determining the weighted normalized scores by using the
+average weights assigned to each criterion.
+ Aggregating the scores separately for the objectives to be
+maximized (e.g., efficiency) and minimized (e.g., base
+area).
+
+Fig. 3.
+Pareto fronts of gearbox designs corresponding to different
+transmission ratios (uh).
+
+KLMN O P
+
+ Computing a final score J = KLMN#Q , which represents a
+# P
+
+ranking value based on the aggregated scores.
+
+ The optimal design is selected as the one with the highest Si
+value.
+This approach allows for a rational, mathematically
+grounded selection of the most desirable design from a set of
+Pareto-efficient options.
+
+C. Comparison of EAMR-Selected Solutions with MeanBased Trends
+To evaluate the quality of the solutions selected by the
+EAMR method, Table II compares them with the
+corresponding mean values of the bottom area and efficiency
+for each transmission ratio uh [17]. This comparison provides
+insights into whether EAMR delivers superior trade-offs
+relative to the average performance across the Pareto front.
+
+Fig. 2.
+Variation of mean gearbox bottom area and transmission efficiency
+with respect to transmission ratio (uh).
+
+As shown in Table II, the EAMR-selected designs
+consistently outperform the average in terms of compactness.
+At all values of uh, the bottom area of the EAMR solution is
+lower than the mean bottom area, with reductions ranging from
+approximately 100 mm2 to over 1,200 mm². For example, at uh
+= 35, the EAMR bottom area is 68,367.81 mm² compared to
+the mean of 69,538.17 mm²—a meaningful reduction for highload, space-constrained systems. The efficiency of the EAMRselected solutions also remains very close to the average, with
+only marginal differences observed (e.g., a deviation of 0.01%
+to 0.07% in most cases). This indicates that the EAMR method
+is able to preserve performance while reducing size, providing
+designs that are balanced and practically favorable. These
+findings reinforce the academic value of the EAMR approach
+in multi-objective engineering design. Rather than selecting
+extreme solutions that may over-optimize a single objective at
+the expense of the other, EAMR targets solutions that are
+proximal to the average ideal. This leads to consistent
+reductions in the bottom area without incurring a significant
+losses in efficiency.
+
+B. Pareto Fronts across Transmission Ratios
+Figure 3 presents the Pareto fronts obtained from NSGA-II
+for each value of uh. The trend shows that as uh increases, the
+Pareto front shifts rightward and downward, indicating a tradeoff, where achieving higher transmission ratios typically results
+
+In practical gearbox design, such balanced configurations
+are preferable, as they simultaneously address constraints
+related to the housing space, weight, and thermal performance
+while maintaining acceptable mechanical efficiency. As such,
+the use of EAMR supports robust and implementable
+optimization decisions in multi-criteria settings.
+
+IV.
+
+RESULTS AND DISCUSSIONS
+
+A. Trend of Average Gearbox Performance with Respect to
+Transmission Ratio
+
+www.etasr.com
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+TABLE I.
+uh
+5
+10
+15
+20
+25
+30
+35
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26160
+
+COMPARISON OF EAMR-SELECTED SOLUTIONS AND AVERAGE PERFORMANCE AT EACH uh
+
+EAMR bottom area (mm²)
+66708.00
+64807.40
+65159.78
+65826.43
+66667.23
+67526.13
+68367.81
+
+EAMR efficiency (%)
+96.06
+95.46
+94.84
+94.05
+93.48
+92.92
+92.38
+
+Mean bottom area (mm²)
+66912.45
+65380.30
+65640.99
+66567.82
+67585.30
+68143.39
+69538.17
+
+Mean efficiency (%)
+96.09
+95.52
+94.97
+94.48
+93.99
+93.41
+93.04
+
+D. Regression Analysis of Stage I Gear Ratio versus Overall
+Transmission Ratio
+To understand the relationship between the gear ratio of the
+first stag (u1) and the overall transmission ratio (uh), a linear
+regression analysis was performed using two datasets:
+
+ The mean-based values, representing the average gear ratio
+observed across the Pareto-optimal solutions for each uh.
+ The EAMR-based values, corresponding to the gear ratio
+selected from the best-compromise solution, as determined
+by the EAMR method.
+As illustrated in Figures 4 and 5, both datasets reveal a
+strong linear correlation between u1 and uh, with coefficient of
+determination values R2 exceeding 0.98 in both cases. The
+fitted regression models are:
+
+ Mean-based regression, as shown in Figure 4:
+= 0.1400 ×
+
+R + 1.3241
+
+(16)
+
+= 0.1251 ×
+
+R + 1.2900
+
+(17)
+
+Fig. 5.
+Linear regression between first-stage gear ratio (u1) and overall
+transmission ratio (uh) based on the EAMR-selected solutions.
+
+E. Benchmarking with MARCOS-Based Optimization Results
+To further assess the effectiveness of the proposed NSGAII and EAMR hybrid approach, a benchmarking analysis was
+conducted using the results reported in [17]. This study was
+selected for comparison because it addresses the same
+optimization problem as the present work: the dual-objective
+design of a two-stage helical gearbox with a split (dual-gear)
+input stage, targeting the minimization of gearbox bottom area
+and the maximization of transmission efficiency. These shared
+objectives and design configurations make [17] a suitable and
+relevant benchmark.
+In [17], the optimization process was implemented in two
+stages. First, a single-objective problem was solved to reduce
+the gap between the upper and lower bounds of the design
+constraints. Then, the MARCOS method was applied to solve
+the resulting MOO problem and identify balanced design
+solutions.
+
+Fig. 4.
+Linear Regression between first-stage gear ratio (u1) and overall
+transmission ratio (uh) based on the mean values of Pareto-optimal solutions.
+
+The regression model based on the mean values of Paretooptimal solutions, shows a strong linear relationship to guide
+the gear ratio distribution. Also, a regression line is fitted to the
+u₁ values of the EAMR-ranked optimal designs, providing a
+practical guideline for assigning the transmission load between
+the stages.
+
+Table II presents a comparison between the optimal
+solutions obtained in this study and those in [17] for the same
+transmission ratio uh values. The results indicate that the
+NSGA-II/EAMR framework consistently yields better
+performance in both objective functions:
+ The gearbox bottom area Ab was reduced by 3.46% -3.67%,
+demonstrating improved compactness.
+ The gearbox efficiency ηgb was improved by 1.03%-2.58%,
+indicating enhanced transmission performance.
+These findings validate the effectiveness of the proposed
+approach in generating well-balanced and high-quality designs.
+
+www.etasr.com
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+TABLE II.
+COMPARISON OF OPTIMAL RESULTS BETWEEN
+THIS STUDY AND MARCOS-BASED METHOD [17]
+Gearbox bottom area Ab
+Difference
+Optimal
+[17]
+solution
+(%)
+6.67
+6.91
+3.46
+6.48
+6.72
+3.56
+6.52
+6.75
+3.47
+6.58
+6.83
+3.62
+6.67
+6.92
+3.66
+6.75
+7.01
+3.67
+
+Gearbox efficiency ηgb
+Difference
+Optimal
+[17]
+solution
+(%)
+96.06
+95.07
+1.03
+95.46
+94.17
+1.35
+94.84
+93.05
+1.89
+94.05
+92.16
+2.01
+93.48
+91.34
+2.29
+92.92
+90.53
+2.58
+
+V. CONCLUSION
+This study proposed a hybrid approach combining the Nondominated Sorting Genetic Algorithm II (NSGA-II), an
+evolutionary algorithm, and the Evaluation by an Area-based
+Method of Ranking (EAMR), a Multi-Criteria DecisionMaking method (MCDM) to solve a bi-objective optimization
+problem for a two-stage helical gearbox with a split input stage.
+The two conflicting objectives—minimizing the gearbox
+bottom area and maximizing the transmission efficiency—were
+simultaneously addressed.
+The results showed that NSGA-II effectively generated
+diverse Pareto-optimal solutions across a wide range of
+transmission ratios (uh), revealing clear trade-offs between the
+design compactness and efficiency. The EAMR method, then,
+successfully selected well-balanced solutions that outperformed
+the average ones in terms of compactness while maintaining
+competitive efficiency.
+The regression analysis further revealed a strong linear
+relationship between the Stage I gear ratio (u1) and the overall
+ratio (uh), offering a practical design rule for distributing the
+gear ratios between stages. Notably, the EAMR-based
+regression favored allocating more transmission load to the
+second stage, potentially improving the load distribution and
+mechanical durability.
+This is the first study to apply a hybrid NSGA-II and
+MCDM framework to the Multi-Objective Optimization
+(MOO) of a two-stage gearbox with a split input stage. The
+proposed approach not only delivers high-quality trade-off
+solutions, but also successfully determines the optimal design
+parameters across a wide range of transmission ratios—thereby
+assisting designers in making early-stage decisions regarding
+the gearbox configuration.
+The integration of NSGA-II and EAMR offers a powerful
+and practical tool for gearbox design optimization. This
+approach not only enhances the quality of multi-objective
+solutions, but also supports rational decision-making in realworld applications that demand both high performance and
+compact form factor.
+ACKNOWLEDGMENT
+This work was supported by Thai Nguyen University of
+Technology (TNUT).
+
+www.etasr.com
+
+26161
+
+DATA AVAILABILITY
+The simulation data supporting the findings of this study
+are available from the corresponding author.
+REFERENCES
+[1]
+
+M. Rosić, B. Rosić, and M. Sedak, "Multi-Objective Hybrid Sailfish
+Optimization Algorithm for Planetary Gearbox and Mechanical
+Engineering Design Optimization Problems," Computer Modeling in
+Engineering & Sciences, vol. 142, no. 2, pp. 2111–2145, 2025,
+https://doi.org/10.32604/cmes.2025.059319.
+[2] A. Kumar, P. Ramkumar, and K. Shankar, "Multi-objective 3-stage wind
+turbine gearbox (WTG) with tribological constraint," Mechanics Based
+Design of Structures and Machines, vol. 52, no. 8, pp. 5263–5289, Aug.
+2024, https://doi.org/10.1080/15397734.2023.2249987.
+[3] X. Xu et al., "Optimization Design for the Planetary Gear Train of an
+Electric Vehicle under Uncertainties," Actuators, vol. 11, no. 2, Feb.
+2022, Art. no. 49, https://doi.org/10.3390/act11020049.
+[4] K. Deb and S. Jain, "Multi-Speed Gearbox Design Using MultiObjective Evolutionary Algorithms," Journal of Mechanical Design, vol.
+125, no. 3, pp. 609–619, Sep. 2003, https://doi.org/10.1115/1.1596242.
+[5] M. Hu, J. Zhu, L. Gong, Z. Lu, and H. Liu, "Multi-Objective
+Optimization of an Aeroengine Accessory Gearbox Transmission Based
+on a Heuristic Algorithm," Journal of Aerospace Engineering, vol. 38,
+no. 2, Mar. 2025, https://doi.org/10.1061/jaeeez.aseng-5155.
+[6] E. B. Younes, C. Changenet, J. Bruyère, E. Rigaud, and J. PerretLiaudet, "Multi-objective optimization of gear unit design to improve
+efficiency and transmission error," Mechanism and Machine Theory,
+vol.
+167,
+Jan.
+2022,
+Art.
+no.
+104499,
+https://doi.org/10.1016/j.mechmachtheory.2021.104499.
+[7] M. Patil, P. Ramkumar, and S. Krishnapillai, "Multi-Objective
+Optimization of Two Stage Spur Gearbox Using NSGA-II," in SAE
+Technical Paper Series, 400 Commonwealth Drive, Warrendale, PA,
+United
+States,
+vol.
+1,
+Jul.
+2017,
+Art.
+no.
+1939,
+https://doi.org/10.4271/2017-28-1939.
+[8] E. S. Maputi and R. Arora, "Multi-objective spur gear design using
+teaching learning-based optimization and decision-making techniques,"
+Cogent
+Engineering,
+vol.
+6,
+no.
+1,
+Jan.
+2019,
+https://doi.org/10.1080/23311916.2019.1665396.
+[9] Z. Qingyong et al., "Multi-objective Optimization Design and Dynamic
+Characteristic Analysis based on Planetary Gear Transmission," Journal
+of Network Intelligence, vol. 8, no. 3, pp. 639– 657 Aug. 2023.
+[10] J. H. Kim, B. S. Kim, D. Im, J. H. Park, D. J. Moon, and Y. J. Park,
+"Optimization of high-speed angular contact ball bearing for aircraft
+gearbox utilizing an evolutionary multi-objective algorithm, NSGA-III,"
+Advances in Mechanical Engineering, vol. 16, no. 9, Sep. 2024,
+https://doi.org/10.1177/16878132241272197.
+[11] V. Savsani, R. V. Rao, and D. P. Vakharia, "Optimal weight design of a
+gear train using particle swarm optimization and simulated annealing
+algorithms," Mechanism and Machine Theory, vol. 45, no. 3, pp. 531–
+541, Mar. 2010, https://doi.org/10.1016/j.mechmachtheory.2009.10.010.
+[12] M. Patil, P. Ramkumar, and K. Shankar, "Multi-Objective Optimization
+of Spur Gearbox with Inclusion of Tribological Aspects," Journal of
+Friction and Wear, vol. 38, no. 6, pp. 430–436, Nov. 2017,
+https://doi.org/10.3103/s1068366617060101.
+[13] M. Mendez, D. A. Rossit, B. Gonzalez, and M. Frutos, "Proposal and
+Comparative Study of Evolutionary Algorithms for Optimum Design of
+a Gear System," IEEE Access, vol. 8, pp. 3482–3497, 2020,
+https://doi.org/10.1109/access.2019.2962906.
+[14] K. Daoudi, E. M. Boudi, and M. Abdellah, "Genetic Approach for
+Multiobjective Optimization of Epicyclical Gear Train," Mathematical
+Problems in Engineering, vol. 2019, no. 1, Jan. 2019,
+https://doi.org/10.1155/2019/9324903.
+[15] R. C. Sanghvi, A. S. Vashi, H. P. Patolia, and R. G. Jivani, "MultiObjective Optimization of Two-Stage Helical Gear Train Using NSGAII," Journal of Optimization, vol. 2014, pp. 1–8, 2014,
+https://doi.org/10.1155/2014/670297.
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+Engineering, Technology & Applied Science Research
+
+Vol. 15, No. 5, 2025, 26156-26162
+
+26162
+
+[16] T. Q. Hung, V. D. Binh, D. V. Thanh, L. A. Tung, and N. K. Tuan,
+"Multi-Objective Optimization of a Two-Stage Helical Gearbox with
+Two Gear Sets in First Stage to Reduce Volume and Enhance Efficiency
+using the EAMR Technique," Engineering, Technology & Applied
+Science Research, vol. 15, no. 1, pp. 19288–19294, Feb. 2025,
+https://doi.org/10.48084/etasr.9224.
+[17] L. D. Bao, V. D. Binh, D. V. Thanh, K. M. Nguyen, and L. X. Hung,
+"Multi-Objective Optimization of a Two-stage Helical Gearbox with
+Double Gears in the First Stage using MARCOS," Engineering,
+Technology & Applied Science Research, vol. 14, no. 6, pp. 18245–
+18251, Dec. 2024, https://doi.org/10.48084/etasr.8865.
+[18] Q. Yao, "Multi-objective optimization design of spur gear based on
+NSGA-II and decision making," Advances in Mechanical Engineering,
+vol. 11, no. 3, Mar. 2019, https://doi.org/10.1177/1687814018824936.
+[19] T. Chat and L. Van Uyen, Design and Calculation of Mechanical
+Transmissions Systems, 1st ed. Hanoi, Vietnam: Educational Publishing
+House, 2007.
+[20] D. Jelaska, Gears and Gear Drives, 1st ed. New York, New York State:
+Wiley, 2012.
+[21] X. H. Le and N. P. Vu, "Multi-Objective Optimization of a Two-Stage
+Helical Gearbox Using Taguchi Method and Grey Relational Analysis,"
+Applied Sciences, vol. 13, no. 13, Jun. 2023, Art. no. 7601,
+https://doi.org/10.3390/app13137601.
+[22] M. Keshavarz-Ghorabaee, E. Zavadskas, M. Amiri, and J.
+Antucheviciene, "Evaluation by an Area-based Method of Ranking
+Interval Type-2 Fuzzy Sets (EAMRIT-2F) for Multi-criteria Group
+Decision-making," Transformations in Business and Economics, vol. 15,
+no. 3 (39), pp.76–95, Dec. 2016.
+
+www.etasr.com
+
+Dinh et al.: A Hybrid NSGA-II and EAMR Approach for Dual-Objective Optimization of a Two-Stage …
+
+

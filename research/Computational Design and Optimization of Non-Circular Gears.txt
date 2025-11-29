@@ -1,0 +1,1104 @@
+EUROGRAPHICS 2020 / U. Assarsson and D. Panozzo
+(Guest Editors)
+
+Volume 39 (2020), Number 2
+
+Computational Design and Optimization of Non-Circular Gears
+Hao Xu† 1
+
+Tianwen Fu† 1
+
+1 The Chinese University of Hong Kong
+
+Peng Song2
+
+Mingjun Zhou1
+
+2 Singapore University of Technology and Design
+
+Chi-Wing Fu1
+
+Niloy J. Mitra3,4
+
+3 University College London
+
+4 Adobe Research London
+
+Figure 1: We introduce an automatic method to design non-circular gears, which are optimized not only to resemble the input shapes (left)
+but also to transfer motion continuously and smoothly (middle). Further, our results can be 3D-printed and put to work in practice (right).
+Abstract
+We study a general form of gears known as non-circular gears that can transfer periodic motion with variable speed through
+their irregular shapes and eccentric rotation centers. To design functional non-circular gears is nontrivial, since the gear pair
+must have compatible shape to keep in contact during motion, so the driver gear can push the follower to rotate via a bounded
+torque that the motor can exert. To address the challenge, we model the geometry, kinematics, and dynamics of non-circular
+gears, formulate the design problem as a shape optimization, and identify necessary independent variables in the optimization
+search. Taking a pair of 2D shapes as inputs, our method optimizes them into gears by locating the rotation center on each
+shape, minimally modifying each shape to form the gear’s boundary, and constructing appropriate teeth for gear meshing. Our
+optimized gears not only resemble the inputs but can also drive the motion with relatively small torque. We demonstrate our
+method’s usability by generating a rich variety of non-circular gears from various inputs and 3D printing several of them.
+CCS Concepts
+• Computing methodologies → Shape modeling; • Fabrication → Computational design;
+
+1. Introduction
+Gears are basic building blocks in mechanical devices. The most
+common form of gears is the circular gear, which transfers constant speed and torque from one gear to another. In this paper, we
+explore a general form of gears called non-circular gears [LFA04].
+These gears have non-circular shapes and eccentric rotation centers, meaning that their boundaries are irregular and rotation centers are not necessarily at the gear centroid. In practice, non-circular
+gears can transfer periodic motion with variable speed, and are used
+in a variety of mechanical devices such as clockworks, astronomical devices, and musical instruments; see Figure 2 for examples.
+Early works on non-circular gears focus on studying specific
+forms such as elliptical gears [Bai02] and square gears [KB99],
+analytically modeling their kinematic and dynamic behaviors, and
+empirically investigating their mechanical properties. Recently,
+† joint first authors
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John
+Wiley & Sons Ltd. Published by John Wiley & Sons Ltd.
+
+the design of non-circular gears has received a lot of interest
+in the mechanical engineering community [LFAGPH09]. Some
+of the designed gears have been put to work in various mechanisms [CTN∗ 13, ZHH∗ 16]. However, the dominant design approach for non-circular gears is analytical and relies on the specification of a transmission function as the input. Hence, the approach
+is limited to professional users and impractical for designing gears
+of arbitrary shape; see Section 2 for details.
+Motivated by the recent advancement of digital fabrication techniques, we aim to develop computational methods that enable general users to design functional non-circular gears with desired
+shape. This is a nontrivial problem for three reasons. First, unlike circular gears that can always couple together as long as their
+teeth have same spacing, a pair of non-circular gears should have
+compatible shape and gear profile to ensure almost unceasing contacts during the rotation; see Figure 1(middle). Second, the required
+instantaneous torque to drive non-circular gears is not constant
+but varies with distance (i.e., arm of force) between the contact
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 2: Non-circular gears designed by human experts: (a) eccentric gears sketched by Leonardo da Vinchi in “Codex Madrid
+II” [Lac08]; (b) elliptical gears by “Magic Wheel” [Whe07]; (c)
+wooden clocks with non-circular gears by Brian Law [Law13].
+and each rotation center. Hence, improperly-designed non-circular
+gears require extensive torque to drive, thereby reducing the mechanism’s efficiency. Third, non-circular gears require teeth with customized shape to ensure proper gear meshing for transferring motion continuously without losing contact.
+We approach the problem by first studying a pair of non-circular
+gears, modeling their geometry, kinematics, and dynamics, and also
+formulating necessary geometric and kinematic constraints to ensure a mating gear pair. Based on this foundation, we pose the problem of designing a pair of functional non-circular gears as a geometric optimization, taking a pair of user-specified 2D shapes as
+inputs. Our optimization has two goals: (i) the gears should resemble the input shapes; and (ii) the maximum instantaneous torque required to drive the gears should be minimized, with the constraint
+that the two gears should form a mating pair.
+To solve the optimization, we minimally modify the input shapes
+into a pair of mating gears, while minimizing the required torque
+to drive them. Our idea is to construct a transmission function for
+each input shape with a fixed rotation center, then match and interpolate the transmission function derivatives to obtain the target
+transmission function. By then, we can construct the gear boundary
+shapes from the target transmission function, making the gears similar to the input shapes, while avoiding tedious and explicit shape
+deformations. To this end, we further devise a coarse-to-fine search
+to find optimal rotation centers that satisfy our two design objectives. Lastly, we create customized teeth on the resulting boundary
+shapes for gear meshing. Our method enables the creation of a rich
+variety of non-circular gears from various inputs. The results are
+demonstrated via simulations and 3D printing, e.g., see Figure 1.
+2. Related Works
+Non-circular gears. The idea of non-circular gears can be traced
+back to the 16th century, in a sketch by Leonardo da Vinci in
+“Codex Madrid II”; see Figure 2(a). Later, a number of intriguing
+mechanical properties of non-circular gears were discovered and
+studied in experiments and practice, such as variable speed transmission ratio [FLC00], force/moment balancing [AB10], and preventing resonance oscillations [KNF∗ 17]. Non-circular gears have
+also been used in a variety of mechanisms, including planetary gear
+train [Mun06], geared linkage mechanism [MLB∗ 09, CTN∗ 13],
+and indexing mechanism [ZHH∗ 16], for different applications.
+Designing non-circular gears is nontrivial. Researchers in mechanical engineering typically use analytical methods to compute
+their geometry from a given transmission function [LFAGPH09,
+
+Bäs19]. However, specifying a transmission function requires deep,
+relevant knowledge in mathematics and engineering, which is beyond the capability of general users. Very recently, Valle designed a
+graphical software tool called Gearify [Val19], that can aid users to
+design customized non-circular gears. This software takes as input
+a user-provided gear profile, and automatically computes a mating
+gear that can mesh with the input gear. However, there is no control
+over the shape of the generated mating gear, making it difficult and
+tedious to design a pair of gears with desired shapes. Enabled by
+our computational method, our design tool takes two 2D shapes as
+input, and resorts to a geometric optimization to automatically find
+a pair of mating gears that resemble the input shapes.
+Mechanism design. Computational design of personalized mechanical automata has excited great interest in the computer graphics community. The key challenge in this line of works is to design
+a mechanism that can effectively transfer an input motion (usually
+from a single rotational motor) to realize the user-specified motions
+or poses of the automata’s end-effectors, while simultaneously satisfying the various fabrication, assembly, and aesthetic constraints.
+To address the challenges, Zhang et al. [ZAC∗ 17] retargeted an
+existing mechanism to a user-specified input shape, while Hergel
+and Lefebvre [HL15] generated mechanisms from 2D designs
+crafted by users. Rather than relying on existing mechanisms or
+user sketches, a number of research works gain more flexibility in designing the mechanisms by automatically constructing
+and connecting various classes of mechanical components, including traditional mechanical elements (such as cams [ZXS∗ 12],
+gears [CTN∗ 13, RCLM18], and linkages [TCG∗ 14, BCT15,
+NBA19]), mechanical modules for oscillation [CLM∗ 13], elemental mechanisms with higher pair joints [SWT∗ 17], and even
+flexible mechanisms with compliant joints [MZB∗ 17] or kinetic
+wires [XKCB18]. Among the above works, Coros et al. [CTN∗ 13]
+incorporate non-circular gears for designing mechanical characters
+that can display user-specified motions, in which the relation between the gears profile and transmission function is also modelled.
+Compared with it, our work differs in two aspects. First, the design goals are different. We design non-circular gears to resemble
+the user-specified shapes, while they aim at controlling the timing of the motions. Second, the ways to generate the transmission
+function are different. We automatically generate the transmission
+function based on an optimization, while they let users specify it.
+Non-circular gears designed by our method complement the mechanical components explored in existing works by enabling timing and force controls while transferring motion. This result could
+have great potential for use in the design of mechanisms that involve adaptive speed and force.
+2D shape-guided design. Our work is also related to techniques
+that take 2D shapes as inputs to guide the design of an artwork, such
+that the artwork’s contour resembles the given shape’s boundary.
+Typical examples include calligram [ZCR∗ 16], collage [KSH∗ 16],
+and ornamental packing [SKAM17]. Other works take a pair of 2D
+shapes as input for designing dissection puzzles, including latticebased dissection [ZW12], approximate dissection [DYYT17], and
+reversible hinged dissection [LMAH∗ 18]. Similar to our work, the
+input shapes in [DYYT17, LMAH∗ 18] are allowed to be slightly
+deformed to gain more flexibility when forming the designs.
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 3: Geometric parameters of a non-circular gear pair.
+As a convention, we color the driver (GD ) and follower (GF ) in
+light blue and dark blue, respectively, throughout the paper. The
+local coordinate system of GD (GF ) is colored in light (dark)
+orange, and the world coordinate system is colored in black.
+
+Figure 4: A mating gear pair without teeth for better visualization. The contact point (orange dot) is always on the line between the two rotation centers.
+
+3. Parameterizing Non-Circular Gears
+3.1. Modeling Individual Non-Circular Gears
+A non-circular gear has three geometric components: (i) a closed
+boundary curve; (ii) a rotation center; and (iii) teeth along the
+boundary. Following [LFAGPH09], we represent the boundary
+curve using a polar function r(θ), with rotation center at the origin
+of the local coordinate and r denoting the distance from the origin
+to curve at θ ∈ [0, 2π). In our implementation, we discretize r(θ) as
+2π(i−1)
+a set of polar coordinates {θi , ri }, where θi = N , ri = r(θi ),
+and i ∈ {1...N}. In practice, we set N = 1024 in all experiments.
+Also, given M as the number of teeth on a gear, we use standard
+involute tooth profile [LFA04] to model the teeth using parameters
+{h j } and {s j }: h j is the height of the j-th tooth (from tooth root
+to tooth tip), s j is the spacing to next tooth (see inset in Figure 3),
+j ∈ {1...M}, and j is uniformly sampled along boundary. The teeth
+geometry is constructed by adjusting the sampled points along the
+boundary curve to the locations computed based on {h j } and {s j }.
+
+Figure 5: Example non-circular gear pairs with different transmission ratio K. Teeth are omitted for better boundary visualization.
+since it needs repetitive boundary and teeth profiles for compatible
+gear meshing. Lastly, we also have MF = K × MD .
+Kinematic modeling. The pose of GF relative to GD is not arbitrary. We must place GF at a certain location relative to GD as its
+initial pose. Without loss of generality, we define their initial poses
+as the ones shown in Figure 4(a), i.e., the two gears contact at rD (0)
+in GD ’s coordinate system (with θD = 0) and rF (π) in GF ’s coordinate system (with θF = π). Also, we denote L as the distance
+between the two rotation centers, so L = rD (0) + rF (π).
+Further, we denote φD and φF as the rotation angles of GD
+and GF , respectively, relative to initial poses, and set GD to rotate counter-clockwise and GF to rotate clockwise; see Figure 4(b).
+Then, we can define the transmission function for the gears:
+ψ(φD ) = φF ,
+
+3.2. Modeling Pairs of Mating Non-Circular Gears
+Next, we model the geometry, kinematics, and dynamics of a noncircular gear pair, as well as the associated constraints.
+Geometric modeling. In a pair of non-circular gears, the driver
+gear (denoted as GD ) initializes the motion and the follower gear
+(denoted as GF ) reacts and rotates accordingly. Their polar function
+j
+j
+i
+}, OD , {hD , sD },
+and parameters are denoted as { rD (θD ), {θiD , rD
+i
+k k
+i
+MD }, and { rF (θF ), {θF , rF }, OF , {hF , sF }, MF }, respectively,
+where OD and OF represent the rotation centers of GD and GF ,
+respectively, in the world coordinate system; see Figure 3.
+The geometric parameters of the two gears are not independent.
+First, the perimeter of GD should be K times the perimeter of GF ,
+in which K is a rational number (ratio of two positive integers), to
+enable gear meshing during periodic motion. Such perimeter ratio
+is in fact the transmission ratio between GD and GF . Note that for
+circular gears, K can be an arbitrary positive number as long as
+the mating gears have the same tooth spacing. This paper considers
+a specific class of non-circular gears, where K must be a positive
+integer, or a reciprocal of a positive integer, to simplify our design
+problem. Figure 5 showcases non-circular gear pairs with different
+K. When K > 1, the bigger gear is K-fold rotational symmetric,
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+(1)
+
+which maps φD to φF ; see again Figure 4(b). At the initial poses,
+ψ(0) = 0. Also, ψ is monotonic and periodic, since GF keeps rotating in the same direction and both φD and φF vary periodically.
+Dynamic modeling. We assume a constant torque (magnitude denoted as τF ) that resists the follower gear to rotate, e.g., caused by
+friction or load. Dynamic modeling aims to compute the required
+instantaneous torque on the driver to move the gears. Such torque
+varies with φD , so its magnitude is denoted as τD (φD ). By the law of
+action and reaction, the constant force
+magnitude (denoted as F) acted on
+GD and GF should be the same; see
+the inset. So, by the formula of torque
+calculation, τD (φD ) = rD (2π − φD )F
+and τF = rF (π − φF )F. Combining
+the two equations, we have
+F=
+
+τD (φD )
+τF
+=
+.
+rD (2π − φD ) rF (π − φF )
+
+(2)
+
+So, the instantaneous torque required on the driver at φD is
+τD (φD ) =
+
+rD (2π − φD )
+τF .
+rF (π − φF )
+
+(3)
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 6: Our approach to compute the mating gear. Given (a)
+GD and K = 1, we first locate (b) GF ’s rotation center OF , then
+compute (c) the transmission function and (d) GF ’s geometry.
+Figure 7: The rotate-and-carve approach to generate GF from GD .
+Note that we ignore energy loss, e.g., due to friction, in our model.
+Geometric and kinematic constraints. Below, we summarize
+the constraints for ensuring smooth and continuous gear motion:
+• First, since the distance between rotation centers of GD and GF
+is fixed, for any φD , we should have
+rD (2π − φD ) + rF (π − φF ) = L , where φF = ψ(φD ) . (4)
+dφF
+D
+• Second, the tangential speed of the gears (rD dφ
+dt and rF dt ) at
+the contact point should equal, so we can remove dt and obtain
+
+rD (2π − φD ) dφD = rF (π − φF ) dφF .
+
+(5)
+
+• In general, a full cycle (2π) of GD should correspond to 1/K
+cycle of GF in the periodic rotation, so we have
+ψ(2π) =
+
+2π
+.
+K
+
+(6)
+
+3.3. Computing Mating Gear Profiles
+Next, we show that given a gear (with known geometry and rotation
+center) and also a transmission ratio K, the geometry and rotation
+center of its mating gear can be computed based on the above geometric and kinematic constraints; see Figure 6. Without loss of
+generality, we take the input gear as GD .
+(i) Locate the rotation center (L). By combining Equations 4
+and 5, we can eliminate rF (π − φF ) and obtain
+rD (2π − φD )
+dφ
+= F = ψ0 (φD ) .
+L − rD (2π − φD ) dφD
+
+(7)
+
+Then, by replacing φD in Equation 7 with variable α ∈ [0, 2π), and
+integrating both sides from 0 to φD , we have
+Z φD
+
+ψ(φD ) =
+
+0
+
+rD (2π − α)
+dα .
+L − rD (2π − α)
+
+0
+
+rD (2π − α)
+2π
+dα =
+.
+L − rD (2π − α)
+K
+
+(iii) Compute mating gear geometry. We initialize follower gear
+GF as a circle of radius L, since it must be contained within such
+circle. Then, by rotating both GD and GF for a full cycle following
+ψ(φD ) and using GD ’s boundary to progressively carve the circle,
+we can obtain the shape of GF ; see Figure 7 for an example.
+The above approach involves extensive constructive solid geometry computation. We thus resort to an analytical approach to compute GF , for efficient evaluation when exploring gear designs. By
+Equation 4, the polar function of GF , i.e., rF , can be computed by
+rF (π − φF ) = L − rD (2π − ψ−1 (φF )) ,
+
+(10)
+
+−1
+
+where ψ (φF ) always exists because ψ(φD ) is strictly monotonic.
+This approach computes GF in O(N), where N is the number of
+sample points on its boundary curve. It is worth to note that the resulting gear may not be functional, due to potential collisions with
+other parts in the driver. Figure 8 compares GF produced by the
+two approaches. Note that we use the analytical approach for fast
+generation and evaluation of GF when exploring the design space,
+and use the rotate-and-carve approach to produce GF in the end.
+
+(8)
+4. Problem Formulation
+
+To satisfy the constraint in Equation 6, we set φD = 2π in Equation 8 and then substitute the result into Equation 6 to obtain
+Z 2π
+
+Figure 8: Mating gears (without teeth) computed using (a) rotateand-carve and (b) analytical approaches, which take 7.33 and 0.34
+seconds, respectively. Note that the gear in (b) is not functional due
+to part collision (see the red circle) during the rotation.
+
+(9)
+
+Now, Equation 9 contains only one unknown, i.e., L. Observing that
+its left side always monotonically decreases with increase in L, we
+max
+thus solve for L by performing a binary search in range (rD
+, (K +
+max
+max
+1)rD
+], where rD
+is the maximum rD for all θD . Then, we can
+locate the rotation center of the follower; see Figure 6(b).
+(ii) Compute transmission function. With L, we further compute
+ψ(φD ) by integrating Equation 8; see Figure 6(c) for an example.
+
+We take two shapes, SD and SF , as well as transmission ratio K and
+target number of teeth MD , as inputs. Our goal is to design a pair of
+functional gears GD and GF that resemble SD and SF , respectively.
+We formulate the design problem as an optimization that minimizes
+the following objective:
+E = Es + ω Eτ ,
+
+(11)
+
+where Es measures the amount of changes on SD and SF for forming the gear pair; Eτ is the maximal instantaneous torque required
+of GD to drive the gears; and ω is a weight empirically set as 0.2.
+By using Equation 3, we can compute Eτ as maxφD τD (φD ). We will
+provide detail on how to compute Es later.
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 9: Overview of our approach: (a&b) smooth and normalize the input shapes; (c) recursively sample and evaluate rotation center
+candidates; (d) choose the ones with minimal E; (e) construct the gear shapes; (f) generate teeth; and (g) fabricate the resulting gears.
+term Es is indirectly minimized when computing the transmission
+function. Section 5 provides details about this approach.
+5. Our Method
+Figure 10: (a) Input shapes with rotation center OD marked on SD .
+Mating gears generated using our (b) first and (c) second attempts.
+In general, the search space in the optimization consists of the
+boundary curves and rotation centers of both GD and GF , as well
+as the transmission function. However, since the parameters have
+to satisfy the constraints presented in Section 3, several of them
+are, in fact, dependent on one another. Hence, we need efficient
+strategies to explore the search space. Also, since the teeth geometry does not affect the objective, we perform teeth generation as a
+post-processing after solving the optimization; see Section 5.
+Initial attempts. In our first attempt, we form the driver gear GD
+by taking SD as its boundary curve and selecting a point in SD as
+its rotation center OD , then compute GD ’s mating gear GF using
+the procedure in Section 3.3. This approach ensures GD to have
+the same shape as SD , but yet, the shape of the follower GF may
+deviate a lot from SF ; see Figure 10(b) for a typical result.
+Our second attempt addresses the above limitation by deforming
+both SD and SF , and measuring the shape change (i.e., Es ) by using
+a translational and rotational invariant shape descriptor [ARKF07].
+However, there are no trivial methods (e.g., gradient-based) to
+guide the deformations measured by the descriptors, while ensuring that the generated gears form a mating pair. Hence, we resort to
+use a simulated annealing search [CDY98]; see Figure 10(c) for a
+typical result. However, the search easily gets stuck in local minima
+and is too time-consuming, due to the huge search space.
+Our strategy. From Equations 7 and 4, we observe that the geometry of a mating gear pair (without teeth) can be fully determined by the transmission function and distance between rotation
+centers (i.e., L). Also, the rotation centers can locate at arbitrary
+points within the input shapes. These observations inspire us to develop an approach that first determines the rotation centers by using a sampling-based search and then computes the transmission
+function by taking the given shapes and selected rotation centers
+as inputs. Then, using the computed transmission function, we can
+reconstruct the gear shapes, which can be guaranteed to be a mating pair. Different from the two initial attempts, the shape change
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+This section presents our method to solve the optimization problem
+formulated in Section 4. Since the input shapes SD and SF usually
+contain noise and sharp features, we first smooth them by using
+cubic spline interpolation [DBDBM∗ 78]. Then, we normalize both
+shapes in a unit square and scale-up SF , such that its perimeter is
+K times the perimeter of SD ; see Figure 9(a&b).
+Figure 9 outlines our approach, which consists of three key steps.
+First, we develop a coarse-to-fine search to find a pair of optimal rotation centers that minimizes the objective in Equation 11
+(see Figures 9(c&d)). Second, from the rotation centers and input shapes, we determine the transmission function that minimizes
+the shape change, and reconstruct the gear shapes from the transmission function accordingly (see Figure 9(e)). Third, we initialize
+teeth on gears and adjust the teeth height to avoid the gears from
+losing contacts during their rotations (see Figure 9(f)). Lastly, we
+fabricate the generated gears with teeth (see Figure 9(g)).
+Note that to evaluate the quality of candidate rotation centers,
+the coarse-to-fine search in the first step relies on our mechanism
+formulated for the second step. Hence, we first present the second
+step in Section 5.1, followed by the coarse-to-fine search (first step)
+in Section 5.2 and teeth construction (third step) in Section 5.3.
+5.1. Construct Mating Gears from Given Rotation Centers
+In this section, we first consider the construction of mating gears
+with transmission ratio K = 1, then extend the method for K > 1.
+Given shapes SD and SF with the corresponding rotation centers
+OD and OF , we first take SD and OD to form initial gear GD and
+compute its transmission function following Equation 8, denoted
+as ψD (φD ). Similarly, we can obtain initial follower gear GF and
+transmission function ψF (φF ); see Figure 11(b). If GD and GF are
+perfectly paired already, ψD and ψF should be an exact inverse of
+each other, i.e., ψD = ψ−1
+F , when we properly align them. Here, we
+denote φshift as the shift angle on ψF to align GF with GD .
+In general, it is likely that the initial gears GD and GF do not
+perfectly pair; see Figure 11(c). Hence, to deform them and make
+them a mating pair, we design the following procedure:
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 11: Our approach to compute mating gears from (a) input shapes. We first (b) locate a rotation center in each input shape, (c) compute
+the derivatives of their transmission functions, (d) find the shift angle to align the two derivatives, (e&f) obtain the derivative of the target
+transmission function by interpolating the two aligned derivatives, and lastly, (g) generate boundary curves (shapes) of the resulting gears.
+
+Figure 12: Gears generated (a) without and (b)-(e) with the optional step of bounding the maximum torque, in which the maximum
+instantaneous torque of the driver does not exceed (b) 3.0 τF , (c)
+2.0 τF , (d) 1.2 τF and (e) 1.0 τF . Here, we set K = 1.
+
+(i) Align initial gears. To align the initial gears, we need to find a
+proper orientation (i.e., φshift ) to pose GF relative to GD . To obtain
+φshift , we shift GF ’s transmission function (ψF ) for different angles,
+and try to match it with GD ’s transmission function (ψD ). Since
+derivative is independent of the starting point (i.e., the gears’ initial
+orientation) and is more sensitive to changes, we thus compute the
+0
+transmission function derivatives ψ0D and ψ−1
+F , and use them to
+find the shift angle that minimizes their difference:
+Z 2π
+
+∆=
+0
+
+0
+
+2
+(ψ0D (φ) − ψ−1
+F (φ + φshift )) dφ .
+
+(12)
+
+Here, we uniformly sample M candidate values of φshift in [0, 2π],
+and empirically set M = 128 in our experiments. Then, we use
+Equation 12 to evaluate ∆ for each candidate, and choose the one
+with the least ∆ (denoted as ∆min ) as φshift ; see Figure 11(d).
+Interestingly, ∆min actually indicates the amount of deformation
+(i.e., the change of r(θ) along the radial direction θ) needed on the
+input shapes to make them a mating gear pair. Hence, we take it to
+model the Es term in our objective (see Equation 11):
+Es = ∆min .
+
+(13)
+
+The underlying reason is that when the rotation centers are given,
+L is known, and therefore, the gear shape (rD ) and transmission
+function derivative (ψ0 ) are actually one-to-one corresponding; see
+Equation 7. This is also evidenced by the fact that when ∆min = 0,
+0
+the two transmission function derivatives (ψ0D and ψ−1
+F ) perfectly
+aligns with each other, and the two shapes are already a mating pair
+without the need to deform them. By this one-to-one correspondence, we thus minimize ∆min to minimize shape changes (Es ).
+0
+
+(ii) Compute target transmission function. Next, we shift ψ−1
+F
+by φshift , and compute the derivative of the target transmission func0
+tion ψ0 (φ) (see Figure 11(e&f)) by interpolating ψ0D and ψ−1
+F :
+0
+
+ψ0 (φ) = tψ0D (φ) + (1 − t)ψ−1
+F (φ + φshift ) ,
+
+(14)
+
+Figure 13: Constructing mating gears for K = 2. We match (a)
+0
+ψ0D (φ) with 1/K of ψ−1
+F (φ), (b&c) duplicate the resulting polar
+function (in blue) of the follower gear K times, normalize it, and
+then (d) compute the boundary curves of the gears.
+where t ∈ [0, 1] is a user-specified parameter and its default value
+is set as 0.5 to balance the deformations on the two input shapes.
+Note that ψ0 (φ) will later be used to reconstruct the shape of both
+the driver and follower gears, so by the above interpolation, we
+0
+can make ψ0 (φ) to be similar to both ψ0D and ψ−1
+F . Therefore, the
+resulting gear shapes can better resemble the inputs with minimized
+shape changes. Furthermore, we can use t to control how close the
+resulting gears resemble each input shape.
+(iii) Compute gear boundary curves. Using ψ0 (φ), OD , and OF ,
+we can compute the boundary curves of GD and GF using Equation 7, and then Equation 4; see Figure 11(g) for a typical result. Comparing the result with those by the initial attempts (see
+Figure 10(b&c)), this constructive approach produces gears with
+smaller and more balanced modifications.
+Optional step: bound the maximum torque. By combining
+Equations 3, 4, and 7, we can derive
+ψ0 (φD ) = τD (φD )/τF ,
+
+(15)
+
+meaning that the instantaneous torque τD (φD ) to drive the gears can
+be measured by ψ0 (φD ) as τF is a constant. Considering that motors
+usually have a limit on the maximum output torque, we allow users
+to set a threshold τthres to bound the driver’s torque τD (φD ). Hence,
+if τthres has been set, we truncate ψ0 (φD ) from Equation 14 by
+
+τthres /τF if ψ0 (φD ) > τthres /τF
+0
+ψtrunc (φD ) =
+(16)
+ψ0 (φD )
+otherwise .
+Further, we scale ψ0trunc (φD ) to satisfy 02π ψ0trunc (φD )dφD = 2π,
+since transmission functions have to produce a full cycle on the
+follower after the driver makes a full turn, for the case of K = 1.
+Figure 12 shows gears generated using different τthres , in which the
+gear shapes become more circular when τthres decreases.
+R
+
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Extension: transmission ratio K 6= 1. We need three adaptations to our approach to construct mating gears when K 6= 1. In
+0
+step (i), we match ψ0D (φ) in range [0, 2π] with 1/K of ψ−1
+F (φ) in
+range [0, 2π/K] to find φshift using Equation 12; see Figure 13(a). In
+0
+step (ii), we normalize the selected part of ψ−1
+F (φ) from [0, 2π/K]
+to [0, 2π]. After that, we use the original ψ0D (φ) and normalize
+0
+ψF−1 (φ) to compute ψ0 (φ) according to Equation 14. In step (iii),
+after obtaining the polar function of the follower based on ψ0 (φ),
+we further duplicate the polar function K times and normalize it to
+create the final polar function; see Figure 13 (b&c).
+5.2. Coarse-to-fine Search for Optimal Rotation Centers
+Given a pair of rotation centers, the above constructive approach
+not just generates a pair of mating gears, but also provides a quantitative measure Es (or ∆min ) on the amount of required changes to
+the input shapes. Hence, the domains of the rotation center pair (OD
+and OF ) can be regarded as the search space, since other parameters
+can be computed from them. Therefore, we apply the constructive
+approach to adaptively explore the search space by sampling candidate rotation center pairs and evaluating their quality using the
+objective E to locate the rotation center pair that minimizes E.
+To speed up the search, we sample rotation center pairs inside SD
+and SF in a coarse-to-fine manner. In detail, for each input shape,
+we first construct a 3 × 3 grid within its bounding box, locate the
+centers in the grid cells, and discard centers that are outside the
+shape boundary; see the top-left illustration in Figure 9(c). Here, we
+denote {OiD } as the list of remaining rotation center candidates in
+j
+shape SD , and likewise, {OF } for SF . Next, we try all possible pairs
+j
+i
+of OD and OF as candidate rotation center pairs to construct mating
+gears (using the constructive approach in Section 5.1) but stop the
+computation when we obtain the Es and objective function value
+E. In this way, we can locate the best J rotation center pairs with
+the smallest E. After that, we subdivide each cell associated with
+the best rotation centers into a 3x3 grid, gather the new set of cell
+j
+centers within the shape as {OiD } and {OF }, then repeat the above
+evaluation process. By recursively performing the above process
+three times, we can obtain the rotation center pair that minimizes E
+and take them as OD and OF ; see Figure 9(c) & (d) for a running
+example. Note that we empirically set J = 3 in our implementation.
+Once the optimal rotation centers OD and OF are found, we apply our constructive approach on them to compute the shapes of the
+mating gears; see Figure 9(e).
+5.3. Constructing Teeth on Mating Gears
+To add teeth on the constructed gear shapes, we first locate MD
+uniformly-spaced sample points on the driver shape’s boundary,
+and use the standard involute tooth profile [LFA04] to initialize
+{hi } and {si }, and construct teeth on the driver gear. Then, taking ρ as the tolerance between gears, we apply the rotate-and-carve
+technique (see Figure 7) to generate teeth on the follower shape;
+see Figure 14(a&b). However, we found that the resulting gears
+can easily lose contacts after some rotation; see Figure 14(c). This
+is because some of the teeth’s local moving direction is simply not
+blocked by the corresponding teeth on the follower gear.
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Figure 14: Constructing teeth on gears (a) without and (b) with
+tolerance, showing that the tolerance is small. (c) Gears with regular teeth could lose contact during motion transfer. (d) We create
+customized teeth with non-uniform shape for better gear meshing.
+To resolve the problem, we individually scale the height (hi ) of
+each tooth, such that when it rotates, it can always push the corresponding tooth on the follower and make it move. Mathematically,
+for each tooth in the driver gear, we consider the moment at which
+the root of the tooth just passes through the center line between
+OD and OF (see the inset in Figure 14(b)). Then, we formulate the
+following inequality that describes the situation that the tooth can
+contact and push the corresponding tooth:
+s
+hi cos α ≥ i sin α + ρ cos α .
+(17)
+2
+Hence, we set hi as s2i tan α + ρ for constructing the tooth on the
+driver. In the end, we generate a 3D mesh models for each gear
+by triangulating the 2D gear profile and thickening it, and then,
+fabricate the gear models using 3D printing; see Figure 9(g).
+6. Results and Experiments
+We implement our method in Python 3.7 and run it on a laptop with a dual-core Intel i5 CPU and 16GB RAM. We use
+NumPy [Oli19] to manipulate the arrays and their computation,
+and use Shapely [G∗ 19] for the basic geometric computing, such
+as CSG operations and triangulation. To generate the input 2D
+shapes, we compile a collection of shapes, including 28 silhouette
+images and 84 images selected from two public silhouette image
+datasets, i.e., MPEG-7 database [LLE00] and the Animal database
+from [BLT09]. Then, we manually select 300 pairs of shapes from
+the collection as inputs to our method. Here, we consider three selection criteria: (i) the shapes in each gear pair should have relevant
+semantic meaning; (ii) shapes with delicate structures, e.g., long
+and thin tails, are not selected; and (iii) we avoid overly using the
+same shape. For each pair of input shapes, we try our method with
+three different values of transmission ratio K, i.e., K = 1, 2, and 3.
+We sort all the results in ascending order of the resulting objective
+function value E, and report the top ones in the paper.
+Generated gears of different variety. Figure 15 shows 14 pairs
+of non-circular gears of various shapes generated by our method;
+see also the supplementary video for animated results. When the
+two input shapes are the same, the generated gear pair will have the
+same boundary curve, if we set t = 0.5 in Equation 14 for generating the resulting gear shapes; see the top two rows in Figure 15.
+Also, our method allows users to express preference on which of
+the two input shapes to be better preserved in the resulting gears
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 15: A gallery of non-circular gears computed by our method. From top to bottom: left column: SQUARE - SQUARE, STARFISH STARFISH , DROP - HEART, POT- SHOE , FISH - BUTTERFLY , DOG - BONE , TRUMP - CLUB ; right column: ELLIPSE - ELLIPSE , TRIANGLE _ BELL SUNNY _ DOLL , LEAF - FLOWER , DOVE - DOVE , HAT- GIRL , BUTTERFLY- FIGHTER . For each generated gear pair, we show the input shapes on
+the left, and three snapshots of rotating gears on the right. We overlay the input shape to gears in the first snapshot to show the deformation.
+K = 1, 2, 3) as well as the corresponding objective function value E,
+and we can see that significant shape change happens for K = 1, 3.
+
+Figure 16: (a) Given the BELL - CANDY input, three sets of results
+are generated for different transmission ratios: (b) K = 1, (c) K = 2
+and (d) K = 3. The corresponding objective function value is (b)
+E = 0.30, (c) E = 0.24, and (d) E = 0.43.
+by simply adjusting the value of t; see two typical examples in Figure 17. Note further that preserving more of one input shape will
+deteriorate the shape of the other, and vice-versa.
+In our experiments, we found that many desirable results are generated for K = 1 but not for K > 1; see again Figure 15. This is
+because K > 1 requires an input shape of K-fold rotational symmetry. This is not common in practice; see the LEAF - FLOWER result
+with K = 3 in Figure 15 (5th row, right column) for an example.
+Figure 16 shows three pairs of BELL - CANDY gears generated for
+the same input shapes but using different transmission ratios (i.e.,
+
+Statistics. Table 1 shows the statistics of our results. Overall, our
+method can generate a gear pair in around 9.7 minutes on average,
+which can be significantly sped up with a C/C++ implementation
+in the future. As expected, the rotation center search and the rotateand-carve procedure take up most of the processing time, which
+are 9.5 and 0.15 minutes on average, respectively. Also, we observe that input shapes of larger area (e.g., SQUARE - SQUARE) usually need more time to process, since there are more rotation center
+candidates to be evaluated inside the input shapes.
+Fabrication. We use an FDM 3D printer (Ultimaker 2 Extended
+plus) with printing resolution 0.1mm and an SLA printer (Form 2)
+with printing resolution 0.05mm to print our designed gears. To accommodate the manufacturing inaccuracy, we shrink the boundary
+of each gear (driver and follower) by 0.1mm, so the overall tolerance is 0.2mm. We assemble a LEGO Technic test bed to examine
+the usability of the generated gears. To do so, we first scale the gear
+pairs, such that the distance between their rotation centers equals to
+N × 7.76mm, where N is a positive integer and 7.76mm is the size
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 17: Preference on preserving one particular input shape can be expressed by adjusting the value of t in Equation 14. Note that the
+rotation centers of the gears are fixed in these optimizations (see the dots in the input shapes). Top: FISH - BUTTERFLY; bottom: DOG - BONE.
+Table 1: Statistics of our results. From left to right, the name of input shape, transmission ratio K, number of teeth MD on the driver
+gear, number of vertices V (GF ) of the follower gear model (note
+that the number of vertices of the driver gear is 1024 for all the
+results), pre-processing time, time to find the optimal rotation centers, time to generate the follower gear using the rotate-and-carve
+technique, and total time to generate the gears.
+Input & Output
+Model
+
+𝐾
+
+𝑀𝐷
+
+V(𝐺𝐹 )
+
+1
+1
+1
+1
+1
+1
+1
+2
+3
+1
+1
+1
+1
+1
+1
+1
+1
+
+32
+32
+64
+64
+32
+48
+32
+32
+32
+64
+48
+64
+64
+48
+64
+64
+64
+
+1535
+1107
+3388
+4275
+2933
+4475
+1122
+5033
+8608
+3776
+2462
+4912
+2884
+1898
+3904
+2907
+3570
+
+Running time (minutes)
+RotatePre- Rotation
+center
+andTotal
+process search
+carve
+0.015
+12.83
+0.08
+12.92
+0.005
+7.65
+0.06
+7.71
+0.006
+8.77
+0.16
+8.93
+0.013
+8.55
+0.21
+8.77
+0.013
+10.12
+0.12
+10.25
+0.010
+8.65
+0.21
+8.87
+0.013
+10.30
+0.07
+10.38
+0.008
+8.31
+0.24
+8.55
+0.008
+10.37
+0.14
+10.51
+0.010
+8.28
+0.20
+8.49
+0.018
+12.07
+0.12
+12.21
+0.008
+8.17
+0.22
+8.39
+0.010
+9.22
+0.14
+9.37
+0.010
+5.81
+0.11
+5.93
+0.015
+9.58
+0.21
+9.80
+0.013
+10.36
+0.13
+10.50
+0.017
+12.50
+0.18
+12.70
+
+of a grid cell in our test bed. Second, we create a cross-shaped hole
+at the rotation center of the 3D-printed gears, so that we can assemble it with the LEGO R Technic axle beam. Using this testbed,
+we can put together our 3D-printed gears, and evaluate the gears
+usability by connecting the axle of the driver gear to the LEGO R
+motor. Figure 18 (top) shows six pairs of gears that are in motion.
+Besides, we also build a train of twelve gears, which consists of
+six pairs of gears with exactly the same shapes that are connecting
+alternatively; see Figure 18 (bottom). Please watch the supplementary video for the animated results.
+Experiment on torque. Our method not only minimizes the
+torque (i.e., Eτ ) required to drive the gears, but also allows users
+to bound the driver’s torque by setting the threshold τthres . We conducted two experiments to evaluate these two features, respectively.
+In the first experiment, we generate two pairs of HEART- HEART
+gears with different ω in our objective function (see Equation 11),
+i.e., ω = 0.2 and ω = 1.0, respectively. Figure 19 (b&c) shows the
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Figure 18: Our 3D-printed non-circular gears. Top: SQUARE SQUARE , BELL - CANDY & ELLIPSE - ELLIPSE ; middle: FISH BUTTERFLY , HEART- HEART & TRIANGLE _ BELL - SUNNY _ DOLL ;
+and bottom: a gear train composed of six pairs of DROP - HEART.
+two generated gear pairs. We can see from the figure that the rotation centers of the gear pair with ω = 1.0 (Figure 19 (c)) locates
+more close to the shape center, but the gear boundary is more deformed from the inputs. This is because a larger ω emphasizes more
+on minimizing the maximum torque in the gear rotation. This is
+equivalent to putting the rotation center at the shape centroid. In
+the second experiment, we generate two pairs of BOY- GIRL gears
+with and without having τthres = 2τF ; see Figure 19 (e&f).
+To experimentally compare the generated gears, we create a simple system to measure the maximum torque required to drive the
+3D-printed gears. First, we use a LEGO Technic pin with the friction ridges (constant friction torque of 0.01195 Nm) to block the
+follower gear to rotate, which is employed to simulate a load acted
+on the follower gear; see the blue axle shown in Figure 19. Next, we
+use a force gauge to measure the force with a 23.9mm arm of force,
+which has a maximum range of 50N and an accuracy of 0.25N, and
+is able to record the maximum force it measured. After the preparation work, we divide a full rotation cycle of the driver into 16
+samples, measure the required driving force for each sample, and
+record the maximum force. Figure 19 shows the maximum driving force and the corresponding gear poses, thereby verifying the
+effectiveness of our method to reduce the required driving torque.
+Please watch the supplementary video for more detail.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+Figure 19: Experiments on maximum instantaneous torque required to drive the gears. From the same input shapes (a&d),
+HEART- HEART gears generated with (b) ω = 0.2 and (c) ω = 1.0;
+and BOY- GIRL results generated (e) without and (f) with torque
+bounding. The torque is measured by a force gauge with a fixed
+arm of force (see the numbers in the yellow dial plate).
+
+Experiment on teeth. To test the effectiveness of our customized
+teeth, we generate two pairs of gears with the same boundary curve
+but different teeth, i.e., regular and customized teeth, where the customized teeth are generated using the approach presented in Section 5.3. For each gear pair, we rotate the driver gear and observe
+the reaction of the follower gear. In our experiments, the gears with
+regular teeth could lose contact at a certain moment; see Figure 20
+(left). In contrast, the gears with customized teeth can transfer motion continuously without such issue; see Figure 20 (right). Please
+watch the supplementary video for animated results.
+7. Conclusion
+
+Figure 20: Gears generated with regular and customized teeth.
+Left: gears with regular teeth could lose contact during motion
+transfer (see the zooming views). Right: gears with customized
+teeth could maintain unceasing contact.
+
+Figure 21: Two typical failure cases. Left: not all 2D shapes can
+be represented by a polar function (range [0, 2π)); see the red and
+green dots. Right: our method cannot preserve very fine geometric
+features on the input shapes, as such details cannot be well encoded
+in the transmission functions for generating the gears.
+
+gears of shape optimized for assorted functionality requirements,
+e.g., avoiding potential collision with the enclosure and with the
+other parts in a mechanical or robotic system.
+
+We present a new method to compute and generate non-circular
+gears that are functional and resemble the given 2D shapes. The
+foundation of our method is a discrete geometric characterization of
+the non-circular gear, as well as the kinematic and dynamic modeling built on top of it. Inspired by the close relationship between gear
+geometry and kinematics, we formulate a constructive approach
+that takes the transmission functions of the input shapes as an intermediary, and then minimally modifies the two input shapes to
+form a mating gear pair with fixed rotation centers. One key innovation is to work with the derivative of the transmission functions
+to solve for a pair of optimal rotation centers, then to take these
+rotation centers to directly reconstruct the gear shapes. In this way,
+we can avoid explicit and tedious 2D shape deformations, yet being
+able to modify the input shapes with minimized shape changes. Our
+method can produce non-circular gears of a rich variety of shapes
+that were not possible before. Also, these gears require only a relatively small torque to drive, as verified in our physical experiments.
+
+Discussion. Our work has some limitations that could inspire interesting directions for future research. First, our method may not
+work well for arbitrary inputs, meaning that the generated gears
+cannot be faithful to the inputs. Figure 21 shows two typical cases,
+where the input shapes cannot be represented by polar functions
+(left), and they contain characteristic features that are lost during
+the gear generation (right). Second, our current implementation
+considers only shape similarity and maximum torque. It would be
+helpful to include other measures, such as aesthetics (e.g., maintain
+shape features), structural strength, kinematic and dynamic performance, etc. Third, the decomposition of gear geometry into boundary curve and teeth profile could result in non-fabricable geometry;
+e.g., teeth added on thin gear parts could create a gear with disconnected geometry. Last, we focus on designing 2D non-circular
+gear pairs. Further work to explore the construction of non-circular
+gears with other kinds of mechanical elements (e.g., linkages), as
+well as non-circular gears in 3D space, to form mechanisms for
+performing more complex tasks would be interesting.
+
+Potential applications. The non-circular gears generated from
+our framework seek visually-appealing results on top of a functionality guarantee, enabling us to apply them in various usage scenarios. For example, we can employ them as components in decorative
+artworks and mechanical devices, combining form and function in
+an aesthetically-pleasing manner. Besides, we can use non-circular
+
+Acknowledgements. This work is supported by grants from the
+Research Grants Council of the Hong Kong Special Administrative
+Region (Project no. CUHK 14201918 and 14203416), SUTD Startup Research Grant (Award Number: SRG ISTD 2019 148), ERC
+Starting Grant, ERC PoC Grant, Google Faculty Award, Royal Society Advanced Newton Fellowship, and gifts from Adobe.
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+Hao Xu et al. / Computational Design and Optimization of Non-Circular Gears
+
+References
+[AB10] A RAKELIAN V., B RIOT S.: Simultaneous inertia force/moment
+balancing and torque compensation of slider-crank mechanisms. Mechanics Research Communications 37, 2 (2010), 265–269. 2
+[ARKF07] A LAJLAN N., RUBE I. E., K AMEL M. S., F REEMAN G.:
+Shape retrieval using triangle-area representation and dynamic space
+warping. Pattern Recognition 40, 7 (2007), 1911–1920. 5
+[Bai02] BAIR B.-W.: Computer aided design of elliptical gears. Journal
+of Mechanical Design 124, 4 (2002), 787–793. 1
+[Bäs19] B ÄSEL U.: Determining the geometry of noncircular gears for
+given transmission function. arXiv preprint arXiv:1905.02642 (2019). 2
+[BCT15] B ÄCHER M., C OROS S., T HOMASZEWSKI B.: LinkEdit: Interactive linkage editing using symbolic kinematics. ACM Trans. on Graph.
+(SIGGRAPH) 34, 4 (2015). Article 99. 2
+
+IEEE Conference on Computer Vision and Pattern Recognition. CVPR
+2000 (Cat. No. PR00662) (2000), vol. 1, IEEE, pp. 424–429. 7
+[LMAH∗ 18] L I S., M AHDAVI -A MIRI A., H U R., L IU H., Z OU C., VAN
+K AICK O., L IU X., H UANG H., Z HANG H.: Construction and fabrication of reversible shape transforms. ACM Trans. on Graph. (SIGGRAPH
+Asia) 37, 6 (2018). Article No. 190. 2
+[MLB∗ 09] M ODLER K.-H., L OVASZ E.-C., B ÄR G., N EUMANN R.,
+P ERJU D., P ERNER M., M ĂRGINEANU D.: General method for the
+synthesis of geared linkages with non-circular gears. Mechanism and
+Machine Theory 44, 4 (2009), 726–738. 2
+[Mun06] M UNDO D.:
+Geometric design of a planetary gear
+train with non-circular gears.
+Mechanism and Machine Theory
+41, 4 (2006), 456–472. doi:https://doi.org/10.1016/j.
+mechmachtheory.2005.06.003. 2
+
+[BLT09] BAI X., L IU W., T U Z.: Integrating contour and skeleton for
+shape classification. In 2009 IEEE 12th international conference on computer vision workshops, ICCV workshops (2009), IEEE, pp. 360–367. 7
+
+[MZB∗ 17] M EGARO V., Z EHNDER J., B ÄCHER M., C OROS S., G ROSS
+M., T HOMASZEWSKI B.: A computational design tool for compliant
+mechanisms. ACM Trans. on Graph. (SIGGRAPH) 36, 4 (2017). Article
+No. 82. 2
+
+[CDY98] C AGAN J., D EGENTESH D., Y IN S.: A simulated annealingbased algorithm using hierarchical models for general three-dimensional
+component layout. Computer-aided design 30, 10 (1998), 781–790. 5
+
+[NBA19] N ISHIDA G., B OUSSEAU A., A LIAGA D. G.: Multi-pose interactive linkage design. Computer Graphics Forum (Eurographics) 38,
+2 (2019), 277–289. 2
+
+[CLM∗ 13] C EYLAN D., L I W., M ITRA N. J., AGRAWALA M., PAULY
+M.: Designing and fabricating mechanical automata from mocap sequences. ACM Trans. on Graph. (SIGGRAPH Asia) 32, 6 (2013). Article
+No. 186. 2
+
+[Oli19] O LIPHANT T.: NumPy: The fundamental package for scientific
+computing with Python, 2019. http://www.numpy.org/. 7
+
+[CTN∗ 13]
+
+C OROS S., T HOMASZEWSKI B., N ORIS G., S UEDA S., F OR BERG M., S UMNER R. W., M ATUSIK W., B ICKEL B.: Computational
+
+design of mechanical characters. ACM Trans. on Graph. (SIGGRAPH)
+32, 4 (2013). Article no. 83. 1, 2
+[DBDBM∗ 78] D E B OOR C., D E B OOR C., M ATHÉMATICIEN E.-U.,
+D E B OOR C., D E B OOR C.: A practical guide to splines, vol. 27.
+springer-verlag New York, 1978. 5
+[DYYT17] D UNCAN N., Y U L.-F., Y EUNG S.-K., T ERZOPOULOS D.:
+Approximate dissections. ACM Trans. on Graph. (SIGGRAPH Asia) 36,
+6 (2017). Article No. 182. 2
+[FLC00] F IGLIOLINI G., L ANNI C., C ECCARELLI M.: On the kinematic
+synthesis of non-circular gears. In International Conference on Gears,
+Transmissions and Mechanical Systems (2000), pp. 283–292. 2
+[G∗ 19]
+
+G ILLIES S., ET AL .: Shapely: Manipulation and analysis of geometric objects, 2019. https://github.com/Toblerity/Shapely. 7
+
+[HL15] H ERGEL J., L EFEBVRE S.: 3d fabrication of 2d mechanisms.
+Computer Graphics Forum 34, 2 (2015), 229–238. 2
+[KB99] K AHRAMAN A., B LANKENSHIP G. W.: Effect of involute contact ratio on spur gear dynamics. Journal of Mechanical Design 121, 1
+(1999), 112–118. 1
+[KNF∗ 17] K ARPOV O., N OSKO P., F IL P., N OSKO O., O LOFSSON
+U.: Prevention of resonance oscillations in gear mechanisms using noncircular gears. Mechanism and Machine Theory 114 (2017), 1–10. 2
+[KSH∗ 16] K WAN K. C., S INN L. T., H AN C., W ONG T.-T., F U C.-W.:
+Pyramid of arclength descriptor for generating collage of shapes. ACM
+Trans. on Graph. (SIGGRAPH Asia) 35, 6 (2016). Article No. 229. 2
+[Lac08] L ACZIK B.: Design of profile of the non-circular gears, 2008.
+G-2008-A-08. 2
+[Law13]
+
+L AW B.: Wooden clocks with non-circular gears, 2013. https:
+//www.youtube.com/watch?v=IzznSFmz5rM. 2
+
+[LFA04] L ITVIN F. L., F UENTES -A ZNAR A.: Gear Geometry and Applied Theory. Cambridge University Press, 2004. 1, 3, 7
+[LFAGPH09] L ITVIN F. L., F UENTES -A ZNAR A., G ONZALEZ -P EREZ
+I., H AYASAKA K.: Noncircular Gears: Design and Generation. Cambridge University Press, 2009. 1, 2, 3
+[LLE00] L ATECKI L. J., L AKAMPER R., E CKHARDT T.: Shape descriptors for non-rigid shapes with a single closed contour. In Proceedings
+c 2020 The Author(s)
+Computer Graphics Forum c 2020 The Eurographics Association and John Wiley & Sons Ltd.
+
+[RCLM18] ROUSSEL R., C ANI M.-P., L ÉON J.-C., M ITRA N. J.: Exploratory Design of Mechanical Devices with Motion Constraints. Computers and Graphics 74 (2018), 244–256. 2
+[SKAM17] S APUTRA R. A., K APLAN C. S., A SENTE P., M ĔCH R.:
+FLOWPAK: Flow-based ornamental element packing. In Graphics Interface Conference (2017), pp. 8–15. 2
+[SWT∗ 17] S ONG P., WANG X., TANG X., F U C.-W., X U H., L IU L.,
+M ITRA N. J.: Computational design of wind-up toys. ACM Trans. on
+Graph. (SIGGRAPH Asia) 36, 6 (2017). Article No. 238. 2
+[TCG∗ 14] T HOMASZEWSKI B., C OROS S., G AUGE D., M EGARO V.,
+G RINSPUN E., G ROSS M.: Computational design of linkage-based characters. ACM Trans. on Graph. (SIGGRAPH) 33, 4 (2014). Article No.
+64. 2
+[Val19]
+
+VALLE M.:
+
+Gearify software, 2019.
+
+http://www.
+
+gearifysoftware.com. 2
+
+[Whe07]
+
+W HEEL M.: Elliptical gears, 2007. https://www.youtube.com/
+
+watch?v=RqDTwP1a6bo. 2
+
+[XKCB18] X U H., K NOOP E., C OROS S., B ÄCHER M.: Bend-It: Design and fabrication of kinetic wire characters. ACM Trans. on Graph.
+(SIGGRAPH Asia) 37, 6 (2018). Article No. 239. 2
+[ZAC∗ 17] Z HANG R., AUZINGER T., C EYLAN D., L I W., B ICKEL B.:
+Functionality-aware retargeting of mechanisms to 3D shapes. ACM
+Trans. on Graph. (SIGGRAPH) 36, 4 (2017). Article No. 81. 2
+[ZCR∗ 16] Z OU C., C AO J., R ANAWEERA W., A LHASHIM I., TAN P.,
+S HEFFER A., Z HANG H.: Legible compact calligrams. ACM Trans. on
+Graph. (SIGGRAPH) 35, 4 (2016). Article No. 122. 2
+[ZHH∗ 16] Z HENG F., H UA L., H AN X., L I B., C HEN D.: Synthesis of
+indexing mechanisms with non-circular gears. Mechanism and Machine
+Theory 105 (2016), 108–128. 1, 2
+[ZW12] Z HOU Y., WANG R.: An algorithm for creating geometric dissection puzzles. In Bridges Towson: Mathematics, Music, Art, Architecture, Culture (2012), pp. 49–56. 2
+[ZXS∗ 12] Z HU L., X U W., S NYDER J., L IU Y., WANG G., G UO B.:
+Motion-guided mechanical toy modeling. ACM Trans. on Graph. (SIGGRAPH Asia) 31, 6 (2012). Article No. 127. 2
+
+

@@ -1,0 +1,1890 @@
+The Optimal Design of Standard
+Gearsets *
+Michael Savage,? John J. Coy,$ and Dennis P. Townsend8
+The design of a gearset is a reasonably difficult problem which involves the satisfaction of many
+design constraints. In recent literature, several approaches to the optimum design of a gear mesh have
+been presented (refs. 1 to 3). Cockerham (ref. 1) presents a computer design program for 20" pressure
+angle gearing which ignores gear-tooth tip scoring. This program varies the diametral pitch, face
+width, and gear ratio to obtain an acceptable design. Tucker (ref. 2) and Estrin (ref. 3) look more
+closely at the gear-mesh parameters, such as addendum ratio and pressure angle, and outline
+procedures for varying a standard gear mesh to obtain a more favorable gearset. Gay (ref. 4)
+considers gear tip scoring as well and shows how to modify a standard gearset to bring this mode of
+failure into balance with the pitting fatigue mode. He also adjusts the addendum ratios of the gear
+and pinion to obtain an optimal design.
+No general procedures exist, however, to determine the optimal size of a standard gear mesh.
+The basic approach available is one of checking a given design to verify its acceptability (refs. 5 to 7).
+Optimum methods are presented for the design of a gearbox (refs. 8 to 10) with the object of
+minimizing size and weight. These methods focus on multistage gear reductions and consider the
+effect of splitting the gear ratios on overall transmission size.
+The optimum design of a standard gearset has not been treated in the literature to date. Such a
+study must be based on a thorough study of the kinematics of the gear mesh, such as those by
+Buckingham (ref. 11) and Anderson (ref. 12). The gear strengths that must be considered include
+bending fatigue as treated by the AGMA (ref. 13), by Gitchel (ref. 14), and by Mitchiner and Mabie
+(ref. 15). Surface pitting of the gear teeth in the full load region must also be treated (refs. 16 to 18) as
+must gear scoring at the tip of the gear tooth (refs. 19 and 20).
+The objective of the research reported here is to establish an optimal design procedure for spur
+gear pairs. Standard tooth forms are assumed. Figure 1 shows a single mesh of the external type, and
+figure 2 shows a single mesh of the internal type. The procedure developed in this paper uses standard
+gear geometry and optimizes the remaining parameters to obtain the most compact standard gearset
+for a given application of specified speed reduction and input torque. The procedure applies to
+internal and external gearing.
+
+Nomenclature
+a
+
+C
+d
+E
+
+F
+
+f
+
+k
+I
+mg
+mP
+
+N
+
+addendum ratio
+center distance, m
+dedendum ratio
+elastic modulus, Pa
+tangential tooth load, N
+gear face width, m
+slope of equal size design line in design space
+parabolic beam height, m
+gear ratio
+contact ratio
+tooth number
+
+*Work partially supported by NASA Grant NAG3-55.
+tThe University of Akron.
+$Propulsion Laboratory, U.S. Army Research and Technology Laboratories (AVRADCOM), NASA Lewis Research Center.
+jNASA Lewis Research Center.
+435
+
+GEAR
+
+Figure 1. - External gear mesh.
+
+Figure 2.
+
+number of million stress cycles
+p d diametral pitch
+Pb base pitch, m
+pitch radius, m
+R
+Rla addendum radius, m
+Rb base circular radius, m
+S probability of survival
+pinion torque, N*m
+=I,
+parabolic beam depth, m
+t
+V stress volume, m3
+Y Lewis tooth form factor
+Z length of action, m
+depth to maximum shearing stress, m
+20
+secondary interference angle, deg
+P
+secondary interference gear rotation angle, deg
+Y
+roll angle to initial point of contact, deg
+6
+e involute correction angle, deg
+pinion roll angle to lowest point of single tooth contact, rad
+9,'
+pinion roll angle to lowest point of tooth contact, rad
+8,
+length to diameter ratio
+h
+Y
+Poisson's ratio
+radius of curvature, m
+P
+bending fatigue stress, Pa
+UB
+OBT bending fatigue stress for load at the pinion tooth tip, Pa
+ON surface pressure, Pa
+UNT surface pressure at the gear tooth tip, Pa
+shearing stress, Pa
+7
+
+n
+
+436
+
+- Internal gear mesh.
+
+TABLE 1 GEAR MESH PARAMETER CONSTRAINTS
+Parameter
+
+m9
+N2
+
+d'
+R1
+R2
+
+C
+
+a1
+a2
+dl
+
+d2
+f
+4
+
+El
+
+Y
+oB1
+oN1
+
+E2
+v2
+
+uB2
+uN;
+
+Description
+
+Equality constraint
+
+Pinion tooth number
+m I (m )design
+Gear ratio
+9
+9
+Gear tooth number
+N2 = mgN1
+Diametral pitch
+Pinion pitch radius
+R 1 = N1/2Pd
+Gear pitch radius
+Rp = N212Pd
+Center distance
+C = R2 f R1
+1 f o r std tooth form
+Pinion addendum ratio
+1 for std tooth form
+Gear addendum ratio
+1.25 for std tooth form
+Pinion dedendum rat io
+1.25 for std tooth form
+Gear dedendum ratio
+f = a Nl/Pd
+Mesh face width
+Pitch line pressure angle
+4 = bSTo
+Pinion radius
+Pinion
+Pinion Poisson's ratio
+Pinion bending design stress Material properties
+Pinion surface design pressure
+Gear modulus
+Gear
+Gear Poisson's ratio
+Gear bending design stress
+Materisl properties
+Gear surface design pressure
+
+Table 1 includes four parameter groups, addendum and dedendum ratios, face width, pressure
+angle, and material constants, which are tied down by standard practice but which could be varied in
+the design of nonstandard gearing. Several other parameters are determined exactly in terms of the
+input specifications and the free parameters. One parameter is a design input quantity, and only two
+parameters are free to be varied over an arbitrary range of values. These two free parameters in this
+formulation of the gear-mesh design problem are the number of teeth on the pinion and the diametral
+pitch. This leaves the designer with a two-dimensional design space for standard gears and a sixdimensional design space for nonstandard gears.
+The design spaces are limited by the inequality constraints of the problem. These inequality
+constraints could generate a null design space by placing conflicting requirements on the free
+parameters. In a well posed design problem, they will enclose a bounded area of acceptable designs.
+To assure a quiet mesh, the contact ratio of the mesh should be greater than some minimum
+value. The value 1.4 is commonly stated (refs. 6 and 7), but higher values will make the mesh even
+quieter. For reasonable manufacturing of the gear teeth, both the tooth tip and the tool tip should be
+wider than a specified minimum (ref. 3). These widths permit proper surface hardening of the tooth
+and prevent excessive tool tip wear in manufacture. For standard gearing, these three inequalities are
+automatically satisfied by the standard.
+For proper tooth engagement and disengagement, involute interference (contact below the base
+circle) and secondary interference between the pinion tooth tip and the internal gear tooth tip for
+internal gearing must be avoided.
+For proper gear mesh strength and life, the possibility of failure by three different mechanism:
+must be avoided. These mechanisms are pinion-tooth bending fatigue, surface fatigue, or spalling ii
+the region of single-tooth load and gear-tip scoring.
+To treat these three modes of failure on a common basis, a nominal stress approach is used. A
+three modes of failure are affected by more than the nominal design stress used herein. The bendir
+fatigue is dependent on the surface finish oi the tooth among other factors (refs. 6 and 7). T
+surface fatigue of the tooth is influenced by the stress volume and does not have an infinite I
+endurance limit (ref. 17). The gear tip scoring failure is highly temperature dependent (ref. 2
+438
+
+TABLE 1 GEAR MESH PARAMETER CONSTRAINTS
+Parameter
+N1
+m9
+
+N2
+d'
+R1
+R2
+C
+a1
+a2
+dl
+d2
+f
+
+6
+v1
+'81
+'N1
+E2
+'82
+ON2
+
+Description
+
+Equality constraint
+
+Pinion tooth number
+m
+(m )design
+Gear ratio
+9
+9
+Gear tooth number
+NZ=mN
+9 1
+Diametral pitch
+Pinion pitch radius
+R1 N1/2Pd
+Gear pitch radius
+R2 = N2/2Pd
+Center distance
+C = R2 R1
+Pinion addendum ratio
+1 for std tooth form
+Gear addendum ratio
+1 for std tooth form
+Pinion dedendum ratio
+1.25 for std tooth form
+Gear dedendum ratio
+1.25 for std tooth form
+f = x N1/Pd
+Mesh face width
+Pitch line pressure angle
+6 = fiSTD
+Pinion radius
+Pinion Poisson's ratio
+Pinion
+Pinion bending design stress Material properties
+Pinion surface design pressure
+Gear modulus
+Gear Poisson's ratio
+Gear
+Materisl properties
+Gear bending design stress
+Gear surface design pressure
+I
+
+p
+
+Table 1 includes four parameter groups, addendum and dedendum ratios, face width, pressure
+angle, and material constants, which are tied down by standard practice but which could be varied in
+the design of nonstandard gearing. Several other parameters are determined exactly in terms of the
+input specifications and the free parameters. One parameter is a design input quantity, and only two
+parameters are free to be varied over an arbitrary range of values. These two free parameters in this
+formulation of the gear-mesh design problem are the number of teeth on the pinion and the diametral
+pitch. This leaves the designer with a two-dimensional design space for standard gears and a sixdimensional design space for nonstandard gears.
+The design spaces are limited by the inequality constraints of the problem. These inequality
+constraints could generate a null design space by placing conflicting requirements on the free
+parameters. In a well posed design problem, they will enclose a bounded area of acceptable designs.
+To assure a quiet mesh, the contact ratio of the mesh should be greater than some minimum
+value. The value 1.4 is commonly stated (refs. 6 and 7), but higher values will make the mesh even
+quieter. For reasonable manufacturing of the gear teeth, both the tooth tip and the tool tip should be
+wider than a specified minimum (ref. 3). These widths permit proper surface hardening of the tooth
+and prevent excessive tool tip wear in manufacture. For standard gearing, these three inequalities are
+automatically satisfied by the standard.
+For proper tooth engagement and disengagement, involute interference (contact below the base
+circle) and secondary interference between the pinion tooth tip and the internal gear tooth tip for
+internal gearing must be avoided.
+For proper gear mesh strength and life, the possibility of failure by three different mechanisms
+must be avoided. These mechanisms are pinion-tooth bending fatigue, surface fatigue, or spalling in
+the region of single-tooth load and gear-tip scoring.
+To treat these three modes of failure on a common basis, a nominal stress approach is used. All
+three modes of failure are affected by more than the nominal design stress used herein. The bending
+fatigue is dependent on the surface finish oi the tooth among other factors (refs. 6 and 7). The
+surface fatigue of the tooth is influenced by the stress volume and does not have an infinite life
+endurance limit (ref. 17). The gear tip scoring failure is highly temperature dependent (ref. 22).
+438
+
+However, this temperature is a direct result of the contact pressure and sliding velocity at the gear tip.
+The contact pressure is thus a meaningful parameter to predict the severity of both surface pitting
+and tip scoring. The nominal tooth bending stress will also be used as a measure of the bending
+fatigue severity.
+Once all these limits have been applied to the design space, the designer is in a position to survey
+the acceptable designs and select the optimum. The criterion of this selection, called the merit
+function, is established as the center distance of the gears. By minimizing the center distance at a
+specified load, one produces the most economical gearset for the stated conditions since it would use
+the least material for the gears and permit the gearbox to assume a minimum size. This criterion
+could be inverted very easily if a fixed size was available for the gearset. The merit function would
+then become the maximum transmitted load for the given size or the maximum reliability for a given
+size and load.
+
+Kinematic Interference
+Involute interference occurs when the addendum circle of one gear crosses the line of action past
+the point of tangency with the base circle on the mating gear. For standard tooth systems with equal
+addenda, the pinion will always be the gear on which contact occurs below the base circle. The
+contact geometry is shown in figure 3 for an external gear and in figure 4 for an internal gear.
+Involute interference occurs when the gear tooth contacts the pinion tooth below its involute profile.
+The relation that describes this is a comparison of two distances. For contact with an external gear
+(fig. 3) the distance between the points of tangency of the line of action with the two base circles, A
+and E, should be greater than the distance on the gear along this line of action from the addendum
+circle, B, to the point of tangency with its base circle, E;
+-~
+
+AE>BE
+
+(1)
+
+or
+
+c sin p > , / m
+for no primary interference.
+
+Figure 3.
+
+- Pinion - external gear mesh geometry.
+
+Figure 4.
+439
+
+- Pinion - i n t e r n a l gear mesh geometry.
+
+The standard cure for primary involute interference is to increase the number of teeth on the
+pinion for the desired gear ratio until the inequality is satisfied. These relationships can be used to
+define a minimum number of teeth required to avoid interference. Since
+
+Nl
+R1= -
+
+(4)
+
+2pd
+
+and
+
+one has
+
+multiplying through by 2Pd/N2, and solving for N2 yields
+
+or, in terms of N1,
+Ni >
+
+2a2/mg
+
+for contact with an external gear.
+For contact with an internal gear (fig. 4) the distance between the points of tangency of the line
+of action with the two base circles, E X should be less than the distance on the gear along the line of
+action from the addendum circle, B, to the point of tangency with its base circle, E.
+
+EA<EB
+
+c sin cp<JIn this case
+
+440
+
+Thus,
+
+Multiplying through by 2Pd/N2 and solving for N2 yields
+
+or, in terms of N1,
+2 a2/mr!
+
+N, >
+
+for contact with an internal gear.
+By satisfying relation 10 or 17, one can assure that primary involute interference will not occur
+for a given gear ratio, pressure angle, and gear addendum ratio. This check is sufficient for all cases
+in which the gear addendum ratio equals the pinion addendum ratio, as is the case for standard gears.
+However, if the pinion addendum ratio were greater than that on the gear, one would also have
+to check interference on the gear tooth. For contact with an external gear, the pinion addendum must
+cross the line of action inside the point of tangency between the line of action and the gear base circle.
+
+The resulting limit on the number of pinion teeth is
+
+for contact with an external gear.
+To avoid interference with the base of the internal gear tooth, the addendum radius of the gear
+must be greater than its base radius.
+Ra2>Rb2
+
+or
+202
+
+N2’ 1 -cos
+
+(o
+
+441
+
+In terms of N1 this becomes
+2a2/rn
+N1’ 1 -cos;
+For standard teeth with 112 = 1.O, this requires N2 to be greater than 34 teeth for a 20” pressure angle
+or 22 teeth for a 25” pressure angle. This does not pose a problem for standard teeth.
+For contact with an internal gear a second type of kinematic interference is possible in which the
+tip of the internal gear contacts the tip of the pinion as they come into mesh (refs. 1 1 and 12). This
+interference, called “fouling,” is illustrated in figure 5. In this figure two mating gears are shown in
+contact at the pitch point, P . The clearance between the teeth can be seen three or four teeth away
+from the pitch point. However, as one moves further from the pitch point to the intersection of the
+two addendum circles, interference between the tips of teeth on the two gears can be seen.
+To avoid this secondary interference, or fouling, the actual rotation of the gear tooth caused by
+the rotation of the pinion tooth must be greater than the rotation of the gear tooth that would allow
+interference. The actual rotation of the pinion tooth is given by
+
+Where 01 is the angle from the pitch point to the intersection of the addendum circles on the pinion.
+It can be found from the law of cosines that
+
+The angle 81 is the angle on the pinion tooth between the pitch circle and the addendum circle. It is
+given by
+
+where cp is the pitch line pressure angle and pal is the pressure angle at the addendum circle. The
+involute function (ref. 7) is shown in figure 6 and is related to the involute curve’s pressure angle by
+inv cp=tan cp-cp
+
+(27)
+
+Figure 5.
+
+- Secondary interference ge0rnetr.y.
+442
+
+where cp is measured in radians for this calculation.
+The rotation limit of the gear is given by
+(28)
+
+7 2 = P2 - 82
+
+where PZ is the angle from the pitch point to the intersection of the addendum circles on the gear,
+found from P1 by the law of sines, such that
+
+and where 82 is the angle on the gear tooth between the pitch circle and the addendum circle, that is,
+82 = inv cp - inv cpa2
+
+(30)
+
+Since the actual gear rotation must be greater than this rotation limit for a rotation of y1 of the
+pinion,
+71
+
+- >72
+mg
+to avoid secondary interference or fouling.
+
+Contact Ratio
+The contact ratio for a given spur gear mesh is the ratio of the length of action along the line of
+action between the two addendum circles to the base pitch:
+
+Z
+mP= 6
+In this equation
+
+where the base pitch, Pb, is defined as the distance from one tooth to the next, measured along the
+line of action. The length of contact, 2,can be expressed as
+
+for contact with an external gear as shown in figure 3. Combining these equations yields
+
+For contact with an internal gear (fig. 4) the length of contact, Z, is given by
+
+443
+
+The contact ratio for this case can be expressed as
+
+This contact ratio should be greater than 1.4 and is normally less than 2.0 for standard spur
+gears. For contact with an internal gear at low ratios and for nonstandard addenda and dedenda, it
+can exceed 2.0. For the strength modeling of this design study, it will be assumed to be less than 2.0.
+
+Gear-Tooth Strengths
+Spur-gear teeth have three distinct modes of failure. A tooth may fail in bending fatigue at its
+root, it may fail by pitting fatigue on its surface, or it may fail by scoring at the tip of the gear tooth.
+The basic model for bending failure of a gear tooth was developed by Wilfred Lewis in 1893 (ref.
+15). Although the knowledge of fatigue strengths and this mechanism of failure have increased
+significantly since then, compensating factors exist that make the Lewis model of bending failure
+reasonably accurate. As a result, it is still the bending strength analysis in use today. The idea is to fit
+the largest possible constant-width, constant-surface-stress cantilever inside the tooth. The apex of
+this parabolic beam is placed at the intersection of the applied load and the centerline of the tooth
+(shown as point b in fig. 7). The strength of the tooth is then equated to the strength of this beam:
+
+Mc
+
+(JL=-=I
+
+6FI
+
+(38)
+
+ft2
+
+where F i s the tangential load in newtons, I is the parabola length in meters, f is the gear face width in
+meters, and t is the parabola depth at the critical tooth section in meters. Lewis has written this
+expression as
+
+where Y is the dimensionless Lewis form factor, which is a function of the proportion of the tooth
+and not its size.
+t2Pd
+y= 61
+The form factor Y can thus be determined by locating the point of tangency between the tooth fillet
+and the parabola inscribed within the tooth with its apex at b (labeled a in fig. 7).
+The length, t, is the full thickness of the parabola at this point, while I is the distance between
+points b and a along the tooth centerline. These distances can be found by an iterative scheme which
+finds the point of the fillet for which the tangent to the fillet crossed the centerline of the tooth at c, a
+distance I above the parabola apex-point b. This tangent will also be tangent to the inscribed
+parabola with its apex at b. This calculation (refs. 14 and 15) requires knowledge of the tip radius of
+the tool, the addendum and dedendum of the gear tooth as well as the pitch line pressure angle of the
+tooth. These four quantities are fixed for a given standard gear system. The procedure assumes that
+the tooth width and tooth space are equal at the pitch radius.
+In addition, the iteration procedure requires knowledge of the number of teeth on the gear and
+the pressure angle at the point on the involute surface of the tooth at which the load is acting. This
+pressure angle increases from zero at the base radius to the nominal pressure angle at the pitch circle
+to a maximum pressure angle at the largest involute radius on the tooth. Standard tables (refs. 6 and
+7) of tooth form factors give the factor for the load at the tooth tip or at the middle of the tooth for a
+given tooth system. The factors are then tabulated versus the number of teeth on the pinion since the
+444
+
+factor magnitude is independent of the physical size of the gear. The factor for the load at the tooth
+tip is given since this is for the largest effective cantilever loading on the tooth. However, at this point
+the load is shared with another mesh so a second point of concern is the highest point of single tooth
+load. This point is approximated by placing the load at the middle of the tooth for tabular purposes.
+A more correct procedure is to use the highest point of single tooth contact. This point varies with the
+gear ratio and can be found from an analysis of the mesh geometry. Once found, it is defined by the
+pressure angle, (PA,of the involute at that point. This pressure angle is related to the roll angle, ,e of
+the involute as shown in figure 6. Here ,6 is the angle of unwrap of the line of action from the base
+circle:
+7 INVOLUTE
+
+Figure 6.
+
+- Involute angle geometry.
+
+Figure 7 .
+
+-
+
+- Tooth bending strength model.
+
+Figure 9. - Highest point of single t o o t h contact
+for an internal gear mesh.
+
+Highest point o f single t o o t h Contact
+Figure 8.
+f o r an external gear mesh.
+445
+
+-
+
+OA=
+
+AB
+~
+
+Rb
+
+=tan c p ~
+
+hence,
+
+The roll angle to the highest point of single tooth contact can be determined by considering
+figure 8 for contact with an external gear and figure 9 for contact with an internal gear. In both cases
+the distance Asigiven by
+
+and the distance m i s given by
+
+The highest point of single tooth contact is at G and its roll angle is
+
+Similarly, the roll angle to the lowest point of single tooth contact can be found by rolling the pinion
+until G corresponds to D. In this position the second tooth which was at B will have moved up to the
+start of single tooth contact. Thus,
+
+defines the roll angle to the lowest point of single tooth contact on the pinion tooth. It is at this point
+where the Hertzian pressure due to single tooth contact is a maximum.
+It has been shown that the surface endurance of gear teeth behaves much like that of rollingelement bearings (ref. 17). The life of the contact is represented by
+In
+
+1 7cvne
+--h
+
+(47)
+
+20
+
+where S is the probability of survival, 7 is the critical shear stress, n is the number of million stress
+cycles, zo is the depth to the critical stress, e is the Weibull exponent, and c and h are material
+constants. The three design parameters in this expression are the stress, its depth, and the volume of
+material subjected to the stress. Since the depth of the critical shear stress is nearly fixed and since the
+stress is raised to a power in excess of three, relative to the volume, it is assumed in this study that the
+magnitude of surface compression is a reasonable measure of the tendency of the surface to pit. It is
+thus used as a criterion for design comparison.
+The Hertzian pressure which produces spalling can be modeled by
+
+where p1 and p2 are the radii of curvature at the point of contact. For this study it will be assumed
+that the two gears are made of the same material. It can be seen from figures 10 and 11 that the
+446
+
++
+
+4
+O2
+
+Rt42
+
+R,,
+
+7+
+
+OI
+Figure 1 1 . - Tooth s u r f a c e curvature for al7
+i n t e r n a l gear mesh.
+
+Figure 10. - Tooth s u r f a c e curvature f o r an
+external gear mesh.
+
+centers of curvature of the two gear teeth surfaces are the points of tangency of the line of action with
+the respective base circles. Since these points are fixed, one has
+p2=Csin P - P I
+
+(49)
+
+for the external gear and
+p2= -Csin ( p - ~ l
+
+(50)
+
+for the internal gear where the minus sign indicates conformal contact. At the point of maximum
+Hertzian pressure, in the single-tooth contact region,
+
+Putting all this together, one has
+
+where the minus sign holds for contact with an external gear and the plus sign holds for contact with
+an internal gear.
+The scoring mode of failure is more difficult to predict since it is influenced by a combination of
+factors. Scoring is caused by an instability in oil film thickness at high speed and high load with
+inadequate cooling. In addition to surface pressure, this mode of failure is affected by the relatively
+large sliding velocity present at the gear tip and by the temperature of the teeth. Because of the sliding
+velocity present, some elastohydrodynamic effects are present in the contact that alter the pressure
+distribution from the simple Hertzian model of equation (48). Oil cooling has a major effect in
+preventing scoring.
+447
+
+A second factor exists which increases the tip pressure above that of the simple model. That
+factor is dynamic loading, which is largest at the initial point of contact. When the pinion drives the
+gear making the mesh a speed reduction, this point of initial contact is the gear tooth tip and the base
+of the pinion tooth. Because of the complexities involved in dynamic load estimation, the contact
+pressure at the gear tip is modeled by equation (48). In this case the radius of curvature on the pinion
+tooth is given by
+
+and the radius of curvature of the gear tooth is given by equation (49) for an external gear or equation
+(50) for an internal gear. The roll angle to this point of contact on the pinion is
+-
+
+e,=
+
+AB
+Rbl
+
+(54)
+
+and
+
+gives the surface pressure.
+Although contact pressure is only one factor in this mode of failure, it is a significant one. If this
+pressure is extreme, the design is not in balance, and excessive measures must be taken in the other
+factors to compensate. It is felt then that the contact pressure at the gear tip should be kept to the
+same level as that in the single-tooth load region.
+
+Design Space
+As shown in table I and described in the section on parameters and constraints, the standard gear
+design problem for gears made of a chosen material can be reduced to a two-dimensional design
+problem where the two free parameters are the number of teeth on the pinion and the diametral pitch.
+The inequality constraints which bound this design space are the minimum number of teeth
+required to prevent interference and the three strength limits. These strength limits can be converted
+to expressions for the maximum allowable diametral pitch for the given problem as functions of the
+number of teeth on the pinion. As stated in table I the face width can be expressed in terms of the
+length-to-diameter ratio of the gear tooth contact:
+f = h N1
+pd
+
+The load can also be expressed in terms of the diametral pitch:
+
+For the bending limit where Y is taken as the tooth-form factor for the highest point of single-tooth
+contact for the given ratio and the number of teeth on the pinion, combining equations (39), (56), and
+(57) yields
+
+448
+
+or in terms of the allowable bending strength U B
+
+For the single-tooth pitting limit, equations (56) and (57) are combined with equation (52):
+
+&,=
+
+2 T p E 4 sin cp
+
+where OB is given by equation (46) and is a function of Nl and p. This equation can also be solved for
+an upper bound on Pd as a function of N1 and the allowable surface wear pressure, UN:
+
+where the positive sign holds for contact with an external gear while the negative mg is for contact
+with an internal gear.
+Finally, a similar equation can be found for the limit on Pd based on gear-tooth tip scoring in
+terms of 8,, the roll angle on the pinion to the initiation of contact. This angle, as given by equation
+(54), is also a function of only N1 and cp for the stated problem:
+
+These limits are plotted in figure 12 for the case cp=20°, m g = 1.0, X=0.25, Tp= 113 N-m (loo0
+lb-in), E=205 GPa ( 3 0 x 106 psi), v=0.25, U N = 1.38 GPa (200 OOO psi) and u ~ = 4 1 4MPa (60 OOO
+psi). The gear for this design problem is external. The acceptable design space is the upper left hand
+corner of the plot.
+
+The merit function for this problem is the center distance, C:
+
+c= -N1
+(rng4)
+2pd
+
+where the plus sign is valid for an external gear, and the negative sign holds for an internal gear in
+equations (62) to (64). For a given gear ratio the locus of equally optimum designs can be found by
+considering C to be constant. This produces the relation
+
+which states that equally sized designs lie on a straight line through the origin. Since the smaller C,
+the better the design, the best design corresponds to the line of least slope drawn through the origin
+which lies within the design space. For this design the line of least slope within the design space
+crosses the two surface pressure limits at their intersection, point A in figure 12.
+449
+
+--
+
+CERR 2 EXTERNAL
+Mg
+1
+Phl
+2 0 DEGREES
+
+r . = CONSTANT
+
+PTT
+
+0
+
+10
+
+20
+
+30
+
+DIAMETRAL P I T C H
+
+F i g u r e 12
+
+Optimal Designs
+In this study arbitrarily chosen values are used for the tooth width to pinion pitch diameter ratio,
+
+A, and the pinion torque, Tp. Values of 0.25 and 113 N-m (lo00 lb-in) were chosen to reflect
+reasonable geometry and a nominal load. The design spaces do not change in character as these
+
+quantities are varied, so no loss in generality results from their use. The values of elastic modulus,
+Poisson’s ratio, allowed surface pressure and bending fatigue strength are for hardened steel. If
+another material is used for the gears, the design space would be altered. However, the only real
+difference would be a shift in the relative importance of the surface wear strengths and the bending
+strengths.
+For high-speed, high-cycle operations, point A in figure 12 is an important design point since it
+identifies the minimum number of pinion teeth required to keep the gear-tooth tip contact pressure at
+or below the maximum contact pressure in the full-load region of the tooth surface. By having at least
+this number of teeth in the pinion, a well balanced compact design can be achieved by sizing the gears
+based on the full-load contact surface pressure.
+It is of interest to note that this limit is close to a straight line through the origin. Exceeding this
+minimum number of teeth does not significantly change the merit function, C, if one stays on the
+constraint line for pitting. This is partly due to the fact that the radius of curvature of the teeth is
+more a function of the base circle size than the tooth size once one gets away from the situation of
+tooth contact near the base circle.
+A common design approach (ref. 7) in the design of gearsets has been to use the interference
+limit and the tooth bending strength limit to define the “best” design. This gives point Bin the design
+space of figure 12. This point will produce a smaller gearset, since =has a smaller slope than
+but it ignores the pitting problems in the full load region and totally ignores the situation at the tip of
+the gear tooth. It thus will produce gears that are not balanced in their design and that may have
+pitting and scoring problems in service.
+The design space of figure 12 can be used to study the effects of varying the parameters IVl and
+Pd on a design with a gear ratio of 1 and a pressure angle of 20”.Similar design spaces can be drawn
+for different gear ratios and different pressure angles.
+
+a,
+
+450
+
+--
+
+--
+
+GERR 2 INTERNRL
+Mg
+5
+2 0 DEGREES
+Phi
+
+GERR 2 EXTERNAL
+Mg
+5
+Phl
+2 0 DEGREES
+
+m
+
+m
+
+v1
+
+v1
+
+m
+0
+
+z
+m
+0 "
+
+z
+
+I
+
+CI
+
+a
+
+LL
+W
+R
+
+I:
+3
+
+z
+
+I
+
+E
+
+E
+
+N
+
+W
+
+m
+
+I:
+3
+7.
+
+m
+
+0
+
+L
+O
+
+.
+
+2.0
+
+.
+
+30
+I
+
+%
+0
+
+10
+DIRMETRRL P I T C H
+
+10
+
+20
+
+30
+
+DIRMETRRL P I T C H
+
+F i g u r e 13. - E x t e r n a l gear mesh design space w i t h X = F i g u r e 14. - I n t e r n a l gear mesh design space w i t h
+0.25, Tp = 113 N-m (1000 l b - i n ) , uN = 1.38 GPa
+0.25, Tp = 113 N-m (1000 l b - i n ) , u N = 1.38 GPa
+(200 k s i ) , OB = 414 MPa (60 k s i ) , E = 205 GPa
+(200 k s i ) , OB = 414 MPa (60 k s i ) , E = 205 GPa
+( 3 0 ~ 1 0k ~s i ) , v = 0.25.
+(30x10 3 k s i ) , w = 0.25.
+
+To illustrate the effect of gear ratio on the design space, this parameter has been varied for the
+conditions of figure 12. Figures 13 to 15 show the design space as this ratio changes from 1 to 5 for
+contact with an external gear and then continuing for contact with an internal gear of increasing
+conformal contact with ratios of 5 and 2.5.
+A continuous change in characteristics occurs as the external gear ratio increases to infinity
+(contact with a rack) and the internal gear ratio reduces from infinity. Three distinct shifts occur in
+the design space as the gear ratio increases. First, the involute interference limit increases to a higher
+number of pinion teeth. Second, point A-the condition of equal surface contact pressure at the gear
+tip and at the lowest point of single tooth contact-shifts to a higher Nl and a higher Pd. Third, the
+bending fatigue strength limit becomes more critical as the gear ratio increases.
+
+The design tradeoff between pitting fatigue and bending fatigue is shown in the design space
+curves at the point where these two constraint curves cross (point C in fig. 13). If one were just
+concerned with bending fatigue failure, a reduction in the number of teeth from point C would
+produce a better design. Conversely, if one were just concerned with pitting fatigue, an increase in the
+number of teeth would produce a better design.
+Figures 16 to 19 illustrate the effect of a 25" pressure angle on the design space for the same set
+of gear ratios. Basically, the same conclusions are present as for the 20" pressure angle design spaces.
+The increase in pressure angle also reduces the minimum number of pinion teeth required to avoid
+interference, and it reduces the bending load while it increases the bending strength, so the bending
+fatigue limit becomes less important as the pressure angle is increased. However, the pitting fatigue
+limit only improves a small amount, so increasing the pressure angle should not significantly improve
+the surface wear properties of a gearset.
+These design spaces indicate that the most compact designs will have a minimal number of teeth.
+However, this number is not based on involute interference as implied by point B but is based on
+equal contact pressure at the base of the tooth and in the region of single-tooth contact. Figures 20
+and 21 are plots of the numbers of teeth which produce this equality of contact pressure, assuming
+equal load sharing when two tooth sets are in contact. The upper branch of each curve is for contact
+45 1
+
+=
+
+--
+
+CERR 2 INTERNRL
+Mg
+2.5
+Phi
+20 DEGREES
+PITTING
+
+- - . SCORING
+______.
+BENDING
+
+B
+
+m
+
+--
+
+GEAR 2 EXTERNRL
+1
+25 DEGREES
+PITTING
+
+Mg
+
+Phi
+
+- - -SCORING
+
+;
+
+BENDING
+
+m
+
+0
+
+I
+
+IW
+W
+
+I-
+
+= g
+
+z
+
+n
+
+E:
+L
+W
+
+m
+
+x
+
+3
+
+z
+
+m
+W
+
+m
+
+I
+
+0
+
+18
+
+28
+
+20
+
+18
+
+0
+
+30
+
+30
+
+DIRMETRRL PITCH
+
+DIAMETRAL PITCH
+
+F i g u r e 15. - I n t e r n a l gear mesh design space w i t h X = F i g u r e 16. - E x t e r n a l gear mesh design space w i t h X =
+0.25, Tp = 113 N-m (1000 l b - i n ) , u N = 1.38 GPa
+0.25, Tp = 113 N-m (1000 l b - i n ) , O N = 1.38 GPa
+(200 k s i ) , U B = 414 MPa (60 k s i ) , E = 205 GPa
+(200 k s i ) , uB = 414 MPa (60 k s i ) , E = 205 GPa
+( 3 0 ~ 1 0k ~s i ) , v = 0.25.
+(313x10~ k s i ) , 0 = 0.25.
+
+--
+
+--
+
+GEAR 2 EXTERNRL
+Mg
+5
+Phi
+25 DEGREES
+PITTING
+
+GEAR 2 INTERNRL
+Mg
+5
+Phl
+25 DEGREES
+PITTING
+
+- . SBENDING
+CORIHG
+_______
+
+- - .SCORING
+BENDING
+
+/
+
+W
+
+T
+
+I
+t-
+
+u
+W
+
+I-
+
+z
+m
+0
+0
+u
+
+z
+c
+(
+
+L
+L
+
+o m
+a
+W
+
+N
+
+m
+
+I:
+
+2
+
+m
+
+/
+
+W
+
+I
+
+10
+
+0
+
+28
+
+30
+
+0
+
+DIAMETRfiL PITCH
+
+10
+
+20
+
+38
+
+DIRMETRRL PITCH
+
+-
+
+F i g u r e 17.
+E x t e r n a l gear mesh design space w i t h X = f i g u r e 18. - I n t e r n a l gear mesh design space w i t h
+0.25, T = 113 N-m (1000 l b - i n ) ,
+= 1.38 GPa
+0.25, Tp = 113 N-m (1000 l b - i n ) , aN = 1.38 GPa
+Pl ) ,
+(200
+k
+s
+= 414 MPa (60 k s i ) , E = 205 GPa
+(200 k s i ) ,
+= 414 MPa (60 k s i ) , E = 205 GPa
+( 3 0 ~ 1 0k ~s i ) , v = 0.25.
+(30x10 3 k s i ) , v = 0.25.
+452
+
+=
+
+--
+
+GERR 2 INTERNRL
+Mg
+
+Phi
+
+m
+
+U,
+
+2.5
+25 DEGREES
+
+PITTING
+--_______
+- .SCORING
+BENDING
+
+i
+
+m
+0
+
+4
+
+m
+
+0
+
+20
+
+10
+
+30
+
+DIRMETRRL PITCH
+
+F i g u r e 19. - I n t e r n a l gear mesh design space w i t h X =
+9.25, Tp = 113 N-m (1000 l b - i n ) , aN = 1.38 GPa
+(200 k s i ) , a B = 414 MPa (60 k s i ) , E = 205 GPa
+(30x10 3 k s i ) , u = 0.25.
+
+INTERNAL
+
+EXTERNAL
+
+-#-
+
+2
+
+0
+
+4
+
+6
+
+B
+
+0
+
+10
+
+2
+
+EXTERNAL
+
+4
+
+6
+
+B
+
+10
+
+CERR RATIO
+
+GEAR RATIO
+
+-
+
+F i g u r e 21. - Optimal number o f p i n i o n t e e t h 1 0 1
+25" p r e s s u r e angle.
+
+F i g u r e 20.
+Optimal number o f p i n i o n t e e t h for
+20' p r e s s u r e angle.
+45 3
+
+with an internal gear, while the lower branch is for contact with an external gear. Figure 20 is for 20"
+pressure angle while figure 21 is for 25"pressure angle standard tooth systems. A truly optimal design
+might use a slightly higher number of teeth in order to obtain a combination of gears with a standard
+diametral pitch and whole teeth.
+
+Design Example
+To illustrate the use of this method in design, consider a gear ratio of 5 and a pressure angle of
+20". Consider the pinion torque to be 113 N-m (lo00 lb-in) and the other design values to be identical
+to those of figure 13 for convenience. For contact with an external gear, figure 20 indicates that for
+an optimal design using standard teeth, the pinion should have about 27 teeth. The design space for
+this particular example is shown in figure 13. One could check the design space of figure 13 to
+identify point A for which the diametral pitch is about 13.5.
+Since this pitch would require nonstandard tooling, the best design will be shifted away from
+point A . However, it will lie near the pitting constraint line. This pitting constraint line can be closely
+approximated by a straight line from the origin through point A , with the slope given by
+
+k = Nl
+pd
+
+In this case
+k = - L- I - 2.0
+13.5
+
+The standard pitches near 13.5 can be used to find the numbers of teeth for near optimal designs with
+equation (65). Pitches of 12, 16, and 20 could be used to obtain minimal numbers of teeth of 24, 32,
+and 40, respectively. The best design will be in the set of trial designs with pinion teeth numbers near
+these limits.
+Table 2 lists the possible optimum designs determined from equation (65) with diametral pitches
+of 12, 16, or 20. The best design is that with a P d of 16 and 32 pinion teeth. This design has a center
+distance of 0.152 m (6.0 in.), a maximum contact pressure of 1.35 GPa (196) ksi), and a maximum
+fillet bending stress of 303 MPa (44 ksi). The design is shown in figure 22. Figure 23 is a plot of the
+maximum surface compression on the pinion tooth as a function of pinion roll angle.
+
+TABLE 2 EXTERNAL GEAR DESIGNS
+
+m = 5 , I$ = 20'
+9
+
+'d
+
+12
+12
+16
+16
+20
+20
+
+a
+
+6
+
+N1
+
+24
+25
+31
+32
+39
+40
+16
+16
+
+"2
+
+120
+125
+155
+160
+195
+200
+80
+80
+
+f
+
+C
+
+m
+
+m
+
+GPa
+
+GPa
+
+.0127
+.0132
+.0123
+.0127
+.0124
+.0127
+.0127
+.0169
+
+.152
+.159
+.148
+.152
+.149
+.152
+.152
+.203
+
+1.51
+1.37
+1.34
+1.26
+1.21
+1.16
+6.87
+4.45
+
+1.39
+1.30
+1.43
+1.35
+1.39
+1.34
+1.49
+.97
+
+454
+
+-
+
+g
+MPa
+
+MPa
+
+193
+
+200
+
+-
+
+CERA 2
+EXTERNRL
+P H I = 20 DEGREES
+,P
+,
+16
+N, = 32
+N2 = 160
+
+-
+
+I
+
+w
+
+a
+2
+
+.
+
+m
+
+v)
+
+w
+
+a
+
+.
+
+(
+i
+
+c
+
+.
+
+U
+IU
+
+z
+
+U
+D
+
+.
+
+1
+
+0
+
+PD.16
+
+F i g u r e 23. - Optimal e x t e r n a l gear d e s i g n - t o o t h
+s u r f a c e pressure.
+
+F i g u r e 22. - Optimum design f o r mg = 5, 0
+20", and Tp = 113 N-m (1000 l b - i n ) f o r mesh w i t h
+e x t e r n a l gear.
+
+--
+
+GEAR 2
+
+- EXTERNAL
+
+PHI = 20 DEGREES
+P,
+
+N,
+N~
+
+a
+
+16
+
+= eo
+
+t
+Po=8
+
+PINION
+
+R O L L R N G L E - IOEGEEESI
+
+50
+
+F i g u r e 25. - Minimum t o o t h number d e s i g n - t o o t h
+s u r f a c e p r e s s u r e f o r mesh w i t h e x t e r n a l gear.
+
+F i g u r e 24. - Minimum t o o t h number d e s i g n f o r in =
+9
+5, Q = 20", and T = 113 N-m (1000 l b - i n ) f o r
+P
+mesh w i t h e x t e r n a l gear.
+
+It can be noted from table 2 that an equally compact design exists with a diametral pitch of 20
+and 40 pinion teeth. This design also has a center distance of 0.152 m (6.0 in.) and does not exceed
+any of the design stress limits. However, it has 25 percent higher bending stresses with no
+improvement in compactness, so the lower pitch design is to be preferred.
+A popular approach to the design of a gear mesh (ref. 7) suggests that the strongest gear design
+results when the pinion has the smallest number of teeth possible. This makes the teeth large. Based
+on the minimum number of teeth required to eliminate interference, N1 would equal 16. The last two
+designs in table 2 show this design with a diametral pitches of 8 and 6.
+As can be seen in table 2, even decreasing the diametral pitch to 6 to further increase the tooth
+size does not reduce the scoring contact pressure, UNT, to the levels present in the optimum design.
+Figure 24 shows the minimum tooth design with a diametral pitch of 8 and a center distance of 0.152
+455
+
+m (6.0in.), which is the same as that of the optimal design. This design is stronger than the design of
+figure 22 in bending fatigue and slightly weaker in pitting fatigue, but is extremely overloaded with
+contact pressure at the gear tip where scoring may occur. Figure 25 is a plot of the maximum surface
+pressure on the pinion tooth of this design as a function of pinion roll angle.
+A similar study for a gear ratio of 5 and a pressure angle of 20" for contact with an internal gear
+produces similar results. The major difference lies in the increased levels of bending stress. However,
+the optimal designs are still in the region of point A because of the balance between the strengths
+given by these proportions.
+For this example consider the pinion torque to be 113 N-m (lo00 lbin) and the other design
+values to be identical to those of the first example with the exception that the gear ratio of 5 is for
+contact with an internal gear. In this example, both gears turn in the same direction. The design space
+for this example is shown in figure 14.
+Figure 20 indicates that an optimal design using standard teeth should have a pinion with about
+36 teeth. In figure 14 point A corresponds to a diametral pitch of about 21. Although the bending
+limit is more critical for this case, if one used this point to obtain a minimum slope relationship
+between pinion teeth and diametral pitch, equation (65)would yield
+
+36
+21
+
+k = - = 1.71
+Using diametral pitches of 16, 20, and 24, the minimum required number of teeth as given by
+equation (61)are 27.4, 34.3, and 41.1 respectively. Table 3 lists the possible optimum designs that
+have these diametral pitches and numbers of pinion teeth greater than these limits. To satisfy the
+bending fatigue limit, the numbers of teeth in this table are greater than those indicated by equation
+(65), which is based on the surface pitting pressure. However, the final optimal design is still close to
+
+the starting point A , so this stands as a good initial design even though the bending fatigue limit
+controls the design.
+The best design is that with a diametral pitch of 20 and 38 pinion teeth. This design has a center
+distance of 0.0965 m (3.8in.), a maximum contact pressure of 1.2 GPa (174OOO psi), and a maximum
+fillet bending stress of 407 MPa (59 0oO psi). The design is shown in figure 26. Figure 27 is a plot of
+the maximum surface compression on the pinion tooth as a function of pinion roll angle.
+As in the external contact case, the effect of increasing the diametral pitch in this area of optimal
+design is to increase the bending stresses.
+The last two designs in table 3 show what happens when the design is based on the minimum
+number of teeth required to prevent involute interference. As before, decreasing the diametral pitch
+makes the gearset larger but does not change the situation of poor balance between the different
+modes of failure. Thus, a design that is larger than the optimal design still does not have acceptable
+levels of surface compression. The design with a diametral pitch of 10 and a center distance of 0.0965
+TABLE 3
+
+INTERNAL GEAR DESIGNS
+
+mg = 5,
+
+'d
+
+@ = 20"
+
+N1
+
+N2
+
+f
+
+C
+
+-
+
+-
+
+'Nt
+
+'N
+
+"8
+
+'BT
+
+m
+
+m
+
+GPa
+
+GPa
+
+MPa
+
+MPa
+
+16
+16
+
+30
+31
+
+150
+155
+
+,0119
+
+.095
+.098
+
+1.25
+
+20
+20
+
+37
+
+290
+269
+352
+
+352
+331
+427
+
+&3
+
+185
+190
+
+1.40
+1.30
+1.23
+
+24
+24
+
+47
+4a~
+
+235
+240
+
+407
+434
+
+1.10
+
+331
+359
+345
+
+10
+
+19
+
+95
+
+8
+
+19
+
+1.32
+0.94
+
+207
+103
+
+,
+
+95
+
+.0123
+.0118
+.0121
+.0124
+.0127
+
+.0121
+.0151
+
+.094
+.097
+.099
+.lo2
+.097
+
+1.17
+1.02
+.99
+8.27
+
+.121
+
+5.93
+
+456
+
+1.19
+1.25
+1.20
+1.13
+
+41 4
+255
+
+131
+-
+
+-
+
+GEAR 2
+INTERNAL
+PHI = 20 DEGREES
+Po = 20
+N, = 38
+N2 = 190
+
+"I-
+
+t
+
+PINION ROLL A N G L E - IOEGREESI
+
+P,=22
+
+-
+
+so
+
+F i g u r e 27. - Optimal i n t e r n a l gear desig1,-tooth
+s u r f a c e pressure.
+
+F i g u r e 26.
+Optimum d e s i g n f o r mg = 5, $4 =
+20°, and Tp = 113 N-m (1000 l b - i n ) f o r mesh
+w i t h i n t e r n a l gear.
+
+- -
+
+GEAR 2
+INTERNAL
+PHI
+20 DEGREES
+
+-
+
+0
+
+Po = 10
+
+N, = 19
+N2 = 95
+
+-ae
+
+t?
+I
+
+W
+
+a
+
+3
+v)
+
+VJ
+W
+
+a
+e
+I-
+
+u
+a
+Iz
+0
+V
+
+N
+
+I-
+
+a
+W
+
+I
+
+P,=10
+
+0
+
+-
+
+J
+
+P I N I O N ROLL R N C L E
+
+- IDEGREESI
+
+50
+
+F i g u r e 29. - Minimum t o o t h number d e s i g n - t o o t h
+s u r f a c e p r e s s u r e f o r mesh w i t h i n t e r n a l gear.
+
+F i g u r e 28.
+Minimum t o o t h number d e s i g n f o r in =
+9
+5, 9 = 20°, and T = 113 N-m (1000 l b - i n ) f o r
+mesh w i t h i n t e r n a y gear.
+
+m (3.8 in.) is shown in figure 28. As in the first example, this design is the same size as the optimal
+
+design. It also is stronger in bending than the optimal design but is greatly overloaded with contact
+pressure at the gear tip where scoring may occur. Figure 29 is a plot of the maximum surface pressure
+on the pinion tooth of this design as a function of pinion roll angle.
+
+Design Procedure
+The design space developed in this paper can be used to obtain optimal designs for gear meshes
+using standard spur gears. A procedure using this design space was followed in the two design
+examples of the previous section. Required input to the procedure is the gear ratio, the pinion torque
+451
+
+the pitch-line pressure angle, the maximum allowable length to diameter ratio for the pinion pitch
+cylinder, and the material properties of the gears. Equation (10) or (17) can then be used to determine
+the kinematic interference limit for the mesh, and equations (59), (61), and (62) can be used to
+determine the strength constraints on the design space. By plotting these curves on a graph of pinion
+tooth number versus diametral pitch, the region of acceptable designs can be established as that
+region of high pinion tooth numbers and low diametral pitches bounded by these curves. The most
+compact designs lie on the line of least slope inside this region. For designs in which surface pressure
+dominates, the graphs of figures 20 and 21 show the optimal number of pinion teeth as a function of
+the gear ratio and pressure angle. By using the number of pinion teeth indicated by these graphs and a
+straight line through the origin, a set of standard pitches and corresponding minimum numbers of
+pinion teeth can be found near this optimal position. A small set of standard pitch, practical designs
+can now be obtained by considering designs with these pitches and valid numbers of pinion teeth
+greater than the corresponding minimum numbers. By analyzing these designs and comparing their
+properties, a practical optimum design can be selected.
+
+Summary and Conclusions
+A design procedure for sizing standard involute spur gearsets is presented in this paper. The
+procedure is applied to find the optimal design for two examples-an external gear mesh with a ratio
+of 5:l and an internal gear mesh with a ratio of 5:l. In the procedure, the gear mesh is designed to
+minimize the center distance for a given gear ratio, pressure angle, pinion torque, and allowable
+tooth strengths.
+From the methodology presented, a design space may be formulated for either external gear
+contact or for internal gear contact. The design space includes kinematics considerations of involute
+interference, tip fouling, and contact ratio. Also included are design constraints based on bending
+fatigue in the pinion fillet and Hertzian contact pressure in the full load region and at the gear tip
+where scoring is possible. This design space is two-dimensional, giving the gear mesh center distance
+as a function of diametral pitch and the number of pinion teeth. The following results were obtained:
+1. The constraint equations were identified for kinematic interference (eqs. (lo) and (l7)), fillet
+bending fatigue (eq. (59)), pitting fatigue (eq. (61)), and scoring pressure (eq. (62)), which define the
+optimal design space for a given gear design.
+2. The locus of equal size optimum designs was identified as the straight line through the origin
+which has the least slope in the design region.
+3. For designs in which bending fatigue is not dominant, the optimal design condition was
+identified as the point in the design space where the tooth tip contact pressure equals the maximum
+full load contact pressure.
+4. Design charts for selecting the optimal number of pinion teeth for a given gear ratio and
+pressure angle were presented for these cases.
+
+References
+1 . Cockerham, G.; and Waite, D.: Computer-Aided Design of Spur on Helical Gear Train. Computer-Aided Design, vol. 8,
+no. 2, April 1976, pp. 84-88.
+2. Tucker, A. I.: The Gear Design Process. ASME Paper 80-C2/DET-13.
+3. Estrin, M.: Optimization of Tooth Proportions for a Gear Mesh. ASME Paper 80-C2/DET-101.
+4. Gay, D. E.: How to Design to Minimize Wear in Gears. Machine Design, vol. 42, Nov. 1970, pp. 92-97,
+5. Design Procedure for Aircraft Engine and Power Take-Off Spur and Helical Gears. AGMA Standard No. 411.02, Sep.
+1966.
+6. Dudley, D. W.: Gear Handbook. McGraw Hill Book Co., Inc., 1962.
+7. Shigley, J. E.: Mechanical Engineering Design. McGraw Hill Book Co., Inc., 3rd ed., 1977.
+8. Lee, T. W.: Weight Minimization of a Speed Reducer, ASME Paper 77-DET-163.
+9. Osman, M. 0. M.; Sankar, S.; and Dukkipati, R. V.: Design Synthesis of a Multi-Speed Machine Tool Gear Transmission
+Using Multiparameter Optimization. J. Mech. Des., vol. 100, April 1978, pp. 303-310.
+10. Kamenatskaya, M. P.: Computer-Aided Design of Optimal Speed Gearbox Transmission Layouts. Mach. & Tool., vol.
+46, no. 9, 1975, pp. 11-15.
+
+458
+
+1 1 . Buckingham, E.: Analytical Mechanics of Gears. McGraw Hill Book Co., Inc., 1949.
+12. Anderson, S. A. E.: On the Design of Internal Involute Spur Gears. Transactions of Machine Elements Division, Lund
+Technical University, Lund, Sweden, 1973.
+13. Strength of Spur Gear Teeth. AGMA Standard 220.02, August 1966.
+14. Gitchel, K. R.: Computed Strength and Durability Geometry Factors for External Spur and Helical Gears with Tooling
+Check. ASME Paper 72-PTG-18.
+15. Mitchiner, R. G.; and Mabie, H. W.: The Determination of the Lewis Form Factor and the AGMA Geometry Factor J for
+External Spur Gear Teeth. J. Mech. Des. V104, Jan. 1982, pp. 148-158.16. Surface Durability (Pitting) of Spur Gear
+Teeth. AGMA Standard 210.02, Jan. 1965.
+17. Coy, J. J.; Townsend, D. P.; and Zaretsky, E. V.: Dynamic Capacity and Surface Fatigue Life for Spur and Helical
+Gears. J. Lubr. Technol., vol. 98, no. 2, April 1976, pp. 267-276.
+18. Bowen, C. W.: The Practical Significance of Designing to Gear Pitting Fatigue Life Criteria. J. Mech. Des., vol. 100,
+no. I , Jan. 1978, pp. 46-53.
+19. Gear Scoring Design Guide for Aerospace Spur and Helical Power Gears. AGMA Information Sheet, 217.01, Oct. 1965.
+20. Rozeana, L.; and Godet, M.: Model for Gear Scoring. ASME Paper 77-DET-60.
+21. Walker, H.: Gear Tooth Deflection and Profile Modification. The Engineer, Oct. 14, 1938, pp. 409-412; Oct. 21, 1938,
+pp. 434-436; Aug. 16, 1940, pp. 102-104.
+22. Coleman, W.: Gear Design Considerations. Interdisciplinary Approach to the Lubrication of Concentrated Contacts.
+NASA SP-237, 1969.
+
+459
+
+

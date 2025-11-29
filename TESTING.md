@@ -10,7 +10,8 @@
 
 ## Automated checks
 - `./bundle.sh` — concatenates modules into `SmartGears.lsp`.
-- `./tests/auto_load_test.sh` — runs the bundler, checks for balanced parentheses and expected symbols, then runs Python unit tests.
+- `./tests/run.sh` — bundles then executes the AutoLISP unit tests locally using a minimal interpreter (no AutoCAD needed). Ideal for TDD loops.
+- `./tests/auto_load_test.sh` — runs the bundler, checks balanced parentheses and expected symbols; keeps CI guardrails light.
 - `./tests/smoke.sh` — verifies the bundled file exists and records a non-interactive `SGEARMAKE` example. CI cannot execute AutoLISP here, so this step documents the call rather than running it.
 
 ## Manual AutoLISP checks

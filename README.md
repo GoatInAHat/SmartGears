@@ -5,7 +5,7 @@ SmartGears is a modular AutoLISP toolkit for generating 2D external spur gear pr
 ## Getting started
 1. Run the bundler to concatenate modules into a single distributable file:
    ```bash
-   ./bundle.sh
+   ./bundle.sh 
    ```
 2. Load `SmartGears.lsp` in AutoCAD (Desktop or Web) using **APPLOAD** (desktop) or the **LOAD** command (Web/desktop), then run the command:
    ```

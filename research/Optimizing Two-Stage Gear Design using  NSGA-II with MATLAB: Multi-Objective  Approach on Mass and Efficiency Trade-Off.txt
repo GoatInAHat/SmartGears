@@ -1,0 +1,761 @@
+Engineering, Technology & Applied Science Research
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+23586
+
+Optimizing Two-Stage Gear Design using
+NSGA-II with MATLAB: Multi-Objective
+Approach on Mass and Efficiency Trade-Off
+Ngoc Pi Vu
+Thai Nguyen University of Technology, Thai Nguyen City 251750, Vietnam
+vungocpi@tnut.edu.vn
+Duc Binh Vu
+Viet Tri University of Industry, Viet Tri City 35100, Vietnam
+vubinh@vui.edu.vn
+Van Thanh Dinh
+East Asia University of Technology, Hanoi City 12000, Vietnam
+thanh.dinh@eaut.edu.vn
+Duong Vu
+School of Engineering and Technology, Duy Tan University, Da Nang City 50000, Vietnam
+vuduong@duytan.edu.vn
+Trieu Quy Huy
+University of Economics and Technology for Industries, Ha Noi 11622, Vietnam
+tqhuy@uneti.edu.vn (corresponding author)
+Received: 27 March 2025 | Revised: 15 April 2025 | Accepted: 19 April 2025
+Licensed under a CC-BY 4.0 license | Copyright (c) by the authors | DOI: https://doi.org/10.48084/etasr.11162
+
+ABSTRACT
+This paper presents a comprehensive methodology for the multi-objective optimization of a two-stage spur
+gear reducer, aiming to minimize mass while maximizing efficiency. A physically grounded mathematical
+model is constructed to express gearbox mass and efficiency as functions of critical design parameters,
+including the gear ratio of the first stage (u1) and the face width coefficients of both stages (Xba1, Xba2). The
+Non-dominated Sorting Genetic Algorithm II (NSGA-II) is implemented in MATLAB to solve the
+optimization problem across a range of total transmission ratios (uh ∈ [5, 35]). For each , the algorithm
+produces a Pareto front, which reflects the trade-offs between objectives. Results reveal consistent design
+trends, with increasing overall transmission ratio leading to reduced mass and improved efficiency. The
+proposed methodology provides a decision-support tool for gearbox engineers and paves the way for
+intelligent design frameworks integrating simulation and optimization.
+Keywords-multi-objective optimization; NSGA-II; MATLAB; gearbox design; efficiency; mass minimization;
+spur gear; transmission ratio
+
+I.
+
+INTRODUCTION
+
+Gear train design plays a critical role in mechanical systems
+ranging from automotive transmissions to industrial machinery
+and robotics. Over the past few decades, optimization of gear
+trains has transitioned from traditional deterministic, singleobjective methods to more advanced approaches that
+incorporate computational intelligence. Early studies in gear
+optimization, such as that of authors in [1], introduced practical
+frameworks using computer-aided design. Subsequent work by
+www.etasr.com
+
+authors in [2] and [3] contributed algorithmic methods and
+engineering principles for improving spur gear sets. Authors in
+[4] further explored failure mechanisms under optimized
+configurations. The development of evolutionary computation
+significantly expanded these capabilities, with authors in [5]
+demonstrating automated preliminary gear drive design using
+genetic algorithms. Later studies introduced metaheuristics like
+Particle Swarm Optimization (PSO) and Simulated Annealing
+(SA) for gear train optimization [6], whereas researchers such
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+Engineering, Technology & Applied Science Research
+
+as authors in [7] considered tribological behavior as part of
+multi-objective frameworks. More recently, authors in [8] and
+[9] applied multi-criteria decision-making techniques (e.g., the
+Taguchi–Grey method and TOPSIS) to optimize two-stage
+gearboxes. Comprehensive surveys of multi-objective
+optimization methods further underscore the breadth of
+available techniques.
+Despite these advances, traditional approaches often
+isolated objectives such as mass minimization or efficiency
+maximization. However, practical engineering demands
+solutions that balance multiple, often conflicting, criteria. This
+has led to the growing adoption of Multi-Objective
+Optimization (MOO) strategies, with evolutionary algorithms
+emerging as powerful tools for such problems [10-12]. Among
+these, the Non-dominated Sorting Genetic Algorithm II
+(NSGA-II) has gained widespread recognition for its
+convergence speed, elitism, and ability to maintain solution
+diversity. NSGA-II has been successfully applied in gear
+design optimization, including gear ratio tuning, weight
+reduction, and noise minimization [13-15]. Authors in [16]
+highlighted its effectiveness when integrated with CAD-based
+simulations for structural constraint management, whereas
+authors in [17] applied MOO techniques to improve gear
+durability. In the context of digital and smart manufacturing,
+NSGA-II has also been coupled with simulation environments
+like MATLAB and Finite Element Modeling (FEM) [18, 19].
+Recent innovations have further combined it with machine
+learning models and neural network hybrids [20-22], as well as
+surrogate modeling approaches [23], expanding its application
+in mechanical system design.
+Multi-objective techniques have likewise been applied to
+specific gearbox problems [24]. Authors in [25] applied the
+TOPSIS decision method to the multi-objective optimization of
+a two-stage helical gearbox. Additionally, author in [26]
+introduced a non-parametric empirical method relevant to
+vibration and signal analysis in rotating machinery. These
+studies collectively underscore the potential of NSGA-II and
+related MOO techniques in solving real-world engineering
+trade-offs. However, a key research gap remains in applying
+NSGA-II within a MATLAB-based simulation environment to
+systematically study how variations in load torque (represented
+by the overall transmission ratio u ) affect optimal gear design
+in terms of both mass and efficiency.
+This paper addresses the above gap by implementing a
+MATLAB-driven NSGA-II optimization framework tailored to
+the design of two-stage spur gear reducers. Specifically, it
+focuses on determining the optimal values of three fundamental
+design parameters—gear ratio of the first stage (u ) and face
+width coefficients of both stages (X , X )—for a given
+overall transmission ratio u . The proposed approach
+systematically evaluates how changes in load torque (through
+different u values) influence the trade-offs between gear mass
+and transmission efficiency. The findings of this study are
+expected to assist engineers in the conceptual and detailed
+design phases of gearboxes by offering a comprehensive set of
+Pareto-optimal solutions that reflect practical design constraints
+and performance objectives.
+
+www.etasr.com
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+II.
+
+23587
+
+PROBLEM FORMULATION
+
+To accurately model the optimization of the two-stage
+helical gearbox (Figure 1), the objective functions are derived
+from physical relationships governing gearbox mass and
+efficiency. The total mass of the gearbox consists of three main
+components: the mass of the housing (m ), the mass of the
+gears (m ), and the mass of the shafts (m ). These components
+sum to give the gearbox mass:
+m
+
+=m
+
++m +m
+
+Fig. 1.
+
+(1)
+
+Schema of a two-stage helical gearbox.
+
+Housing mass is calculated based on the material density
+and geometrical volume (where housing volume is derived
+from the sum of sectional volumes of different housing
+regions). Gear masses are computed from gear geometry (pitch
+diameters and face widths) and material density, whereas shaft
+masses are derived from shaft dimensions and material
+properties. Notably, the pitch diameters and face widths depend
+on the design variables u , u , X , and X , making those
+variables directly influence the total mass.
+Gearbox efficiency (in %) is modeled as the percentage of
+input power that is not lost to friction and other parasitic
+effects. It can be expressed as:
+η
+
+= 100 −
+
+∙
+
+(2)
+
+where P is the input power and P is the total power loss in the
+system. The total loss P can be computed by:
+P =P +P +P +P
+
+(31)
+
+where P , P , P , and P are the power losses in the gears,
+bearings, seals, and idle motion. These elements can be
+determined according to [27].
+With the mass and efficiency models defined, the design
+optimization problem can be formulated as a bi-objective
+optimization. The objectives are:
+ Minimize the gearbox mass: f X! = m .
+ Maximize the gearbox efficiency: f X! = η .
+In the optimization, we handle efficiency maximization by
+equivalently minimizing the negative efficiency (or, as
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+Engineering, Technology & Applied Science Research
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+implemented in the code, by minimizing f X! = η to fit a
+minimization framework). The vector of design variables is
+X = "u , X , X $ , which reflects three primary design
+degrees of freedom for a two-stage spur gearbox. Although in
+principle five design parameters (including the allowable
+contact stresses AS1 and AS2 for each stage) influence the
+design, prior studies have noted that the optimal values of AS1
+and AS2 tend to be their maximum allowable values for
+strength. Therefore, AS1 and AS2 are fixed at their material
+limits, and only the remaining three parameters ( u , X ,
+X ) are treated as decision variables. The gear ratio of the
+second stage, u , is not an independent variable since it is
+determined by the overall transmission ratio and the first stage
+ratio (specifically, u = u ⁄u ).
+The optimization problem is subject to a set of design
+constraints reflecting practical limits on the variables and gear
+geometry:
+1 ≤ u ,u ≤ 9
+0.25 ≤ X
+
+,X
+
+(3)
+≤ 0.4
+
+(4)
+
+The bounds on u and u ensure a reasonable distribution
+of the total reduction across the two stages (preventing, for
+example, an extremely high reduction in one stage that could
+lead to unfavorable gear sizes or stresses). The bounds on the
+face width coefficients X
+and X
+reflect standard design
+practice limits on face width relative to center distance (to
+avoid overly narrow or overly wide gear faces that could cause
+manufacturing or load distribution issues). Additional implicit
+constraints, such as ensuring that gears meet strength and
+contact stress requirements, are handled by the selection of AS1
+and AS2 at allowable values and by the design formulas from
+which mass and efficiency are derived, as those inherently
+penalize non-viable designs (e.g., a design that demands a
+certain stress in excess of the allowable would require a larger
+gear and thus higher mass).
+In summary, the optimization problem is formulated as:
+ Decision variables: X = "u , X
+determined by u = u ⁄u .
+
+$ ,
+
+,X
+
+with
+
+u
+
+ Objectives: minimize f X! = m ; maximize f X! = η .
+ Subject to: 1 ≤ u , u ≤ 9; 0.25 ≤ X
+
+,X
+
+≤ 0.4.
+
+This formulation provides a robust physical foundation for
+applying NSGA-II to find Pareto-optimal solutions balancing
+mass and efficiency.
+III.
+
+OPTIMIZATION METHODOLOGY
+
+A. Overview of Non-Dominated Sorting Genetic Algorithm II
+To solve the above multi-objective optimization problem,
+we employ the NSGA-II algorithm [13]. NSGA-II is a genetic
+algorithm
+specifically
+designed
+for
+multi-objective
+optimization, known for its efficient non-dominated sorting
+procedure and its ability to maintain a diverse set of solutions
+through crowding-distance sorting. Key features of NSGA-II
+include an elitist strategy (retaining Pareto-optimal solutions
+across generations) and a fast-sorting mechanism that classifies
+solutions into Pareto fronts of increasing dominance rank. This
+www.etasr.com
+
+23588
+
+approach avoids the need for subjective weighting factors
+(unlike classical weighted-sum methods) and naturally handles
+conflicting objectives without aggregating them. The algorithm
+begins with an initial population of candidate solutions, then
+iteratively applies genetic operators—selection (tournament
+selection), crossover (simulated binary crossover), and
+mutation (polynomial mutation)—to evolve the population
+towards the Pareto-optimal front. Constraints are handled by
+discarding or penalizing infeasible solutions, which NSGA-II
+can accommodate alongside its evolutionary process. It is
+worth noting that NSGA-II does require careful parameter
+tuning (such as population size, crossover probability, and
+mutation rate) to ensure convergence and sufficient exploration
+of the design space. In this study, those parameters were chosen
+based on preliminary tests to balance convergence speed and
+solution diversity (for instance, a moderate population size and
+number of generations were used to obtain stable Pareto fronts
+without excessive computation).
+B. MATLAB Implementation
+The optimization methodology was implemented in
+MATLAB, leveraging NSGA-II to explore the design space for
+various overall ratios. A custom NSGA-II code was developed,
+consisting of modules for objective function evaluation, genetic
+operators, and sorting of Pareto-optimal fronts. The objective
+function, implemented as objective gearbox (vars, u ),
+internally calculates the gearbox mass and efficiency for a
+given set of design variables and a specified overall ratio u ,
+returning the two objective values. In this computation, the
+relationship u = u ⁄u is enforced, and the constraints (3)
+and (4) are applied as bounds on the variables. The mass
+calculation uses the model described in Section II, summing
+housing, gear, and shaft masses, whereas the efficiency
+calculation uses the loss model to compute η . The two
+objectives are then passed to the NSGA-II routine as
+minimization targets (with efficiency negated to convert
+maximization to minimization within the algorithm).
+The main optimization loop runs across a range of overall
+transmission ratios. In our study, we examine u values from 5
+to 35 in increments of 5 (i.e., 5, 10, 15, 20, 25, 30, 35). For
+each value of u , a separate NSGA-II run is executed to find
+the Pareto-optimal set of solutions (u , X , X ) for that
+fixed overall ratio. Each run yields a Pareto front of designs
+illustrating the trade-off between minimal mass and maximal
+efficiency for that particular u . The algorithm was set to
+terminate after a predefined number of generations once the
+Pareto front converged (i.e., when improvements became
+marginal). To ensure a broad search, multiple independent
+trials were performed for each u , and the best result (in terms
+of Pareto front coverage and convergence) was retained. All
+Pareto optimal solutions found for each case were recorded for
+post-processing; in particular, the resulting non-dominated
+solutions for all u values were aggregated into a single dataset
+for comparative analysis across different transmission ratios.
+Key outputs such as Pareto front plots and solution sets were
+automatically saved for visualization and further examination.
+After obtaining the Pareto fronts for all cases, a postprocessing analysis was carried out to identify trends and to
+extract representative optimal solutions. In practice, a design
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+Engineering, Technology & Applied Science Research
+
+engineer may want a single recommended design for each
+required overall ratio. To facilitate this, we applied a filtering
+criterion to each Pareto front to select a preferred solution that
+offers an excellent efficiency-to-mass ratio. Specifically, for
+each u , we chose the solution that maximizes the ratio
+η ⁄m while still achieving near-maximum efficiency. This
+criterion selects a point near the "knee" of the Pareto curve,
+favoring designs that significantly improve efficiency with only
+a modest increase in mass relative to the absolute lightest
+design. The selected solutions form a set of optima balancing
+the two objectives, which can be used to derive general design
+insights.
+IV.
+
+RESULTS AND DISCUSSION
+
+A. Pareto-Optimal Performance Trade-Offs across Gear
+Ratios
+Figure 2 shows the Pareto-optimal trade-off curves between
+gearbox mass and efficiency for representative overall
+transmission ratios (u ). As u increases from 5 to 35, the
+Pareto front moves upward and leftward in the objective space,
+indicating that higher overall reductions enable designs that are
+simultaneously lighter (lower mass) and more efficient. For
+example, at a low ratio of u = 5, achieving even moderate
+efficiency levels (above ~80%) requires a relatively heavy
+gearbox (on the order of 270–280 kg), whereas pushing for the
+absolute lightest design (around 260 kg) forces a much lower
+efficiency (near 70–75%). In contrast, at a high ratio of
+u = 35, the entire Pareto front is shifted to a superior region:
+even the least-efficient design exceeds ~90% efficiency, and
+the most efficient approaches 97–98%, all while using less
+material. This trend confirms that increasing the transmission
+ratio enhances the trade-off between weight and efficiency.
+
+Fig. 2.
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+23589
+
+reduction between stages. The gear ratio split gradually
+balances as u increases.
+TABLE I.
+
+5
+10
+15
+20
+25
+30
+35
+
+REPRESENTATIVE COMPROMISE DESIGN
+SOLUTIONS FOR VARIOUS OVERALL
+
+-
+
+.
+
+/01-
+
+/ 01.
+
+1.28
+2.19
+2.92
+3.37
+4.22
+4.41
+4.91
+
+3.92
+4.57
+5.14
+5.94
+5.92
+6.80
+7.13
+
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+
+0.40
+0.32
+0.30
+0.35
+0.28
+0.35
+0.34
+
+Mass
+(kg)
+261.36
+237.36
+231.41
+232.90
+228.46
+233.00
+233.33
+
+Efficiency
+(%)
+97.43
+96.95
+96.55
+96.31
+95.67
+95.64
+95.29
+
+Based on the research results presented in Table I and the
+practical constraint that the gear ratio of a single gear stage
+should not exceed 6.5, it is not recommended to use overall
+transmission ratios u 2 30 when only two gear stages are
+employed, as the second-stage ratio (u ) would exceed the
+allowable limit. In such cases, it is advisable to either design a
+three-stage transmission or consider alternative solutions such
+as planetary gear systems or worm gear drives to ensure
+durability and efficient operation.
+C. Trade-Off between Weight Reduction and Efficiency
+Losses
+Figure 3 presents the trend of gearbox mass and efficiency
+versus overall gearbox ratio. The mean gearbox mass decreases
+sharply from ~255 kg at u = 5 to ~229 kg at u = 25 ,
+followed by a near-plateau trend up to u = 35. In contrast,
+mean efficiency declines steadily, from ~97.4% at u = 5
+down to ~94.3% at u = 35. This demonstrates that increasing
+u leads to lighter gear designs due to favorable load
+distribution, but also incurs a slight penalty in efficiency, likely
+due to higher sliding speeds and meshing complexity. This
+reflects a classical trade-off in gear system design and supports
+the practical need to balance weight reduction against
+efficiency loss.
+
+Pareto fronts between gearbox mass and efficiency for all u .
+
+B. Optimal Configurations and Design Trends
+Table I describes the best (compromise) design solutions
+for various overall transmission ratios. Across all designs, the
+face width coefficients are near or at their upper limits,
+confirming that maximizing face width is an effective strategy
+for increasing load capacity and reducing gear mass. Increasing
+u with respect to u also reflects a proportional distribution of
+www.etasr.com
+
+Fig. 3.
+ratio.
+
+Trend of gearbox mass and efficiency versus overall transmission
+
+D. Design Variable Trends and Ratio-Splitting Strategy
+Figure 4 shows the linear regression of optimal first-stage
+gear ratio versus total gearbox ratio. The blue circles denote the
+mean values extracted from the Pareto-optimal solutions at
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+Engineering, Technology & Applied Science Research
+
+each u , whereas the red dashed line represents the best-fit
+linear regression:
+u = 0.1396 ∙ u + 0.8539
+
+(5)
+
+Fig. 4.
+Linear regression of optimal first-stage gear ratio versus total
+gearbox ratio.
+
+Regression (5) reveals a near-perfect linear correlation
+between u and u , with an R² value of 0.9899, confirming the
+strength of the relationship. The slope of 0.1396 indicates that,
+on average, the first-stage gear ratio increases by ~0.14 for
+every unit increase in u , whereas the intercept of 0.8539 sets a
+practical lower bound. This suggests that approximately 14%
+of the total reduction is allocated to the first stage, plus a base
+value. From a design standpoint, this finding implies that as the
+total transmission ratio increases, the gearbox naturally
+balances the reduction more evenly between the two stages. At
+low u , u is small (e.g., 1.4 at u = 5 ), assigning more
+reduction to the second stage. As u increases, it rises toward
+values above 5.0, indicating a near-even split with the second
+stage. This balance improves meshing efficiency and reduces
+gear stress. Furthermore, the regression provides a fast,
+accurate estimation tool for preliminary design. For example,
+with u = 25 , the regression predicts u 5 4.4 , yielding
+u 5 5.68. This aligns closely with NSGA-II results, enabling
+designers to estimate feasible initial values for rapid
+prototyping without full optimization.
+In conclusion, the tight linear fit underscores the physical
+intuition that the optimal stage distribution scales
+proportionally with the total reduction demands. This insight
+can be directly translated into gear system design rules for
+early-stage sizing and feasibility assessment.
+V.
+
+CONCLUSION
+
+In this study, a multi-objective optimization framework for
+a two-stage spur gear reducer was developed by integrating a
+physics-based design model with the NSGA-II evolutionary
+algorithm in a MATLAB environment. The objectives of
+minimizing gearbox mass and maximizing efficiency were
+simultaneously addressed over a range of overall transmission
+ratios. The results demonstrate that significant improvements in
+gear reducer performance can be achieved by systematically
+exploring the design space: as the overall reduction ratio (u )
+increases, the optimizer identifies designs with substantially
+
+www.etasr.com
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+23590
+
+lower mass and higher efficiency than those at lower ratios.
+Notably, all Pareto-optimal solutions favor the largest
+allowable face width for gears, underscoring the importance of
+this parameter in enhancing load capacity and efficiency. The
+optimal distribution of the gear ratio between the first and
+second stages was found to vary approximately linearly with
+the total ratio, providing a simple guideline for preliminary
+design (i.e., as the required overall ratio grows, allocate a
+proportionally larger share to the first stage).
+The Pareto fronts obtained for each scenario offer a wealth
+of information to design engineers. By examining these tradeoff curves, one can select a configuration that best meets
+specific design requirements. For instance, if weight
+minimization is paramount, a design near the low-mass end of
+the Pareto front can be selected at the expense of some
+efficiency. Conversely, if efficiency is critical (for example, to
+reduce heat generation and improve energy efficiency), a
+design on the high-efficiency end can be selected with a modest
+weight penalty. The compromise solutions highlighted in this
+paper achieve a balanced trade-off, often delivering >90%
+efficiency while keeping the mass close to its minimum
+feasible value for each ratio. In practical terms, the optimized
+designs at high ratios (e.g., u = 30 − 35) were able to exceed
+95% efficiency with about a 10–15% reduction in mass
+compared to the baseline low-ratio design – a remarkable
+improvement that could translate into both operational energy
+savings and material/cost savings in manufacturing.
+In conclusion, the combination of a detailed analytical
+model and an evolutionary multi-objective algorithm has
+proven to be effective in identifying optimal gear reducer
+designs under dual objectives. The study provides clear
+quantitative relationships between the gear reducer's
+performance (mass and efficiency) and its fundamental design
+parameters, offering guidance for future gearbox design efforts.
+The methodology and findings pave the way for more
+intelligent gear design frameworks in which designers can
+readily obtain a spectrum of optimal solutions and make
+informed decisions according to project-specific criteria. Future
+work may extend this approach by incorporating additional
+objectives or constraints, such as noise/vibration performance
+or cost, or by integrating higher-fidelity simulations (e.g., finite
+element analysis of gear deformation and stress) into the
+optimization loop. Moreover, applying surrogate modeling [23]
+or advanced hybrid algorithms [22] could further reduce the
+computational effort, enabling real-time optimization as part of
+a digital twin or interactive design software. The insights from
+this research contribute to the growing field of performancedriven gear design and illustrate the value of multi-objective
+optimization in resolving engineering design trade-offs.
+This work introduces several novel contributions:
+ It is the first to apply a physically-grounded NSGA-II
+optimization for two-stage spur gear reducers using full
+empirical loss models for mass and efficiency.
+ The method explores a complete range of transmission
+ratios, offering a generalizable design dataset applicable
+across industries.
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+Engineering, Technology & Applied Science Research
+
+ The proposed filtering approach identifies the most
+technically feasible Pareto-optimal solutions, not just the
+mathematically dominant ones.
+Moreover, this study's findings correlate well with prior
+works that focus on empirical or simulation-based gear
+optimization. For example, unlike earlier studies that used
+simplified or static models [7], our approach introduces fully
+dynamic load-dependent efficiency modeling. Compared to
+methods relying solely on surrogate models or MCDM
+techniques, such as in [9] and [26], our use of NSGA-II with
+first-principles modeling allows for deeper insights into
+parameter interactions and system-level trade-offs.
+ACKNOWLEDGMENT
+The authors thank Thai Nguyen University of Technology
+for their support.
+REFERENCES
+[1]
+
+S. Prayoonrat and D. Walton, "Practical approach to optimum gear train
+design," Computer-Aided Design, vol. 20, no. 2, pp. 83–92, Mar. 1988,
+https://doi.org/10.1016/0010-4485(88)90053-X.
+[2] H. Zarefar and S. N. Muthukrishnan, "Computer-aided optimal design
+via modified adaptive random-search algorithm," Computer-Aided
+Design, vol. 25, no. 4, pp. 240–248, Apr. 1993, https://doi.org/
+10.1016/0010-4485(93)90055-S.
+[3] H. Wang and H.-P. Wang, "Optimal engineering design of spur gear
+sets," Mechanism and Machine Theory, vol. 29, no. 7, pp. 1071–1080,
+Oct. 1994, https://doi.org/10.1016/0094-114X(94)90074-4.
+[4] M. M. A. Kader, S. P. Nigam, and G. K. Grover, "A study on mode of
+failures in spur gears under optimized conditions," Mechanism and
+Machine Theory, vol. 33, no. 6, pp. 839–850, Aug. 1998, https://doi.org/
+10.1016/S0094-114X(97)00058-X.
+[5] C. Gologlu and M. Zeyveli, "A genetic approach to automate
+preliminary design of gear drives," Computers & Industrial Engineering,
+vol. 57, no. 3, pp. 1043–1051, Oct. 2009, https://doi.org/10.1016/
+j.cie.2009.04.006.
+[6] V. Savsani, R. V. Rao, and D. P. Vakharia, "Optimal weight design of a
+gear train using particle swarm optimization and simulated annealing
+algorithms," Mechanism and Machine Theory, vol. 45, no. 3, pp. 531–
+541, Mar. 2010, https://doi.org/10.1016/j.mechmachtheory.2009.10.010.
+[7] M. Patil, P. Ramkumar, and K. Shankar, "Multi-Objective Optimization
+of Spur Gearbox with Inclusion of Tribological Aspects," Journal of
+Friction and Wear, vol. 38, no. 6, pp. 430–436, Nov. 2017, https://
+doi.org/10.3103/S1068366617060101.
+[8] X.-H. Le and N.-P. Vu, "Multi-Objective Optimization of a Two-Stage
+Helical Gearbox Using Taguchi Method and Grey Relational Analysis,"
+Applied Sciences, vol. 13, no. 13, Jul. 2023, Art. no. 7601, https://
+doi.org/10.3390/app13137601.
+[9] V.-T. Dinh et al., "Multi-Objective Optimization of a Two-Stage Helical
+Gearbox with Second Stage Double Gear-Sets Using TOPSIS Method,"
+Processes, vol. 12, no. 6, Jun. 2024, Art. no. 1160, https://doi.org/
+10.3390/pr12061160.
+[10] C. A. Coello Coello, G. B. Lamont, and D. A. Van Veldhuizen,
+Evolutionary Algorithms for Solving Multi-Objective Problems, 2nd ed.
+Boston, MA, USA: Springer US, 2007, https://doi.org/10.1007/978-0387-36797-2.
+[11] K. Miettinen, Nonlinear Multiobjective Optimization, 1st. ed. Boston,
+MA, USA: Springer US, 1998, https://doi.org/10.1007/978-1-46155563-6.
+[12] A. Konak, D. W. Coit, and A. E. Smith, "Multi-objective optimization
+using genetic algorithms: A tutorial," Reliability Engineering & System
+Safety, vol. 91, no. 9, pp. 992–1007, Sep. 2006, https://doi.org/10.1016/
+j.ress.2005.11.018.
+
+www.etasr.com
+
+Vol. 15, No. 3, 2025, 23586-23591
+
+23591
+
+[13] K. Deb, A. Pratap, S. Agarwal, and T. Meyarivan, "A fast and elitist
+multiobjective genetic algorithm: NSGA-II," IEEE Transactions on
+Evolutionary Computation, vol. 6, no. 2, pp. 182–197, Apr. 2002,
+https://doi.org/10.1109/4235.996017.
+[14] R. C. Sanghvi, A. S. Vashi, H. P. Patolia, and R. G. Jivani, "MultiObjective Optimization of Two-Stage Helical Gear Train Using NSGAII," Journal of Optimization, vol. 2014, no. 1, Nov. 2014, Art. no.
+670297, https://doi.org/10.1155/2014/670297.
+[15] E. S. Maputi and R. Arora, "Multi-objective optimization of a 2-stage
+spur gearbox using NSGA-II and decision-making methods," Journal of
+the Brazilian Society of Mechanical Sciences and Engineering, vol. 42,
+no. 9, Aug. 2020, Art. no. 477, https://doi.org/10.1007/s40430-02002557-2.
+[16] E. B. Younes, C. Changenet, J. Bruyère, E. Rigaud, and J. PerretLiaudet, "Multi-objective optimization of gear unit design to improve
+efficiency and transmission error," Mechanism and Machine Theory,
+vol. 167, Jan. 2022, Art. no. 104499, https://doi.org/10.1016/
+j.mechmachtheory.2021.104499.
+[17] Q. Yao, "Multi-objective optimization design of spur gear based on
+NSGA-II and decision making," Advances in Mechanical Engineering,
+vol. 11, no. 3, Mar. 2019, Art. no. 1687814018824936, https://doi.org/
+10.1177/1687814018824936.
+[18] M. I. Hlal, V. K. Ramachandaramurthya, S. Padmanaban, H. R. Kaboli,
+A. Pouryekta, and T. A. R. bin T. Abdullah, "NSGA-II and MOPSO
+based optimization for sizing of hybrid PV/wind/battery energy storage
+system," International Journal of Power Electronics and Drive Systems,
+vol. 10, no. 1, pp. 463–478, Mar. 2019, https://doi.org/10.11591/
+ijpeds.v10.i1.pp463-478.
+[19] M. El-Nemr, M. Afifi, H. Rezk, and M. Ibrahim, "Finite Element Based
+Overall Optimization of Switched Reluctance Motor Using MultiObjective Genetic Algorithm (NSGA-II)," Mathematics, vol. 9, no. 5,
+Mar. 2021, Art. no. 576, https://doi.org/10.3390/math9050576.
+[20] X. Zhuang et al., "Multi-objective optimization of reservoir development
+strategy with hybrid artificial intelligence method," Expert Systems with
+Applications, vol. 241, May 2024, Art. no. 122707, https://doi.org/
+10.1016/j.eswa.2023.122707.
+[21] B. Yan, M. Gudala, and S. Sun, "Robust optimization of geothermal
+recovery based on a generalized thermal decline model and deep
+learning," Energy Conversion and Management, vol. 286, Jun. 2023,
+Art. no. 117033, https://doi.org/10.1016/j.enconman.2023.117033.
+[22] S. K. Yadav, S. Ghosh, and A. Sivanandam, "An intelligent hybrid
+optimization approach to improve the end milling performance of
+Incoloy 925 based on ANN-NSGA-II-ETOPSIS," International Journal
+on Interactive Design and Manufacturing, vol. 18, no. 7, pp. 4673–4695,
+Sep. 2024, https://doi.org/10.1007/s12008-024-01744-y.
+[23] M. Willecke and J. Brimmers, "Investigation of the Potential of Using
+Surrogate Models in the Gear Design Process," Gear Technology, pp.
+68–74, Dec. 2021.
+[24] R. T. Marler and J. S. Arora, "Survey of multi-objective optimization
+methods for engineering," Structural and Multidisciplinary
+Optimization, vol. 26, no. 6, pp. 369–395, Apr. 2004, https://doi.org/
+10.1007/s00158-003-0368-6.
+[25] H.-D. Tran, V.-T. Dinh, D.-B. Vu, D. Vu, A.-T. Luu, and N. P. Vu,
+"Application of the TOPSIS Method for Multi-Objective Optimization
+of a Two-Stage Helical Gearbox," Engineering, Technology & Applied
+Science Research, vol. 14, no. 4, pp. 15454–15463, Aug. 2024, https://
+doi.org/10.48084/etasr.7551.
+[26] Y. Berrouche, "A Non-Parametric Empirical Method for Nonlinear and
+Non-Stationary Signal Analysis," Engineering, Technology & Applied
+Science Research, vol. 12, no. 1, pp. 8058–8062, Feb. 2022, https://
+doi.org/10.48084/etasr.4651.
+[27] V.-T. Dinh, H.-D. Tran, D.-B. Vu, D. Vu, N.-P. Vu, and A.-T. Luu,
+"Application of a Multi-Criterion Decision-Making Method for Solving
+the Multi-Objective Optimization of a Two-Stage Helical Gearbox,"
+Machines, vol. 12, no. 6, Jun. 2024, Art. no. 365, https://doi.org/
+10.3390/machines12060365.
+
+Vu et al.: Optimizing Two-Stage Gear Design using NSGA-II with MATLAB: Multi-Objective Approach …
+
+

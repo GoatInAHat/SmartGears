@@ -1,0 +1,1244 @@
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+SYNTHESIS OF THE PITCH CURVE DESIGN FOR
+NONCIRCULAR GEAR BASED ON BERNOULLI'S
+LEMNISCATE
+Xin ZHANG1, 2, Chang’an CHEN1, Ruiqin Li2*
+1
+
+Yalong Intelligent Equipment Group Company Limited, Wenzhou, 325105, China, e-mail:
+zhangxin891221@163.com
+*2
+School of Mechanical Engineering, North University of China. Taiyuan, 030051, China, e-mail:
+1085223859@qq.com
+
+ABSTRACT: A novel method for designing pitch curves of noncircular gears is proposed.
+The mathematical models, including unclosed and closed pitch curves, are established based on
+Bernoulli's lemniscate. In particular, according to the meshing principle of noncircular gears,
+two methods for calculating the noncircular driven gear pitch curve conjugated with the
+noncircular driving gear pitch curve based on Bernoulli's lemniscate are proposed. Several
+typical examples are implemented in MATLAB, and simulation results demonstrate the
+feasibility and validity of the proposed design method for noncircular gears pitch curves.
+KEYWORDS: noncircular gear, pitch curve design, bernoulli's lemniscate, mathematical
+model
+
+1
+
+INTRODUCTION
+
+Noncircular gears, which transfers variable
+speed and torque from one noncircular driving gear
+to another noncircular driven gear, have been used
+in a variety of mechanical equipments and
+automatic instruments: flow meters, packaging
+machines, textile machines, and aeronautical ring
+dampers (Litvin, 2004; Stefano, 2012; Arakelian,
+2010; Terada, 2012). However, due to the
+complexity of design and manufacturing for
+noncircular gears, early researches on noncircular
+gears focus on elliptical gears and their geometric
+and manufacturing properties (Chang, 1996;
+Figliolini, 2003; He, 2004; Litvin, 2007; Lin, 2012;
+Zhang, 2014).
+Recently, with the development of modern
+computer and CNC machine tools, the design and
+application of noncircular gears have been
+expanded in mechanical industry. Particularly, the
+mathematical methods of the noncircular gears with
+arbitrary shape pitch curves can be proposed by
+some researchers. Such as, noncircular gears based
+on Bézier and B-spline nonparametric curves have
+been obtained by Hector, Salvador and Liuisa
+(2007). A mathematical model of the noncircular
+gears based on spiral of Archimedes have been
+established by Yao (2013). A design method of
+noncircular gears with steepest rotation pitch curves
+have been obtained by Zhang and Fan (2016).
+Noncircular gears with minimal rotary inertia and
+mean kinetic energy characteristics have been
+respectively obtained by Zhang and Fan (2018;
+
+2019). A general form of gears known as
+noncircular gears that can transfer periodic motion
+with variable speed through their irregular shapes
+and eccentric rotation centers has been proposed by
+Xu, Fu and et al (2020). Moreover, some
+modification methods of pitch curves for N-lobed
+noncircular gears has been proposed by Zhang and
+Fan (2021, 2022).
+Furthermore, in order to extend the application
+and transmission performance of noncircular gears,
+the paper presents a novel mathematical model of
+the noncircular gears design with the pitch curves
+based on Bernoulli's lemniscate. The design
+methods of the unclosed and closed pitch curves can
+also be presented. Two calculating methods of
+noncircular driven gear pitch curve conjugated with
+the noncircular driving gear pitch curve based on
+Bernoulli's lemniscate are developed according to
+the meshing principle of noncircular gears.
+transmission performance of the proposed
+noncircular gears can also be analyzed. Several
+mathematical examples are implemented in
+MATLAB to design the pitch curves based on
+Bernoulli's lemniscate, and to demonstrate the
+feasibility and validity of the proposed design
+method for noncircular gears pitch curves.
+
+160
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+2
+
+r ( )  a sin 2(  1 ),  [0,  2  1 ]
+
+
+
+a  0，0<1   2 
+2
+
+
+DESIGN AND ANALYSIS OF THE
+UNCLOSED PITCH CURVE FOR
+NONCIRCULAR GEAR BASED ON
+BERNOULLI'S LEMNISCATE
+
+(3)
+
+2.1 Design of the noncircular gear pitch
+curve based on Bernoulli's lemniscate
+The polar equation rb(θ) of Bernoulli's
+lemniscate can be established as (Department of
+Mathematics, Tongji University, 2014):
+
+
+rb1 ( )=a sin 2 ,   [0, ]
+
+
+2
+rb ( )  
+r ( )=a sin 2 ,   [ , 3 ]
+b2
+
+2
+
+
+(1)
+where a (a > 0) is called Bernoulli's lemniscate
+design parameter, polar angle θ is measured
+counterclockwise from the positive direction x-axis
+
+Fig. 2 Unclosed pitch curve r(θ) for noncircular gear
+based on Bernoulli's lemniscate
+
+Fig. 1 The graph of Bernoulli's lemniscate rb(θ)
+
+As shown in Fig. 1, this is a graph of Bernoulli's
+lemniscate, we know that the curve rb2(θ) (θ ∈ [π,
+3π/2]) can be obtained by rotating the curve rb1(θ)
+(θ ∈ [0, π/2]) counterclockwise by π radian.
+Particularly, because the noncircular gear possesses
+the characteristic of rotation, so the curve rb1(θ) (θ ∈
+[0, π/2]) can be as the research object of the pitch
+curve design for noncircular gear based on
+Bernoulli's lemniscate. Because the pitch curve of
+noncircular gear must be greater than zero, as
+shown in Fig. 2, the unclosed pitch curve r(θ) for
+noncircular gear based on Bernoulli's lemniscate
+should satisfy the following equation:
+r ( )  a sin 2 , [1 ,  2 ]
+
+Fig. 3 The improved unclosed pitch curve r(θ) for
+noncircular gear that rotates from a polar angle equal
+to zero
+
+According to Eq. (3) and differential calculus,
+the first derivative r′(θ) and the second derivative
+r′′(θ) of the improved unclosed pitch curve r(θ)
+based on Bernoulli's lemniscate can be expressed
+as, respectively:
+cos 2(  1 )
+
+r ( )  a sin 2(   ) ,  [0,  2  1 ]
+
+1
+
+a  0，0<    
+1
+2
+
+2
+
+
+
+
+
+ a  0，0<1   2 
+2
+
+
+(2)
+where θ1 and θ2 are the polar angles
+corresponding to the left and right boundary points
+of the pitch curve, respectively.
+Furthermore, as shown in Fig. 3, in order to
+ensure that the noncircular gear rotates from a polar
+angle equal to zero, Eq. (2) can be rearranging to
+
+(4)
+
+a
+ 
+r ( )  sin 2(   ) sin 2(   ) ,  [0,  2  1 ]
+
+1
+1
+
+
+a  0，0<   
+1
+2
+
+2
+
+
+(5)
+
+Referring to Eq. (4) and Eq. (5), we know that
+the first derivative r′(θ) and the second derivative
+r′′(θ) possess the following constraints:
+r ( )  0
+,   [0,  2  1 ]
+ 
+r ( )  0
+
+
+
+a  0，0<1   2  2
+(6)
+161
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+According to the meshing principle of
+noncircular gears, the pitch curves re(θe) and ri(θi)
+of the external meshing and internal meshing
+noncircular driven gear conjugated with the
+improved unclosed pitch curve r(θ) can be
+calculated as, respectively:
+re ( e )  Ae  r ( )
+
+
+r ( )
+
+d
+ e  0
+A
+
+r
+(
+
+)
+e
+
+
+  [0,    ],   [0,  ]
+2
+1
+e
+emax
+
+(7)
+ri (i )  Ai  r ( )
+
+
+,
+r ( )
+
+d
+i  0
+Ai  r ( )
+
+  [0,  2  1 ], i  [0, imax ]
+
+
+Fig. 4 Two mathematical design examples of this
+improved unclosed pitch curve r(θ) based on
+Bernoulli's lemniscate
+Table 1 The polar equations of the improved unclosed
+pitch curve r(θ) and its design parameters
+
+(8)
+where Ae and Ai are respectively center distances
+of external meshing and internal meshing
+noncircular gears, θemax and θimax are respectively
+the maximum of the external meshing and internal
+meshing polar angles θe and θi, and they can be
+calculated as:
+ 
+r ( )
+emax  
+d
+0
+Ae  r ( )
+(9)
+2
+
+imax  
+
+a  3
+
+
+8 ，
+
+1  ,  2 
+
+18
+18
+
+r (0)  r ( 2  1 )
+
+1
+
+ 2 1
+
+0
+
+Design parameters
+
+r ( )
+d
+Ai  r ( )
+
+
+
+ r ( )  3 sin 2(  ) ,
+18
+
+  [0, 7  ]
+
+18
+
+Referring to Fig. 4(a)
+a  3
+
+
+7 ，
+
+1  ,  2 
+
+18
+18
+
+r (0)  r ( 2  1 )
+
+(10)
+
+2.2 Mathematical examples of the pitch
+curve design for noncircular gear based
+on Bernoulli's lemniscate
+According to Eq. (3), two mathematical design
+examples of this improved unclosed pitch curve r(θ)
+for noncircular gear based on Bernoulli's lemniscate
+are depicted in Fig. 4(a) and Fig. 4(b), their polar
+equations and design parameters are listed in Table
+1.
+
+The polar equations of the
+improved unclosed pitch curve
+r(θ)
+
+
+
+ r ( )  3 sin 2(  ) ,
+18
+
+  [0, 6 ]
+
+18
+
+Referring to Fig. 4(b)
+
+Referring to Eq. (7) ~ Eq. (8), according to the
+meshing principle of noncircular gears, there are
+two ways to calculate the pitch curves re(θe) and
+ri(θi) conjugated with the unclosed pitch curve r(θ)
+based on Bernoulli's lemniscate for noncircular
+gears, the calculation flow chart is shown in Fig. 5.
+According to the different design requirements
+of the practical applications of noncircular gears,
+the designer can design and calculate the pitch
+curve of the noncircular driven gear by choosing
+one of the above two methods depicted in Fig. 5.
+Referring to Fig. 5 and Eq. (7) ~ Eq. (10), take the
+pitch curve shown in Fig. 4(a) as an example, the
+pitch curves re(θe) and ri(θi) can be designed and
+depicted in Fig. 6 and Fig. 7, their corresponding
+design parameters are listed in Table 2.
+
+162
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+Fig. 5 The calculation flow of the pitch curves re(θe)
+and ri(θi) conjugated with the unclosed pitch curve r(θ)
+based on Bernoulli's lemniscate
+
+Fig. 6 Unclosed noncircular gear pitch curves
+calculated by the method one of Fig. 5
+Table 2. The polar equations and corresponding design parameters of the pitch curves re(θe) and ri(θi)
+conjugated with the unclosed pitch curve r(θ) based on Bernoulli's lemniscate shown in Fig. 4(a)
+Noncircular driving gear
+pitch curve r(θ) based on
+Bernoulli's lemniscate
+
+Known
+conditions
+
+Calculated
+design
+parameters
+
+Noncircular driven gear pitch curves re(θe) and ri(θi)
+conjugated with the noncircular driving gear pitch
+curve r(θ)
+re (e )  5  r ( )
+
+, e [0, 1.3846]
+
+r ( )
+
+e  0 5  r ( ) d
+
+
+emax  1.3846
+
+Ae  5
+
+(Referring to Fig. 6(a))
+
+r ( )  3 sin 2( 
+
+  [0,
+
+
+)
+18
+
+Ai  3
+
+ri (i )  3  r ( )
+
+, i [0, 0.5650]
+
+r ( )
+
+
+
+d
+
+i
+
+
+0 3  r ( )
+
+
+i max  0.5650
+
+(Referring to Fig. 6(b))
+
+7
+]
+18
+
+(Referring to Fig. 4(a))
+
+emax 
+
+7
+18
+
+re (e )  5.3020  r ( )
+7
+
+,  e  [0,
+]
+
+r ( )
+
+18
+e  0 5.3020  r ( ) d
+
+
+Ae  5.3020
+
+(Referring to Fig. 7(a))
+
+i max 
+
+4
+18
+
+ri (i )  1.9315  r ( )
+4
+
+, i  [0, ]
+
+r ( )
+
+18
+i  0 1.9315  r ( ) d
+
+
+Ai  1.9315
+
+(Referring to Fig. 7(b))
+163
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+
+ 2 1
+sin 2(  1 )
+d
+ie ( )  0
+Pe  sin 2(  1 )
+
+
+A
+
+
+Pe  e  ( sin 2(  1 )) max
+
+
+
+a
+ s.t. 
+  [0,    ], a  0，0<    
+
+2
+1
+1
+2
+
+
+2 (13)
+
+ 2 1
+sin 2(  1 )
+d
+ii ( )  0
+Pi  sin 2(  1 )
+
+
+Ai
+
+
+ Pi  a  0,   [0,  2  1 ]
+
+ s.t. 
+a  0，0<    
+
+1
+2
+
+
+2
+
+Fig. 7 Unclosed noncircular gear pitch curves
+calculated by the method two of Fig. 5
+
+2.3 Characteristic analysis of the
+transmission ratio for noncircular gears
+with the pitch curve based on Bernoulli's
+lemniscate
+Referring to Eq. (3) and Eq. (7) ~ Eq. (8), the
+transmission ratio functions ie(θ) and ii(θ) of
+external meshing and internal meshing noncircular
+gears can be expressed as:
+
+ 2 1
+a sin 2(  1 )
+d
+ie ( )  0
+Ae  a sin 2(  1 )
+
+
+
+
+
+
+a  0，0<1   2 
+2
+ s.t. 
+  [0,    ], A  a sin 2(   )  0
+
+2
+1
+e
+1
+
+
+(11)
+
+ 2 1
+a sin 2(  1 )
+d
+ii ( )  0
+Ai  a sin 2(  1 )
+
+
+
+
+
+
+a  0，0<1   2 
+2
+ s.t. 
+
+
+  [0,  2  1 ], Ai  a sin 2(  1 )  0 12)
+
+Furthermore, rearranging Eq. (11) ~ Eq. (12) to:
+
+(14)
+The transmission ratio functions ie(θ) and ii(θ) of
+external meshing and internal meshing noncircular
+gears are depicted in Fig. 8 ~ Fig. 9, and its design
+parameters are listed in Table 3. Referring to Fig. 8,
+when the value range of the polar angle θ is fixed,
+the transmission ratio function ie(θ) of external
+meshing noncircular gears has the following
+characteristics: i) The transmission ratio function
+ie(θ) becomes smoother with the increase of the
+parameter Pe. ii) When the parameter Pe is close to
+1, the variation trend of the transmission ratio
+function ie(θ) is more obvious. iii) The transmission
+ratio function ie(θ) reaches its maximum when the
+polar angle θ is equal to π/2-θ1.
+
+Fig. 8 The transmission ratio functions ie(θ) of
+external meshing noncircular gears with different
+design parameters Pe
+164
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+transmission ratio function ii(θ) becomes smoother
+with the increase of the parameter Pi. ii) The
+transmission ratio function ii(θ) reaches its
+maximum when the polar angle θ is equal to π/2-θ1.
+
+3
+
+DESIGN AND ANALYSIS OF THE
+CLOSED PITCH CURVE FOR
+NONCIRCULAR GEAR BASED ON
+BERNOULLI'S LEMNISCATE
+
+3.1 Design of the closed noncircular gear
+pitch curve based on Bernoulli's
+lemniscate
+
+Fig. 9 The transmission ratio functions ii(θ) of
+external meshing noncircular gears with different
+design parameters Pi
+
+Referring to Fig. 9, when the value range [0, π/3]
+of the polar angle θ is fixed, the transmission ratio
+function ii(θ) of internal meshing noncircular gears
+has the following characteristics: i) The
+
+Referring to Eq. (3) and Fig. (3), in order to
+obtain the closed noncircular gear pitch curve R(θ)
+based on Bernoulli's lemniscate by rotating about
+the center of rotation, the improved unclosed pitch
+curve r(θ) should satisfy the following constraints:
+2
+
+ 2  1 = N
+
+，0<1   2 
+
+2
+r (0)  r ( 2 )
+
+N
+(15)
+where N is the number of lobes of the closed
+noncircular gear pitch curve R(θ) and it’s an integer
+greater than 4.
+
+Table 3. The design parameters of the transmission ratio functions ie(θ) and ii(θ) depicted in Fig. 8 ~ Fig. 9
+Design parameters
+
+The transmission ratio functions ie(θ) and ii(θ)
+
+Pe  1.1, 1.2, 1.3, 1.5, 3, 5
+
+
+7
+
+  , 
+
+ 1 18 2 18
+
+    
+2
+1
+
+3
+
+
+
+
+sin 2(  1 )
+
+0
+
+Pe  sin 2(  1 )
+
+ie ( )   3
+
+10, 20, 30, 50, 300, 500
+
+d
+
+(Referring to Fig. 8)
+Pi  1.1, 1.2, 1.3, 1.5, 3, 5
+
+
+
+sin 2(  1 )
+
+0
+
+Pi  sin 2(  1 )
+
+ii ( )   3
+
+10, 20, 30, 50, 300, 500
+
+d
+
+(Referring to Fig. 9)
+
+2
+
+
+r1 ( )  a sin 2(  1 ),  [0, N ]
+
+
+2
+2 4
+
+
+ R ( )  r2 ( )  r1 (  N ),  [ N , N ]
+
+
+
+
+
+r ( )  r (  2(k  1) ),  [ 2(k  1) , 2k  ]
+
+1
+ k
+N
+N
+N
+
+
+ 
+ s.t. a >0, N  4, 1   ，k  1, 2, , N
+4 N
+
+
+Along with Eq. (3), in order ensure that the
+2
+r (0)  r ( )
+N is true, polar angles θ1 and θ2
+equation
+should satisfy the following equation:
+
+2
+
+ 2 =  1，0<1   2 
+
+
+2
+
+(16)
+Furthermore, rearranging Eq. (15) to:
+1 
+
+ 
+ , N 4
+4 N
+
+(17)
+Then, the polar equation of the closed
+noncircular gear pitch curve R(θ) based on
+Bernoulli's lemniscate can be expressed as:
+
+(18)
+Referring to Eq. (7) ~ (10), in order to ensure
+that the pitch curves Re(θe) and Ri(θi) satisfy the
+closure conditions of the external meshing and
+internal meshing noncircular gears conjugated with
+165
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+the closed noncircular gear pitch curve R(θ), the
+polar equations and constraint conditions of the
+pitch curves Re(θe) and Ri(θi) can be calculated as,
+respectively:
+ Re (e )  Ae  R( )
+
+
+， [0, 2], e [0, 2]
+R( )
+
+
+
+d
+e
+
+
+0 A  R ( )
+e
+
+(19)
+
+Fig. 10, its polar equation and design parameters are
+listed in Table 4.
+
+ Ri (i )  Ai  R( )
+
+
+， [0, 2], i [0, 2]
+R( )
+
+i  0 A  R( ) d
+i
+
+(20)
+2
+2
+R( )
+N
+d
+0
+Ne
+Ae  R( )
+2
+N
+0
+
+2
+
+Ni 
+
+(21)
+
+R( )
+d
+Ai  R ( )
+
+(22)
+where Ne and Ni are respectively the numbers of
+lobes of the pitch curves Re(θe) and Ri(θi), and both
+Ne and Ni are integers.
+
+3.2 Mathematical examples of the pitch
+curve design for noncircular gear
+based on Bernoulli's lemniscate
+
+Fig. 10 Two mathematical design examples of the
+closed noncircular gear pitch curve R(θ) based on
+Bernoulli's lemniscate
+
+According to Eq. (16), A mathematical design
+example of the closed noncircular gear pitch curve
+R(θ) based on Bernoulli's lemniscate are depicted in
+
+Table 4. The polar equations of the closed noncircular gear pitch curve R(θ) and its design parameters
+
+Design
+parameters
+
+a  3
+
+N  5
+
+Calculated parameter
+
+1 
+
+  
+ 
+4 5 20
+
+The polar equations of the closed noncircular gear
+pitch curve R(θ)
+
+
+2
+]
+r1 ( )  3 sin 2(  ),   [0,
+20
+5
+
+
+2
+2 4
+r ( )  r1 (  ),   [ ,
+]
+R ( )   2
+5
+5 5
+
+
+8
+8
+
+r5 ( )  r1 (  5 ),   [ 5 , 2]
+
+(Referring to Fig. 10(a))
+
+a  3
+
+N  6
+
+1 
+
+  
+ 
+4 6 12
+
+
+
+
+r1 ( )  3 sin 2(  ),   [0, ]
+12
+3
+
+
+
+ 2
+r ( )  r1 (  ),   [ ,
+]
+R( )   2
+3
+3 3
+
+
+5
+5
+
+r6 ( )  r1 (  3 ),   [ 3 , 2]
+
+(Referring to Fig. 10(b))
+
+Referring to Eq. (18) ~ Eq. (20), take the pitch
+curve shown in Fig. 10(a) as an example, the pitch
+curves Re(θe) and Ri(θi) can be designed and
+
+depicted in Fig. 11, their corresponding design
+parameters are listed in Table 5.
+
+166
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+Fig. 12 Transmission ratio functions ie(θ) and ii(θ) of
+closed external meshing and internal meshing
+noncircular gears
+
+Fig. 11 Closed noncircular gear pitch curves based on
+Bernoulli's lemniscate
+
+Table 5. The polar equations and corresponding design parameters of the pitch curves Re(θe) and Ri(θi)
+conjugated with the closed pitch curve R(θ) based on Bernoulli's lemniscate shown in Fig. 10(a)
+
+The closed noncircular driving gear
+pitch curve R(θ) based on Bernoulli's
+lemniscate
+
+
+
+2
+]
+r1 ( )  3 sin 2(  ),   [0,
+20
+5
+
+, Referring to Fig. 8(a)
+
+2
+2 4
+r ( )  r1 (  ),   [ ,
+]
+R ( )   2
+5
+5 5
+
+
+8
+8
+
+r5 ( )  r1 (  5 ),   [ 5 , 2]
+
+Known conditions
+
+e 5
+
+ i  10
+
+Calculated design parameters
+
+Ae  5.2645
+
+Ai  2.55
+
+ Re ( e )  5.2645  R( )
+
+
+R( )
+
+d
+ e  0
+5.2645
+ R( )
+
+
+ s.t.   [0, 2],  e  [0, 2]
+
+ Ri (i )  2.55  R( )
+
+
+R( )
+
+d
+i  0
+2.55
+ R( )
+
+
+ s.t.   [0, 2], i  [0, 2]
+
+(Referring to Fig. 11(a))
+
+(Referring to Fig. 11(b))
+
+R( )
+
+ie ( ) 
+5.2645
+ R( )
+
+  [0, 2]
+
+
+R( )
+
+ii ( ) 
+2.55
+ R( )
+
+  [0, 2]
+
+
+(Referring to Fig. 12(a))
+
+(Referring to Fig. 12(b))
+
+Noncircular driven gear pitch curves
+Re(θe) and Ri(θi) conjugated with the
+noncircular driving gear pitch curve
+R(θ)
+
+Transmission ratio functions ie(θ) and
+ii(θ) of closed external meshing and
+internal meshing noncircular gears
+
+Fig. 12 are the transmission ratio functions ie(θ)
+and ii(θ) of closed external meshing and internal
+meshing noncircular gears depicted in Fig. 11.
+Referring to Fig. 12, the transmission ratio
+functions ie(θ) and ii(θ) possess the transmission
+characteristics described in Section 2.3 in a rotation
+period. Therefore, the proposed design method of
+
+the pitch curves based on Bernoulli's lemniscate can
+be used to design the noncircular gears with the
+above transmission characteristics.
+
+4
+
+CONCLUDING REMARKS
+
+The unclosed and closed pitch curves for
+noncircular gears based on Bernoulli's lemniscate
+167
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+are obtained successfully in this paper. In particular,
+two calculating methods for noncircular driven gear
+pitch curve conjugated with the pitch curve based
+on Bernoulli's lemniscate are proposed. According
+to the different design requirements of the practical
+applications of noncircular gears, the designer can
+design and calculate the pitch curve of the
+noncircular driven gear by choosing one of the
+above two methods. The transmission ration
+characteristics of noncircular gears are analyzed and
+summarized. Several numerical examples are
+implemented to clarify the design process of the
+pitch curve based on Bernoulli's lemniscate, and to
+demonstrate the feasibility and validity of the
+proposed design method. This novel method builds
+a solid foundation for further researches on other
+particular geometrical and mechanical properties of
+noncircular gears.
+
+5
+
+ACKNOWLEDGEMENTS
+
+The author(s) disclosed receipt of the following
+financial support for the research, authorship, and/or
+publication of this article: This work was supported
+by the 2021 Service technology innovation project
+of Wenzhou Association For Science and
+Technology (grant number: kjfw40).
+
+6
+
+REFERENCES
+
+Litvin, F. L., Fuentes, A. (2004). Gear geometry
+and applied theory, Cambridge University Press,
+Cambridge, UK.
+Stefano, Z., Christian, M. F., Marco, F. (2012). A
+method for the design of ring dampers for gears in
+aeronautical applications, Journal of Mechanical
+Design, pp. 091003.1- 091003.10.
+Terada, H., Zhu, Y., Suzuki, M. and et al (2012).
+Developments of a knee motion assist mechanism
+for wearable robot with a non-circular gear and
+grooved cams, Mechanisms, Transmissions and
+Applications, pp. 69-76.
+Chang S. L., Tsay C. B. and Wu L. I. (1996):
+Mathematical model and undercutting analysis of
+elliptical gears generated by rack cutters,
+Mechanism and Machine Theory, pp. 879-890.
+Figliolini, G., Angeles, J. (2003), The synthesis of
+elliptical gears generated by shaper-cutters, Journal
+of Mechanical Design, pp. 793-801.
+He J. L., Wu X. T. and Li J. G. (2004): Kinematic
+characteristics and gear pair design for deformed
+elliptical geared linkage mechanism, ournal of
+Mechanical Engineering, pp. 62-65.
+Litvin F. L., Gonzalez-Perez I. and et al (2007).
+Generation of planar and helical elliptical gears by
+application of rack-cutter, hob, and shaper,
+
+Computer Methods in Applied Mechanics and
+Engineering, pp. 4321-4336.
+Lin C., Gong H. and et al (2012). Tooth profile
+design and manufacture of high-order elliptical
+bevel gear, China Mechanical Engineering, pp. 253258.
+Litvin, F. L., Gonzalez-Perez, I., Fuentes-Aznar, A.
+and et al (2008). Design and investigation of gear
+drives with non-circular gears applied for speed
+variation and generation of functions, Computer
+Methods in Applied Mechanics and Engineering,
+pp. 3783-3802.
+Zhang, G. Z., Han, J., Liu, Y. Y. (2014). Gear
+hobbing machining method and its principle for
+higher-order elliptic gears, Computer integrated
+manufacturing systems, pp. 1106-1113.
+Hector, F. Q. R., Salvador, C. F., Liuisa, J. N.
+(2007). The synthesis of a N-lobe noncircular gear
+using Bézier and B-spline nonparametric curve on
+the design of its displacement law, Journal of
+Mechanical Design, pp. 982-985.
+Yao, W. X. (2013). Noncircular gears design,
+China Machine Press, Beijing, China.
+Zhang, X., Fan, S. W. (2016). Synthesis of the
+steepest rotation pitch curve design for noncircular
+gear, Mechanism and Machine Theory, pp. 16-35.
+Zhang, X., Fan, S. W. (2018). Study on the pitch
+curve with minimal rotary inertia for the noncircular
+gears, Proceedings of the Institution of Mechanical
+Engineers, Part C: Journal of Mechanical
+Engineering Science, pp. 2666-2673.
+Zhang, X., Fan, S. (2019). Generation of the pitch
+curves with minimal mean kinetic energy
+characteristic for noncircular gears, UPB Scientific
+Bulletin, Series D: Mechanical Engineering, pp.
+151-160.
+Xu, H., Fu, T. W., Song, P. and et al (2020).
+Computational design and optimization of noncircular gears, Computer Graphics Forum, 2020 The
+Eurographics Association and John Wiley & Sons
+Ltd, pp. 399-410.
+Department of Mathematics, Tongji University
+(2014). Higher Mathematics, Higher Education
+Press, Beijing, China.
+Zhang, X. (2021). Reshaping method with steepest
+rotation driven by arc length constraint for
+noncircular driving gear pitch curve with ccs,
+Academic Journal of Manufacturing Engineering,
+pp. 63-70.
+Zhang, X. and Fan S. (2022). Modification design
+and analysis of the pitch curve with convex points
+driven by rotation time constraint for N-lobed
+168
+
+ACADEMIC JOURNAL OF MANUFACTURING ENGINEERING, VOL.20, ISSUE 4/2022
+
+noncircular gear, UPB Scientific Bulletin, Series D:
+Mechanical Engineering, pp. 93-106.
+
+7
+
+NOTATION
+
+The following symbols are used in this paper:
+a = Bernoulli's lemniscate design parameter;
+ie(θ), ii(θ) = transmission ratio functions of the
+external meshing and the internal meshing
+noncircular gears, respectively;
+r(θ) = the unclosed pitch curve for noncircular
+gear based on Bernoulli's lemniscate;
+rb(θ) = polar equation of Bernoulli's lemniscate;
+re(θe), ri(θi) = pitch curves of the external
+meshing and the internal meshing noncircular
+driven gear conjugated with the improved unclosed
+pitch curve r(θ)
+Ae, Ai = center distances of the external meshing
+and the internal meshing noncircular gears,
+respectively;
+N= the number of lobes of the closed noncircular
+gear pitch curve R(θ);
+Ne, Ni = numbers of lobes of the pitch curves
+Re(θe) and Ri(θi), respectively;
+R(θ) = the closed noncircular gear pitch curve
+based on Bernoulli's lemniscate;
+Re(θe), Ri(θi) = pitch curves satisfied the closure
+conditions of the external meshing and internal
+meshing noncircular gears conjugated with the
+closed noncircular gear pitch curve R(θ)
+θ = polar angles of noncircular gear pitch curve;
+θe, θi = the external meshing and the internal
+meshing polar angles, respectively;
+θemax, θimax = the maximum of the external
+meshing and internal meshing polar angles θe and
+θi, respectively
+
+169
+
+

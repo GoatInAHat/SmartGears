@@ -28,7 +28,8 @@
                                         add ded half-thick tooth-ang flank-samples
                                         tooth-index pts r-start r-end flank
                                         flank-right flank-left tooth-pts
-                                        next-base root-start-angle root-end-angle
+                                        right-root left-root-next
+                                        root-start-angle root-end-angle
                                         root-mid root-arc)
   ;; gear alist expected keys: module teeth pa(deg)
   (setq module (cdr (assoc 'module gear)))
@@ -71,10 +72,11 @@
     (setq tooth-pts (append flank-left (reverse flank-right)))
 
     ;; root connection to next tooth (approximate circular arc at root radius)
-    (setq next-base (+ base-angle tooth-ang))
-    ;; Root arc uses nominal half-thickness positions to stitch between teeth.
-    (setq root-start-angle (angle '(0.0 0.0) (car flank-right)))
-    (setq root-end-angle (+ base-angle tooth-ang (- half-thick))) ;; next tooth left root
+    ;; Use actual flank root angles to avoid overshoot/undershoot at high tooth counts.
+    (setq right-root (car flank-right))
+    (setq left-root-next (sg--rot-point (car flank-left) tooth-ang))
+    (setq root-start-angle (angle '(0.0 0.0) right-root))
+    (setq root-end-angle (angle '(0.0 0.0) left-root-next))
     (setq root-mid (sg-lerp root-start-angle root-end-angle 0.5))
     (setq root-arc (list
                      (sg--polar rr root-start-angle)

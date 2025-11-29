@@ -21,7 +21,7 @@ This must never regress.
 
 ---
 
-## Phase 1 — Parameterized External Spur Gears (`SGSPUR`)
+## Phase 1 — Parameterized External Spur Gears (`SGSPUR`) (Complete)
 
 **Command:** `SGSPUR`  
 Creates a configurable external spur gear with cascading defaults.

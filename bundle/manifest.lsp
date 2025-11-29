@@ -14,7 +14,7 @@
     "src/acad/acad-entities.lsp"
     "src/acad/acad-metadata.lsp"
     "src/acad/acad-snap.lsp"
-    "src/ui/ui-commands.lsp"
+    "src/commands/SGMVP.lsp"
   ))
 
 (defun sg-load-modules ( / )

@@ -1,24 +1,16 @@
-# Testing SmartGears
+# Testing SmartGears (for AI agents)
 
-## Interactive vs non-interactive SGEARMAKE
-- **Interactive**: run `SGEARMAKE` directly. Each prompt shows a default; pressing Enter accepts it via `sg:val-or-default`.
-- **Non-interactive**: call `SGEARMAKE` with a property list (keywords lowercase), for example:
-  ```lisp
-  (SGEARMAKE '(:module 2 :teeth 12 :pressure-angle 20 :bore 5 :kerf 0.0))
-  ```
-  The call bypasses prompts and uses the provided values, defaulting any missing entry through `sg:val-or-default`.
+## Non-negotiable workflow per task
+- Run `./tests/run.sh` before claiming any work is complete; it bundles then executes all unit tests.
+- When adding or changing behavior, first add a failing test in `tests/unit/` that captures the expected outcome, then implement the fix/feature, and rerun `./tests/run.sh` until green.
+- Keep new tests CAD-free: exercise math/geom functions directly; stub/mock AutoCAD calls through existing helpers (`*sg-mock*`, `sg-mvp-run` with `T`) instead of `command`/`entmake`.
+- If you touch bundling order or command registration, also run `./tests/auto_load_test.sh` (includes parentheses check + unit suite).
 
-## Automated checks
-- `./bundle.sh` — concatenates modules into `SmartGears.lsp`.
-- `./tests/run.sh` — bundles then executes the AutoLISP unit tests locally using a minimal interpreter (no AutoCAD needed). Ideal for TDD loops.
-- `./tests/auto_load_test.sh` — runs the bundler, checks balanced parentheses and expected symbols; keeps CI guardrails light.
-- `./tests/smoke.sh` — verifies the bundled file exists and records a non-interactive `SGEARMAKE` example. CI cannot execute AutoLISP here, so this step documents the call rather than running it.
+## Available scripts
+- `./tests/run.sh` — single entry point: bundles via `bundle.sh`, then runs all unit tests under `tests/unit/` with the lightweight interpreter.
+- `./tests/auto_load_test.sh` — bundle, structural sanity checks, and full unit suite; use when manifest/command files move.
+- `./tests/smoke.sh` — CI-friendly wrapper that calls `auto_load_test.sh` and emits notes (no manual steps).
 
-## Manual AutoLISP checks
-1. Load `SmartGears.lsp` into AutoCAD (Desktop or Web) and run:
-   ```
-   (SGEARMAKE '(:module 2 :teeth 12 :pressure-angle 20 :bore 5 :kerf 0.0))
-   ```
-   to confirm the non-interactive mode draws without prompting.
-2. Load `tests/sg-input-tests.lsp` after `SmartGears.lsp` and evaluate `(sg:run-input-tests)` to verify `sg:val-or-default` fallback behavior.
-3. Optionally run `SGEARMAKE` without parameters to confirm the prompts accept Enter for defaults and still draw the gear.
+## MVP command reference for tests
+- `SGMVP` draws a 10‑tooth external spur gear at the origin (module 2 mm, PA 20°, bore 5 mm) on layer `SGEARS` if available; metadata is written via XData.
+- For geometry-only assertions, set `*sg-mock*` to `T` and call `(sg-mvp-run T)` to obtain the geometry/metadata alist without CAD side effects.

@@ -23,7 +23,7 @@
 2. **geom/** — gear/tooth geometry in model space (no CAD). Spur involute, internal, nautilus, non-circular pitch sampling, fillets, offsets.
 3. **topology/** — graphs of gears, axles, meshes, compound groups; validation and kinematic propagation.
 4. **acad/** — CAD adapters: polyline/arc builders, block wrapper, XData storage, snap/rotate/move helpers using `entmake`, `command`, `ssget`.
-5. **ui/** — command definitions (CLI-only). Defaults + validation; optional debug/dry-run modes.
+5. **commands/** — one file per command (CLI-only). Defaults + validation; optional debug/dry-run modes.
 6. **bundle/** — orchestrates module load order; produces single-file build for AutoCAD Web.
 
 ### 2.2 Module responsibilities
@@ -36,7 +36,7 @@
 - `topology-kinematics.lsp`: propagate RPM/direction through graph; compound pairs handled by shared axle constraint.
 - `acad-entities.lsp`: entmake polyline, circles; layer/color; block wrapper for reuse; attach XData (gear metadata, version, tolerance preset).
 - `acad-snap.lsp`: compute center distance, move/rotate second gear, phase align tooth/gap; uses `command` for MOVE/ROTATE when Web-safe.
-- `ui-commands.lsp`: registers commands (MVP + later phases). Every command validates inputs, prints summary, writes metadata.
+- `commands/SGMVP.lsp`: zero-input MVP command module (one file per command; future commands join this folder). Every command validates inputs, prints summary, writes metadata.
 - `bundle/manifest.lsp`: ordered `(load ...)` list for GitHub Action concatenation.
 
 ---

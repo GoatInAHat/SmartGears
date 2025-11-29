@@ -9,25 +9,20 @@ SmartGears is a modular AutoLISP toolkit for generating 2D external spur gear pr
    ```
 2. Load `SmartGears.lsp` in AutoCAD (Desktop or Web) using **APPLOAD** (desktop) or the **LOAD** command (Web/desktop), then run the command:
    ```
-   SGEARMAKE
+   SGMVP
    ```
    For general AutoLISP loading guidance, see the AutoCAD help on running LISP programs (e.g., AppLoad or LOAD). [lee-mac.com](https://www.lee-mac.com/runlisp.html?utm_source=chatgpt.com)
 
 ## Usage
-`SGEARMAKE` prompts for:
-- Number of teeth (integer > 4)
-- Module (mm)
-- Pressure angle (degrees; default 20°)
-- Bore diameter (mm)
-- Kerf / clearance offset (mm; positive to expand, negative to shrink)
-- Center point (defaults to origin if Enter is pressed)
-
-Press **Enter** at any prompt to accept the shown default values so you can move quickly through common setups.
-
-The tool builds an involute spur gear outline (outer profile, root circle, bore) using only core AutoLISP primitives for maximum AutoCAD Web compatibility.
+`SGMVP` is the zero-input smoke test command:
+- Draws a 10‑tooth external spur gear at the origin (module 2 mm, PA 20°, bore 5 mm).
+- Uses layer `SGEARS` when available; otherwise falls back to the current layer.
+- Attaches gear metadata (teeth/module/PA/version) via XData for later phases.
+- Intended for quick verification that bundling + geometry generation are working in AutoCAD Web/Desktop.
 
 ## Repository layout
-- `src/` — modular AutoLISP source files
+- `src/commands/` — one file per command (currently `SGMVP.lsp`)
+- `src/` — modular AutoLISP source files (math/geom/topology/acad layers)
 - `tests/` — smoke tests and math/geometry checks
 - `.github/workflows/` — CI workflows
 - `bundle.sh` — bundles modules into `SmartGears.lsp`

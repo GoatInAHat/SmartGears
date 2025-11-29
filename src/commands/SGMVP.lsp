@@ -1,7 +1,7 @@
-;;; ui-commands.lsp -- Command definitions and CLI prompts (Phase 0 SGMVP).
-;;; Purpose: register SmartGears commands; implements zero-input SGMVP demo.
+;;; SGMVP.lsp -- Zero-input MVP command in its own module.
+;;; Purpose: define the SGMVP command and helpers without bundling other commands.
 
-(setq *sg-mock* nil) ;; test hook: when non-nil, SGMVP skips entmake and returns geom.
+(setq *sg-mock* nil) ;; test hook: when non-nil, SGMVP returns geometry only.
 
 (defun sg--ensure-layer (name / existing created)
   "Ensure LAYER table contains NAME. Returns T if available."
@@ -71,9 +71,5 @@
 (defun c:SGMVP ( / )
   "Zero-input MVP: draws 10T spur (m=2, PA=20, bore=5) with pitch/base circles."
   (sg-mvp-run *sg-mock*))
-
-(defun sg-ui-register ( / )
-  "Register SmartGears commands."
-  (princ "\nSmartGears UI loaded. Commands: SGMVP."))
 
 (princ)

@@ -72,9 +72,9 @@
 
     ;; root connection to next tooth (approximate circular arc at root radius)
     (setq next-base (+ base-angle tooth-ang))
-    ;; Root arc should leave the current right flank (at +half-thick) toward the next tooth.
-    (setq root-start-angle (+ base-angle half-thick inv-pa))
-    (setq root-end-angle (+ base-angle tooth-ang (- half-thick inv-pa))) ;; next tooth left root
+    ;; Root arc uses nominal half-thickness positions to stitch between teeth.
+    (setq root-start-angle (angle '(0.0 0.0) (car flank-right)))
+    (setq root-end-angle (+ base-angle tooth-ang (- half-thick))) ;; next tooth left root
     (setq root-mid (sg-lerp root-start-angle root-end-angle 0.5))
     (setq root-arc (list
                      (sg--polar rr root-start-angle)

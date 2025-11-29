@@ -279,6 +279,20 @@ def fn_strlen(s):
     return len(s)
 
 
+def fn_strcase(s, flag=None):
+    text = "" if s is None else str(s)
+    return text.lower() if flag else text.upper()
+
+
+def fn_rtos(val, mode=None, prec=None):
+    try:
+        p = 0 if prec is None else int(prec)
+    except Exception:
+        p = 6
+    fmt = "{0:." + str(p) + "f}"
+    return fmt.format(val)
+
+
 def fn_logand(a, b):
     return int(a) & int(b)
 
@@ -390,6 +404,9 @@ BUILT_INS = {
     "or": lambda *args: next((a for a in args if is_true(a)), None),
     "substr": fn_substr,
     "strlen": fn_strlen,
+    "strcase": fn_strcase,
+    "strcat": lambda *args: "".join(str(a) for a in args),
+    "rtos": fn_rtos,
     "ascii": fn_ascii,
     "logand": fn_logand,
     "logxor": fn_logxor,

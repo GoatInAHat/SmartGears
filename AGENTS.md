@@ -44,6 +44,3 @@
 
 ## 11) LLM Management
 - Agents like you surpass humans at tasks for which there are millions of examples, but fumble through codebases in niche languages and libraries like this one and hallucination rates tend to skyrocket. Information on AutoLISP is not built into your model's weights (in other words, your "muscle memory") like it is for web development. This means the information has to be kept in the context window at all times. This is why whenever you begin a new task you must thoroughly read through the relevant AutoLISP docs (available offline in `docs-autolisp/`) and, especially if the task at all involves gear generation math/algorithms, geometry, non-circular gears, or optimization, the 7 research papers available in `research/`.
-
-## 12) Git Hygiene
-- After completing each prompt task, `git stash push -m "<task summary>"` your changes so they can be reapplied or dropped easily later. Do not stash or discard user-created work you didn't touch.

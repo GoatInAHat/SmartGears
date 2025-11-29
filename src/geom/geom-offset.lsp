@@ -3,18 +3,21 @@
 
 (defun sg-apply-kerf-backlash (points kerf backlash pitch-radius / delta-r delta-theta)
   "Apply kerf/backlash thinning to POINTS in polar space relative to origin."
+  (setq kerf (sg-ensure-number kerf 0.0))
+  (setq backlash (sg-ensure-number backlash 0.0))
+  (setq pitch-radius (sg-ensure-number pitch-radius 0.0))
   (setq delta-r (+ (/ kerf 2.0) (/ backlash 2.0)))
   (setq delta-theta (if (and pitch-radius (> pitch-radius 1e-9))
                         (/ backlash pitch-radius)
                         0.0))
   (mapcar
-    '(lambda (pt)
-       (let* ((r (distance '(0 0) pt))
-              (ang (angle '(0 0) pt))
-              (sign (if (>= (sin ang) 0.0) 1.0 -1.0))
-              (new-r (max 0.0 (- r delta-r)))
-              (new-ang (+ ang (* sign 0.5 delta-theta))))
-         (list (* new-r (cos new-ang)) (* new-r (sin new-ang)))))
+    '(lambda (pt / r ang sign new-r new-ang)
+       (setq r (distance '(0 0) pt))
+       (setq ang (angle '(0 0) pt))
+       (setq sign (if (>= (sin ang) 0.0) 1.0 -1.0))
+       (setq new-r (max 0.0 (- r delta-r)))
+       (setq new-ang (+ ang (* sign 0.5 delta-theta)))
+       (list (* new-r (cos new-ang)) (* new-r (sin new-ang))))
     points))
 
 (defun sg-offset-bore (bore-diam oversize)

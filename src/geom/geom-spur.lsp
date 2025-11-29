@@ -95,8 +95,37 @@
     (cons 'outer-radius ra)
     (cons 'root-radius rr)))
 
+;; Contact ratio for external spur gear pair (shared module & PA).
+(defun sg-spur-contact-ratio (g1 g2 / m1 m2 teeth1 teeth2 pa-rad rp1 rp2 rb1 rb2 ra1 ra2 center loa base-pitch)
+  (setq m1 (sg-ensure-number (cdr (assoc 'module g1)) nil))
+  (setq m2 (sg-ensure-number (cdr (assoc 'module g2)) nil))
+  (setq teeth1 (cdr (assoc 'teeth g1)))
+  (setq teeth2 (cdr (assoc 'teeth g2)))
+  (setq pa-rad (sg-deg->rad (sg-ensure-number (cdr (assoc 'pa g1)) 20.0)))
+  (if (and m2 (numberp m2)) nil (setq m2 m1)) ;; allow second gear omitted
+  (if (or (null m1) (null m2) (> (abs (- m1 m2)) 1e-6) (null teeth1) (null teeth2))
+      nil
+      (progn
+        (setq rp1 (sg-spur-pitch-radius m1 teeth1))
+        (setq rp2 (sg-spur-pitch-radius m2 teeth2))
+        (setq rb1 (sg-spur-base-radius m1 teeth1 pa-rad))
+        (setq rb2 (sg-spur-base-radius m2 teeth2 pa-rad))
+        (setq ra1 (+ rp1 m1))
+        (setq ra2 (+ rp2 m2))
+        (setq center (+ rp1 rp2))
+        (setq loa (+ (sqrt (max 0.0 (- (* ra1 ra1) (* rb1 rb1))))
+                     (sqrt (max 0.0 (- (* ra2 ra2) (* rb2 rb2))))
+                     (- (* center (sin pa-rad)))))
+        (setq base-pitch (* *sg-pi* m1 (cos pa-rad)))
+        (if (and base-pitch (> (abs base-pitch) 1e-9))
+            (/ loa base-pitch)
+            nil))))
+
 ;; Backward compatibility wrapper name
 (defun sg-spur-outline (gear-params)
   (sg-generate-spur-gear-geom gear-params))
+
+;; Alias
+(defun spur-contact-ratio (g1 g2) (sg-spur-contact-ratio g1 g2))
 
 (princ)
